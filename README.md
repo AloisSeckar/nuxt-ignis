@@ -20,7 +20,7 @@ Aside from being "forked", `nuxt-ignis` is also available as [NPM package](https
 
 1) Add following dependency into your `package.json`:
 ```
-"nuxt-ignis": "0.1.5"
+"nuxt-ignis": "0.1.6"
 ```
 
 2) Add following section into your `nuxt.config.ts`:

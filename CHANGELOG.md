@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.6 (2024-12-25)
+- build: bump Nuxt to `3.15.0` + update other deps
+
 ## 0.1.5 (2024-12-21)
 - feat: more flexible config for `i18n` and `formkit`
 - docs: improved instructions for using as a layer
