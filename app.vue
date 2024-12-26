@@ -9,9 +9,7 @@
     </div>
     <div>{{ useT("subtitle") }}</div>
     <NuxtPage v-if="pages" />
-    <div v-else class="my-2">
-      NUXT_PUBLIC_IGNIS_PAGES was set to `false`
-    </div>
+    <AppFeatureList v-else />
     <CurrentTime />
     <div class="link text-xs">
       <NuxtLink to="https://github.com/AloisSeckar/nuxt-ignis">
