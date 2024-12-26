@@ -5,6 +5,8 @@ import { log } from './utils/consola'
 export function setFeatures() {
   // list of optional extra features
   const extras = [] as string[]
+  // list of Nuxt-related settings
+  const nuxt = [] as string[]
 
   // object for optional config that will be merged with global Nuxt config
   // declared in nuxt.config.ts
@@ -22,7 +24,7 @@ export function setFeatures() {
     '@vueuse/nuxt',
   )
 
-  // 2. optional modules
+  // 2. optional modules & features
 
   // ui
   const uiPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_UI
@@ -110,10 +112,32 @@ export function setFeatures() {
     extras.push('elrh-pslo')
   }
 
+  // 3. Nuxt-related settings
+
+  if (process.env.NUXT_PUBLIC_IGNIS_SSR === 'false') {
+    nuxtConfig = defu({
+      ssr: false,
+    }, nuxtConfig)
+    nuxt.push('ssr=false')
+  }
+
+  if (process.env.NUXT_PUBLIC_IGNIS_PAGES === 'false') {
+    nuxtConfig = defu({
+      pages: false,
+    }, nuxtConfig)
+    nuxt.push('pages=false')
+  }
+
+  // 4. verify results
+  // TODO why this run twice?
+
   let overview = 'Nuxt Ignis will start using following settings:\n'
   overview += 'Modules: ' + nuxtConfig.modules.join(', ') + '\n'
   if (extras.length > 0) {
     overview += 'Extras: ' + extras.join(', ') + '\n'
+  }
+  if (nuxt.length > 0) {
+    overview += 'Nuxt: ' + nuxt.join(', ') + '\n'
   }
   log.info(overview)
 

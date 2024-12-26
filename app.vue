@@ -8,7 +8,10 @@
       <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
     </div>
     <div>{{ useT("subtitle") }}</div>
-    <NuxtPage />
+    <NuxtPage v-if="pages" />
+    <div v-else class="my-2">
+      NUXT_PUBLIC_IGNIS_PAGES was set to `false`
+    </div>
     <CurrentTime />
     <div class="link text-xs">
       <NuxtLink to="https://github.com/AloisSeckar/nuxt-ignis">
@@ -32,6 +35,8 @@ initConsola()
 log.info('Nuxt Ignis was here!')
 const title = useT('title')
 const alt = title
+
+const pages = useRuntimeConfig().public.ignis.pages
 </script>
 
 <style scoped>

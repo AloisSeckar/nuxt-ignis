@@ -26,6 +26,9 @@ const nuxtConfig = defu(ignisFeatures, {
       // NOTE: due to static-like nature of nuxt.config.ts file
       // actual values MUST BE provided via .env file (or production equivalent)
       ignis: {
+        // nuxt-related config
+        ssr: true, // true/false
+        pages: true, // true/false
         // presets
         preset: {
           ui: 'off', // nuxt-ui/tailwind/off
