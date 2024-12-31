@@ -2,7 +2,7 @@
 
 ![Nuxt Ignis](https://github.com/AloisSeckar/nuxt-ignis/blob/main/public/nuxt-ignis.png)
 
-This is a template starter for Nuxt web applicatons. It is being build as the setup I'd currently use to start with a new "real world" [Nuxt](https://nuxt.com/) webapp. It will improve and grow together with my skills. I also try to include **WHAT** and **WHY** comments based on my knowledge about the framework and used libraries.
+This is a template starter for Nuxt web applications. It is being built as the setup I'd currently use to start with a new "real world" [Nuxt](https://nuxt.com/) webapp. It will improve and grow together with my skills. I also try to include **WHAT** and **WHY** comments based on my knowledge about the framework and used libraries.
 
 ## How to use
 
@@ -16,7 +16,7 @@ This is a template starter for Nuxt web applicatons. It is being build as the se
 You are ready to build your next awesome project in Nuxt!
 
 ### As a layer (RECOMMENDED)
-Aside from being "forked", `nuxt-ignis` is also available as [NPM package](https://www.npmjs.com/package/nuxt-ignis) that can be referenced as a single-import with all the features incomming.
+Aside from being "forked", `nuxt-ignis` is also available as [NPM package](https://www.npmjs.com/package/nuxt-ignis) that can be referenced as a single-import with all the features incoming.
 
 1) Add following dependency into your `package.json`:
 ```
