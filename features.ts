@@ -128,6 +128,8 @@ export function setFeatures() {
     nuxt.push('pages=false')
   }
 
+  nuxt.push(`log-level=${process.env.NUXT_PUBLIC_LOG_LEVEL || 'info[default]'}`)
+
   // 4. verify results
   // TODO why this run twice?
 
