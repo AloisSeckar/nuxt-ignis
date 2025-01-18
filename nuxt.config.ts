@@ -6,6 +6,11 @@ const ignisFeatures = setFeatures()
 // https://nuxt.com/docs/guide/directory-structure/nuxt-config
 const nuxtConfig = defu(ignisFeatures, {
 
+  extends: [
+    // Test-pack base layer
+    'nuxt-spec',
+  ],
+
   // https://nuxt.com/docs/api/nuxt-config#compatibilitydate
   compatibilityDate: '2024-12-25',
 

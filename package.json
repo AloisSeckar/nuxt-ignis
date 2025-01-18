@@ -13,7 +13,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "start": "nuxt start"
+    "start": "nuxt start",
+    "test": "vitest run"
   },
   "dependencies": {
     "@formkit/nuxt": "1.6.9",
@@ -32,6 +33,7 @@
     "elrh-pslo": "1.1.6",
     "nuxt-neon": "0.2.5",
     "nuxt-security": "2.1.5",
+    "nuxt-spec": "0.0.1",
     "nuxt-time": "1.0.3",
     "open-props": "1.7.9",            
     "pinia": "2.3.0",
