@@ -27,6 +27,9 @@
     <AppFeature v-if="content" :text="useT('features.content')" />
     <AppFeature v-if="openprops" class="openprops-feature" :text="useT('features.openprops')" />
   </div>
+  <div v-if="!pages" class="mb-2">
+    Single-page mode (/pages disabled)
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -41,4 +44,5 @@ const i18n = setup.i18n.enabled
 const formkit = setup.formkit.enabled
 const content = setup.content
 const openprops = setup.openprops
+const pages = setup.pages
 </script>
