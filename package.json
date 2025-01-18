@@ -18,32 +18,32 @@
   },
   "dependencies": {
     "@formkit/nuxt": "1.6.9",
-    "@nuxt/content": "2.13.4",
-    "@nuxt/eslint": "0.7.4",
-    "@nuxt/image": "1.8.1",
-    "@nuxt/ui": "2.20.0",
+    "@nuxt/content": "3.0.0",
+    "@nuxt/eslint": "0.7.5",
+    "@nuxt/image": "1.9.0",
+    "@nuxt/ui": "2.21.0",
     "@nuxtjs/i18n": "9.1.1",
     "@nuxtjs/supabase": "1.4.5",
-    "@nuxtjs/tailwindcss": "6.12.2",
+    "@nuxtjs/tailwindcss": "6.13.1",
     "@pinia/nuxt": "0.9.0",
-    "@vueuse/core": "12.2.0",
-    "@vueuse/nuxt": "12.2.0",
-    "consola": "3.3.1",
+    "@vueuse/core": "12.4.0",
+    "@vueuse/nuxt": "12.4.0",
+    "consola": "3.4.0",
     "defu": "6.1.4",
     "elrh-pslo": "1.1.6",
     "nuxt-neon": "0.2.5",
     "nuxt-security": "2.1.5",
     "nuxt-spec": "0.0.1",
     "nuxt-time": "1.0.3",
-    "open-props": "1.7.9",            
+    "open-props": "1.7.10",            
     "pinia": "2.3.0",
     "postcss-jit-props": "1.0.15",    
-    "typescript": "5.7.2",
+    "typescript": "5.7.3",
     "vue": "latest",
     "vue-router": "latest"
   },
   "devDependencies": {
-    "nuxt": "3.15.0"
+    "nuxt": "3.15.2"
   },
   "packageManager": "pnpm@9.15.1"
 }
