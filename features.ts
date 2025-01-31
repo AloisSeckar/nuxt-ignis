@@ -114,6 +114,8 @@ export function setFeatures() {
 
   // 3. Nuxt-related settings
 
+  nuxt.push(`log-level=${process.env.NUXT_PUBLIC_IGNIS_LOG_LEVEL || 'info[default]'}`)
+
   if (process.env.NUXT_PUBLIC_IGNIS_SSR === 'false') {
     nuxtConfig = defu({
       ssr: false,
@@ -127,8 +129,6 @@ export function setFeatures() {
     }, nuxtConfig)
     nuxt.push('pages=false')
   }
-
-  nuxt.push(`log-level=${process.env.NUXT_PUBLIC_LOG_LEVEL || 'info[default]'}`)
 
   // 4. verify results
   // TODO why this run twice?

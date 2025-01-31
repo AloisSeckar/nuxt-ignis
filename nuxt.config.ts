@@ -31,6 +31,12 @@ const nuxtConfig = defu(ignisFeatures, {
       // NOTE: due to static-like nature of nuxt.config.ts file
       // actual values MUST BE provided via .env file (or production equivalent)
       ignis: {
+
+        // logging
+        log: {
+          level: 'info',
+        },
+
         // nuxt-related config
         ssr: true, // true/false
         pages: true, // true/false
@@ -61,9 +67,6 @@ const nuxtConfig = defu(ignisFeatures, {
           content: false, // true/false (elrh-pslo will (not) be aplied on nuxt-content)
         },
       },
-
-      // logging
-      logLevel: 'info',
     },
   },
 })

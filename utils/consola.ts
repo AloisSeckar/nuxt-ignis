@@ -33,7 +33,7 @@ export const log = createConsola({
  */
 export async function initConsola() {
   // set default log level from config
-  const logLevel = useRuntimeConfig().public.logLevel
+  const logLevel = useRuntimeConfig().public.ignis.log.level
   log.level = getLogLevel(logLevel)
   defaultReporter.level = log.level
   log.debug(`[consola] log level set to '${logLevel}'`)
@@ -44,7 +44,7 @@ export async function initConsola() {
  * to numeric equivalent used by consola.
  */
 function getLogLevel(logLevel: string): LogLevel {
-  const logLevelString = logLevel.toLocaleLowerCase()
+  const logLevelString = logLevel.toLocaleLowerCase() || 'info'
   switch (logLevelString) {
     case 'fatal': return LogLevels.fatal
     case 'error': return LogLevels.error
