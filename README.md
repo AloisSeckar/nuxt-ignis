@@ -62,6 +62,7 @@ Without this workaround the project builds and deploys but will hit runtime erro
 - integration with utility functions library for Vue apps via [`@vueuse/nuxt`](https://vueuse.org/nuxt/README.html)
 - handful tools for working with images via [`@nuxt/image`](https://image.nuxt.com/) 
 - SSR-friendly component for rendering dynamic date/time via [`nuxt-time`](https://nuxt.com/modules/time)
+- logging via [`consola](https://github.com/unjs/consola)
 
 **Configurable features**
 - UI (pick 0-1)
@@ -137,3 +138,8 @@ There are two config values for this feature:
 Currently, it is possible to override following Nuxt config via .env variables:
 - `NUXT_PUBLIC_IGNIS_SSR` - set to `false` to disable SSR (results in `ssr: false` in Nuxt Config)
 - `NUXT_PUBLIC_IGNIS_PAGES` - set to `false` to disable multiple pages in simple projects (results in `pages: false` in Nuxt Config)
+
+### Logging
+Use `NUXT_PUBLIC_INGIS_LOG_LEVEL` to set level of log messages captured with `consola`. The default value is `info`.
+
+Possible values are: `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose`
