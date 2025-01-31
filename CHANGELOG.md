@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.1.7 (2025-01-31)
+- feat: unified test-pack included via separate `nuxt-spec` layer
+- feat: support `ssr` and `pages` settings
+- feat: display log level setting on startup
+- refactor: log level setting moved inside `ignis` config
+- build: updated deps
+
 ## 0.1.6 (2024-12-25)
 - build: bump Nuxt to `3.15.0` + update other deps
 
