@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.8 (2025-02-02)
+- build: fix `nuxt-neon` security issue
+- build: fix `vite` security issue
+
 ## 0.1.7 (2025-01-31)
 - feat: unified test-pack included via separate `nuxt-spec` layer
 - feat: support `ssr` and `pages` settings
