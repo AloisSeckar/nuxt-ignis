@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.10 (TBA)
+- feat: remove `useIgnisI18n` again as it is NOT needed
+
 ## 0.1.9 (2025-02-03)
 - feat: expose `useI18n` composable via custom `useIgnisI18n`
 

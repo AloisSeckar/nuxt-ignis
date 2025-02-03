@@ -33,9 +33,6 @@ initConsola()
 
 log.info('Nuxt Ignis was here!')
 
-const { locale } = useIgnisI18n()
-log.debug(`I18n locale set to ${locale.value}`)
-
 const title = useT('title')
 const alt = title
 
