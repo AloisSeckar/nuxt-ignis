@@ -20,7 +20,7 @@ Aside from being "forked", `nuxt-ignis` is also available as [NPM package](https
 
 1) Add following dependency into your `package.json`:
 ```
-"nuxt-ignis": "0.1.8"
+"nuxt-ignis": "0.1.9"
 ```
 
 2) Add following section into your `nuxt.config.ts`:
@@ -117,6 +117,7 @@ Default values are **false** (not included) for all optional modules.
 - you can select default language locale via `NUXT_PUBLIC_IGNIS_I18N_LOCALE`
 - all `.json` files with messages in `@assets/lang` folder will be auto-scanned
 - if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`
+- **NOTE:** the `useI18n` composable is not available and must be replaced with custom `useIgnisI18n` wrapper
 
 #### Formkit options
 - you can select default language locale via `NUXT_PUBLIC_IGNIS_FORMKIT_LOCALE`

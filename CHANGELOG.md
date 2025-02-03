@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.1.9 (2025-02-03)
+- feat: expose `useI18n` composable via custom `useIgnisI18n`
+
 ## 0.1.8 (2025-02-02)
 - build: fix `nuxt-neon` security issue
 - build: fix `vite` security issue
