@@ -22,3 +22,7 @@
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { useT } from '#imports' // requires explicit import for some reason
+</script>

@@ -33,6 +33,8 @@
 </template>
 
 <script setup lang="ts">
+import { useT } from '#imports' // requires explicit import for some reason
+
 const setup = useRuntimeConfig().public.ignis
 const ui = setup.preset.ui
 const db = setup.preset.db
