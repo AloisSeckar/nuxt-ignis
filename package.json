@@ -22,7 +22,7 @@
     "@nuxt/eslint": "0.7.6",
     "@nuxt/image": "1.9.0",
     "@nuxt/ui": "2.21.0",
-    "@nuxtjs/i18n": "9.1.4",
+    "@nuxtjs/i18n": "9.1.1",
     "@nuxtjs/supabase": "1.4.6",
     "@nuxtjs/tailwindcss": "6.13.1",
     "@pinia/nuxt": "0.9.0",
