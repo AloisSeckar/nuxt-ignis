@@ -1,7 +1,10 @@
 # Changelog
 
-## 0.1.10 (TBA)
+## 0.1.10 (2025-02-06)
+- feat: update `nuxt-neon` to allow server-side exports
 - feat: remove `useIgnisI18n` again as it is NOT needed
+- fix: pin down `i18n` due to current regression
+- build: security updates
 
 ## 0.1.9 (2025-02-03)
 - feat: expose `useI18n` composable via custom `useIgnisI18n`
