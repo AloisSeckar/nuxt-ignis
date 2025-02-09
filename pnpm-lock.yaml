@@ -7,6 +7,7 @@ settings:
 overrides:
   vite: latest
   '@nuxtjs/mdc': ^0.13.3
+  '@nuxt/kit': 3.15.4
 
 importers:
 
@@ -240,10 +241,6 @@ packages:
     engines: {node: '>=6.9.0'}
     peerDependencies:
       '@babel/core': ^7.0.0-0
-
-  '@babel/standalone@7.26.2':
-    resolution: {integrity: sha512-i2VbegsRfwa9yq3xmfDX3tG2yh9K0cCqwpSyVG2nPxifh0EOnucAZUeO/g4lW2Zfg03aPJNtPfxQbDHzXc7H+w==}
-    engines: {node: '>=6.9.0'}
 
   '@babel/standalone@7.26.4':
     resolution: {integrity: sha512-SF+g7S2mhTT1b7CHyfNjDkPU1corxg4LPYsyP0x5KuCl+EbtBQHRLqr9N3q7e7+x7NQ5LYxQf8mJ2PmzebLr0A==}
@@ -844,21 +841,9 @@ packages:
     resolution: {integrity: sha512-kuuePx/jtlmsuG/G8mTMELntw4p8MLD4tu9f4A064xor/ks29oEoBmFRzvfFwxqZ7cqfG2M4LZfTZFjQz5St+Q==}
     engines: {node: '>=18.20.5'}
 
-  '@nuxt/kit@3.14.1592':
-    resolution: {integrity: sha512-r9r8bISBBisvfcNgNL3dSIQHSBe0v5YkX5zwNblIC2T0CIEgxEVoM5rq9O5wqgb5OEydsHTtT2hL57vdv6VT2w==}
-    engines: {node: ^14.18.0 || >=16.10.0}
-
-  '@nuxt/kit@3.15.2':
-    resolution: {integrity: sha512-nxiPJVz2fICcyBKlN5pL1IgZVejyArulREsS5HvAk07hijlYuZ5toRM8soLt51VQNpFd/PedL+Z1AlYu/bQCYQ==}
-    engines: {node: '>=18.0.0'}
-
   '@nuxt/kit@3.15.4':
     resolution: {integrity: sha512-dr7I7eZOoRLl4uxdxeL2dQsH0OrbEiVPIyBHnBpA4co24CBnoJoF+JINuP9l3PAM3IhUzc5JIVq3/YY3lEc3Hw==}
     engines: {node: '>=18.12.0'}
-
-  '@nuxt/schema@3.14.1592':
-    resolution: {integrity: sha512-A1d/08ueX8stTXNkvGqnr1eEXZgvKn+vj6s7jXhZNWApUSqMgItU4VK28vrrdpKbjIPwq2SwhnGOHUYvN9HwCQ==}
-    engines: {node: ^14.18.0 || >=16.10.0}
 
   '@nuxt/schema@3.15.2':
     resolution: {integrity: sha512-cTHGbLTbrQ83B+7Mh0ggc5MzIp74o8KciA0boCiBJyK5uImH9QQNK6VgfwRWcTD5sj3WNKiIB1luOMom3LHgVw==}
@@ -3050,9 +3035,6 @@ packages:
   has-unicode@2.0.1:
     resolution: {integrity: sha512-8Rf9Y83NBReMnx0gFzA8JImQACstCYWUplepDa9xprwwtmgEZUF0h/i5xSA625zB/I37EtrswSST6OXxwaaIJQ==}
 
-  hash-sum@2.0.0:
-    resolution: {integrity: sha512-WdZTbAByD+pHfl/g9QSsBIIwy8IT+EsPiKDs0KNX+zSHhdDLFKdZu0BQHljvO+0QI/BasbMSUa8wYNCZTvhslg==}
-
   hasown@2.0.2:
     resolution: {integrity: sha512-0hJU9SCPvmMzIBdZFqNPXWa6dqh7WdH0cII9y+CyS8rG3nL48Bclra9HmKhVVUHyPWNH5Y7xDwAB7bfgSjkUMQ==}
     engines: {node: '>= 0.4'}
@@ -3178,10 +3160,6 @@ packages:
 
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
-    engines: {node: '>= 4'}
-
-  ignore@6.0.2:
-    resolution: {integrity: sha512-InwqeHHN2XpumIkMvpl/DCJVrAHgCsG5+cn1XlnLWGwtZBm8QJfSusItfrwx81CTp5agNZqpKU2J/ccC5nGT4A==}
     engines: {node: '>= 4'}
 
   ignore@7.0.3:
@@ -3368,10 +3346,6 @@ packages:
     resolution: {integrity: sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==}
     hasBin: true
 
-  jiti@2.4.1:
-    resolution: {integrity: sha512-yPBThwecp1wS9DmoA4x4KR2h3QoslacnDR8ypuFM962kI4/456Iy1oHx2RAgh4jfZNdn0bctsdadceiBUgpU1g==}
-    hasBin: true
-
   jiti@2.4.2:
     resolution: {integrity: sha512-rg9zJN+G4n2nfJl5MW3BMygZX56zKPNVEYYqq7adpmMh4Jn2QNEwhvQlFy6jPVdcod7txZtKHWnyZiA3a0zP7A==}
     hasBin: true
@@ -3456,9 +3430,6 @@ packages:
   klona@2.0.6:
     resolution: {integrity: sha512-dhG34DXATL5hSxJbIexCft8FChFXtmskoZYnoPWjXQuebWYCNkVeV3KkGegCK9CP1oswI/vQibS2GY7Em/sJJA==}
     engines: {node: '>= 8'}
-
-  knitwork@1.1.0:
-    resolution: {integrity: sha512-oHnmiBUVHz1V+URE77PNot2lv3QiYU2zQf1JjOVkMt3YDKGbu8NAFr+c4mcNOhdsGrB/VpVbRwPwhiXrPhxQbw==}
 
   knitwork@1.2.0:
     resolution: {integrity: sha512-xYSH7AvuQ6nXkq42x0v5S8/Iry+cfulBz/DJQzhIyESdLD7425jXsPy4vn5cCXU+HhRN2kVw51Vd1K6/By4BQg==}
@@ -3834,15 +3805,8 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
-  mlly@1.7.3:
-    resolution: {integrity: sha512-xUsx5n/mN0uQf4V548PKQ+YShA4/IW0KI1dZhrNrPCLG+xizETbHTkOa1f8/xut9JRPp8kQuMnz0oqwkTiLo/A==}
-
   mlly@1.7.4:
     resolution: {integrity: sha512-qmdSIPC4bDJXgZTCR7XosJiNKySV7O215tsPtDN9iEO/7q/76b/ijtgRu/+epFXSJhijtTCCGp3DWS549P3xKw==}
-
-  mri@1.2.0:
-    resolution: {integrity: sha512-tzzskb3bG8LvYGFF/mDTpq3jpI6Q9wc3LEmBaghu+DdCssd1FakN7Bc0hVNmEyGq1bq3RgfkCb3cmQLpNPOroA==}
-    engines: {node: '>=4'}
 
   mrmime@2.0.0:
     resolution: {integrity: sha512-eu38+hdgojoyq63s+yTpN4XMBdt5l8HhMhc4VKLO9KM5caLIBvUm4thi7fFaxyTmCKeNnXZ5pAlBwCUnhA09uw==}
@@ -4247,9 +4211,6 @@ packages:
   pirates@4.0.6:
     resolution: {integrity: sha512-saLsH7WeYYPiD25LDuLRRY/i+6HaPYr6G1OUlN39otzkSTxKnubR9RTxS3/Kk50s1g2JTgFwWQDQyplC5/SHZg==}
     engines: {node: '>= 6'}
-
-  pkg-types@1.2.1:
-    resolution: {integrity: sha512-sQoqa8alT3nHjGuTjuKgOnvjo4cljkufdtLMnO2LBP/wRwuDlo1tkaEdMxCRhyGRPacv/ztlZgDPm2b7FAmEvw==}
 
   pkg-types@1.3.1:
     resolution: {integrity: sha512-/Jm5M4RvtBFVkKWRu2BLUTNP8/M2a+UwuAX+ae4770q1qVGtfjG+WTCupoZixokjmHiry8uI+dlY8KXYV5HVVQ==}
@@ -5221,9 +5182,6 @@ packages:
   uncsrf@1.2.0:
     resolution: {integrity: sha512-EyeG1tIx1zisLuqokSXZ5LhndzaUd2WBMS+18IlBUYobJsKSUQMpLIEm6QUfY/Azmhnnz0v2QbkrT6/u2K/Y1g==}
 
-  unctx@2.3.1:
-    resolution: {integrity: sha512-PhKke8ZYauiqh3FEMVNm7ljvzQiph0Mt3GBRve03IJm7ukfaON2OBK795tLwhbyfzknuRRkW0+Ze+CQUmzOZ+A==}
-
   unctx@2.4.1:
     resolution: {integrity: sha512-AbaYw0Nm4mK4qjhns67C+kgxR2YWiwlDBPzxrN8h8C6VtAdCgditAY5Dezu3IJy4XVqAnbrXt9oQJvsn3fyozg==}
 
@@ -5246,9 +5204,6 @@ packages:
 
   unified@11.0.5:
     resolution: {integrity: sha512-xKvGhPWw3k84Qjh8bI3ZeJjqnyadK+GEFtazSfZv/rKeTkTjOJho6mFqh2SM96iIcZokxiOpg78GazTSg8+KHA==}
-
-  unimport@3.14.2:
-    resolution: {integrity: sha512-FSxhbAylGGanyuTb3K0Ka3T9mnsD0+cRKbwOS11Li4Lh2whWS091e32JH4bIHrTckxlW9GnExAglADlxXjjzFw==}
 
   unimport@3.14.6:
     resolution: {integrity: sha512-CYvbDaTT04Rh8bmD8jz3WPmHYZRG/NnvYVzwD6V1YAlvvKROlAeNDUBhkBGzNav2RKaeuXvlWYaa1V4Lfi/O0g==}
@@ -5454,10 +5409,6 @@ packages:
 
   untun@0.1.3:
     resolution: {integrity: sha512-4luGP9LMYszMRZwsvyUd9MrxgEGZdZuZgpVQHEEX0lCYFESasVRvZd0EYpCkOIbJKHMuv0LskpXc/8Un+MJzEQ==}
-    hasBin: true
-
-  untyped@1.5.1:
-    resolution: {integrity: sha512-reBOnkJBFfBZ8pCKaeHgfZLcehXtM6UTxc+vqs1JvCps0c4amLNp3fhdGBZwYp+VLyoY9n3X5KOP7lCyWBUX9A==}
     hasBin: true
 
   untyped@1.5.2:
@@ -6084,8 +6035,6 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/standalone@7.26.2': {}
-
   '@babel/standalone@7.26.4': {}
 
   '@babel/template@7.25.9':
@@ -6321,7 +6270,7 @@ snapshots:
       '@formkit/core': 1.6.9
       '@formkit/i18n': 1.6.9
       '@formkit/vue': 1.6.9(tailwindcss@3.4.17)(vue@3.5.13(typescript@5.7.3))
-      '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.28.0)
+      '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.28.0)
       chokidar: 3.6.0
       pathe: 1.1.2
       unplugin: 1.16.0
@@ -6888,7 +6837,7 @@ snapshots:
 
   '@nuxt/image@1.9.0(db0@0.2.1(better-sqlite3@11.8.1))(ioredis@5.4.1)(magicast@0.3.5)(rollup@4.28.0)':
     dependencies:
-      '@nuxt/kit': 3.15.2(magicast@0.3.5)(rollup@4.28.0)
+      '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.28.0)
       consola: 3.4.0
       defu: 6.1.4
       h3: 1.13.1
@@ -6922,61 +6871,6 @@ snapshots:
       - supports-color
       - uploadthing
 
-  '@nuxt/kit@3.14.1592(magicast@0.3.5)(rollup@4.28.0)':
-    dependencies:
-      '@nuxt/schema': 3.14.1592(magicast@0.3.5)(rollup@4.28.0)
-      c12: 2.0.1(magicast@0.3.5)
-      consola: 3.4.0
-      defu: 6.1.4
-      destr: 2.0.3
-      globby: 14.0.2
-      hash-sum: 2.0.0
-      ignore: 6.0.2
-      jiti: 2.4.1
-      klona: 2.0.6
-      knitwork: 1.1.0
-      mlly: 1.7.3
-      pathe: 1.1.2
-      pkg-types: 1.2.1
-      scule: 1.3.0
-      semver: 7.6.3
-      ufo: 1.5.4
-      unctx: 2.3.1
-      unimport: 3.14.2(rollup@4.28.0)
-      untyped: 1.5.1
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-
-  '@nuxt/kit@3.15.2(magicast@0.3.5)(rollup@4.28.0)':
-    dependencies:
-      '@nuxt/schema': 3.15.2
-      c12: 2.0.1(magicast@0.3.5)
-      consola: 3.4.0
-      defu: 6.1.4
-      destr: 2.0.3
-      globby: 14.0.2
-      ignore: 7.0.3
-      jiti: 2.4.2
-      klona: 2.0.6
-      knitwork: 1.2.0
-      mlly: 1.7.4
-      ohash: 1.1.4
-      pathe: 2.0.2
-      pkg-types: 1.3.1
-      scule: 1.3.0
-      semver: 7.6.3
-      std-env: 3.8.0
-      ufo: 1.5.4
-      unctx: 2.4.1
-      unimport: 3.14.6(rollup@4.28.0)
-      untyped: 1.5.2
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-
   '@nuxt/kit@3.15.4(magicast@0.3.5)(rollup@4.28.0)':
     dependencies:
       c12: 2.0.1(magicast@0.3.5)
@@ -6998,26 +6892,6 @@ snapshots:
       ufo: 1.5.4
       unctx: 2.4.1
       unimport: 4.0.0(rollup@4.28.0)
-      untyped: 1.5.2
-    transitivePeerDependencies:
-      - magicast
-      - rollup
-      - supports-color
-
-  '@nuxt/schema@3.14.1592(magicast@0.3.5)(rollup@4.28.0)':
-    dependencies:
-      c12: 2.0.1(magicast@0.3.5)
-      compatx: 0.1.8
-      consola: 3.4.0
-      defu: 6.1.4
-      hookable: 5.5.3
-      pathe: 1.1.2
-      pkg-types: 1.3.1
-      scule: 1.3.0
-      std-env: 3.8.0
-      ufo: 1.5.4
-      uncrypto: 0.1.3
-      unimport: 3.14.6(rollup@4.28.0)
       untyped: 1.5.2
     transitivePeerDependencies:
       - magicast
@@ -7114,7 +6988,7 @@ snapshots:
       '@headlessui/vue': 1.7.23(vue@3.5.13(typescript@5.7.3))
       '@iconify-json/heroicons': 1.2.2
       '@nuxt/icon': 1.10.3(magicast@0.3.5)(rollup@4.28.0)(vite@6.1.0(@types/node@22.10.1)(jiti@2.4.2)(terser@5.36.0)(yaml@2.7.0))(vue@3.5.13(typescript@5.7.3))
-      '@nuxt/kit': 3.15.2(magicast@0.3.5)(rollup@4.28.0)
+      '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.28.0)
       '@nuxtjs/color-mode': 3.5.2(magicast@0.3.5)(rollup@4.28.0)
       '@nuxtjs/tailwindcss': 6.13.1(magicast@0.3.5)(rollup@4.28.0)
       '@popperjs/core': 2.11.8
@@ -7317,7 +7191,7 @@ snapshots:
 
   '@nuxtjs/tailwindcss@6.13.1(magicast@0.3.5)(rollup@4.28.0)':
     dependencies:
-      '@nuxt/kit': 3.15.2(magicast@0.3.5)(rollup@4.28.0)
+      '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.28.0)
       autoprefixer: 10.4.20(postcss@8.4.49)
       c12: 2.0.1(magicast@0.3.5)
       consola: 3.4.0
@@ -7406,7 +7280,7 @@ snapshots:
 
   '@pinia/nuxt@0.9.0(magicast@0.3.5)(pinia@2.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3)))(rollup@4.28.0)':
     dependencies:
-      '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.28.0)
+      '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.28.0)
       pinia: 2.3.1(typescript@5.7.3)(vue@3.5.13(typescript@5.7.3))
     transitivePeerDependencies:
       - magicast
@@ -8281,7 +8155,7 @@ snapshots:
 
   '@vueuse/nuxt@12.5.0(magicast@0.3.5)(nuxt@3.15.4(@parcel/watcher@2.5.0)(@types/node@22.10.1)(better-sqlite3@11.8.1)(db0@0.2.1(better-sqlite3@11.8.1))(eslint@9.16.0(jiti@2.4.2))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.28.0)(terser@5.36.0)(typescript@5.7.3)(vite@6.1.0(@types/node@22.10.1)(jiti@2.4.2)(terser@5.36.0)(yaml@2.7.0))(yaml@2.7.0))(rollup@4.28.0)(typescript@5.7.3)':
     dependencies:
-      '@nuxt/kit': 3.15.2(magicast@0.3.5)(rollup@4.28.0)
+      '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.28.0)
       '@vueuse/core': 12.5.0(typescript@5.7.3)
       '@vueuse/metadata': 12.5.0
       local-pkg: 1.0.0
@@ -9618,8 +9492,6 @@ snapshots:
 
   has-unicode@2.0.1: {}
 
-  hash-sum@2.0.0: {}
-
   hasown@2.0.2:
     dependencies:
       function-bind: 1.1.2
@@ -9834,8 +9706,6 @@ snapshots:
 
   ignore@5.3.2: {}
 
-  ignore@6.0.2: {}
-
   ignore@7.0.3: {}
 
   image-meta@0.2.1: {}
@@ -10032,8 +9902,6 @@ snapshots:
 
   jiti@1.21.6: {}
 
-  jiti@2.4.1: {}
-
   jiti@2.4.2: {}
 
   js-beautify@1.15.1:
@@ -10103,8 +9971,6 @@ snapshots:
   kleur@3.0.3: {}
 
   klona@2.0.6: {}
-
-  knitwork@1.1.0: {}
 
   knitwork@1.2.0: {}
 
@@ -10665,21 +10531,12 @@ snapshots:
 
   mkdirp@3.0.1: {}
 
-  mlly@1.7.3:
-    dependencies:
-      acorn: 8.14.0
-      pathe: 1.1.2
-      pkg-types: 1.3.1
-      ufo: 1.5.4
-
   mlly@1.7.4:
     dependencies:
       acorn: 8.14.0
       pathe: 2.0.2
       pkg-types: 1.3.1
       ufo: 1.5.4
-
-  mri@1.2.0: {}
 
   mrmime@2.0.0: {}
 
@@ -10909,7 +10766,7 @@ snapshots:
 
   nuxt-security@2.1.5(magicast@0.3.5)(rollup@4.28.0):
     dependencies:
-      '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.28.0)
+      '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.28.0)
       basic-auth: 2.0.1
       defu: 6.1.4
       nuxt-csurf: 1.6.5(magicast@0.3.5)(rollup@4.28.0)
@@ -10957,7 +10814,7 @@ snapshots:
 
   nuxt-time@1.0.3(magicast@0.3.5)(nuxt@3.15.4(@parcel/watcher@2.5.0)(@types/node@22.10.1)(better-sqlite3@11.8.1)(db0@0.2.1(better-sqlite3@11.8.1))(eslint@9.16.0(jiti@2.4.2))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.28.0)(terser@5.36.0)(typescript@5.7.3)(vite@6.1.0(@types/node@22.10.1)(jiti@2.4.2)(terser@5.36.0)(yaml@2.7.0))(yaml@2.7.0))(rollup@4.28.0):
     dependencies:
-      '@nuxt/kit': 3.14.1592(magicast@0.3.5)(rollup@4.28.0)
+      '@nuxt/kit': 3.15.4(magicast@0.3.5)(rollup@4.28.0)
       nuxt: 3.15.4(@parcel/watcher@2.5.0)(@types/node@22.10.1)(better-sqlite3@11.8.1)(db0@0.2.1(better-sqlite3@11.8.1))(eslint@9.16.0(jiti@2.4.2))(ioredis@5.4.1)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.28.0)(terser@5.36.0)(typescript@5.7.3)(vite@6.1.0(@types/node@22.10.1)(jiti@2.4.2)(terser@5.36.0)(yaml@2.7.0))(yaml@2.7.0)
     transitivePeerDependencies:
       - magicast
@@ -11344,12 +11201,6 @@ snapshots:
       - '@vue/composition-api'
 
   pirates@4.0.6: {}
-
-  pkg-types@1.2.1:
-    dependencies:
-      confbox: 0.1.8
-      mlly: 1.7.4
-      pathe: 1.1.2
 
   pkg-types@1.3.1:
     dependencies:
@@ -12479,13 +12330,6 @@ snapshots:
 
   uncsrf@1.2.0: {}
 
-  unctx@2.3.1:
-    dependencies:
-      acorn: 8.14.0
-      estree-walker: 3.0.3
-      magic-string: 0.30.17
-      unplugin: 1.16.1
-
   unctx@2.4.1:
     dependencies:
       acorn: 8.14.0
@@ -12523,25 +12367,6 @@ snapshots:
       is-plain-obj: 4.1.0
       trough: 2.2.0
       vfile: 6.0.3
-
-  unimport@3.14.2(rollup@4.28.0):
-    dependencies:
-      '@rollup/pluginutils': 5.1.3(rollup@4.28.0)
-      acorn: 8.14.0
-      escape-string-regexp: 5.0.0
-      estree-walker: 3.0.3
-      local-pkg: 0.5.1
-      magic-string: 0.30.17
-      mlly: 1.7.4
-      pathe: 1.1.2
-      picomatch: 4.0.2
-      pkg-types: 1.3.1
-      scule: 1.3.0
-      strip-literal: 2.1.1
-      tinyglobby: 0.2.10
-      unplugin: 1.16.1
-    transitivePeerDependencies:
-      - rollup
 
   unimport@3.14.6(rollup@4.28.0):
     dependencies:
@@ -12737,18 +12562,6 @@ snapshots:
       citty: 0.1.6
       consola: 3.4.0
       pathe: 1.1.2
-
-  untyped@1.5.1:
-    dependencies:
-      '@babel/core': 7.26.0
-      '@babel/standalone': 7.26.2
-      '@babel/types': 7.26.0
-      defu: 6.1.4
-      jiti: 2.4.2
-      mri: 1.2.0
-      scule: 1.3.0
-    transitivePeerDependencies:
-      - supports-color
 
   untyped@1.5.2:
     dependencies:
