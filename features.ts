@@ -20,6 +20,7 @@ export function setFeatures() {
     'nuxt-security',
     '@nuxt/eslint',
     '@nuxt/image',
+    '@nuxt/scripts',
     '@pinia/nuxt',
     '@vueuse/nuxt',
   )
