@@ -26,6 +26,15 @@
     <div class="mb-4 text-justify">
       {{ processedText }}
     </div>
+    <div class="mt-6 mb-2">
+      <strong>elrh-content test</strong>
+    </div>
+    <div class="mb-4 text-justify">
+      <div v-if="content">
+        <ContentRenderer v-if="contentData" :value="contentData" />
+      </div>
+      <span v-else>nuxt-content not enabled</span>
+    </div>
     <div class="link">
       <NuxtLink to="/">
         {{ useT("goto1") }}
@@ -41,4 +50,12 @@ const rawText = 'Veřejné s autorská počítačové vyhotovení, popis vzorec 
 // this will or will not add non-brakable spaces
 // based on NUXT_PUBLIC_IGNIS_PSLO_CONTENT setting
 const processedText = pslo(rawText)
+
+// data for nuxt-content rendering
+const content = useRuntimeConfig().public.ignis.content
+const route = useRoute()
+console.log(route.path)
+const { data: contentData } = await useAsyncData('second', () => {
+  return queryCollection('content').path('/second').first()
+})
 </script>
