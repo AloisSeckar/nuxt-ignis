@@ -53,8 +53,6 @@ const processedText = pslo(rawText)
 
 // data for nuxt-content rendering
 const content = useRuntimeConfig().public.ignis.content
-const route = useRoute()
-console.log(route.path)
 const { data: contentData } = await useAsyncData('second', () => {
   return queryCollection('content').path('/second').first()
 })
