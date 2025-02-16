@@ -61,6 +61,7 @@ Without this workaround the project builds and deploys but will hit runtime erro
 - de-facto standard state management library for Vue apps via [`@pinia/nuxt`](https://pinia.vuejs.org/ssr/nuxt.html)
 - integration with utility functions library for Vue apps via [`@vueuse/nuxt`](https://vueuse.org/nuxt/README.html)
 - handful tools for working with images via [`@nuxt/image`](https://image.nuxt.com/)
+- simple integration of various fonts via [`@nuxt/fonts`](https://fonts.nuxt.com/)
 - optimized scripts loading via [`@nuxt/scripts`](https://scripts.nuxt.com/)
 - SSR-friendly component for rendering dynamic date/time via [`nuxt-time`](https://nuxt.com/modules/time)
 - logging via [`consola](https://github.com/unjs/consola)

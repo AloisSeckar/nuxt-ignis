@@ -20,6 +20,7 @@ export function setFeatures() {
     'nuxt-security',
     '@nuxt/eslint',
     '@nuxt/image',
+    '@nuxt/fonts',
     '@nuxt/scripts',
     '@pinia/nuxt',
     '@vueuse/nuxt',
@@ -102,7 +103,7 @@ export function setFeatures() {
       // CSS processor for Open Props
       postcss: {
         plugins: {
-          'postcss-jit-props': OpenProps,
+          'elrh-postcss-jit-props': OpenProps,
         },
       },
     }, nuxtConfig)
