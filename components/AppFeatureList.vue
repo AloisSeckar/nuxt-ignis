@@ -14,6 +14,8 @@
     <AppFeature :text="useT('features.nuxt')" />
     <AppFeature :text="useT('features.security')" />
     <AppFeature :text="useT('features.image')" />
+    <AppFeature :text="useT('features.scripts')" />
+    <AppFeature :text="useT('features.fonts')" class="fonts" />
     <AppFeature :text="useT('features.pinia')" />
     <AppFeature :text="useT('features.vueuse')" />
     <AppFeature :text="useT('features.consola')" />
@@ -48,3 +50,10 @@ const content = setup.content
 const openprops = setup.openprops
 const pages = setup.pages
 </script>
+
+<style scoped>
+/* demo for @nuxt/fonts */
+.fonts {
+  font-family: "Kurale";
+}
+</style>

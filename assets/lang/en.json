@@ -8,7 +8,9 @@
     "features" : {
         "nuxt" : "Nuxt application framework atop Vue.js",
         "security" : "Nuxt Security module helping with OWASP patterns",
-        "image" : "NuxtImage to optimize use of images",
+        "image" : "Nuxt Image to optimize use of images",
+        "scripts" : "Nuxt Scripts to allow simple execution of external scripts",
+        "fonts" : "Nuxt Fonts to allow simple integration of various fonts",
         "pinia" : "Pinia for state management",
         "vueuse" : "VueUse utils available",
         "i18n" : "I18n for translations",
