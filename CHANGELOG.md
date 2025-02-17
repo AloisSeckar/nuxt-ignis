@@ -1,8 +1,13 @@
 # Changelog
 
+## 0.2.1 (2025-02-17)
+- feat: `@nuxt/fonts` included into built-in dependencies
+- fix: added default content.config.ts to avoid warning on startup
+- build: fixed couple of version issues in lock file
+
 ## 0.2.0 (2025-02-09)
-- feat: breaking change update to `nuxt-content v3` - in case of problems, see [migration guide](https://content.nuxt.com/docs/getting-started/migration)
-- feat: `nuxt-scripts` included into built-in dependencies
+- feat: breaking change update to `@nuxt/content v3` - in case of problems, see [migration guide](https://content.nuxt.com/docs/getting-started/migration)
+- feat: `@nuxt/scripts` included into built-in dependencies
 - build: Vite and Nuxt Kit version fix
 
 ## 0.1.10 (2025-02-06)
