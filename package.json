@@ -2,10 +2,28 @@
   "name": "nuxt-ignis",
   "version": "0.2.0",
   "description": "Enhanced and customizable Nuxt application starter pack",
-  "repository": "github:AloisSeckar/nuxt-ignis",
+  "keywords": [
+    "nuxt",
+    "nuxtjs",
+    "nuxt3",
+    "starter"
+  ],
+  "author": "Alois Seckar <alois.seckar@gmail.com>",
+  "homepage": "https://github.com/AloisSeckar/nuxt-ignis",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AloisSeckar/nuxt-ignis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/AloisSeckar/nuxt-ignis/issues",
+    "email": "alois.seckar@gmail.com"
+  },
   "license": "MIT",
   "type": "module",
   "main": "./nuxt.config.ts",
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "scripts": {
     "analyze": "nuxt analyze",
     "eslint": "eslint .",
