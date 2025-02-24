@@ -103,7 +103,7 @@ export function setFeatures() {
       // CSS processor for Open Props
       postcss: {
         plugins: {
-          'elrh-postcss-jit-props': OpenProps,
+          'postcss-jit-props': OpenProps,
         },
       },
     }, nuxtConfig)
