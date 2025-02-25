@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.2 (2025-02-25)
+- build: bump `nuxt-spec` and `nuxt-neon`
+- build: return `postcss-jit-props` dependency after a [bug gets fixed](https://github.com/GoogleChromeLabs/postcss-jit-props/commit/0c98b5367935b9c048a547400ee8346cb6c07b00)
+
 ## 0.2.1 (2025-02-17)
 - feat: `@nuxt/fonts` included into built-in dependencies
 - fix: added default content.config.ts to avoid warning on startup
