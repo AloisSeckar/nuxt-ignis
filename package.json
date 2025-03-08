@@ -36,18 +36,18 @@
   },
   "dependencies": {
     "@formkit/nuxt": "1.6.9",
-    "@nuxt/content": "3.2.2",
-    "@nuxt/eslint": "1.1.0",
+    "@nuxt/content": "3.3.0",
+    "@nuxt/eslint": "1.2.0",
     "@nuxt/fonts": "0.10.3",
     "@nuxt/image": "1.9.0",
-    "@nuxt/scripts": "0.10.5",
-    "@nuxt/ui": "2.21.0",
-    "@nuxtjs/i18n": "9.2.1",
-    "@nuxtjs/supabase": "1.4.6",
+    "@nuxt/scripts": "0.11.0",
+    "@nuxt/ui": "2.21.1",
+    "@nuxtjs/i18n": "9.3.0",
+    "@nuxtjs/supabase": "1.5.0",
     "@nuxtjs/tailwindcss": "6.13.1",
     "@pinia/nuxt": "0.10.1",
-    "@vueuse/core": "12.7.0",
-    "@vueuse/nuxt": "12.7.0",
+    "@vueuse/core": "12.8.2",
+    "@vueuse/nuxt": "12.8.2",
     "consola": "3.4.0",
     "defu": "6.1.4",
     "elrh-pslo": "1.1.6",
@@ -73,7 +73,7 @@
     }
   },
   "devDependencies": {
-    "nuxt": "3.15.4"
+    "nuxt": "3.16.0"
   },
-  "packageManager": "pnpm@9.15.4"
+  "packageManager": "pnpm@9.15.5"
 }
