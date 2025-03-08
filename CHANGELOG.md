@@ -1,5 +1,8 @@
 # Changelog
 
+## 0.2.3 (2025-02-08)
+- build: bump Nuxt to `3.16.0` + update other deps
+
 ## 0.2.2 (2025-02-25)
 - build: bump `nuxt-spec` and `nuxt-neon`
 - build: return `postcss-jit-props` dependency after a [bug gets fixed](https://github.com/GoogleChromeLabs/postcss-jit-props/commit/0c98b5367935b9c048a547400ee8346cb6c07b00)
