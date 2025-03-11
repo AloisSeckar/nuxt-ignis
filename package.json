@@ -65,7 +65,8 @@
   "pnpm": {
     "overrides": {
       "eslint": "9.16.0",
-      "esbuild": "^0.25.0"
+      "esbuild": "^0.25.0",
+      "vue-i18n": "^10.0.6"
     }
   },
   "devDependencies": {
