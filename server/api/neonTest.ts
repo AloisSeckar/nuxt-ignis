@@ -1,12 +1,11 @@
 export default defineEventHandler(async () => {
   const config = useRuntimeConfig().public.ignis
   if (config.preset.db === 'neon' || config.neon === true) {
-    const neon = getNeonClient()
     return await select(
-      neon,
+      getNeonClient(),
       ['name', 'value'],
-      ['playing_with_neon'],
-      ['name LIKE \'test%\''],
+      'playing_with_neon',
+      [{ column: 'name', condition: 'LIKE', value: '\'test%\'' }],
       'name DESC',
       2,
     )
