@@ -1,7 +1,12 @@
 # Changelog
 
-## 0.2.3 (2025-02-08)
-- build: bump Nuxt to `3.16.0` + update other deps
+## 0.2.4 (2025-03-20)
+- build: bump `Nuxt` to `3.16.1`, `Nuxt Content` to `3.4.0` + update other deps
+- build: fix some security issues
+- fix: update necessary default config for `@nuxtjs/i18n`
+
+## 0.2.3 (2025-03-08)
+- build: bump `Nuxt` to `3.16.0` + update other deps
 
 ## 0.2.2 (2025-02-25)
 - build: bump `nuxt-spec` and `nuxt-neon`
