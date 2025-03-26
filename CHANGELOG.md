@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.5 (2025-03-26)
+- build: move `vue` and `vue-router` to devDepencencies (should allow smooth Netlify deployment)
+- build: fix Vite security issue
+
 ## 0.2.4 (2025-03-20)
 - build: bump `Nuxt` to `3.16.1`, `Nuxt Content` to `3.4.0` + update other deps
 - build: fix some security issues
