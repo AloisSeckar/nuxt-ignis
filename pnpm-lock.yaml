@@ -86,18 +86,18 @@ importers:
         specifier: 1.0.16
         version: 1.0.16(postcss@8.5.3)
       typescript:
-        specifier: latest
+        specifier: 5.7.3
         version: 5.7.3
-      vue:
-        specifier: latest
-        version: 3.5.13(typescript@5.7.3)
-      vue-router:
-        specifier: latest
-        version: 4.5.0(vue@3.5.13(typescript@5.7.3))
     devDependencies:
       nuxt:
         specifier: 3.16.1
         version: 3.16.1(@parcel/watcher@2.5.0)(@types/node@22.10.1)(better-sqlite3@11.9.1)(db0@0.3.1(better-sqlite3@11.9.1))(eslint@9.16.0(jiti@2.4.2))(ioredis@5.6.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.36.0)(terser@5.36.0)(typescript@5.7.3)(vite@6.2.3(@types/node@22.10.1)(jiti@2.4.2)(terser@5.36.0)(yaml@2.7.0))(yaml@2.7.0)
+      vue:
+        specifier: 3.5.13
+        version: 3.5.13(typescript@5.7.3)
+      vue-router:
+        specifier: 4.5.0
+        version: 4.5.0(vue@3.5.13(typescript@5.7.3))
 
 packages:
 
@@ -225,16 +225,6 @@ packages:
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  '@babel/parser@7.26.2':
-    resolution: {integrity: sha512-DWMCZH9WA4Maitz2q21SRKHo9QXZxkDsbNZoVD62gusNtNBBqDg9i7uOhASfTfIGNzW+O+r7+jAlM8dwphcJKQ==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
-  '@babel/parser@7.26.7':
-    resolution: {integrity: sha512-kEvgGGgEjRUutvdVvZhbn/BxVt+5VSpwXz1j3WYXQbXDo8KzFOPNG2GQbdAiNq8g6wn1yKk7C/qrke03a84V+w==}
-    engines: {node: '>=6.0.0'}
-    hasBin: true
-
   '@babel/plugin-syntax-jsx@7.25.9':
     resolution: {integrity: sha512-ld6oezHQMZsZfp6pWtbjaNDF2tiiCYYDqQszHt5VV437lewP9aSi2Of99CK0D0XB21k7FLgnLcmQKyKzynfeAA==}
     engines: {node: '>=6.9.0'}
@@ -265,16 +255,8 @@ packages:
     resolution: {integrity: sha512-k8NuDrxr0WrPH5Aupqb2LCVURP/S0vBEn5mK6iH+GIYob66U5EtoZvcdudR2jQ4cmTwhEwW1DLB+Yyas9zjF6A==}
     engines: {node: '>=6.9.0'}
 
-  '@babel/types@7.26.0':
-    resolution: {integrity: sha512-Z/yiTPj+lDVnF7lWeKCIJzaIkI0vYO87dMpZ4bg4TDrFe4XXLFWL1TbXU27gBP3QccxV9mZICCrnjnYlJjXHOA==}
-    engines: {node: '>=6.9.0'}
-
   '@babel/types@7.26.10':
     resolution: {integrity: sha512-emqcG3vHrpxUKTrxcblR36dcrcoRDvKmnL/dCL6ZsHaShW80qxCAcNhzQZrpeM765VzEos+xOi4s+r4IXzTwdQ==}
-    engines: {node: '>=6.9.0'}
-
-  '@babel/types@7.26.7':
-    resolution: {integrity: sha512-t8kDRGrKXyp6+tjUh7hw2RLyclsW4TRoRvRHtSyAX9Bb5ldlFh+90YAYY6awRXrlB4G5G2izNeGySpATlFzmOg==}
     engines: {node: '>=6.9.0'}
 
   '@capsizecss/metrics@2.2.0':
@@ -4529,10 +4511,6 @@ packages:
     resolution: {integrity: sha512-OCVPnIObs4N29kxTjzLfUryOkvZEq+pf8jTF0lg8E7uETuWHA+v7j3c/xJmiqpX450191LlmZfUKkXxkTry7nA==}
     engines: {node: ^10 || ^12 || >=14}
 
-  postcss@8.5.1:
-    resolution: {integrity: sha512-6oz2beyjc5VMn/KV1pPw8fliQkhBXrVn1Z3TVyqZxU8kZpzEKhBdmCFqI6ZbmGtamQvQGuU1sgPTk8ZrXDD7jQ==}
-    engines: {node: ^10 || ^12 || >=14}
-
   postcss@8.5.3:
     resolution: {integrity: sha512-dle9A3yYxlBSrt8Fu+IpjGT8SY8hN0mlaA6GY8t0P5PjIOZemULz/E2Bnm/2dcUOena75OTNkHI76uZBNUUq3A==}
     engines: {node: ^10 || ^12 || >=14}
@@ -5240,11 +5218,6 @@ packages:
 
   typescript@5.7.3:
     resolution: {integrity: sha512-84MVSjMEHP+FQRPy3pX9sTVV/INIex71s9TL2Gm5FG/WG1SqXeKyZ0k7/blY/4FdOzI12CBy1vGc4og/eus0fw==}
-    engines: {node: '>=14.17'}
-    hasBin: true
-
-  typescript@5.8.2:
-    resolution: {integrity: sha512-aJn6wq13/afZp/jT9QZmwEjDqqvSGp1VT5GVg+f/t6/oVyrgXM6BY1h9BRh/O5p3PlUPAe+WuiEZOmb/49RqoQ==}
     engines: {node: '>=14.17'}
     hasBin: true
 
@@ -6060,14 +6033,6 @@ snapshots:
     dependencies:
       '@babel/types': 7.26.10
 
-  '@babel/parser@7.26.2':
-    dependencies:
-      '@babel/types': 7.26.0
-
-  '@babel/parser@7.26.7':
-    dependencies:
-      '@babel/types': 7.26.7
-
   '@babel/plugin-syntax-jsx@7.25.9(@babel/core@7.26.10)':
     dependencies:
       '@babel/core': 7.26.10
@@ -6119,17 +6084,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@babel/types@7.26.0':
-    dependencies:
-      '@babel/helper-string-parser': 7.25.9
-      '@babel/helper-validator-identifier': 7.25.9
-
   '@babel/types@7.26.10':
-    dependencies:
-      '@babel/helper-string-parser': 7.25.9
-      '@babel/helper-validator-identifier': 7.25.9
-
-  '@babel/types@7.26.7':
     dependencies:
       '@babel/helper-string-parser': 7.25.9
       '@babel/helper-validator-identifier': 7.25.9
@@ -8150,7 +8105,7 @@ snapshots:
 
   '@vue/compiler-core@3.5.13':
     dependencies:
-      '@babel/parser': 7.26.7
+      '@babel/parser': 7.26.10
       '@vue/shared': 3.5.13
       entities: 4.5.0
       estree-walker: 2.0.2
@@ -8163,14 +8118,14 @@ snapshots:
 
   '@vue/compiler-sfc@3.5.13':
     dependencies:
-      '@babel/parser': 7.26.2
+      '@babel/parser': 7.26.10
       '@vue/compiler-core': 3.5.13
       '@vue/compiler-dom': 3.5.13
       '@vue/compiler-ssr': 3.5.13
       '@vue/shared': 3.5.13
       estree-walker: 2.0.2
       magic-string: 0.30.17
-      postcss: 8.5.1
+      postcss: 8.5.3
       source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.5.13':
@@ -8215,7 +8170,7 @@ snapshots:
     dependencies:
       rfdc: 1.4.1
 
-  '@vue/language-core@2.2.0(typescript@5.8.2)':
+  '@vue/language-core@2.2.0(typescript@5.7.3)':
     dependencies:
       '@volar/language-core': 2.4.11
       '@vue/compiler-dom': 3.5.13
@@ -8226,7 +8181,7 @@ snapshots:
       muggle-string: 0.4.1
       path-browserify: 1.0.1
     optionalDependencies:
-      typescript: 5.8.2
+      typescript: 5.7.3
 
   '@vue/reactivity@3.5.13':
     dependencies:
@@ -10874,9 +10829,9 @@ snapshots:
       citty: 0.1.6
       mlly: 1.7.4
       scule: 1.3.0
-      typescript: 5.8.2
+      typescript: 5.7.3
       ufo: 1.5.4
-      vue-component-meta: 2.2.0(typescript@5.8.2)
+      vue-component-meta: 2.2.0(typescript@5.7.3)
     transitivePeerDependencies:
       - magicast
 
@@ -11557,12 +11512,6 @@ snapshots:
   postcss-value-parser@4.2.0: {}
 
   postcss@8.4.49:
-    dependencies:
-      nanoid: 3.3.8
-      picocolors: 1.1.1
-      source-map-js: 1.2.1
-
-  postcss@8.5.1:
     dependencies:
       nanoid: 3.3.8
       picocolors: 1.1.1
@@ -12423,8 +12372,6 @@ snapshots:
 
   typescript@5.7.3: {}
 
-  typescript@5.8.2: {}
-
   ufo@1.5.4: {}
 
   ultrahtml@1.5.3: {}
@@ -12890,14 +12837,14 @@ snapshots:
     dependencies:
       ufo: 1.5.4
 
-  vue-component-meta@2.2.0(typescript@5.8.2):
+  vue-component-meta@2.2.0(typescript@5.7.3):
     dependencies:
       '@volar/typescript': 2.4.11
-      '@vue/language-core': 2.2.0(typescript@5.8.2)
+      '@vue/language-core': 2.2.0(typescript@5.7.3)
       path-browserify: 1.0.1
       vue-component-type-helpers: 2.2.0
     optionalDependencies:
-      typescript: 5.8.2
+      typescript: 5.7.3
 
   vue-component-type-helpers@2.2.0: {}
 
