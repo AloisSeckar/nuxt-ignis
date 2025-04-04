@@ -72,6 +72,10 @@ export function setFeatures() {
     nuxtConfig = defu({
       i18n: {
         vueI18n: process.env.NUXT_PUBLIC_IGNIS_I18N_CONFIG || './i18n.config.ts',
+        // will deprecate in v10
+        bundle: {
+          optimizeTranslationDirective: false,
+        },
       },
     }, nuxtConfig)
   }
