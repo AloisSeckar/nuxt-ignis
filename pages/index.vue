@@ -13,16 +13,5 @@
 -->
 
 <template>
-  <div>
-    <AppFeatureList />
-    <div class="link">
-      <NuxtLink to="/second">
-        {{ useT("goto2") }}
-      </NuxtLink>
-    </div>
-  </div>
+  <IgnisInfo />
 </template>
-
-<script setup lang="ts">
-import { useT } from '#imports' // requires explicit import for some reason
-</script>
