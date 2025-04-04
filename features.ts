@@ -32,6 +32,10 @@ export function setFeatures() {
   const uiPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_UI
   if (uiPreset === 'nuxt-ui' || (!uiPreset && process.env.NUXT_PUBLIC_IGNIS_UI === 'true')) {
     nuxtConfig.modules.push('@nuxt/ui')
+    // import tailwind css file
+    nuxtConfig = defu({
+      css: ['~/assets/css/nuxt-ui.css'],
+    }, nuxtConfig)
   } else {
     // remove @nuxt/ui-specific components from resolution if module is not used
     nuxtConfig = defu({
@@ -45,6 +49,10 @@ export function setFeatures() {
     // evaluate separate Tailwind CSS module
     if (uiPreset === 'tailwind' || (!uiPreset && process.env.NUXT_PUBLIC_IGNIS_TAILWIND === 'true')) {
       nuxtConfig.modules.push('@nuxtjs/tailwindcss')
+      // import tailwind css file
+      nuxtConfig = defu({
+        css: ['~/assets/css/tailwind.css'],
+      }, nuxtConfig)
     }
   }
 

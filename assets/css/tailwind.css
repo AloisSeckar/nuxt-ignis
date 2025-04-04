@@ -1,49 +1,15 @@
-/* 
-  This file is auto-imported when using Tailwind CSS
+/*
+  This will import Tailwind CSS
+  https://tailwindcss.com/docs/installation/
 
-  Use @apply if you don't want to define style for each element separately
-
-  Read more at:
-  https://tailwindcss.com/docs/reusing-styles#extracting-classes-with-apply
-  https://tailwindcss.com/docs/functions-and-directives#apply
-
-  Use correct @layer to keep your Tailwind CSS organized:
-  https://bloggie.io/@kinopyo/organize-your-css-in-the-tailwind-style-with-layer-directive
-
-  And most importantly: THINK TWICE before using this approach!
+  NUXT_PUBLIC_IGNIS_PRESET_UI=tailwind or NUXT_PUBLIC_IGNIS_TAILWIND=true is required for se this feature
 */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-@layer base {
-
-    /* 
-      Tailwind CSS classes might be auto-applied to all respective elements like this.
-      However, I recommend NOT to use it like that, because this obsfucates code logic
-      and makes maintaing harder (even you should soon forgot styles are defined here)
-    */
-
-    /* NOTE: For setting "body" tag attributes, it is better to use useHead() composable - @see `app.vue`*/
-    /*
-    body {
-        @apply bg-slate-900;
-    }
-    */
-
+/*
+// Tailwind v4 way of defining custom classes
+@utility <name> {
+  // css rules here
 }
-
-@layer components {
-
-    /* 
-      Following classes are available to use throughout the app as shorthands.
-      Although still discouraged by Tailwind CSS authors, this usage makes more
-      sense, because the class name is visible and trackable in SFC templates.
-    */
-
-    .link {
-        @apply my-2 text-amber-400 hover:text-amber-200;
-    }
-
-}
+*/

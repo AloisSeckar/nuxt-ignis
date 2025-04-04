@@ -1,22 +1,26 @@
 <template>
-  <div class="p-3">
-    <div class="ignis-header">
-      <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
-      <h1 class="my-4 text-4xl text-amber-400 font-bold">
-        {{ useT("title") }}
-      </h1>
-      <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
+  <UApp>
+    <div class="p-3">
+      <div class="ignis-header">
+        <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
+        <h1 class="my-4 text-4xl text-amber-400 font-bold">
+          {{ useT("title") }}
+        </h1>
+        <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
+      </div>
+      <div class="mb-2">
+        {{ useT("subtitle") }}
+      </div>
+      <NuxtPage v-if="pages" />
+      <AppFeatureList v-else />
+      <CurrentTime />
+      <div class="link text-xs">
+        <NuxtLink to="https://github.com/AloisSeckar/nuxt-ignis">
+          https://github.com/AloisSeckar/nuxt-ignis
+        </NuxtLink>
+      </div>
     </div>
-    <div>{{ useT("subtitle") }}</div>
-    <NuxtPage v-if="pages" />
-    <AppFeatureList v-else />
-    <CurrentTime />
-    <div class="link text-xs">
-      <NuxtLink to="https://github.com/AloisSeckar/nuxt-ignis">
-        https://github.com/AloisSeckar/nuxt-ignis
-      </NuxtLink>
-    </div>
-  </div>
+  </UApp>
 </template>
 
 <script setup lang="ts">
