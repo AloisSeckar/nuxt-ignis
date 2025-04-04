@@ -22,9 +22,12 @@
 -->
 
 <template>
-  <div class="m-1 px-2 py-1 border border-amber-300 font-bold text-lg text-feature hover:bg-slate-700">
+  <div
+    class="m-1! px-2 py-1 border! border-amber-300 font-bold text-lg text-feature bg-emerald-700 hover:bg-slate-700"
+    :class="active ? '' : 'text-gray-700 bg-gray-300! hover:bg-slate-400!'"
+    :title="active ? 'Active' : 'Inactive'">
     {{ text }}
-    <div v-if="showIcon" style="display: inline;">
+    <div v-if="active && showIcon" style="display: inline;">
       <Icon name="ic:sharp-add-reaction" style="color: yellow" />
     </div>
   </div>
@@ -43,6 +46,7 @@
 const props = defineProps({
   text: { type: String, required: true },
   optionalText: { type: String, default: 'default' },
+  active: { type: Boolean, default: true },
 })
 
 /**

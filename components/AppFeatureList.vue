@@ -10,27 +10,29 @@
 -->
 
 <template>
-  <div class="m-auto my-4 w-3/5 flex flex-col">
-    <AppFeature :text="useT('features.nuxt')" />
-    <AppFeature :text="useT('features.security')" />
-    <AppFeature :text="useT('features.image')" />
-    <AppFeature :text="useT('features.scripts')" />
-    <AppFeature :text="useT('features.fonts')" class="fonts" />
-    <AppFeature :text="useT('features.pinia')" />
-    <AppFeature :text="useT('features.vueuse')" />
-    <AppFeature :text="useT('features.consola')" />
-    <AppFeature v-if="nuxtui" :text="useT('features.ui')" />
-    <AppFeature v-if="tailwind" :text="useT('features.tailwind')" />
-    <AppFeature v-if="nuxtui" :text="useT('features.icon')" />
-    <AppFeature v-if="neon" :text="useT('features.neon')" />
-    <AppFeature v-if="supabase" :text="useT('features.supabase')" />
-    <AppFeature v-if="i18n" :text="useT('features.i18n')" />
-    <AppFeature v-if="formkit" :text="useT('features.formkit')" />
-    <AppFeature v-if="content" :text="useT('features.content')" />
-    <AppFeature v-if="openprops" class="openprops-feature" :text="useT('features.openprops')" />
-  </div>
-  <div v-if="!pages" class="mb-2">
-    Single-page mode (/pages disabled)
+  <div class="flex flex-row justify-center">
+    <div class="margin-auto my-4 w-3/5 flex flex-col">
+      <AppFeature :text="useT('features.nuxt')" />
+      <AppFeature :text="useT('features.security')" />
+      <AppFeature :text="useT('features.image')" />
+      <AppFeature :text="useT('features.scripts')" />
+      <AppFeature :text="useT('features.fonts')" class="fonts" />
+      <AppFeature :text="useT('features.pinia')" />
+      <AppFeature :text="useT('features.vueuse')" />
+      <AppFeature :text="useT('features.consola')" />
+      <AppFeature :active="nuxtui" :text="useT('features.ui')" />
+      <AppFeature :active="tailwind" :text="useT('features.tailwind')" />
+      <AppFeature :active="nuxtui" :text="useT('features.icon')" />
+      <AppFeature :active="neon" :text="useT('features.neon')" />
+      <AppFeature :active="supabase" :text="useT('features.supabase')" />
+      <AppFeature :active="i18n" :text="useT('features.i18n')" />
+      <AppFeature :active="formkit" :text="useT('features.formkit')" />
+      <AppFeature :active="content" :text="useT('features.content')" />
+      <AppFeature :active="openprops" class="openprops-feature" :text="useT('features.openprops')" />
+    </div>
+    <div v-if="!pages" class="mb-2">
+      Single-page mode (/pages disabled)
+    </div>
   </div>
 </template>
 
