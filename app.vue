@@ -1,31 +1,11 @@
 <template>
   <UApp>
-    <div class="p-3">
-      <div class="ignis-header">
-        <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
-        <h1 class="my-4 text-4xl text-amber-400 font-bold">
-          {{ useT("title") }}
-        </h1>
-        <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
-      </div>
-      <div class="mb-2">
-        {{ useT("subtitle") }}
-      </div>
-      <NuxtPage v-if="pages" />
-      <AppFeatureList v-else />
-      <CurrentTime />
-      <div class="link text-xs">
-        <NuxtLink to="https://github.com/AloisSeckar/nuxt-ignis">
-          https://github.com/AloisSeckar/nuxt-ignis
-        </NuxtLink>
-      </div>
-    </div>
+    <NuxtPage v-if="pages" />
+    <IgnisInfo v-else />
   </UApp>
 </template>
 
 <script setup lang="ts">
-import { useT } from '#imports' // requires explicit import for some reason
-
 useHead({
   title: useAppConfig().textTitle,
   htmlAttrs: {
@@ -38,9 +18,6 @@ useHead({
 initConsola()
 
 log.info('Nuxt Ignis was here!')
-
-const title = useT('title')
-const alt = title
 
 const pages = useRuntimeConfig().public.ignis.pages
 </script>
