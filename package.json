@@ -62,7 +62,7 @@
   },
   "pnpm": {
     "overrides": {
-      "@nuxt/kit": "3.16.1",
+      "@nuxt/kit": "3.16.2",
       "eslint": "9.16.0",
       "esbuild": "^0.25.0",
       "tar-fs": "^2.1.2",
