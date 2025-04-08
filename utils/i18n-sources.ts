@@ -1,10 +1,10 @@
-// scans @/assets/lang/* for all .json files with i18n messages
+// scans @/i18n/locales/* for all .json files with i18n messages
 // and makes them available for i18n.config.ts
 
 import type { LocaleMessage } from '@intlify/core-base'
 
 export function scanI18NSources() {
-  const modules = import.meta.glob('@/assets/lang/*.json', { eager: true })
+  const modules = import.meta.glob('@/i18n/locales/*.json', { eager: true })
 
   const messages = {} as { [x: string]: LocaleMessage<unknown> }
   for (const path in modules) {

@@ -7,6 +7,6 @@ export default defineI18nConfig(() => ({
   locale: ignisLocale,
   defaultLocale: ignisLocale,
   fallbackLocale: ignisLocale,
-  messages: scanI18NSources(), // will dynamically load all .jsons from @/assets/lang/*
+  messages: scanI18NSources(), // will dynamically load all .jsons from @/i18n/locales/*
   warnHtmlMessage: false,
 }))

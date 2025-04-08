@@ -109,7 +109,7 @@ Default values are **false** (not included) for all optional modules.
 
 #### I18N options
 - you can select default language locale via `NUXT_PUBLIC_IGNIS_I18N_LOCALE`
-- all `.json` files with messages in `@assets/lang` folder will be auto-scanned
+- all `.json` files with messages in `@/i18n/locales` folder will be auto-scanned.
 - if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`
 
 #### Formkit options
