@@ -47,7 +47,7 @@ You are ready to build your next awesome project in Nuxt!
 - [Nuxt](https://nuxt.com/) application framework built atop [Vue.js](https://vuejs.org/)
 - Available as a starter template or standalone NPM package to extend from
 
-**Built-in features**
+**Core features**
 - linting for maintaining coding standards and improving code quality via [`@nuxt/eslint`](https://nuxt.com/modules/eslint) 
 - zero-config OWASP security patterns for Nuxt via [`nuxt-security`](https://nuxt-security.vercel.app/)
 - de-facto standard state management library for Vue apps via [`@pinia/nuxt`](https://pinia.vuejs.org/ssr/nuxt.html)
@@ -58,7 +58,7 @@ You are ready to build your next awesome project in Nuxt!
 - SSR-friendly component for rendering dynamic date/time via [`nuxt-time`](https://nuxt.com/modules/time)
 - logging via [`consola](https://github.com/unjs/consola)
 
-**Configurable features**
+**Optional features**
 - UI (pick 0-1)
   - **Nuxt UI** - UI component and CSS library via [`@nuxt/ui`](https://ui.nuxt.com/) 
   - **Tailwind CSS** - CSS library (included in Nuxt UI) via [`@nuxtjs/tailwindcss`](https://tailwindcss.nuxtjs.org/) 
@@ -74,6 +74,19 @@ You are ready to build your next awesome project in Nuxt!
 
 ## Configuration
 It is possible to select which Nuxt modules will be activated in your project. All dependencies are being downloaded into local `node_modules`, but Nuxt build process will ensure only relevant packages will be bundled for production.
+
+### Core modules
+Pre-defined set of Nuxt modules are being automatically included by default. However, for greater flexibility you can opt-out from using them by setting respecitve config value to `false`:
+- use `NUXT_PUBLIC_CORE_ESLINT=false` to disable `@nuxt/eslint`
+- use `NUXT_PUBLIC_CORE_FONTS=false` to disable `@nuxt/fonts`
+- use `NUXT_PUBLIC_CORE_IMAGE=false` to disable `@nuxt/image`
+- use `NUXT_PUBLIC_CORE_PINIA=false` to disable `@pinia/nuxt`
+- use `NUXT_PUBLIC_CORE_TIME=false` to disable `nuxt-time`
+- use `NUXT_PUBLIC_CORE_SCRIPTS=false` to disable `@nuxt/scripts`
+- use `NUXT_PUBLIC_CORE_SECURITY=false` to disable `nuxt-security`
+- use `NUXT_PUBLIC_CORE_VUEUSE=false` to disable `@vueuse/nuxt`
+
+The usage of `consola` is integrated at deeper level and cannot be opted out.
 
 ### UI preset
 It is possible to pick from three options:

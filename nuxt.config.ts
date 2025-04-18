@@ -55,7 +55,19 @@ const nuxtConfig = defu(ignisFeatures, {
           ui: 'off', // nuxt-ui/tailwind/off
           db: 'off', // neon/supabase/off
         },
-        // individual modules
+        // core modules
+        // (may be disabled by explicitly setting "false")
+        core: {
+          eslint: true,
+          fonts: true,
+          image: true,
+          pinia: true,
+          time: true,
+          scripts: true,
+          security: true,
+          vueuse: true,
+        },
+        // optional modules
         ui: false, // true/false
         tailwind: false, // true/false (ignored, if ui=true)
         neon: false, // true/false

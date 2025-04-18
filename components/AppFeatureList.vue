@@ -13,13 +13,15 @@
   <div class="flex flex-row justify-center">
     <div class="margin-auto my-4 w-3/5 flex flex-col">
       <AppFeature :text="useT('features.nuxt')" />
-      <AppFeature :text="useT('features.security')" />
-      <AppFeature :text="useT('features.image')" />
-      <AppFeature :text="useT('features.scripts')" />
-      <AppFeature :text="useT('features.fonts')" class="fonts" />
-      <AppFeature :text="useT('features.pinia')" />
-      <AppFeature :text="useT('features.vueuse')" />
       <AppFeature :text="useT('features.consola')" />
+      <AppFeature :active="eslint" :text="useT('features.eslint')" />
+      <AppFeature :active="security" :text="useT('features.security')" />
+      <AppFeature :active="image" :text="useT('features.image')" />
+      <AppFeature :active="scripts" :text="useT('features.scripts')" />
+      <AppFeature :active="fonts" :text="useT('features.fonts')" class="fonts" />
+      <AppFeature :active="pinia" :text="useT('features.pinia')" />
+      <AppFeature :active="vueuse" :text="useT('features.vueuse')" />
+      <AppFeature :active="time" :text="useT('features.time')" />
       <AppFeature :active="nuxtui" :text="useT('features.ui')" />
       <AppFeature :active="tailwind" :text="useT('features.tailwind')" />
       <AppFeature :active="nuxtui" :text="useT('features.icon')" />
@@ -40,6 +42,14 @@
 import { useT } from '#imports' // requires explicit import for some reason
 
 const setup = useRuntimeConfig().public.ignis
+const eslint = setup.core.eslint
+const fonts = setup.core.fonts
+const image = setup.core.image
+const pinia = setup.core.pinia
+const time = setup.core.time
+const scripts = setup.core.scripts
+const security = setup.core.security
+const vueuse = setup.core.vueuse
 const ui = setup.preset.ui
 const db = setup.preset.db
 const nuxtui = ui === 'nuxt-ui' || setup.ui

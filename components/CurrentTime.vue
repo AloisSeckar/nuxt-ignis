@@ -8,12 +8,13 @@
 -->
 
 <template>
-  <div>
+  <div v-if="time">
     Current time by
     <span class="link">
       <NuxtLink to="https://github.com/danielroe/nuxt-time">Nuxt Time</NuxtLink>
     </span>:
     <NuxtTime
+      v-if="time"
       :datetime="currentDate"
       year="numeric"
       month="2-digit"
@@ -21,9 +22,14 @@
       hour="2-digit"
       minute="2-digit"
       second="2-digit" />
+    <span v-if="!vueuse">
+      (Enable VueUse to get reactive time)
+    </span>
   </div>
 </template>
 
 <script setup lang="ts">
-const currentDate = useNow()
+const time = useRuntimeConfig().public.ignis.core.vueuse
+const vueuse = useRuntimeConfig().public.ignis.core.vueuse
+const currentDate = vueuse ? useNow() : new Date().toISOString()
 </script>

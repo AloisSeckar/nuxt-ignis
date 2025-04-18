@@ -14,19 +14,60 @@ export function setFeatures() {
     modules: [] as string[],
   }
 
-  // 1. default modules (mandatory)
-  nuxtConfig.modules.push(
-    'nuxt-time',
-    'nuxt-security',
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxt/fonts',
-    '@nuxt/scripts',
-    '@pinia/nuxt',
-    '@vueuse/nuxt',
-  )
+  // 1. core modules
+  // (included unless disabled)
+
+  // https://nuxt.com/modules/eslint
+  if (process.env.NUXT_PUBLIC_IGNIS_CORE_ESLINT !== 'false') {
+    nuxtConfig.modules.push('@nuxt/eslint')
+  }
+
+  // https://nuxt.com/modules/fonts
+  if (process.env.NUXT_PUBLIC_IGNIS_CORE_FONTS !== 'false') {
+    nuxtConfig.modules.push('@nuxt/fonts')
+  }
+
+  // https://image.nuxt.com/
+  if (process.env.NUXT_PUBLIC_IGNIS_CORE_IMAGE !== 'false') {
+    nuxtConfig.modules.push('@nuxt/image')
+  }
+
+  // https://pinia.vuejs.org/ssr/nuxt.html
+  if (process.env.NUXT_PUBLIC_IGNIS_CORE_PINIA !== 'false') {
+    nuxtConfig.modules.push('@pinia/nuxt')
+  }
+
+  // https://nuxt.com/modules/time
+  if (process.env.NUXT_PUBLIC_IGNIS_CORE_TIME !== 'false') {
+    nuxtConfig.modules.push('nuxt-time')
+  } else {
+    nuxtConfig = defu({
+      // if disabled, must remove NuxtTime component from resolution
+      vue: {
+        compilerOptions: {
+          isCustomElement: (tag: string) => ['NuxtTime'].includes(tag),
+        },
+      },
+    }, nuxtConfig)
+  }
+
+  // https://scripts.nuxt.com/
+  if (process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS !== 'false') {
+    nuxtConfig.modules.push('@nuxt/scripts')
+  }
+
+  // https://nuxt.com/modules/security
+  if (process.env.NUXT_PUBLIC_IGNIS_CORE_SECURITY !== 'false') {
+    nuxtConfig.modules.push('nuxt-security')
+  }
+
+  // https://nuxt.com/modules/vueuse
+  if (process.env.NUXT_PUBLIC_IGNIS_CORE_VUEUSE !== 'false') {
+    nuxtConfig.modules.push('@vueuse/nuxt')
+  }
 
   // 2. optional modules & features
+  // (excluded unless enabled)
 
   // ui
   const uiPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_UI
