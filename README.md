@@ -1,6 +1,6 @@
 # Nuxt Ignis
 
-![Nuxt Ignis](https://github.com/AloisSeckar/nuxt-ignis/blob/main/public/nuxt-ignis.png)
+![Nuxt Ignis](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/public/nuxt-ignis.png)
 
 This is a template starter for Nuxt web applications. It is being built as the setup I'd currently use to start with a new "real world" [Nuxt](https://nuxt.com/) webapp. It will improve and grow together with my skills. I also try to include **WHAT** and **WHY** comments based on my knowledge about the framework and used libraries.
 
@@ -8,10 +8,11 @@ This is a template starter for Nuxt web applications. It is being built as the s
 
 ### As standalone template
 1. Do a `git checkout` from https://github.com/AloisSeckar/nuxt-ignis.git
-2. Open in IDE and run `pnpm install` in terminal
-3. Configure modules via `.env` properties
-4. Start dev server with `pnpm dev` command
-5. Visit `localhost:3000` in browser
+2. Open in IDE and go to `/core` directory
+3. run `pnpm install` in terminal
+4. Configure modules via `.env` properties
+5. Start dev server with `pnpm dev` command
+6. Visit `localhost:3000` in browser
 
 You are ready to build your next awesome project in Nuxt!
 
@@ -123,11 +124,11 @@ Default values are **false** (not included) for all optional modules.
 #### I18N options
 - you can select default language locale via `NUXT_PUBLIC_IGNIS_I18N_LOCALE`
 - all `.json` files with messages in `@/i18n/locales` folder will be auto-scanned.
-- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`
+- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/core/main/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`
 
 #### Formkit options
 - you can select default language locale via `NUXT_PUBLIC_IGNIS_FORMKIT_LOCALE`
-- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG`
+- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob//core/main/formkit.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG`
 
 ### Optional features
 Currently, following extra features (not using separate Nuxt Modules) are opinionated:
