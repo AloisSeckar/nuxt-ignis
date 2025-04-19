@@ -5,7 +5,7 @@
 
     <div v-if="pages" class="link">
       <NuxtLink to="/second">
-        {{ useT("goto2") }}
+        {{ useIgnisT("goto2") }}
       </NuxtLink>
     </div>
 

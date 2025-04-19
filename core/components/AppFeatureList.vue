@@ -12,25 +12,25 @@
 <template>
   <div class="flex flex-row justify-center">
     <div class="margin-auto my-4 w-3/5 flex flex-col">
-      <AppFeature :text="useT('features.nuxt')" />
-      <AppFeature :text="useT('features.consola')" />
-      <AppFeature :active="eslint" :text="useT('features.eslint')" />
-      <AppFeature :active="security" :text="useT('features.security')" />
-      <AppFeature :active="image" :text="useT('features.image')" />
-      <AppFeature :active="scripts" :text="useT('features.scripts')" />
-      <AppFeature :active="fonts" :text="useT('features.fonts')" class="fonts" />
-      <AppFeature :active="pinia" :text="useT('features.pinia')" />
-      <AppFeature :active="vueuse" :text="useT('features.vueuse')" />
-      <AppFeature :active="time" :text="useT('features.time')" />
-      <AppFeature :active="nuxtui" :text="useT('features.ui')" />
-      <AppFeature :active="tailwind" :text="useT('features.tailwind')" />
-      <AppFeature :active="nuxtui" :text="useT('features.icon')" />
-      <AppFeature :active="neon" :text="useT('features.neon')" />
-      <AppFeature :active="supabase" :text="useT('features.supabase')" />
-      <AppFeature :active="i18n" :text="useT('features.i18n')" />
-      <AppFeature :active="formkit" :text="useT('features.formkit')" />
-      <AppFeature :active="content" :text="useT('features.content')" />
-      <AppFeature :active="openprops" class="openprops-feature" :text="useT('features.openprops')" />
+      <AppFeature :text="useIgnisT('features.nuxt')" />
+      <AppFeature :text="useIgnisT('features.consola')" />
+      <AppFeature :active="eslint" :text="useIgnisT('features.eslint')" />
+      <AppFeature :active="security" :text="useIgnisT('features.security')" />
+      <AppFeature :active="image" :text="useIgnisT('features.image')" />
+      <AppFeature :active="scripts" :text="useIgnisT('features.scripts')" />
+      <AppFeature :active="fonts" :text="useIgnisT('features.fonts')" class="fonts" />
+      <AppFeature :active="pinia" :text="useIgnisT('features.pinia')" />
+      <AppFeature :active="vueuse" :text="useIgnisT('features.vueuse')" />
+      <AppFeature :active="time" :text="useIgnisT('features.time')" />
+      <AppFeature :active="nuxtui" :text="useIgnisT('features.ui')" />
+      <AppFeature :active="tailwind" :text="useIgnisT('features.tailwind')" />
+      <AppFeature :active="nuxtui" :text="useIgnisT('features.icon')" />
+      <AppFeature :active="neon" :text="useIgnisT('features.neon')" />
+      <AppFeature :active="supabase" :text="useIgnisT('features.supabase')" />
+      <AppFeature :active="i18n" :text="useIgnisT('features.i18n')" />
+      <AppFeature :active="formkit" :text="useIgnisT('features.formkit')" />
+      <AppFeature :active="content" :text="useIgnisT('features.content')" />
+      <AppFeature :active="openprops" class="openprops-feature" :text="useIgnisT('features.openprops')" />
     </div>
     <div v-if="!pages" class="mb-2">
       Single-page mode (/pages disabled)
@@ -39,7 +39,7 @@
 </template>
 
 <script setup lang="ts">
-import { useT } from '#imports' // requires explicit import for some reason
+import { useIgnisT } from '#imports' // requires explicit import for some reason
 
 const setup = useRuntimeConfig().public.ignis
 const eslint = setup.core.eslint

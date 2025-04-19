@@ -3,20 +3,20 @@
     <div class="ignis-header">
       <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
       <h1 class="my-4 text-4xl text-amber-400 font-bold">
-        {{ useT("title") }}
+        {{ useIgnisT("title") }}
       </h1>
       <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
     </div>
     <div class="mb-2">
-      {{ useT("subtitle") }}
+      {{ useIgnisT("subtitle") }}
     </div>
   </header>
 </template>
 
 <script setup lang="ts">
-import { useT } from '#imports' // requires explicit import for some reason
+import { useIgnisT } from '#imports' // requires explicit import for some reason
 
-const title = useT('title')
+const title = useIgnisT('title')
 const alt = title
 </script>
 
