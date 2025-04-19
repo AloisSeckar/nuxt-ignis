@@ -4,9 +4,9 @@
 
 This is a _not-another-template-starter_ for Nuxt web applications. It is mostly based on the setup I'd currently use to start a new "real world" [Nuxt](https://nuxt.com/) webapp. The main goal is to abstract from difficult and repetitive dependency management across more Nuxt projects. All common features are replaced with just one `package.json` dependency (+ the specific ones for the project).
 
-However, instead of being heavily opinionated as usual, Nuxt Ignis is **optionated**. It incorporates a wast spectrum of modules and features, but the end user controls what will appear in the final bundle. This is achieved by (not) adding modules and configuration into `nuxt.config.ts`. Although this file must remain static on build time and cannot be changed afterwards, nothing is preventing it from being dynamically prepared. And in this phase, `.env` variables can be used to ajdust what makes it into the actual build.
+However, instead of being heavily opinionated as usual, Nuxt Ignis is **optionated**. It incorporates a vast spectrum of modules and features, but the end user controls what will appear in the final bundle. This is achieved by (not) adding modules and configuration into `nuxt.config.ts`. Although this file must remain static on build time and cannot be changed afterwards, nothing is preventing it from being dynamically prepared. And in this phase, `.env` variables can be used to adjust what makes it into the actual build.
 
-The project will improve and grow together with my skills. And - hopefully - by adressing the feedback from you, the (future) users. I also try to include **WHAT** and **WHY** comments based on my knowledge about the framework and used libraries.
+The project will improve and grow together with my skills. And - hopefully - through addressing the feedback from you, the (future) users. I also try to include **WHAT** and **WHY** comments based on my knowledge about the framework and used libraries.
 
 ## How to use
 
@@ -23,7 +23,7 @@ You are ready to build your next awesome project in Nuxt!
 ### As a layer (RECOMMENDED)
 Aside from being "forked", `nuxt-ignis` is also available as [NPM package](https://www.npmjs.com/package/nuxt-ignis) that can be referenced as a single-import with all the features incoming.
 
-1) Add following dependency into your `package.json`:
+1) Add the following dependency into your `package.json`:
 ```
 "nuxt-ignis": "0.2.5"
 ```
@@ -81,7 +81,7 @@ You are ready to build your next awesome project in Nuxt!
 It is possible to select which Nuxt modules will be activated in your project. All dependencies are being downloaded into local `node_modules`, but Nuxt build process will ensure only relevant packages will be bundled for production.
 
 ### Core modules
-Pre-defined set of Nuxt modules are being automatically included by default. However, for greater flexibility you can opt-out from using them by setting respecitve config value to `false`:
+Pre-defined set of Nuxt modules are being automatically included by default. However, for greater flexibility you can opt-out from using them by setting respective config value to `false`:
 - use `NUXT_PUBLIC_CORE_ESLINT=false` to disable `@nuxt/eslint`
 - use `NUXT_PUBLIC_CORE_FONTS=false` to disable `@nuxt/fonts`
 - use `NUXT_PUBLIC_CORE_IMAGE=false` to disable `@nuxt/image`
@@ -114,7 +114,7 @@ Set the value via `NUXT_PUBLIC_IGNIS_PRESET_DB` env variable.
 Value other than `off` will override Optional modules setting.
 
 ### Optional modules
-Currently, following modules are opinionated:
+Currently, following modules are optional:
 - `@nuxt/ui` - set `NUXT_PUBLIC_IGNIS_UI` to `true | false`
 - `@nuxtjs/tailwindcss` - set `NUXT_PUBLIC_IGNIS_TAILWIND` to `true | false` (ignored if `NUXT_PUBLIC_IGNIS_UI=true`)
 - `nuxt-neon` - set `NUXT_PUBLIC_IGNIS_NEON` to `true | false`
@@ -135,7 +135,7 @@ Default values are **false** (not included) for all optional modules.
 - if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob//core/main/formkit.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG`
 
 ### Optional features
-Currently, following extra features (not using separate Nuxt Modules) are opinionated:
+Currently, following extra features (not using separate Nuxt Modules) are optional:
 - `Open Props CSS` - set `NUXT_PUBLIC_IGNIS_OPENPROPS` to `true | false`
 - `elrh-pslo` - set `NUXT_PUBLIC_IGNIS_PSLO_ENABLED` to `true | false`
 
