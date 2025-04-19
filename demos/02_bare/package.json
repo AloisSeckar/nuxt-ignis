@@ -1,0 +1,11 @@
+{
+  "private": true,
+  "name": "ignis-demo-02",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev"
+  },
+  "devDependencies": {
+    "nuxt": "3.16.2"
+  }
+}

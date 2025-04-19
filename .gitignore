@@ -4,3 +4,9 @@
 .output
 dist
 node_modules
+
+# special rules for `/demos` folder
+# TODO trying to find a way how to re-use definition from core layer
+demos/**/eslint.config.mjs
+# no need to keep track on this for demo apps
+demos/**/pnpm-lock.yaml

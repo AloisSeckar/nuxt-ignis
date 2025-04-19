@@ -1,0 +1,12 @@
+{
+  "private": true,
+  "name": "ignis-demo-03",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev"
+  },
+  "devDependencies": {
+    "nuxt": "3.16.2",
+    "better-sqlite3": "11.9.1"
+  }
+}
