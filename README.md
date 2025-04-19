@@ -2,7 +2,11 @@
 
 ![Nuxt Ignis](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/public/nuxt-ignis.png)
 
-This is a template starter for Nuxt web applications. It is being built as the setup I'd currently use to start with a new "real world" [Nuxt](https://nuxt.com/) webapp. It will improve and grow together with my skills. I also try to include **WHAT** and **WHY** comments based on my knowledge about the framework and used libraries.
+This is a _not-another-template-starter_ for Nuxt web applications. It is mostly based on the setup I'd currently use to start a new "real world" [Nuxt](https://nuxt.com/) webapp. The main goal is to abstract from difficult and repetitive dependency management across more Nuxt projects. All common features are replaced with just one `package.json` dependency (+ the specific ones for the project).
+
+However, instead of being heavily opinionated as usual, Nuxt Ignis is **optionated**. It incorporates a wast spectrum of modules and features, but the end user controls what will appear in the final bundle. This is achieved by (not) adding modules and configuration into `nuxt.config.ts`. Although this file must remain static on build time and cannot be changed afterwards, nothing is preventing it from being dynamically prepared. And in this phase, `.env` variables can be used to ajdust what makes it into the actual build.
+
+The project will improve and grow together with my skills. And - hopefully - by adressing the feedback from you, the (future) users. I also try to include **WHAT** and **WHY** comments based on my knowledge about the framework and used libraries.
 
 ## How to use
 
