@@ -12,7 +12,7 @@ useHead({
     lang: 'en',
   },
   bodyAttrs: {
-    class: 'bg-slate-900 m-auto text-center text-white',
+    class: 'ignis-body',
   },
 })
 initConsola()
@@ -23,18 +23,11 @@ const pages = useRuntimeConfig().public.ignis.pages
 </script>
 
 <style scoped>
-.ignis-header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-.ignis-logo {
-  display: inline;
-  width: 64px;
-  height: 64px;
-}
-.ignis-title {
-  margin-top: 15px;
+/* bg-slate-900 m-auto text-center text-white */
+.ignis-body {
+  margin: auto;
+  background-color: #0f172a;
+  color: white;
+  text-align: center;
 }
 </style>

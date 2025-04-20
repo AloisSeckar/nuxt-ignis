@@ -1,5 +1,5 @@
 <template>
-  <div class="p-3!">
+  <div>
     <IgnisHeader />
     <AppFeatureList />
 
@@ -17,3 +17,10 @@
 <script setup lang="ts">
 const pages = useRuntimeConfig().public.ignis.pages
 </script>
+
+<style scoped lang="css">
+.link {
+  text-align: center;
+  margin-bottom: 4px;
+}
+</style>

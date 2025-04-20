@@ -23,12 +23,12 @@
 
 <template>
   <div
-    class="m-1! px-2 py-1 border! border-amber-300 font-bold text-lg text-feature bg-emerald-700 hover:bg-slate-700"
-    :class="active ? '' : 'text-gray-700 bg-gray-300! hover:bg-slate-400!'"
+    class="feature"
+    :class="active ? '' : 'feature-disabled'"
     :title="active ? 'Active' : 'Inactive'">
     {{ text }}
-    <div v-if="active && showIcon" style="display: inline;">
-      <Icon name="ic:sharp-add-reaction" style="color: yellow" />
+    <div v-if="active && showIcon" class="icon">
+      <Icon name="ic:sharp-add-reaction" class="icon-color" />
     </div>
   </div>
 </template>
@@ -65,3 +65,43 @@ const showIcon = config.preset.ui === 'nuxt-ui' || config.ui
 log.debug(props.text)
 log.debug(props.optionalText)
 </script>
+
+<style scoped>
+/* avoid Tailwind CSS styles here, because Tailwind may not be enabled */
+
+/* m-1! px-2 py-1 border! border-amber-300 font-bold text-lg text-feature bg-emerald-700 hover:bg-slate-700 */
+.feature {
+  margin: 4px;
+  padding: 4px 12px;
+  border: 2px solid #fcd34d;
+  font-weight: bold;
+  background-color: #047857;
+  color: #f1f5f9;
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.feature:hover {
+  background-color: #334155;
+  color: #3CB371;
+}
+
+/* text-gray-700 bg-gray-300! hover:bg-slate-400! */
+.feature-disabled {
+  background-color: #cbd5e1;
+  color: #334155;
+}
+.feature-disabled:hover {
+  background-color: #94a3b8;
+  color: #f1f5f9;
+}
+
+/* additional styles for displaying smiley icons */
+
+.icon {
+  display: inline;
+}
+
+.icon-color {
+  color: yellow;
+}
+</style>

@@ -2,12 +2,12 @@
   <header>
     <div class="ignis-header">
       <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
-      <h1 class="my-4 text-4xl text-amber-400 font-bold">
+      <h1 class="ignis-title">
         {{ useIgnisT("title") }}
       </h1>
       <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
     </div>
-    <div class="mb-2">
+    <div class="ignis-subtitle ">
       {{ useIgnisT("subtitle") }}
     </div>
   </header>
@@ -32,7 +32,17 @@ const alt = title
   width: 64px;
   height: 64px;
 }
+/* my-4 text-4xl text-amber-400 font-bold */
 .ignis-title {
   margin-top: 15px;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: bold;
+  color: #fbbf24;
+}
+.ignis-subtitle {
+  text-align: center;
+  margin: 0px auto;
+  margin-bottom: 8px;
 }
 </style>

@@ -5,3 +5,12 @@
     </NuxtLink>
   </footer>
 </template>
+
+<style scoped lang="css">
+footer {
+  text-align: center;
+  margin-top: 4px;
+  font-size: 0.75rem; /* 12px */
+  line-height: 1rem; /* 16px */
+}
+</style>

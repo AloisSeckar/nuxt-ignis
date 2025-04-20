@@ -10,7 +10,7 @@
 -->
 
 <template>
-  <div class="flex flex-row justify-center">
+  <div class="feature-box">
     <div class="margin-auto my-4 w-3/5 flex flex-col">
       <AppFeature :text="useIgnisT('features.nuxt')" />
       <AppFeature :text="useIgnisT('features.consola')" />
@@ -32,7 +32,7 @@
       <AppFeature :active="content" :text="useIgnisT('features.content')" />
       <AppFeature :active="openprops" class="openprops-feature" :text="useIgnisT('features.openprops')" />
     </div>
-    <div v-if="!pages" class="mb-2">
+    <div v-if="!pages" class="pages">
       Single-page mode (/pages disabled)
     </div>
   </div>
@@ -67,5 +67,28 @@ const pages = setup.pages
 /* demo for @nuxt/fonts */
 .fonts {
   font-family: "Kurale";
+}
+
+/* avoid Tailwind CSS styles here, because Tailwind may not be enabled */
+
+/* flex flex-row justify-center */
+.feature-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+/* margin-auto my-4 w-3/5 flex flex-col */
+.feature-list {
+  margin: 0px auto;
+  margin-bottom: 4em;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* mb-2 */
+.pages {
+  margin-bottom: 2em;
 }
 </style>

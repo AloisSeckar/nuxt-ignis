@@ -8,11 +8,8 @@
 -->
 
 <template>
-  <div v-if="time">
-    Current time by
-    <span class="link">
-      <NuxtLink to="https://github.com/danielroe/nuxt-time">Nuxt Time</NuxtLink>
-    </span>:
+  <div v-if="time" style="text-align: center;">
+    Current time by <NuxtLink to="https://github.com/danielroe/nuxt-time">Nuxt Time</NuxtLink>:
     <NuxtTime
       v-if="time"
       :datetime="currentDate"
