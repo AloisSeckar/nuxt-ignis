@@ -4,6 +4,7 @@ import { defineConfig } from 'vitepress'
 export default defineConfig({
   title: "Nuxt Ignis",
   description: "A ready-to-use setup for your next application in Nuxt",
+  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
