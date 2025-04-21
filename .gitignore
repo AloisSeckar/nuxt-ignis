@@ -5,6 +5,11 @@
 dist
 node_modules
 
+# vitepress build output
+docs/.vitepress/dist
+docs/.vitepress/cache
+docs/.vitepress/.temp
+
 # special rules for `/demos` folder
 # TODO trying to find a way how to re-use definition from core layer
 demos/**/eslint.config.mjs
