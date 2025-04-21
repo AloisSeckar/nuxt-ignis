@@ -15,10 +15,10 @@ hero:
       link: /2-1-overview
 
 features:
-  - title: Simple dependencies
-    details: Get access to whole pack of popular Nuxt modules and extra features with just one NPM dependency
+  - title: Single dependency
+    details: Gain access to whole pack of popular Nuxt modules and features with a single dependency
   - title: Configurable setup
-    details: Use env variables to pick what you want to include into your app
+    details: Use env variables to pick only what you want to include into your app
   - title: Ignite your ideas
     details: Simply extend your application from nuxt-ignis base layer and start building your dream project
 ---
