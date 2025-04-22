@@ -1,6 +1,10 @@
+import { fileURLToPath } from 'url'
+import { dirname, join } from 'path'
 import { defu } from 'defu'
 import OpenProps from 'open-props'
 import { log } from './utils/consola'
+
+const currentDir = dirname(fileURLToPath(import.meta.url))
 
 export function setFeatures() {
   // list of optional extra features
@@ -75,7 +79,7 @@ export function setFeatures() {
     nuxtConfig.modules.push('@nuxt/ui')
     // import tailwind css file
     nuxtConfig = defu({
-      css: ['~/assets/css/nuxt-ui.css'],
+      css: [join(currentDir, './assets/css/nuxt-ui.css')],
     }, nuxtConfig)
   } else {
     // remove @nuxt/ui-specific components from resolution if module is not used
@@ -92,7 +96,7 @@ export function setFeatures() {
       nuxtConfig.modules.push('@nuxtjs/tailwindcss')
       // import tailwind css file
       nuxtConfig = defu({
-        css: ['~/assets/css/tailwind.css'],
+        css: [join(currentDir, './assets/css/tailwind.css')],
       }, nuxtConfig)
     }
   }
@@ -152,7 +156,7 @@ export function setFeatures() {
     extras.push('Open Props CSS')
     nuxtConfig = defu({
       // import Open Prpops stylesheet
-      css: ['~/assets/css/open-props.css'],
+      css: [join(currentDir, './assets/css/open-props.css')],
       // CSS processor for Open Props
       postcss: {
         plugins: {
