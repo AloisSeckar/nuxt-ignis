@@ -125,6 +125,9 @@ export function setFeatures() {
     nuxtConfig = defu({
       i18n: {
         vueI18n: process.env.NUXT_PUBLIC_IGNIS_I18N_CONFIG || './i18n.config.ts',
+        // default to defined here because of the way of possibe initializing of @nuxtjs/seo module
+        // TODO scanI18Names from './utils/i18n-sources' would be better, but import.meta.glob fails here...
+        locales: [process.env.NUXT_PUBLIC_IGNIS_I18N_DEFAULT || 'en'],
         // will deprecate in v10
         bundle: {
           optimizeTranslationDirective: false,

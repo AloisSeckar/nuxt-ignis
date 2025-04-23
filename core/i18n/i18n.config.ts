@@ -5,6 +5,7 @@ export default defineI18nConfig(() => ({
   legacy: false,
   strategy: 'no_prefix',
   locale: ignisLocale,
+  locales: scanI18Names(), // will dynamically load all available locale definitions from @/i18n/locales/*
   defaultLocale: ignisLocale,
   fallbackLocale: ignisLocale,
   messages: scanI18NSources(), // will dynamically load all .jsons from @/i18n/locales/*
