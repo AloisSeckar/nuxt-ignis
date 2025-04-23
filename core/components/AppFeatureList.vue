@@ -30,6 +30,7 @@
       <AppFeature :active="i18n" :text="useIgnisT('features.i18n')" />
       <AppFeature :active="formkit" :text="useIgnisT('features.formkit')" />
       <AppFeature :active="content" :text="useIgnisT('features.content')" />
+      <AppFeature :active="seo" :text="useIgnisT('features.seo')" />
       <AppFeature :active="openprops" class="openprops-feature" :text="useIgnisT('features.openprops')" />
     </div>
     <div v-if="!pages" class="pages">
@@ -59,6 +60,7 @@ const supabase = db === 'supabase' || setup.supabase
 const i18n = setup.i18n.enabled
 const formkit = setup.formkit.enabled
 const content = setup.content
+const seo = setup.seo
 const openprops = setup.openprops
 const pages = setup.pages
 </script>

@@ -146,6 +146,12 @@ export function setFeatures() {
     }, nuxtConfig)
   }
 
+  // seo
+  // 2025/04 - must be before @nuxt/content (https://nuxtseo.com/docs/nuxt-seo/guides/nuxt-content)
+  if (process.env.NUXT_PUBLIC_IGNIS_SEO === 'true') {
+    nuxtConfig.modules.push('@nuxtjs/seo')
+  }
+
   // content
   if (process.env.NUXT_PUBLIC_IGNIS_CONTENT === 'true') {
     nuxtConfig.modules.push('@nuxt/content')

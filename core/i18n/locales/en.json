@@ -24,6 +24,7 @@
         "neon" : "Neon for DB services",
         "formkit" : "FormKit for input forms",
         "content" : "Nuxt Content for creating and editing content",
+        "seo" : "Nuxt SEO collection of SEO-related modules",
         "openprops" : "Additional CSS by Open Props"
     }
 }

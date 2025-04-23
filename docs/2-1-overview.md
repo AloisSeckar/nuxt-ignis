@@ -33,3 +33,4 @@ outline: deep
   - **Content** - for working with website content in `.md` or `.json` via [`@nuxt/content`](https://content.nuxt.com/) 
   - **Open Props** - extra CSS styles via [Open Props](https://open-props.style/)
   - **pslo** - treating single letter words at the end of line via [elrh-pslo](https://open-props.style/)
+  - **SEO** - collection of SEO-related modules via [Nuxt SEO](https://nuxtseo.com/)
