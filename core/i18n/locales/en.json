@@ -25,6 +25,7 @@
         "formkit" : "FormKit for input forms",
         "content" : "Nuxt Content for creating and editing content",
         "seo" : "Nuxt SEO collection of SEO-related modules",
+        "auth" : "Nuxt Auth Utils for easy and secure authentication",
         "openprops" : "Additional CSS by Open Props"
     }
 }

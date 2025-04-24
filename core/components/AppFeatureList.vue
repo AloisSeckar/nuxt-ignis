@@ -31,6 +31,7 @@
       <AppFeature :active="formkit" :text="useIgnisT('features.formkit')" />
       <AppFeature :active="content" :text="useIgnisT('features.content')" />
       <AppFeature :active="seo" :text="useIgnisT('features.seo')" />
+      <AppFeature :active="auth" :text="useIgnisT('features.auth')" />
       <AppFeature :active="openprops" class="openprops-feature" :text="useIgnisT('features.openprops')" />
     </div>
     <div v-if="!pages" class="pages">
@@ -61,6 +62,7 @@ const i18n = setup.i18n.enabled
 const formkit = setup.formkit.enabled
 const content = setup.content
 const seo = setup.seo
+const auth = setup.auth
 const openprops = setup.openprops
 const pages = setup.pages
 </script>

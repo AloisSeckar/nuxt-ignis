@@ -160,6 +160,11 @@ export function setFeatures() {
     nuxtConfig.modules.push('@nuxt/content')
   }
 
+  // nuxt-auth-utils
+  if (process.env.NUXT_PUBLIC_IGNIS_AUTH === 'true') {
+    nuxtConfig.modules.push('nuxt-auth-utils')
+  }
+
   // Open Props CSS
   if (process.env.NUXT_PUBLIC_IGNIS_OPENPROPS === 'true') {
     extras.push('Open Props CSS')

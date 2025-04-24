@@ -34,3 +34,4 @@ outline: deep
   - **Open Props** - extra CSS styles via [Open Props](https://open-props.style/)
   - **pslo** - treating single letter words at the end of line via [elrh-pslo](https://open-props.style/)
   - **SEO** - collection of SEO-related modules via [Nuxt SEO](https://nuxtseo.com/)
+  - **Auth Utils** -  easy and secure authentication via [nuxt-auth-utils](https://nuxt.com/modules/auth-utils)

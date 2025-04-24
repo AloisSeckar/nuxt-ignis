@@ -44,6 +44,7 @@ Currently, following modules are optional:
 - `@formkit/nuxt` - set `NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED` to `true | false`
 - `@nuxt/content` - set `NUXT_PUBLIC_IGNIS_CONTENT` to `true | false`
 - `@nuxtjs/seo` - set `NUXT_PUBLIC_IGNIS_SEO` to `true | false` 
+- `nuxt-auth-utils` - set `NUXT_PUBLIC_IGNIS_AUTH` to `true | false` 
 
 Default values are **false** (not included) for all optional modules.
 

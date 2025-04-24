@@ -52,6 +52,7 @@
     "consola": "3.4.2",
     "defu": "6.1.4",
     "elrh-pslo": "1.1.6",
+    "nuxt-auth-utils": "0.5.20",
     "nuxt-neon": "0.4.0",
     "nuxt-security": "2.2.0",
     "nuxt-spec": "0.0.4",

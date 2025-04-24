@@ -88,7 +88,8 @@ const nuxtConfig = defu(ignisFeatures, {
           enabled: false, // true/false (elrh-pslo will (not) be used)
           content: false, // true/false (elrh-pslo will (not) be aplied on nuxt-content)
         },
-        seo: false, // true/false
+        seo: false, // true/false,
+        auth: false, // true/false
       },
     },
   },
