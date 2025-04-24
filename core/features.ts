@@ -128,6 +128,9 @@ export function setFeatures() {
         // default to defined here because of the way of possibe initializing of @nuxtjs/seo module
         // TODO scanI18Names from './utils/i18n-sources' would be better, but import.meta.glob fails here...
         locales: [process.env.NUXT_PUBLIC_IGNIS_I18N_DEFAULT || 'en'],
+        // avoid automatic route-prefixing with multiple locales
+        // TODO this needs to be written in docs
+        strategy: 'no_prefix',
         // will deprecate in v10
         bundle: {
           optimizeTranslationDirective: false,
