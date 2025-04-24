@@ -85,7 +85,7 @@ const pages = setup.pages
 /* margin-auto my-4 w-3/5 flex flex-col */
 .feature-list {
   margin: 0px auto;
-  margin-bottom: 4em;
+  margin-bottom: 8px;
   width: 40%;
   display: flex;
   flex-direction: column;
