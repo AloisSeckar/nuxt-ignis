@@ -11,7 +11,7 @@
 
 <template>
   <div class="feature-box">
-    <div class="margin-auto my-4 w-3/5 flex flex-col">
+    <div class="feature-list">
       <AppFeature :text="useIgnisT('features.nuxt')" />
       <AppFeature :text="useIgnisT('features.consola')" />
       <AppFeature :active="eslint" :text="useIgnisT('features.eslint')" />
@@ -86,9 +86,27 @@ const pages = setup.pages
 .feature-list {
   margin: 0px auto;
   margin-bottom: 4em;
-  width: 60%;
+  width: 40%;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 1200px) {
+  .feature-list {
+    width: 60%;
+  }
+}
+
+@media (max-width: 800px) {
+  .feature-list {
+    width: 80%;
+  }
+}
+
+@media (max-width: 600px) {
+  .feature-list {
+    width: 100%;
+  }
 }
 
 /* mb-2 */
