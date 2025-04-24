@@ -32,7 +32,5 @@ export function scanI18Names() {
     }
   }
 
-  console.warn(locales)
-
   return locales
 }
