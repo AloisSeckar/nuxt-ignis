@@ -34,6 +34,16 @@ Set the value via `NUXT_PUBLIC_IGNIS_PRESET_DB` env variable.
 
 Value other than `off` will override Optional modules setting.
 
+## Forms preset
+It is possible to pick from three options:
+- `vueform` - https://vueform.com/ via `@vueform/nuxt` connector module **[RECOMMENDED]**
+- `formkit` - https://formkit.com/ via `@formkit/nuxt` connector module
+- `off` - no database module preset **[DEFAULT]**
+
+Set the value via `NUXT_PUBLIC_IGNIS_PRESET_FORMS` env variable.
+
+Value other than `off` will override Optional modules setting.
+
 ## Optional modules
 Currently, following modules are optional:
 - `@nuxt/ui` - set `NUXT_PUBLIC_IGNIS_UI` to `true | false`

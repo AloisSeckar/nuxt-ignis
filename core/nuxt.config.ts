@@ -50,11 +50,14 @@ const nuxtConfig = defu(ignisFeatures, {
         // nuxt-related config
         ssr: true, // true/false
         pages: true, // true/false
+
         // presets
         preset: {
           ui: 'off', // nuxt-ui/tailwind/off
           db: 'off', // neon/supabase/off
+          forms: 'off', // formkit/vueform/off
         },
+
         // core modules
         // (may be disabled by explicitly setting "false")
         core: {
@@ -67,6 +70,7 @@ const nuxtConfig = defu(ignisFeatures, {
           security: true,
           vueuse: true,
         },
+
         // optional modules
         ui: false, // true/false
         tailwind: false, // true/false (ignored, if ui=true)
