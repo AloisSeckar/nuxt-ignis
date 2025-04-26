@@ -42,6 +42,7 @@ Currently, following modules are optional:
 - `@nuxtjs/supabase` - set `NUXT_PUBLIC_IGNIS_SUPABASE` to `true | false`
 - `@nuxtjs/i18n` - set `NUXT_PUBLIC_IGNIS_I18N_ENABLED` to `true | false`
 - `@formkit/nuxt` - set `NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED` to `true | false`
+- `@vueform/nuxt` - set `NUXT_PUBLIC_IGNIS_VUEFORM` to `true | false`
 - `@nuxt/content` - set `NUXT_PUBLIC_IGNIS_CONTENT` to `true | false`
 - `@nuxtjs/seo` - set `NUXT_PUBLIC_IGNIS_SEO` to `true | false` 
 - `nuxt-auth-utils` - set `NUXT_PUBLIC_IGNIS_AUTH` to `true | false` 

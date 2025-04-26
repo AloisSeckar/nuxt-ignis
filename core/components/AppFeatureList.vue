@@ -29,6 +29,7 @@
       <AppFeature :active="supabase" :text="useIgnisT('features.supabase')" />
       <AppFeature :active="i18n" :text="useIgnisT('features.i18n')" />
       <AppFeature :active="formkit" :text="useIgnisT('features.formkit')" />
+      <AppFeature :active="vueform" :text="useIgnisT('features.vueform')" />
       <AppFeature :active="content" :text="useIgnisT('features.content')" />
       <AppFeature :active="seo" :text="useIgnisT('features.seo')" />
       <AppFeature :active="auth" :text="useIgnisT('features.auth')" />
@@ -60,6 +61,7 @@ const neon = db === 'neon' || setup.neon
 const supabase = db === 'supabase' || setup.supabase
 const i18n = setup.i18n.enabled
 const formkit = setup.formkit.enabled
+const vueform = setup.vueform
 const content = setup.content
 const seo = setup.seo
 const auth = setup.auth

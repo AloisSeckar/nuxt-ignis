@@ -82,6 +82,7 @@ const nuxtConfig = defu(ignisFeatures, {
           default: 'en', // default locale (should be same as i18n)
           config: './formkit.config.ts', // path to config file
         },
+        vueform: false, // true/false
         content: false, // true/false
         openprops: false, // true/false
         pslo: {

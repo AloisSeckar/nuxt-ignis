@@ -47,6 +47,7 @@
     "@nuxtjs/supabase": "1.5.0",
     "@nuxtjs/tailwindcss": "6.13.2",
     "@pinia/nuxt": "0.10.1",
+    "@vueform/nuxt": "1.12.1",
     "@vueuse/core": "13.0.0",
     "@vueuse/nuxt": "13.0.0",
     "consola": "3.4.2",

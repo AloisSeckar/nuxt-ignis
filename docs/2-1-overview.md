@@ -30,6 +30,7 @@ outline: deep
 - Other (opt-in)
   - **I18N** - translations and internalization made easy via [`@nuxtjs/i18n`](hhttps://i18n.nuxtjs.org/) 
   - **FormKit** - for handling input forms via [`@formkit/nuxt`](https://nuxt.com/modules/formkit) 
+  - **Vueform** - for handling input forms via [`@vueform/nuxt`](https://nuxt.com/modules/vueform) 
   - **Content** - for working with website content in `.md` or `.json` via [`@nuxt/content`](https://content.nuxt.com/) 
   - **Open Props** - extra CSS styles via [Open Props](https://open-props.style/)
   - **pslo** - treating single letter words at the end of line via [elrh-pslo](https://open-props.style/)

@@ -152,6 +152,11 @@ export function setFeatures() {
     }, nuxtConfig)
   }
 
+  // vueform
+  if (process.env.NUXT_PUBLIC_IGNIS_VUEFORM === 'true') {
+    nuxtConfig.modules.push('@vueform/nuxt')
+  }
+
   // seo
   // 2025/04 - must be before @nuxt/content (https://nuxtseo.com/docs/nuxt-seo/guides/nuxt-content)
   if (process.env.NUXT_PUBLIC_IGNIS_SEO === 'true') {
