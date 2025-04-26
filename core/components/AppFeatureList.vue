@@ -28,8 +28,8 @@
       <AppFeature :active="neon" :text="useIgnisT('features.neon')" />
       <AppFeature :active="supabase" :text="useIgnisT('features.supabase')" />
       <AppFeature :active="i18n" :text="useIgnisT('features.i18n')" />
-      <AppFeature :active="formkit" :text="useIgnisT('features.formkit')" />
       <AppFeature :active="vueform" :text="useIgnisT('features.vueform')" />
+      <AppFeature :active="formkit" :text="useIgnisT('features.formkit')" />
       <AppFeature :active="content" :text="useIgnisT('features.content')" />
       <AppFeature :active="seo" :text="useIgnisT('features.seo')" />
       <AppFeature :active="auth" :text="useIgnisT('features.auth')" />
@@ -54,14 +54,16 @@ const scripts = setup.core.scripts
 const security = setup.core.security
 const vueuse = setup.core.vueuse
 const ui = setup.preset.ui
-const db = setup.preset.db
 const nuxtui = ui === 'nuxt-ui' || setup.ui
 const tailwind = ui !== 'off' || setup.ui || setup.tailwind
-const neon = db === 'neon' || setup.neon
-const supabase = db === 'supabase' || setup.supabase
+const db = setup.preset.db
+const neon = db === 'neon' || (db === 'off' && setup.neon)
+const supabase = db === 'supabase' || (db === 'off' && setup.supabase)
 const i18n = setup.i18n.enabled
-const formkit = setup.formkit.enabled
-const vueform = setup.vueform
+const forms = setup.preset.forms
+console.log(forms)
+const vueform = forms === 'vueform' || (forms === 'off' && setup.vueform)
+const formkit = forms === 'formkit' || (forms === 'off' && setup.formkit.enabled)
 const content = setup.content
 const seo = setup.seo
 const auth = setup.auth

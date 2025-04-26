@@ -143,7 +143,7 @@ export function setFeatures() {
   const formsPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS
   if (formsPreset === 'vueform' || (!formsPreset && process.env.NUXT_PUBLIC_IGNIS_VUEFORM === 'true')) {
     nuxtConfig.modules.push('@vueform/nuxt')
-  } else if (dbPreset === 'formkit' || (!dbPreset && process.env.NUXT_PUBLIC_IGNIS_FORMKIT === 'true')) {
+  } else if (formsPreset === 'formkit' || (!formsPreset && process.env.NUXT_PUBLIC_IGNIS_FORMKIT === 'true')) {
     // module definition
     nuxtConfig.modules.push('@formkit/nuxt')
     // module-specific config key
