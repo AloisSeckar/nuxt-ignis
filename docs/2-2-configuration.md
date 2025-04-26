@@ -22,7 +22,7 @@ It is possible to pick from three options:
 
 Set the value via `NUXT_PUBLIC_IGNIS_PRESET_UI` env variable.
 
-Value other than `off` will override Optional modules setting.
+Setting the UI preset will override individual settings for `nuxt-ui` and  `tailwind` modules.
 
 ## Database preset
 It is possible to pick from three options:
@@ -32,7 +32,7 @@ It is possible to pick from three options:
 
 Set the value via `NUXT_PUBLIC_IGNIS_PRESET_DB` env variable.
 
-Value other than `off` will override Optional modules setting.
+Setting the database preset will override individual settings for `neon` and  `supabase` modules.
 
 ## Forms preset
 It is possible to pick from three options:
@@ -42,7 +42,7 @@ It is possible to pick from three options:
 
 Set the value via `NUXT_PUBLIC_IGNIS_PRESET_FORMS` env variable.
 
-Value other than `off` will override Optional modules setting.
+Setting the forms preset will override individual settings for `vueform` and  `formkit` modules.
 
 ## Optional modules
 Currently, following modules are optional:

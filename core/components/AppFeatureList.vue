@@ -61,7 +61,6 @@ const neon = db === 'neon' || (db === 'off' && setup.neon)
 const supabase = db === 'supabase' || (db === 'off' && setup.supabase)
 const i18n = setup.i18n.enabled
 const forms = setup.preset.forms
-console.log(forms)
 const vueform = forms === 'vueform' || (forms === 'off' && setup.vueform)
 const formkit = forms === 'formkit' || (forms === 'off' && setup.formkit.enabled)
 const content = setup.content
