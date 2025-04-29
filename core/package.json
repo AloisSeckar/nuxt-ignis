@@ -36,20 +36,20 @@
   },
   "dependencies": {
     "@formkit/nuxt": "1.6.9",
-    "@nuxt/content": "3.4.0",
+    "@nuxt/content": "3.5.1",
     "@nuxt/eslint": "1.3.0",
-    "@nuxt/fonts": "0.11.0",
+    "@nuxt/fonts": "0.11.2",
     "@nuxt/image": "1.10.0",
-    "@nuxt/scripts": "0.11.5",
-    "@nuxt/ui": "3.0.2",
-    "@nuxtjs/i18n": "9.4.0",
+    "@nuxt/scripts": "0.11.6",
+    "@nuxt/ui": "3.1.0",
+    "@nuxtjs/i18n": "9.5.3",
     "@nuxtjs/seo": "3.0.3",
     "@nuxtjs/supabase": "1.5.0",
-    "@nuxtjs/tailwindcss": "6.13.2",
-    "@pinia/nuxt": "0.10.1",
-    "@vueform/nuxt": "1.12.1",
-    "@vueuse/core": "13.0.0",
-    "@vueuse/nuxt": "13.0.0",
+    "@nuxtjs/tailwindcss": "6.14.0",
+    "@pinia/nuxt": "0.11.0",
+    "@vueform/nuxt": "1.13.0",
+    "@vueuse/core": "13.1.0",
+    "@vueuse/nuxt": "13.1.0",
     "consola": "3.4.2",
     "defu": "6.1.4",
     "elrh-pslo": "1.1.6",
@@ -58,28 +58,21 @@
     "nuxt-security": "2.2.0",
     "nuxt-spec": "0.0.4",
     "nuxt-time": "1.0.3",
-    "open-props": "1.7.14",
-    "pinia": "3.0.1",
+    "open-props": "1.7.15",
+    "pinia": "3.0.2",
     "postcss-jit-props": "1.0.16",
-    "typescript": "5.8.2"
+    "typescript": "5.8.3"
   },
   "pnpm": {
     "overrides": {
-      "@nuxt/kit": "3.16.2",
-      "eslint": "9.16.0",
-      "esbuild": "^0.25.0",
-      "koa": "^2.16.1",
-      "tar-fs": "^2.1.2",
-      "vite": "^6.2.6",
-      "vue-i18n": "^10.0.6",
-      "@babel/helpers": "^7.26.10",
-      "@unhead/vue": "^2.0.8"
+      "@nuxt/kit": "3.17.1",
+      "esbuild": "^0.25.0"
     }
   },
   "devDependencies": {
-    "nuxt": "3.16.2",
+    "nuxt": "3.17.1",
     "vue": "3.5.13",
-    "vue-router": "4.5.0"
+    "vue-router": "4.5.1"
   },
   "packageManager": "pnpm@9.15.9"
 }
