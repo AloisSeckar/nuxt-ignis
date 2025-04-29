@@ -1,17 +1,15 @@
 <!--
-  The `NuxtTime` component of `nuxt-time` module is a way how to deal with SSR in Nuxt.
+  Built-in `NuxtTime` component is a way how to deal with SSR in Nuxt.
   Because page on the server is rendered miliseconds before being re-rendered on client,
   wild "hydration error mismatch" may appear from a difference between displayed times.
 
-  This special component gracefully deals with the issue:
-  https://github.com/nuxt/nuxt/discussions/23278#discussioncomment-7607298
+  https://nuxt.com/docs/api/components/nuxt-time
 -->
 
 <template>
-  <div v-if="time" style="text-align: center;">
-    Current time by <NuxtLink to="https://github.com/danielroe/nuxt-time">Nuxt Time</NuxtLink>:
+  <div style="text-align: center;">
+    Current time with <NuxtLink to="https://nuxt.com/docs/api/components/nuxt-time">NuxtTime</NuxtLink>:
     <NuxtTime
-      v-if="time"
       :datetime="currentDate"
       year="numeric"
       month="2-digit"
@@ -26,7 +24,6 @@
 </template>
 
 <script setup lang="ts">
-const time = useRuntimeConfig().public.ignis.core.vueuse
 const vueuse = useRuntimeConfig().public.ignis.core.vueuse
 const currentDate = vueuse ? useNow() : new Date().toISOString()
 </script>

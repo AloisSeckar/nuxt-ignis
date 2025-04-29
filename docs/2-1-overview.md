@@ -17,7 +17,6 @@ outline: deep
 - handful tools for working with images via [`@nuxt/image`](https://image.nuxt.com/)
 - simple integration of various fonts via [`@nuxt/fonts`](https://fonts.nuxt.com/)
 - optimized scripts loading via [`@nuxt/scripts`](https://scripts.nuxt.com/)
-- SSR-friendly component for rendering dynamic date/time via [`nuxt-time`](https://nuxt.com/modules/time)
 - logging via [`consola](https://github.com/unjs/consola)
 
 ## Optional features

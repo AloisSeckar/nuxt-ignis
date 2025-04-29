@@ -41,20 +41,6 @@ export function setFeatures() {
     nuxtConfig.modules.push('@pinia/nuxt')
   }
 
-  // https://nuxt.com/modules/time
-  if (process.env.NUXT_PUBLIC_IGNIS_CORE_TIME !== 'false') {
-    nuxtConfig.modules.push('nuxt-time')
-  } else {
-    nuxtConfig = defu({
-      // if disabled, must remove NuxtTime component from resolution
-      vue: {
-        compilerOptions: {
-          isCustomElement: (tag: string) => ['NuxtTime'].includes(tag),
-        },
-      },
-    }, nuxtConfig)
-  }
-
   // https://scripts.nuxt.com/
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS !== 'false') {
     nuxtConfig.modules.push('@nuxt/scripts')

@@ -7,7 +7,6 @@ Pre-defined set of Nuxt modules are being automatically included by default. How
 - use `NUXT_PUBLIC_CORE_FONTS=false` to disable `@nuxt/fonts`
 - use `NUXT_PUBLIC_CORE_IMAGE=false` to disable `@nuxt/image`
 - use `NUXT_PUBLIC_CORE_PINIA=false` to disable `@pinia/nuxt`
-- use `NUXT_PUBLIC_CORE_TIME=false` to disable `nuxt-time`
 - use `NUXT_PUBLIC_CORE_SCRIPTS=false` to disable `@nuxt/scripts`
 - use `NUXT_PUBLIC_CORE_SECURITY=false` to disable `nuxt-security`
 - use `NUXT_PUBLIC_CORE_VUEUSE=false` to disable `@vueuse/nuxt`
