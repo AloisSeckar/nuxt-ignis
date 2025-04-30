@@ -159,7 +159,6 @@ export function setFeatures() {
     // ogImage and Schema.org modules should be disabled with `ssr: false`
     // note: this won't work if `ssr: false` is set in target's project nuxt.config.ts
     if (process.env.NUXT_PUBLIC_IGNIS_SSR === 'false') {
-      console.warn('disabling modules')
       nuxtConfig = defu({
         ogImage: { enabled: false },
         schemaOrg: { enabled: false },
