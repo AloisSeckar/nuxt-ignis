@@ -67,6 +67,11 @@ Default values are **false** (not included) for all optional modules.
 - you can select default language locale via `NUXT_PUBLIC_IGNIS_FORMKIT_LOCALE`
 - if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob//core/main/formkit.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG`
 
+### Nuxt SEO notice
+If you allow `@nuxtjs/seo` module and also set `NUXT_PUBLIC_IGNIS_SSR=false`, modules from  Nuxt SEO pack  requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce warning on startup.
+
+If you set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.
+
 ## Optional features
 Currently, following extra features (not using separate Nuxt Modules) are optional:
 - `Open Props CSS` - set `NUXT_PUBLIC_IGNIS_OPENPROPS` to `true | false`
