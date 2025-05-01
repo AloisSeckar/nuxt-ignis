@@ -218,7 +218,19 @@ export function setFeatures() {
     nuxt.push('pages=false')
   }
 
-  // 4. verify results
+  // 4. warn if duplicate modules find
+  // this means e.g. 2 database modules or 2 form solutions
+  if (process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES !== 'false') {
+    const used = nuxtConfig.modules
+    if (used.includes('nuxt-neon') && used.includes('nuxt-neon')) {
+      log.warn('You have both DB connector modules (Neon and Supabase) active, which is not recommended. If this is intentional, you can use `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.')
+    }
+    if (used.includes('@vueform/nuxt') && used.includes('@formkit/nuxt')) {
+      log.warn('You have both Form solution provider modules (Vueform and Formkit) active, which is not recommended. If this is intentional, you can use `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.')
+    }
+  }
+
+  // 5. verify results
   // TODO why this run twice?
 
   let overview = 'Nuxt Ignis will start using following settings:\n'

@@ -89,6 +89,9 @@ Currently, it is possible to override following Nuxt config via .env variables:
 - `NUXT_PUBLIC_IGNIS_SSR` - set to `false` to disable SSR (results in `ssr: false` in Nuxt Config)
 - `NUXT_PUBLIC_IGNIS_PAGES` - set to `false` to disable multiple pages in simple projects (results in `pages: false` in Nuxt Config)
 
+## Extra behavior
+By default, Nuxt Ignis doesn't recommend mixing DB and Form solutions. If both `Neon` and `Supabase` or `Vueform` and `Formkit` is used, a warning will be triggered on startup. For use cases when having both varitants together is appropriate and desired, you can set `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.
+
 ## Logging
 Use `NUXT_PUBLIC_INGIS_LOG_LEVEL` to set level of log messages captured with `consola`. The default value is `info`.
 
