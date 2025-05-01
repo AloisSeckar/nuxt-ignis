@@ -96,7 +96,8 @@ export function setFeatures() {
   if (dbPreset === 'neon' || (!dbPreset && process.env.NUXT_PUBLIC_IGNIS_NEON === 'true')) {
     // module definition
     nuxtConfig.modules.push('nuxt-neon')
-  } else if (dbPreset === 'supabase' || (!dbPreset && process.env.NUXT_PUBLIC_IGNIS_SUPABASE === 'true')) {
+  }
+  if (dbPreset === 'supabase' || (!dbPreset && process.env.NUXT_PUBLIC_IGNIS_SUPABASE === 'true')) {
     // module definition
     nuxtConfig.modules.push('@nuxtjs/supabase')
     // module-specific config key
@@ -105,7 +106,8 @@ export function setFeatures() {
         redirect: false, // https://github.com/supabase/supabase/issues/16551#issuecomment-1685300935
       },
     }, nuxtConfig)
-  } else {
+  }
+  if (dbPreset && dbPreset !== 'neon' && dbPreset !== 'supabase') {
     // surpress other values
     process.env.NUXT_PUBLIC_IGNIS_PRESET_DB = 'off'
   }
@@ -136,7 +138,8 @@ export function setFeatures() {
   const formsPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS
   if (formsPreset === 'vueform' || (!formsPreset && process.env.NUXT_PUBLIC_IGNIS_VUEFORM === 'true')) {
     nuxtConfig.modules.push('@vueform/nuxt')
-  } else if (formsPreset === 'formkit' || (!formsPreset && process.env.NUXT_PUBLIC_IGNIS_FORMKIT === 'true')) {
+  }
+  if (formsPreset === 'formkit' || (!formsPreset && process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED === 'true')) {
     // module definition
     nuxtConfig.modules.push('@formkit/nuxt')
     // module-specific config key
@@ -146,7 +149,8 @@ export function setFeatures() {
         configFile: process.env.NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG || './formkit.config.ts',
       },
     }, nuxtConfig)
-  } else {
+  }
+  if (formsPreset && formsPreset !== 'vueform' && formsPreset !== 'formkit') {
     // surpress other values
     process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS = 'off'
   }
