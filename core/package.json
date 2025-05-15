@@ -65,6 +65,7 @@
   "pnpm": {
     "overrides": {
       "@nuxt/kit": "3.17.3",
+      "esbuild": "^0.25.0",
       "trix": "^2.1.15"
     }
   },
