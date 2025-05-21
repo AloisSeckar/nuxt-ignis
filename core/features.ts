@@ -2,6 +2,7 @@ import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 import { defu } from 'defu'
 import OpenProps from 'open-props'
+import tailwindcss from '@tailwindcss/vite'
 import { log } from './utils/consola'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
@@ -84,10 +85,14 @@ export function setFeatures() {
 
     // evaluate separate Tailwind CSS module
     if (uiPreset === 'tailwind' || (process.env.NUXT_PUBLIC_IGNIS_TAILWIND === 'true' && uiPreset !== 'nuxt-ui')) {
-      nuxtConfig.modules.push('@nuxtjs/tailwindcss')
+      // nuxtConfig.modules.push('@nuxtjs/tailwindcss') // temporary disabled until v7 is released
+      extras.push('Tailwind CSS')
       // import tailwind css file
       nuxtConfig = defu({
         css: [join(currentDir, './assets/css/tailwind.css')],
+        vite: {
+          plugins: [tailwindcss()], // temporary integration using Vite plugin directly
+        },
       }, nuxtConfig)
     }
   }

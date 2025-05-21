@@ -50,6 +50,7 @@
     "@vueform/nuxt": "1.13.0",
     "@vueuse/core": "13.2.0",
     "@vueuse/nuxt": "13.2.0",
+    "@tailwindcss/vite": "4.1.7",
     "consola": "3.4.2",
     "defu": "6.1.4",
     "elrh-pslo": "1.1.6",
