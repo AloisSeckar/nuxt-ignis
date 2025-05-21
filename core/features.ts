@@ -60,8 +60,13 @@ export function setFeatures() {
   // (excluded unless enabled)
 
   // ui
-  const uiPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_UI
-  if (uiPreset === 'nuxt-ui' || (!uiPreset && process.env.NUXT_PUBLIC_IGNIS_UI === 'true')) {
+  let uiPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_UI
+  if (uiPreset && !['nuxt-ui', 'tailwind'].includes(uiPreset)) {
+    // surpress other values
+    process.env.NUXT_PUBLIC_IGNIS_PRESET_UI = uiPreset = 'off'
+  }
+
+  if (uiPreset === 'nuxt-ui' || process.env.NUXT_PUBLIC_IGNIS_UI === 'true') {
     nuxtConfig.modules.push('@nuxt/ui')
     // import tailwind css file
     nuxtConfig = defu({
@@ -78,7 +83,7 @@ export function setFeatures() {
     }, nuxtConfig)
 
     // evaluate separate Tailwind CSS module
-    if (uiPreset === 'tailwind' || (!uiPreset && process.env.NUXT_PUBLIC_IGNIS_TAILWIND === 'true')) {
+    if (uiPreset === 'tailwind' || (process.env.NUXT_PUBLIC_IGNIS_TAILWIND === 'true' && uiPreset !== 'nuxt-ui')) {
       nuxtConfig.modules.push('@nuxtjs/tailwindcss')
       // import tailwind css file
       nuxtConfig = defu({
@@ -86,18 +91,19 @@ export function setFeatures() {
       }, nuxtConfig)
     }
   }
-  // surpress other values
-  if (!uiPreset || !['nuxt-ui', 'tailwind'].includes(uiPreset)) {
-    process.env.NUXT_PUBLIC_IGNIS_PRESET_UI = 'off'
-  }
 
   // database
-  const dbPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_DB
-  if (dbPreset === 'neon' || (!dbPreset && process.env.NUXT_PUBLIC_IGNIS_NEON === 'true')) {
+  let dbPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_DB
+  if (dbPreset && !['neon', 'supabase'].includes(dbPreset)) {
+    // surpress other values
+    process.env.NUXT_PUBLIC_IGNIS_PRESET_DB = dbPreset = 'off'
+  }
+
+  if (dbPreset === 'neon' || process.env.NUXT_PUBLIC_IGNIS_NEON === 'true') {
     // module definition
     nuxtConfig.modules.push('nuxt-neon')
   }
-  if (dbPreset === 'supabase' || (!dbPreset && process.env.NUXT_PUBLIC_IGNIS_SUPABASE === 'true')) {
+  if (dbPreset === 'supabase' || process.env.NUXT_PUBLIC_IGNIS_SUPABASE === 'true') {
     // module definition
     nuxtConfig.modules.push('@nuxtjs/supabase')
     // module-specific config key
@@ -106,10 +112,6 @@ export function setFeatures() {
         redirect: false, // https://github.com/supabase/supabase/issues/16551#issuecomment-1685300935
       },
     }, nuxtConfig)
-  }
-  if (dbPreset && dbPreset !== 'neon' && dbPreset !== 'supabase') {
-    // surpress other values
-    process.env.NUXT_PUBLIC_IGNIS_PRESET_DB = 'off'
   }
 
   // i18n
@@ -135,11 +137,16 @@ export function setFeatures() {
   }
 
   // forms
-  const formsPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS
-  if (formsPreset === 'vueform' || (!formsPreset && process.env.NUXT_PUBLIC_IGNIS_VUEFORM === 'true')) {
+  let formsPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS
+  if (formsPreset && !['vueform', 'formkit'].includes(formsPreset)) {
+    // surpress other values
+    process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS = formsPreset = 'off'
+  }
+
+  if (formsPreset === 'vueform' || process.env.NUXT_PUBLIC_IGNIS_VUEFORM === 'true') {
     nuxtConfig.modules.push('@vueform/nuxt')
   }
-  if (formsPreset === 'formkit' || (!formsPreset && process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED === 'true')) {
+  if (formsPreset === 'formkit' || process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED === 'true') {
     // module definition
     nuxtConfig.modules.push('@formkit/nuxt')
     // module-specific config key
@@ -149,10 +156,6 @@ export function setFeatures() {
         configFile: process.env.NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG || './formkit.config.ts',
       },
     }, nuxtConfig)
-  }
-  if (formsPreset && formsPreset !== 'vueform' && formsPreset !== 'formkit') {
-    // surpress other values
-    process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS = 'off'
   }
 
   // seo
