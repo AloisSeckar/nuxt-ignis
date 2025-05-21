@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.3.1 (2025-05-21)
+- fix: broken preset evaluation ignoring direct values for optional modules
+- fix: temporary bridge `Tailwind CSS v4` via Vite plugin instead of Nuxt module
+
 ## 0.3.0 (2025-05-21)
 - BREAKING CHANGE: migrated to `Tailwind CSS v4` - see [migration guide](https://tailwindcss.com/docs/upgrade-guide)
 - BREAKING CHANGE: changed way of locating i18n JSON files from `@assets/lang` to `@/i18n/locales` to match current `i18n` module default structure
