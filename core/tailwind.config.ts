@@ -6,7 +6,7 @@ import plugin from 'tailwindcss/plugin'
 module.exports = {
   content: [
     // include Nuxt Content files into array scanned by Tailwind CSS
-    '{srcDir}/content/**/*.{md,yml,json}',
+    'srcDir/content/**/*.{md,yml,json}',
   ],
   theme: {
     // example of extending Tailwind CSS with custom color
