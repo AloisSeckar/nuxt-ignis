@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.3.0 (2025-05-21)
+- BREAKING CHANGE: migrated to `Tailwind CSS v4` - see [migration guide](https://tailwindcss.com/docs/upgrade-guide)
+- BREAKING CHANGE: changed way of locating i18n JSON files from `@assets/lang` to `@/i18n/locales` to match current `i18n` module default structure
+- feat: `@nuxtjs/seo`, `nuxt-auth-utils`, `Vueform`  added as optional modules
+- feat: new preset for `forms` to choose between `Vueform` and `FormKit`
+- feat: warn when duplicate db/forms solutions are used (can be surpressed by config)
+- feat: even "core" modules can be disabled by configuration
+- feat: improved overview page - display enabled/disabled status for ALL features, implemented as separate page/component, non-dependant on any optional features
+- feat: `nuxt-time` module dropped in favor of now-native `<NuxtTime>` component
+- fix: extend default `Tailwind CSS` config to allow it in `/content` folder
+- docs: established standalone `Vitepress` based docs at https://nuxt-ignis.netlify.app/
+- docs: updated to reflect latest change
+- build: bump `Nuxt` to `3.17.4` + update all other deps to latest versions (as of 2025-05-21)
+
 ## 0.2.5 (2025-03-26)
 - build: move `vue` and `vue-router` to devDepencencies (should allow smooth Netlify deployment)
 - build: fix Vite security issue

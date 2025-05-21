@@ -6,7 +6,7 @@
 
 1) Add the following dependency into your `package.json`:
 ```
-"nuxt-ignis": "0.2.5"
+"nuxt-ignis": "0.3.0"
 ```
 
 2) Add following section into your `nuxt.config.ts`:

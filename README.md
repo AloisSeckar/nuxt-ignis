@@ -14,7 +14,7 @@ The project will improve and grow together with my skills. And - hopefully - thr
 
 1) Add the following dependency into your `package.json`:
 ```
-"nuxt-ignis": "0.2.5"
+"nuxt-ignis": "0.3.0"
 ```
 
 2) Add following section into your `nuxt.config.ts`:
