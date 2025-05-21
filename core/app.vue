@@ -1,8 +1,12 @@
 <template>
-  <UApp>
+  <UApp v-if="ui">
     <NuxtPage v-if="pages" />
     <IgnisInfo v-else />
   </UApp>
+  <div v-else>
+    <NuxtPage v-if="pages" />
+    <IgnisInfo v-else />
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -19,7 +23,9 @@ initConsola()
 
 log.info('Nuxt Ignis was here!')
 
-const pages = useRuntimeConfig().public.ignis.pages
+const config = useRuntimeConfig().public.ignis
+const pages = config.pages
+const ui = config.ui || config.preset.ui
 </script>
 
 <style scoped>

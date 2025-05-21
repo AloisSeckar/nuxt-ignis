@@ -72,7 +72,7 @@ export function setFeatures() {
     nuxtConfig = defu({
       vue: {
         compilerOptions: {
-          isCustomElement: (tag: string) => tag === 'Icon',
+          isCustomElement: (tag: string) => tag === 'Icon' || tag === 'UApp',
         },
       },
     }, nuxtConfig)
