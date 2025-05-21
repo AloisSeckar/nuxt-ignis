@@ -12,7 +12,7 @@ const nuxtConfig = defu(ignisFeatures, {
   ],
 
   // https://nuxt.com/docs/api/nuxt-config#compatibilitydate
-  compatibilityDate: '2025-04-04',
+  compatibilityDate: '2025-05-21',
 
   // simple eslint config - see eslint.config.mjs
   eslint: {
