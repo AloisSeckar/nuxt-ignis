@@ -230,7 +230,7 @@ export function setFeatures() {
   // this means e.g. 2 database modules or 2 form solutions
   if (process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES !== 'false') {
     const used = nuxtConfig.modules
-    if (used.includes('nuxt-neon') && used.includes('nuxt-neon')) {
+    if (used.includes('nuxt-neon') && used.includes('@nuxtjs/supabase')) {
       log.warn('You have both DB connector modules (Neon and Supabase) active, which is not recommended. If this is intentional, you can use `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.')
     }
     if (used.includes('@vueform/nuxt') && used.includes('@formkit/nuxt')) {
