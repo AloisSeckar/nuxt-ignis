@@ -1,0 +1,4 @@
+Nuxt Ignis will start using following settings:
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @pinia/nuxt, @nuxt/scripts, nuxt-security, @vueuse/nuxt
+Extras: Tailwind CSS
+Nuxt: log-level=info[default]
