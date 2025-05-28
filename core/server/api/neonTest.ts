@@ -3,11 +3,13 @@ export default defineEventHandler(async () => {
   if (config.preset.db === 'neon' || config.neon === true) {
     return await select(
       getNeonClient(),
-      ['name', 'value'],
-      'playing_with_neon',
-      [{ column: 'name', condition: 'LIKE', value: '\'test%\'' }],
-      'name DESC',
-      2,
+      {
+        columns: ['name', 'value'],
+        from: 'playing_with_neon',
+        where: { column: 'name', condition: 'LIKE', value: '\'test%\'' },
+        order: 'name DESC',
+        limit: 2,
+      },
     )
   } else {
     return 'Neon DB module not enabled'
