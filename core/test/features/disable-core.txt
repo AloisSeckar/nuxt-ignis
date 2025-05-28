@@ -1,0 +1,3 @@
+Nuxt Ignis will start using following settings:
+Modules: 
+Nuxt: log-level=info[default]

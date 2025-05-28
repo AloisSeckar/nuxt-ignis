@@ -64,15 +64,29 @@ describe('setFeatures() unit tests', () => {
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/ui-off.txt')
   })
 
+  // UI - set directly
+
+  test('setFeatures() - UI - nuxt-ui', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_UI = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/ui-nuxt-ui.txt')
+  })
+
+  test('setFeatures() - UI - tailwind', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_TAILWIND = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/ui-tailwind.txt')
+  })
+
   // preset - DB
 
-  test('setFeatures() - DB preset - nuxt-ui', async () => {
+  test('setFeatures() - DB preset - neon', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_DB = 'neon'
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-neon.txt')
   })
 
-  test('setFeatures() - DB preset - tailwind', async () => {
+  test('setFeatures() - DB preset - supabase', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_DB = 'supabase'
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-supabase.txt')
@@ -88,6 +102,20 @@ describe('setFeatures() unit tests', () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_DB = 'invalid'
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-off.txt')
+  })
+
+  // DB - set directly
+
+  test('setFeatures() - DB - neon', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_NEON = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-neon.txt')
+  })
+
+  test('setFeatures() - DB - supabase', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_SUPABASE = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-supabase.txt')
   })
 
   // preset - forms
@@ -114,5 +142,50 @@ describe('setFeatures() unit tests', () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS = 'invalid'
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/forms-off.txt')
+  })
+
+  // forms - set directly
+
+  test('setFeatures() - forms - vueform', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_VUEFORM = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/forms-vueform.txt')
+  })
+
+  test('setFeatures() - forms - formkit', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/forms-formkit.txt')
+  })
+
+  // disable "core" features
+  test('setFeatures() - disable core features', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_CORE_ESLINT = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_CORE_FONTS = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_CORE_IMAGE = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_CORE_PINIA = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_CORE_SECURITY = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_CORE_VUEUSE = 'false'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/disable-core.txt')
+  })
+
+  // enable all features
+  test('setFeatures() - enable all features', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_UI = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_NEON = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_SUPABASE = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_I18N_ENABLED = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_VUEFORM = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_CONTENT = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_OPENPROPS = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_PSLO_ENABLED = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_SEO = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_AUTH = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES = 'false' // to avoid console log
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/enable-all.txt')
   })
 })
