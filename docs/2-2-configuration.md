@@ -43,6 +43,21 @@ Set the value via `NUXT_PUBLIC_IGNIS_PRESET_FORMS` env variable.
 
 Setting the forms preset will override individual settings for `vueform` and  `formkit` modules.
 
+### Vueform notice
+In order to use `vueform` via Nuxt Ignis, is currently required to create a custom config file in the root of your project named `vueform.config.ts` with following contents:
+
+```ts
+import { defineConfig } from '@vueform/vueform'
+
+const vueformConfig = await loadDefaultVueformConfig()
+
+export default defineConfig(vueformConfig)
+```
+
+This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/vueform/vueform.config.ts) to inject `Vueform` into your project. The extra step is required as it seems not possible to transfer the config file from the layer.
+
+Alternatively, you can ignore Nuxt Ignis' default config and create your own file based on [Vueform docs](https://vueform.com/docs/installation#manual-installation) (check instructions for Nuxt).
+
 ## Optional modules
 Currently, following modules are optional:
 - `@nuxt/ui` - set `NUXT_PUBLIC_IGNIS_UI` to `true | false`
