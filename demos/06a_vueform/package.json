@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "ignis-demo-06a",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev"
+  },
+  "devDependencies": {
+    "nuxt": "3.17.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "esbuild"
+    ]
+  }
+}
