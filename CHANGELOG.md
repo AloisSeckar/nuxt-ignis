@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.2 (2025-06-07)
+- feat: (slightly) better solution for using `Vueform` and `@nuxt-content` (see usage notice in docs)
+- fix: incorrect "both DB connector modules" warning
+- fix: provide solution for Tailwind CSS sourcemap warning during build
+- build: bump `Nuxt` to `3.17.5` + update all other deps to latest versions (as of 2025-06-07)
+
 ## 0.3.1 (2025-05-21)
 - fix: broken preset evaluation ignoring direct values for optional modules
 - fix: temporary bridge `Tailwind CSS v4` via Vite plugin instead of Nuxt module
