@@ -9,7 +9,7 @@
 export async function loadDefaultVueformConfig() {
   const config = useRuntimeConfig().public.ignis
   if (config.preset.forms === 'vueform' || config.vueform === true) {
-    const vueformConfig = await import('./vueform/vueform.config')
+    const vueformConfig = await import('./config/vueform.config')
     return vueformConfig.default
   }
   return null

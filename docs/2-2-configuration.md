@@ -83,7 +83,7 @@ const vueformConfig = await loadDefaultVueformConfig()
 export default defineConfig(vueformConfig)
 ```
 
-This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/vueform/vueform.config.ts) to inject `Vueform` into your project. The extra step is required as it seems not possible to transfer the config file from the layer.
+This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/config/vueform.config.ts) to inject `Vueform` into your project. The extra step is required as it seems not possible to transfer the config file from the layer.
 
 Alternatively, you can ignore Nuxt Ignis' default config and create your own file based on [Vueform docs](https://vueform.com/docs/installation#manual-installation) (check instructions for Nuxt).
 
