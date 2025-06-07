@@ -1,5 +1,5 @@
 import { defineConfig } from '@vueform/vueform'
 
-const vueformConfig = await maybeLoadVueformConfig()
+const vueformConfig = await loadDefaultVueformConfig()
 
 export default defineConfig(vueformConfig)
