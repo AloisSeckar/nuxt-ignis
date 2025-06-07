@@ -3,7 +3,8 @@
   "name": "ignis-demo-04a",
   "type": "module",
   "scripts": {
-    "dev": "nuxt dev"
+    "dev": "nuxt dev",
+    "build": "nuxt build"
   },
   "devDependencies": {
     "nuxt": "3.17.4"

@@ -4,6 +4,7 @@ import { defu } from 'defu'
 import OpenProps from 'open-props'
 import tailwindcss from '@tailwindcss/vite'
 import { log } from './utils/consola'
+import { ignisTailwindcssFix } from './utils/tailwind'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
@@ -67,7 +68,9 @@ export function setFeatures() {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_UI = uiPreset = 'off'
   }
 
+  let tailwindFixRequired = false
   if (uiPreset === 'nuxt-ui' || process.env.NUXT_PUBLIC_IGNIS_UI === 'true') {
+    tailwindFixRequired = true
     nuxtConfig.modules.push('@nuxt/ui')
     // import tailwind css file
     nuxtConfig = defu({
@@ -85,6 +88,7 @@ export function setFeatures() {
 
     // evaluate separate Tailwind CSS module
     if (uiPreset === 'tailwind' || (process.env.NUXT_PUBLIC_IGNIS_TAILWIND === 'true' && uiPreset !== 'nuxt-ui')) {
+      tailwindFixRequired = true
       // nuxtConfig.modules.push('@nuxtjs/tailwindcss') // temporary disabled until v7 is released
       extras.push('Tailwind CSS')
       // import tailwind css file
@@ -95,6 +99,15 @@ export function setFeatures() {
         },
       }, nuxtConfig)
     }
+  }
+
+  // TODO occasionaly check https://github.com/tailwindlabs/tailwindcss/discussions/16119 for solution
+  if (tailwindFixRequired) {
+    nuxtConfig = defu({
+      vite: {
+        plugins: [ignisTailwindcssFix],
+      },
+    }, nuxtConfig)
   }
 
   // database
