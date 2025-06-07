@@ -43,21 +43,6 @@ Set the value via `NUXT_PUBLIC_IGNIS_PRESET_FORMS` env variable.
 
 Setting the forms preset will override individual settings for `vueform` and  `formkit` modules.
 
-### Vueform notice
-In order to use `vueform` via Nuxt Ignis, is currently required to create a custom config file in the root of your project named `vueform.config.ts` with following contents:
-
-```ts
-import { defineConfig } from '@vueform/vueform'
-
-const vueformConfig = await loadDefaultVueformConfig()
-
-export default defineConfig(vueformConfig)
-```
-
-This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/vueform/vueform.config.ts) to inject `Vueform` into your project. The extra step is required as it seems not possible to transfer the config file from the layer.
-
-Alternatively, you can ignore Nuxt Ignis' default config and create your own file based on [Vueform docs](https://vueform.com/docs/installation#manual-installation) (check instructions for Nuxt).
-
 ## Optional modules
 Currently, following modules are optional:
 - `@nuxt/ui` - set `NUXT_PUBLIC_IGNIS_UI` to `true | false`
@@ -82,10 +67,49 @@ Default values are **false** (not included) for all optional modules.
 - you can select default language locale via `NUXT_PUBLIC_IGNIS_FORMKIT_LOCALE`
 - if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob//core/main/formkit.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG`
 
-### Nuxt SEO notice
+### Nuxt SEO usage notice
 If you allow `@nuxtjs/seo` module and also set `NUXT_PUBLIC_IGNIS_SSR=false`, modules from  Nuxt SEO pack  requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce warning on startup.
 
 If you set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.
+
+### Vueform usage notice
+In order to use `vueform` via Nuxt Ignis, is currently required to create a custom config file in the root of your project named `vueform.config.ts` with following contents:
+
+```ts
+import { defineConfig } from '@vueform/vueform'
+
+const vueformConfig = await loadDefaultVueformConfig()
+
+export default defineConfig(vueformConfig)
+```
+
+This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/vueform/vueform.config.ts) to inject `Vueform` into your project. The extra step is required as it seems not possible to transfer the config file from the layer.
+
+Alternatively, you can ignore Nuxt Ignis' default config and create your own file based on [Vueform docs](https://vueform.com/docs/installation#manual-installation) (check instructions for Nuxt).
+
+### Nuxt Content usage notice
+In order to use `@nuxt-content` via Nuxt Ignis, is currently required to create a custom config file in the root of your project named `content.config.ts` with following contents:
+
+```ts
+import { loadContentConfig } from 'nuxt-ignis'
+
+export default loadContentConfig({
+  // here you can pass extra config that will be defu-merged with the default  
+  // custom collections (different than the default "content") can be defined here 
+  // via speciall exposed `defineContentCollection`
+  // collections: {
+  //   demo: defineContentCollection({
+  //     source: '**',
+  //     type: 'page',
+  //   }),
+  // },
+})
+
+```
+
+This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/config/content.config.ts) to enable default `@nuxt-content` collection in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
+
+Alternatively, you can ignore Nuxt Ignis' default config and create your own file based on [Nuxt Content docs](https://content.nuxt.com/docs/getting-started/installation#create-your-first-collection).
 
 ## Optional features
 Currently, following extra features (not using separate Nuxt Modules) are optional:

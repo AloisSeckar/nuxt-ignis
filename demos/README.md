@@ -11,3 +11,7 @@ This folder contains various implementations of `nuxt-ignis` module. Those mini-
 05. DB presets
     - a) `neon` module enabled
     - b) `supabase` module enabled
+06. Form presets
+    - a) `vueform` module enabled
+    - b) `formkit` module enabled
+07. Content - `@nuxt/content` module enabled
