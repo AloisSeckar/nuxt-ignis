@@ -1,16 +1,19 @@
-// this function adresses https://github.com/AloisSeckar/nuxt-ignis/issues/71
-// Vueform requires its configuration to be injected and config exported
-// this normally happens in vueform.config.ts file in project root
-// however, it is not possible to transfer this config file when extending a layer
-// user only have to setup small custom config file in his own project
-// more info in the docs
-// TODO can this be changed? can layer's "auto-imports" be configured?
+// this functions shield configuration processing
+// when Nuxt Ignis' vueform.config.ts is presented
+// but the related module is not allowed by .env settings
 
-export async function loadDefaultVueformConfig() {
+import { getVueformConfig } from './config/vueform'
+
+// @ts-expect-error no-implicit-any
+// TODO set proper type for the object
+export function loadVueformConfig(userVueformConfig) {
+  // only if Vueform is allowed
   const config = useRuntimeConfig().public.ignis
   if (config.preset.forms === 'vueform' || config.vueform === true) {
-    const vueformConfig = await import('./config/vueform.config')
-    return vueformConfig.default
+    // defu-merge nuxt-ignis default with possible user values
+    return getVueformConfig(userVueformConfig)
   }
-  return null
+  // otherwise throw warning and return just a dummy object
+  log.warn('loadVueformConfig: Vueform is not enabled, settings will take no effect')
+  return {}
 }

@@ -1,5 +1,4 @@
-import { defineConfig } from '@vueform/vueform'
+// explicit imports due to some issue with auto-loading in /demo folder
+import { loadVueformConfig } from '../../core/utils/vueform'
 
-const vueformConfig = await loadDefaultVueformConfig()
-
-export default defineConfig(vueformConfig)
+export default loadVueformConfig({})

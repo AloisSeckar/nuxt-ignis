@@ -76,11 +76,11 @@ If you set `ssr: false` directly in your project's `nuxt.config.ts`, modules men
 In order to use `vueform` via Nuxt Ignis, is currently required to create a custom config file in the root of your project named `vueform.config.ts` with following contents:
 
 ```ts
-import { defineConfig } from '@vueform/vueform'
-
-const vueformConfig = await loadDefaultVueformConfig()
-
-export default defineConfig(vueformConfig)
+export default loadVueformConfig({
+  // custom config here
+  // here you can pass extra config that will be defu-merged 
+  // with the defaults provided by nuxt-ignis 
+})
 ```
 
 This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/config/vueform.config.ts) to inject `Vueform` into your project. The extra step is required as it seems not possible to transfer the config file from the layer.
@@ -91,12 +91,17 @@ Alternatively, you can ignore Nuxt Ignis' default config and create your own fil
 In order to use `@nuxt-content` via Nuxt Ignis, is currently required to create a custom config file in the root of your project named `content.config.ts` with following contents:
 
 ```ts
-import { loadContentConfig } from 'nuxt-ignis'
+// NOTE: explicit import seems to be required
+import { loadContentConfig } from './utils/content'
 
 export default loadContentConfig({
-  // here you can pass extra config that will be defu-merged with the default  
-  // custom collections (different than the default "content") can be defined here 
-  // via speciall exposed `defineContentCollection`
+  // custom config here
+  // here you can pass extra config that will be defu-merged 
+  // with defaults provided by nuxt-ignis 
+  //
+  // custom collections (different than the default "content")
+  // can be defined here via special `defineContentCollection`:
+  //
   // collections: {
   //   demo: defineContentCollection({
   //     source: '**',
@@ -104,7 +109,6 @@ export default loadContentConfig({
   //   }),
   // },
 })
-
 ```
 
 This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/config/content.config.ts) to enable default `@nuxt-content` collection in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
