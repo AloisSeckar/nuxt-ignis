@@ -87,6 +87,7 @@ const nuxtConfig = defu(ignisFeatures, {
           config: './formkit.config.ts', // path to config file
         },
         vueform: false, // true/false
+        valibot: false, // true/false
         zod: false, // true/false
         content: false, // true/false
         openprops: false, // true/false
