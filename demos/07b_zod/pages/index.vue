@@ -19,7 +19,7 @@ const LoginSchema = z.object({
   password: z.string(),
 })
 
-// TODO this is not possible with current way of importing zod
+// TODO this is not possible with current way of importing Zod
 // "z" is not available as a namespace
 // inferred type for using in app
 // type Login = z.infer<typeof LoginSchema>;
