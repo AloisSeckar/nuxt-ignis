@@ -158,6 +158,46 @@ describe('setFeatures() unit tests', () => {
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/forms-formkit.txt')
   })
 
+  // preset - validation
+
+  test('setFeatures() - validation preset - valibot', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = 'valibot'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-valibot.txt')
+  })
+
+  test('setFeatures() - validation preset - zod', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = 'zod'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-zod.txt')
+  })
+
+  test('setFeatures() - validation preset - off', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = 'off'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-off.txt')
+  })
+
+  test('setFeatures() - validation preset - invalid', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = 'invalid'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-off.txt')
+  })
+
+  // validation - set directly
+
+  test('setFeatures() - validation - valibot', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_VALIBOT = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-valibot.txt')
+  })
+
+  test('setFeatures() - validation - zod', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_ZOD = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-zod.txt')
+  })
+
   // disable "core" features
   test('setFeatures() - disable core features', async () => {
     process.env.NUXT_PUBLIC_IGNIS_CORE_ESLINT = 'false'

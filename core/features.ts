@@ -176,6 +176,19 @@ export function setFeatures() {
     }, nuxtConfig)
   }
 
+  // validation
+  let validationPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION
+  if (validationPreset && !['zod', 'valibot'].includes(validationPreset)) {
+    // surpress other values
+    process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = validationPreset = 'off'
+  }
+  if (validationPreset === 'zod' || process.env.NUXT_PUBLIC_IGNIS_ZOD === 'true') {
+    extras.push('zod')
+  }
+  if (validationPreset === 'valibot' || process.env.NUXT_PUBLIC_IGNIS_VALIBOT === 'true') {
+    extras.push('valibot')
+  }
+
   // seo
   // 2025/04 - must be before @nuxt/content (https://nuxtseo.com/docs/nuxt-seo/guides/nuxt-content)
   if (process.env.NUXT_PUBLIC_IGNIS_SEO === 'true') {

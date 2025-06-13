@@ -56,6 +56,7 @@ const nuxtConfig = defu(ignisFeatures, {
           ui: 'off', // nuxt-ui/tailwind/off
           db: 'off', // neon/supabase/off
           forms: 'off', // formkit/vueform/off
+          validation: 'off', // valibot/zod/off
         },
 
         // core modules

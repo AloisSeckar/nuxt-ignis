@@ -30,6 +30,8 @@
       <AppFeature :active="i18n" :text="useIgnisT('features.i18n')" />
       <AppFeature :active="vueform" :text="useIgnisT('features.vueform')" />
       <AppFeature :active="formkit" :text="useIgnisT('features.formkit')" />
+      <AppFeature :active="valibot" :text="useIgnisT('features.valibot')" />
+      <AppFeature :active="zod" :text="useIgnisT('features.zod')" />
       <AppFeature :active="content" :text="useIgnisT('features.content')" />
       <AppFeature :active="seo" :text="useIgnisT('features.seo')" />
       <AppFeature :active="auth" :text="useIgnisT('features.auth')" />
@@ -63,6 +65,9 @@ const i18n = setup.i18n.enabled
 const forms = setup.preset.forms
 const vueform = forms === 'vueform' || (forms === 'off' && setup.vueform)
 const formkit = forms === 'formkit' || (forms === 'off' && setup.formkit.enabled)
+const validation = setup.preset.validation
+const valibot = validation === 'valibot' || (validation === 'off' && setup.valibot)
+const zod = validation === 'zod' || (validation === 'off' && setup.zod)
 const content = setup.content
 const seo = setup.seo
 const auth = setup.auth

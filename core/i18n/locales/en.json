@@ -24,6 +24,8 @@
         "neon" : "Neon for DB services",
         "formkit" : "FormKit for input forms",
         "vueform" : "Vueform for input forms",
+        "valibot" : "Valibot for schema validation",
+        "zod": "Zod for schema validation",
         "content" : "Nuxt Content for creating and editing content",
         "seo" : "Nuxt SEO collection of SEO-related modules",
         "auth" : "Nuxt Auth Utils for easy and secure authentication",

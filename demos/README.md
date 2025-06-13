@@ -14,4 +14,7 @@ This folder contains various implementations of `nuxt-ignis` module. Those mini-
 06. Form presets
     - a) `vueform` module enabled
     - b) `formkit` module enabled
-07. Content - `@nuxt/content` module enabled
+07. Validation presets
+    - a) `valibot` module enabled
+    - b) `zod` module enabled
+08. Content - `@nuxt/content` module enabled
