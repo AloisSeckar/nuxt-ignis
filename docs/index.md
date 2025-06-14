@@ -9,10 +9,10 @@ hero:
   actions:
     - theme: brand
       text: Get started
-      link: /1-installation
+      link: /1-1-introduction
     - theme: alt
-      text: Full reference
-      link: /2-1-overview
+      text: Configuration
+      link: /2-1-configuration
 
 features:
   - title: Single dependency

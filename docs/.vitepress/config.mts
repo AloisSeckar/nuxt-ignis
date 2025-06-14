@@ -9,22 +9,23 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: 'Home', link: '/' },
-      { text: 'Get started', link: '/1-installation' },
-      { text: 'Full reference', link: '/2-1-overview' }
+      { text: 'Get started', link: '/1-1-introduction' },
+      { text: 'Configuration', link: '/2-1-configuration' }
     ],
 
     sidebar: [
       {
         text: 'Get started',
         items: [
-          { text: 'Installation', link: '/1-installation' },
+          { text: 'Introduction', link: '/1-1-introduction' },
+          { text: 'Overview', link: '/1-2-overview' },
+          { text: 'Installation', link: '/1-3-installation' },
         ]
       },
       {
-        text: 'Full reference',
+        text: 'Configuration',
         items: [
-          { text: 'Overview', link: '/2-1-overview' },
-          { text: 'Configuration', link: '/2-2-configuration' },
+          { text: 'Configuration', link: '/2-1-configuration' },
         ]
       }
     ],
@@ -35,7 +36,7 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the <a href="https://github.com/AloisSeckar/nuxt-ignis/blob/main/LICENSE">MIT License</a>',
-      copyright: 'Copyright © 2023-present <a href="https://alois-seckar.cz/">Alois Sečkár</a>'
+      copyright: 'Copyright © 2024-present <a href="https://alois-seckar.cz/">Alois Sečkár</a>'
     }
   }
 })
