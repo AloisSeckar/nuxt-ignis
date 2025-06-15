@@ -20,7 +20,7 @@ The list includes:
 - handful tools for working with images via [`@nuxt/image`](https://image.nuxt.com/)
 - simple integration of various fonts via [`@nuxt/fonts`](https://fonts.nuxt.com/)
 - optimized scripts loading via [`@nuxt/scripts`](https://scripts.nuxt.com/)
-- logging via [`consola](https://github.com/unjs/consola)
+- logging via [`consola`](https://github.com/unjs/consola)
 
 ## Optional features
 Optional features are disabled by default, but can be opted-in. 

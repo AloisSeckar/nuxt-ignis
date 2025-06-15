@@ -26,6 +26,8 @@ export default defineConfig({
         text: 'Configuration',
         items: [
           { text: 'Configuration', link: '/2-1-configuration' },
+          { text: 'Core features', link: '/2-2-core-features' },
+          { text: 'Optional features', link: '/2-3-optional-features' },
         ]
       }
     ],
