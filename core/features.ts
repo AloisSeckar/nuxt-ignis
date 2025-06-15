@@ -262,6 +262,10 @@ export function setFeatures() {
     if (used.includes('@vueform/nuxt') && used.includes('@formkit/nuxt')) {
       log.warn('You have both Form solution provider modules (Vueform and Formkit) active, which is not recommended. If this is intentional, you can use `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.')
     }
+    // validation - not imported as modules
+    if (extras.includes('zod') && extras.includes('valibot')) {
+      log.warn('You have both validation libraries (Zod and Valibot) active, which is not recommended. If this is intentional, you can use `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.')
+    }
   }
 
   // 5. verify results
