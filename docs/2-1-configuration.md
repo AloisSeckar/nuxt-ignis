@@ -8,3 +8,6 @@ See [Core features](/2-2-core-features) for a list of core features that are inc
 
 ## Optional features
 See [Optional features](/2-3-optional-features) for a list of optional features that can be enabled in your project.
+
+## More info
+See details about Nuxt Ignis in [Features section](/3-1-features)

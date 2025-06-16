@@ -10,7 +10,8 @@ export default defineConfig({
     nav: [
       { text: 'Home', link: '/' },
       { text: 'Get started', link: '/1-1-introduction' },
-      { text: 'Configuration', link: '/2-1-configuration' }
+      { text: 'Configuration', link: '/2-1-configuration' },
+      { text: 'Features', link: '/3-1-features' }
     ],
 
     sidebar: [
@@ -28,8 +29,15 @@ export default defineConfig({
           { text: 'Configuration', link: '/2-1-configuration' },
           { text: 'Core features', link: '/2-2-core-features' },
           { text: 'Optional features', link: '/2-3-optional-features' },
+          { text: 'Full reference', link: '/2-4-full-reference' },
         ]
-      }
+      },
+      {
+        text: 'Features',
+        items: [
+          { text: 'Index', link: '/3-1-features' },
+        ]
+      },
     ],
 
     socialLinks: [

@@ -76,7 +76,7 @@ Default values are **false** (not included) for all optional modules.
 
 ### Formkit options
 - you can select default language locale via `NUXT_PUBLIC_IGNIS_FORMKIT_LOCALE`
-- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob//core/main/formkit.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG`
+- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/core/main/formkit.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG`
 
 ### Nuxt SEO usage notice
 If you allow `@nuxtjs/seo` module and also set `NUXT_PUBLIC_IGNIS_SSR=false`, modules from  Nuxt SEO pack  requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce warning on startup.
@@ -170,9 +170,12 @@ Currently, it is possible to override following Nuxt config via .env variables:
 - `NUXT_PUBLIC_IGNIS_PAGES` - set to `false` to disable multiple pages in simple projects (results in `pages: false` in Nuxt Config)
 
 ## Extra behavior
-By default, Nuxt Ignis doesn't recommend mixing DB and Form solutions. If both `Neon` and `Supabase` or `Vueform` and `Formkit` is used, a warning will be triggered on startup. For use cases when having both varitants together is appropriate and desired, you can set `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.
+By default, Nuxt Ignis doesn't recommend mixing preset solutions. If for example both `Neon` and `Supabase` are used, a warning will be triggered on startup. For use cases when having both variants together is appropriate and desired, you can set `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.
 
 ## Logging
 Use `NUXT_PUBLIC_INGIS_LOG_LEVEL` to set level of log messages captured with `consola`. The default value is `info`.
 
 Possible values are: `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose`
+
+## More info
+See details about Nuxt Ignis in [Features section](/3-1-features)

@@ -13,6 +13,9 @@ hero:
     - theme: alt
       text: Configuration
       link: /2-1-configuration
+    - theme: alt
+      text: Features
+      link: /3-1-features
 
 features:
   - title: Single dependency
