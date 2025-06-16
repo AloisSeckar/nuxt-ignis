@@ -13,6 +13,9 @@
     "overrides": {
       "esbuild": "^0.25.0",
       "vite": "^5.4.19"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
