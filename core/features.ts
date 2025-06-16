@@ -38,11 +38,6 @@ export function setFeatures() {
     nuxtConfig.modules.push('@nuxt/image')
   }
 
-  // https://pinia.vuejs.org/ssr/nuxt.html
-  if (process.env.NUXT_PUBLIC_IGNIS_CORE_PINIA !== 'false') {
-    nuxtConfig.modules.push('@pinia/nuxt')
-  }
-
   // https://scripts.nuxt.com/
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS !== 'false') {
     nuxtConfig.modules.push('@nuxt/scripts')
@@ -56,6 +51,11 @@ export function setFeatures() {
   // https://nuxt.com/modules/vueuse
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_VUEUSE !== 'false') {
     nuxtConfig.modules.push('@vueuse/nuxt')
+  }
+
+  // https://pinia.vuejs.org/ssr/nuxt.html
+  if (process.env.NUXT_PUBLIC_IGNIS_CORE_PINIA !== 'false') {
+    nuxtConfig.modules.push('@pinia/nuxt')
   }
 
   // 2. optional modules & features

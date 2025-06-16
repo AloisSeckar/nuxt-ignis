@@ -65,11 +65,10 @@ const nuxtConfig = defu(ignisFeatures, {
           eslint: true,
           fonts: true,
           image: true,
-          pinia: true,
-          time: true,
           scripts: true,
           security: true,
           vueuse: true,
+          pinia: true,
         },
 
         // optional modules
