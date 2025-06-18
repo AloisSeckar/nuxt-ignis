@@ -21,11 +21,11 @@ useHead({
 })
 initConsola()
 
-log.info('Nuxt Ignis was here!')
-
 const config = useRuntimeConfig().public.ignis
 const pages = config.pages
 const ui = config.ui || config.preset.ui
+
+log.info('Nuxt Ignis initialized')
 </script>
 
 <style scoped>

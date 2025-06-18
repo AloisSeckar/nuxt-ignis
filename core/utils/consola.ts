@@ -4,7 +4,7 @@
 import type { LogLevel, LogObject } from 'consola/core'
 import { LogLevels, createConsola } from 'consola/core'
 import { consola } from 'consola'
-import { useDateFormat } from '@vueuse/core'
+import { format } from 'date-fns'
 
 // default instance to write into browser's console
 const defaultReporter = consola
@@ -73,7 +73,7 @@ function transformLog(logObj: LogObject): string {
     logBody = JSON.stringify(logBody)
   }
 
-  const timestamp = useDateFormat(new Date(), 'YYYY-MM-DD HH:mm:ss.SSS').value
+  const timestamp = format(new Date(), 'yyyy-MM-dd HH:mm:ss.SSS')
   logBody = timestamp + '\n' + logBody
 
   if (logObj.level <= LogLevels.warn) {

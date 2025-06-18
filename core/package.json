@@ -52,6 +52,7 @@
     "@vueuse/core": "13.3.0",
     "@vueuse/nuxt": "13.3.0",
     "consola": "3.4.2",
+    "date-fns": "4.1.0",
     "defu": "6.1.4",
     "elrh-pslo": "1.1.6",
     "nuxt-auth-utils": "0.5.20",
