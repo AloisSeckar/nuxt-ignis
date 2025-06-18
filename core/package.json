@@ -47,10 +47,10 @@
     "@nuxtjs/supabase": "1.5.1",
     "@nuxtjs/tailwindcss": "6.14.0",
     "@pinia/nuxt": "0.11.1",
+    "@tailwindcss/vite": "4.1.8",
     "@vueform/nuxt": "1.15.0",
     "@vueuse/core": "13.3.0",
     "@vueuse/nuxt": "13.3.0",
-    "@tailwindcss/vite": "4.1.8",
     "consola": "3.4.2",
     "defu": "6.1.4",
     "elrh-pslo": "1.1.6",
@@ -86,5 +86,5 @@
       "vue-demi"
     ]
   },
-  "packageManager": "pnpm@10.11.0"
+  "packageManager": "pnpm@10.12.1"
 }
