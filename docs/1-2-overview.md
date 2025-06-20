@@ -36,11 +36,12 @@ The list includes:
   - **I18N** - translations and internalization made easy via [`@nuxtjs/i18n`](hhttps://i18n.nuxtjs.org/) 
   - **FormKit** - for handling input forms via [`@formkit/nuxt`](https://nuxt.com/modules/formkit) 
   - **Vueform** - for handling input forms via [`@vueform/nuxt`](https://nuxt.com/modules/vueform) 
-  - **Content** - for working with website content in `.md` or `.json` via [`@nuxt/content`](https://content.nuxt.com/) 
-  - **Open Props** - extra CSS styles via [Open Props](https://open-props.style/)
-  - **pslo** - treating single letter words at the end of line via [elrh-pslo](https://open-props.style/)
+  - **Content** - for working with website content in `.md` or `.json` via [`@nuxt/content`](https://content.nuxt.com/)
   - **SEO** - collection of SEO-related modules via [Nuxt SEO](https://nuxtseo.com/)
   - **Auth Utils** -  easy and secure authentication via [nuxt-auth-utils](https://nuxt.com/modules/auth-utils)
+  - **Open Props** - extra CSS styles via [Open Props](https://open-props.style/)
+  - **Vue Equipment** - collectio of Vue utilities via [Vue Equipment](https://www.vue.equipment/)
+  - **pslo** - treating single letter words at the end of line via [elrh-pslo](https://open-props.style/)
 
 ## Flexibility
 You control is guaranted via `.env` variables. Learn more in the [Configuration](/2-1-overview) section.

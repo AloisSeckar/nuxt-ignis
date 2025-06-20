@@ -214,6 +214,29 @@ export function setFeatures() {
     nuxtConfig.modules.push('nuxt-auth-utils')
   }
 
+  // https://www.vue.equipment/
+  if (process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED === 'true') {
+    nuxtConfig.modules.push('@maas/vue-equipment/nuxt')
+    // composables to be included
+    if (process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES) {
+      // values MUST be delimited by "," (spaces will be trimmed)
+      nuxtConfig = defu({
+        vueEquipment: {
+          composables: process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES.split(',').map(p => p?.trim()),
+        },
+      }, nuxtConfig)
+    }
+    // plugins to be included
+    if (process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS) {
+      // values MUST be delimited by "," (spaces will be trimmed)
+      nuxtConfig = defu({
+        vueEquipment: {
+          plugins: process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS.split(',').map(p => p?.trim()),
+        },
+      }, nuxtConfig)
+    }
+  }
+
   // Open Props CSS
   if (process.env.NUXT_PUBLIC_IGNIS_OPENPROPS === 'true') {
     extras.push('Open Props CSS')

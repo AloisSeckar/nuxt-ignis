@@ -1,0 +1,22 @@
+{
+  "modules": [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "nuxt-security",
+    "@vueuse/nuxt",
+    "@pinia/nuxt",
+    "@maas/vue-equipment/nuxt",
+  ],
+  "vue": {
+    "compilerOptions": {
+      "isCustomElement": [Function],
+    },
+  },
+  "vueEquipment": {
+    "composables": [
+      "useScrollTo",
+    ],
+  },
+}

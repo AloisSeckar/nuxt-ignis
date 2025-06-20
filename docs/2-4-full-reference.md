@@ -54,6 +54,8 @@ Other configurable options:
 | `NUXT_PUBLIC_IGNIS_I18N_CONFIG` | `string` | `/i18n.config.ts` | Set path to `i18n` config file |
 | `NUXT_PUBLIC_IGNIS_FORMKIT_LOCALE` | `string` | `en` | Set default locale for `@formkit/nuxt` |
 | `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG` | `string` | `/formkit.config.ts` | Set path to `@formkit/nuxt` config file |
+| `NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES` | `string` | `''` | Coma-separated list of `Vue Equipment` composables to be imported |
+| `NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS` | `string` | `''` | Coma-separated list of `Vue Equipment` plugins to be imported |
 | `NUXT_PUBLIC_IGNIS_PSLO_CONTENT` | `boolean` | `false` | If both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function |
 | `NUXT_PUBLIC_IGNIS_SSR` | `boolean` | `true` | Set to `false` to disable Nuxt SSR |
 | `NUXT_PUBLIC_IGNIS_PAGES` | `boolean` | `true` | Set to `false` to disable multiple pages and routing |

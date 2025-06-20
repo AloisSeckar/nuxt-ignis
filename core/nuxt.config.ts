@@ -90,13 +90,18 @@ const nuxtConfig = defu(ignisFeatures, {
         valibot: false, // true/false
         zod: false, // true/false
         content: false, // true/false
+        seo: false, // true/false
+        auth: false, // true/false
         openprops: false, // true/false
         pslo: {
           enabled: false, // true/false (elrh-pslo will (not) be used)
           content: false, // true/false (elrh-pslo will (not) be aplied on nuxt-content)
         },
-        seo: false, // true/false
-        auth: false, // true/false
+        equipment: {
+          enabled: false, // true/false
+          composables: '', // list of Vue Equipment composables
+          plugins: '', // list of Vue Equipment plugins
+        },
 
         // extra behavior
         warn: {

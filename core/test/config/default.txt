@@ -1,0 +1,16 @@
+{
+  "modules": [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "nuxt-security",
+    "@vueuse/nuxt",
+    "@pinia/nuxt",
+  ],
+  "vue": {
+    "compilerOptions": {
+      "isCustomElement": [Function],
+    },
+  },
+}

@@ -48,4 +48,5 @@ This section contains the full list of NPM packages included in Nuxt Ignis.
 | `valibot` | `1.1.0` | Schema validation solution |
 | `open-props` | `1.7.15` | Pre-defined CSS classes library |
 | `postcss-jit-props` | `1.0.16` | PostCSS plugin to inject `open-props` |
+| `@maas/vue-equipment` | `1.0.0-beta.30` | Collection of Vue utilities |
 | `elrh-pslo` | `1.1.6` | Utility for adding non-breakable spaces into text |

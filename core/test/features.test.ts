@@ -228,4 +228,12 @@ describe('setFeatures() unit tests', () => {
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/enable-all.txt')
   })
+
+  // Vue Equipment
+
+  test('setFeatures() - Vue Equipment - none', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/equipment.txt')
+  })
 })

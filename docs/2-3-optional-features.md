@@ -131,6 +131,7 @@ Currently, following extra features (not using separate Nuxt Modules) are option
 - `valibot` - set `NUXT_PUBLIC_IGNIS_VALIBOT` to `true | false`
 - `zod` - set `NUXT_PUBLIC_IGNIS_ZOD` to `true | false`
 - `Open Props CSS` - set `NUXT_PUBLIC_IGNIS_OPENPROPS` to `true | false`
+- `Vue Equipment` - set `NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED` to `true | false`
 - `elrh-pslo` - set `NUXT_PUBLIC_IGNIS_PSLO_ENABLED` to `true | false`
 
 Default values are **false** (not included) for all optional features.
@@ -158,6 +159,11 @@ const v = (await useValibot())!
 You can then use `v` object as you would normally do in your project.
 
 No**NOTE:** We are using `await` here, because the import is dynamic at runtime. And because the composable may technically return `undefined` (only if the relevant setting is not enabled), we add exclamation mark to avoid TS complaints.
+
+### Vue Equipment options
+There are two config values for this feature:
+- `NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES` - which `Vue Equipment` composables should be imported (coma-separated list)
+- `NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS` - which `Vue Equipment` plugins should be imported (coma-separated list)
 
 ### elrh-pslo options
 There are two config values for this feature:

@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@formkit/nuxt": "1.6.9",
+    "@maas/vue-equipment": "1.0.0-beta.30",
     "@nuxt/content": "3.5.1",
     "@nuxt/eslint": "1.4.1",
     "@nuxt/fonts": "0.11.4",
