@@ -21,8 +21,8 @@ This section contains the full list of NPM packages included in Nuxt Ignis.
 | `@nuxt/image` | `1.10.0` | Official module for optimizing images |
 | `@nuxt/scripts` | `0.11.8` | Official module for integrating 3rd party scripts |
 | `nuxt-security` | `2.2.0` | Module for establishing best security practices |
-| `@vueuse/core` | `13.3.0` | Collection of handy Vue utility functions |
-| `@vueuse/nuxt` | `13.3.0` | Nuxt connector for `VueUse` |
+| `@vueuse/core` | `13.4.0` | Collection of handy Vue utility functions |
+| `@vueuse/nuxt` | `13.4.0` | Nuxt connector for `VueUse` |
 | `pinia` | `0.11.1` | Current ecosystem standard for state management |
 | `@pinia/nuxt` | `0.11.1` | Nuxt connector for `pinia` |
 
@@ -31,20 +31,20 @@ This section contains the full list of NPM packages included in Nuxt Ignis.
 | --- | --- | :-- |
 | `@nuxt/ui` | `3.1.3` | Official UI library for Nuxt (free version) |
 | `@nuxtjs/tailwindcss` | `6.14.0` | Connector module for `Tailwind CSS` (**TEMP DISABLED**) |
-| `@tailwindcss/vite` | `4.1.8` | Vite connector for `Tailwind CSS` (**TEMP WORKAROUND**) |
+| `@tailwindcss/vite` | `4.1.10` | Vite connector for `Tailwind CSS` (**TEMP WORKAROUND**) |
 | `nuxt-neon` | `0.6.2` | Connector module for `Neon` database |
-| `@nuxtjs/supabase` | `1.5.1` | Connector module for `Supabase` database |
-| `@vueform/nuxt` | `1.15.0` | Connector module for `Vueform` form builder |
+| `@nuxtjs/supabase` | `1.5.2` | Connector module for `Supabase` database |
+| `@vueform/nuxt` | `1.16.0` | Connector module for `Vueform` form builder |
 | `@formkit/nuxt` | `1.6.9` | Connector module for `FormKit` form builder |
 | `@nuxtjs/i18n` | `9.5.5` | Module for adding `i18n` internalization into apps |
-| `@nuxt/content` | `3.5.1` | Official module for displaying `.md` content |
+| `@nuxt/content` | `3.6.1` | Official module for displaying `.md` content |
 | `@nuxtjs/seo` | `3.0.3` | Official module for easier SEO configuration |
 | `nuxt-auth-utils` | `0.5.20` | Module for easier authentication |
 
 ## Packages of optional features
 | Package | Version | Description |
 | --- | --- | :-- |
-| `zod` | `3.25.64` | Schema validation solution |
+| `zod` | `3.25.67` | Schema validation solution |
 | `valibot` | `1.1.0` | Schema validation solution |
 | `open-props` | `1.7.15` | Pre-defined CSS classes library |
 | `postcss-jit-props` | `1.0.16` | PostCSS plugin to inject `open-props` |
