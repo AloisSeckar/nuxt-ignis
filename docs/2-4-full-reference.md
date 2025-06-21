@@ -59,6 +59,7 @@ Other configurable options:
 | `NUXT_PUBLIC_IGNIS_PSLO_CONTENT` | `boolean` | `false` | If both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function |
 | `NUXT_PUBLIC_IGNIS_SSR` | `boolean` | `true` | Set to `false` to disable Nuxt SSR |
 | `NUXT_PUBLIC_IGNIS_PAGES` | `boolean` | `true` | Set to `false` to disable multiple pages and routing |
+| `NUXT_PUBLIC_IGNIS_ERROR` | `boolean` | `true` | Set to `false` to turn default error and warn handlers off |
 | `NUXT_PUBLIC_IGNIS_WARN_DUPLICATES` | `boolean` | `true` | Set to `false` to allow more than more preset solutions at once |
 | `NUXT_PUBLIC_INGIS_LOG_LEVEL` | `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose` | `info` | Set level of log messages captured with `consola` |
 

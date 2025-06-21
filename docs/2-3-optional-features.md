@@ -183,5 +183,10 @@ Use `NUXT_PUBLIC_INGIS_LOG_LEVEL` to set level of log messages captured with `co
 
 Possible values are: `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose`
 
+## Error handling
+By default, Nuxt Ignis registers global Vue [error](https://vuejs.org/api/application.html#app-config-errorhandler) and [warn](https://vuejs.org/api/application.html#app-config-warnhandler) handler to process errors and warnings in your app. The error/warn object is sent to `consola` error/warn function. Additional info provided by Vue is also captured in debug mode. Check the implementation [here](https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/heads/main/core/plugins/errorHandler.ts).
+
+If you don't want to rely on the default behavior, you can disable those handlers by setting `NUXT_PUBLIC_IGNIS_ERROR` to `false`.
+
 ## More info
-See details about Nuxt Ignis in [Features section](/3-1-features)
+See details about technologies available via Nuxt Ignis in [Features section](/3-1-features)

@@ -62,29 +62,39 @@ function getLogLevel(logLevel: string): LogLevel {
 }
 
 /**
- * Enhance received log object, which should be logged.
- * Add current date+time and trim irrelevant call-stack for warn/errors.
+ * Enhance received log object before it is logged.
+ * Add current date+time and trim irrelevant callstack for warn/errors.
  * @param logObj Object to be logged
- * @returns Enhanced object to be logged
+ * @returns Enhanced string to be logged
  */
 function transformLog(logObj: LogObject): string {
-  let logBody = logObj.args[0]
-  if (typeof logBody !== 'string') {
-    logBody = JSON.stringify(logBody)
+  const logData = logObj.args[0]
+
+  let logBody
+  if (typeof logData === 'string') {
+    logBody = logData
+  } else {
+    if ('message' in logData) {
+      logBody = logData.message
+    } else {
+      logBody = JSON.stringify(logData, null, 2)
+    }
   }
 
+  // add timestamp to the log body
   const timestamp = format(new Date(), 'yyyy-MM-dd HH:mm:ss.SSS')
   logBody = timestamp + '\n' + logBody
 
+  // for warns and errors the stack is parsed to display only relevant records
+  // (= coming from your own codebase)
   if (logObj.level <= LogLevels.warn) {
-    const fullStack = new Error(logBody).stack
+    const fullStack = logData.stack as string
     const filteredStack = fullStack?.split('\n    at ').filter(x => !x.includes('node_modules'))
-    const relevantStack = filteredStack?.slice(0, filteredStack.length - 3)
-    if (relevantStack?.length && logObj.level <= LogLevels.warn) {
+    if (filteredStack?.length && logObj.level <= LogLevels.warn) {
       if (logObj.level === LogLevels.warn) {
-        relevantStack[0] = relevantStack[0]!.replace('Error:', 'Warn:')
+        filteredStack[0] = filteredStack[0]!.replace('Error:', 'Warn:')
       }
-      logBody = timestamp + '\n' + relevantStack.join('\n\tat ')
+      logBody = timestamp + '\n' + filteredStack.join('\n\tat ')
     }
   }
 

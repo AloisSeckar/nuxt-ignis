@@ -47,6 +47,9 @@ const nuxtConfig = defu(ignisFeatures, {
           level: 'info',
         },
 
+        // central error handler
+        error: true, // true/false
+
         // nuxt-related config
         ssr: true, // true/false
         pages: true, // true/false
