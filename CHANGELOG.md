@@ -1,8 +1,16 @@
 # Changelog
 
+## 0.3.3 (2025-06-21)
+- feat: schema validation via `zod` and `valibot` integrated
+- feat: `Vue Equipment` utils collection integrated
+- feat: global error and warn handlers are now available by default
+- feat: `date-fns` is now used to get timestamps for logs
+- fix: redesigned `Vueform` and `Nuxt Content` config loading
+- docs: improved structure + added more information
+
 ## 0.3.2 (2025-06-07)
 - feat: (slightly) better solution for using `Vueform` and `@nuxt-content` (see usage notice in docs)
-- fix: incorrect "both DB connector modules" warning
+- fix: incorrect _"both DB connector modules"_ warning
 - fix: provide solution for Tailwind CSS sourcemap warning during build
 - build: bump `Nuxt` to `3.17.5` + update all other deps to latest versions (as of 2025-06-07)
 
