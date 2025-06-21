@@ -1,0 +1,48 @@
+{
+  "css": [
+    "C:\Git\nuxt-ignis\core\assets\css\tailwind.css",
+  ],
+  "modules": [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "nuxt-security",
+    "@vueuse/nuxt",
+    "@pinia/nuxt",
+  ],
+  "vite": {
+    "plugins": [
+      {
+        "apply": "build",
+        "configResolved": [Function],
+        "name": "vite-plugin-ignore-sourcemap-warnings",
+      },
+      [
+        {
+          "configResolved": [Function],
+          "configureServer": [Function],
+          "enforce": "pre",
+          "name": "@tailwindcss/vite:scan",
+        },
+        {
+          "apply": "serve",
+          "enforce": "pre",
+          "name": "@tailwindcss/vite:generate:serve",
+          "transform": [Function],
+        },
+        {
+          "apply": "build",
+          "enforce": "pre",
+          "name": "@tailwindcss/vite:generate:build",
+          "transform": [Function],
+        },
+      ],
+    ],
+  },
+  "vue": {
+    "compilerOptions": {
+      "isCustomElement": [Function],
+    },
+  },
+}

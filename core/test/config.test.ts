@@ -21,6 +21,73 @@ describe('nuxtConfig unit tests', () => {
     await expect(nuxtConfig).toMatchFileSnapshot('./config/default.txt')
   })
 
+  // UI
+
+  test('nuxtConfig - UI - Nuxt UI', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_UI = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/ui-nuxt-ui.txt')
+  })
+
+  test('nuxtConfig - UI - Tailwind', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_TAILWIND = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/ui-tailwind.txt')
+  })
+
+  // DB
+
+  test('nuxtConfig - DB - Neon', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_NEON = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/db-neon.txt')
+  })
+
+  test('nuxtConfig - DB - Supabase', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_SUPABASE = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/db-supabase.txt')
+  })
+
+  // forms
+
+  test('nuxtConfig - Forms - Vueform', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_VUEFORM = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/forms-vueform.txt')
+  })
+
+  test('nuxtConfig - Forms - Formkit', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/forms-formkit.txt')
+  })
+
+  // i18n
+
+  test('nuxtConfig - i18n', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_I18N_ENABLED = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/i18n.txt')
+  })
+
+  // SEO
+
+  test('nuxtConfig - SEO + ssr=false', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_SEO = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_SSR = 'false'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/seo-ssr-false.txt')
+  })
+
+  // Open Props
+
+  test('nuxtConfig - Open Props', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_OPENPROPS = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/open-props.txt')
+  })
+
   // Vue Equipment
 
   test('nuxtConfig - Vue Equipment - 1 composable', async () => {

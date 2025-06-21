@@ -1,0 +1,24 @@
+{
+  "css": [
+    "C:\Git\nuxt-ignis\core\assets\css\nuxt-ui.css",
+  ],
+  "modules": [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "nuxt-security",
+    "@vueuse/nuxt",
+    "@pinia/nuxt",
+    "@nuxt/ui",
+  ],
+  "vite": {
+    "plugins": [
+      {
+        "apply": "build",
+        "configResolved": [Function],
+        "name": "vite-plugin-ignore-sourcemap-warnings",
+      },
+    ],
+  },
+}

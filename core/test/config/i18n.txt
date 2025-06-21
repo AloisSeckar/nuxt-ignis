@@ -1,0 +1,27 @@
+{
+  "i18n": {
+    "bundle": {
+      "optimizeTranslationDirective": false,
+    },
+    "locales": [
+      "en",
+    ],
+    "strategy": "no_prefix",
+    "vueI18n": "./i18n.config.ts",
+  },
+  "modules": [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "nuxt-security",
+    "@vueuse/nuxt",
+    "@pinia/nuxt",
+    "@nuxtjs/i18n",
+  ],
+  "vue": {
+    "compilerOptions": {
+      "isCustomElement": [Function],
+    },
+  },
+}

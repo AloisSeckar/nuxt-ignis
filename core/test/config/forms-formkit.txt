@@ -1,0 +1,21 @@
+{
+  "formkit": {
+    "autoImport": true,
+    "configFile": "./formkit.config.ts",
+  },
+  "modules": [
+    "@nuxt/eslint",
+    "@nuxt/fonts",
+    "@nuxt/image",
+    "@nuxt/scripts",
+    "nuxt-security",
+    "@vueuse/nuxt",
+    "@pinia/nuxt",
+    "@formkit/nuxt",
+  ],
+  "vue": {
+    "compilerOptions": {
+      "isCustomElement": [Function],
+    },
+  },
+}
