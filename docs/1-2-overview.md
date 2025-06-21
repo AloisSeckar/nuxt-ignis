@@ -44,7 +44,7 @@ The list includes:
   - **pslo** - treating single letter words at the end of line via [elrh-pslo](https://open-props.style/)
 
 ## Flexibility
-You control is guaranted via `.env` variables. Learn more in the [Configuration](/2-1-overview) section.
+You control is guaranted via `.env` variables. Learn more in the [Configuration](/2-1-configuration) section.
 
 ## Installation
 Continue to the [Installation](/1-3-installation) section for instructions on how to add `nuxt-ignis` into your Nuxt project.
