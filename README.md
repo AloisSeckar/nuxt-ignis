@@ -8,6 +8,8 @@ However, instead of being heavily opinionated as usual, Nuxt Ignis is **optionat
 
 The project will improve and grow together with my skills. And - hopefully - through addressing the feedback from you, the (future) users. I also try to include **WHAT** and **WHY** comments based on my knowledge about the framework and used libraries.
 
+See [CHANGELOG](https://nuxt-ignis.netlify.app/4-1-changelog.html) for the latest changes.
+
 ## How to use
 
 `nuxt-ignis` is available as [NPM package](https://www.npmjs.com/package/nuxt-ignis) that can be referenced as a single dependency with all the features incoming.

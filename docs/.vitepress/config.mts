@@ -11,7 +11,8 @@ export default defineConfig({
       { text: 'Home', link: '/' },
       { text: 'Get started', link: '/1-1-introduction' },
       { text: 'Configuration', link: '/2-1-configuration' },
-      { text: 'Features', link: '/3-1-features' }
+      { text: 'Features', link: '/3-1-features' },
+      { text: 'Changelog', link: '/4-1-changelog' }
     ],
 
     sidebar: [
@@ -36,6 +37,12 @@ export default defineConfig({
         text: 'Features',
         items: [
           { text: 'Index', link: '/3-1-features' },
+        ]
+      },
+      {
+        text: 'Changelog',
+        items: [
+          { text: 'Changelog', link: '/4-1-changelog' },
         ]
       },
     ],

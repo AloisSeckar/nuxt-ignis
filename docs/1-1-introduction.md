@@ -8,7 +8,9 @@ The main goal is to abstract from difficult and repetitive dependency management
 
 Nuxt Ignis incorporates a number of modules and features. But to keep the setup flexible as well, the end user controls what will appear in the final bundle. This is technically achieved by (not) adding modules and configuration into `nuxt.config.ts`. Although this file must remain static at build time and cannot be changed afterwards, it can be dynamically prepared. During this phase, `.env` variables can be used to adjust what makes it into the actual build.
 
-Learn more about the idea in the [Configuration](/2-1-configuration) section.
+Learn more about the idea in the [configuration](/2-1-configuration) section.
+
+See [changelog](4-1-changelog.html) for the latest changes.
 
 ## What is Nuxt Ignis?
 

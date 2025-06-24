@@ -16,6 +16,9 @@ hero:
     - theme: alt
       text: Features
       link: /3-1-features
+    - theme: alt
+      text: Changelog
+      link: /4-1-changelog
 
 features:
   - title: Single dependency
