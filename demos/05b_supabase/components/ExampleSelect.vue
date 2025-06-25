@@ -5,13 +5,13 @@
   </div>
   <div>
     <img
-        v-for="value in data"
-        :key="value.id"
-        :src="value?.image"
-        :alt="value?.name"
-        :title="`${value?.name} - ${value?.dscr}`"
-        class="supabase"
-      >
+      v-for="value in data"
+      :key="value.id"
+      :src="value?.image"
+      :alt="value?.name"
+      :title="`${value?.name} - ${value?.dscr}`"
+      class="supabase"
+    >
   </div>
 </template>
 

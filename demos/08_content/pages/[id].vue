@@ -2,15 +2,21 @@
   <div>
     <h1>Ignis Content demo</h1>
     <div>
-        <ContentRenderer
-          v-if="page"
-          :value="page"
-        />
+      <ContentRenderer
+        v-if="page"
+        :value="page"
+      />
     </div>
     <div>
-      <NuxtLink to="/demo1" :external="true">First</NuxtLink>
+      <NuxtLink
+        to="/demo1"
+        :external="true"
+      >First</NuxtLink>
       &bull;
-      <NuxtLink to="/demo2" :external="true">Second</NuxtLink>
+      <NuxtLink
+        to="/demo2"
+        :external="true"
+      >Second</NuxtLink>
     </div>
   </div>
 </template>

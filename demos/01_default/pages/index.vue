@@ -1,12 +1,14 @@
 <template>
+  <div>
     <h1>Nuxt Ignis demo</h1>
     <ClientOnly>
-        {{ timestamp }}
+      {{ timestamp }}
     </ClientOnly>
+  </div>
 </template>
 
 <script setup lang="ts">
- // TEST if date-fns is available
+// TEST if date-fns is available
 import { format } from 'date-fns'
 
 // ClientOnly to avoid hydration issues

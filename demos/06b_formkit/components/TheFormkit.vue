@@ -1,9 +1,9 @@
 <template>
-    <div>
-      {{ formState }}
-    </div>
-    <div>
-      <FormKit
+  <div>
+    {{ formState }}
+  </div>
+  <div>
+    <FormKit
       v-slot="{ value }"
       type="form"
       submit-label="Odeslat"
@@ -59,8 +59,8 @@
         help="Check to mark as completed"
       />
     </FormKit>
-    </div>
-</template> 
+  </div>
+</template>
 
 <script setup lang="ts">
 type Bio = {
