@@ -18,3 +18,4 @@ This folder contains various implementations of `nuxt-ignis` module. Those mini-
     - a) `valibot` module enabled
     - b) `zod` module enabled
 08. Content - `@nuxt/content` module enabled
+09. Vue Equipment - `@maas/vue-equipment` module enabled

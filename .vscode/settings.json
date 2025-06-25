@@ -5,5 +5,9 @@
         "source.fixAll.eslint": "explicit"
     },
     // ESlint flat config
-    "eslint.useFlatConfig": true
+    "eslint.useFlatConfig": true,
+    // allow multiple eslint configurations
+    "eslint.workingDirectories": [
+        { "mode": "auto" },
+    ],
 }

@@ -6,14 +6,17 @@
     "dev": "nuxt dev"
   },
   "devDependencies": {
+    "@nuxt/eslint": "1.4.1",
+    "better-sqlite3": "11.10.0",
     "nuxt": "3.17.5",
-    "better-sqlite3": "11.10.0"
+    "typescript": "5.8.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
-      "better-sqlite3",
       "@parcel/watcher",
-      "esbuild"
+      "better-sqlite3",
+      "esbuild",
+      "unrs-resolver"
     ]
   }
 }

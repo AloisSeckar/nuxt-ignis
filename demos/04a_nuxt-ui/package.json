@@ -7,12 +7,15 @@
     "build": "nuxt build"
   },
   "devDependencies": {
-    "nuxt": "3.17.5"
+    "@nuxt/eslint": "1.4.1",
+    "nuxt": "3.17.5",
+    "typescript": "5.8.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@parcel/watcher",
-      "esbuild"
+      "esbuild",
+      "unrs-resolver"
     ]
   }
 }

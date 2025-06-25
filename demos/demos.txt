@@ -1,0 +1,13 @@
+01_default
+..\02_bare
+..\03_full
+..\04a_nuxt-ui
+..\04b_tailwind
+..\05a_neon
+..\05b_supabase
+..\06a_vueform
+..\06b_formkit
+..\07a_valibot
+..\07b_zod
+..\08_content
+..\09_equipment
