@@ -12,7 +12,8 @@ export default defineConfig({
       { text: 'Get started', link: '/1-1-introduction' },
       { text: 'Configuration', link: '/2-1-configuration' },
       { text: 'Features', link: '/3-1-features' },
-      { text: 'Changelog', link: '/4-1-changelog' }
+      { text: 'Changelog', link: '/4-1-changelog' },
+      { text: 'Contributing', link: '/5-1-contributing' },
     ],
 
     sidebar: [
@@ -43,6 +44,12 @@ export default defineConfig({
         text: 'Changelog',
         items: [
           { text: 'Changelog', link: '/4-1-changelog' },
+        ]
+      },
+      {
+        text: 'Contributing',
+        items: [
+          { text: 'Contributing guide', link: '/5-1-contributing' },
         ]
       },
     ],

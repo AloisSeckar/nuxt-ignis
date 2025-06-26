@@ -39,3 +39,7 @@ You are ready to build your next awesome project in Nuxt!
 ## Docs
 
 Learn more and check all the configuration options at **[Nuxt Ignis Docs](https://nuxt-ignis.netlify.app)**
+
+## Contributing
+
+If you want to help making Nuxt Ignis better, please check our [Contributing Guide](https://nuxt-ignis.netlify.app/5-1-contributing).
