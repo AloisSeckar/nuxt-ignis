@@ -38,6 +38,7 @@ export default defineConfig({
         text: 'Features',
         items: [
           { text: 'Index', link: '/3-1-features' },
+          { text: 'UI', link: '/3-2-features-ui' },
         ]
       },
       {
