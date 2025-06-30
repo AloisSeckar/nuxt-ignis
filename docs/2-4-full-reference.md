@@ -31,7 +31,7 @@ Following Nuxt modules/features are disabled by default and can be opted-in by s
 | `NUXT_PUBLIC_IGNIS_AUTH` | `boolean` | `false` | Enable or disable `nuxt-auth-utils` module |
 | `NUXT_PUBLIC_IGNIS_VALIBOT` | `boolean` | `false` | Enable or disable `valibot` |
 | `NUXT_PUBLIC_IGNIS_ZOD` | `boolean` | `false` | Enable or disable `zod` |
-| `NUXT_PUBLIC_IGNIS_AUTH` | `boolean` | `false` | Enable or disable `Open Props CSS` |
+| `NUXT_PUBLIC_IGNIS_OPENPROPS` | `boolean` | `false` | Enable or disable `Open Props CSS` |
 | `NUXT_PUBLIC_IGNIS_PSLO_ENABLED` | `boolean` | `false` | Enable or disable `elrh-pslo` |
 
 ## Presets
