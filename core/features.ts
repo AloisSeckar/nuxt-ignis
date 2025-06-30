@@ -74,7 +74,7 @@ export function setFeatures() {
     nuxtConfig.modules.push('@nuxt/ui')
     // import tailwind css file
     nuxtConfig = defu({
-      css: [join(currentDir, './assets/css/nuxt-ui.css')],
+      css: [join(currentDir, './assets/css/ignis-nuxt-ui.css')],
     }, nuxtConfig)
   } else {
     // remove @nuxt/ui-specific components from resolution if module is not used
@@ -93,7 +93,7 @@ export function setFeatures() {
       extras.push('Tailwind CSS')
       // import tailwind css file
       nuxtConfig = defu({
-        css: [join(currentDir, './assets/css/tailwind.css')],
+        css: [join(currentDir, './assets/css/ignis-tailwind.css')],
         vite: {
           plugins: [tailwindcss()], // temporary integration using Vite plugin directly
         },
@@ -242,7 +242,7 @@ export function setFeatures() {
     extras.push('Open Props CSS')
     nuxtConfig = defu({
       // import Open Prpops stylesheet
-      css: [join(currentDir, './assets/css/open-props.css')],
+      css: [join(currentDir, './assets/css/ignis-open-props.css')],
       // CSS processor for Open Props
       postcss: {
         plugins: {

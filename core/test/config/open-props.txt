@@ -1,6 +1,6 @@
 {
   "css": [
-    "C:\Git\nuxt-ignis\core\assets\css\open-props.css",
+    "C:\Git\nuxt-ignis\core\assets\css\ignis-open-props.css",
   ],
   "modules": [
     "@nuxt/eslint",

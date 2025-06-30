@@ -3,13 +3,16 @@
   https://ui.nuxt.com/getting-started/installation/nuxt#import-tailwind-css-and-nuxt-ui-in-your-css
 
   NUXT_PUBLIC_IGNIS_PRESET_UI=nuxt-ui or NUXT_PUBLIC_IGNIS_UI=true is required for se this feature
+
+  If enabled, this file will be included in `css` section of nuxt.config.ts.
+  If only Tailwind is enabled, `ignis-tailwind.css` will be used instead.
 */
 
 @import "tailwindcss";
 @import "@nuxt/ui";
 
 /*
-// Tailwind v4 way of defining custom classes
+// Tailwind v4 way of defining custom c.lasses
 @utility <name> {
   // css rules here
 }

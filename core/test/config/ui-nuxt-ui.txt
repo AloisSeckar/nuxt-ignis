@@ -1,6 +1,6 @@
 {
   "css": [
-    "C:\Git\nuxt-ignis\core\assets\css\nuxt-ui.css",
+    "C:\Git\nuxt-ignis\core\assets\css\ignis-nuxt-ui.css",
   ],
   "modules": [
     "@nuxt/eslint",
