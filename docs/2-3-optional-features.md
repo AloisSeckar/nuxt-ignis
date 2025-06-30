@@ -175,6 +175,9 @@ Currently, it is possible to override following Nuxt config via .env variables:
 - `NUXT_PUBLIC_IGNIS_SSR` - set to `false` to disable SSR (results in `ssr: false` in Nuxt Config)
 - `NUXT_PUBLIC_IGNIS_PAGES` - set to `false` to disable multiple pages in simple projects (results in `pages: false` in Nuxt Config)
 
+## Custom CSS
+You can provide paths to your custom CSS files via `NUXT_PUBLIC_IGNIS_CSS` environment variable. The paths must be delimited by comma (`,`). White spaces will be trimmed.
+
 ## Extra behavior
 By default, Nuxt Ignis doesn't recommend mixing preset solutions. If for example both `Neon` and `Supabase` are used, a warning will be triggered on startup. For use cases when having both variants together is appropriate and desired, you can set `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.
 

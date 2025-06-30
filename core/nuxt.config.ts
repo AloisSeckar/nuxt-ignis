@@ -54,6 +54,9 @@ const nuxtConfig = defu(ignisFeatures, {
         ssr: true, // true/false
         pages: true, // true/false
 
+        // custom css files
+        css: '',
+
         // presets
         preset: {
           ui: 'off', // nuxt-ui/tailwind/off

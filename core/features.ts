@@ -275,6 +275,15 @@ export function setFeatures() {
     nuxt.push('pages=false')
   }
 
+  // custom CSS files
+  if (process.env.NUXT_PUBLIC_IGNIS_CSS) {
+    // values MUST be delimited by "," (spaces will be trimmed)
+    nuxtConfig = defu({
+      css: process.env.NUXT_PUBLIC_IGNIS_CSS.split(',').map(p => p?.trim()),
+    }, nuxtConfig)
+    nuxt.push('custom CSS')
+  }
+
   // 4. warn if duplicate modules find
   // this means e.g. 2 database modules or 2 form solutions
   if (process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES !== 'false') {

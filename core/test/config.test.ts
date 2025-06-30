@@ -111,4 +111,38 @@ describe('nuxtConfig unit tests', () => {
     const nuxtConfig = setFeatures()
     await expect(nuxtConfig).toMatchFileSnapshot('./config/equipment-all.txt')
   })
+
+  // custom CSS files
+  test('nuxtConfig - custom CSS files - single', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_CSS = 'first.css '
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/css-single.txt')
+  })
+
+  test('nuxtConfig - custom CSS files - multiple', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_CSS = ' first.css , second.css,third.css'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/css-multiple.txt')
+  })
+
+  test('nuxtConfig - custom CSS files - with Nuxt UI', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_CSS = 'custom.css'
+    process.env.NUXT_PUBLIC_IGNIS_UI = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/css-nuxt-ui.txt')
+  })
+
+  test('nuxtConfig - custom CSS files - with Tailwind CSS', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_CSS = 'custom.css'
+    process.env.NUXT_PUBLIC_IGNIS_TAILWIND = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/css-tailwind.txt')
+  })
+
+  test('nuxtConfig - custom CSS files - with Open Props', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_CSS = 'custom.css'
+    process.env.NUXT_PUBLIC_IGNIS_OPENPROPS = 'true'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/css-open-props.txt')
+  })
 })
