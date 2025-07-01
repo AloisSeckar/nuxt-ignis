@@ -89,16 +89,6 @@ Currently, following extra features (not using separate Nuxt Modules) are option
 
 Default values are **false** (not included) for all optional features.
 
-### Vue Equipment options
-There are two config values for this feature:
-- `NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES` - which `Vue Equipment` composables should be imported (coma-separated list)
-- `NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS` - which `Vue Equipment` plugins should be imported (coma-separated list)
-
-### elrh-pslo options
-There are two config values for this feature:
-- `NUXT_PUBLIC_IGNIS_PSLO_ENABLED` - setting to true will allow utility function `pslo` to treat texts in your app
-- `NUXT_PUBLIC_IGNIS_PSLO_CONTENT` - if both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function
-
 ## Nuxt config overrides
 Currently, it is possible to override following Nuxt config via .env variables:
 - `NUXT_PUBLIC_IGNIS_SSR` - set to `false` to disable SSR (results in `ssr: false` in Nuxt Config)
