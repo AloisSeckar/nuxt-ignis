@@ -79,34 +79,6 @@ If you allow `@nuxtjs/seo` module and also set `NUXT_PUBLIC_IGNIS_SSR=false`, mo
 
 If you set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.
 
-### Nuxt Content usage notice
-In order to use `@nuxt-content` via Nuxt Ignis, it is currently required to create a custom config file in the root of your project named `content.config.ts` with following contents:
-
-```ts [content.config.ts]
-// NOTE: explicit import seems to be required
-import { loadContentConfig } from './utils/content'
-
-export default loadContentConfig({
-  // custom config here
-  // here you can pass extra config that will be defu-merged 
-  // with defaults provided by nuxt-ignis 
-  //
-  // custom collections (different than the default "content")
-  // can be defined here via special `defineContentCollection`:
-  //
-  // collections: {
-  //   demo: defineContentCollection({
-  //     source: '**',
-  //     type: 'page',
-  //   }),
-  // },
-})
-```
-
-This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/config/content.config.ts) to enable default `@nuxt-content` collection in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
-
-Referencing config like this allows to pass in a custom config that will be defu-merged with the defaults provided by Nuxt Ignis. Alternatively, you can completely ignore Nuxt Ignis' default config and create your own file based on [Nuxt Content docs](https://content.nuxt.com/docs/getting-started/installation#create-your-first-collection).
-
 ## Optional features
 Currently, following extra features (not using separate Nuxt Modules) are optional:
 - `valibot` - set `NUXT_PUBLIC_IGNIS_VALIBOT` to `true | false`
