@@ -89,26 +89,5 @@ Currently, following extra features (not using separate Nuxt Modules) are option
 
 Default values are **false** (not included) for all optional features.
 
-## Nuxt config overrides
-Currently, it is possible to override following Nuxt config via .env variables:
-- `NUXT_PUBLIC_IGNIS_SSR` - set to `false` to disable SSR (results in `ssr: false` in Nuxt Config)
-- `NUXT_PUBLIC_IGNIS_PAGES` - set to `false` to disable multiple pages in simple projects (results in `pages: false` in Nuxt Config)
-
-## Custom CSS
-You can provide paths to your custom CSS files via `NUXT_PUBLIC_IGNIS_CSS` environment variable. The paths must be delimited by comma (`,`). White spaces will be trimmed.
-
-## Extra behavior
-By default, Nuxt Ignis doesn't recommend mixing preset solutions. If for example both `Neon` and `Supabase` are used, a warning will be triggered on startup. For use cases when having both variants together is appropriate and desired, you can set `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.
-
-## Logging
-Use `NUXT_PUBLIC_INGIS_LOG_LEVEL` to set level of log messages captured with `consola`. The default value is `info`.
-
-Possible values are: `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose`
-
-## Error handling
-By default, Nuxt Ignis registers global Vue [error](https://vuejs.org/api/application.html#app-config-errorhandler) and [warn](https://vuejs.org/api/application.html#app-config-warnhandler) handler to process errors and warnings in your app. The error/warn object is sent to `consola` error/warn function. Additional info provided by Vue is also captured in debug mode. Check the implementation [here](https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/heads/main/core/plugins/errorHandler.ts).
-
-If you don't want to rely on the default behavior, you can disable those handlers by setting `NUXT_PUBLIC_IGNIS_ERROR` to `false`.
-
 ## More info
 See details about technologies available via Nuxt Ignis in [Features section](/3-1-features)

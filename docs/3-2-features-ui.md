@@ -24,7 +24,7 @@ To abstract users from the requirment of [adding CSS files manually](https://ui.
 @import "@nuxt/ui";
 ```
 
-If you need your custom CSS files to be added, you can use `NUXT_PUBLIC_IGNIS_CSS` setting to defu-merge them into `nuxt.config.ts`.
+Your custom CSS files may be added via [dedicated option](#custom-css).
 
 ## Tailwind CSS
 - Packages: `@tailwindcss/vite`
@@ -52,9 +52,9 @@ To abstract users from the requirment of [adding CSS files manually](https://tai
 @import "tailwindcss";
 ```
 
-If you need your custom CSS files to be added, you can use `NUXT_PUBLIC_IGNIS_CSS` setting to defu-merge them into `nuxt.config.ts`.
+Your custom CSS files may be added via [dedicated option](#custom-css).
 
-In order to use `Tailwind CSS` utility classes in your custom CSS files, you still need to import `tailwindcss` set in each of them:
+**Note:** In order to use `Tailwind CSS` utility classes in your custom CSS files, you still need to import `tailwindcss` set in each of them:
 
 ```css [custom.css]
 @import "tailwindcss";
@@ -86,4 +86,24 @@ To abstract users from the requirment of adding CSS files manually, Nuxt Ignis i
 }
 ```
 
-If you need your custom CSS files to be added, you can use `NUXT_PUBLIC_IGNIS_CSS` setting to defu-merge them into `nuxt.config.ts`.
+Your custom CSS files may be added via [dedicated option](#custom-css).
+
+## Custom CSS
+You can provide paths to your custom CSS files via `NUXT_PUBLIC_IGNIS_CSS` environment variable. The values must be valid CSS file paths delimited by commas (`,`). Nuxt aliases (eg. `@` or `~`) are supported. Whitespaces around will be trimmed, so it doesn't matter if you add or omit them.
+
+For example:
+
+```[.env]
+NUXT_PUBLIC_IGNIS_CSS='@/assets/custom1.css, @/assets/custom2.css'
+```
+
+Provided values will be defu-merged into `nuxt.config.ts` under `css` property::
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  css: [
+    '@/assets/custom1.css',
+    '@/assets/custom2.css'
+  ]
+})
+```
