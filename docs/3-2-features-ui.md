@@ -56,6 +56,14 @@ To abstract users from the requirment of [adding CSS files manually](https://tai
 
 If you need your custom CSS files to be added, you can use `NUXT_PUBLIC_IGNIS_CSS` setting to defu-merge them into `nuxt.config.ts`.
 
+In order to use `Tailwind CSS` utility classes in your custom CSS files, you still need to import `tailwindcss` set in each of them:
+
+```css
+@import "tailwindcss";
+
+/* your custom CSS with Tailwind utility classes */
+```
+
 ## Open Props
 - Packages: `open-props`
 - Version: `1.7.15`
