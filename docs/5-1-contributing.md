@@ -32,6 +32,7 @@ Nuxt Ignis uses [Vitest](https://vitest.dev/) for testing. More specificly, it u
 - `@nuxt/test-utils` for testing Nuxt stuff
 
 ### Test suite
+
 To run the test suite, use the following command:
 
 ```[pnpm]

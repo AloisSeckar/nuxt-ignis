@@ -1,7 +1,9 @@
 # UI features
+
 Nuxt Ignis contains following customizable UI related features:
 
-## Nuxt UI
+## Nuxt UI integration
+
 - Packages: `@nuxt/ui`
 - Version: `3.1.3`
 
@@ -26,7 +28,8 @@ To abstract users from the requirment of [adding CSS files manually](https://ui.
 
 Your custom CSS files may be added via [dedicated option](#custom-css).
 
-## Tailwind CSS
+## Tailwind CSS integration
+
 - Packages: `@tailwindcss/vite`
 - Version: `4.1.10`
 
@@ -62,7 +65,8 @@ Your custom CSS files may be added via [dedicated option](#custom-css).
 /* your custom CSS with Tailwind utility classes */
 ```
 
-## Open Props
+## Open Props integration
+
 - Packages: `open-props`
 - Version: `1.7.15`
 
@@ -89,6 +93,7 @@ To abstract users from the requirment of adding CSS files manually, Nuxt Ignis i
 Your custom CSS files may be added via [dedicated option](#custom-css).
 
 ## Custom CSS
+
 You can provide paths to your custom CSS files via `NUXT_PUBLIC_IGNIS_CSS` environment variable. The values must be valid CSS file paths delimited by commas (`,`). Nuxt aliases (eg. `@` or `~`) are supported. Whitespaces around will be trimmed, so it doesn't matter if you add or omit them.
 
 For example:
@@ -97,7 +102,7 @@ For example:
 NUXT_PUBLIC_IGNIS_CSS='@/assets/custom1.css, @/assets/custom2.css'
 ```
 
-Provided values will be defu-merged into `nuxt.config.ts` under `css` property::
+Provided values will be [defu-merged](/2-1-configuration.html#defu-merge) into `nuxt.config.ts` under `css` property::
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({

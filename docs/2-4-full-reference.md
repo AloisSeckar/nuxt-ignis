@@ -1,20 +1,23 @@
 # Full reference
+
 Detailed list of all configuration options
 
 ## Core features
+
 Following Nuxt modules are enabled by default and can be opted-out by setting respective config value:
 
 | .env variable | Values | Default | Description |
 | --- | --- | --- | :--  |
-| `NUXT_PUBLIC_CORE_ESLINT` | `boolean` | `true` | Enable or disable `@nuxt/eslint` module |
-| `NUXT_PUBLIC_CORE_FONTS` | `boolean` | `true` | Enable or disable `@nuxt/fonts` module |
-| `NUXT_PUBLIC_CORE_IMAGE` | `boolean` | `true` | Enable or disable `@nuxt/image` module |
-| `NUXT_PUBLIC_CORE_SCRIPTS` | `boolean` | `true` | Enable or disable `@nuxt/scripts` module |
-| `NUXT_PUBLIC_CORE_SECURITY` | `boolean` | `true` | Enable or disable `nuxt-security` module |
-| `NUXT_PUBLIC_CORE_VUEUSE` | `boolean` | `true` | Enable or disable `@vueuse/nuxt` module |
-| `NUXT_PUBLIC_CORE_PINIA` | `boolean` | `true` | Enable or disable `@pinia/nuxt` module |
+| `NUXT_PUBLIC_IGNIS_CORE_ESLINT` | `boolean` | `true` | Enable or disable `@nuxt/eslint` module |
+| `NUXT_PUBLIC_IGNIS_CORE_FONTS` | `boolean` | `true` | Enable or disable `@nuxt/fonts` module |
+| `NUXT_PUBLIC_IGNIS_CORE_IMAGE` | `boolean` | `true` | Enable or disable `@nuxt/image` module |
+| `NUXT_PUBLIC_IGNIS_CORE_SCRIPTS` | `boolean` | `true` | Enable or disable `@nuxt/scripts` module |
+| `NUXT_PUBLIC_IGNIS_CORE_SECURITY` | `boolean` | `true` | Enable or disable `nuxt-security` module |
+| `NUXT_PUBLIC_IGNIS_CORE_VUEUSE` | `boolean` | `true` | Enable or disable `@vueuse/nuxt` module |
+| `NUXT_PUBLIC_IGNIS_CORE_PINIA` | `boolean` | `true` | Enable or disable `@pinia/nuxt` module |
 
 ## Optional modules/features
+
 Following Nuxt modules/features are disabled by default and can be opted-in by setting respective config value:
 
 | .env variable | Values | Default | Description |
@@ -59,6 +62,7 @@ Other configurable options:
 | `NUXT_PUBLIC_IGNIS_PSLO_CONTENT` | `boolean` | `false` | If both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function |
 | `NUXT_PUBLIC_IGNIS_CSS` | `string` | `''` | Coma-separated list of paths to custom CSS files to be included |
 | `NUXT_PUBLIC_IGNIS_PAGES` | `boolean` | `true` | Set to `false` to disable multiple pages and routing |
+| `NUXT_PUBLIC_IGNIS_SSR` | `boolean` | `true` | Set to `false` to disable server side rendering |
 | `NUXT_PUBLIC_IGNIS_ERROR` | `boolean` | `true` | Set to `false` to turn default error and warn handlers off |
 | `NUXT_PUBLIC_IGNIS_WARN_DUPLICATES` | `boolean` | `true` | Set to `false` to allow more than more preset solutions at once |
 | `NUXT_PUBLIC_IGNIS_LOG_LEVEL` | `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose` | `info` | Set level of log messages captured with `consola` |

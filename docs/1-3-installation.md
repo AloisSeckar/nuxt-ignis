@@ -1,8 +1,9 @@
 # Installation
 
-`nuxt-ignis` is available as [NPM package](https://www.npmjs.com/package/nuxt-ignis) that can be referenced as a single dependency with all the features incoming.
+`nuxt-ignis` is available as [NPM package](https://www.npmjs.com/package/nuxt-ignis) that can be referenced as a single dependency with all the features wrapped up.
 
 ## Adding to your project
+
 To enable `nuxt-ignis` in your Nuxt project, follow these steps:
 
 1) Add the following dependency into your `package.json`:
@@ -23,9 +24,10 @@ shamefully-hoist=true
 strict-peer-dependencies=false
 ```
 
-4) Setup your `.env` to fit your project needs. Check [Configuration](/2-1-configuration.html) section for reference.
+4) Setup your `.env` to fit your project needs. Check [the reference](/2-4-full-reference.html) for all available config options.
 
 5) **Congratulations!** You are ready to build your next awesome project in Nuxt!
 
-## Configuration
-Proceed to the [Configuration](/2-1-configuration.html) section to learn how to configure `nuxt-ignis` for your project.
+## More info
+
+- Proceed to the [Configuration](/2-1-configuration.html) section to get the big picture and learn how to set `nuxt-ignis` up for your project.

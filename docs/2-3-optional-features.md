@@ -4,11 +4,12 @@ So-called _"optional features"_ are disabled by default in Nuxt Ignis. You can t
 
 ## Presets
 
-For common functional areas in webapps you can choose from more than one option using special _"preset"_ configuration variables.
+For common functional areas of webapps you can choose from more than one option using special _"preset"_ configuration variables.
 
 The list of available presets currently includes:
 
 ### UI preset
+
 It is possible to pick from three options:
 - `nuxt-ui` - full https://ui.nuxt.com/ via `@nuxt/ui` connector module **[RECOMMENDED]**
 - `tailwind` - only https://tailwindcss.com/ via `@nuxtjs/tailwindcss` connector module
@@ -21,6 +22,7 @@ You can still use individual settings for `nuxt-ui` and  `tailwind` modules (che
 **NOTE:** Currently, this isn't actually _"one or another"_, as `nuxt-ui` is including `tailwind` (v4) automatically.
 
 ### Database preset
+
 It is possible to pick from three options:
 - `neon` - https://neon.tech/ via `nuxt-neon` connector module **[RECOMMENDED]**
 - `supabase` - https://supabase.com/ via `@nuxtjs/supabase` connector module
@@ -53,9 +55,13 @@ Set the value via `NUXT_PUBLIC_IGNIS_PRESET_VALIDATION` env variable.
 
 You can still use individual settings for `valibot` and  `zod` modules (check [Optional features](#optional-features) section).
 
+### Warning for duplicates
+
+By default, Nuxt Ignis doesn't recommend mixing preset solutions. If for example both `Neon` and `Supabase` database solutions are used, a warning will be triggered on startup. For use cases when having both variants together is appropriate and desired, you can set `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to suppress this warning.
+
 ## Optional modules
 
-Currently, following modules are optional:
+Currently, following modules are optional to use:
 - `@nuxt/ui` - set `NUXT_PUBLIC_IGNIS_UI` to `true | false`
 - `@nuxtjs/tailwindcss` - set `NUXT_PUBLIC_IGNIS_TAILWIND` to `true | false` (ignored if `NUXT_PUBLIC_IGNIS_UI=true`)
 - `nuxt-neon` - set `NUXT_PUBLIC_IGNIS_NEON` to `true | false`
@@ -70,16 +76,19 @@ Currently, following modules are optional:
 Default values are **false** (not included) for all optional modules.
 
 ### I18N options
+
 - you can select default language locale via `NUXT_PUBLIC_IGNIS_I18N_LOCALE`
 - all `.json` files with messages in `@/i18n/locales` folder will be auto-scanned.
 - if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/core/main/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`
 
 ### Nuxt SEO usage notice
+
 If you allow `@nuxtjs/seo` module and also set `NUXT_PUBLIC_IGNIS_SSR=false`, modules from  Nuxt SEO pack  requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce warning on startup.
 
 If you set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.
 
 ## Optional features
+
 Currently, following extra features (not using separate Nuxt Modules) are optional:
 - `valibot` - set `NUXT_PUBLIC_IGNIS_VALIBOT` to `true | false`
 - `zod` - set `NUXT_PUBLIC_IGNIS_ZOD` to `true | false`
@@ -90,4 +99,5 @@ Currently, following extra features (not using separate Nuxt Modules) are option
 Default values are **false** (not included) for all optional features.
 
 ## More info
-See details about technologies available via Nuxt Ignis in [Features section](/3-1-features)
+
+- See details about technologies available via Nuxt Ignis in [Features section](/3-1-features).

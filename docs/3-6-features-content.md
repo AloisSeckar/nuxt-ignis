@@ -1,7 +1,9 @@
 # Forms features
+
 Nuxt Ignis contains following customizable features related to content generation and displaying:
 
 ## Nuxt Content integration
+
 - Packages: `@nuxt/content`
 - Version: `3.6.1`
 
@@ -13,7 +15,7 @@ Nuxt Ignis contains following customizable features related to content generatio
 NUXT_PUBLIC_IGNIS_CONTENT=true
 ```
 
-### Usage notice
+### Nuxt Content usage notice
 
 In order to use `@nuxt-content` via Nuxt Ignis, it is currently required to create a custom config file in the root of your project named `content.config.ts` with following contents:
 
@@ -23,11 +25,9 @@ import { loadContentConfig } from './utils/content'
 
 export default loadContentConfig({
   // custom config here
-  // here you can pass extra config that will be defu-merged 
-  // with defaults provided by nuxt-ignis 
   //
   // custom collections (different than the default "content")
-  // can be defined here via special `defineContentCollection`:
+  // can be defined here via special `defineContentCollection`, e.g.:
   //
   // collections: {
   //   demo: defineContentCollection({
@@ -40,7 +40,7 @@ export default loadContentConfig({
 
 This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/config/content.config.ts) to enable default `@nuxt-content` collection in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
 
-Referencing config like this allows to pass in a custom config that will be defu-merged with the defaults provided by Nuxt Ignis. Alternatively, you can completely ignore Nuxt Ignis' default config and create your own file based on [Nuxt Content docs](https://content.nuxt.com/docs/getting-started/installation#create-your-first-collection).
+Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can completely ignore Nuxt Ignis' default config and create your own file based on [Nuxt Content docs](https://content.nuxt.com/docs/getting-started/installation#create-your-first-collection).
 
 ## `pslo` integration
 - Packages: `elrh-pslo`

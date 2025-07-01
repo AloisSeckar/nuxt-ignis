@@ -1,7 +1,9 @@
 # Validation features
+
 Nuxt Ignis offers two alternatives for schema validation:
 
-## Zod integration
+## Zod integration¨
+
 - Packages: `zod`
 - Version: `3.25.67`
 
@@ -30,6 +32,7 @@ You can then use `z` object as you would normally do in your project.
 **NOTE:** We are using `await` here, because the import is dynamic at runtime. And because the composable may technically return `undefined` (only if the relevant setting is not enabled), we add exclamation mark to avoid TS complaints.
 
 ## Valibot integration
+
 - Packages: `valibot`
 - Version: `1.1.0`
 

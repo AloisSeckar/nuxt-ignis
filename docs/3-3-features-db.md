@@ -1,7 +1,9 @@
 # DB features
+
 Nuxt Ignis contains following customizable DB related features:
 
 ## Neon integration
+
 - Packages: `nuxt-neon`
 - Version: `0.6.2`
 
@@ -28,6 +30,7 @@ To configure `Neon` connection you need to provide following env variables:
 For details and more config options see the [`nuxt-neon` docs](https://github.com/AloisSeckar/nuxt-neon).
 
 ## Supabase integration
+
 - Packages: `@nuxtjs/supabase`
 - Version: `1.5.2`
 

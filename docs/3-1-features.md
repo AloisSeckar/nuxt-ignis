@@ -1,7 +1,9 @@
 # Nuxt Ignis features
+
 This section contains the full list of NPM packages included in Nuxt Ignis.
 
 ## Packages of root features
+
 | Package | Version | Description |
 | --- | --- | :-- |
 | `nuxt` | `3.17.5` | Underlying Nuxt application itself |
@@ -14,6 +16,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis.
 | `nuxt-spec` | `0.0.4` | Experimental aggregated testing solution (`vitest` && `playwright` && Nuxt/Vue test utils) |
 
 ## Packages of core features
+
 | Package | Version | Description |
 | --- | --- | :-- |
 | `@nuxt/eslint` | `1.4.1` | Official module for code linting via `eslint` |
@@ -27,6 +30,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis.
 | `@pinia/nuxt` | `0.11.1` | Nuxt connector for `pinia` |
 
 ## Packages of optional modules
+
 | Package | Version | Description |
 | --- | --- | :-- |
 | `@nuxt/ui` | `3.1.3` | Official UI library for Nuxt (free version) |
@@ -42,6 +46,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis.
 | `nuxt-auth-utils` | `0.5.20` | Module for easier authentication |
 
 ## Packages of optional features
+
 | Package | Version | Description |
 | --- | --- | :-- |
 | `zod` | `3.25.67` | Schema validation solution |
