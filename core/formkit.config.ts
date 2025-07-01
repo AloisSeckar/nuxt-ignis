@@ -1,12 +1,12 @@
-// https://formkit.com/guides/optimizing-for-production#using-the-nuxt-module
-import { en, de, cs } from '@formkit/i18n'
-import type { DefaultConfigOptions } from '@formkit/vue'
+// minimal config for Formkit
+// currently required to be loaded like this...
 
-const ignisLocale = process.env.NUXT_PUBLIC_IGNIS_FORMKIT_DEFAULT || 'en'
+import { loadFormkitConfig } from './utils/formkit'
 
-const config: DefaultConfigOptions = {
-  locales: { en, de, cs }, // TODO allow multiple locales
-  locale: ignisLocale,
-}
+const config = loadFormkitConfig({
+  // custom config here
+})
 
+// Formkit expects default export of a `config` constant
+// `export default loadFormkitConfig({})` does not work
 export default config
