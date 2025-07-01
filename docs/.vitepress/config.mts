@@ -40,6 +40,7 @@ export default defineConfig({
         items: [
           { text: 'Index', link: '/3-1-features' },
           { text: 'UI', link: '/3-2-features-ui' },
+          { text: 'DB', link: '/3-3-features-db' },
         ]
       },
       {
