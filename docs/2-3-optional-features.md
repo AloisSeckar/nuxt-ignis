@@ -74,44 +74,10 @@ Default values are **false** (not included) for all optional modules.
 - all `.json` files with messages in `@/i18n/locales` folder will be auto-scanned.
 - if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/core/main/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`
 
-### Formkit options and usage notice
-- you can select default language locale via `NUXT_PUBLIC_IGNIS_FORMKIT_LOCALE`
-- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/core/main/formkit.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG`
-
-In order to use `formkit` via Nuxt Ignis, it is currently _advised_ to create a custom config file in the root of your project named `formkit.config.ts` with following contents:
-
-```ts [formkit.config.ts]
-const config = loadFormkitConfig({
-  // custom config here
-  // here you can pass extra config that will be defu-merged 
-  // with the defaults provided by nuxt-ignis 
-})
-export default config
-```
-
-This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/config/formkit.config.ts) to inject `Formkit` into your project. The extra step is required as it seems not possible to transfer the config file from the layer. Note that `export default config` is a required syntax as `Formkit` expects such export in `formkit.config.ts` file.
-
-Referencing config like this allows to pass in a custom config that will be defu-merged with the defaults provided by Nuxt Ignis. Alternatively, you can ignore Nuxt Ignis' default config and create your own file based on [Formkit docs](https://formkit.com/getting-started/installation) (check instructions for Nuxt).
-
 ### Nuxt SEO usage notice
 If you allow `@nuxtjs/seo` module and also set `NUXT_PUBLIC_IGNIS_SSR=false`, modules from  Nuxt SEO pack  requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce warning on startup.
 
 If you set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.
-
-### Vueform usage notice
-In order to use `vueform` via Nuxt Ignis, it is currently required to create a custom config file in the root of your project named `vueform.config.ts` with following contents:
-
-```ts [vueform.config.ts]
-export default loadVueformConfig({
-  // custom config here
-  // here you can pass extra config that will be defu-merged 
-  // with the defaults provided by nuxt-ignis 
-})
-```
-
-This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/utils/config/vueform.config.ts) to inject `Vueform` into your project. The extra step is required as it seems not possible to transfer the config file from the layer. 
-
-Referencing config like this allows to pass in a custom config that will be defu-merged with the defaults provided by Nuxt Ignis. Alternatively, you can ignore Nuxt Ignis' default config and create your own file based on [Vueform docs](https://vueform.com/docs/installation#manual-installation) (check instructions for Nuxt).
 
 ### Nuxt Content usage notice
 In order to use `@nuxt-content` via Nuxt Ignis, it is currently required to create a custom config file in the root of your project named `content.config.ts` with following contents:
