@@ -6,19 +6,19 @@
 To enable `nuxt-ignis` in your Nuxt project, follow these steps:
 
 1) Add the following dependency into your `package.json`:
-```
+```json [package.json]
 "nuxt-ignis": "0.3.3"
 ```
 
 2) Add following section into your `nuxt.config.ts`:
-```
+```ts [nuxt.config.ts]
 extends: [
   'nuxt-ignis'
 ]
 ```
 
 3) Add `.npmrc` file with following content (if you don't have it yet):
-```
+```[.npmrc]
 shamefully-hoist=true
 strict-peer-dependencies=false
 ```

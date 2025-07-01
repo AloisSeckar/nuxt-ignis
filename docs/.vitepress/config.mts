@@ -1,4 +1,5 @@
-import { defineConfig } from 'vitepress'
+import { defineConfig, type Plugin } from 'vitepress'
+import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -63,5 +64,21 @@ export default defineConfig({
       message: 'Released under the <a href="https://github.com/AloisSeckar/nuxt-ignis/blob/main/LICENSE">MIT License</a>',
       copyright: 'Copyright © 2024-present <a href="https://alois-seckar.cz/">Alois Sečkár</a>'
     }
-  }
+  },
+
+  markdown: {
+    config(md) {
+      md.use(groupIconMdPlugin)
+    }
+  },
+
+  vite: {
+    plugins: [
+      groupIconVitePlugin({
+        customIcon: {
+          // in case custom icons are needed...
+        }
+      }) as Plugin
+    ],
+  },
 })

@@ -19,8 +19,7 @@ NUXT_PUBLIC_IGNIS_PRESET_UI=nuxt-ui
 
 To abstract users from the requirment of [adding CSS files manually](https://ui.nuxt.com/getting-started/installation/nuxt#import-tailwind-css-and-nuxt-ui-in-your-css), Nuxt Ignis is automatically including `ignis-nuxt-ui.css` with necessary import directives:
 
-```css
-/* ignis-nuxt-ui.css */
+```css [ignis-nuxt-ui.css ~vscode-icons:file-type-css~]
 @import "tailwindcss";
 @import "@nuxt/ui";
 ```
@@ -49,8 +48,7 @@ NUXT_PUBLIC_IGNIS_PRESET_UI=tailwind
 
 To abstract users from the requirment of [adding CSS files manually](https://tailwindcss.com/docs/installation/), Nuxt Ignis is automatically including `ignis-tailwind.css` with necessary import directive:
 
-```css
-/* ignis-tailwind.css */
+```css [ignis-tailwind.css]
 @import "tailwindcss";
 ```
 
@@ -58,7 +56,7 @@ If you need your custom CSS files to be added, you can use `NUXT_PUBLIC_IGNIS_CS
 
 In order to use `Tailwind CSS` utility classes in your custom CSS files, you still need to import `tailwindcss` set in each of them:
 
-```css
+```css [custom.css]
 @import "tailwindcss";
 
 /* your custom CSS with Tailwind utility classes */
@@ -78,8 +76,7 @@ NUXT_PUBLIC_IGNIS_OPENPROPS=true
 
 To abstract users from the requirment of adding CSS files manually, Nuxt Ignis is automatically including `ignis-open-props.css` with necessary import directives. The file also contains definition for style shown on the `Ignis Features` overview page:
 
-```css
-/* ignis-open-props.css */
+```css [ignis-open-props.css]
 @import "open-props/normalize";
 @import "open-props/buttons";
 

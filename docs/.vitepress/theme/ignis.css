@@ -4,4 +4,11 @@
   --vp-c-brand-2: #00dc82;
   --vp-c-brand-3: #00dc82;
   --vp-button-brand-text: black;
+
+  --vp-code-block-bg: #d1d4e0;
 }
+
+.dark {
+  --vp-code-block-bg: #2f2f2f;
+}
+

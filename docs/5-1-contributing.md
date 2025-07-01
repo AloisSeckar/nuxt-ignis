@@ -34,7 +34,7 @@ Nuxt Ignis uses [Vitest](https://vitest.dev/) for testing. More specificly, it u
 ### Test suite
 To run the test suite, use the following command:
 
-```bash
+```[pnpm]
 pnpm test
 ```
 
@@ -42,7 +42,7 @@ This runs `vitest run` under the hood, which executes all tests in the project. 
 
 Vitest snapshot files should be stored in the `/core/tests/[test_file_name]` directory. If you need to create/update snapshot files, you can run:
 
-```bash
+```[pnpm]
 pnpm test -u
 ```
 
@@ -52,8 +52,7 @@ Inside `/demos` folder there are growing collection of simple demo apps that can
 
 Unlike real applications that extend `nuxt-ignis` layer from an NPM package, those demos follow the mono-repo pattern with:
 
-```ts
-// nuxt.config.ts
+```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   extends: [
     '../../core',

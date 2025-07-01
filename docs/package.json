@@ -7,7 +7,8 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "vitepress": "1.6.3"
+    "vitepress": "1.6.3",
+    "vitepress-plugin-group-icons": "1.6.1"
   },
   "pnpm": {
     "overrides": {
@@ -17,5 +18,6 @@
     "onlyBuiltDependencies": [
       "esbuild"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.12.1"
 }

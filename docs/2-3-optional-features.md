@@ -86,7 +86,7 @@ If you set `ssr: false` directly in your project's `nuxt.config.ts`, modules men
 ### Vueform usage notice
 In order to use `vueform` via Nuxt Ignis, is currently required to create a custom config file in the root of your project named `vueform.config.ts` with following contents:
 
-```ts
+```ts [vueform.config.ts]
 export default loadVueformConfig({
   // custom config here
   // here you can pass extra config that will be defu-merged 
@@ -101,7 +101,7 @@ Alternatively, you can ignore Nuxt Ignis' default config and create your own fil
 ### Nuxt Content usage notice
 In order to use `@nuxt-content` via Nuxt Ignis, is currently required to create a custom config file in the root of your project named `content.config.ts` with following contents:
 
-```ts
+```ts [content.config.ts]
 // NOTE: explicit import seems to be required
 import { loadContentConfig } from './utils/content'
 
@@ -140,7 +140,7 @@ Default values are **false** (not included) for all optional features.
 
 In order to  use `zod` in Nuxt Ignis conditionally, we wrapped its import into a composable. In order to use it, you need to import it in a file like this:
 
-```ts
+```ts [your-zod-validator.ts]
 const z = (await useZod())!
 ```
 
@@ -152,7 +152,7 @@ You can then use `z` object as you would normally do in your project.
 
 In order to  use `valibot` in Nuxt Ignis conditionally, we wrapped its import into a composable. In order to use it, you need to import it in a file like this:
 
-```ts
+```ts [your-valibot-validator.ts]
 const v = (await useValibot())!
 ```
 
