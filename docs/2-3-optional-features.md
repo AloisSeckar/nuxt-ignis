@@ -89,30 +89,6 @@ Currently, following extra features (not using separate Nuxt Modules) are option
 
 Default values are **false** (not included) for all optional features.
 
-### Zod usage notice
-
-In order to  use `zod` in Nuxt Ignis conditionally, we wrapped its import into a composable. In order to use it, you need to import it in a file like this:
-
-```ts [your-zod-validator.ts]
-const z = (await useZod())!
-```
-
-You can then use `z` object as you would normally do in your project.
-
-**NOTE:** We are using `await` here, because the import is dynamic at runtime. And because the composable may technically return `undefined` (only if the relevant setting is not enabled), we add exclamation mark to avoid TS complaints.
-
-### Valibot usage notice
-
-In order to  use `valibot` in Nuxt Ignis conditionally, we wrapped its import into a composable. In order to use it, you need to import it in a file like this:
-
-```ts [your-valibot-validator.ts]
-const v = (await useValibot())!
-```
-
-You can then use `v` object as you would normally do in your project.
-
-No**NOTE:** We are using `await` here, because the import is dynamic at runtime. And because the composable may technically return `undefined` (only if the relevant setting is not enabled), we add exclamation mark to avoid TS complaints.
-
 ### Vue Equipment options
 There are two config values for this feature:
 - `NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES` - which `Vue Equipment` composables should be imported (coma-separated list)
