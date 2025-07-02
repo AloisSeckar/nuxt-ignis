@@ -2,7 +2,7 @@
 
 Nuxt Ignis contains following customizable UI related features:
 
-## Nuxt UI integration
+## Nuxt UI
 
 - Packages: `@nuxt/ui`
 - Version: `3.1.3`
@@ -19,6 +19,8 @@ Or [UI preset](/2-3-optional-features.html#ui-preset):
 NUXT_PUBLIC_IGNIS_PRESET_UI=nuxt-ui
 ```
 
+### Usage notice
+
 To abstract users from the requirment of [adding CSS files manually](https://ui.nuxt.com/getting-started/installation/nuxt#import-tailwind-css-and-nuxt-ui-in-your-css), Nuxt Ignis is automatically including `ignis-nuxt-ui.css` with necessary import directives:
 
 ```css [ignis-nuxt-ui.css ~vscode-icons:file-type-css~]
@@ -28,7 +30,7 @@ To abstract users from the requirment of [adding CSS files manually](https://ui.
 
 Your custom CSS files may be added via [dedicated option](#custom-css).
 
-## Tailwind CSS integration
+## Tailwind CSS
 
 - Packages: `@tailwindcss/vite`
 - Version: `4.1.10`
@@ -49,6 +51,8 @@ NUXT_PUBLIC_IGNIS_PRESET_UI=tailwind
 
 **NOTE:** If `@nuxt/ui` is enabled, this setting is <span style="color: red">**ignored**</span> as `Tailwind CSS` is already included.
 
+### Usage notice
+
 To abstract users from the requirment of [adding CSS files manually](https://tailwindcss.com/docs/installation/), Nuxt Ignis is automatically including `ignis-tailwind.css` with necessary import directive:
 
 ```css [ignis-tailwind.css]
@@ -65,7 +69,7 @@ Your custom CSS files may be added via [dedicated option](#custom-css).
 /* your custom CSS with Tailwind utility classes */
 ```
 
-## Open Props integration
+## Open Props
 
 - Packages: `open-props`
 - Version: `1.7.15`
@@ -77,6 +81,8 @@ Open Props are **disabled** by default. To enable it, you can use following envi
 ```env
 NUXT_PUBLIC_IGNIS_OPENPROPS=true
 ```
+
+### Usage notice
 
 To abstract users from the requirment of adding CSS files manually, Nuxt Ignis is automatically including `ignis-open-props.css` with necessary import directives. The file also contains definition for style shown on the `Ignis Features` overview page:
 

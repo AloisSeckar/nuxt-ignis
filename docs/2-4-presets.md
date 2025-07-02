@@ -15,7 +15,7 @@ It is possible to pick from three options:
 
 Set the value via `NUXT_PUBLIC_IGNIS_PRESET_UI` env variable.
 
-You can still use individual settings for `nuxt-ui` and  `tailwind` modules (check [Optional modules](#optional-modules) section).
+You can still use individual settings for `nuxt-ui` and  `tailwind` modules (check [optional modules](#optional-modules) section).
 
 **NOTE:** Currently, this isn't actually _"one or another"_, as `nuxt-ui` is including `tailwind` (v4) automatically.
 
@@ -28,7 +28,7 @@ It is possible to pick from three options:
 
 Set the value via `NUXT_PUBLIC_IGNIS_PRESET_DB` env variable.
 
-You can still use individual settings for `neon` and  `supabase` modules (check [Optional modules](#optional-modules) section).
+You can still use individual settings for `neon` and  `supabase` modules (check [optional modules](#optional-modules) section).
 
 ### Forms preset
 
@@ -39,7 +39,7 @@ It is possible to pick from three options:
 
 Set the value via `NUXT_PUBLIC_IGNIS_PRESET_FORMS` env variable.
 
-You can still use individual settings for `vueform` and  `formkit` modules (check [Optional modules](#optional-modules) section).
+You can still use individual settings for `vueform` and  `formkit` modules (check [optional modules](#optional-modules) section).
 
 
 ### Validation preset
@@ -51,7 +51,7 @@ It is possible to pick from three options:
 
 Set the value via `NUXT_PUBLIC_IGNIS_PRESET_VALIDATION` env variable.
 
-You can still use individual settings for `valibot` and  `zod` modules (check [Optional features](#optional-features) section).
+You can still use individual settings for `valibot` and  `zod` modules (check [optional features](#optional-features) section).
 
 ## Warning for duplicates
 

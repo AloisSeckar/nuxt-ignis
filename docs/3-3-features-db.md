@@ -2,7 +2,7 @@
 
 Nuxt Ignis contains following customizable DB related features:
 
-## Neon integration
+## Neon
 
 - Packages: `nuxt-neon`
 - Version: `0.6.2`
@@ -21,6 +21,8 @@ Or [DB preset](/2-3-optional-features.html#db-preset):
 NUXT_PUBLIC_IGNIS_PRESET_DB=neon
 ```
 
+### Usage notice
+
 To configure `Neon` connection you need to provide following env variables:
 - `NUXT_NEON_HOST`
 - `NUXT_NEON_USER`
@@ -29,7 +31,7 @@ To configure `Neon` connection you need to provide following env variables:
 
 For details and more config options see the [`nuxt-neon` docs](https://github.com/AloisSeckar/nuxt-neon).
 
-## Supabase integration
+## Supabase
 
 - Packages: `@nuxtjs/supabase`
 - Version: `1.5.2`
@@ -47,6 +49,8 @@ Or [DB preset](/2-3-optional-features.html#db-preset):
 ```env
 NUXT_PUBLIC_IGNIS_PRESET_DB=supabase
 ```
+
+### Usage notice
 
 To configure `Supabase` connection you need to provide following env variables:
 - `SUPABASE_URL`

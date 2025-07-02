@@ -2,7 +2,7 @@
 
 Nuxt Ignis offers two alternatives for schema validation:
 
-## Zod integration¨
+## Zod
 
 - Packages: `zod`
 - Version: `3.25.67`
@@ -19,7 +19,7 @@ Or [Validation preset](/2-3-optional-features.html#validation-preset):
 NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=zod
 ```
 
-### Zod usage notice
+### Usage notice
 
 In order to  use `zod` in Nuxt Ignis conditionally, we wrapped its import into a composable. In order to use it, you need to import it in a file like this:
 
@@ -31,7 +31,7 @@ You can then use `z` object as you would normally do in your project.
 
 **NOTE:** We are using `await` here, because the import is dynamic at runtime. And because the composable may technically return `undefined` (only if the relevant setting is not enabled), we add exclamation mark to avoid TS complaints.
 
-## Valibot integration
+## Valibot
 
 - Packages: `valibot`
 - Version: `1.1.0`
@@ -48,7 +48,7 @@ Or [Validation preset](/2-3-optional-features.html#validation-preset):
 NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=valibot
 ```
 
-### Valibot usage notice
+### Usage notice
 
 In order to  use `valibot` in Nuxt Ignis conditionally, we wrapped its import into a composable. In order to use it, you need to import it in a file like this:
 

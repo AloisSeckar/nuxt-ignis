@@ -2,7 +2,7 @@
 
 Nuxt Ignis contains following customizable features related to content generation and displaying:
 
-## Nuxt Content integration
+## Nuxt Content
 
 - Packages: `@nuxt/content`
 - Version: `3.6.1`
@@ -15,7 +15,7 @@ Nuxt Ignis contains following customizable features related to content generatio
 NUXT_PUBLIC_IGNIS_CONTENT=true
 ```
 
-### Nuxt Content usage notice
+### Usage notice
 
 In order to use `@nuxt-content` via Nuxt Ignis, it is currently required to create a custom config file in the root of your project named `content.config.ts` with following contents:
 
@@ -42,7 +42,7 @@ This will reference [default config file](https://github.com/AloisSeckar/nuxt-ig
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can completely ignore Nuxt Ignis' default config and create your own file based on [Nuxt Content docs](https://content.nuxt.com/docs/getting-started/installation#create-your-first-collection).
 
-### I18N
+## I18N
 
 - Packages: `@nuxtjs/i18n`
 - Version: `9.5.5`
@@ -61,7 +61,7 @@ NUXT_PUBLIC_IGNIS_I18N_ENABLED=true
 - You can select default language locale via `NUXT_PUBLIC_IGNIS_I18N_LOCALE`.
 - If [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/core/main/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`.
 
-## `pslo` integration
+## `pslo`
 
 - Packages: `elrh-pslo`
 - Version: `1.1.6`
@@ -76,6 +76,6 @@ Nuxt Ignis allows simple integration of this function for more convenience.
 NUXT_PUBLIC_IGNIS_PSLO_ENABLED=true
 ```
 
-### Additional `pslo` options
+### Additional options
 
 - `NUXT_PUBLIC_IGNIS_PSLO_CONTENT` - if both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function

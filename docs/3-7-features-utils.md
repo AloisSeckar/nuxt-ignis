@@ -2,7 +2,7 @@
 
 Nuxt Ignis offers following utility options:
 
-## VueUse integration
+## VueUse
 
 - Packages: `@vueuse/core`
 - Version: `13.4.0`
@@ -15,7 +15,7 @@ Nuxt Ignis offers following utility options:
 NUXT_PUBLIC_IGNIS_CORE_VUEUSE=false
 ```
 
-## VueEquipment integration
+## VueEquipment
 
 - Packages: `@maas/vue-equipment` 
 - Version: `1.0.0-beta.30`
@@ -28,7 +28,7 @@ NUXT_PUBLIC_IGNIS_CORE_VUEUSE=false
 NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED=true
 ```
 
-### Additional `VueEquipment` options
+### Additional options
 
 Simply enabling `VueEquipment` actually does **nothing** as you also need to specifify which composables and/or plugins you want to use.
 
@@ -65,3 +65,16 @@ NUXT_PUBLIC_IGNIS_SEO=true
 If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`, modules from `Nuxt SEO` pack requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce their built-in warning on startup.
 
 **NOTE**: If you don't use Nuxt Ignis configuration and set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.
+
+## Nuxt Auth Utils
+
+- Packages: `nuxt-auth-utils`
+- Version: `0.5.20`
+
+[Nuxt Auth Utils](https://github.com/AloisSeckar/nuxt-auth-utils) is a set of utilities for handling authentication in Nuxt applications.
+
+`Nuxt Auth Utils` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
+
+```env
+NUXT_PUBLIC_IGNIS_AUTH=true
+```

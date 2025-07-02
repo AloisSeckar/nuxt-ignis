@@ -18,11 +18,11 @@ Pre-defined set of Nuxt modules is being automatically included by default. You 
 - use `NUXT_PUBLIC_CORE_ESLINT=false` to disable `@nuxt/eslint`
 - use `NUXT_PUBLIC_CORE_FONTS=false` to disable `@nuxt/fonts`
 - use `NUXT_PUBLIC_CORE_IMAGE=false` to disable `@nuxt/image`
-- use `NUXT_PUBLIC_CORE_PINIA=false` to disable `@pinia/nuxt`
 - use `NUXT_PUBLIC_CORE_SCRIPTS=false` to disable `@nuxt/scripts`
 - use `NUXT_PUBLIC_CORE_SECURITY=false` to disable `nuxt-security`
-- use `NUXT_PUBLIC_CORE_VUEUSE=false` to disable `@vueuse/nuxt`
+- use `NUXT_PUBLIC_CORE_VUEUSE=false` to disable [`@vueuse/nuxt`](/3-7-features-utils.html#vueuse)
+- use `NUXT_PUBLIC_CORE_PINIA=false` to disable `@pinia/nuxt`
 
 ## More info
 
-- See details about each feature's purpose and usage in [features section](/3-1-features).
+- See details about technologies available via Nuxt Ignis in [features section](/3-1-features).

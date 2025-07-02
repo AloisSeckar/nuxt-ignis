@@ -28,12 +28,12 @@ Following Nuxt modules/features are disabled by default and can be opted-in by s
 | `NUXT_PUBLIC_IGNIS_SUPABASE` | `boolean` | `false` | Enable or disable `@nuxtjs/supabase` module |
 | `NUXT_PUBLIC_IGNIS_VUEFORM` | `boolean` | `false` | Enable or disable `@vueform/nuxt` module |
 | `NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED` | `boolean` | `false` | Enable or disable `@formkit/nuxt` module |
-| `NUXT_PUBLIC_IGNIS_I18N_ENABLED` | `boolean` | `false` | Enable or disable `@nuxtjs/i18n` module |
-| `NUXT_PUBLIC_IGNIS_CONTENT` | `boolean` | `false` | Enable or disable `@nuxt/content` module |
-| `NUXT_PUBLIC_IGNIS_SEO` | `boolean` | `false` | Enable or disable `@nuxtjs/seo` module |
-| `NUXT_PUBLIC_IGNIS_AUTH` | `boolean` | `false` | Enable or disable `nuxt-auth-utils` module |
 | `NUXT_PUBLIC_IGNIS_VALIBOT` | `boolean` | `false` | Enable or disable `valibot` |
 | `NUXT_PUBLIC_IGNIS_ZOD` | `boolean` | `false` | Enable or disable `zod` |
+| `NUXT_PUBLIC_IGNIS_CONTENT` | `boolean` | `false` | Enable or disable `@nuxt/content` module |
+| `NUXT_PUBLIC_IGNIS_I18N_ENABLED` | `boolean` | `false` | Enable or disable `@nuxtjs/i18n` module |
+| `NUXT_PUBLIC_IGNIS_SEO` | `boolean` | `false` | Enable or disable `@nuxtjs/seo` module |
+| `NUXT_PUBLIC_IGNIS_AUTH` | `boolean` | `false` | Enable or disable `nuxt-auth-utils` module |
 | `NUXT_PUBLIC_IGNIS_OPENPROPS` | `boolean` | `false` | Enable or disable `Open Props CSS` |
 | `NUXT_PUBLIC_IGNIS_PSLO_ENABLED` | `boolean` | `false` | Enable or disable `elrh-pslo` |
 
