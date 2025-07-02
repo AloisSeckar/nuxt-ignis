@@ -32,7 +32,8 @@ export default defineConfig({
           { text: 'Configuration', link: '/2-1-configuration' },
           { text: 'Core features', link: '/2-2-core-features' },
           { text: 'Optional features', link: '/2-3-optional-features' },
-          { text: 'Full reference', link: '/2-4-full-reference' },
+          { text: 'Optional features', link: '/2-4-presets' },
+          { text: 'Full reference', link: '/2-5-full-reference' },
         ]
       },
       {

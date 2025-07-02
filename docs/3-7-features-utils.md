@@ -46,3 +46,22 @@ NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS=MagicNoise, MagicMarquee
 ```
 
 Whitespaces around will be trimmed, so it doesn't matter if you add or omit them.
+
+## Nuxt SEO
+
+- Packages: `@nuxtjs/seo` 
+- Version: `3.0.3`
+
+[Nuxt SEO](https://nuxtseo.com/) is a collection of Nuxt modules that handles all of the technical aspects in growing your sites organic traffic.
+
+`Nuxt SEO` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
+
+```env
+NUXT_PUBLIC_IGNIS_SEO=true
+```
+
+### Usage notice
+
+If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`, modules from `Nuxt SEO` pack requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce their built-in warning on startup.
+
+**NOTE**: If you don't use Nuxt Ignis configuration and set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.

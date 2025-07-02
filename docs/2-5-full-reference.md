@@ -68,4 +68,4 @@ Other configurable options:
 | `NUXT_PUBLIC_IGNIS_LOG_LEVEL` | `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose` | `info` | Set level of log messages captured with `consola` |
 
 ## More info
-See details about Nuxt Ignis in [Features section](/3-1-features)
+- See details about Nuxt Ignis in [features section](/3-1-features).

@@ -24,7 +24,7 @@ shamefully-hoist=true
 strict-peer-dependencies=false
 ```
 
-4) Setup your `.env` to fit your project needs. Check [the reference](/2-4-full-reference.html) for all available config options.
+4) Setup your `.env` to fit your project needs. Check [the reference](/2-5-full-reference.html) for all available config options.
 
 5) **Congratulations!** You are ready to build your next awesome project in Nuxt!
 

@@ -42,7 +42,27 @@ This will reference [default config file](https://github.com/AloisSeckar/nuxt-ig
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can completely ignore Nuxt Ignis' default config and create your own file based on [Nuxt Content docs](https://content.nuxt.com/docs/getting-started/installation#create-your-first-collection).
 
+### I18N
+
+- Packages: `@nuxtjs/i18n`
+- Version: `9.5.5`
+
+[Nuxt I18N](https://i18n.nuxtjs.org/) is a module that provides internationalization support for your application. It allows you to easily manage translations and switch between different languages.
+
+`Nuxt I18N` integration is **disabled** by default. To enable it, you can use following environment variable:
+
+```env
+NUXT_PUBLIC_IGNIS_I18N_ENABLED=true
+```
+
+### Additional options
+
+- All `.json` files with messages in `@/i18n/locales` folder will be auto-scanned.
+- You can select default language locale via `NUXT_PUBLIC_IGNIS_I18N_LOCALE`.
+- If [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/core/main/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`.
+
 ## `pslo` integration
+
 - Packages: `elrh-pslo`
 - Version: `1.1.6`
 

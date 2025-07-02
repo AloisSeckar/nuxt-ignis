@@ -4,60 +4,9 @@ So-called _"optional features"_ are disabled by default in Nuxt Ignis. You can t
 
 ## Presets
 
-For common functional areas of webapps you can choose from more than one option using special _"preset"_ configuration variables.
+Some of the optional solutions are meant to be alternatives. Nuxt Ignis defines simplified configuration _"presets"_ for such cases. Learn more about this concept in [presets section](/2-4-presets).
 
-The list of available presets currently includes:
-
-### UI preset
-
-It is possible to pick from three options:
-- `nuxt-ui` - full https://ui.nuxt.com/ via `@nuxt/ui` connector module **[RECOMMENDED]**
-- `tailwind` - only https://tailwindcss.com/ via `@nuxtjs/tailwindcss` connector module
-- `off` - no UI library preset **[DEFAULT]**
-
-Set the value via `NUXT_PUBLIC_IGNIS_PRESET_UI` env variable.
-
-You can still use individual settings for `nuxt-ui` and  `tailwind` modules (check [Optional modules](#optional-modules) section).
-
-**NOTE:** Currently, this isn't actually _"one or another"_, as `nuxt-ui` is including `tailwind` (v4) automatically.
-
-### Database preset
-
-It is possible to pick from three options:
-- `neon` - https://neon.tech/ via `nuxt-neon` connector module **[RECOMMENDED]**
-- `supabase` - https://supabase.com/ via `@nuxtjs/supabase` connector module
-- `off` - no database module preset **[DEFAULT]**
-
-Set the value via `NUXT_PUBLIC_IGNIS_PRESET_DB` env variable.
-
-You can still use individual settings for `neon` and  `supabase` modules (check [Optional modules](#optional-modules) section).
-
-### Forms preset
-
-It is possible to pick from three options:
-- `vueform` - https://vueform.com/ via `@vueform/nuxt` connector module **[RECOMMENDED]**
-- `formkit` - https://formkit.com/ via `@formkit/nuxt` connector module
-- `off` - no forms module preset **[DEFAULT]**
-
-Set the value via `NUXT_PUBLIC_IGNIS_PRESET_FORMS` env variable.
-
-You can still use individual settings for `vueform` and  `formkit` modules (check [Optional modules](#optional-modules) section).
-
-
-### Validation preset
-
-It is possible to pick from three options:
-- `valibot` - schema validation via https://valibot.dev/
-- `zod` - schema validation via https://zod.dev/ 
-- `off` - no validation module preset **[DEFAULT]**
-
-Set the value via `NUXT_PUBLIC_IGNIS_PRESET_VALIDATION` env variable.
-
-You can still use individual settings for `valibot` and  `zod` modules (check [Optional features](#optional-features) section).
-
-### Warning for duplicates
-
-By default, Nuxt Ignis doesn't recommend mixing preset solutions. If for example both `Neon` and `Supabase` database solutions are used, a warning will be triggered on startup. For use cases when having both variants together is appropriate and desired, you can set `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to suppress this warning.
+However, you are not limited to presets only. Every optional module or feature can be enabled individually.
 
 ## Optional modules
 
@@ -74,18 +23,6 @@ Currently, following modules are optional to use:
 - `nuxt-auth-utils` - set `NUXT_PUBLIC_IGNIS_AUTH` to `true | false` 
 
 Default values are **false** (not included) for all optional modules.
-
-### I18N options
-
-- you can select default language locale via `NUXT_PUBLIC_IGNIS_I18N_LOCALE`
-- all `.json` files with messages in `@/i18n/locales` folder will be auto-scanned.
-- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/core/main/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`
-
-### Nuxt SEO usage notice
-
-If you allow `@nuxtjs/seo` module and also set `NUXT_PUBLIC_IGNIS_SSR=false`, modules from  Nuxt SEO pack  requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce warning on startup.
-
-If you set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.
 
 ## Optional features
 
