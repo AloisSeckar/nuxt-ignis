@@ -13,11 +13,11 @@ The integration is provided via [`@vueform/nuxt` module](https://vueform.com/doc
 
 `Vueform` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_VUEFORM=true
 ```
 Or [Forms preset](/2-3-optional-features.html#forms-preset):
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_FORMS=vueform
 ```
 
@@ -46,11 +46,11 @@ The integration is provided via [`@formkit/nuxt` module](https://formkit.com/get
 
 `Formkit` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_FORMKIT=true
 ```
 Or [Forms preset](/2-3-optional-features.html#forms-preset):
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_FORMS=formkit
 ```
 

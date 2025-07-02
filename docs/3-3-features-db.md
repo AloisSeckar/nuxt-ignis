@@ -13,11 +13,11 @@ The [`nuxt-neon`](https://github.com/AloisSeckar/nuxt-neon) module integrates `N
 
 `Neon` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_NEON=true
 ```
 Or [DB preset](/2-3-optional-features.html#db-preset):
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_DB=neon
 ```
 
@@ -42,11 +42,11 @@ The integration is provided via [`@nuxtjs/supabase` module](https://supabase.nux
 
 `Supabase` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_SUPABASE=true
 ```
 Or [DB preset](/2-3-optional-features.html#db-preset):
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_DB=supabase
 ```
 

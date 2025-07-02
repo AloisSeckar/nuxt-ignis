@@ -11,11 +11,11 @@ Nuxt Ignis offers two alternatives for schema validation:
 
 `Zod` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_ZOD=true
 ```
 Or [Validation preset](/2-3-optional-features.html#validation-preset):
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=zod
 ```
 
@@ -40,11 +40,11 @@ You can then use `z` object as you would normally do in your project.
 
 `Valibot` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_VALIBOT=true
 ```
 Or [Validation preset](/2-3-optional-features.html#validation-preset):
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=valibot
 ```
 

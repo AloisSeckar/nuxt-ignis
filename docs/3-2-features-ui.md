@@ -11,11 +11,11 @@ Nuxt Ignis contains following customizable UI related features:
 
 `Nuxt UI` is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_UI=true
 ```
 Or [UI preset](/2-3-optional-features.html#ui-preset):
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_UI=nuxt-ui
 ```
 
@@ -41,11 +41,11 @@ Your custom CSS files may be added via [dedicated option](#custom-css).
 
 `Tailwind CSS` is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_TAILWIND=true
 ```
 Or [UI preset](/2-3-optional-features.html#ui-preset):
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_UI=tailwind
 ```
 
@@ -78,7 +78,7 @@ Your custom CSS files may be added via [dedicated option](#custom-css).
 
 Open Props are **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_OPENPROPS=true
 ```
 

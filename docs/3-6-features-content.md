@@ -11,7 +11,7 @@ Nuxt Ignis contains following customizable features related to content generatio
 
 `Nuxt Content` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_CONTENT=true
 ```
 
@@ -51,7 +51,7 @@ Referencing config like this allows to pass in a custom config that will be [def
 
 `Nuxt I18N` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_I18N_ENABLED=true
 ```
 
@@ -72,7 +72,7 @@ Nuxt Ignis allows simple integration of this function for more convenience.
 
 `elrh-pslo` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_PSLO_ENABLED=true
 ```
 

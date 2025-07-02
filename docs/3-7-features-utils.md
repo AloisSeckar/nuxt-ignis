@@ -11,7 +11,7 @@ Nuxt Ignis offers following utility options:
 
 `VueUse` integration is a [core feature](/2-2-core-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_CORE_VUEUSE=false
 ```
 
@@ -24,7 +24,7 @@ NUXT_PUBLIC_IGNIS_CORE_VUEUSE=false
 
 `VueEquipment` integration is an [optional feature](/2-3-optional-features.html) and it is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED=true
 ```
 
@@ -56,7 +56,7 @@ Whitespaces around will be trimmed, so it doesn't matter if you add or omit them
 
 `Nuxt SEO` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_SEO=true
 ```
 
@@ -75,6 +75,6 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`,
 
 `Nuxt Auth Utils` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
 
-```env
+```dotenv
 NUXT_PUBLIC_IGNIS_AUTH=true
 ```
