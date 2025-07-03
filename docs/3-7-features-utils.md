@@ -50,7 +50,7 @@ Whitespaces around will be trimmed, so it doesn't matter if you add or omit them
 ## Nuxt SEO
 
 - Packages: `@nuxtjs/seo` 
-- Version: `3.0.3`
+- Version: `3.1.0`
 
 [Nuxt SEO](https://nuxtseo.com/) is a collection of Nuxt modules that handles all of the technical aspects in growing your sites organic traffic.
 
