@@ -12,7 +12,7 @@ The very nature of the process requires `nuxt.config.ts` to be static. The bundl
 
 Nuxt Ignis emerged from embracing this fact. Provided environment variables are processed in [`setFeatures()` function](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/features.ts) which happens to return a Nuxt config-like object. The output of this function is then merged into the final `nuxt.config.ts` file. This happens before the build step is executed, so the environment variables apply as intended.
 
-The typical application is to include or exclude certain Nuxt module. For example Nuxt Ignis is including `@nuxt/eslint` into `module` array of the config object, but if the feature function sees `NUXT_PUBLIC_IGNIS_CORE_ESLINT=false` environment variable, it will omit it. Some config options also imply other modifications in the config object, but the idea remains the same.
+The typical application is to include or exclude certain Nuxt module. For example Nuxt Ignis is including [`@nuxt/eslint`](https://nuxt.com/modules/eslint) into `module` array of the config object, but if the feature function sees `NUXT_PUBLIC_IGNIS_CORE_ESLINT=false` environment variable, it will omit it. Some config options also imply other modifications in the config object, but the idea remains the same.
 
 ### Defu-merge
 

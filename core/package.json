@@ -24,6 +24,9 @@
   "engines": {
     "node": ">=18.0.0"
   },
+  "bin": {
+    "make-eslint": "./bin/make-eslint.js"
+  },
   "scripts": {
     "analyze": "nuxt analyze",
     "eslint": "eslint .",

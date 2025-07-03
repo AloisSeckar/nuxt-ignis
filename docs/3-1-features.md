@@ -19,7 +19,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |
-| `@nuxt/eslint` | `1.4.1` | - | Official module for code linting via `eslint` |
+| `@nuxt/eslint` | `1.4.1` | [👁️‍🗨️](/3-8-features-devex.html#eslint) | Official module for code linting via `eslint` |
 | `@nuxt/fonts` | `0.11.4` | - | Official module for working with web fonts |
 | `@nuxt/image` | `1.10.0` | - | Official module for optimizing images |
 | `@nuxt/scripts` | `0.11.8` | - | Official module for integrating 3rd party scripts |

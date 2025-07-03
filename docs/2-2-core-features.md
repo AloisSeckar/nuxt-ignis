@@ -14,8 +14,8 @@ Following packages are currently deeply integrated into Nuxt Ignis and **cannot 
 ## Core modules
 
 Pre-defined set of Nuxt modules is being automatically included by default. You can opt-out from using them by setting respective config value to `false`.
-
-- use `NUXT_PUBLIC_CORE_ESLINT=false` to disable `@nuxt/eslint`
+d
+- use `NUXT_PUBLIC_CORE_ESLINT=false` to disable [`@nuxt/eslint`](/3-8-features-devex.html#eslint)
 - use `NUXT_PUBLIC_CORE_FONTS=false` to disable `@nuxt/fonts`
 - use `NUXT_PUBLIC_CORE_IMAGE=false` to disable `@nuxt/image`
 - use `NUXT_PUBLIC_CORE_SCRIPTS=false` to disable `@nuxt/scripts`

@@ -12,9 +12,59 @@ Currently, it is possible to override following Nuxt config via .env variables:
 - `NUXT_PUBLIC_IGNIS_SSR` - set to `false` to disable SSR (results in `ssr: false` in Nuxt Config)
 - `NUXT_PUBLIC_IGNIS_PAGES` - set to `false` to disable multiple pages in simple projects (results in `pages: false` in Nuxt Config)
 
+## ESlint
+
+Nuxt Ignis utilizes `@nuxt/eslint` module for convenient [ESLint](https://eslint.org/) integration in your project. For [VS Code](https://code.visualstudio.com/), it is recommended to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for even better integration including "linting on save" configuration.
+
+`@nuxt/eslint` is a [core feature](/2-2-core-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
+
+```dotenv
+NUXT_PUBLIC_IGNIS_CORE_ESLINT=false
+```
+
+The default configuration in Nuxt Ignis' `nuxt.config.ts` is:
+
+```ts [nuxt.config.ts]
+// ...
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
+// ...
+```
+
+So the module is also checking for styling issues. [Prettier](https://prettier.io/) or other solution is **NOT** used.
+
+### Usage notice
+
+`@nuxt/eslint` module automatically generates ready-to-use `eslint.config.mjs` file in your project root directory, if not yet present. This file is scaffolded to include recommended Nuxt-related ESLint rules.
+
+The template looks like this:
+```js [eslint.config.mjs]
+// @ts-check
+import withNuxt from './.nuxt/eslint.config.mjs'
+
+export default withNuxt(
+  // Your custom configs here
+)
+```
+
+As it inherits from generated Nuxt content, running `pnpm dev` for the first time is **REQUIRED** to make linting work in your projects.
+
+Because Nuxt Ignis author is _opinionated_ about some of the default rules, there is also a config override available. A CLI tool is provided to generate a default ESLint configuration file enhanced with some rule overrides. 
+
+To create Nuxt Ignis default instead of plain `@nuxt/eslint` version, use the following command:
+
+```bash
+npx make-eslint
+```
+
+Check the [file template](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/eslint.config.mjs) for more details and explanation.
+
 ## Logging
 
-Use `NUXT_PUBLIC_INGIS_LOG_LEVEL` to set level of log messages captured with `consola`. The default value is `info`.
+Use `NUXT_PUBLIC_IGNIS_LOG_LEVEL` to set level of log messages captured with `consola`. The default value is `info`.
 
 Possible values are: `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose`
 
