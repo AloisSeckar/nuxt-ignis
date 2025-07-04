@@ -35,6 +35,7 @@
       <AppFeature :active="content" :text="useIgnisT('features.content')" />
       <AppFeature :active="seo" :text="useIgnisT('features.seo')" />
       <AppFeature :active="auth" :text="useIgnisT('features.auth')" />
+      <AppFeature :active="equipment" :text="useIgnisT('features.equipment')" />
       <AppFeature :active="openprops" class="openprops-feature" :text="useIgnisT('features.openprops')" />
     </div>
     <div v-if="!pages" class="pages">
@@ -72,6 +73,7 @@ const content = setup.content
 const seo = setup.seo
 const auth = setup.auth
 const openprops = setup.openprops
+const equipment = setup.equipment.enabled
 const pages = setup.pages
 </script>
 
