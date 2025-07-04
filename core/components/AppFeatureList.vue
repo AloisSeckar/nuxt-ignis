@@ -21,7 +21,7 @@
       <AppFeature :active="fonts" :text="useIgnisT('features.fonts')" class="fonts" />
       <AppFeature :active="pinia" :text="useIgnisT('features.pinia')" />
       <AppFeature :active="vueuse" :text="useIgnisT('features.vueuse')" />
-      <AppFeature :active="time" :text="useIgnisT('features.time')" />
+      <AppFeature :active="true" :text="useIgnisT('features.time')" />
       <AppFeature :active="nuxtui" :text="useIgnisT('features.ui')" />
       <AppFeature :active="tailwind" :text="useIgnisT('features.tailwind')" />
       <AppFeature :active="nuxtui" :text="useIgnisT('features.icon')" />
@@ -52,7 +52,6 @@ const eslint = setup.core.eslint
 const fonts = setup.core.fonts
 const image = setup.core.image
 const pinia = setup.core.pinia
-const time = setup.core.time
 const scripts = setup.core.scripts
 const security = setup.core.security
 const vueuse = setup.core.vueuse
