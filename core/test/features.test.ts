@@ -236,4 +236,12 @@ describe('setFeatures() unit tests', () => {
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/equipment.txt')
   })
+
+  // Magic Regexp
+
+  test('setFeatures() - Magic Regexp - none', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_REGEXP = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/regexp.txt')
+  })
 })

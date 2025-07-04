@@ -30,6 +30,7 @@
         "seo" : "Nuxt SEO collection of SEO-related modules",
         "auth" : "Nuxt Auth Utils for easy and secure authentication",
         "openprops" : "Additional CSS by Open Props",
-        "equipment" : "Vue Equipment utils available"
+        "equipment" : "Vue Equipment utils available",
+        "regexp" : "Magic Regexp for easier regexp handling"
     }
 }

@@ -78,3 +78,16 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`,
 ```dotenv
 NUXT_PUBLIC_IGNIS_AUTH=true
 ```
+
+## Magic Regexp
+
+- Packages: `magic-regexp`
+- Version: `0.10.0`
+
+[Magic Regexp](https://regexp.dev/) is a utility library for working with regular expressions in more natural way.
+
+`Magic Regexp` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
+
+```dotenv
+NUXT_PUBLIC_IGNIS_REGEXP=true
+```

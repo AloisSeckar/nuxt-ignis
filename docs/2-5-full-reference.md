@@ -34,10 +34,12 @@ Following Nuxt modules/features are disabled by default and can be opted-in by s
 | `NUXT_PUBLIC_IGNIS_I18N_ENABLED` | `boolean` | `false` | Enable or disable `@nuxtjs/i18n` module |
 | `NUXT_PUBLIC_IGNIS_SEO` | `boolean` | `false` | Enable or disable `@nuxtjs/seo` module |
 | `NUXT_PUBLIC_IGNIS_AUTH` | `boolean` | `false` | Enable or disable `nuxt-auth-utils` module |
+| `NUXT_PUBLIC_IGNIS_REGEXP` | `boolean` | `false` | Enable or disable `magic-regexp` module |
 | `NUXT_PUBLIC_IGNIS_OPENPROPS` | `boolean` | `false` | Enable or disable `Open Props CSS` |
 | `NUXT_PUBLIC_IGNIS_PSLO_ENABLED` | `boolean` | `false` | Enable or disable `elrh-pslo` |
 
 ## Presets
+
 For some common functional areas there are choices from 2+ options:
 
 | .env variable | Values | Default | Description |
@@ -47,8 +49,8 @@ For some common functional areas there are choices from 2+ options:
 | `NUXT_PUBLIC_IGNIS_PRESET_FORMS` | `vueform \| formkit \| off` | `off` | Set forms solution - `@vueform/nuxt` or  `@formkit/nuxt` |
 | `NUXT_PUBLIC_IGNIS_PRESET_VALIDATION` | `valibot \| zod \| off` | `off` | Set validation solution - `valibot` or  `zod` |
 
-
 ## Other config
+
 Other configurable options:
 
 | .env variable | Values | Default | Description |
@@ -68,4 +70,5 @@ Other configurable options:
 | `NUXT_PUBLIC_IGNIS_LOG_LEVEL` | `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose` | `info` | Set level of log messages captured with `consola` |
 
 ## More info
+
 - See details about Nuxt Ignis in [features section](/3-1-features).

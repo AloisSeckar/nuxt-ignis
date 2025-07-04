@@ -108,6 +108,7 @@ const nuxtConfig = defu(ignisFeatures, {
           composables: '', // list of Vue Equipment composables
           plugins: '', // list of Vue Equipment plugins
         },
+        regexp: false, // true/false
 
         // extra behavior
         warn: {

@@ -21,6 +21,7 @@ Currently, following modules are optional to use:
 - [`@nuxtjs/i18n`](/3-6-features-content.html#i18n) - set `NUXT_PUBLIC_IGNIS_I18N_ENABLED` to `true | false`
 - [`@nuxtjs/seo`](/3-7-features-utils.html#nuxt-seo) - set `NUXT_PUBLIC_IGNIS_SEO` to `true | false`
 - [`nuxt-auth-utils`](/3-7-features-utils.html#nuxt-auth-utils) - set `NUXT_PUBLIC_IGNIS_AUTH` to `true | false`
+- [`magic-regexp`](/3-7-features-utils.html#magic-regexp) - set `NUXT_PUBLIC_IGNIS_REGEXP` to `true | false`
 
 Default values are **false** (not included) for all optional modules.
 

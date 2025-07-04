@@ -59,6 +59,7 @@
     "date-fns": "4.1.0",
     "defu": "6.1.4",
     "elrh-pslo": "1.1.6",
+    "magic-regexp": "0.10.0",
     "nuxt-auth-utils": "0.5.20",
     "nuxt-neon": "0.6.2",
     "nuxt-security": "2.2.0",

@@ -257,6 +257,11 @@ export function setFeatures() {
     extras.push('elrh-pslo')
   }
 
+  // magic-regexp
+  if (process.env.NUXT_PUBLIC_IGNIS_REGEXP === 'true') {
+    nuxtConfig.modules.push('magic-regexp/nuxt')
+  }
+
   // 3. Nuxt-related settings
 
   nuxt.push(`log-level=${process.env.NUXT_PUBLIC_IGNIS_LOG_LEVEL || 'info[default]'}`)
