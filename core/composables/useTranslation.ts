@@ -20,8 +20,8 @@ export function useT(key: string): string {
   } else {
     // backdoor for Nuxt Ignis to display values on demo index page
     const backdoorValue = useIgnisT(key)
-    if (backdoorValue) {
-      return backdoorValue as string
+    if (backdoorValue !== '???') {
+      return backdoorValue
     }
     // for other custom values a warning will be produced and a placeholder will be returned
     log.warn('@nuxtjs/i18n turned off, translations are not available (set NUXT_PUBLIC_IGNIS_I18N=true)')
@@ -37,18 +37,27 @@ export function useT(key: string): string {
  * @param key identifier of text that should be displayed
  * @returns hardcoded text from '@/i18n/locales/en.json' of nuxt-ignis package (providing the key exists)
  */
-export function useIgnisT(key: string): unknown {
+export function useIgnisT(key: string): string {
   const keys = key.split('.')
 
-  let current = lang
-  for (const key of keys) {
-    if (current && key in current) {
+  let currentLang = lang
+  for (const currentKey of keys) {
+    if (currentLang && currentKey in currentLang) {
       // @ts-expect-error TODO this should be fixed
-      current = current[key]
+      currentLang = currentLang[currentKey]
     } else {
-      return undefined
+      log.debug(`useIgnisT: string value not found for "${key}"`)
+      return '???'
     }
   }
 
-  return current
+  if (typeof currentLang === 'string') {
+    return currentLang
+  }
+
+  log.debug(`useIgnisT: string value not found for "${key}"`)
+  log.debug(`useIgnisT: was resolved as:`)
+  log.debug(JSON.stringify(currentLang))
+
+  return '???'
 }
