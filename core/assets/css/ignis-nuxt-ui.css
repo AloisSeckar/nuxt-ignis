@@ -17,3 +17,8 @@
   // css rules here
 }
 */
+
+/* 
+// Tailwind v3 config file can be referenced like this for legacy reasons
+@config "./path/to/tailwind.config.ts";
+*/

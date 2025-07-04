@@ -69,7 +69,7 @@ log.debug(props.optionalText)
 <style scoped>
 /* avoid Tailwind CSS styles here, because Tailwind may not be enabled */
 
-/* m-1! px-2 py-1 border! border-amber-300 font-bold text-lg text-feature bg-emerald-700 hover:bg-slate-700 */
+/* m-1! px-2 py-1 border! border-amber-300 font-bold text-lg bg-emerald-700 hover:bg-slate-700 */
 .feature {
   margin: 4px;
   padding: 4px 12px;
