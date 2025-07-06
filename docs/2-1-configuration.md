@@ -16,9 +16,9 @@ The typical application is to include or exclude certain Nuxt module. For exampl
 
 ### Defu-merge
 
-Handling varying configuration options could become tricky pretty fast. That's why Nuxt Ignis uses [`unjs/defu`](https://github.com/unjs/defu) which is the smart tool for deep merging (config) objects together. It allows to supply default values while being able to override them with user-defined values. Thanks to that, you are almost never constrained by Nuxt Ignis defaults. You can add or change almost every config, while you are always backed by a sensible default.
+Handling varying configuration options could become tricky pretty fast. That's why Nuxt itself uses [`unjs/defu`](https://github.com/unjs/defu) which is the smart tool for deep merging (config) objects together. It allows to supply default values while being able to override them with user-defined values. 
 
-This is used when `nuxt.config.ts` is being scaffolded and also when constructing config files for certain features that rely on them.
+Nuxt Ignis is also leveraging `defu` wherever possible. Thanks to that, you are almost never constrained by Nuxt Ignis defaults. You can add or change almost every config, while you are always backed by a sensible default provided by us. The most significant usage is when final `nuxt.config.ts` is being scaffolded prior to build phase and also for constructing config files for certain features that rely on them.
 
 This principle is addressed as _"defu-merge"_ throughout the docs and in source codes comments.
 

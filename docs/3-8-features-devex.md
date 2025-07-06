@@ -2,16 +2,6 @@
 
 For better developer experience, Nuxt Ignis offers following features:
 
-## Nuxt config overrides
-
-You can always modify your `nuxt.config.ts` file directly and override any setting you need. However, Nuxt Ignis also provides a way to override some of the settings via environment variables. This might be useful for both 
-
-allows you to change the behavior of your Nuxt app without modifying the config file directly, which can be useful for different environments (development, production, etc.).
-
-Currently, it is possible to override following Nuxt config via .env variables:
-- `NUXT_PUBLIC_IGNIS_SSR` - set to `false` to disable SSR (results in `ssr: false` in Nuxt Config)
-- `NUXT_PUBLIC_IGNIS_PAGES` - set to `false` to disable multiple pages in simple projects (results in `pages: false` in Nuxt Config)
-
 ## ESlint
 
 Nuxt Ignis utilizes `@nuxt/eslint` module for convenient [ESLint](https://eslint.org/) integration in your project. For [VS Code](https://code.visualstudio.com/), it is recommended to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for even better integration including "linting on save" configuration.

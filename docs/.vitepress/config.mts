@@ -47,6 +47,7 @@ export default defineConfig({
           { text: 'Content', link: '/3-6-features-content' },
           { text: 'Utils', link: '/3-7-features-utils' },
           { text: 'DevEx', link: '/3-8-features-devex' },
+          { text: 'Nuxt', link: '/3-9-features-nuxt' },
         ]
       },
       {

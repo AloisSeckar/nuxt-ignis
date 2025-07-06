@@ -28,7 +28,7 @@ To abstract users from the requirment of [adding CSS files manually](https://ui.
 @import "@nuxt/ui";
 ```
 
-Your custom CSS files may be added via [dedicated option](#custom-css).
+Your custom CSS files may be added via [dedicated option](/3-9-features-nuxt#css).
 
 ## Tailwind CSS
 
@@ -59,9 +59,9 @@ To abstract users from the requirment of [adding CSS files manually](https://tai
 @import "tailwindcss";
 ```
 
-Your custom CSS files may be added via [dedicated option](#custom-css).
+Your custom CSS files may be added via [dedicated option](/3-9-features-nuxt#css).
 
-**Note:** In order to use `Tailwind CSS` utility classes in your custom CSS files, you still need to import `tailwindcss` set in each of them:
+**NOTE:** In order to use `Tailwind CSS` utility classes in your custom CSS files, you still need to import `tailwindcss` set in each of them:
 
 ```css [custom.css]
 @import "tailwindcss";
@@ -96,8 +96,7 @@ To abstract users from the requirment of adding CSS files manually, Nuxt Ignis i
 }
 ```
 
-Your custom CSS files may be added via [dedicated option](#custom-css).
-
+Your custom CSS files may be added via [dedicated option](/3-9-features-nuxt#css).
 
 ## Nuxt Charts
 
@@ -118,21 +117,6 @@ Because `Nuxt Charts` don't work with SSR, you need either to disable SSR in you
 
 ## Custom CSS
 
-You can provide paths to your custom CSS files via `NUXT_PUBLIC_IGNIS_CSS` environment variable. The values must be valid CSS file paths delimited by commas (`,`). Nuxt aliases (eg. `@` or `~`) are supported. Whitespaces around will be trimmed, so it doesn't matter if you add or omit them.
+If you have custom CSS files you want to include in your project, you can do so by defining a comma-delimited array of paths as a value for the `NUXT_PUBLIC_IGNIS_CSS` environment variable.
 
-For example:
-
-```[.env]
-NUXT_PUBLIC_IGNIS_CSS='@/assets/custom1.css, @/assets/custom2.css'
-```
-
-Provided values will be [defu-merged](/2-1-configuration.html#defu-merge) into `nuxt.config.ts` under `css` property::
-
-```ts [nuxt.config.ts]
-export default defineNuxtConfig({
-  css: [
-    '@/assets/custom1.css',
-    '@/assets/custom2.css'
-  ]
-})
-```
+Refer to [this page](/3-9-features-nuxt#css) for more details.
