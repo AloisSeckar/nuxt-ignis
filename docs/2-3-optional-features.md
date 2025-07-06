@@ -22,6 +22,7 @@ Currently, following modules are optional to use:
 - [`@nuxtjs/seo`](/3-7-features-utils.html#nuxt-seo) - set `NUXT_PUBLIC_IGNIS_SEO` to `true | false`
 - [`nuxt-auth-utils`](/3-7-features-utils.html#nuxt-auth-utils) - set `NUXT_PUBLIC_IGNIS_AUTH` to `true | false`
 - [`magic-regexp`](/3-7-features-utils.html#magic-regexp) - set `NUXT_PUBLIC_IGNIS_REGEXP` to `true | false`
+- [`nuxt-charts`](/3-2-features-ui.html#nuxt-charts) - set `NUXT_PUBLIC_IGNIS_CHARTS` to `true | false`
 
 Default values are **false** (not included) for all optional modules.
 

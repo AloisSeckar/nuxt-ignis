@@ -21,3 +21,5 @@ This folder contains various implementations of `nuxt-ignis` module. Those mini-
     - a) `@nuxt/content` module enabled
     - b) `@nuxt/content` AND `tailwind` module enabled
 09. Vue Equipment - `@maas/vue-equipment` module enabled
+10. Magic Regexp - `magic-regexp` module enabled
+11. Nuxt Charts - `nuxt-charts` module enabled

@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "ignis-demo-10",
+  "name": "ignis-demo-11",
   "type": "module",
   "scripts": {
     "dev": "nuxt dev"
@@ -8,12 +8,14 @@
   "devDependencies": {
     "@nuxt/eslint": "1.4.1",
     "nuxt": "3.17.5",
+    "nuxt-charts": "0.1.11",
     "typescript": "5.8.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "esbuild",
+      "maplibre-gl",
       "unrs-resolver"
     ]
   }

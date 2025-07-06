@@ -9,6 +9,8 @@
 ..\06b_formkit
 ..\07a_valibot
 ..\07b_zod
-..\08_content
+..\08a_content
 ..\08b_content-tailwind
 ..\09_equipment
+..\10_regexp
+..\11_charts

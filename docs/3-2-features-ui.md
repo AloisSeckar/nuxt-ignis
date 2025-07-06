@@ -98,6 +98,24 @@ To abstract users from the requirment of adding CSS files manually, Nuxt Ignis i
 
 Your custom CSS files may be added via [dedicated option](#custom-css).
 
+
+## Nuxt Charts
+
+- Packages: `nuxt-charts`
+- Version: `0.1.11`
+
+[Nuxt Charts](https://nuxt.com/modules/charts) is a module for creating visualy appealing charts in your Nuxt application.
+
+`Nuxt Charts` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
+
+```dotenv
+NUXT_PUBLIC_IGNIS_CHARTS=true
+```
+
+### Usage notice
+
+Because `Nuxt Charts` don't work with SSR, you need either to disable SSR in your app or make your charts client only. Check the [dedicated docs page](https://nuxtcharts.com/docs/server-side-rendering) for more details.
+
 ## Custom CSS
 
 You can provide paths to your custom CSS files via `NUXT_PUBLIC_IGNIS_CSS` environment variable. The values must be valid CSS file paths delimited by commas (`,`). Nuxt aliases (eg. `@` or `~`) are supported. Whitespaces around will be trimmed, so it doesn't matter if you add or omit them.

@@ -31,6 +31,7 @@
         "auth" : "Nuxt Auth Utils for easy and secure authentication",
         "openprops" : "Additional CSS by Open Props",
         "equipment" : "Vue Equipment utils available",
-        "regexp" : "Magic Regexp for easier regexp handling"
+        "regexp" : "Magic Regexp for easier regexp handling",
+        "charts" : "Nuxt Charts for drawing charts with ease"
     }
 }

@@ -109,6 +109,7 @@ const nuxtConfig = defu(ignisFeatures, {
           plugins: '', // list of Vue Equipment plugins
         },
         regexp: false, // true/false
+        charts: false, // true/false
 
         // extra behavior
         warn: {

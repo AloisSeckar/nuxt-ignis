@@ -244,4 +244,12 @@ describe('setFeatures() unit tests', () => {
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/regexp.txt')
   })
+
+  // Nuxt Charts
+
+  test('setFeatures() - Nuxt Charts - none', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_CHARTS = 'true'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/charts.txt')
+  })
 })

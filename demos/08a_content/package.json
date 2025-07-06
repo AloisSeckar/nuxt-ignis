@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "ignis-demo-08",
+  "name": "ignis-demo-08a",
   "type": "module",
   "scripts": {
     "dev": "nuxt dev"

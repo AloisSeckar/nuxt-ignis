@@ -262,6 +262,11 @@ export function setFeatures() {
     nuxtConfig.modules.push('magic-regexp/nuxt')
   }
 
+  // magic-regexp
+  if (process.env.NUXT_PUBLIC_IGNIS_CHARTS === 'true') {
+    nuxtConfig.modules.push('nuxt-charts')
+  }
+
   // 3. Nuxt-related settings
 
   nuxt.push(`log-level=${process.env.NUXT_PUBLIC_IGNIS_LOG_LEVEL || 'info[default]'}`)

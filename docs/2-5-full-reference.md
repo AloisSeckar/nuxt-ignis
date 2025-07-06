@@ -35,6 +35,7 @@ Following Nuxt modules/features are disabled by default and can be opted-in by s
 | `NUXT_PUBLIC_IGNIS_SEO` | `boolean` | `false` | Enable or disable `@nuxtjs/seo` module |
 | `NUXT_PUBLIC_IGNIS_AUTH` | `boolean` | `false` | Enable or disable `nuxt-auth-utils` module |
 | `NUXT_PUBLIC_IGNIS_REGEXP` | `boolean` | `false` | Enable or disable `magic-regexp` module |
+| `NUXT_PUBLIC_IGNIS_CHARTS` | `boolean` | `false` | Enable or disable `nuxt-charts` module |
 | `NUXT_PUBLIC_IGNIS_OPENPROPS` | `boolean` | `false` | Enable or disable `Open Props CSS` |
 | `NUXT_PUBLIC_IGNIS_PSLO_ENABLED` | `boolean` | `false` | Enable or disable `elrh-pslo` |
 
