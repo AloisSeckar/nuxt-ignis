@@ -4,8 +4,7 @@ Nuxt Ignis offers following utility options:
 
 ## VueUse
 
-- Packages: `@vueuse/core`
-- Version: `13.4.0`
+<PackagesReference :packages="[{ name: '@vueuse/core', version: '13.4.0' }, { name: '@vueuse/nuxt', version: '13.4.0' }]" />
 
 [VueUse](https://vueuse.org/) is a collection of essential Vue Composition Utilities that provides a set of reusable functions and utilities for Vue.js applications. It includes features like reactive state management, event handling, and more.
 
@@ -17,8 +16,7 @@ NUXT_PUBLIC_IGNIS_CORE_VUEUSE=false
 
 ## VueEquipment
 
-- Packages: `@maas/vue-equipment` 
-- Version: `1.0.0-beta.30`
+<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.30' }]" />
 
 [VueEquipment](https://www.vue.equipment/) is a collection of Vue composables and plugins that provides a set of reusable functions and utilities for Vue.js applications.
 
@@ -49,8 +47,7 @@ Whitespaces around will be trimmed, so it doesn't matter if you add or omit them
 
 ## Nuxt SEO
 
-- Packages: `@nuxtjs/seo` 
-- Version: `3.1.0`
+<PackagesReference :packages="[{ name: '@nuxtjs/seo', version: '3.1.0' }]" />
 
 [Nuxt SEO](https://nuxtseo.com/) is a collection of Nuxt modules that handles all of the technical aspects in growing your sites organic traffic.
 
@@ -68,8 +65,7 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`,
 
 ## Nuxt Auth Utils
 
-- Packages: `nuxt-auth-utils`
-- Version: `0.5.20`
+<PackagesReference :packages="[{ name: 'nuxt-auth-utils', version: '0.5.20' }]" />
 
 [Nuxt Auth Utils](https://github.com/AloisSeckar/nuxt-auth-utils) is a set of utilities for handling authentication in Nuxt applications.
 
@@ -81,8 +77,7 @@ NUXT_PUBLIC_IGNIS_AUTH=true
 
 ## Magic Regexp
 
-- Packages: `magic-regexp`
-- Version: `0.10.0`
+<PackagesReference :packages="[{ name: 'magic-regexp', version: '0.10.0' }]" />
 
 [Magic Regexp](https://regexp.dev/) is a utility library for working with regular expressions in more natural way.
 

@@ -4,8 +4,7 @@ Nuxt Ignis contains following customizable features related to content generatio
 
 ## Nuxt Content
 
-- Packages: `@nuxt/content`
-- Version: `3.6.1`
+<PackagesReference :packages="[{ name: '@nuxt/content', version: '3.6.1' }]" />
 
 [Nuxt Content](https://content.nuxt.com/) is a powerful content management system for Nuxt applications that allows you to write content in Markdown, JSON, YAML, or CSV formats. It provides a flexible way to manage and display content in your application.
 
@@ -44,8 +43,7 @@ Referencing config like this allows to pass in a custom config that will be [def
 
 ## I18N
 
-- Packages: `@nuxtjs/i18n`
-- Version: `9.5.5`
+<PackagesReference :packages="[{ name: '@nuxtjs/i18n', version: '9.5.5' }]" />
 
 [Nuxt I18N](https://i18n.nuxtjs.org/) is a module that provides internationalization support for your application. It allows you to easily manage translations and switch between different languages.
 
@@ -63,8 +61,7 @@ NUXT_PUBLIC_IGNIS_I18N_ENABLED=true
 
 ## `pslo`
 
-- Packages: `elrh-pslo`
-- Version: `1.1.6`
+<PackagesReference :packages="[{ name: 'elrh-pslo', version: '1.1.6' }]" />
 
 This feature exists mainly because Nuxt Ignis origins in Czechia. In Czech language it is considered a typography error to have a single-letter word at the end of a line. To avoid this [`elrh-pslo` package](https://www.npmjs.com/package/elrh-pslo) was created to provide a function to _"**P**revent **S**ingle **L**etter **O**rphans_. The effect is achieved by replacing ordinary spaces with `\xa0` Unicode character using regular expressions. 
 
