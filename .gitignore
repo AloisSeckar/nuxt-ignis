@@ -15,3 +15,6 @@ docs/.vitepress/.temp
 demos/**/eslint.config.mjs
 # no need to keep track on this for demo apps
 demos/**/pnpm-lock.yaml
+
+# config snapshot created upon Nuxt start
+_ignis-config.json

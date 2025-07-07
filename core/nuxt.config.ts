@@ -1,3 +1,5 @@
+import { writeFileSync } from 'fs'
+import { join } from 'path'
 import { defu } from 'defu'
 import { setFeatures } from './features'
 
@@ -116,6 +118,13 @@ const nuxtConfig = defu(ignisFeatures, {
           duplicates: true, // true/false
         },
       },
+    },
+  },
+  hooks: {
+    'schema:resolved'() {
+      const ignisConfig = JSON.stringify(ignisFeatures, null, 2)
+      const outPath = join(__dirname, 'public/_ignis-config.json')
+      writeFileSync(outPath, ignisConfig)
     },
   },
 })

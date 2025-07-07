@@ -33,5 +33,8 @@
         "equipment" : "Vue Equipment utils available",
         "regexp" : "Magic Regexp for easier regexp handling",
         "charts" : "Nuxt Charts for drawing charts with ease"
+    },
+    "config" : {
+        "header" : "Current Nuxt Ignis iteration was started with following config applied:"
     }
 }
