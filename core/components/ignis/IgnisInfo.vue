@@ -4,7 +4,7 @@
     <AppFeatureList />
 
     <div v-if="pages" class="link">
-      <NuxtLink to="/second">
+      <NuxtLink to="/_ignis-two">
         {{ useIgnisT("goto2") }}
       </NuxtLink>
     </div>

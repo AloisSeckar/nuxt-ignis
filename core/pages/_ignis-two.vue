@@ -1,12 +1,16 @@
 <!--
+    TODO: rewview this page if it is really needed...
+
     https://nuxt.com/docs/guide/directory-structure/pages
 
-    This page appears under URL `/second`
+    This page appears under URL `/_ignis-two`
 
     NuxtImg
     - special component for displaying images with NuxtImage module
     elrh-pslo
     - special text-processing feature
+    Nuxt Content
+    - verify that Nuxt Content module is working
 -->
 
 <template>
@@ -36,7 +40,7 @@
       <span v-else>nuxt-content not enabled</span>
     </div>
     <div class="link">
-      <NuxtLink to="/">
+      <NuxtLink to="/_ignis-info">
         {{ useT("goto1") }}
       </NuxtLink>
     </div>
@@ -53,7 +57,7 @@ const processedText = pslo(rawText)
 
 // data for nuxt-content rendering
 const content = useRuntimeConfig().public.ignis.content
-const { data: contentData } = await useAsyncData('second', () => {
-  return queryCollection('content').path('/second').first()
+const { data: contentData } = await useAsyncData('content-demo', () => {
+  return queryCollection('content').path('/demo').first()
 })
 </script>

@@ -1,9 +1,9 @@
 {
     "title" : "Nuxt Ignis",
     "subtitle" : "A ready-to-use setup for your next application in Nuxt",
-    "page2" : "This is a second page of the application",
+    "page2" : "This is a test page of Nuxt Ignis app",
     "image" : "Image by Unsplash displayed with Nuxt Image",
-    "goto1" : "Go back to index",
+    "goto1" : "Go back to info",
     "goto2" : "Go to 2nd page",
     "features" : {
         "nuxt" : "Nuxt application framework atop Vue.js",
