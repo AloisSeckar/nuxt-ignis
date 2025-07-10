@@ -323,13 +323,14 @@ export function setFeatures() {
   // 6. verify results
   // TODO why this run twice? (SSR?)
 
-  let overview = 'Nuxt Ignis will start using following settings:\n'
-  overview += 'Modules: ' + nuxtConfig.modules.join(', ') + '\n'
+  let overview = `Nuxt Ignis will start using following settings:\n`
+  overview += `App title: ${appTitle}\n`
+  overview += `Modules: ${nuxtConfig.modules.join(', ')}\n`
   if (extras.length > 0) {
-    overview += 'Extras: ' + extras.join(', ') + '\n'
+    overview += `Extras: ${extras.join(', ')}\n`
   }
   if (nuxt.length > 0) {
-    overview += 'Nuxt: ' + nuxt.join(', ') + '\n'
+    overview += `Nuxt: ${nuxt.join(', ')}\n`
   }
   log.info(overview)
 
