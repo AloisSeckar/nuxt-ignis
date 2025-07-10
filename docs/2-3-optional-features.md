@@ -11,6 +11,7 @@ However, you are not limited to presets only. Every optional module or feature c
 ## Optional modules
 
 Currently, following modules are optional to use:
+
 - [`@nuxt/ui`](/3-2-features-ui.html#nuxt-ui) - set `NUXT_PUBLIC_IGNIS_UI` to `true | false`
 - [`@nuxtjs/tailwindcss`](/3-2-features-ui.html#tailwindcss) - set `NUXT_PUBLIC_IGNIS_TAILWIND` to `true | false` (ignored if `NUXT_PUBLIC_IGNIS_UI=true`)
 - [`nuxt-neon`](/3-3-features-db.html#neon) - set `NUXT_PUBLIC_IGNIS_NEON` to `true | false`
@@ -26,9 +27,10 @@ Currently, following modules are optional to use:
 
 Default values are **false** (not included) for all optional modules.
 
-## Optional features
+## Extra features
 
 Currently, following extra features (not using separate Nuxt Modules) are optional:
+
 - [`zod`](/3-5-features-validation.html#zod) - set `NUXT_PUBLIC_IGNIS_ZOD` to `true | false`
 - [`valibot`](/3-5-features-validation.html#valibot) - set `NUXT_PUBLIC_IGNIS_VALIBOT` to `true | false`
 - [`Open Props CSS`](/3-2-features-ui.html#open-props) - set `NUXT_PUBLIC_IGNIS_OPENPROPS` to `true | false`

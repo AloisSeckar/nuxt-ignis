@@ -25,6 +25,7 @@ Recommended package manager is [pnpm](https://pnpm.io/).
 ## Testing
 
 Nuxt Ignis uses [Vitest](https://vitest.dev/) for testing. More specificly, it uses proprietary [Nuxt Spec](https://github.com/AloisSeckar/nuxt-spec) package that provides a base layer for testing Nuxt modules and applications united under single dependency. With that you have access to:
+
 - `vitest` as the fundamental testing framework
 - `happy-dom` as the headless browser runtime
 - `playwright-core` as the headless browser testing framework

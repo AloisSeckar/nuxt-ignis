@@ -31,6 +31,7 @@ So the module is also checking for styling issues. [Prettier](https://prettier.i
 `@nuxt/eslint` module automatically generates ready-to-use `eslint.config.mjs` file in your project root directory, if not yet present. This file is scaffolded to include recommended Nuxt-related ESLint rules.
 
 The template looks like this:
+
 ```js [eslint.config.mjs]
 // @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
@@ -42,7 +43,7 @@ export default withNuxt(
 
 As it inherits from generated Nuxt content, running `pnpm dev` for the first time is **REQUIRED** to make linting work in your projects.
 
-Because Nuxt Ignis author is _opinionated_ about some of the default rules, there is also a config override available. A CLI tool is provided to generate a default ESLint configuration file enhanced with some rule overrides. 
+Because Nuxt Ignis author is _opinionated_ about some of the default rules, there is also a config override available. A CLI tool is provided to generate a default ESLint configuration file enhanced with some rule overrides.
 
 To create Nuxt Ignis default instead of plain `@nuxt/eslint` version, use the following command:
 
@@ -60,7 +61,7 @@ Possible values are: `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`
 
 ## Error handling
 
-By default, Nuxt Ignis registers global Vue [error](https://vuejs.org/api/application.html#app-config-errorhandler) and [warn](https://vuejs.org/api/application.html#app-config-warnhandler) handler to process errors and warnings in your app. The error/warn object is sent to `consola` error/warn function. Additional info provided by Vue is also captured in debug mode. Check the implementation [here](https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/heads/main/core/plugins/errorHandler.ts).
+By default, Nuxt Ignis registers global Vue [error](https://vuejs.org/api/application.html#app-config-errorhandler) and [warn](https://vuejs.org/api/application.html#app-config-warnhandler) handler to process errors and warnings in your app. The error/warn object is sent to `consola` error/warn function. Additional info provided by Vue is also captured in debug mode. Check the [implementation](https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/heads/main/core/plugins/errorHandler.ts).
 
 If you don't want to rely on the default behavior, you can disable those handlers by setting `NUXT_PUBLIC_IGNIS_ERROR` to `false`.
 

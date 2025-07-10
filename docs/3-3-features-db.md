@@ -15,7 +15,9 @@ The [`nuxt-neon`](https://github.com/AloisSeckar/nuxt-neon) module integrates `N
 ```dotenv
 NUXT_PUBLIC_IGNIS_NEON=true
 ```
+
 Or [DB preset](/2-3-optional-features.html#db-preset):
+
 ```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_DB=neon
 ```
@@ -23,6 +25,7 @@ NUXT_PUBLIC_IGNIS_PRESET_DB=neon
 ### Usage notice
 
 To configure `Neon` connection you need to provide following env variables:
+
 - `NUXT_NEON_HOST`
 - `NUXT_NEON_USER`
 - `NUXT_NEON_PASS`
@@ -43,7 +46,9 @@ The integration is provided via [`@nuxtjs/supabase` module](https://supabase.nux
 ```dotenv
 NUXT_PUBLIC_IGNIS_SUPABASE=true
 ```
+
 Or [DB preset](/2-3-optional-features.html#db-preset):
+
 ```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_DB=supabase
 ```
@@ -51,6 +56,7 @@ NUXT_PUBLIC_IGNIS_PRESET_DB=supabase
 ### Usage notice
 
 To configure `Supabase` connection you need to provide following env variables:
+
 - `SUPABASE_URL`
 - `SUPABASE_KEY`
 

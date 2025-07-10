@@ -16,7 +16,7 @@ export default defineNuxtConfig({
 
 This will tell Nuxt to extend from `nuxt-ignis` layer included in the NPM package you're referencing in your `package.json`. For many use cases you will be good to go with this and with Nuxt Ignis environment variables you need.
 
-Naturally, there will be additional scenarios. Thanks to [defu-merge](/2-1-configuration.html#defu-merge) principle you can always directly add or override any valid config option in your `nuxt.config.ts` file. 
+Naturally, there will be additional scenarios. Thanks to [defu-merge](/2-1-configuration.html#defu-merge) principle you can always directly add or override any valid config option in your `nuxt.config.ts` file.
 
 For example, you can add your own runtime config values like this:
 

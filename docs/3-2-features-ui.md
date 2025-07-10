@@ -13,7 +13,9 @@ Nuxt Ignis contains following customizable UI related features:
 ```dotenv
 NUXT_PUBLIC_IGNIS_UI=true
 ```
+
 Or [UI preset](/2-3-optional-features.html#ui-preset):
+
 ```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_UI=nuxt-ui
 ```
@@ -42,7 +44,9 @@ Your custom CSS files may be added via [dedicated option](/3-9-features-nuxt#css
 ```dotenv
 NUXT_PUBLIC_IGNIS_TAILWIND=true
 ```
+
 Or [UI preset](/2-3-optional-features.html#ui-preset):
+
 ```dotenv
 NUXT_PUBLIC_IGNIS_PRESET_UI=tailwind
 ```

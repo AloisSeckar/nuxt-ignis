@@ -4,7 +4,7 @@
 
 Nuxt Ignis is a _not-another-template-starter_ for [Nuxt](https://nuxt.com/) web applications. Unlike other heavily opinionated solutions, this one is designed to be **optionated**.
 
-The main goal is to abstract from difficult and repetitive dependency management across multiple Nuxt projects. Instead of managing a long list of dependencies in `package.json`, you can depend just on single `nuxt-ignis` package. 
+The main goal is to abstract from difficult and repetitive dependency management across multiple Nuxt projects. Instead of managing a long list of dependencies in `package.json`, you can depend just on single `nuxt-ignis` package.
 
 This is possible, because we are leveraging the power of [Nuxt Layers](https://nuxt.com/docs/getting-started/layers). Not only you can re-use the components, composables and utils like that. You can also bring in the NPM packages that are defined in the layer and use them in the extending application.
 

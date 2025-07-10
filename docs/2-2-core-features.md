@@ -5,6 +5,7 @@ So-called _"core features"_ are enabled by default in Nuxt Ignis. Once you inclu
 ## Integrated features
 
 Following packages are currently deeply integrated into Nuxt Ignis and **cannot be disabled**:
+
 - [Nuxt](https://nuxt.com/) itself - because obviously it is required to run everything uder the hood
 - merging configurations via [`defu`](https://github.com/unjs/defu) - used for merging defaults with user-defined config in various modules
 - date operations via [`date-fns`](https://github.com/date-fns/date-fns) - `format` function is used to get timestamps
@@ -14,7 +15,7 @@ Following packages are currently deeply integrated into Nuxt Ignis and **cannot 
 ## Core modules
 
 Pre-defined set of Nuxt modules is being automatically included by default. You can opt-out from using them by setting respective config value to `false`.
-d
+
 - use `NUXT_PUBLIC_CORE_ESLINT=false` to disable [`@nuxt/eslint`](/3-8-features-devex.html#eslint)
 - use `NUXT_PUBLIC_CORE_FONTS=false` to disable `@nuxt/fonts`
 - use `NUXT_PUBLIC_CORE_IMAGE=false` to disable `@nuxt/image`

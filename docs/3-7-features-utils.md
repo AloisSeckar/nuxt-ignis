@@ -31,6 +31,7 @@ NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED=true
 Simply enabling `VueEquipment` actually does **nothing** as you also need to specifify which composables and/or plugins you want to use.
 
 There are two config values for this purpose:
+
 - `NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES` - which `Vue Equipment` composables should be imported (coma-separated list)
 - `NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS` - which `Vue Equipment` plugins should be imported (coma-separated list)
 

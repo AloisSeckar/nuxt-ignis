@@ -63,7 +63,7 @@ NUXT_PUBLIC_IGNIS_I18N_ENABLED=true
 
 <PackagesReference :packages="[{ name: 'elrh-pslo', version: '1.1.6' }]" />
 
-This feature exists mainly because Nuxt Ignis origins in Czechia. In Czech language it is considered a typography error to have a single-letter word at the end of a line. To avoid this [`elrh-pslo` package](https://www.npmjs.com/package/elrh-pslo) was created to provide a function to _"**P**revent **S**ingle **L**etter **O**rphans_. The effect is achieved by replacing ordinary spaces with `\xa0` Unicode character using regular expressions. 
+This feature exists mainly because Nuxt Ignis origins in Czechia. In Czech language it is considered a typography error to have a single-letter word at the end of a line. To avoid this [`elrh-pslo` package](https://www.npmjs.com/package/elrh-pslo) was created to provide a function to _"**P**revent **S**ingle **L**etter **O**rphans_. The effect is achieved by replacing ordinary spaces with `\xa0` Unicode character using regular expressions.
 
 Nuxt Ignis allows simple integration of this function for more convenience.
 
