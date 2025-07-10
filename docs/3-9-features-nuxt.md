@@ -32,7 +32,7 @@ export default defineNuxtConfig({
     // they will be MERGED with Nuxt Ignis set
     // CAUTION: you should avoid using `public.ignis` prefix 
     // as it may cause conflicts
-  }
+  },
 })
 ```
 
@@ -62,13 +62,37 @@ For example:
 NUXT_PUBLIC_IGNIS_CSS='@/assets/custom1.css, @/assets/custom2.css'
 ```
 
-Provided values will be [defu-merged](/2-1-configuration.html#defu-merge) into `nuxt.config.ts` under `css` property::
+Provided values will be [defu-merged](/2-1-configuration.html#defu-merge) into `nuxt.config.ts` under `css` property:
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   css: [
     '@/assets/custom1.css',
     '@/assets/custom2.css'
-  ]
+  ],
 })
 ```
+
+### HTML title
+
+By setting:
+
+```[.env]
+NUXT_PUBLIC_IGNIS_TITLE=<YOUR APP TITLE>
+```
+
+You can set value `<YOUR APP TITLE>` to [HTML title tag](https://www.w3schools.com/tags/tag_title.asp) of your app.
+
+Provided value will be [defu-merged](/2-1-configuration.html#defu-merge) into `nuxt.config.ts`as:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  app: {
+    head: {
+      title: appTitle,
+    },
+  },
+})
+```
+
+You can still override global value provided like this with [`useHead` composable](https://nuxt.com/docs/api/composables/use-head) in your pages.

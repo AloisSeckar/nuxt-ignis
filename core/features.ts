@@ -294,7 +294,17 @@ export function setFeatures() {
     nuxt.push('custom CSS')
   }
 
-  // 4. warn if duplicate modules find
+  // 4. other - app title
+  const appTitle = process.env.NUXT_PUBLIC_IGNIS_TITLE || 'Nuxt Ignis App'
+  nuxtConfig = defu({
+    app: {
+      head: {
+        title: appTitle,
+      },
+    },
+  }, nuxtConfig)
+
+  // 5. warn if duplicate modules find
   // this means e.g. 2 database modules or 2 form solutions
   if (process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES !== 'false') {
     const used = nuxtConfig.modules
@@ -310,8 +320,8 @@ export function setFeatures() {
     }
   }
 
-  // 5. verify results
-  // TODO why this run twice?
+  // 6. verify results
+  // TODO why this run twice? (SSR?)
 
   let overview = 'Nuxt Ignis will start using following settings:\n'
   overview += 'Modules: ' + nuxtConfig.modules.join(', ') + '\n'

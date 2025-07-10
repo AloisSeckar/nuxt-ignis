@@ -11,7 +11,7 @@
 
 <script setup lang="ts">
 useHead({
-  title: useAppConfig().textTitle,
+  title: 'Override',
   htmlAttrs: {
     lang: 'en',
   },

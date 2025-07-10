@@ -44,6 +44,9 @@ const nuxtConfig = defu(ignisFeatures, {
       // actual values MUST BE provided via .env file (or production equivalent)
       ignis: {
 
+        // HTML page title,
+        title: 'Nuxt Ignis App',
+
         // logging
         log: {
           level: 'info',
