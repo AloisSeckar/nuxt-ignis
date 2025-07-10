@@ -1,4 +1,9 @@
 {
+  "app": {
+    "head": {
+      "title": "Nuxt Ignis App",
+    },
+  },
   "css": [
     "first.css",
   ],

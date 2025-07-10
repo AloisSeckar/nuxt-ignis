@@ -1,3 +1,4 @@
 Nuxt Ignis will start using following settings:
+App title: Nuxt Ignis App
 Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, magic-regexp/nuxt
 Nuxt: log-level=info[default]

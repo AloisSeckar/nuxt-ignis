@@ -1,4 +1,9 @@
 {
+  "app": {
+    "head": {
+      "title": "Nuxt Ignis App",
+    },
+  },
   "i18n": {
     "bundle": {
       "optimizeTranslationDirective": false,

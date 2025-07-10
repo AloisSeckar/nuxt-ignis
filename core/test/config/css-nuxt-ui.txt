@@ -1,4 +1,9 @@
 {
+  "app": {
+    "head": {
+      "title": "Nuxt Ignis App",
+    },
+  },
   "css": [
     "custom.css",
     "C:\Git\nuxt-ignis\core\assets\css\ignis-nuxt-ui.css",

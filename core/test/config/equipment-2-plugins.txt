@@ -1,4 +1,9 @@
 {
+  "app": {
+    "head": {
+      "title": "Nuxt Ignis App",
+    },
+  },
   "modules": [
     "@nuxt/eslint",
     "@nuxt/fonts",

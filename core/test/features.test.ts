@@ -252,4 +252,11 @@ describe('setFeatures() unit tests', () => {
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/charts.txt')
   })
+
+  // custom app title
+  test('setFeatures() - custom app title', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_TITLE = 'Custom Title'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/custom-title.txt')
+  })
 })
