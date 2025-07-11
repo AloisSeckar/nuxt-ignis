@@ -11,10 +11,6 @@
 
 <script setup lang="ts">
 useHead({
-  title: 'Override',
-  htmlAttrs: {
-    lang: 'en',
-  },
   bodyAttrs: {
     class: 'ignis-body',
   },

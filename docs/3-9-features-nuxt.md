@@ -73,26 +73,48 @@ export default defineNuxtConfig({
 })
 ```
 
-### HTML title
+### HTML attrs
 
-By setting:
-
-```[.env]
-NUXT_PUBLIC_IGNIS_TITLE=<YOUR APP TITLE>
-```
-
-You can set value `<YOUR APP TITLE>` to [HTML title tag](https://www.w3schools.com/tags/tag_title.asp) of your app.
-
-Provided value will be [defu-merged](/2-1-configuration.html#defu-merge) into `nuxt.config.ts`as:
+Couple of HTML attributes can be automatically set via environment variables. Provided values will be [defu-merged](/2-1-configuration.html#defu-merge) into `nuxt.config.ts`as:
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
   app: {
     head: {
-      title: appTitle,
+      // Nuxt Ignis environment variables will be merged here
     },
   },
 })
 ```
 
-You can still override global value provided like this with [`useHead` composable](https://nuxt.com/docs/api/composables/use-head) in your pages.
+Nuxt then automatically injects given values in the `<head>` section of rendered HTML pages. See [Nuxt docs](https://nuxt.com/docs/api/nuxt-config#head) for more details.
+
+You can still override global value provided like this with [`useHead` composable](https://nuxt.com/docs/api/composables/use-head) in your `app.vue` or for individual pages.
+
+Currently, following HTML attributes can be set:
+
+#### Lang
+
+Environment variable:
+
+```[.env]
+NUXT_PUBLIC_IGNIS_LANG=<LANG_CODE>
+```
+
+Will set value `<LANG_CODE>` into [HTML lang attribute](https://www.w3schools.com/tags/ref_language_codes.asp) of your app. According to the [HTML specification](https://html.spec.whatwg.org/multipage/dom.html#attr-lang), the value should be a valid [BCP 47 tag](https://www.rfc-editor.org/rfc/rfc5646.html).
+
+If no custom value is provided, the default is `en`.
+
+**NOTE:** Using `@nuxtjs/seo` and/or `@nuxtjs/i18n` modules might cause this value to be overridden.
+
+#### Title
+
+Environment variable:
+
+```[.env]
+NUXT_PUBLIC_IGNIS_TITLE=<YOUR APP TITLE>
+```
+
+Will set value `<YOUR APP TITLE>` into [HTML title tag](https://www.w3schools.com/tags/tag_title.asp) of your app.
+
+If no custom value is provided, the default is `Nuxt Ignis App`.

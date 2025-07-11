@@ -64,7 +64,8 @@ Other configurable options:
 | `NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS` | `string` | `''` | Coma-separated list of `Vue Equipment` plugins to be imported |
 | `NUXT_PUBLIC_IGNIS_PSLO_CONTENT` | `boolean` | `false` | If both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function |
 | `NUXT_PUBLIC_IGNIS_TITLE` | `string` | `Nuxt Ignis App` | HTML title of the application |
-| `NUXT_PUBLIC_IGNIS_CSS` | `string` | `''` | Coma-separated list of paths to custom CSS files to be included |
+| `NUXT_PUBLIC_IGNIS_LANG` | `string` | `en-US` | HTML lang attribute of the application |
+| `NUXT_PUBLIC_IGNIS_CSS` | `string` | `''` | Comma-separated list of paths to custom CSS files to be included |
 | `NUXT_PUBLIC_IGNIS_PAGES` | `boolean` | `true` | Set to `false` to disable multiple pages and routing |
 | `NUXT_PUBLIC_IGNIS_SSR` | `boolean` | `true` | Set to `false` to disable server side rendering |
 | `NUXT_PUBLIC_IGNIS_ERROR` | `boolean` | `true` | Set to `false` to turn default error and warn handlers off |
