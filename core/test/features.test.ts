@@ -231,7 +231,7 @@ describe('setFeatures() unit tests', () => {
 
   // Vue Equipment
 
-  test('setFeatures() - Vue Equipment - none', async () => {
+  test('setFeatures() - Vue Equipment', async () => {
     process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED = 'true'
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/equipment.txt')
@@ -239,7 +239,7 @@ describe('setFeatures() unit tests', () => {
 
   // Magic Regexp
 
-  test('setFeatures() - Magic Regexp - none', async () => {
+  test('setFeatures() - Magic Regexp', async () => {
     process.env.NUXT_PUBLIC_IGNIS_REGEXP = 'true'
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/regexp.txt')
@@ -247,15 +247,16 @@ describe('setFeatures() unit tests', () => {
 
   // Nuxt Charts
 
-  test('setFeatures() - Nuxt Charts - none', async () => {
+  test('setFeatures() - Nuxt Charts', async () => {
     process.env.NUXT_PUBLIC_IGNIS_CHARTS = 'true'
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/charts.txt')
   })
 
-  // custom app title
-  test('setFeatures() - custom app title', async () => {
-    process.env.NUXT_PUBLIC_IGNIS_TITLE = 'Custom Title'
+  // HTML
+
+  test('setFeatures() - custom html title', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_HTML_TITLE = 'Custom Title'
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/custom-title.txt')
   })

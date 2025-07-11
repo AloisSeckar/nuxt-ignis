@@ -145,4 +145,12 @@ describe('nuxtConfig unit tests', () => {
     const nuxtConfig = setFeatures()
     await expect(nuxtConfig).toMatchFileSnapshot('./config/css-open-props.txt')
   })
+
+  // HTML
+
+  test('setFeatures() - custom html lang', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_HTML_LANG = 'en-US'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/custom-lang.txt')
+  })
 })

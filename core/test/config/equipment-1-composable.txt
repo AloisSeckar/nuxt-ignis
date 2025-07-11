@@ -1,6 +1,9 @@
 {
   "app": {
     "head": {
+      "htmlAttrs": {
+        "lang": "en",
+      },
       "title": "Nuxt Ignis App",
     },
   },

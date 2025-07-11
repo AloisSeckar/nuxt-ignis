@@ -2,7 +2,7 @@
   "app": {
     "head": {
       "htmlAttrs": {
-        "lang": "en",
+        "lang": "en-US",
       },
       "title": "Nuxt Ignis App",
     },
@@ -15,7 +15,6 @@
     "nuxt-security",
     "@vueuse/nuxt",
     "@pinia/nuxt",
-    "@vueform/nuxt",
   ],
   "vue": {
     "compilerOptions": {
