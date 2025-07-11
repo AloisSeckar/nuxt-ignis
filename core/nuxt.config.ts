@@ -44,10 +44,12 @@ const nuxtConfig = defu(ignisFeatures, {
       // actual values MUST BE provided via .env file (or production equivalent)
       ignis: {
 
-        // HTML lang attribute,
-        lang: 'en',
-        // HTML page title,
-        title: 'Nuxt Ignis App',
+        html: {
+          // HTML lang attribute,
+          lang: 'en',
+          // HTML page title,
+          title: 'Nuxt Ignis App',
+        },
 
         // logging
         log: {

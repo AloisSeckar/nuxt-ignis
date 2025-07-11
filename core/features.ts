@@ -295,8 +295,8 @@ export function setFeatures() {
   }
 
   // 4. HTML config
-  const htmlLang = process.env.NUXT_PUBLIC_IGNIS_LANG || 'en'
-  const appTitle = process.env.NUXT_PUBLIC_IGNIS_TITLE || 'Nuxt Ignis App'
+  const htmlLang = process.env.NUXT_PUBLIC_IGNIS_HTML_LANG || 'en'
+  const appTitle = process.env.NUXT_PUBLIC_IGNIS_HTML_TITLE || 'Nuxt Ignis App'
   nuxtConfig = defu({
     app: {
       head: {

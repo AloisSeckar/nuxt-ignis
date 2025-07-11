@@ -98,7 +98,7 @@ Currently, following HTML attributes can be set:
 Environment variable:
 
 ```[.env]
-NUXT_PUBLIC_IGNIS_LANG=<LANG_CODE>
+NUXT_PUBLIC_IGNIS_HTML_LANG=<LANG_CODE>
 ```
 
 Will set value `<LANG_CODE>` into [HTML lang attribute](https://www.w3schools.com/tags/ref_language_codes.asp) of your app. According to the [HTML specification](https://html.spec.whatwg.org/multipage/dom.html#attr-lang), the value should be a valid [BCP 47 tag](https://www.rfc-editor.org/rfc/rfc5646.html).
@@ -112,7 +112,7 @@ If no custom value is provided, the default is `en`.
 Environment variable:
 
 ```[.env]
-NUXT_PUBLIC_IGNIS_TITLE=<YOUR APP TITLE>
+NUXT_PUBLIC_IGNIS_HTML_TITLE=<YOUR APP TITLE>
 ```
 
 Will set value `<YOUR APP TITLE>` into [HTML title tag](https://www.w3schools.com/tags/tag_title.asp) of your app.
