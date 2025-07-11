@@ -3,7 +3,7 @@
 
     An example of Nuxt component.
 
-    AppFeature
+    IgnisFeature
      - an example usage of auto-imported Nuxt component declared in `/components` directory
      - the text is (usually) being loaded localized via nuxtjs/i18n module
      - features are being displayed conditionally according to current setting
@@ -12,33 +12,33 @@
 <template>
   <div class="feature-box">
     <div class="feature-list">
-      <AppFeature :text="useIgnisT('features.nuxt')" />
-      <AppFeature :text="useIgnisT('features.consola')" />
-      <AppFeature :active="eslint" :text="useIgnisT('features.eslint')" />
-      <AppFeature :active="security" :text="useIgnisT('features.security')" />
-      <AppFeature :active="image" :text="useIgnisT('features.image')" />
-      <AppFeature :active="scripts" :text="useIgnisT('features.scripts')" />
-      <AppFeature :active="fonts" :text="useIgnisT('features.fonts')" class="fonts" />
-      <AppFeature :active="pinia" :text="useIgnisT('features.pinia')" />
-      <AppFeature :active="vueuse" :text="useIgnisT('features.vueuse')" />
-      <AppFeature :active="true" :text="useIgnisT('features.time')" />
-      <AppFeature :active="nuxtui" :text="useIgnisT('features.ui')" />
-      <AppFeature :active="tailwind" :text="useIgnisT('features.tailwind')" />
-      <AppFeature :active="nuxtui" :text="useIgnisT('features.icon')" />
-      <AppFeature :active="neon" :text="useIgnisT('features.neon')" />
-      <AppFeature :active="supabase" :text="useIgnisT('features.supabase')" />
-      <AppFeature :active="i18n" :text="useIgnisT('features.i18n')" />
-      <AppFeature :active="vueform" :text="useIgnisT('features.vueform')" />
-      <AppFeature :active="formkit" :text="useIgnisT('features.formkit')" />
-      <AppFeature :active="valibot" :text="useIgnisT('features.valibot')" />
-      <AppFeature :active="zod" :text="useIgnisT('features.zod')" />
-      <AppFeature :active="content" :text="useIgnisT('features.content')" />
-      <AppFeature :active="seo" :text="useIgnisT('features.seo')" />
-      <AppFeature :active="auth" :text="useIgnisT('features.auth')" />
-      <AppFeature :active="equipment" :text="useIgnisT('features.equipment')" />
-      <AppFeature :active="regexp" :text="useIgnisT('features.regexp')" />
-      <AppFeature :active="charts" :text="useIgnisT('features.charts')" />
-      <AppFeature :active="openprops" class="openprops-feature" :text="useIgnisT('features.openprops')" />
+      <IgnisFeature :text="useIgnisT('features.nuxt')" />
+      <IgnisFeature :text="useIgnisT('features.consola')" />
+      <IgnisFeature :active="eslint" :text="useIgnisT('features.eslint')" />
+      <IgnisFeature :active="security" :text="useIgnisT('features.security')" />
+      <IgnisFeature :active="image" :text="useIgnisT('features.image')" />
+      <IgnisFeature :active="scripts" :text="useIgnisT('features.scripts')" />
+      <IgnisFeature :active="fonts" :text="useIgnisT('features.fonts')" class="fonts" />
+      <IgnisFeature :active="pinia" :text="useIgnisT('features.pinia')" />
+      <IgnisFeature :active="vueuse" :text="useIgnisT('features.vueuse')" />
+      <IgnisFeature :active="true" :text="useIgnisT('features.time')" />
+      <IgnisFeature :active="nuxtui" :text="useIgnisT('features.ui')" />
+      <IgnisFeature :active="tailwind" :text="useIgnisT('features.tailwind')" />
+      <IgnisFeature :active="nuxtui" :text="useIgnisT('features.icon')" />
+      <IgnisFeature :active="neon" :text="useIgnisT('features.neon')" />
+      <IgnisFeature :active="supabase" :text="useIgnisT('features.supabase')" />
+      <IgnisFeature :active="i18n" :text="useIgnisT('features.i18n')" />
+      <IgnisFeature :active="vueform" :text="useIgnisT('features.vueform')" />
+      <IgnisFeature :active="formkit" :text="useIgnisT('features.formkit')" />
+      <IgnisFeature :active="valibot" :text="useIgnisT('features.valibot')" />
+      <IgnisFeature :active="zod" :text="useIgnisT('features.zod')" />
+      <IgnisFeature :active="content" :text="useIgnisT('features.content')" />
+      <IgnisFeature :active="seo" :text="useIgnisT('features.seo')" />
+      <IgnisFeature :active="auth" :text="useIgnisT('features.auth')" />
+      <IgnisFeature :active="equipment" :text="useIgnisT('features.equipment')" />
+      <IgnisFeature :active="regexp" :text="useIgnisT('features.regexp')" />
+      <IgnisFeature :active="charts" :text="useIgnisT('features.charts')" />
+      <IgnisFeature :active="openprops" class="openprops-feature" :text="useIgnisT('features.openprops')" />
     </div>
     <div v-if="!pages" class="pages">
       Single-page mode (/pages disabled)

@@ -1,7 +1,7 @@
 <template>
   <div>
     <IgnisHeader />
-    <AppFeatureList />
+    <IgnisFeatureList />
 
     <div v-if="pages" class="link">
       <NuxtLink to="/_ignis-two">
