@@ -72,4 +72,4 @@ For demo apps we are deliberately **not committing** `pnpm-lock.yaml` and `eslin
 
 ## License
 
-By contributing to this project, you agree that your contributions will be licensed under the [MIT License](LICENSE).
+By contributing to this project, you agree that your contributions will be licensed under the [MIT License](https://github.com/AloisSeckar/nuxt-ignis/blob/main/LICENSE).
