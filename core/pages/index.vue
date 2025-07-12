@@ -6,9 +6,10 @@
 
     IgnisInfo
      - an example usage of auto-imported Nuxt component declared in `/components` directory
-     - this contains a list of available features configured in current Nuxt Ignis setup
+     - it is a wrapper around couple of possible components defined by "content" prop
+     - this one contains a list of available features configured in current Nuxt Ignis setup
 -->
 
 <template>
-  <IgnisInfo />
+  <IgnisInfo :content="'Features'" />
 </template>

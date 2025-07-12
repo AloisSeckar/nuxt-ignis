@@ -1,11 +1,11 @@
 <template>
   <UApp v-if="ui">
     <NuxtPage v-if="pages" />
-    <IgnisInfo v-else />
+    <IgnisInfo v-else :content="'Features'" />
   </UApp>
   <div v-else>
     <NuxtPage v-if="pages" />
-    <IgnisInfo v-else />
+    <IgnisInfo v-else :content="'Features'" />
   </div>
 </template>
 
