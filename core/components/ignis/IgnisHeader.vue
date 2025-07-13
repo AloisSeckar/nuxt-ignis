@@ -2,9 +2,9 @@
   <header>
     <div class="ignis-header">
       <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
-      <h1 class="ignis-title">
+      <div class="ignis-title">
         {{ useIgnisT("title") }}
-      </h1>
+      </div>
       <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
     </div>
     <div class="ignis-subtitle ">

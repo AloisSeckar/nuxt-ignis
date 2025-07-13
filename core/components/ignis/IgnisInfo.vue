@@ -10,14 +10,16 @@
 </template>
 
 <script setup lang="ts">
-export type IgnisComponentType = 'Features' | 'Config'
+export type IgnisComponentType = 'Welcome' | 'Features' | 'Config'
 
 const props = defineProps<{
   content: IgnisComponentType
 }>()
 
 let ignisContent
-if (props.content === 'Config') {
+if (props.content === 'Welcome') {
+  ignisContent = resolveComponent('IgnisWelcome')
+} else if (props.content === 'Config') {
   ignisContent = resolveComponent('IgnisConfig')
 } else {
   ignisContent = resolveComponent('IgnisFeatureList')

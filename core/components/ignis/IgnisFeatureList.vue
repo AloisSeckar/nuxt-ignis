@@ -10,34 +10,37 @@
 -->
 
 <template>
-  <div class="feature-list">
-    <IgnisFeature :text="useIgnisT('features.nuxt')" />
-    <IgnisFeature :text="useIgnisT('features.consola')" />
-    <IgnisFeature :active="eslint" :text="useIgnisT('features.eslint')" />
-    <IgnisFeature :active="security" :text="useIgnisT('features.security')" />
-    <IgnisFeature :active="image" :text="useIgnisT('features.image')" />
-    <IgnisFeature :active="scripts" :text="useIgnisT('features.scripts')" />
-    <IgnisFeature :active="fonts" :text="useIgnisT('features.fonts')" class="fonts" />
-    <IgnisFeature :active="pinia" :text="useIgnisT('features.pinia')" />
-    <IgnisFeature :active="vueuse" :text="useIgnisT('features.vueuse')" />
-    <IgnisFeature :active="true" :text="useIgnisT('features.time')" />
-    <IgnisFeature :active="nuxtui" :text="useIgnisT('features.ui')" />
-    <IgnisFeature :active="tailwind" :text="useIgnisT('features.tailwind')" />
-    <IgnisFeature :active="nuxtui" :text="useIgnisT('features.icon')" />
-    <IgnisFeature :active="neon" :text="useIgnisT('features.neon')" />
-    <IgnisFeature :active="supabase" :text="useIgnisT('features.supabase')" />
-    <IgnisFeature :active="i18n" :text="useIgnisT('features.i18n')" />
-    <IgnisFeature :active="vueform" :text="useIgnisT('features.vueform')" />
-    <IgnisFeature :active="formkit" :text="useIgnisT('features.formkit')" />
-    <IgnisFeature :active="valibot" :text="useIgnisT('features.valibot')" />
-    <IgnisFeature :active="zod" :text="useIgnisT('features.zod')" />
-    <IgnisFeature :active="content" :text="useIgnisT('features.content')" />
-    <IgnisFeature :active="seo" :text="useIgnisT('features.seo')" />
-    <IgnisFeature :active="auth" :text="useIgnisT('features.auth')" />
-    <IgnisFeature :active="equipment" :text="useIgnisT('features.equipment')" />
-    <IgnisFeature :active="regexp" :text="useIgnisT('features.regexp')" />
-    <IgnisFeature :active="charts" :text="useIgnisT('features.charts')" />
-    <IgnisFeature :active="openprops" class="openprops-feature" :text="useIgnisT('features.openprops')" />
+  <div style="margin: 0 auto; text-align: center;">
+    <h1>Features Overview</h1>
+    <div class="feature-list">
+      <IgnisFeature :text="useIgnisT('features.nuxt')" />
+      <IgnisFeature :text="useIgnisT('features.consola')" />
+      <IgnisFeature :active="eslint" :text="useIgnisT('features.eslint')" />
+      <IgnisFeature :active="security" :text="useIgnisT('features.security')" />
+      <IgnisFeature :active="image" :text="useIgnisT('features.image')" />
+      <IgnisFeature :active="scripts" :text="useIgnisT('features.scripts')" />
+      <IgnisFeature :active="fonts" :text="useIgnisT('features.fonts')" class="fonts" />
+      <IgnisFeature :active="pinia" :text="useIgnisT('features.pinia')" />
+      <IgnisFeature :active="vueuse" :text="useIgnisT('features.vueuse')" />
+      <IgnisFeature :active="true" :text="useIgnisT('features.time')" />
+      <IgnisFeature :active="nuxtui" :text="useIgnisT('features.ui')" />
+      <IgnisFeature :active="tailwind" :text="useIgnisT('features.tailwind')" />
+      <IgnisFeature :active="nuxtui" :text="useIgnisT('features.icon')" />
+      <IgnisFeature :active="neon" :text="useIgnisT('features.neon')" />
+      <IgnisFeature :active="supabase" :text="useIgnisT('features.supabase')" />
+      <IgnisFeature :active="i18n" :text="useIgnisT('features.i18n')" />
+      <IgnisFeature :active="vueform" :text="useIgnisT('features.vueform')" />
+      <IgnisFeature :active="formkit" :text="useIgnisT('features.formkit')" />
+      <IgnisFeature :active="valibot" :text="useIgnisT('features.valibot')" />
+      <IgnisFeature :active="zod" :text="useIgnisT('features.zod')" />
+      <IgnisFeature :active="content" :text="useIgnisT('features.content')" />
+      <IgnisFeature :active="seo" :text="useIgnisT('features.seo')" />
+      <IgnisFeature :active="auth" :text="useIgnisT('features.auth')" />
+      <IgnisFeature :active="equipment" :text="useIgnisT('features.equipment')" />
+      <IgnisFeature :active="regexp" :text="useIgnisT('features.regexp')" />
+      <IgnisFeature :active="charts" :text="useIgnisT('features.charts')" />
+      <IgnisFeature :active="openprops" class="openprops-feature" :text="useIgnisT('features.openprops')" />
+    </div>
   </div>
 </template>
 
@@ -81,6 +84,12 @@ const charts = setup.charts
 }
 
 /* avoid Tailwind CSS styles here, because Tailwind may not be enabled */
+
+h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.5rem;
+  color: #fbbf24;
+}
 
 /* margin-auto my-4 w-3/5 flex flex-col */
 .feature-list {

@@ -11,5 +11,5 @@
 -->
 
 <template>
-  <IgnisInfo :content="'Features'" />
+  <IgnisInfo :content="'Welcome'" />
 </template>
