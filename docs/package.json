@@ -7,7 +7,7 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "oxc-minify": "0.77.0",
+    "oxc-minify": "0.77.2",
     "vitepress": "2.0.0-alpha.8",
     "vitepress-plugin-group-icons": "1.6.1"
   },
@@ -20,5 +20,5 @@
       "esbuild"
     ]
   },
-  "packageManager": "pnpm@10.12.1"
+  "packageManager": "pnpm@10.13.1"
 }

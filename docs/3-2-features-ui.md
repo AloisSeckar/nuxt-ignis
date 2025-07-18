@@ -13,7 +13,7 @@ NUXT_PUBLIC_IGNIS_CORE_CSS=false
 
 ## Nuxt UI
 
-<PackagesReference :packages="[{ name: '@nuxt/ui', version: '3.1.3' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/ui', version: '3.2.0' }]" />
 
 [`Nuxt UI`](https://ui.nuxt.com/) is an official UI library for Nuxt, providing a set of components and utilities to build user interfaces. It is designed to be flexible and easy to use and it might be a natural choice when building Nuxt applications. It also brings in `Tailwind CSS` and `Nuxt Icon` modules out of the box.
 
@@ -42,7 +42,7 @@ Your custom CSS files may be added via [dedicated option](/3-9-features-nuxt#css
 
 ## Tailwind CSS
 
-<PackagesReference :packages="[{ name: '@tailwindcss/vite', version: '4.1.10' }]" />
+<PackagesReference :packages="[{ name: '@tailwindcss/vite', version: '4.1.11' }]" />
 
 **NOTE:** Integration via [`@nuxtjs/tailwindcss` module](https://nuxt.com/modules/tailwindcss) is temporarily bridged by direct Vite integration until `v7` with updated `Tailwind v4` support is released.
 
@@ -82,7 +82,7 @@ Your custom CSS files may be added via [dedicated option](/3-9-features-nuxt#css
 
 ## Open Props
 
-<PackagesReference :packages="[{ name: 'open-props', version: '1.7.15' }, { name: 'postcss-jit-props', version: '1.0.16' }]" />
+<PackagesReference :packages="[{ name: 'open-props', version: '1.7.16' }, { name: 'postcss-jit-props', version: '1.0.16' }]" />
 
 [`Open Props`](https://open-props.style/) is a collection of CSS custom properties (variables) that can be used to style your application. It provides a set of design tokens that can be used to create consistent and reusable styles across your application.
 

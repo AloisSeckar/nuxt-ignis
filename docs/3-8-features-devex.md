@@ -4,6 +4,8 @@ For better developer experience, Nuxt Ignis offers following features:
 
 ## ESlint
 
+<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.6.0' }]" />
+
 Nuxt Ignis utilizes `@nuxt/eslint` module for convenient [ESLint](https://eslint.org/) integration in your project. For [VS Code](https://code.visualstudio.com/), it is recommended to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for even better integration including "linting on save" configuration.
 
 `@nuxt/eslint` is a [core feature](/2-2-core-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
@@ -55,6 +57,8 @@ Check the [file template](https://github.com/AloisSeckar/nuxt-ignis/blob/main/co
 
 ## Logging
 
+<PackagesReference :packages="[{ name: 'consola', version: '3.4.2' }]" />
+
 Use `NUXT_PUBLIC_IGNIS_LOG_LEVEL` to set level of log messages captured with `consola`. The default value is `info`.
 
 Possible values are: `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose`
@@ -66,5 +70,7 @@ By default, Nuxt Ignis registers global Vue [error](https://vuejs.org/api/applic
 If you don't want to rely on the default behavior, you can disable those handlers by setting `NUXT_PUBLIC_IGNIS_ERROR` to `false`.
 
 ## Testing
+
+<PackagesReference :packages="[{ name: 'nuxt-spec', version: '0.0.4' }]" />
 
 See [testing section](/5-1-contributing.html#testing) in contributing guide.

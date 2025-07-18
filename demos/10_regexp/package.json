@@ -6,8 +6,8 @@
     "dev": "nuxt dev"
   },
   "devDependencies": {
-    "@nuxt/eslint": "1.4.1",
-    "nuxt": "3.17.5",
+    "@nuxt/eslint": "1.6.0",
+    "nuxt": "3.17.7",
     "typescript": "5.8.3"
   },
   "pnpm": {
