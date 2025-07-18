@@ -153,4 +153,10 @@ describe('nuxtConfig unit tests', () => {
     const nuxtConfig = setFeatures()
     await expect(nuxtConfig).toMatchFileSnapshot('./config/custom-lang.txt')
   })
+
+  test('setFeatures() - no default CSS', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_CORE_CSS = 'false'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/no-default-css.txt')
+  })
 })

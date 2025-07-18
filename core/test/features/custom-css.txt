@@ -1,5 +1,4 @@
 Nuxt Ignis will start using following settings:
 App title: Nuxt Ignis App
 Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt
-Extras: Tailwind CSS
-Nuxt: log-level=info[default], ignis CSS
+Nuxt: log-level=info[default], ignis CSS, custom CSS

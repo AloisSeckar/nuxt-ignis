@@ -260,4 +260,16 @@ describe('setFeatures() unit tests', () => {
     setFeatures()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/custom-title.txt')
   })
+
+  test('setFeatures() - custom CSS', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_CSS = ' first.css '
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/custom-css.txt')
+  })
+
+  test('setFeatures() - no default CSS', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_CORE_CSS = 'false'
+    setFeatures()
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/no-default-css.txt')
+  })
 })

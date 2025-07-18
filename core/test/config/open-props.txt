@@ -8,6 +8,7 @@
     },
   },
   "css": [
+    "C:\Git\nuxt-ignis\core\assets\css\ignis.css",
     "C:\Git\nuxt-ignis\core\assets\css\ignis-open-props.css",
   ],
   "modules": [

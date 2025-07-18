@@ -11,6 +11,7 @@
     "first.css",
     "second.css",
     "third.css",
+    "C:\Git\nuxt-ignis\core\assets\css\ignis.css",
   ],
   "modules": [
     "@nuxt/eslint",

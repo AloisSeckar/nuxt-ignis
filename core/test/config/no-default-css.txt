@@ -7,9 +7,6 @@
       "title": "Nuxt Ignis App",
     },
   },
-  "css": [
-    "C:\Git\nuxt-ignis\core\assets\css\ignis.css",
-  ],
   "modules": [
     "@nuxt/eslint",
     "@nuxt/fonts",
@@ -18,7 +15,6 @@
     "nuxt-security",
     "@vueuse/nuxt",
     "@pinia/nuxt",
-    "nuxt-neon",
   ],
   "vue": {
     "compilerOptions": {

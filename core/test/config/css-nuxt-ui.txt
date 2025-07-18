@@ -9,6 +9,7 @@
   },
   "css": [
     "custom.css",
+    "C:\Git\nuxt-ignis\core\assets\css\ignis.css",
     "C:\Git\nuxt-ignis\core\assets\css\ignis-nuxt-ui.css",
   ],
   "modules": [
