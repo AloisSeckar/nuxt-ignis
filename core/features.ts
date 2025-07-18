@@ -285,6 +285,14 @@ export function setFeatures() {
     nuxt.push('pages=false')
   }
 
+  // default CSS file
+  if (process.env.NUXT_PUBLIC_IGNIS_CORE_CSS !== 'false') {
+    nuxtConfig = defu({
+      css: [join(currentDir, './assets/css/ignis.css')],
+    }, nuxtConfig)
+    nuxt.push('ignis CSS')
+  }
+
   // custom CSS files
   if (process.env.NUXT_PUBLIC_IGNIS_CSS) {
     // values MUST be delimited by "," (spaces will be trimmed)

@@ -83,6 +83,7 @@ log.debug(props.optionalText)
 .feature:hover {
   background-color: #334155;
   color: #3CB371;
+  text-decoration: none;
 }
 
 /* text-gray-700 bg-gray-300! hover:bg-slate-400! */

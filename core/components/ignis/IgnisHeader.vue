@@ -25,7 +25,8 @@ const alt = title
   display: flex;
   flex-direction: row;
   justify-content: center;
-  margin-bottom: 10px;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
 }
 .ignis-logo {
   display: inline;

@@ -7,7 +7,7 @@
 -->
 
 <template>
-  <div style="text-align: center;">
+  <div style="text-align: center; font-size: 0.8em;">
     Current time with <NuxtLink to="https://nuxt.com/docs/api/components/nuxt-time">NuxtTime</NuxtLink>:
     <NuxtTime
       :datetime="currentDate"

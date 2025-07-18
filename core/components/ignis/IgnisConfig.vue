@@ -23,6 +23,7 @@ const { data: ignisConfig, error } = await useFetch('/_ignis-config.json', {
 <style scoped lang="css">
 h1 {
   font-size: 1.75rem;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
   color: #fbbf24;
 }

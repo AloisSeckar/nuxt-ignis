@@ -2,6 +2,15 @@
 
 Nuxt Ignis contains following customizable UI related features:
 
+## Default CSS file
+There is a default CSS file [`ignis.css`](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/assets/css/ignis.css) that is included in the project by default. It contains basic styling for the HTML apps based on good practices and recommendations.
+
+You can disable its inclusion by setting the following environment variable:
+
+```dotenv
+NUXT_PUBLIC_IGNIS_CORE_CSS=false
+```
+
 ## Nuxt UI
 
 <PackagesReference :packages="[{ name: '@nuxt/ui', version: '3.1.3' }]" />

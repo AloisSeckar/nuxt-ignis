@@ -1,0 +1,31 @@
+/* based on https://www.howtogeek.com/get-a-clean-attractive-site-with-lines-of-css/ */
+
+html {
+    box-sizing: border-box;
+    max-width: 80ch;
+    margin: auto;
+    font-size: 1.2em;
+    color: #333;
+    line-height: 1.4;
+}
+
+* {
+    box-sizing: inherit;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: sans-serif;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

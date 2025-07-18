@@ -10,7 +10,7 @@
 -->
 
 <template>
-  <div style="margin: 0 auto; text-align: center;">
+  <div style="text-align: center;">
     <h1>Features Overview</h1>
     <div class="feature-list">
       <IgnisFeature :text="useIgnisT('features.nuxt')" />
@@ -87,15 +87,15 @@ const charts = setup.charts
 
 h1 {
   font-size: 1.75rem;
+  margin-top: 2rem;
   margin-bottom: 0.5rem;
   color: #fbbf24;
 }
 
-/* margin-auto my-4 w-3/5 flex flex-col */
+/* margin-auto my-4 flex flex-col */
 .feature-list {
   margin: 0px auto;
   margin-bottom: 8px;
-  width: 40%;
   display: flex;
   flex-direction: column;
 }

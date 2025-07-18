@@ -77,6 +77,7 @@ const nuxtConfig = defu(ignisFeatures, {
         // core modules
         // (may be disabled by explicitly setting "false")
         core: {
+          css: true, // not a module, but a default css file
           eslint: true,
           fonts: true,
           image: true,
