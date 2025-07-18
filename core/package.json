@@ -1,12 +1,14 @@
 {
   "name": "nuxt-ignis",
   "version": "0.3.3",
-  "description": "Enhanced and customizable Nuxt application starter pack",
+  "description": "A ready-to-use setup for your next application in Nuxt",
   "keywords": [
     "nuxt",
     "nuxtjs",
     "nuxt3",
-    "starter"
+    "starter",
+    "layer",
+    "nuxt-layer"
   ],
   "author": "Alois Seckar <alois.seckar@gmail.com>",
   "homepage": "https://github.com/AloisSeckar/nuxt-ignis",
@@ -22,7 +24,7 @@
   "type": "module",
   "main": "./nuxt.config.ts",
   "engines": {
-    "node": ">=18.0.0"
+    "node": "^20.19.0 || >=22.12.0"
   },
   "bin": {
     "make-eslint": "./bin/make-eslint.js"
