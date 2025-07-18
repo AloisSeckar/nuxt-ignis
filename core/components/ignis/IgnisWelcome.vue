@@ -3,10 +3,10 @@
     <h1>Welcome to Ignis</h1>
     <p>Thank you for choosing Nuxt Ignis! Your awesome website is just a few steps away.</p>
     <p v-if="pages">
-      Replace <pre class="file">/pages/index.vue</pre> with your own content to get started. You may also replace <pre class="file">/app.vue</pre> to adjust site defaults.
+      Replace <span class="file">/pages/index.vue</span> with your own content to get started. You may also replace <span class="file">/app.vue</span> to adjust site defaults.
     </p>
     <p v-else>
-      Replace <pre class="file">/app.vue</pre> with your own content to get started.
+      Replace <span class="file">/app.vue</span> with your own content to get started.
     </p>
     <h2>Resources</h2>
     <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
@@ -38,6 +38,7 @@ h2 {
 .file {
   display: inline;
   color: #fbbf24;
+  font-family: monospace;
 }
 
 /* TODO unify with IgnisFeature.vue */
