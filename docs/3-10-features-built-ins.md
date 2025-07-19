@@ -19,3 +19,11 @@ The page route starts with an underscore to avoid clashes with your own routes.
 This page, available at `/_ignis-config` and linked from the Welcome component, shows complete `nuxt.config.ts` object, as it was constructed during [features resolution](/2-1-configuration.html#the-big-picture). This might be useful for debugging purposes. For example, it would be much appreciated if you attach the output to any future issues and bugreports.
 
 The page route starts with an underscore to avoid clashes with your own routes.
+
+## Current time
+
+The `<CurrentTime>` component is available to display the current time in the user's timezone. It wraps around Nuxt's built-in `<NuxtTime>` component. If `VueUse` is enabled, the component feeds with `useNow` composable and reactively updates every second then. If `VueUse` is disabled, the component only shows the static time at the moment of rendering.
+
+Instance of `<CurrentTime>` is used in footer of pages mentioned above.
+
+The component currently takes no props.
