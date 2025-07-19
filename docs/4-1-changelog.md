@@ -2,6 +2,31 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.4.0
+
+2025-07-19
+
+- feat: `Magic Regexp` library integrated
+- feat: `Nuxt Charts` library integrated
+- feat: CLI tool for scaffolding `eslint.config.mjs` file
+- feat: redesigned `Formkit` config loading
+- feat: new config option for passing in HTML page title
+- feat: new config option for passing in HTML lang attribute
+- feat: new config option for passing in custom CSS files
+- feat: new default CSS file + new config option for optional disabling it
+- feat: internal CSS files are now prefixed with `ignis-` to avoid conflicts
+- feat: new built-in page for configuration overview
+- feat: built-in pages (Welcome page, Features overview and Configuration overview) redesigned
+- refactor: dropped `app.config.ts` file
+- fix: `<CurrentTime>` component is an always active feature
+- fix: re-wamped `useT` composable function
+- test: improved tests (still WIP)
+- build: bump `Nuxt` to `3.17.7` + update other deps to latest versions (as of 2025-07-07)
+- build: experimental `rolldown-vite` used for docs
+- docs: CHANGELOG.md file moved into docs section
+- docs: new internal component for displaying NPM package references
+- docs: significantly more information added
+
 ## 0.3.3
 
 2025-06-21
