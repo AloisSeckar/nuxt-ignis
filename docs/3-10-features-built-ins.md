@@ -20,6 +20,8 @@ This page, available at `/_ignis-config` and linked from the Welcome component, 
 
 The page route starts with an underscore to avoid clashes with your own routes.
 
+**NOTE:** To display data on this page, Nuxt Ignis auto-generates a `/public/_ignis-config.json` on startup to hold the configuration object that was used. This file is not meant to be stored in Git and should be added into `.gitignore`. But it makes no harm if you want to keep it there for reference.
+
 ## Current time
 
 The `<CurrentTime>` component is available to display the current time in the user's timezone. It wraps around Nuxt's built-in `<NuxtTime>` component. If `VueUse` is enabled, the component feeds with `useNow` composable and reactively updates every second then. If `VueUse` is disabled, the component only shows the static time at the moment of rendering.
