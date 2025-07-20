@@ -8,9 +8,11 @@
 
 <template>
   <div style="text-align: center; font-size: 0.8em;">
-    Current time with <NuxtLink to="https://nuxt.com/docs/api/components/nuxt-time">NuxtTime</NuxtLink>:
+    Current datetime with <NuxtLink to="https://nuxt.com/docs/api/components/nuxt-time">NuxtTime</NuxtLink>:
     <NuxtTime
       :datetime="currentDate"
+      hour-cycle="h24"
+      locale="en-CA"
       year="numeric"
       month="2-digit"
       day="2-digit"
