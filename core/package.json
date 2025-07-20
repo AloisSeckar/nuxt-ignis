@@ -84,7 +84,8 @@
     "overrides": {
       "@nuxt/kit": "3.17.7",
       "@nuxt/schema": "3.17.7",
-      "@eslint/plugin-kit": "^0.3.3"
+      "@eslint/plugin-kit": "^0.3.3",
+      "@nuxtjs/mdc": "^0.17.2"
     },
     "onlyBuiltDependencies": [
       "@parcel/watcher",
