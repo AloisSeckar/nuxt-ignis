@@ -4,6 +4,7 @@ import { defu } from 'defu'
 import OpenProps from 'open-props'
 import tailwindcss from '@tailwindcss/vite'
 import { log } from './utils/consola'
+import { pslo } from './utils/pslo-utils'
 import { ignisTailwindcssFix } from './utils/tailwind'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
@@ -255,6 +256,21 @@ export function setFeatures() {
   // elrh-pslo
   if (process.env.NUXT_PUBLIC_IGNIS_PSLO_ENABLED === 'true') {
     extras.push('elrh-pslo')
+
+    // integration with Nuxt Content
+    // if enabled, all Nuxt Content page data will be treated with "preventSingleLetterOrphans" function
+    if (process.env.NUXT_PUBLIC_IGNIS_CONTENT === 'true' && process.env.NUXT_PUBLIC_IGNIS_PSLO_CONTENT === 'true') {
+      nuxtConfig = defu({
+        hooks: {
+          // TODO can we get type of ctx from Nuxt Content?
+          'content:file:beforeParse'(ctx: { file: { id: string, body: string } }) {
+            const { file } = ctx
+            file.body = pslo(file.body)
+            log.debug(`Nuxt Content file ${file.id} processed with elrh-pslo`)
+          },
+        },
+      }, nuxtConfig)
+    }
   }
 
   // magic-regexp
