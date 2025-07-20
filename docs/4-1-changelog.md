@@ -18,7 +18,9 @@ Overview of the newest features in Nuxt Ignis.
 - feat: new built-in page for configuration overview
 - feat: built-in pages (Welcome page, Features overview and Configuration overview) redesigned
 - refactor: dropped `app.config.ts` file
+- fix: made `pslo` and `Nuxt Content integration` work again
 - fix: `<CurrentTime>` component is an always active feature
+- fix: `<CurrentTime>` output format set to "YYYY-MM-DD, HH:mm:ss"
 - fix: re-wamped `useT` composable function
 - test: improved tests (still WIP)
 - build: bump `Nuxt` to `3.17.7` + update other deps to latest versions (as of 2025-07-07)
