@@ -10,8 +10,10 @@
 -->
 
 <template>
-  <div style="text-align: center;">
-    <h1>Features Overview</h1>
+  <div style="text-align: center; max-width: 1200px;">
+    <h1 class="ignis-feature-header">
+      Features Overview
+    </h1>
     <div class="feature-list">
       <IgnisFeature :text="useIgnisT('features.nuxt')" />
       <IgnisFeature :text="useIgnisT('features.consola')" />
@@ -85,7 +87,9 @@ const charts = setup.charts
 
 /* avoid Tailwind CSS styles here, because Tailwind may not be enabled */
 
-h1 {
+.ignis-feature-header {
+  text-align: center;
+  font-family: monospace;
   font-size: 1.75rem;
   margin-top: 2rem;
   margin-bottom: 0.5rem;
@@ -98,24 +102,6 @@ h1 {
   margin-bottom: 8px;
   display: flex;
   flex-direction: column;
-}
-
-@media (max-width: 1200px) {
-  .feature-list {
-    width: 60%;
-  }
-}
-
-@media (max-width: 800px) {
-  .feature-list {
-    width: 80%;
-  }
-}
-
-@media (max-width: 600px) {
-  .feature-list {
-    width: 100%;
-  }
 }
 
 /* mb-2 */

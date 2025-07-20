@@ -1,6 +1,8 @@
 <template>
-  <div style="display: flex; flex-direction: column; align-items: center; gap: 0.75rem; padding: 2rem;">
-    <h1>Welcome to Ignis</h1>
+  <div class="ignis-welcome">
+    <h1 class="ignis-welcome-header">
+      Welcome to Ignis
+    </h1>
     <p>Thank you for choosing Nuxt Ignis! Your awesome website is just a few steps away.</p>
     <p v-if="pages">
       Replace <span class="file">/pages/index.vue</span> with your own content to get started. You may also replace <span class="file">/app.vue</span> to adjust site defaults.
@@ -8,8 +10,10 @@
     <p v-else>
       Replace <span class="file">/app.vue</span> with your own content to get started.
     </p>
-    <h2>Resources</h2>
-    <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+    <h2 class="ignis-welcome-subheader">
+      Resources
+    </h2>
+    <div class="ignis-welcome-resources">
       <NuxtLink to="/_ignis-info" class="feature">Features Overview</NuxtLink>
       <NuxtLink to="/_ignis-config" class="feature">Configuration Overview</NuxtLink>
       <NuxtLink to="https://nuxt-ignis.netlify.app/" class="feature">Documentation &#x1F517;</NuxtLink>
@@ -25,15 +29,35 @@ const pages = useRuntimeConfig().public.ignis.pages
 </script>
 
 <style scoped lang="css">
-h1 {
+.ignis-welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 2rem;
+}
+
+.ignis-welcome-header {
+  text-align: center;
+  font-family: monospace;
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
   color: #fbbf24;
 }
-h2 {
+
+.ignis-welcome-subheader {
+  text-align: center;
+  font-family: monospace;
   font-size: 1.5rem;
   color: #fbbf24;
 }
+
+.ignis-welcome-resources {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 p {
   width: 100%;
 }
