@@ -17,7 +17,7 @@ See [CHANGELOG](https://nuxt-ignis.netlify.app/4-1-changelog.html) for the lates
 1) Add the following dependency into your `package.json`:
 
 ```json
-"nuxt-ignis": "0.4.0-rc.2"
+"nuxt-ignis": "0.4.0-rc.3"
 ```
 
 2) Add following section into your `nuxt.config.ts`:

@@ -9,7 +9,7 @@ To enable `nuxt-ignis` in your Nuxt project, follow these steps:
 1) Add the following dependency into your `package.json`:
 
 ```json [package.json]
-"nuxt-ignis": "0.4.0-rc.2"
+"nuxt-ignis": "0.4.0-rc.3"
 ```
 
 2) Add following section into your `nuxt.config.ts`:
