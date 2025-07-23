@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "name": "ignis-demo-08c",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "1.7.0",
+    "better-sqlite3": "12.2.0",
+    "nuxt": "3.17.7",
+    "vue": "3.5.18",
+    "typescript": "5.8.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "better-sqlite3",
+      "esbuild",
+      "unrs-resolver"
+    ]
+  }
+}
