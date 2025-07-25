@@ -25,6 +25,7 @@ const alt = title
   display: flex;
   flex-direction: row;
   justify-content: center;
+  gap: 0.4em;
   margin-top: 0.5em;
   margin-bottom: 0.5em;
 }
@@ -35,7 +36,7 @@ const alt = title
 }
 /* my-4 text-4xl text-amber-400 font-bold */
 .ignis-title {
-  margin-top: 15px;
+  margin-top: 10px;
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: bold;
