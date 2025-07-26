@@ -4,7 +4,7 @@ Overview of the newest features in Nuxt Ignis.
 
 ## 0.4.0
 
-2025-07-19
+2025-07-26
 
 - feat: `Magic Regexp` library integrated
 - feat: `Nuxt Charts` library integrated
@@ -17,6 +17,7 @@ Overview of the newest features in Nuxt Ignis.
 - feat: internal CSS files are now prefixed with `ignis-` to avoid conflicts
 - feat: new built-in page for configuration overview
 - feat: built-in pages (Welcome page, Features overview and Configuration overview) redesigned
+- feat: re-wamped Nuxt Ignis logo
 - refactor: dropped `app.config.ts` file
 - fix: made `pslo` and `Nuxt Content integration` work again
 - fix: `<CurrentTime>` component is an always active feature
