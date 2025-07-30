@@ -6,15 +6,20 @@
     "dev": "nuxt dev"
   },
   "devDependencies": {
-    "@nuxt/eslint": "1.6.0",
-    "nuxt": "3.17.7",
+    "@nuxt/eslint": "1.7.1",
+    "@unovis/ts": "1.5.2",
+    "nuxt": "4.0.2",
     "typescript": "5.8.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "esbuild",
+      "maplibre-gl",
       "unrs-resolver"
     ]
+  },
+  "dependencies": {
+    "to-px": "^1.1.0"
   }
 }

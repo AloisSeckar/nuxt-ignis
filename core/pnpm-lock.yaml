@@ -88,8 +88,8 @@ importers:
         specifier: 0.5.20
         version: 0.5.20(magicast@0.3.5)
       nuxt-charts:
-        specifier: 0.1.11
-        version: 0.1.11(@unovis/ts@1.5.2)(magicast@0.3.5)(vue@3.5.18(typescript@5.8.3))
+        specifier: 0.2.1
+        version: 0.2.1(magicast@0.3.5)(vue@3.5.18(typescript@5.8.3))
       nuxt-neon:
         specifier: 0.6.2
         version: 0.6.2(magicast@0.3.5)
@@ -6111,8 +6111,8 @@ packages:
       '@simplewebauthn/server':
         optional: true
 
-  nuxt-charts@0.1.11:
-    resolution: {integrity: sha512-3nI1ko6x1afAHzWdm5mEgMrgIzpb/SV+JMlk4Vm1BVW4qFjXbzYeN/RiZgaUmeyICY5MyEqpN5aXlwlcfxzgqw==}
+  nuxt-charts@0.2.1:
+    resolution: {integrity: sha512-xYdLVvtfwzM5b0ll5Yw21Fk2me39ofTf4AhwCuRj3m/Yw5/jgbCZa5uRMOPOGUlGrXhV/DIXldUDww1jghSn8Q==}
 
   nuxt-component-meta@0.12.1:
     resolution: {integrity: sha512-w0ZgRCE9wGZLbmAnCUV2F4/Gjwy1J6L9FejrpTHSHM8Igrf2THwe809QOXbdV8g4+Elkz2MeC/34ZFyt05tKCg==}
@@ -8077,8 +8077,8 @@ packages:
   vue-bundle-renderer@2.1.2:
     resolution: {integrity: sha512-M4WRBO/O/7G9phGaGH9AOwOnYtY9ZpPoDVpBpRzR2jO5rFL9mgIlQIgums2ljCTC2HL1jDXFQc//CzWcAQHgAw==}
 
-  vue-chrts@0.1.11:
-    resolution: {integrity: sha512-v8sl4ggyyULuPgez5v9fCBEYumzSUcYqte6EtNQY9SaUR8B/Gda3ob9idiTrQpoF/cUCLx29bRfhbc6YJfLaIA==}
+  vue-chrts@0.2.0:
+    resolution: {integrity: sha512-p9H/zdPYQVhfh5ObwQ7q6d3CAX5qCb4f3EiSCog1vJM+5rA+uc7PKZ6pGW6YOowUlTYbe/fEnxt6K0+BZyo3sg==}
     peerDependencies:
       vue: ^3.5.13
 
@@ -15298,14 +15298,15 @@ snapshots:
       - bcrypt
       - magicast
 
-  nuxt-charts@0.1.11(@unovis/ts@1.5.2)(magicast@0.3.5)(vue@3.5.18(typescript@5.8.3)):
+  nuxt-charts@0.2.1(magicast@0.3.5)(vue@3.5.18(typescript@5.8.3)):
     dependencies:
       '@nuxt/kit': 4.0.2(magicast@0.3.5)
+      '@unovis/ts': 1.5.2
       '@unovis/vue': 1.5.2(@unovis/ts@1.5.2)(vue@3.5.18(typescript@5.8.3))
-      vue-chrts: 0.1.11(vue@3.5.18(typescript@5.8.3))
+      vue-chrts: 0.2.0(vue@3.5.18(typescript@5.8.3))
     transitivePeerDependencies:
-      - '@unovis/ts'
       - magicast
+      - supports-color
       - vue
 
   nuxt-component-meta@0.12.1(magicast@0.3.5)(vue-component-type-helpers@2.2.12):
@@ -17899,7 +17900,7 @@ snapshots:
     dependencies:
       ufo: 1.6.1
 
-  vue-chrts@0.1.11(vue@3.5.18(typescript@5.8.3)):
+  vue-chrts@0.2.0(vue@3.5.18(typescript@5.8.3)):
     dependencies:
       vue: 3.5.18(typescript@5.8.3)
 

@@ -124,6 +124,8 @@ NUXT_PUBLIC_IGNIS_CHARTS=true
 
 Because `Nuxt Charts` don't work with SSR, you need either to disable SSR in your app or make your charts client only. Check the [dedicated docs page](https://nuxtcharts.com/docs/server-side-rendering) for more details.
 
+You might also need to explicitly add `@unovis/ts` dependency in your `package.json` file to avoid issues with `to-px` module (**confirmation needed**).
+
 ## Custom CSS
 
 If you have custom CSS files you want to include in your project, you can do so by defining a comma-delimited array of paths as a value for the `NUXT_PUBLIC_IGNIS_CSS` environment variable.
