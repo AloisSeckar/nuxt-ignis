@@ -3,9 +3,9 @@ import { dirname, join } from 'path'
 import { defu } from 'defu'
 import OpenProps from 'open-props'
 import tailwindcss from '@tailwindcss/vite'
-import { log } from './utils/consola'
-import { pslo } from './utils/pslo-utils'
-import { ignisTailwindcssFix } from './utils/tailwind'
+import { log } from './app/utils/consola'
+import { pslo } from './app/utils/pslo-utils'
+import { ignisTailwindcssFix } from './app/utils/tailwind'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
@@ -75,7 +75,7 @@ export function setFeatures() {
     nuxtConfig.modules.push('@nuxt/ui')
     // import tailwind css file
     nuxtConfig = defu({
-      css: [join(currentDir, './assets/css/ignis-nuxt-ui.css')],
+      css: [join(currentDir, './app/assets/css/ignis-nuxt-ui.css')],
     }, nuxtConfig)
   } else {
     // remove @nuxt/ui-specific components from resolution if module is not used
@@ -94,7 +94,7 @@ export function setFeatures() {
       extras.push('Tailwind CSS')
       // import tailwind css file
       nuxtConfig = defu({
-        css: [join(currentDir, './assets/css/ignis-tailwind.css')],
+        css: [join(currentDir, './app/assets/css/ignis-tailwind.css')],
         vite: {
           plugins: [tailwindcss()], // temporary integration using Vite plugin directly
         },
@@ -142,7 +142,7 @@ export function setFeatures() {
       i18n: {
         vueI18n: process.env.NUXT_PUBLIC_IGNIS_I18N_CONFIG || './i18n.config.ts',
         // default to defined here because of the way of possibe initializing of @nuxtjs/seo module
-        // TODO scanI18Names from './utils/i18n-sources' would be better, but import.meta.glob fails here...
+        // TODO scanI18Names from './app/utils/i18n-sources' would be better, but import.meta.glob fails here...
         locales: [process.env.NUXT_PUBLIC_IGNIS_I18N_DEFAULT || 'en'],
         // avoid automatic route-prefixing with multiple locales
         // TODO this needs to be written in docs
@@ -243,7 +243,7 @@ export function setFeatures() {
     extras.push('Open Props CSS')
     nuxtConfig = defu({
       // import Open Prpops stylesheet
-      css: [join(currentDir, './assets/css/ignis-open-props.css')],
+      css: [join(currentDir, './app/assets/css/ignis-open-props.css')],
       // CSS processor for Open Props
       postcss: {
         plugins: {
@@ -304,7 +304,7 @@ export function setFeatures() {
   // default CSS file
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_CSS !== 'false') {
     nuxtConfig = defu({
-      css: [join(currentDir, './assets/css/ignis.css')],
+      css: [join(currentDir, './app/assets/css/ignis.css')],
     }, nuxtConfig)
     nuxt.push('ignis CSS')
   }

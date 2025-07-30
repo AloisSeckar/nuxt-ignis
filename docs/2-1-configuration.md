@@ -26,7 +26,7 @@ This principle is addressed as _"defu-merge"_ throughout the docs and in source 
 
 All existing config options are also defined as [public runtime config values](https://nuxt.com/docs/guide/directory-structure/nuxt.config#runtime-config) in a standard Nuxt fashion - i.e. `NUXT_PUBLIC_IGNIS_SSR` can be accessed as `useRuntimeConfig().public.ignis.ssr`. While this doesn't affect the build process itself, it can be used for runtime checks if certain feature is enabled or not.
 
-There are several examples of such usage in Nuxt Ignis core codebase, starting in [app.vue](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/app.vue) file.
+There are several examples of such usage in Nuxt Ignis core codebase, starting in [app.vue](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/app/app.vue) file.
 
 ## More info
 

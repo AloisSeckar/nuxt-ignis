@@ -1,3 +1,5 @@
+import { scanI18Names, scanI18NSources } from '../app/utils/i18n-sources'
+
 const ignisLocale = process.env.NUXT_PUBLIC_IGNIS_I18N_DEFAULT || 'en'
 
 // https://i18n.nuxtjs.org/docs/composables/define-i18n-config

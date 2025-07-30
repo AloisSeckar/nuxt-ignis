@@ -1,7 +1,7 @@
 // minimal config for Formkit
 // currently required to be loaded like this...
 
-import { loadFormkitConfig } from './utils/formkit'
+import { loadFormkitConfig } from './app/utils/formkit'
 
 const config = loadFormkitConfig({
   // custom config here

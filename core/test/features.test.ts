@@ -1,6 +1,6 @@
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
 import { setFeatures } from '../features'
-import { log } from '../utils/consola'
+import { log } from '../app/utils/consola'
 
 // `setFeatures()` is the core function that evaluates the environment variables
 // and decides which features to enable in the user's Nuxt application

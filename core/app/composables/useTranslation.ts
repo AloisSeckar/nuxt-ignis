@@ -1,4 +1,4 @@
-import lang from '@/i18n/locales/en.json'
+import lang from '@/../i18n/locales/en.json'
 
 /**
  * An adapter above `t` function from `i18n` module.
