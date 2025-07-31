@@ -8,6 +8,8 @@ There is a default content for the `/` or `/index` page featuring a simple welco
 
 If you provide your own `/pages/index.vue` or `/app.vue`, the defaults will be overriden.
 
+This page is also available at `/_ignis-welcome`, where it prevails even in case of overwriting the default routes.
+
 ## Features overview
 
 This page, available at `/_ignis-info` and linked from the Welcome component, provides a list of all Nuxt Ignis features and their status based on the current configuration. Active features are marked green, inactive are gray. 
