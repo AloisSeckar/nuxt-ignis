@@ -1,4 +1,5 @@
 <template>
+  <NuxtRouteAnnouncer />
   <UApp v-if="ui">
     <NuxtPage v-if="pages" />
     <IgnisInfo v-else :content="'Welcome'" />
