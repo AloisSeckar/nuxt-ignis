@@ -1,6 +1,20 @@
-// https://nuxt.com/docs/guide/directory-structure/tsconfig
+// https://nuxt.com/docs/4.x/guide/directory-structure/tsconfig
 {
-  "extends": "./.nuxt/tsconfig.json",
+  "files": [],
+  "references": [
+    {
+      "path": "./.nuxt/tsconfig.app.json"
+    },
+    {
+      "path": "./.nuxt/tsconfig.server.json"
+    },
+    {
+      "path": "./.nuxt/tsconfig.shared.json"
+    },
+    {
+      "path": "./.nuxt/tsconfig.node.json"
+    }
+  ],
   "compilerOptions": {
     "noUncheckedIndexedAccess": true
   }
