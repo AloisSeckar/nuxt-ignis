@@ -26,4 +26,5 @@ Most of the available are disabled by default and are meant to be opted-in by a 
 
 ## More info
 
-- Check [Installation](/1-3-installation) section for instructions on how to add `nuxt-ignis` into your Nuxt project.
+- Check [showcase](/1-3-showcase) of live projects using `nuxt-ignis`.
+- Go to [installation](/1-4-installation) to learn how to start using Nuxt Ignis.

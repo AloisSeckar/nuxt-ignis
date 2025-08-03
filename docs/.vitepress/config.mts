@@ -23,7 +23,8 @@ export default defineConfig({
         items: [
           { text: 'Introduction', link: '/1-1-introduction' },
           { text: 'Overview', link: '/1-2-overview' },
-          { text: 'Installation', link: '/1-3-installation' },
+          { text: 'Showcase', link: '/1-3-showcase' },
+          { text: 'Installation', link: '/1-4-installation' },
         ]
       },
       {

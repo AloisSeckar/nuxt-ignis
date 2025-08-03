@@ -15,4 +15,5 @@ Learn more about the idea in the [configuration section](/2-1-configuration).
 ## More info
 
 - Continue to the [overview](/1-2-overview) for summary of all the available features.
+- Go to [installation](/1-4-installation) to learn how to start using Nuxt Ignis.
 - See [changelog](4-1-changelog.html) to display the latest changes.
