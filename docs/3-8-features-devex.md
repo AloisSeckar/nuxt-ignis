@@ -71,6 +71,6 @@ If you don't want to rely on the default behavior, you can disable those handler
 
 ## Testing
 
-<PackagesReference :packages="[{ name: 'nuxt-spec', version: '0.0.4' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-spec', version: '0.1.0' }]" />
 
 See [testing section](/5-1-contributing.html#testing) in contributing guide.
