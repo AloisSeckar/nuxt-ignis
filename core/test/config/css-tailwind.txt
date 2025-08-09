@@ -9,8 +9,8 @@
   },
   "css": [
     "custom.css",
-    "C:\Git\nuxt-ignis\core\assets\css\ignis.css",
-    "C:\Git\nuxt-ignis\core\assets\css\ignis-tailwind.css",
+    "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
+    "C:\Git\nuxt-ignis\core\app\assets\css\ignis-tailwind.css",
   ],
   "modules": [
     "@nuxt/eslint",

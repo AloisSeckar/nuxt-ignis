@@ -8,8 +8,8 @@
     },
   },
   "css": [
-    "C:\Git\nuxt-ignis\core\assets\css\ignis.css",
-    "C:\Git\nuxt-ignis\core\assets\css\ignis-nuxt-ui.css",
+    "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
+    "C:\Git\nuxt-ignis\core\app\assets\css\ignis-nuxt-ui.css",
   ],
   "modules": [
     "@nuxt/eslint",

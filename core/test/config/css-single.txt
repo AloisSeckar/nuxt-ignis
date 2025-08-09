@@ -9,7 +9,7 @@
   },
   "css": [
     "first.css",
-    "C:\Git\nuxt-ignis\core\assets\css\ignis.css",
+    "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
   ],
   "modules": [
     "@nuxt/eslint",
