@@ -37,7 +37,9 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "start": "nuxt start",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test-u": "vitest run -u",
+    "test-i": "vitest"
   },
   "dependencies": {
     "@formkit/nuxt": "1.6.9",
@@ -67,7 +69,7 @@
     "nuxt-charts": "0.2.1",
     "nuxt-neon": "0.6.2",
     "nuxt-security": "2.2.0",
-    "nuxt-spec": "0.1.0",
+    "nuxt-spec": "0.1.2",
     "open-props": "1.7.16",
     "pinia": "3.0.3",
     "postcss-jit-props": "1.0.16",
