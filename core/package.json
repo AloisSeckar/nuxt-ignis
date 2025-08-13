@@ -88,7 +88,8 @@
       "@nuxt/schema": "4.0.2",
       "@eslint/plugin-kit": "^0.3.3",
       "@nuxtjs/mdc": "^0.17.2",
-      "axios": "^1.11.0"
+      "axios": "^1.11.0",
+      "tmp": "^0.2.5"
     },
     "onlyBuiltDependencies": [
       "@parcel/watcher",
