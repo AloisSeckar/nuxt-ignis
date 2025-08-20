@@ -3,6 +3,7 @@
     <h1>Ignis Zod demo</h1>
     <div>Valid: {{ validObject }}</div>
     <div>Invalid: {{ invalidObject }}</div>
+    <div>Validator: {{ isValid1 }} {{ isValid2 }}</div>
   </div>
 </template>
 
@@ -40,4 +41,8 @@ catch (error) {
   // ZodError: Expected string, received number
   console.log((error as Error).message)
 }
+
+// test built-in validator
+const isValid1 = await isValidByZod(LoginSchema, { email: 'jane.doe@example.com', password: '12345' })
+const isValid2 = await isValidByZod(LoginSchema, { email: 'jane.doe@example.com', password: 12345 })
 </script>

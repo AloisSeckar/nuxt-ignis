@@ -3,6 +3,7 @@
     <h1>Ignis Valibot demo</h1>
     <div>Valid: {{ validObject }}</div>
     <div>Invalid: {{ invalidObject }}</div>
+    <div>Validator: {{ isValid1 }} {{ isValid2 }}</div>
   </div>
 </template>
 
@@ -40,4 +41,8 @@ catch (error) {
   // ValiError: Invalid type: Expected string but received 12345
   console.log((error as Error).message)
 }
+
+// test built-in validator
+const isValid1 = await isValidByValibot(LoginSchema, { email: 'jane.doe@example.com', password: '12345' })
+const isValid2 = await isValidByValibot(LoginSchema, { email: 'jane.doe@example.com', password: 12345 })
 </script>
