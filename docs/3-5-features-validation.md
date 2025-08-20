@@ -32,6 +32,20 @@ You can then use `z` object as you would normally do in your project.
 
 **NOTE:** We are using `await` here, because the import is dynamic at runtime. And because the composable may technically return `undefined` (only if the relevant setting is not enabled), we add exclamation mark to avoid TS complaints.
 
+For quick schema validation, helper function `isValidByZod` is available. It will return `true/false` based on Zod's `safeParse` result:
+
+```ts [your-code.ts]
+const ZodSchema = z.object({
+  // ...
+})
+
+const object = { 
+  // ...
+}
+
+const isValid: boolean = await isValidByZod(ZodSchema, object)
+```
+
 ## Valibot
 
 <PackagesReference :packages="[{ name: 'valibot', version: '1.1.0' }]" />
@@ -61,3 +75,17 @@ const v = (await useValibot())!
 You can then use `v` object as you would normally do in your project.
 
 **NOTE:** We are using `await` here, because the import is dynamic at runtime. And because the composable may technically return `undefined` (only if the relevant setting is not enabled), we add exclamation mark to avoid TS complaints.
+
+For quick schema validation, helper function `isValidByValibot` is available. It will return `true/false` based on Valibot's `safeParse` result:
+
+```ts [your-code.ts]
+const ValibotSchema = v.object({
+  // ...
+})
+
+const object = { 
+  // ...
+}
+
+const isValid: boolean = await isValidByValibot(ValibotSchema, object)
+```
