@@ -7,9 +7,9 @@
     "build": "nuxt build"
   },
   "devDependencies": {
-    "@nuxt/eslint": "1.6.0",
-    "nuxt": "3.17.7",
-    "typescript": "5.8.3"
+    "@nuxt/eslint": "1.9.0",
+    "nuxt": "4.0.3",
+    "typescript": "5.9.2"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
