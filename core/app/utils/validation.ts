@@ -2,7 +2,7 @@ import type { ObjectEntries, ObjectSchema } from 'valibot'
 import type { ZodObject } from 'zod/v4'
 
 // quick object schema validation - zod variant
-export async function isValidByZod(obj: unknown, schema: ZodObject): Promise<boolean> {
+export async function isValidByZod(schema: ZodObject, obj: unknown): Promise<boolean> {
   const config = useRuntimeConfig().public.ignis
   if (config.preset.validation === 'zod' || config.zod === true) {
     return schema.safeParse(obj).success
@@ -13,7 +13,7 @@ export async function isValidByZod(obj: unknown, schema: ZodObject): Promise<boo
 }
 
 // quick object schema validation - valibot variant
-export async function isValidByValibot(obj: unknown, schema: ObjectSchema<ObjectEntries, undefined>): Promise<boolean> {
+export async function isValidByValibot(schema: ObjectSchema<ObjectEntries, undefined>, obj: unknown): Promise<boolean> {
   const config = useRuntimeConfig().public.ignis
   if (config.preset.validation === 'valibot' || config.valibot === true) {
     const v = (await useValibot())!
