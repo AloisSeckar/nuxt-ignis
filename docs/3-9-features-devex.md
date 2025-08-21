@@ -4,9 +4,11 @@ For better developer experience, Nuxt Ignis offers following features:
 
 ## ESlint
 
-<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.6.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.6.0' }, { name: 'typescript', version: '5.8.3' }]" />
 
 Nuxt Ignis utilizes `@nuxt/eslint` module for convenient [ESLint](https://eslint.org/) integration in your project. For [VS Code](https://code.visualstudio.com/), it is recommended to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for even better integration including "linting on save" configuration.
+
+To ensure correct functionality, `typescript` [must be included](https://eslint.nuxt.com/packages/module#quick-setup) as an explicit dependency.
 
 `@nuxt/eslint` is a [core feature](/2-2-core-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
@@ -57,11 +59,21 @@ Check the [file template](https://github.com/AloisSeckar/nuxt-ignis/blob/main/co
 
 ## Logging
 
-<PackagesReference :packages="[{ name: 'consola', version: '3.4.2' }]" />
+<PackagesReference :packages="[{ name: 'consola', version: '3.4.2' }, { name: 'date-fns', version: '4.1.0' }]" />
 
 Use `NUXT_PUBLIC_IGNIS_LOG_LEVEL` to set level of log messages captured with `consola`. The default value is `info`.
 
 Possible values are: `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose`
+
+Timestamps for logs are formatted using `date-fns` library, which is also available in target apps. You can invoke it like this:
+
+```ts [your-code.ts]
+import { format } from 'date-fns'
+
+const formatString = 'yyyy-MM-dd HH:mm:ss'
+const formattedDate = format(new Date(), formatString)
+// sample output: 2025-08-01 11:12:13
+```
 
 ## Error handling
 

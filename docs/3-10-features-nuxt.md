@@ -1,6 +1,10 @@
 # Nuxt
 
-While Nuxt Ignis aims to provide a solid foundation for your Nuxt projects by providing default values where it makes sense, it also wants to give you maximum flexibility and freedom. This applies to the configuration of underlying Nuxt instance itself as well.
+<PackagesReference :packages="[{ name: 'nuxt', version: '3.17.7' }, { name: 'vue', version: '3.5.17' }, { name: 'vue-router', version: '4.5.1' }]" />
+
+The goal of Nuxt Ignis is to bring [Nuxt framework](https://nuxt.com/) into your apps.
+
+While we aim to provide a solid foundation for your Nuxt projects by providing default values where it makes sense, we also want to give you maximum flexibility and freedom. This applies to the configuration of underlying Nuxt instance itself as well.
 
 ## Direct `nuxt.config.ts` edits
 

@@ -6,28 +6,28 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |
-| `nuxt` | `3.17.7` | - | Underlying Nuxt application itself |
-| `vue` | `3.5.17` | - | Explicit devDependency due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
-| `vue-router` | `4.5.1` | - | Explicit devDependency due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
-| `typescript` | `5.8.3` | - | Explicit dependency, mainly due to correct `eslint` functionality |
+| `nuxt` | `3.17.7` | [👁️‍🗨️](/3-10-features-nuxt) | Underlying Nuxt application itself |
+| `vue` | `3.5.17` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
+| `vue-router` | `4.5.1` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
+| `typescript` | `5.8.3` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Explicit dependency included to ensure correct `eslint` functionality |
 | `defu` | `6.1.4` | [👁️‍🗨️](/2-1-configuration.html#defu-merge) | Used for merging user configurations with defaults |
-| `date-fns` | `4.1.0` | - | Used to get timestamps in readable format |
-| `consola` | `3.4.2` | [👁️‍🗨️](/3-8-features-devex.html#logging) | Improved centralized logging solution |
+| `date-fns` | `4.1.0` | [👁️‍🗨️](/3-9-features-devex.html#logging) | Used to get timestamps in readable format |
+| `consola` | `3.4.2` | [👁️‍🗨️](/3-9-features-devex.html#logging) | Improved centralized logging solution |
 | `nuxt-spec` | `0.1.0` | [👁️‍🗨️](/5-1-contributing.html#testing) | Experimental aggregated testing solution (`vitest` && `playwright` && Nuxt/Vue test utils) |
 
 ## Packages of core features
 
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |
-| `@nuxt/eslint` | `1.6.0` | [👁️‍🗨️](/3-8-features-devex.html#eslint) | Official module for code linting via `eslint` |
-| `@nuxt/fonts` | `0.11.4` | - | Official module for working with web fonts |
-| `@nuxt/image` | `1.10.0` | - | Official module for optimizing images |
-| `@nuxt/scripts` | `0.11.10` | - | Official module for integrating 3rd party scripts |
-| `nuxt-security` | `2.2.0` | [👁️‍🗨️](/3-8-features-devex.html#nuxt-security) | Module for establishing best security practices |
+| `@nuxt/eslint` | `1.6.0` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Official module for code linting via `eslint` |
+| `@nuxt/fonts` | `0.11.4` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-fonts) | Official module for working with web fonts |
+| `@nuxt/image` | `1.10.0` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-image) | Official module for optimizing images |
+| `@nuxt/scripts` | `0.11.10` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-scripts) | Official module for integrating 3rd party scripts |
+| `nuxt-security` | `2.2.0` | [👁️‍🗨️](/3-9-features-devex.html#nuxt-security) | Module for establishing best security practices |
 | `@vueuse/core` | `13.5.0` | [👁️‍🗨️](/3-7-features-utils.html#vueuse) | Collection of handy Vue utility functions |
 | `@vueuse/nuxt` | `13.5.0` | [👁️‍🗨️](/3-7-features-utils.html#vueuse) | Nuxt connector for `VueUse` |
-| `pinia` | `3.0.3` | - | Current ecosystem standard for state management |
-| `@pinia/nuxt` | `0.11.2` | - | Nuxt connector for `pinia` |
+| `pinia` | `3.0.3` | [👁️‍🗨️](/3-8-features-performance.html#pinia) | Current ecosystem standard for state management |
+| `@pinia/nuxt` | `0.11.2` | [👁️‍🗨️](/3-8-features-performance.html#pinia) | Nuxt connector for `pinia` |
 
 ## Packages of optional modules
 

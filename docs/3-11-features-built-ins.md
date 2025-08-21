@@ -4,7 +4,7 @@ Nuxt Ignis contains couple of built-in pages and components, that will become a 
 
 ## Welcome page
 
-There is a default content for the `/` or `/index` page featuring a simple welcome component with basic info and links. If your project is using pages (default), the component is served from `/pages/index.vue` within a `<NuxtPage />` boundary. If pages are disabled [via env variable](/3-9-features-nuxt.html#pages), the component is served directly from `/app.vue` instead.
+There is a default content for the `/` or `/index` page featuring a simple welcome component with basic info and links. If your project is using pages (default), the component is served from `/pages/index.vue` within a `<NuxtPage />` boundary. If pages are disabled [via env variable](/3-10-features-nuxt.html#pages), the component is served directly from `/app.vue` instead.
 
 If you provide your own `/pages/index.vue` or `/app.vue`, the defaults will be overriden.
 
