@@ -74,3 +74,17 @@ If you don't want to rely on the default behavior, you can disable those handler
 <PackagesReference :packages="[{ name: 'nuxt-spec', version: '0.1.0' }]" />
 
 See [testing section](/5-1-contributing.html#testing) in contributing guide.
+
+## Nuxt Security
+
+<PackagesReference :packages="[{ name: 'nuxt-security', version: '2.2.0' }]" />
+
+Nuxt Ignis includes [`nuxt-security` module](https://nuxt-security.vercel.app/) by default to help you establish best security practices in your Nuxt application. It provides a set of security headers and other features to protect your app from common vulnerabilities.
+
+The module is imported as-is with default configuration used. Its behavior can be altered by adjusting `security` option in `nuxt.config.ts` file in your target app. Refer to [the documentation](https://nuxt-security.vercel.app/getting-started/configuration) for available options.
+
+You can disable module inclusion by setting the following environment variable:
+
+```dotenv
+NUXT_PUBLIC_IGNIS_CORE_SECURITY=false
+```

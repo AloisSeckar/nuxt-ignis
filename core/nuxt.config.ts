@@ -23,16 +23,6 @@ const nuxtConfig = defu(ignisFeatures, {
     },
   },
 
-  security: {
-    headers: {
-      contentSecurityPolicy: {
-        'script-src': ['\'self\'', 'https:', '\'strict-dynamic\'', '\'nonce-{{nonce}}\'', '\'wasm-unsafe-eval\''],
-      },
-      crossOriginEmbedderPolicy: 'require-corp',
-      crossOriginOpenerPolicy: 'same-origin',
-    },
-  },
-
   // app configuration
   runtimeConfig: {
     // nitro-only secret env-like variables go here

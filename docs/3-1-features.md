@@ -23,7 +23,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `@nuxt/fonts` | `0.11.4` | - | Official module for working with web fonts |
 | `@nuxt/image` | `1.10.0` | - | Official module for optimizing images |
 | `@nuxt/scripts` | `0.11.10` | - | Official module for integrating 3rd party scripts |
-| `nuxt-security` | `2.2.0` | - | Module for establishing best security practices |
+| `nuxt-security` | `2.2.0` | [👁️‍🗨️](/3-8-features-devex.html#nuxt-security) | Module for establishing best security practices |
 | `@vueuse/core` | `13.5.0` | [👁️‍🗨️](/3-7-features-utils.html#vueuse) | Collection of handy Vue utility functions |
 | `@vueuse/nuxt` | `13.5.0` | [👁️‍🗨️](/3-7-features-utils.html#vueuse) | Nuxt connector for `VueUse` |
 | `pinia` | `3.0.3` | - | Current ecosystem standard for state management |
