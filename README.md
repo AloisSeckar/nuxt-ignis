@@ -8,7 +8,7 @@ However, instead of being heavily opinionated as usual, Nuxt Ignis is **optionat
 
 The project will improve and grow together with my skills. And - hopefully - through addressing the feedback from you, the (future) users. I also try to include **WHAT** and **WHY** comments based on my knowledge about the framework and used libraries.
 
-See [CHANGELOG](https://nuxt-ignis.netlify.app/4-1-changelog.html) for the latest changes.
+See [CHANGELOG](https://nuxt-ignis.com/4-1-changelog.html) for the latest changes.
 
 ## How to use
 
@@ -35,14 +35,14 @@ shamefully-hoist=true
 strict-peer-dependencies=false
 ```
 
-4) Setup your `.env` to fit your project needs. Check [Configuration](https://nuxt-ignis.netlify.app/2-1-configuration.html) section for reference.
+4) Setup your `.env` to fit your project needs. Check [Configuration](https://nuxt-ignis.com/2-1-configuration.html) section for reference.
 
 You are ready to build your next awesome project in Nuxt!
 
 ## Docs
 
-Learn more and check all the configuration options at **[Nuxt Ignis Docs](https://nuxt-ignis.netlify.app)**
+Learn more and check all the configuration options at **[Nuxt Ignis Docs](https://nuxt-ignis.com)**
 
 ## Contributing
 
-If you want to help making Nuxt Ignis better, please check our [Contributing Guide](https://nuxt-ignis.netlify.app/5-1-contributing).
+If you want to help making Nuxt Ignis better, please check our [Contributing Guide](https://nuxt-ignis.com/5-1-contributing).

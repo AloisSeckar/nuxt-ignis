@@ -70,7 +70,7 @@ Overview of the newest features in Nuxt Ignis.
 - feat: improved overview page - display enabled/disabled status for ALL features, implemented as separate page/component, non-dependant on any optional features
 - feat: `nuxt-time` module dropped in favor of now-native `<NuxtTime>` component
 - fix: extend default `Tailwind CSS` config to allow it in `/content` folder
-- docs: established standalone `Vitepress` based docs at <https://nuxt-ignis.netlify.app/>
+- docs: established standalone `Vitepress` based docs at <https://nuxt-ignis.com/>
 - docs: updated to reflect latest change
 - build: bump `Nuxt` to `3.17.4` + update all other deps to latest versions (as of 2025-05-21)
 
