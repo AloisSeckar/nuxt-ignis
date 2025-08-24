@@ -100,3 +100,10 @@ You can disable module inclusion by setting the following environment variable:
 ```dotenv
 NUXT_PUBLIC_IGNIS_CORE_SECURITY=false
 ```
+
+## CLI tools
+
+Nuxt Ignis provides couple of CLI tools to help you set up your project:
+
+- `npx make-eslint`: Creates a new ESLint configuration file with Nuxt Ignis defaults.
+- `npx set-gitignore`: Adds Nuxt Ignis-related files into .gitignore.

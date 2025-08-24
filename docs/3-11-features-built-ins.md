@@ -22,7 +22,15 @@ This page, available at `/_ignis-config` and linked from the Welcome component, 
 
 The page route starts with an underscore to avoid clashes with your own routes.
 
-**NOTE:** To display data on this page, Nuxt Ignis auto-generates a `/public/_ignis-config.json` on startup to hold the configuration object that was used. This file is not meant to be stored in Git and should be added into `.gitignore`. But it makes no harm if you want to keep it there for reference.
+### Usage notice
+
+To display data on this page, Nuxt Ignis auto-generates a `/public/_ignis-config.json` on startup to hold the configuration object that was used. This file is not meant to be stored in Git and should be added into `.gitignore`. You can use the CLI tool `npx set-gitignore` to automatically adjust your `.gitignore` file:
+
+```bash
+npx set-gitignore
+```
+
+However, if you want to store the configuration for reference, there is no problem with doing so.
 
 ## Current time
 
