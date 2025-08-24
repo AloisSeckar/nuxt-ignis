@@ -52,7 +52,7 @@ Because Nuxt Ignis author is _opinionated_ about some of the default rules, ther
 To create Nuxt Ignis default instead of plain `@nuxt/eslint` version, use the following command:
 
 ```bash
-npx make-eslint
+npx set-eslint
 ```
 
 Check the [file template](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/eslint.config.mjs) for more details and explanation.
@@ -105,5 +105,5 @@ NUXT_PUBLIC_IGNIS_CORE_SECURITY=false
 
 Nuxt Ignis provides couple of CLI tools to help you set up your project:
 
-- `npx make-eslint`: Creates a new ESLint configuration file with Nuxt Ignis defaults.
+- `npx set-eslint`: Creates a new ESLint configuration file with Nuxt Ignis defaults.
 - `npx set-gitignore`: Adds Nuxt Ignis-related files into .gitignore.

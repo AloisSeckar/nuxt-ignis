@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 // CLI tool to create an ESLint configuration file with Nuxt Ignis defaults
-// usage: `npx make-eslint` in target folder
+// usage: `npx set-eslint` in target folder
 
 import { createFileFromTemplate } from 'elrh-cosca'
 

@@ -27,7 +27,7 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "bin": {
-    "make-eslint": "./bin/make-eslint.js",
+    "set-eslint": "./bin/set-eslint.js",
     "set-gitignore": "./bin/set-gitignore.js"
   },
   "scripts": {
