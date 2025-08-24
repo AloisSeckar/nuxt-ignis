@@ -79,6 +79,9 @@ importers:
       defu:
         specifier: 6.1.4
         version: 6.1.4
+      elrh-cosca:
+        specifier: 0.1.0
+        version: 0.1.0
       elrh-pslo:
         specifier: 1.1.6
         version: 1.1.6
@@ -4122,6 +4125,9 @@ packages:
 
   elkjs@0.10.0:
     resolution: {integrity: sha512-v/3r+3Bl2NMrWmVoRTMBtHtWvRISTix/s9EfnsfEWApNrsmNjqgqJOispCGg46BPwIFdkag3N/HYSxJczvCm6w==}
+
+  elrh-cosca@0.1.0:
+    resolution: {integrity: sha512-UBYzlITzDGXiDWvCt5FMgVrbOGgUgyKz9uOlXlX/D+wPdbc8cZd6NoBBDcPJm1UOygJWoAXfqNrq/sXapTYP6g==}
 
   elrh-pslo@1.1.6:
     resolution: {integrity: sha512-DPPvTaMKRV5jFfi48jaFK5soJjB9ZiO2actXps4aT9r6+GGTN81Gi/nfcLeVlrq5hXIogxGbYANZl3It/Gxviw==}
@@ -12707,6 +12713,8 @@ snapshots:
   electron-to-chromium@1.5.193: {}
 
   elkjs@0.10.0: {}
+
+  elrh-cosca@0.1.0: {}
 
   elrh-pslo@1.1.6: {}
 
