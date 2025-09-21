@@ -2,6 +2,29 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.5.0
+
+2025-09-21
+
+- BREAKING: added `Nuxt v4` support and adjusted project structure accordingly (see [migration guide](https://nuxt.com/docs/4.x/getting-started/upgrade)))
+- BREAKING: bumped `@nuxtjs/i18n` to `v10` (see [migration guide](https://i18n.nuxtjs.org/docs/guide/migrating))
+- feat: `/_ignis-welcome` page exposed separately even after default page is overwritten
+- feat: `NuxtRouteAnnouncer` included into default `app.vue` to improve a11y (#108)
+- feat: quick validator utils were added for `zod` and `valibot` (#109)
+- feat: date-formatting helper based on date-fns added (#111)
+- feat: CLI tool  (`npx nuxt-ignis setup`) for quick project setup
+- feat: CLI tool  (`npx nuxt-ignis set-css`) for scaffolding default CSS file to allow easy adjustments (#100)
+- fix: dropped custom settings for nuxt-security (#46)
+- fix: corrected warn message in `useT` function
+- fix: passing constructed Nuxt config object via spread operator to avoid Proxy issues
+- fix: added proper typing for NuxtConfig object
+- build: bump `Nuxt` to `4.1.2` + update other deps to latest versions (as of 2025-09-21)
+- chore: renamed `.env.public` to `.env.example` for more consistency with other projects
+- docs: moved to new https://nuxt-ignis.com/ domain
+- docs: updated with new information to keep up with the changes
+- docs: added link sections for all dependencies (#95)
+- docs: added [`Made with Ignis`](https://nuxt-ignis.com/1-3-showcase.html) showcase page
+
 ## 0.4.0
 
 2025-07-26

@@ -21,7 +21,7 @@ async function nuxtIgnisSetup() {
 
   // 1.1 - add nuxt-ignis dependency
   try {
-    await updateJsonFile('package.json', 'dependencies', { 'nuxt-ignis': '0.4.0' },
+    await updateJsonFile('package.json', 'dependencies', { 'nuxt-ignis': '0.5.0-rc.1' },
       auto, 'This will add \'nuxt-ignis\' dependency to your \'package.json\'. Proceed?')
   } catch (error) {
     console.error('Error adding \'nuxt-ignis\' dependency:\n', error.message)

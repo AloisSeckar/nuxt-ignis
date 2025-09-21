@@ -21,7 +21,7 @@ If any of the settings are already present, the tool will just skip them. This a
 ```json [package.json]
 {
   "dependencies": {
-    "nuxt-ignis": "0.4.0"
+    "nuxt-ignis": "0.5.0-rc.1"
   }
 }
 ```
