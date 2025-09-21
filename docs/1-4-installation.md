@@ -12,6 +12,8 @@ npx nuxt-ignis setup
 
 First, the CLI tool will ask you whether you want to do the setup automatically. If you choose `y`es, it will perform all the steps for you. If you choose `n`o, it will guide you through the setup step-by-step prompting every action.
 
+If any of the settings are already present, the tool will just skip them. This also ensures that, in case any errors occur, the tool can be run multiple times after the issues are resolved.
+
 ### Setup steps
 
 1) Add the following dependency into your `package.json`:
