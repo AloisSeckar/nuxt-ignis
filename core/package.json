@@ -51,7 +51,7 @@
     "@nuxt/image": "1.11.0",
     "@nuxt/scripts": "0.11.13",
     "@nuxt/ui": "3.3.4",
-    "@nuxtjs/i18n": "9.5.6",
+    "@nuxtjs/i18n": "10.1.0",
     "@nuxtjs/seo": "3.2.2",
     "@nuxtjs/supabase": "1.6.2",
     "@nuxtjs/tailwindcss": "6.14.0",

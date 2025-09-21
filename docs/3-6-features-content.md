@@ -43,7 +43,7 @@ Referencing config like this allows to pass in a custom config that will be [def
 
 ## I18N
 
-<PackagesReference :packages="[{ name: '@nuxtjs/i18n', version: '9.5.6' }]" />
+<PackagesReference :packages="[{ name: '@nuxtjs/i18n', version: '10.1.0' }]" />
 
 [Nuxt I18N](https://i18n.nuxtjs.org/) is a module that provides internationalization support for your application. It allows you to easily manage translations and switch between different languages.
 
