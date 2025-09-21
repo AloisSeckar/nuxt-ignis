@@ -52,7 +52,7 @@ Because Nuxt Ignis author is _opinionated_ about some of the default rules, ther
 To create Nuxt Ignis default instead of plain `@nuxt/eslint` version, use the following command:
 
 ```bash
-npx set-eslint
+npx nuxt-ignis set-eslint
 ```
 
 Check the [file template](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/eslint.config.mjs) for more details and explanation.

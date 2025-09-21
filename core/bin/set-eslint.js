@@ -1,15 +1,21 @@
 #!/usr/bin/env node
 
-// CLI tool to create an ESLint configuration file with Nuxt Ignis defaults
-// usage: `npx set-eslint` in target folder
+import { createFileFromWebTemplate } from 'elrh-cosca'
 
-import { createFileFromTemplate } from 'elrh-cosca'
-
+/**
+ * CLI tool to create an ESLint configuration file with Nuxt Ignis defaults.
+ *
+ * Usage: `npx nuxt-ignis set-eslint` in target folder.
+ */
 async function main() {
-  await createFileFromTemplate('eslint.config.mjs', 'eslint.config.mjs')
+  try {
+    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/heads/main/core/eslint.config.mjs', 'eslint.config.mjs')
+  } catch (error) {
+    console.error('Error creating ESLint config file:\n', error.message)
+  }
 }
 
 main().catch((err) => {
-  console.error('Error:', err)
+  console.error(err)
   process.exit(1)
 })
