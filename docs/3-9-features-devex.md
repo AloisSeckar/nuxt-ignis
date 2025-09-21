@@ -75,6 +75,8 @@ const formattedDate = format(new Date(), formatString)
 // sample output: 2025-08-01 11:12:13
 ```
 
+**Note:** Formatting via `date-fns` is also exported as an util function [`ignisDate`](/3-11-features-built-ins.html#date-formatting).
+
 ## Error handling
 
 By default, Nuxt Ignis registers global Vue [error](https://vuejs.org/api/application.html#app-config-errorhandler) and [warn](https://vuejs.org/api/application.html#app-config-warnhandler) handler to process errors and warnings in your app. The error/warn object is sent to `consola` error/warn function. Additional info provided by Vue is also captured in debug mode. Check the [implementation](https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/heads/main/core/plugins/errorHandler.ts).

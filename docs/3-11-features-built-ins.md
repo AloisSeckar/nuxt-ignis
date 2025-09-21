@@ -32,9 +32,19 @@ npx set-gitignore
 
 However, if you want to store the configuration for reference, there is no problem with doing so.
 
+## Date formatting
+
+The `ignisDate` function is available for date-formatting based on `date-fns`. Unlike `useDateFormat` from VueUse, this function works even if VueUse is disabled.
+
+By default, it returns `new Date()` formatted as `yyyy-MM-dd HH:mm:ss`. Both parameters cane be provided for custom output.
+
+```ts
+function ignisDate(date: Date = new Date(), formatString: string = 'yyyy-MM-dd HH:mm:ss'): string
+```
+
 ## Current time
 
-The `<CurrentTime>` component is available to display the current time in the user's timezone. It wraps around Nuxt's built-in `<NuxtTime>` component. If `VueUse` is enabled, the component feeds with `useNow` composable and reactively updates every second then. If `VueUse` is disabled, the component only shows the static time at the moment of rendering.
+The `<CurrentTime>` component is available to display the current time in the user's timezone. It wraps around Nuxt's built-in `<NuxtTime>` component. If `VueUse` is enabled, the component feeds with `useNow` composable and reactively updates every second then. If `VueUse` is disabled, the component only shows the static time at the moment of rendering displaying the default value of [`ignisDate` function](#date-formatting).
 
 Instance of `<CurrentTime>` is used in footer of pages mentioned above.
 
