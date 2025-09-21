@@ -6,10 +6,11 @@ import tailwindcss from '@tailwindcss/vite'
 import { log } from './app/utils/consola'
 import { pslo } from './app/utils/pslo-utils'
 import { ignisTailwindcssFix } from './app/utils/tailwind'
+import type { NuxtConfig } from 'nuxt/schema'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
-export function setFeatures() {
+export function setFeatures(): NuxtConfig {
   // list of optional extra features
   const extras = [] as string[]
   // list of Nuxt-related settings
@@ -17,7 +18,8 @@ export function setFeatures() {
 
   // object for optional config that will be merged with global Nuxt config
   // declared in nuxt.config.ts
-  let nuxtConfig = {
+  let nuxtConfig: NuxtConfig = {
+    // make sure `nuxtConfig.modules` is always defined
     modules: [] as string[],
   }
 
@@ -26,37 +28,37 @@ export function setFeatures() {
 
   // https://nuxt.com/modules/eslint
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_ESLINT !== 'false') {
-    nuxtConfig.modules.push('@nuxt/eslint')
+    nuxtConfig.modules!.push('@nuxt/eslint')
   }
 
   // https://nuxt.com/modules/fonts
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_FONTS !== 'false') {
-    nuxtConfig.modules.push('@nuxt/fonts')
+    nuxtConfig.modules!.push('@nuxt/fonts')
   }
 
   // https://image.nuxt.com/
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_IMAGE !== 'false') {
-    nuxtConfig.modules.push('@nuxt/image')
+    nuxtConfig.modules!.push('@nuxt/image')
   }
 
   // https://scripts.nuxt.com/
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS !== 'false') {
-    nuxtConfig.modules.push('@nuxt/scripts')
+    nuxtConfig.modules!.push('@nuxt/scripts')
   }
 
   // https://nuxt.com/modules/security
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_SECURITY !== 'false') {
-    nuxtConfig.modules.push('nuxt-security')
+    nuxtConfig.modules!.push('nuxt-security')
   }
 
   // https://nuxt.com/modules/vueuse
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_VUEUSE !== 'false') {
-    nuxtConfig.modules.push('@vueuse/nuxt')
+    nuxtConfig.modules!.push('@vueuse/nuxt')
   }
 
   // https://pinia.vuejs.org/ssr/nuxt.html
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_PINIA !== 'false') {
-    nuxtConfig.modules.push('@pinia/nuxt')
+    nuxtConfig.modules!.push('@pinia/nuxt')
   }
 
   // 2. optional modules & features
@@ -72,7 +74,7 @@ export function setFeatures() {
   let tailwindFixRequired = false
   if (uiPreset === 'nuxt-ui' || process.env.NUXT_PUBLIC_IGNIS_UI === 'true') {
     tailwindFixRequired = true
-    nuxtConfig.modules.push('@nuxt/ui')
+    nuxtConfig.modules!.push('@nuxt/ui')
     // import tailwind css file
     nuxtConfig = defu({
       css: [join(currentDir, './app/assets/css/ignis-nuxt-ui.css')],
@@ -90,7 +92,7 @@ export function setFeatures() {
     // evaluate separate Tailwind CSS module
     if (uiPreset === 'tailwind' || (process.env.NUXT_PUBLIC_IGNIS_TAILWIND === 'true' && uiPreset !== 'nuxt-ui')) {
       tailwindFixRequired = true
-      // nuxtConfig.modules.push('@nuxtjs/tailwindcss') // temporary disabled until v7 is released
+      // nuxtConfig.modules!.push('@nuxtjs/tailwindcss') // temporary disabled until v7 is released
       extras.push('Tailwind CSS')
       // import tailwind css file
       nuxtConfig = defu({
@@ -108,7 +110,7 @@ export function setFeatures() {
       vite: {
         plugins: [ignisTailwindcssFix],
       },
-    }, nuxtConfig)
+    }, nuxtConfig) as NuxtConfig
   }
 
   // database
@@ -120,11 +122,11 @@ export function setFeatures() {
 
   if (dbPreset === 'neon' || process.env.NUXT_PUBLIC_IGNIS_NEON === 'true') {
     // module definition
-    nuxtConfig.modules.push('nuxt-neon')
+    nuxtConfig.modules!.push('nuxt-neon')
   }
   if (dbPreset === 'supabase' || process.env.NUXT_PUBLIC_IGNIS_SUPABASE === 'true') {
     // module definition
-    nuxtConfig.modules.push('@nuxtjs/supabase')
+    nuxtConfig.modules!.push('@nuxtjs/supabase')
     // module-specific config key
     nuxtConfig = defu({
       supabase: {
@@ -136,7 +138,7 @@ export function setFeatures() {
   // i18n
   if (process.env.NUXT_PUBLIC_IGNIS_I18N_ENABLED === 'true') {
     // module definition
-    nuxtConfig.modules.push('@nuxtjs/i18n')
+    nuxtConfig.modules!.push('@nuxtjs/i18n')
     // module-specific config key
     nuxtConfig = defu({
       i18n: {
@@ -152,7 +154,7 @@ export function setFeatures() {
           optimizeTranslationDirective: false,
         },
       },
-    }, nuxtConfig)
+    }, nuxtConfig) as NuxtConfig
   }
 
   // forms
@@ -163,11 +165,11 @@ export function setFeatures() {
   }
 
   if (formsPreset === 'vueform' || process.env.NUXT_PUBLIC_IGNIS_VUEFORM === 'true') {
-    nuxtConfig.modules.push('@vueform/nuxt')
+    nuxtConfig.modules!.push('@vueform/nuxt')
   }
   if (formsPreset === 'formkit' || process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED === 'true') {
     // module definition
-    nuxtConfig.modules.push('@formkit/nuxt')
+    nuxtConfig.modules!.push('@formkit/nuxt')
     // module-specific config key
     nuxtConfig = defu({
       formkit: {
@@ -193,7 +195,7 @@ export function setFeatures() {
   // seo
   // 2025/04 - must be before @nuxt/content (https://nuxtseo.com/docs/nuxt-seo/guides/nuxt-content)
   if (process.env.NUXT_PUBLIC_IGNIS_SEO === 'true') {
-    nuxtConfig.modules.push('@nuxtjs/seo')
+    nuxtConfig.modules!.push('@nuxtjs/seo')
 
     // ogImage and Schema.org modules should be disabled with `ssr: false`
     // note: this won't work if `ssr: false` is set in target's project nuxt.config.ts
@@ -207,17 +209,17 @@ export function setFeatures() {
 
   // content
   if (process.env.NUXT_PUBLIC_IGNIS_CONTENT === 'true') {
-    nuxtConfig.modules.push('@nuxt/content')
+    nuxtConfig.modules!.push('@nuxt/content')
   }
 
   // nuxt-auth-utils
   if (process.env.NUXT_PUBLIC_IGNIS_AUTH === 'true') {
-    nuxtConfig.modules.push('nuxt-auth-utils')
+    nuxtConfig.modules!.push('nuxt-auth-utils')
   }
 
   // https://www.vue.equipment/
   if (process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED === 'true') {
-    nuxtConfig.modules.push('@maas/vue-equipment/nuxt')
+    nuxtConfig.modules!.push('@maas/vue-equipment/nuxt')
     // composables to be included
     if (process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES) {
       // values MUST be delimited by "," (spaces will be trimmed)
@@ -275,12 +277,12 @@ export function setFeatures() {
 
   // magic-regexp
   if (process.env.NUXT_PUBLIC_IGNIS_REGEXP === 'true') {
-    nuxtConfig.modules.push('magic-regexp/nuxt')
+    nuxtConfig.modules!.push('magic-regexp/nuxt')
   }
 
   // magic-regexp
   if (process.env.NUXT_PUBLIC_IGNIS_CHARTS === 'true') {
-    nuxtConfig.modules.push('nuxt-charts')
+    nuxtConfig.modules!.push('nuxt-charts')
   }
 
   // 3. Nuxt-related settings
@@ -335,7 +337,7 @@ export function setFeatures() {
   // 5. warn if duplicate modules find
   // this means e.g. 2 database modules or 2 form solutions
   if (process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES !== 'false') {
-    const used = nuxtConfig.modules
+    const used = nuxtConfig.modules!
     if (used.includes('nuxt-neon') && used.includes('@nuxtjs/supabase')) {
       log.warn('You have both DB connector modules (Neon and Supabase) active, which is not recommended. If this is intentional, you can use `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.')
     }
@@ -353,7 +355,7 @@ export function setFeatures() {
 
   let overview = `Nuxt Ignis will start using following settings:\n`
   overview += `App title: ${appTitle}\n`
-  overview += `Modules: ${nuxtConfig.modules.join(', ')}\n`
+  overview += `Modules: ${nuxtConfig.modules!.join(', ')}\n`
   if (extras.length > 0) {
     overview += `Extras: ${extras.join(', ')}\n`
   }

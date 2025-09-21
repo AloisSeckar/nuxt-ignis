@@ -2,11 +2,12 @@ import { writeFileSync, existsSync, mkdirSync } from 'fs'
 import { dirname } from 'path'
 import { defu } from 'defu'
 import { setFeatures } from './features'
+import type { NuxtConfig } from '@nuxt/schema'
 
-const ignisFeatures = setFeatures()
+const currentFeatures = setFeatures()
 
 // https://nuxt.com/docs/guide/directory-structure/nuxt-config
-const nuxtConfig = defu(ignisFeatures, {
+const baseConfig: NuxtConfig = {
 
   extends: [
     // Test-pack base layer
@@ -120,7 +121,7 @@ const nuxtConfig = defu(ignisFeatures, {
   },
   hooks: {
     'schema:resolved'() {
-      const ignisConfig = JSON.stringify(ignisFeatures, null, 2)
+      const currentConfig = JSON.stringify(currentFeatures, null, 2)
       const outPath = './public/_ignis-config.json'
 
       const outDir = dirname(outPath)
@@ -128,13 +129,14 @@ const nuxtConfig = defu(ignisFeatures, {
         mkdirSync(outDir, { recursive: true })
       }
 
-      writeFileSync(outPath, ignisConfig)
+      writeFileSync(outPath, currentConfig)
     },
   },
-})
+}
+
+// to avoid type inference issues
+const effectiveConfig = defu(currentFeatures, baseConfig) as NuxtConfig
 
 // https://nuxt.com/docs/getting-started/configuration#nuxt-configuration
 // using spread operator to avoid Proxy issues
-// @ts-expect-error unknown object type
-// TODO elaborate correct type for "nuxtConfig" object
-export default defineNuxtConfig({ ...nuxtConfig })
+export default defineNuxtConfig({ ...effectiveConfig })
