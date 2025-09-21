@@ -134,6 +134,7 @@ const nuxtConfig = defu(ignisFeatures, {
 })
 
 // https://nuxt.com/docs/getting-started/configuration#nuxt-configuration
+// using spread operator to avoid Proxy issues
 // @ts-expect-error unknown object type
 // TODO elaborate correct type for "nuxtConfig" object
-export default defineNuxtConfig(nuxtConfig)
+export default defineNuxtConfig({ ...nuxtConfig })
