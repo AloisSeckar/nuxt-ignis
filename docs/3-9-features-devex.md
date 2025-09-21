@@ -4,7 +4,7 @@ For better developer experience, Nuxt Ignis offers following features:
 
 ## ESlint
 
-<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.6.0' }, { name: 'typescript', version: '5.8.3' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.9.0' }, { name: 'typescript', version: '5.9.2' }]" />
 
 Nuxt Ignis utilizes `@nuxt/eslint` module for convenient [ESLint](https://eslint.org/) integration in your project. For [VS Code](https://code.visualstudio.com/), it is recommended to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for even better integration including "linting on save" configuration.
 
@@ -83,13 +83,13 @@ If you don't want to rely on the default behavior, you can disable those handler
 
 ## Testing
 
-<PackagesReference :packages="[{ name: 'nuxt-spec', version: '0.1.0' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-spec', version: '0.1.8' }]" />
 
 See [testing section](/5-1-contributing.html#testing) in contributing guide.
 
 ## Nuxt Security
 
-<PackagesReference :packages="[{ name: 'nuxt-security', version: '2.2.0' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-security', version: '2.4.0' }]" />
 
 Nuxt Ignis includes [`nuxt-security` module](https://nuxt-security.vercel.app/) by default to help you establish best security practices in your Nuxt application. It provides a set of security headers and other features to protect your app from common vulnerabilities.
 
@@ -103,7 +103,9 @@ NUXT_PUBLIC_IGNIS_CORE_SECURITY=false
 
 ## CLI tools
 
-Nuxt Ignis provides couple of CLI tools to help you set up your project:
+<PackagesReference :packages="[{ name: 'elrh-cosca', version: '0.2.7' }]" />
+
+Using experimental [elrh-cosca](https://github.com/AloisSeckar/elrh-cosca) library, Nuxt Ignis provides couple of CLI tools to help you set up your project:
 
 - `npx set-eslint`: Creates a new ESLint configuration file with Nuxt Ignis defaults.
 - `npx set-gitignore`: Adds Nuxt Ignis-related files into .gitignore.

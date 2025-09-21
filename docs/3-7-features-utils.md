@@ -4,7 +4,7 @@ Nuxt Ignis offers following utility options:
 
 ## VueUse
 
-<PackagesReference :packages="[{ name: '@vueuse/core', version: '13.5.0' }, { name: '@vueuse/nuxt', version: '13.5.0' }]" />
+<PackagesReference :packages="[{ name: '@vueuse/core', version: '13.9.0' }, { name: '@vueuse/nuxt', version: '13.9.0' }]" />
 
 [VueUse](https://vueuse.org/) is a collection of essential Vue Composition Utilities that provides a set of reusable functions and utilities for Vue.js applications. It includes features like reactive state management, event handling, and more.
 
@@ -16,7 +16,7 @@ NUXT_PUBLIC_IGNIS_CORE_VUEUSE=false
 
 ## VueEquipment
 
-<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.32' }]" />
+<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.36' }]" />
 
 [VueEquipment](https://www.vue.equipment/) is a collection of Vue composables and plugins that provides a set of reusable functions and utilities for Vue.js applications.
 
@@ -48,7 +48,7 @@ Whitespaces around will be trimmed, so it doesn't matter if you add or omit them
 
 ## Nuxt SEO
 
-<PackagesReference :packages="[{ name: '@nuxtjs/seo', version: '3.1.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxtjs/seo', version: '3.2.2' }]" />
 
 [Nuxt SEO](https://nuxtseo.com/) is a collection of Nuxt modules that handles all of the technical aspects in growing your sites organic traffic.
 
@@ -66,7 +66,7 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`,
 
 ## Nuxt Auth Utils
 
-<PackagesReference :packages="[{ name: 'nuxt-auth-utils', version: '0.5.20' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-auth-utils', version: '0.5.25' }]" />
 
 [Nuxt Auth Utils](https://github.com/AloisSeckar/nuxt-auth-utils) is a set of utilities for handling authentication in Nuxt applications.
 

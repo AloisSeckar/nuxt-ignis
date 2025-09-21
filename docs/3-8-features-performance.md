@@ -16,7 +16,7 @@ NUXT_PUBLIC_IGNIS_CORE_FONTS=false
 
 ## Nuxt Image
 
-<PackagesReference :packages="[{ name: '@nuxt/image', version: '1.10.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/image', version: '1.11.0' }]" />
 
 [Nuxt Image](https://image.nuxt.com/) is an official module for working with images. Resize and transform your images using built-in optimizer or your favorite images CDN.
 
@@ -28,7 +28,7 @@ NUXT_PUBLIC_IGNIS_CORE_IMAGE=false
 
 ## Nuxt Scripts
 
-<PackagesReference :packages="[{ name: '@nuxt/scripts', version: '0.11.10' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/scripts', version: '0.11.13' }]" />
 
 [Nuxt Scripts](https://scripts.nuxt.com/) is an official module for working with scripts. It lets you load third-party scripts with better performance, privacy, security and DX. It includes many popular third-parties out of the box.
 

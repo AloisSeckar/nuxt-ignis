@@ -7,9 +7,9 @@
     "preview": "vitepress preview"
   },
   "dependencies": {
-    "oxc-minify": "0.77.2",
-    "vitepress": "2.0.0-alpha.8",
-    "vitepress-plugin-group-icons": "1.6.1"
+    "oxc-minify": "0.91.0",
+    "vitepress": "2.0.0-alpha.12",
+    "vitepress-plugin-group-icons": "1.6.3"
   },
   "pnpm": {
     "overrides": {
@@ -20,5 +20,5 @@
       "esbuild"
     ]
   },
-  "packageManager": "pnpm@10.14.0"
+  "packageManager": "pnpm@10.17.0"
 }

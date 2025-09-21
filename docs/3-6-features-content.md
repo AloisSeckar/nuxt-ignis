@@ -4,7 +4,7 @@ Nuxt Ignis contains following customizable features related to content generatio
 
 ## Nuxt Content
 
-<PackagesReference :packages="[{ name: '@nuxt/content', version: '3.6.3' }, { name: 'better-sqlite3', version: '12.2.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/content', version: '3.7.1' }, { name: 'better-sqlite3', version: '12.2.0' }]" />
 
 [Nuxt Content](https://content.nuxt.com/) is a powerful content management system for Nuxt applications that allows you to write content in Markdown, JSON, YAML, or CSV formats. It provides a flexible way to manage and display content in your application.
 
