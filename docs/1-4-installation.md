@@ -4,32 +4,74 @@
 
 ## Adding to your project
 
-To enable `nuxt-ignis` in your Nuxt project, follow these steps:
+To enable `nuxt-ignis` in your Nuxt project, you can use the CLI tool to set it up quickly:
+
+```bash
+npx nuxt-ignis setup
+```
+
+First, the CLI tool will ask you whether you want to do the setup automatically. If you choose `y`es, it will perform all the steps for you. If you choose `n`o, it will guide you through the setup step-by-step prompting every action.
+
+### Setup steps
 
 1) Add the following dependency into your `package.json`:
 
 ```json [package.json]
-"nuxt-ignis": "0.4.0"
+{
+  "dependencies": {
+    "nuxt-ignis": "0.4.0"
+  }
+}
 ```
 
-2) Add following section into your `nuxt.config.ts`:
+2) For `pnpm`, you should also configure the `approvedBuilds` and `packageManager`:
+
+```json [package.json]
+{
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "@parcel/watcher",
+      "@tailwindcss/oxide",
+      "better-sqlite3",
+      "esbuild",
+      "maplibre-gl",
+      "puppeteer",
+      "sharp",
+      "unrs-resolver",
+      "vue-demi"
+    ]
+  },
+  "packageManager": "pnpm@10.17.0"
+}
+```
+
+3) Add following section into your `nuxt.config.ts` to extend the `nuxt-ignis` layer:
 
 ```ts [nuxt.config.ts]
-extends: [
-  'nuxt-ignis'
-]
+{
+  "extends": [
+    "nuxt-ignis"
+  ]
+}
 ```
 
-3) Add `.npmrc` file with following content (if you don't have it yet):
+4) Adjust `.npmrc` file with following content (if you don't have it yet):
 
 ```[.npmrc]
 shamefully-hoist=true
-strict-peer-dependencies=false
 ```
 
-4) Setup your `.env` to fit your project needs. Check [the reference](/2-5-full-reference.html) for all available config options.
+5) Adjust `.gitignore` file to exclude Nuxt Ignis-related auxiliary files:
 
-5) **Congratulations!** You are ready to build your next awesome project in Nuxt!
+```[.gitignore]
+_ignis-config.json
+```
+
+### Customization
+
+To tailor Nuxt Ignis to fit your project needs, setup your `.env` file accordingly. Check [the reference](/2-5-full-reference.html) for all available config options.
+
+**Congratulations!** You are now armed ready to build your next awesome project in Nuxt!
 
 ## More info
 

@@ -27,8 +27,8 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "bin": {
-    "set-eslint": "./bin/set-eslint.js",
-    "set-gitignore": "./bin/set-gitignore.js"
+    "setup": "./bin/setup.js",
+    "set-eslint": "./bin/set-eslint.js"
   },
   "scripts": {
     "analyze": "nuxt analyze",
@@ -64,7 +64,7 @@
     "consola": "3.4.2",
     "date-fns": "4.1.0",
     "defu": "6.1.4",
-    "elrh-cosca": "0.2.7",
+    "elrh-cosca": "0.2.8",
     "elrh-pslo": "1.1.6",
     "magic-regexp": "0.10.0",
     "nuxt": "4.1.2",
@@ -83,10 +83,6 @@
     "zod": "4.1.11"
   },
   "pnpm": {
-    "overrides": {
-      "@nuxt/kit": "4.1.2",
-      "@nuxt/schema": "4.1.2"
-    },
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "@tailwindcss/oxide",

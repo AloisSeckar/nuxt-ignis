@@ -105,7 +105,7 @@ NUXT_PUBLIC_IGNIS_CORE_SECURITY=false
 
 ## CLI tools
 
-<PackagesReference :packages="[{ name: 'elrh-cosca', version: '0.2.7' }]" />
+<PackagesReference :packages="[{ name: 'elrh-cosca', version: '0.2.8' }]" />
 
 Using experimental [elrh-cosca](https://github.com/AloisSeckar/elrh-cosca) library, Nuxt Ignis provides couple of CLI tools to help you set up your project:
 
