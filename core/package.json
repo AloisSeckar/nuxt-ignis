@@ -37,6 +37,7 @@
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
+    "prepublishOnly": "pnpm build",
     "preview": "nuxt preview",
     "start": "nuxt start",
     "test": "vitest run",
