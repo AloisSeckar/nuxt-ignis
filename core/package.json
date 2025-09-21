@@ -28,6 +28,7 @@
   },
   "bin": {
     "setup": "./bin/setup.js",
+    "set-css": "./bin/set-css.js",
     "set-eslint": "./bin/set-eslint.js"
   },
   "scripts": {
