@@ -5,16 +5,15 @@
   NUXT_PUBLIC_IGNIS_OPENPROPS=true is required to use this feature
 */
 
-@import "open-props/normalize";
-@import "open-props/buttons";
+@import "open-props/style";
 
 /* demo class - used in IgnisFeature component instance */
 .openprops-feature {
 
   /* https://open-props.style/#gradients */
-  background: var(--gradient-18);
+  background: var(--gradient-18) !important;
 
   /* https://open-props.style/#colors */
-  color: var(--gray-12);
-  
+  color: var(--gray-10) !important;
+ 
 }
