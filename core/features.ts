@@ -271,7 +271,7 @@ export function setFeatures(): NuxtConfig {
             log.debug(`Nuxt Content file ${file.id} processed with elrh-pslo`)
           },
         },
-      }, nuxtConfig)
+      }, nuxtConfig) as NuxtConfig
     }
   }
 
