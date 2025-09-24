@@ -1,3 +1,3 @@
 <template>
-  <IgnisInfo :content="'Config'" />
+  <IgnisContent :content="'Config'" />
 </template>

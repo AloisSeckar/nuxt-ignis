@@ -18,10 +18,10 @@ const props = defineProps<{
 
 let ignisContent
 if (props.content === 'Welcome') {
-  ignisContent = resolveComponent('IgnisWelcome')
+  ignisContent = resolveComponent('IgnisContentWelcome')
 } else if (props.content === 'Config') {
-  ignisContent = resolveComponent('IgnisConfig')
+  ignisContent = resolveComponent('IgnisContentConfig')
 } else {
-  ignisContent = resolveComponent('IgnisFeatureList')
+  ignisContent = resolveComponent('IgnisContentFeatures')
 }
 </script>

@@ -2,11 +2,11 @@
   <NuxtRouteAnnouncer />
   <UApp v-if="ui">
     <NuxtPage v-if="pages" />
-    <IgnisInfo v-else :content="'Welcome'" />
+    <IgnisContent v-else :content="'Welcome'" />
   </UApp>
   <div v-else>
     <NuxtPage v-if="pages" />
-    <IgnisInfo v-else :content="'Welcome'" />
+    <IgnisContent v-else :content="'Welcome'" />
   </div>
 </template>
 
