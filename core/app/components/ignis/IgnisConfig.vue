@@ -1,5 +1,5 @@
 <template>
-  <div style="margin: 0 auto; max-width: 800px;">
+  <div class="ignis-config-wrapper">
     <h1 class="ignis-config-header">
       Configuration Overview
     </h1>
@@ -19,6 +19,10 @@ const { data: ignisConfig, error } = await useFetch('/_ignis-config.json', {
 </script>
 
 <style scoped lang="css">
+.ignis-config-wrapper {
+  margin: 0 auto;
+  max-width: 800px;
+}
 .ignis-config-header {
   text-align: center;
   font-family: monospace;

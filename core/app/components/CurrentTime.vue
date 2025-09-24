@@ -8,7 +8,8 @@
 
 <template>
   <div style="text-align: center; font-size: 0.8em;">
-    Current datetime with <NuxtLink to="https://nuxt.com/docs/api/components/nuxt-time">NuxtTime</NuxtLink>:
+    Current datetime with
+    <NuxtLink to="https://nuxt.com/docs/api/components/nuxt-time" class="link">NuxtTime</NuxtLink>:
     <NuxtTime
       :datetime="currentDate"
       hour-cycle="h24"
@@ -29,3 +30,9 @@
 const vueuse = useRuntimeConfig().public.ignis.core.vueuse
 const currentDate = vueuse ? useNow() : ignisDate()
 </script>
+
+<style scoped lang="css">
+.link:hover {
+  color: oklch(87.9% 0.169 91.605);
+}
+</style>

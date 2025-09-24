@@ -1,5 +1,5 @@
 <template>
-  <div class="ignis-welcome">
+  <div class="ignis-welcome-wrapper">
     <h1 class="ignis-welcome-header">
       Welcome to Ignis
     </h1>
@@ -29,7 +29,7 @@ const pages = useRuntimeConfig().public.ignis.pages
 </script>
 
 <style scoped lang="css">
-.ignis-welcome {
+.ignis-welcome-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;

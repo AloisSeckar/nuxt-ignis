@@ -10,7 +10,7 @@
 -->
 
 <template>
-  <div style="text-align: center; max-width: 1200px;">
+  <div class="ignis-feature-wrapper">
     <h1 class="ignis-feature-header">
       Features Overview
     </h1>
@@ -86,6 +86,12 @@ const charts = setup.charts
 }
 
 /* avoid Tailwind CSS styles here, because Tailwind may not be enabled */
+
+.ignis-feature-wrapper {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
 
 .ignis-feature-header {
   text-align: center;
