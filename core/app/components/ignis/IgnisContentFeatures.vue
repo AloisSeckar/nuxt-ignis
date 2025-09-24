@@ -7,6 +7,7 @@
      - an example usage of auto-imported Nuxt component declared in `/components` directory
      - the text is (usually) being loaded localized via nuxtjs/i18n module
      - features are being displayed conditionally according to current setting
+     - data for displaying are created as an array and then iterated with `v-for` directive
 -->
 
 <template>
@@ -15,33 +16,9 @@
       Features Overview
     </h1>
     <div class="feature-list">
-      <IgnisContentFeaturesDetail :text="useIgnisT('features.nuxt')" />
-      <IgnisContentFeaturesDetail :text="useIgnisT('features.consola')" />
-      <IgnisContentFeaturesDetail :active="eslint" :text="useIgnisT('features.eslint')" />
-      <IgnisContentFeaturesDetail :active="security" :text="useIgnisT('features.security')" />
-      <IgnisContentFeaturesDetail :active="image" :text="useIgnisT('features.image')" />
-      <IgnisContentFeaturesDetail :active="scripts" :text="useIgnisT('features.scripts')" />
-      <IgnisContentFeaturesDetail :active="fonts" :text="useIgnisT('features.fonts')" class="fonts" />
-      <IgnisContentFeaturesDetail :active="pinia" :text="useIgnisT('features.pinia')" />
-      <IgnisContentFeaturesDetail :active="vueuse" :text="useIgnisT('features.vueuse')" />
-      <IgnisContentFeaturesDetail :active="true" :text="useIgnisT('features.time')" />
-      <IgnisContentFeaturesDetail :active="nuxtui" :text="useIgnisT('features.ui')" />
-      <IgnisContentFeaturesDetail :active="tailwind" :text="useIgnisT('features.tailwind')" />
-      <IgnisContentFeaturesDetail :active="nuxtui" :text="useIgnisT('features.icon')" />
-      <IgnisContentFeaturesDetail :active="neon" :text="useIgnisT('features.neon')" />
-      <IgnisContentFeaturesDetail :active="supabase" :text="useIgnisT('features.supabase')" />
-      <IgnisContentFeaturesDetail :active="i18n" :text="useIgnisT('features.i18n')" />
-      <IgnisContentFeaturesDetail :active="vueform" :text="useIgnisT('features.vueform')" />
-      <IgnisContentFeaturesDetail :active="formkit" :text="useIgnisT('features.formkit')" />
-      <IgnisContentFeaturesDetail :active="valibot" :text="useIgnisT('features.valibot')" />
-      <IgnisContentFeaturesDetail :active="zod" :text="useIgnisT('features.zod')" />
-      <IgnisContentFeaturesDetail :active="content" :text="useIgnisT('features.content')" />
-      <IgnisContentFeaturesDetail :active="seo" :text="useIgnisT('features.seo')" />
-      <IgnisContentFeaturesDetail :active="auth" :text="useIgnisT('features.auth')" />
-      <IgnisContentFeaturesDetail :active="equipment" :text="useIgnisT('features.equipment')" />
-      <IgnisContentFeaturesDetail :active="regexp" :text="useIgnisT('features.regexp')" />
-      <IgnisContentFeaturesDetail :active="charts" :text="useIgnisT('features.charts')" />
-      <IgnisContentFeaturesDetail :active="openprops" class="openprops-feature" :text="useIgnisT('features.openprops')" />
+      <IgnisContentFeaturesDetail
+        v-for="feature in features" :key="feature.text"
+        :text="feature.text" :active="feature.active" :class="feature.class ?? ''" />
     </div>
   </div>
 </template>
@@ -50,33 +27,41 @@
 import { useIgnisT } from '#imports' // requires explicit import for some reason
 
 const setup = useRuntimeConfig().public.ignis
-const eslint = setup.core.eslint
-const fonts = setup.core.fonts
-const image = setup.core.image
-const pinia = setup.core.pinia
-const scripts = setup.core.scripts
-const security = setup.core.security
-const vueuse = setup.core.vueuse
+
 const ui = setup.preset.ui
-const nuxtui = ui === 'nuxt-ui' || setup.ui
-const tailwind = ui !== 'off' || setup.ui || setup.tailwind
 const db = setup.preset.db
-const neon = db === 'neon' || (db === 'off' && setup.neon)
-const supabase = db === 'supabase' || (db === 'off' && setup.supabase)
-const i18n = setup.i18n.enabled
 const forms = setup.preset.forms
-const vueform = forms === 'vueform' || (forms === 'off' && setup.vueform)
-const formkit = forms === 'formkit' || (forms === 'off' && setup.formkit.enabled)
 const validation = setup.preset.validation
-const valibot = validation === 'valibot' || (validation === 'off' && setup.valibot)
-const zod = validation === 'zod' || (validation === 'off' && setup.zod)
-const content = setup.content
-const seo = setup.seo
-const auth = setup.auth
-const openprops = setup.openprops
-const equipment = setup.equipment.enabled
-const regexp = setup.regexp
-const charts = setup.charts
+
+const features = [
+  { text: useIgnisT('features.nuxt'), active: true },
+  { text: useIgnisT('features.consola'), active: true },
+  { text: useIgnisT('features.eslint'), active: setup.core.eslint },
+  { text: useIgnisT('features.security'), active: setup.core.security },
+  { text: useIgnisT('features.image'), active: setup.core.image },
+  { text: useIgnisT('features.scripts'), active: setup.core.scripts },
+  { text: useIgnisT('features.fonts'), active: setup.core.fonts, class: 'fonts' },
+  { text: useIgnisT('features.pinia'), active: setup.core.pinia },
+  { text: useIgnisT('features.vueuse'), active: setup.core.vueuse },
+  { text: useIgnisT('features.time'), active: true },
+  { text: useIgnisT('features.ui'), active: ui === 'nuxt-ui' || setup.ui },
+  { text: useIgnisT('features.tailwind'), active: ui !== 'off' || setup.ui || setup.tailwind },
+  { text: useIgnisT('features.icon'), active: ui === 'nuxt-ui' || setup.ui },
+  { text: useIgnisT('features.neon'), active: db === 'neon' || (db === 'off' && setup.neon) },
+  { text: useIgnisT('features.supabase'), active: db === 'supabase' || (db === 'off' && setup.supabase) },
+  { text: useIgnisT('features.vueform'), active: forms === 'vueform' || (forms === 'off' && setup.vueform) },
+  { text: useIgnisT('features.formkit'), active: forms === 'formkit' || (forms === 'off' && setup.formkit.enabled) },
+  { text: useIgnisT('features.valibot'), active: validation === 'valibot' || (validation === 'off' && setup.valibot) },
+  { text: useIgnisT('features.zod'), active: validation === 'zod' || (validation === 'off' && setup.zod) },
+  { text: useIgnisT('features.content'), active: setup.content },
+  { text: useIgnisT('features.i18n'), active: setup.i18n.enabled },
+  { text: useIgnisT('features.seo'), active: setup.seo },
+  { text: useIgnisT('features.auth'), active: setup.auth },
+  { text: useIgnisT('features.equipment'), active: setup.equipment.enabled },
+  { text: useIgnisT('features.regexp'), active: setup.regexp },
+  { text: useIgnisT('features.charts'), active: setup.charts },
+  { text: useIgnisT('features.openprops'), active: setup.openprops, class: 'openprops-feature' },
+]
 </script>
 
 <style scoped>
