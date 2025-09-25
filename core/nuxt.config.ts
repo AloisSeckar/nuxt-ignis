@@ -1,6 +1,7 @@
 import { writeFileSync, existsSync, mkdirSync } from 'fs'
 import { dirname } from 'path'
 import { defu } from 'defu'
+import { log } from './app/utils/consola'
 import { setFeatures } from './features'
 import type { NuxtConfig } from '@nuxt/schema'
 
@@ -121,7 +122,8 @@ const baseConfig: NuxtConfig = {
   },
   hooks: {
     'schema:resolved'() {
-      const currentConfig = JSON.stringify(currentFeatures, null, 2)
+      // write current config to file (for use in app)
+      const configObject = JSON.stringify(currentFeatures.nuxtConfig, null, 2)
       const outPath = './public/_ignis-config.json'
 
       const outDir = dirname(outPath)
@@ -129,13 +131,16 @@ const baseConfig: NuxtConfig = {
         mkdirSync(outDir, { recursive: true })
       }
 
-      writeFileSync(outPath, currentConfig)
+      writeFileSync(outPath, configObject)
+
+      // display settings overview in console (just once)
+      log.info('\n' + currentFeatures.overview)
     },
   },
 }
 
 // to avoid type inference issues
-const effectiveConfig = defu(currentFeatures, baseConfig) as NuxtConfig
+const effectiveConfig = defu(currentFeatures.nuxtConfig, baseConfig) as NuxtConfig
 
 // https://nuxt.com/docs/getting-started/configuration#nuxt-configuration
 // using spread operator to avoid Proxy issues

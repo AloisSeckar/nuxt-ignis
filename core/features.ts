@@ -10,7 +10,7 @@ import type { NuxtConfig } from 'nuxt/schema'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
-export function setFeatures(): NuxtConfig {
+export function setFeatures(): { nuxtConfig: NuxtConfig, overview: string } {
   // list of optional extra features
   const extras = [] as string[]
   // list of Nuxt-related settings
@@ -351,8 +351,7 @@ export function setFeatures(): NuxtConfig {
   }
 
   // 6. verify results
-  // TODO why this run twice? (SSR?)
-
+  // return as string to be logged in 'schema:resolved' hook (to prevent multiple logs)
   let overview = `Nuxt Ignis will start using following settings:\n`
   overview += `App title: ${appTitle}\n`
   overview += `Modules: ${nuxtConfig.modules!.join(', ')}\n`
@@ -362,7 +361,9 @@ export function setFeatures(): NuxtConfig {
   if (nuxt.length > 0) {
     overview += `Nuxt: ${nuxt.join(', ')}\n`
   }
-  log.info(overview)
 
-  return nuxtConfig
+  return {
+    nuxtConfig,
+    overview,
+  }
 }
