@@ -124,8 +124,8 @@ const baseConfig: NuxtConfig = {
     'schema:resolved'() {
       // write current config to file (for use in app)
       const configObject = JSON.stringify(currentFeatures.nuxtConfig, null, 2)
-      const outPath = './public/_ignis-config.json'
 
+      const outPath = './public/_ignis-config.json'
       const outDir = dirname(outPath)
       if (!existsSync(outDir)) {
         mkdirSync(outDir, { recursive: true })
@@ -134,7 +134,7 @@ const baseConfig: NuxtConfig = {
       writeFileSync(outPath, configObject)
 
       // display settings overview in console (just once)
-      log.info('\n' + currentFeatures.overview)
+      log.info('\nNuxt Ignis will start using following settings:\n' + currentFeatures.overview)
     },
   },
 }

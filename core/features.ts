@@ -352,8 +352,7 @@ export function setFeatures(): { nuxtConfig: NuxtConfig, overview: string } {
 
   // 6. verify results
   // return as string to be logged in 'schema:resolved' hook (to prevent multiple logs)
-  let overview = `Nuxt Ignis will start using following settings:\n`
-  overview += `App title: ${appTitle}\n`
+  let overview = `App title: ${appTitle}\n`
   overview += `Modules: ${nuxtConfig.modules!.join(', ')}\n`
   if (extras.length > 0) {
     overview += `Extras: ${extras.join(', ')}\n`
