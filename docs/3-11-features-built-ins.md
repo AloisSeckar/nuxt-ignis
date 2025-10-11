@@ -2,6 +2,14 @@
 
 Nuxt Ignis contains couple of built-in pages and components, that will become a part of your applications.
 
+## Default app.vue
+
+Nuxt Ignis provides a default `app/app.vue` file, that contains basic layout of Nuxt application. The file contains logic for having both `Nuxt UI` and `non-Nuxt UI` mode and also to use or not to use `pages` support. It also includes `<NuxtRouteAnnouncer>` component for better accessibility.
+
+You can check the implementation details [HERE](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/app/app.vue).
+
+If you need something else, you can overwrite it with your own file in the target project as you see fit. If you want to start with the default and tweak it just a little, you can use the CLI tool `npx nuxt-ignis set-app-vue` to scaffold the default file into your project. The file will be created as `app/app.vue` folder and will contain exactly what the default page has.
+
 ## Welcome page
 
 There is a default content for the `/` or `/index` page featuring a simple welcome component with basic info and links. If your project is using pages (default), the component is served from `/pages/index.vue` within a `<NuxtPage />` boundary. If pages are disabled [via env variable](/3-10-features-nuxt.html#pages), the component is served directly from `/app.vue` instead.

@@ -9,6 +9,7 @@ import { getPackageManager } from 'elrh-cosca'
  * `setup` - setup Nuxt Ignis in current folder
  * `set-css` - scaffolds default CSS file to allow editing it
  * `set-eslint` - scaffolds default ESLint config file to allow editing it
+ * `set-app-vue` - scaffolds default app/app.vue file to allow editing it
  *
  * Second parameter for `setup` might be a boolean to indicate auto mode
  * (no prompts, force = true) or manual mode (with prompts, force = false).
@@ -30,8 +31,11 @@ const args = process.argv.slice(2);
     case 'set-eslint':
       await (await import('./set-eslint.js')).setESLint(args[1] || false)
       break
+    case 'set-app-vue':
+      await (await import('./set-app-vue.js')).setAppVue(args[1] || false)
+      break
     default:
-      console.log(`Usage: \`${getCmd()} nuxt-spec setup|set-css|set-eslint [true|false]\``)
+      console.log(`Usage: \`${getCmd()} nuxt-spec setup|set-css|set-eslint|set-app-vue [true|false]\``)
       process.exit(args.length ? 1 : 0)
   }
 })()
