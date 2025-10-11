@@ -7,15 +7,10 @@ import { createFileFromWebTemplate } from 'elrh-cosca'
  *
  * Usage: `npx nuxt-ignis set-eslint` in target folder.
  */
-async function main() {
+export async function setESLint() {
   try {
     await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/heads/main/core/eslint.config.mjs', 'eslint.config.mjs')
   } catch (error) {
     console.error('Error creating ESLint config file:\n', error.message)
   }
 }
-
-main().catch((err) => {
-  console.error(err)
-  process.exit(1)
-})

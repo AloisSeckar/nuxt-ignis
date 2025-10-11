@@ -27,9 +27,7 @@
     "node": "^20.19.0 || >=22.12.0"
   },
   "bin": {
-    "setup": "./bin/setup.js",
-    "set-css": "./bin/set-css.js",
-    "set-eslint": "./bin/set-eslint.js"
+    "nuxt-ignis": "./bin/cli.js"
   },
   "scripts": {
     "analyze": "nuxt analyze",

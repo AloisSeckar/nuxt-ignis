@@ -21,7 +21,7 @@ import {
  *  5) create default `vitest.config.ts` file and add test-related scripts into `package.json`
  *  6) clear node_modules and lock file(s)
  */
-async function nuxtIgnisSetup(autoRun = false) {
+export async function nuxtIgnisSetup(autoRun = false) {
   showMessage('NUXT IGNIS SETUP')
   showMessage('This CLI tool will help you include Nuxt Ignis in your project.')
   showMessage('Refer to the documentation for more information.', 2)
@@ -225,8 +225,3 @@ async function nuxtIgnisSetup(autoRun = false) {
   showMessage('NUXT IGNIS SETUP COMPLETE', 2)
   showMessage(`Proceed with \`${getPackageManager()} install\` to get started.`)
 }
-
-nuxtIgnisSetup().catch((err) => {
-  console.error(err)
-  process.exit(1)
-})
