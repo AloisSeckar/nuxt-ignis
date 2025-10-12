@@ -24,6 +24,12 @@ Most of the available are disabled by default and are meant to be opted-in by a 
 
 [More info about the optional features](/2-3-optional-features)
 
+## CLI tools
+
+A number of CLI commands is available to help you moving on faster.
+
+[More info about the CLI](/3-12-features-cli)
+
 ## More info
 
 - Check [showcase](/1-3-showcase) of live projects using `nuxt-ignis`.

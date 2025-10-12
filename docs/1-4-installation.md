@@ -1,22 +1,40 @@
 # Installation
 
-`nuxt-ignis` is available as [NPM package](https://www.npmjs.com/package/nuxt-ignis) that can be referenced as a single dependency with all the features wrapped up.
+`nuxt-ignis` is available as an [NPM package](https://www.npmjs.com/package/nuxt-ignis) that can be referenced as a single dependency with all the features wrapped up.
 
 ## Adding to your project
 
-To enable `nuxt-ignis` in your Nuxt project, you can use the CLI tool to set it up quickly:
+To include `nuxt-ignis` in your Nuxt project, you can use the CLI tool to set everything up quickly:
 
-```bash
+::: code-group
+```sh [pnpm]
+pnpx nuxt-ignis setup
+```
+
+```sh [npm]
 npx nuxt-ignis setup
 ```
 
-First, the CLI tool will ask you whether you want to do the setup automatically. If you choose `y`es, it will perform all the steps for you. If you choose `n`o, it will guide you through the setup step-by-step prompting every action.
+```sh [yarn]
+yarn dlx nuxt-ignis setup
+```
 
-If any of the settings are already present, the tool will just skip them. This also ensures that, in case any errors occur, the tool can be run multiple times after the issues are resolved.
+```sh [bun]
+$ bunx nuxt-ignis setup
+```
+
+```sh [deno]
+$ deno run --allow-run npm:npx nuxt-ignis setup
+```
+:::
+
+Details about the CLI setup command can be found in the [CLI section](/3-12-features-cli.html#setup).
 
 ### Setup steps
 
-1) Add the following dependency into your `package.json`:
+The CLI command will perform following steps. You can also do them manually if you want to keep more control.
+
+1) Add the required dependency into `package.json`:
 
 ```json [package.json]
 {
@@ -26,7 +44,15 @@ If any of the settings are already present, the tool will just skip them. This a
 }
 ```
 
-2) For `pnpm`, you should also configure the `approvedBuilds` and `packageManager`:
+2) Remove `nuxt`, `vue` and `vue-router` dependencies from `package.json`.
+
+<details>
+<summary>Reason why</summary>
+
+Those dependencies are already included in `nuxt-ignis`. Removing is recommended to avoid version clashes and potential issues. If you need to rely on specific versions, you are advised to use [deduping](https://www.youtube.com/watch?v=TTlgfMPFYwM).
+</details>
+
+3) If `pnpm` is used (will be detected from the command used), set of `onlyBuiltDependencies` and `packageManager` entries will be added into `package.json`:
 
 ```json [package.json]
 {
@@ -47,7 +73,15 @@ If any of the settings are already present, the tool will just skip them. This a
 }
 ```
 
-3) Add following section into your `nuxt.config.ts` to extend the `nuxt-ignis` layer:
+<details>
+<summary>Reason why</summary>
+
+Without `onlyBuiltDependencies`, `pnpm` will block any scripts that are being executed during the installation of these packages. This may lead to errors and inconsistencies. You will be still prompted to allow them manually using `pnpm approve-builds`. This is the way to ease things up. Check more in the [pnpm docs](https://pnpm.io/cli/approve-builds).
+
+The `packageManager` tries to ensure same `pnpm` version is used as during the development of testing `nuxt-ignis`. However, extra setup might be required. Check more in the [Node.js docs](https://nodejs.org/docs/latest-v20.x/api/all.html#all_packages_packagemanager).
+</details>
+
+4) Add following section into your `nuxt.config.ts` to extend the `nuxt-ignis` layer:
 
 ```ts [nuxt.config.ts]
 {
@@ -57,17 +91,73 @@ If any of the settings are already present, the tool will just skip them. This a
 }
 ```
 
-4) Adjust `.npmrc` file with following content (if you don't have it yet):
+5) Create or adjust `.npmrc` file to contain following line:
 
 ```[.npmrc]
 shamefully-hoist=true
 ```
 
-5) Adjust `.gitignore` file to exclude Nuxt Ignis-related auxiliary files:
+<details>
+<summary>Reason why</summary>
+
+This is required to ensure `pnpm` will hoist all dependences from `nuxt-ignis` without you having to specify them in your own `package.json`. It is also recommened setting for Nuxt apps managed by `pnpm` in general. Check more in the [pnpm docs](https://pnpm.io/npmrc#shamefully-hoist).
+</details>
+
+6) Create or adjust `.gitignore` file to exclude Nuxt Ignis-related auxiliary files:
 
 ```[.gitignore]
 _ignis-config.json
 ```
+
+<details>
+<summary>Reason why</summary>
+
+Nuxt Ignis always creates a `public/_ignis-config.json` file when resolving `nuxt.config.ts` to expose the actual configuration for reference and potential debugging. As this file is re-generated automatically everytime the app starts, it is not recommended to add it to Git. It _could_ be stored for reference but this might tempt devs to edit it manually which would have no effect and should cause unnecessary confusion. Since the file is a JSON, comment can't be included to add auto-generation warning.
+</details>
+
+7) Optionally set things up for built-in testing provided by [`nuxt-spec`](/3-9-features-devex.html#testing) package. The dependencies are included in `nuxt-ignis` itself, so you just need to create `vitest.config.ts` with following content:
+
+```ts [vitest.config.ts]
+import { loadVitestConfig } from 'nuxt-spec/config'
+
+export default loadVitestConfig({
+  // custom config here
+})
+```
+
+<details>
+<summary>Reason why</summary>
+
+Technically, this step is not required. Your tests will run even with absolutely zero config with `vitest` defaults. However, written like this, you can mix your override with the additional default setup provided by the test tool. Check more details in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/main/README.md#configuration).
+</details>
+
+It is also possible to add following test-related scripts to `package.json` for simplier execution:
+
+```json [package.json]
+{
+  "scripts": {
+    "test": "vitest run",
+    "test-u": "vitest run -u",
+    "test-i": "vitest"
+  }
+}
+```
+
+<details>
+<summary>Reason why</summary>
+
+This might be just a matter of personal preference, but someone might find the shorthands useful. Check more detailed explanation for each variant in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/main/README.md#running-tests).
+</details>
+
+8) Delete `node_modules` folder and your lock file (based on the package manager you're using).
+
+<details>
+<summary>Reason why</summary>
+
+Hands-on eachxperience shows things may end up acting weirdly if new packages from `nuxt-ignis` are just added into existing `node_modules`. Deleting current set of modules and the lock file ensures all dependencies are freshly resolved and correctly wired up. In most scenarios this is a simple and convenient way to avoid potential issues.
+
+In rare cases, when you need to keep your dependencies intact due to specific overrides, [deduping](https://www.youtube.com/watch?v=TTlgfMPFYwM) might help to mitigate some of the more common problems related to package resolution.
+</details>
 
 ### Customization
 

@@ -47,15 +47,7 @@ export default withNuxt(
 
 As it inherits from generated Nuxt content, running `pnpm dev` for the first time is **REQUIRED** to make linting work in your projects.
 
-Because Nuxt Ignis author is _opinionated_ about some of the default rules, there is also a config override available. A CLI tool is provided to generate a default ESLint configuration file enhanced with some rule overrides.
-
-To create Nuxt Ignis default instead of plain `@nuxt/eslint` version, use the following command:
-
-```bash
-npx nuxt-ignis set-eslint
-```
-
-Check the [file template](https://github.com/AloisSeckar/nuxt-ignis/blob/main/core/eslint.config.mjs) for more details and explanation.
+Because Nuxt Ignis author is _opinionated_ about some of the default rules, there is also a config override available. To create Nuxt Ignis default instead of plain `@nuxt/eslint` version, you can use the CLI tool to [scaffold the default file](/3-12-features-cli.html#set-eslint) into your project.
 
 ## Logging
 

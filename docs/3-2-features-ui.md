@@ -11,13 +11,7 @@ You can disable its inclusion by setting the following environment variable:
 NUXT_PUBLIC_IGNIS_CORE_CSS=false
 ```
 
-If you want to do small adjustments or add more default rules, you can quickly scaffold the copy in your own project by running:
-
-```bash
-npx nuxt-ignis set-css
-```
-
-**Note:** Due to current library limitations, you need to ensure path `app/assets/css` exists in your project before running the command. This should be [fixed](https://github.com/AloisSeckar/elrh-cosca/issues/6) soon.
+If you want to do small adjustments or add more default rules, you can use the CLI tool to [scaffold the default file](/3-12-features-cli.html#set-css) into your project.
 
 ## Nuxt UI
 

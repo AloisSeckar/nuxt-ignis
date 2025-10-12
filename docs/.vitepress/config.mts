@@ -51,6 +51,7 @@ export default defineConfig({
           { text: 'DevEx', link: '/3-9-features-devex' },
           { text: 'Nuxt', link: '/3-10-features-nuxt' },
           { text: 'Built-ins', link: '/3-11-features-built-ins' },
+          { text: 'CLI', link: '/3-12-features-cli' },
         ]
       },
       {
