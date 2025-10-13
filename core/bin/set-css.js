@@ -11,7 +11,7 @@ import { createFileFromWebTemplate } from 'elrh-cosca'
  */
 export async function setCSS() {
   try {
-    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/heads/main/core/app/assets/css/ignis.css', 'app/assets/css/ignis.css')
+    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.4.0/core/app/assets/css/ignis.css', 'app/assets/css/ignis.css')
   } catch (error) {
     console.error('Error creating Ignis CSS file:\n', error.message)
   }

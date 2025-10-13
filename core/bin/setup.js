@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { 
+import {
   createFileFromWebTemplate, deletePath, getPackageManager, hasJsonKey,
   pathExists, promptUser, removeFromJsonFile, showMessage,
   updateConfigFile, updateJsonFile, updateTextFile,
@@ -10,9 +10,9 @@ import {
  * CLI tool to setup Nuxt Ignis for a new project.
  *
  * Usage: `npx nuxt-ignis setup [true|false]` in target folder.
- * 
+ *
  * The script will first ask whether to run in "auto" mode (no prompts, force = true) or "manual" mode (with prompts, force = false). If `autoRun = true` is passed, no prompt will be shown.
- * 
+ *
  * The script will:
  *  1) add `nuxt-ignis` into `package.json` dependencies, remove `nuxt`, `vue` and `vue-router` if present and adjust `pnpm` settings if `pnpm` is used
  *  2) add `extends: ['nuxt-ignis']` to `nuxt.config.ts`
@@ -131,7 +131,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
     if (pathExists('.npmrc')) {
       await updateTextFile('.npmrc', ['shamefully-hoist=true'], isAutoRun, 'This will adjust \'.npmrc\' file in your project. Continue?')
     } else {
-      await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/heads/main/core/.npmrc',
+      await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.4.0/core/.npmrc',
         '.npmrc', isAutoRun, 'This will add \'.npmrc\' file for your project. Continue?')
     }
   } catch (error) {
@@ -155,7 +155,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
   if (setupNuxtSpec) {
     // create vitest.config.ts
     try {
-      await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/heads/main/config/vitest.config.ts.template',
+      await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.4.0/config/vitest.config.ts.template',
         'vitest.config.ts', true, 'This will create a new \'vitest.config.ts\' file for your project. Continue?')
     } catch (error) {
       console.error('Error setting up \'vitest.config.ts\':\n', error.message)
