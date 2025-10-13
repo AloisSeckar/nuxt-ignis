@@ -91,7 +91,7 @@ The `packageManager` tries to ensure same `pnpm` version is used as during the d
 }
 ```
 
-5) Create or adjust `.npmrc` file to contain following line:
+5) If you use `pnpm`, create or adjust `.npmrc` file to contain following line:
 
 ```[.npmrc]
 shamefully-hoist=true
@@ -100,7 +100,7 @@ shamefully-hoist=true
 <details>
 <summary>Reason why</summary>
 
-This is required to ensure `pnpm` will hoist all dependences from `nuxt-ignis` without you having to specify them in your own `package.json`. It is also recommened setting for Nuxt apps managed by `pnpm` in general. Check more in the [pnpm docs](https://pnpm.io/npmrc#shamefully-hoist).
+This is required to ensure `pnpm` will hoist all dependences from `nuxt-ignis` without you having to specify them in your own `package.json`. It is also recommened practice for Nuxt apps managed by `pnpm` in general. Check more in the [pnpm docs](https://pnpm.io/npmrc#shamefully-hoist).
 </details>
 
 6) Create or adjust `.gitignore` file to exclude Nuxt Ignis-related auxiliary files:

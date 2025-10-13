@@ -16,7 +16,7 @@ import {
  * The script will:
  *  1) add `nuxt-ignis` into `package.json` dependencies, remove `nuxt`, `vue` and `vue-router` if present and adjust `pnpm` settings if `pnpm` is used
  *  2) add `extends: ['nuxt-ignis']` to `nuxt.config.ts`
- *  3) create/update `.npmrc` file
+ *  3) create/update `.npmrc` file (only if pnpm is used)
  *  4) update `.gitignore` file
  *  5) create default `vitest.config.ts` file and add test-related scripts into `package.json`
  *  6) clear node_modules and lock file(s)
@@ -28,6 +28,8 @@ export async function nuxtIgnisSetup(autoRun = false) {
 
   const isAutoRun = autoRun || await promptUser('Do you want to set everything up automatically (no more prompts)?')
   showMessage('')
+
+  const packageManager = getPackageManager()
 
   // 1.1 - add nuxt-ignis dependency
   try {
@@ -85,7 +87,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
   }
 
   // 1.3 - adjust pnpm settings
-  if (getPackageManager() === 'pnpm') {
+  if (packageManager === 'pnpm') {
     const pnpmSettings = isAutoRun || await promptUser('This will adjust pnpm settings in your \'package.json\'. Proceed?')
     if (pnpmSettings) {
       try {
@@ -126,16 +128,19 @@ export async function nuxtIgnisSetup(autoRun = false) {
     console.error('Error enabling \'nuxt-ignis\' module:\n', error.message)
   }
 
-  // 3 - .npmrc file
-  try {
-    if (pathExists('.npmrc')) {
-      await updateTextFile('.npmrc', ['shamefully-hoist=true'], isAutoRun, 'This will adjust \'.npmrc\' file in your project. Continue?')
-    } else {
-      await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.4.0/core/.npmrc',
-        '.npmrc', isAutoRun, 'This will add \'.npmrc\' file for your project. Continue?')
+  // 3 - .npmrc file (only if pnpm is used)
+  if (packageManager === 'pnpm') {
+    try {
+      if (pathExists('.npmrc')) {
+        await updateTextFile('.npmrc', ['shamefully-hoist=true'], isAutoRun,
+          'This will adjust \'.npmrc\' file in your project. Continue?')
+      } else {
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.4.0/core/.npmrc',
+          '.npmrc', isAutoRun, 'This will add \'.npmrc\' file for your project. Continue?')
+      }
+    } catch (error) {
+      console.error('Error setting \'.npmrc\':\n', error.message)
     }
-  } catch (error) {
-    console.error('Error setting \'.npmrc\':\n', error.message)
   }
 
   // 4 - .gitignore file
@@ -223,5 +228,5 @@ export async function nuxtIgnisSetup(autoRun = false) {
   // 7) inform user
   showMessage('')
   showMessage('NUXT IGNIS SETUP COMPLETE', 2)
-  showMessage(`Proceed with \`${getPackageManager()} install\` to get started.`)
+  showMessage(`Proceed with \`${packageManager} install\` to get started.`)
 }
