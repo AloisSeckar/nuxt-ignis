@@ -1,7 +1,7 @@
 <template>
   <footer>
-    <NuxtLink to="https://github.com/AloisSeckar/nuxt-ignis" class="ignis-link">
-      https://github.com/AloisSeckar/nuxt-ignis
+    <NuxtLink to="https://nuxt-ignis.com/" class="ignis-link">
+      https://nuxt-ignis.com/
     </NuxtLink>
   </footer>
 </template>
