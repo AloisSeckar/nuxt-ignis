@@ -35,7 +35,7 @@ const args = process.argv.slice(2);
       await (await import('./set-app-vue.js')).setAppVue(args[1] || false)
       break
     default:
-      console.log(`Usage: \`${getCmd()} nuxt-spec setup|set-css|set-eslint|set-app-vue [true|false]\``)
+      console.log(`Usage: \`${getCmd()} nuxt-ignis setup|set-css|set-eslint|set-app-vue [true|false]\``)
       process.exit(args.length ? 1 : 0)
   }
 })()
