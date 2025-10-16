@@ -1,28 +1,34 @@
 {
-  "app": {
-    "head": {
-      "htmlAttrs": {
-        "lang": "en",
+  "nuxtConfig": {
+    "app": {
+      "head": {
+        "htmlAttrs": {
+          "lang": "en",
+        },
+        "title": "Nuxt Ignis App",
       },
-      "title": "Nuxt Ignis App",
+    },
+    "css": [
+      "first.css",
+      "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
+    ],
+    "modules": [
+      "@nuxt/eslint",
+      "@nuxt/fonts",
+      "@nuxt/image",
+      "@nuxt/scripts",
+      "nuxt-security",
+      "@vueuse/nuxt",
+      "@pinia/nuxt",
+    ],
+    "vue": {
+      "compilerOptions": {
+        "isCustomElement": [Function],
+      },
     },
   },
-  "css": [
-    "first.css",
-    "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
-  ],
-  "modules": [
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxt/image",
-    "@nuxt/scripts",
-    "nuxt-security",
-    "@vueuse/nuxt",
-    "@pinia/nuxt",
-  ],
-  "vue": {
-    "compilerOptions": {
-      "isCustomElement": [Function],
-    },
-  },
+  "overview": "App title: Nuxt Ignis App
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt
+Nuxt: log-level=info[default], ignis CSS, custom CSS
+",
 }

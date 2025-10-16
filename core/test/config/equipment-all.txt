@@ -1,39 +1,45 @@
 {
-  "app": {
-    "head": {
-      "htmlAttrs": {
-        "lang": "en",
+  "nuxtConfig": {
+    "app": {
+      "head": {
+        "htmlAttrs": {
+          "lang": "en",
+        },
+        "title": "Nuxt Ignis App",
       },
-      "title": "Nuxt Ignis App",
+    },
+    "css": [
+      "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
+    ],
+    "modules": [
+      "@nuxt/eslint",
+      "@nuxt/fonts",
+      "@nuxt/image",
+      "@nuxt/scripts",
+      "nuxt-security",
+      "@vueuse/nuxt",
+      "@pinia/nuxt",
+      "@maas/vue-equipment/nuxt",
+    ],
+    "vue": {
+      "compilerOptions": {
+        "isCustomElement": [Function],
+      },
+    },
+    "vueEquipment": {
+      "composables": [
+        "useCountdown",
+        "useScrollTo",
+      ],
+      "plugins": [
+        "MagicMenu",
+        "MagicModal",
+        "MagicCookie",
+      ],
     },
   },
-  "css": [
-    "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
-  ],
-  "modules": [
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxt/image",
-    "@nuxt/scripts",
-    "nuxt-security",
-    "@vueuse/nuxt",
-    "@pinia/nuxt",
-    "@maas/vue-equipment/nuxt",
-  ],
-  "vue": {
-    "compilerOptions": {
-      "isCustomElement": [Function],
-    },
-  },
-  "vueEquipment": {
-    "composables": [
-      "useCountdown",
-      "useScrollTo",
-    ],
-    "plugins": [
-      "MagicMenu",
-      "MagicModal",
-      "MagicCookie",
-    ],
-  },
+  "overview": "App title: Nuxt Ignis App
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @maas/vue-equipment/nuxt
+Nuxt: log-level=info[default], ignis CSS
+",
 }

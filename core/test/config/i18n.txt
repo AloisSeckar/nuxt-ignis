@@ -1,38 +1,44 @@
 {
-  "app": {
-    "head": {
-      "htmlAttrs": {
-        "lang": "en",
+  "nuxtConfig": {
+    "app": {
+      "head": {
+        "htmlAttrs": {
+          "lang": "en",
+        },
+        "title": "Nuxt Ignis App",
       },
-      "title": "Nuxt Ignis App",
     },
-  },
-  "css": [
-    "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
-  ],
-  "i18n": {
-    "bundle": {
-      "optimizeTranslationDirective": false,
-    },
-    "locales": [
-      "en",
+    "css": [
+      "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
     ],
-    "strategy": "no_prefix",
-    "vueI18n": "./i18n.config.ts",
-  },
-  "modules": [
-    "@nuxt/eslint",
-    "@nuxt/fonts",
-    "@nuxt/image",
-    "@nuxt/scripts",
-    "nuxt-security",
-    "@vueuse/nuxt",
-    "@pinia/nuxt",
-    "@nuxtjs/i18n",
-  ],
-  "vue": {
-    "compilerOptions": {
-      "isCustomElement": [Function],
+    "i18n": {
+      "bundle": {
+        "optimizeTranslationDirective": false,
+      },
+      "locales": [
+        "en",
+      ],
+      "strategy": "no_prefix",
+      "vueI18n": "./i18n.config.ts",
+    },
+    "modules": [
+      "@nuxt/eslint",
+      "@nuxt/fonts",
+      "@nuxt/image",
+      "@nuxt/scripts",
+      "nuxt-security",
+      "@vueuse/nuxt",
+      "@pinia/nuxt",
+      "@nuxtjs/i18n",
+    ],
+    "vue": {
+      "compilerOptions": {
+        "isCustomElement": [Function],
+      },
     },
   },
+  "overview": "App title: Nuxt Ignis App
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxtjs/i18n
+Nuxt: log-level=info[default], ignis CSS
+",
 }
