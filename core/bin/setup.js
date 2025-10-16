@@ -176,7 +176,30 @@ export async function nuxtIgnisSetup(autoRun = false) {
     } catch (error) {
       console.error('Error adjusting scripts in \'package.json\':\n', error.message)
     }
-  }
+
+    // create sample test files
+    const createSampleTests = isAutoRun || await promptUser('Do you want to create sample tests in \'/test\' folder?')
+    if (createSampleTests) {
+      try {
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.1.12/test/e2e/nuxt-e2e.test.ts',
+          'test/e2e/nuxt-e2e.test.ts', true)
+      } catch (error) {
+        console.error('Error setting up \'nuxt-e2e.test.ts\':\n', error.message)
+      }
+      try {
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.1.12/test/nuxt/nuxt-unit.test.ts',
+          'test/nuxt/nuxt-unit.test.ts', true)
+      } catch (error) {
+        console.error('Error setting up \'nuxt-unit.test.ts\':\n', error.message)
+      }
+      try {
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.1.12/test/unit/vitest.test.ts',
+          'test/unit/vitest.test.ts', true)
+      } catch (error) {
+        console.error('Error setting up \'vitest.test.ts\':\n', error.message)
+      }
+    }
+}
 
   // 6) clear node_modules and lock file(s)
   const prepareForReinstall = isAutoRun || await promptUser('Dependencies should be re-installed now. Do you want to remove node_modules and the lock file?')

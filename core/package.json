@@ -72,7 +72,7 @@
     "nuxt-charts": "0.2.4",
     "nuxt-neon": "0.7.0",
     "nuxt-security": "2.4.0",
-    "nuxt-spec": "0.1.10",
+    "nuxt-spec": "0.1.12",
     "open-props": "1.7.16",
     "pinia": "3.0.3",
     "postcss-jit-props": "1.0.16",
