@@ -33,7 +33,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
 
   // 1.1 - add nuxt-ignis dependency
   try {
-    await updateJsonFile('package.json', 'dependencies', { 'nuxt-ignis': '0.5.0-rc.1' },
+    await updateJsonFile('package.json', 'dependencies', { 'nuxt-ignis': '0.5.0-rc.2' },
       isAutoRun, 'This will add \'nuxt-ignis\' dependency to your \'package.json\'. Proceed?')
   } catch (error) {
     console.error('Error adding \'nuxt-ignis\' dependency:\n', error.message)
@@ -199,7 +199,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
         console.error('Error setting up \'vitest.test.ts\':\n', error.message)
       }
     }
-}
+  }
 
   // 6) clear node_modules and lock file(s)
   const prepareForReinstall = isAutoRun || await promptUser('Dependencies should be re-installed now. Do you want to remove node_modules and the lock file?')
