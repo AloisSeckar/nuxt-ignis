@@ -24,14 +24,7 @@ Recommended package manager is [pnpm](https://pnpm.io/).
 
 ## Testing
 
-Nuxt Ignis uses [Vitest](https://vitest.dev/) for testing. More specificly, it uses proprietary [Nuxt Spec](https://github.com/AloisSeckar/nuxt-spec) package that provides a base layer for testing Nuxt modules and applications united under single dependency. With that you have access to:
-
-- [vitest](https://www.npmjs.com/package/vitest) **v4** as the fundamental testing framework
-- [@vitest/browser](https://www.npmjs.com/package/@vitest/browser) as the experimental browser runner
-- [happy-dom](https://www.npmjs.com/package/happy-dom) as the headless browser runtime
-- [playwright-core](https://www.npmjs.com/package/playwright-core) as the headless browser testing framework
-- [@vue/test-utils](https://www.npmjs.com/package/@vue/test-utils) for testing Vue stuff
-- [@nuxt/test-utils](https://www.npmjs.com/package/@nuxt/test-utils) for testing Nuxt stuff
+Nuxt Ignis ships with proprietary [Nuxt Spec](https://github.com/AloisSeckar/nuxt-spec) package that provides a Vitest-based layer for testing Nuxt modules and applications united under single dependency. See [Testing section](/3-9-features-devex.html#testing) in DevEx features overview for more details.
 
 ### Test suite
 
@@ -47,6 +40,12 @@ Vitest snapshot files should be stored in the `/core/tests/[test_file_name]` dir
 
 ```[pnpm]
 pnpm test -u
+```
+
+Default behavior of the test suite is to run once and end. If you prefer, Vitest interactive mode is also available via:
+
+```[pnpm]
+pnpm test -i
 ```
 
 ### Demo applications

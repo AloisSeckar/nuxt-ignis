@@ -79,7 +79,25 @@ If you don't want to rely on the default behavior, you can disable those handler
 
 <PackagesReference :packages="[{ name: 'nuxt-spec', version: '0.1.8' }]" />
 
-See [testing section](/5-1-contributing.html#testing) in contributing guide.
+Nuxt Ignis embraces [Vitest](https://vitest.dev/) as its test runner library. More specifically, it uses proprietary [Nuxt Spec](https://github.com/AloisSeckar/nuxt-spec) package that provides a base layer for testing Nuxt modules and applications united under single dependency. With that you have out-of-the-box access to:
+
+- [vitest](https://www.npmjs.com/package/vitest) **v4** as the fundamental testing framework
+- [@vitest/browser](https://www.npmjs.com/package/@vitest/browser) as the experimental browser runner
+- [happy-dom](https://www.npmjs.com/package/happy-dom) as the headless browser runtime
+- [playwright-core](https://www.npmjs.com/package/playwright-core) as the headless browser testing framework
+- [@vue/test-utils](https://www.npmjs.com/package/@vue/test-utils) for testing Vue stuff
+- [@nuxt/test-utils](https://www.npmjs.com/package/@nuxt/test-utils) for testing Nuxt stuff
+
+Nuxt Spec is currently an opinionated solution and one of the few features that are fully baked into Nuxt Ignis without an opt-out. I am sorry for that, but hopefully it will provide you enough options to test your apps in a meaningful and convenient way.
+
+If you follow the [default instalation](/1-4-installation.html#setup-steps), you will get following:
+
+- default `vitest.config.ts` file created in your project root
+- example test files created in `/test` folder
+- shorthand commands for running tests in `package.json` scripts:
+  - `test` to run the test suite once
+  - `test-u` to run the test once and update snapshot files if they changed
+  - `test-i` to run the test suite in interactive mode
 
 ## Nuxt Security
 
