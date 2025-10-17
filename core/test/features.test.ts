@@ -31,7 +31,7 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - default output', async () => {
     expect(setFeatures).toBeDefined()
-    setFeatures()
+    setFeatures(true)
     expect(consoleSpy).toHaveBeenCalledOnce()
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/default.txt')
   })
@@ -42,25 +42,25 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - UI preset - nuxt-ui', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_UI = 'nuxt-ui'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/ui-nuxt-ui.txt')
   })
 
   test('setFeatures() - UI preset - tailwind', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_UI = 'tailwind'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/ui-tailwind.txt')
   })
 
   test('setFeatures() - UI preset - off', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_UI = 'off'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/ui-off.txt')
   })
 
   test('setFeatures() - UI preset - invalid', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_UI = 'invalid'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/ui-off.txt')
   })
 
@@ -68,13 +68,13 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - UI - nuxt-ui', async () => {
     process.env.NUXT_PUBLIC_IGNIS_UI = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/ui-nuxt-ui.txt')
   })
 
   test('setFeatures() - UI - tailwind', async () => {
     process.env.NUXT_PUBLIC_IGNIS_TAILWIND = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/ui-tailwind.txt')
   })
 
@@ -82,25 +82,25 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - DB preset - neon', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_DB = 'neon'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-neon.txt')
   })
 
   test('setFeatures() - DB preset - supabase', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_DB = 'supabase'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-supabase.txt')
   })
 
   test('setFeatures() - DB preset - off', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_DB = 'off'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-off.txt')
   })
 
   test('setFeatures() - DB preset - invalid', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_DB = 'invalid'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-off.txt')
   })
 
@@ -108,13 +108,13 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - DB - neon', async () => {
     process.env.NUXT_PUBLIC_IGNIS_NEON = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-neon.txt')
   })
 
   test('setFeatures() - DB - supabase', async () => {
     process.env.NUXT_PUBLIC_IGNIS_SUPABASE = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-supabase.txt')
   })
 
@@ -122,25 +122,25 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - forms preset - vueform', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS = 'vueform'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/forms-vueform.txt')
   })
 
   test('setFeatures() - forms preset - formkit', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS = 'formkit'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/forms-formkit.txt')
   })
 
   test('setFeatures() - forms preset - off', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS = 'off'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/forms-off.txt')
   })
 
   test('setFeatures() - forms preset - invalid', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS = 'invalid'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/forms-off.txt')
   })
 
@@ -148,13 +148,13 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - forms - vueform', async () => {
     process.env.NUXT_PUBLIC_IGNIS_VUEFORM = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/forms-vueform.txt')
   })
 
   test('setFeatures() - forms - formkit', async () => {
     process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/forms-formkit.txt')
   })
 
@@ -162,25 +162,25 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - validation preset - valibot', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = 'valibot'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-valibot.txt')
   })
 
   test('setFeatures() - validation preset - zod', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = 'zod'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-zod.txt')
   })
 
   test('setFeatures() - validation preset - off', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = 'off'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-off.txt')
   })
 
   test('setFeatures() - validation preset - invalid', async () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = 'invalid'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-off.txt')
   })
 
@@ -188,13 +188,13 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - validation - valibot', async () => {
     process.env.NUXT_PUBLIC_IGNIS_VALIBOT = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-valibot.txt')
   })
 
   test('setFeatures() - validation - zod', async () => {
     process.env.NUXT_PUBLIC_IGNIS_ZOD = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/validation-zod.txt')
   })
 
@@ -207,7 +207,7 @@ describe('setFeatures() unit tests', () => {
     process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS = 'false'
     process.env.NUXT_PUBLIC_IGNIS_CORE_SECURITY = 'false'
     process.env.NUXT_PUBLIC_IGNIS_CORE_VUEUSE = 'false'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/disable-core.txt')
   })
 
@@ -225,7 +225,7 @@ describe('setFeatures() unit tests', () => {
     process.env.NUXT_PUBLIC_IGNIS_SEO = 'true'
     process.env.NUXT_PUBLIC_IGNIS_AUTH = 'true'
     process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES = 'false' // to avoid console log
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/enable-all.txt')
   })
 
@@ -233,7 +233,7 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - Vue Equipment', async () => {
     process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/equipment.txt')
   })
 
@@ -241,7 +241,7 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - Magic Regexp', async () => {
     process.env.NUXT_PUBLIC_IGNIS_REGEXP = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/regexp.txt')
   })
 
@@ -249,7 +249,7 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - Nuxt Charts', async () => {
     process.env.NUXT_PUBLIC_IGNIS_CHARTS = 'true'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/charts.txt')
   })
 
@@ -257,19 +257,19 @@ describe('setFeatures() unit tests', () => {
 
   test('setFeatures() - custom html title', async () => {
     process.env.NUXT_PUBLIC_IGNIS_HTML_TITLE = 'Custom Title'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/custom-title.txt')
   })
 
   test('setFeatures() - custom CSS', async () => {
     process.env.NUXT_PUBLIC_IGNIS_CSS = ' first.css '
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/custom-css.txt')
   })
 
   test('setFeatures() - no default CSS', async () => {
     process.env.NUXT_PUBLIC_IGNIS_CORE_CSS = 'false'
-    setFeatures()
+    setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/no-default-css.txt')
   })
 })

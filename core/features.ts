@@ -10,7 +10,11 @@ import type { NuxtConfig } from 'nuxt/schema'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
 
-export function setFeatures(): { nuxtConfig: NuxtConfig, overview: string } {
+// core function to determine effective config for the current Nuxt app instance
+// custom settings are based on passed in environment variables
+// and will be defu-merged with provided defaults
+// printOverview = true is used in tests to capture console output
+export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtConfig, overview: string } {
   // list of optional extra features
   const extras = [] as string[]
   // list of Nuxt-related settings
@@ -359,6 +363,11 @@ export function setFeatures(): { nuxtConfig: NuxtConfig, overview: string } {
   }
   if (nuxt.length > 0) {
     overview += `Nuxt: ${nuxt.join(', ')}\n`
+  }
+
+  // used in tests to capture console output
+  if (printOverview) {
+    log.info('Nuxt Ignis will start using following settings:\n' + overview)
   }
 
   return {
