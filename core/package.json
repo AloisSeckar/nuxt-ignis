@@ -49,15 +49,15 @@
     "@nuxt/eslint": "1.9.0",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/image": "1.11.0",
-    "@nuxt/scripts": "0.11.13",
-    "@nuxt/ui": "3.3.4",
-    "@nuxtjs/i18n": "10.1.0",
+    "@nuxt/scripts": "0.13.0",
+    "@nuxt/ui": "3.3.6",
+    "@nuxtjs/i18n": "10.1.1",
     "@nuxtjs/seo": "3.2.2",
     "@nuxtjs/supabase": "1.6.2",
     "@nuxtjs/tailwindcss": "6.14.0",
     "@pinia/nuxt": "0.11.2",
-    "@tailwindcss/vite": "4.1.13",
-    "@vueform/nuxt": "1.20.0",
+    "@tailwindcss/vite": "4.1.14",
+    "@vueform/nuxt": "1.21.0",
     "@vueuse/core": "13.9.0",
     "@vueuse/nuxt": "13.9.0",
     "better-sqlite3": "12.2.0",
@@ -67,7 +67,7 @@
     "elrh-cosca": "0.3.4",
     "elrh-pslo": "1.1.6",
     "magic-regexp": "0.10.0",
-    "nuxt": "4.1.2",
+    "nuxt": "4.1.3",
     "nuxt-auth-utils": "0.5.25",
     "nuxt-charts": "0.2.4",
     "nuxt-neon": "0.7.0",
@@ -76,11 +76,11 @@
     "open-props": "1.7.16",
     "pinia": "3.0.3",
     "postcss-jit-props": "1.0.16",
-    "typescript": "5.9.2",
+    "typescript": "5.9.3",
     "valibot": "1.1.0",
-    "vue": "3.5.21",
-    "vue-router": "4.5.1",
-    "zod": "4.1.11"
+    "vue": "3.5.22",
+    "vue-router": "4.6.3",
+    "zod": "4.1.12"
   },
   "pnpm": {
     "overrides": {
@@ -98,5 +98,5 @@
       "vue-demi"
     ]
   },
-  "packageManager": "pnpm@10.17.0"
+  "packageManager": "pnpm@10.18.3"
 }

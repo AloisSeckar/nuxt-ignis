@@ -28,7 +28,7 @@ NUXT_PUBLIC_IGNIS_CORE_IMAGE=false
 
 ## Nuxt Scripts
 
-<PackagesReference :packages="[{ name: '@nuxt/scripts', version: '0.11.13' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/scripts', version: '0.13.0' }]" />
 
 [Nuxt Scripts](https://scripts.nuxt.com/) is an official module for working with scripts. It lets you load third-party scripts with better performance, privacy, security and DX. It includes many popular third-parties out of the box.
 

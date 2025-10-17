@@ -4,7 +4,7 @@ For better developer experience, Nuxt Ignis offers following features:
 
 ## ESlint
 
-<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.9.0' }, { name: 'typescript', version: '5.9.2' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.9.0' }, { name: 'typescript', version: '5.9.3' }]" />
 
 Nuxt Ignis utilizes `@nuxt/eslint` module for convenient [ESLint](https://eslint.org/) integration in your project. For [VS Code](https://code.visualstudio.com/), it is recommended to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for even better integration including "linting on save" configuration.
 
@@ -77,9 +77,9 @@ If you don't want to rely on the default behavior, you can disable those handler
 
 ## Testing
 
-<PackagesReference :packages="[{ name: 'nuxt-spec', version: '0.1.8' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-spec', version: '0.1.12' }]" />
 
-Nuxt Ignis embraces [Vitest](https://vitest.dev/) as its test runner library. More specifically, it uses proprietary [Nuxt Spec](https://github.com/AloisSeckar/nuxt-spec) package that provides a base layer for testing Nuxt modules and applications united under single dependency. With that you have out-of-the-box access to:
+Nuxt Ignis embraces [Vitest](https://vitest.dev/) as its test runner library. More specifically, it uses proprietary **Nuxt Spec** package that provides a base layer for testing Nuxt modules and applications united under single dependency. With that you have out-of-the-box access to:
 
 - [vitest](https://www.npmjs.com/package/vitest) **v4** as the fundamental testing framework
 - [@vitest/browser](https://www.npmjs.com/package/@vitest/browser) as the experimental browser runner
@@ -90,7 +90,7 @@ Nuxt Ignis embraces [Vitest](https://vitest.dev/) as its test runner library. Mo
 
 Nuxt Spec is currently an opinionated solution and one of the few features that are fully baked into Nuxt Ignis without an opt-out. I am sorry for that, but hopefully it will provide you enough options to test your apps in a meaningful and convenient way.
 
-If you follow the [default instalation](/1-4-installation.html#setup-steps), you will get following:
+If you follow the [default installation](/1-4-installation.html#setup-steps), you will get following:
 
 - default `vitest.config.ts` file created in your project root
 - example test files created in `/test` folder
@@ -115,7 +115,7 @@ NUXT_PUBLIC_IGNIS_CORE_SECURITY=false
 
 ## CLI tools
 
-<PackagesReference :packages="[{ name: 'elrh-cosca', version: '0.2.8' }]" />
+<PackagesReference :packages="[{ name: 'elrh-cosca', version: '0.3.4' }]" />
 
 Using experimental [elrh-cosca](https://github.com/AloisSeckar/elrh-cosca) library, Nuxt Ignis provides couple of CLI tools to help you set up your project:
 
