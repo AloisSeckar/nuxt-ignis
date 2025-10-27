@@ -32,7 +32,7 @@ export default loadVueformConfig({
 })
 ```
 
-This will reference [default config file](hhttps://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.0/core/app/utils/config/vueform.ts) to inject `Vueform` into your projecz. The extra step is required as it seems not possible to transfer the config file from the layer.
+This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.0/core/app/utils/config/vueform.ts) to inject `Vueform` into your project. The extra step is required as it seems not possible to transfer the config file from the layer.
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can ignore Nuxt Ignis' default config and create your own file based on [Vueform docs](https://vueform.com/docs/installation#manual-installation) (check instructions for Nuxt).
 
