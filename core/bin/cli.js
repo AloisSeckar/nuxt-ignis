@@ -21,23 +21,30 @@ const args = process.argv.slice(2);
 // execute actions based on first param
 // additional params might be passed into the called functions
 (async () => {
-  switch (args[0]) {
-    case 'setup':
-      await (await import('./setup.js')).nuxtIgnisSetup(args[1] || false)
-      break
-    case 'set-css':
-      await (await import('./set-css.js')).setCSS(args[1] || false)
-      break
-    case 'set-eslint':
-      await (await import('./set-eslint.js')).setESLint(args[1] || false)
-      break
-    case 'set-app-vue':
-      await (await import('./set-app-vue.js')).setAppVue(args[1] || false)
-      break
-    default:
-      console.log(`Usage: \`${getCmd()} nuxt-ignis setup|set-css|set-eslint|set-app-vue [true|false]\``)
-      process.exit(args.length ? 1 : 0)
+  let status = 0
+  try {
+    switch (args[0]) {
+      case 'setup':
+        await (await import('./setup.js')).nuxtIgnisSetup(args[1] || false)
+        break
+      case 'set-css':
+        await (await import('./set-css.js')).setCSS()
+        break
+      case 'set-eslint':
+        await (await import('./set-eslint.js')).setESLint()
+        break
+      case 'set-app-vue':
+        await (await import('./set-app-vue.js')).setAppVue()
+        break
+      default:
+        console.log(`Usage: \`${getCmd()} nuxt-ignis setup|set-css|set-eslint|set-app-vue [true|false]\``)
+        status = 1
+    }
+  } catch (error) {
+    console.error('Unexpected Nuxt Ignis error:', error.message)
+    status = 1
   }
+  process.exit(status)
 })()
 
 // try detecting what package manager was used

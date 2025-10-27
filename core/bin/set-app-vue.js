@@ -15,4 +15,6 @@ export async function setAppVue() {
   } catch (error) {
     console.error('Error creating Ignis `app.vue` file:\n', error.message)
   }
+  // make sure the process won't hang
+  process.exit(0)
 }

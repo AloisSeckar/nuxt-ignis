@@ -13,4 +13,6 @@ export async function setESLint() {
   } catch (error) {
     console.error('Error creating ESLint config file:\n', error.message)
   }
+  // make sure the process won't hang
+  process.exit(0)
 }

@@ -15,4 +15,6 @@ export async function setCSS() {
   } catch (error) {
     console.error('Error creating Ignis CSS file:\n', error.message)
   }
+  // make sure the process won't hang
+  process.exit(0)
 }

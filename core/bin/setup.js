@@ -252,4 +252,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
   showMessage('')
   showMessage('NUXT IGNIS SETUP COMPLETE', 2)
   showMessage(`Proceed with \`${packageManager} install\` to get started.`)
+
+  // make sure the process won't hang
+  process.exit(0)
 }
