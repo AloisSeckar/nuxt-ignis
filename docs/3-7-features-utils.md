@@ -4,7 +4,7 @@ Nuxt Ignis offers following utility options:
 
 ## VueUse
 
-<PackagesReference :packages="[{ name: '@vueuse/core', version: '13.9.0' }, { name: '@vueuse/nuxt', version: '13.9.0' }]" />
+<PackagesReference :packages="[{ name: '@vueuse/core', version: '14.0.0' }, { name: '@vueuse/nuxt', version: '14.0.0' }]" />
 
 [VueUse](https://vueuse.org/) is a collection of essential Vue Composition Utilities that provides a set of reusable functions and utilities for Vue.js applications. It includes features like reactive state management, event handling, and more.
 
@@ -16,7 +16,7 @@ NUXT_PUBLIC_IGNIS_CORE_VUEUSE=false
 
 ## VueEquipment
 
-<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.36' }]" />
+<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.37' }]" />
 
 [VueEquipment](https://www.vue.equipment/) is a collection of Vue composables and plugins that provides a set of reusable functions and utilities for Vue.js applications.
 

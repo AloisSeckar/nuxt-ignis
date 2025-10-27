@@ -8,8 +8,8 @@
   "devDependencies": {
     "@nuxt/eslint": "1.9.0",
     "better-sqlite3": "12.2.0",
-    "nuxt": "4.1.3",
-    "typescript": "5.9.2"
+    "nuxt": "4.2.0",
+    "typescript": "5.9.3"
   },
   "pnpm": {
     "onlyBuiltDependencies": [
@@ -18,5 +18,6 @@
       "esbuild",
       "unrs-resolver"
     ]
-  }
+  },
+  "packageManager": "pnpm@10.19.0"
 }

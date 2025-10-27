@@ -21,7 +21,7 @@ Overview of the newest features in Nuxt Ignis.
 - fix: corrected warn message in `useT` function
 - fix: passing constructed Nuxt config object via spread operator to avoid Proxy issues
 - fix: added proper typing for NuxtConfig object
-- build: bump `Nuxt` to `4.1.3` + update other deps to latest versions (as of 2025-10-17)
+- build: bump `Nuxt` to `4.2.0` + update other deps to latest versions (as of 2025-10-17)
 - refactor: code updates in built-in pages
 - chore: renamed `.env.public` to `.env.example` for more consistency with other projects
 - docs: moved to new https://nuxt-ignis.com/ domain

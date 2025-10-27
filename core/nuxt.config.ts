@@ -16,7 +16,7 @@ const baseConfig: NuxtConfig = {
   ],
 
   // https://nuxt.com/docs/4.x/api/nuxt-config#compatibilitydate
-  compatibilityDate: '2025-09-21',
+  compatibilityDate: '2025-10-27',
 
   // simple eslint config - see eslint.config.mjs
   eslint: {

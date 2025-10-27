@@ -13,12 +13,11 @@
   },
   "pnpm": {
     "overrides": {
-      "esbuild": "^0.25.0",
       "vite": "npm:rolldown-vite@latest"
     },
     "onlyBuiltDependencies": [
       "esbuild"
     ]
   },
-  "packageManager": "pnpm@10.18.3"
+  "packageManager": "pnpm@10.19.0"
 }
