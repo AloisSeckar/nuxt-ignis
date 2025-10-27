@@ -41,6 +41,10 @@ This will reference [default config file](https://github.com/AloisSeckar/nuxt-ig
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can completely ignore Nuxt Ignis' default config and create your own file based on [Nuxt Content docs](https://content.nuxt.com/docs/getting-started/installation#create-your-first-collection).
 
+### Usage notice - `better-sqlite3`
+
+Currently, it appears to be **necessary** to have an explicit dependency on `"better-sqlite3": "12.2.0"` in your project's `package.json` in order to make `@nuxt/content` work properly ([opened task to solve this inconvenience](https://github.com/AloisSeckar/nuxt-ignis/issues/55)).
+
 ## I18N
 
 <PackagesReference :packages="[{ name: '@nuxtjs/i18n', version: '10.1.1' }]" />
