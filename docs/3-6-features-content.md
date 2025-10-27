@@ -37,7 +37,7 @@ export default loadContentConfig({
 })
 ```
 
-This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.4.0/core/app/utils/config/content.ts) to enable default `@nuxt-content` collection in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
+This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.0/core/app/utils/config/content.ts) to enable default `@nuxt-content` collection in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can completely ignore Nuxt Ignis' default config and create your own file based on [Nuxt Content docs](https://content.nuxt.com/docs/getting-started/installation#create-your-first-collection).
 
@@ -57,7 +57,7 @@ NUXT_PUBLIC_IGNIS_I18N_ENABLED=true
 
 - All `.json` files with messages in `@/i18n/locales` folder will be auto-scanned.
 - You can select default language locale via `NUXT_PUBLIC_IGNIS_I18N_LOCALE`.
-- If [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/core/v0.4.0/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`.
+- If [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.0/core/i18n/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`.
 
 ### Additional utils
 
