@@ -33,5 +33,6 @@ const { data } = useAsyncData(async () => {
   display: inline-block;
   width: 200px;
   height: 150px;
+  margin: 4px;
 }
 </style>

@@ -136,8 +136,20 @@ const baseConfig: NuxtConfig = {
       // display settings overview in console (just once)
       log.info('\nNuxt Ignis will start using following settings:\n' + currentFeatures.overview)
     },
+    // temporary fix for https://github.com/nuxt/nuxt/issues/33582
+    'vite:extendConfig': extendViteConfig,
   },
 }
+
+// temporary fix for https://github.com/nuxt/nuxt/issues/33582
+function extendViteConfig(config: import('vite').UserConfig) {
+  const plugin = config.plugins?.find(plugin => isPlugin(plugin, 'nuxt:environments'))
+  if (plugin) plugin.enforce = 'pre'
+}
+function isPlugin(plugin: unknown, name: string): plugin is import('vite').Plugin {
+  return !!(plugin && typeof plugin === 'object' && 'name' in plugin && plugin.name === name)
+}
+// temporary fix for https://github.com/nuxt/nuxt/issues/33582
 
 // to avoid type inference issues
 const effectiveConfig = defu(currentFeatures.nuxtConfig, baseConfig) as NuxtConfig
