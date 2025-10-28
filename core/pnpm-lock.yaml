@@ -72,8 +72,8 @@ importers:
         specifier: 6.1.4
         version: 6.1.4
       elrh-cosca:
-        specifier: 0.3.4
-        version: 0.3.4
+        specifier: 0.3.5
+        version: 0.3.5
       elrh-pslo:
         specifier: 1.1.6
         version: 1.1.6
@@ -3907,6 +3907,10 @@ packages:
 
   elrh-cosca@0.3.4:
     resolution: {integrity: sha512-Rj8hvKnDE9yGiwmRCnTGAzMMoFIPVIzYCqp1F/7AOwW2Xzx49IxcTbjvvTc0qMD7DR9qj7R8EJJrolcLXuRZqw==}
+    hasBin: true
+
+  elrh-cosca@0.3.5:
+    resolution: {integrity: sha512-u3NM3/N4PlTtzqh+lLXZx5WUbOxNQgdIsscXcn0yZQZDqw4BqFtyYJEFBb1y2TrSRErTE/JFydalJwIL0c3VsA==}
     hasBin: true
 
   elrh-pslo@1.1.6:
@@ -12111,6 +12115,8 @@ snapshots:
   elkjs@0.10.2: {}
 
   elrh-cosca@0.3.4: {}
+
+  elrh-cosca@0.3.5: {}
 
   elrh-pslo@1.1.6: {}
 
