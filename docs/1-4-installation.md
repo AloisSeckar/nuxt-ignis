@@ -163,7 +163,26 @@ In rare cases, when you need to keep your dependencies intact due to specific ov
 
 To tailor Nuxt Ignis to fit your project needs, setup your `.env` file accordingly. Check [the reference](/2-5-full-reference.html) for all available config options.
 
+### Running the app
+
 **Congratulations!** You are now armed ready to build your next awesome project in Nuxt!
+
+Start your dev server with `pnpm dev` (or `nuxt dev` if you don't have the script alias set up) and start benefiting from all the features provided by `nuxt-ignis`.
+
+#### Notice for projects scaffolded from Nuxt template
+
+Please note, that project scaffolded using `pnpm create nuxt@latest` will have default `/app/app.vue` that doesn't contain `<NuxtPage />` component. Applying `nuxt-ignis` setup as described above will have following consequences:
+
+1) You will get `Your project has pages but the <NuxtPage /> component has not been used.` warning upon starting the dev server
+2) You will not be able to navigate to [built-in pages](/3-11-features-built-ins.html) as there is nowhere to display them
+
+Ways to fix this:
+
+1) Add `<NuxtPage />` into your existing `/app/app.vue` file manually
+2) Use CLI tool to [scaffold Nuxt Ignis default `/app/app.vue`](/3-12-features-cli#set-app-vue) into your project
+3) Set `NUXT_PUBLIC_IGNIS_PAGES=false` in your `.env` file to declare your project is not using pages (you will lose access to built-in pages)
+
+We are currently [investigating ways](https://github.com/AloisSeckar/nuxt-ignis/issues/133) to improve this experience in future releases.
 
 ## More info
 
