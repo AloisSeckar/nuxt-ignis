@@ -4,12 +4,15 @@
   "scripts": {
     "dev": "vitepress dev",
     "build": "vitepress build",
-    "preview": "vitepress preview"
+    "preview": "vitepress preview",
+    "test": "vitest run"
   },
   "dependencies": {
+    "elrh-cosca": "0.3.5",
     "oxc-minify": "0.95.0",
     "vitepress": "2.0.0-alpha.12",
-    "vitepress-plugin-group-icons": "1.6.4"
+    "vitepress-plugin-group-icons": "1.6.4",
+    "vitest": "4.0.4"
   },
   "pnpm": {
     "overrides": {

@@ -32,7 +32,7 @@
   "scripts": {
     "analyze": "nuxt analyze",
     "eslint": "eslint .",
-    "build": "nuxt build",
+    "build": "pnpm test && cd ../docs && pnpm test && cd ../core && nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "prepublishOnly": "pnpm build",
