@@ -119,5 +119,8 @@ NUXT_PUBLIC_IGNIS_CORE_SECURITY=false
 
 Using experimental [elrh-cosca](https://github.com/AloisSeckar/elrh-cosca) library, Nuxt Ignis provides couple of CLI tools to help you set up your project:
 
+- `npx set-app-vue`: Copies Nuxt Ignis default `app.vue` file into target project to allow modifications.
+- `npx set-css`: Copies Nuxt Ignis default CSS file into target project to allow modifications.
 - `npx set-eslint`: Creates a new ESLint configuration file with Nuxt Ignis defaults.
-- `npx set-gitignore`: Adds Nuxt Ignis-related files into .gitignore.
+
+The library is also used internally in CLI setup script and for some tests.
