@@ -99,6 +99,18 @@ If you follow the [default installation](/1-4-installation.html#setup-steps), yo
   - `test-u` to run the test once and update snapshot files if they changed
   - `test-i` to run the test suite in interactive mode
 
+Scaffolded `vitest.config.ts` is utilizing Nuxt Spec's way of merging your custom configuration with the defaults via `loadVitestConfig` helper function:
+
+```ts
+import { loadVitestConfig } from 'nuxt-spec/config'
+
+export default loadVitestConfig({
+  // your custom config here
+})
+```
+
+**NOTE**: Based on the [Vitest documentation](https://main.vitest.dev/config/), it is possible to pass in **any configuration option** valid for [Vite](https://vite.dev/config/). Configuration related directly to Vitest must be passed under the `test` key.
+
 ## Nuxt Security
 
 <PackagesReference :packages="[{ name: 'nuxt-security', version: '2.4.0' }]" />
