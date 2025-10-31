@@ -86,6 +86,9 @@
     "zod": "4.1.12"
   },
   "pnpm": {
+    "overrides": {
+      "tar": "^7.5.2"
+    },
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "@tailwindcss/oxide",
