@@ -3,7 +3,7 @@ import { hasText } from 'elrh-cosca'
 import app from '../package.json' assert { type: 'json' }
 
 // extract the versions from package.json
-const { version, dependencies, packageManager } = app
+const { version, config, dependencies, packageManager } = app
 
 // Nuxt Ignis
 
@@ -51,5 +51,15 @@ const pnpmVersion = packageManager?.split('@')[1] || 'unknown'
 describe(`pnpm version should be the same as in package.json (${pnpmVersion})`, () => {
   test('setup.js', () => {
     expect(hasText('bin/setup.js', `'packageManager', 'pnpm@${pnpmVersion}'`)).toBe(true)
+  })
+})
+
+// compatbility date
+
+const date = config?.date || 'unknown'
+
+describe(`nuxt.config.ts compatibilityDate should be the same as in package.json (${date})`, () => {
+  test('setup.js', () => {
+    expect(hasText('nuxt.config.ts', `compatibilityDate: '${date}',`)).toBe(true)
   })
 })
