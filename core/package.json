@@ -1,7 +1,7 @@
 {
   "name": "nuxt-ignis",
   "description": "A ready-to-use setup for your next application in Nuxt",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "config": {
     "date": "2025-10-27"
   },

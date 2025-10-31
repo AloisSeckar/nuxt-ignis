@@ -2,6 +2,19 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.5.1
+
+2025-10-31
+
+- fix: workaround for Nuxt `v4.2.0` issue with some ESM modules (#135)
+- fix: corrected linked version tags in CLI scripts
+- docs: add usage notice of `better-sqlite3` for `Nuxt Content` (#55)
+- docs: add notice about default `app.vue` for projects scaffolded from Nuxt template (#133)
+- docs: add more info about `nuxt-spec` and `elrh-cosca`
+- docs: fix link to Vueform config file
+- test: added tests to have version tags in-sync between package-json and CLI scripts / docs (#132)
+- build: security update of `tar` (CVE-2025-64118)
+
 ## 0.5.0
 
 2025-10-27

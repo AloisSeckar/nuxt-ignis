@@ -33,7 +33,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
 
   // 1.1 - add nuxt-ignis dependency
   try {
-    await updateJsonFile('package.json', 'dependencies', { 'nuxt-ignis': '0.5.0' },
+    await updateJsonFile('package.json', 'dependencies', { 'nuxt-ignis': '0.5.1' },
       isAutoRun, 'This will add \'nuxt-ignis\' dependency to your \'package.json\'. Proceed?')
   } catch (error) {
     console.error('Error adding \'nuxt-ignis\' dependency:\n', error.message)
@@ -135,7 +135,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
         await updateTextFile('.npmrc', ['shamefully-hoist=true'], isAutoRun,
           'This will adjust \'.npmrc\' file in your project. Continue?')
       } else {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.5.0/core/.npmrc',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.5.1/core/.npmrc',
           '.npmrc', isAutoRun, 'This will add \'.npmrc\' file for your project. Continue?')
       }
     } catch (error) {
