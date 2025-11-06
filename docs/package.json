@@ -14,13 +14,5 @@
     "vitepress-plugin-group-icons": "1.6.4",
     "vitest": "4.0.4"
   },
-  "pnpm": {
-    "overrides": {
-      "vite": "npm:rolldown-vite@latest"
-    },
-    "onlyBuiltDependencies": [
-      "esbuild"
-    ]
-  },
   "packageManager": "pnpm@10.19.0"
 }

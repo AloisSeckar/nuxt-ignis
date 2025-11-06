@@ -6,12 +6,7 @@
     "dev": "nuxt dev"
   },
   "devDependencies": {
-    "nuxt": "4.2.0"
+    "nuxt": "catalog:"
   },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild"
-    ]
-  }
+  "packageManager": "pnpm@10.19.0"
 }

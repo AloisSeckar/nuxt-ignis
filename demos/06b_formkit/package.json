@@ -6,16 +6,9 @@
     "dev": "nuxt dev"
   },
   "devDependencies": {
-    "@nuxt/eslint": "1.9.0",
-    "nuxt": "4.2.0",
-    "typescript": "5.9.3"
-  },
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "esbuild",
-      "unrs-resolver"
-    ]
+    "@nuxt/eslint": "catalog:",
+    "nuxt": "catalog:",
+    "typescript": "catalog:"
   },
   "packageManager": "pnpm@10.19.0"
 }

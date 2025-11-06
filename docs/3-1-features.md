@@ -36,6 +36,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | --- | :---: | :---: | :-- |
 | `@nuxt/ui` | `3.3.7` | [👁️‍🗨️](/3-2-features-ui.html#nuxt-ui) | Official UI library for Nuxt (free version) |
 | `@nuxtjs/tailwindcss` | `6.14.0` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Connector module for `Tailwind CSS` (**TEMP DISABLED**) |
+| `@tailwindcss` | `4.1.16` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Base module for `Tailwind CSS` (**TEMP WORKAROUND**) |
 | `@tailwindcss/vite` | `4.1.16` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Vite connector for `Tailwind CSS` (**TEMP WORKAROUND**) |
 | `nuxt-neon` | `0.7.0` | [👁️‍🗨️](/3-3-features-db.html#neon) | Connector module for `Neon` database |
 | `@nuxtjs/supabase` | `1.6.2` | [👁️‍🗨️](/3-3-features-db.html#supabase) | Connector module for `Supabase` database |
