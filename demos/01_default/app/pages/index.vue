@@ -4,6 +4,12 @@
     <ClientOnly>
       {{ staticTimestamp }}
     </ClientOnly>
+    <h2>@nuxt/image</h2>
+    <NuxtImg
+      src="01.jpg"
+      width="300"
+      height="225"
+    />
   </div>
 </template>
 

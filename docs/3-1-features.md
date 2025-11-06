@@ -22,7 +22,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | --- | :---: | :---: | :-- |
 | `@nuxt/eslint` | `1.9.0` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Official module for code linting via `eslint` |
 | `@nuxt/fonts` | `0.11.4` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-fonts) | Official module for working with web fonts |
-| `@nuxt/image` | `1.11.0` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-image) | Official module for optimizing images |
+| `@nuxt/image` | `2.0.0` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-image) | Official module for optimizing images |
 | `@nuxt/scripts` | `0.13.0` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-scripts) | Official module for integrating 3rd party scripts |
 | `nuxt-security` | `2.4.0` | [👁️‍🗨️](/3-9-features-devex.html#nuxt-security) | Module for establishing best security practices |
 | `@vueuse/core` | `14.0.0` | [👁️‍🗨️](/3-7-features-utils.html#vueuse) | Collection of handy Vue utility functions |

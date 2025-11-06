@@ -16,7 +16,7 @@ NUXT_PUBLIC_IGNIS_CORE_FONTS=false
 
 ## Nuxt Image
 
-<PackagesReference :packages="[{ name: '@nuxt/image', version: '1.11.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/image', version: '2.0.0' }]" />
 
 [Nuxt Image](https://image.nuxt.com/) is an official module for working with images. Resize and transform your images using built-in optimizer or your favorite images CDN.
 
@@ -25,6 +25,8 @@ NUXT_PUBLIC_IGNIS_CORE_FONTS=false
 ```dotenv
 NUXT_PUBLIC_IGNIS_CORE_IMAGE=false
 ```
+
+**Note**: Nuxt Ignis uses [`@nuxt/image` v2](https://nuxt.com/blog/nuxt-image-v2) which includes some breaking changes. Please refer to the [migration guide](https://image.nuxt.com/migration/v2) if you experience troubles after switching.
 
 ## Nuxt Scripts
 
