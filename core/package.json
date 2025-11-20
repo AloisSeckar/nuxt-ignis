@@ -3,7 +3,7 @@
   "description": "A ready-to-use setup for your next application in Nuxt",
   "version": "0.5.1",
   "config": {
-    "date": "2025-10-27"
+    "date": "2025-11-20"
   },
   "keywords": [
     "nuxt",
@@ -49,7 +49,7 @@
     "@formkit/nuxt": "1.6.9",
     "@maas/vue-equipment": "1.0.0-beta.37",
     "@nuxt/content": "3.7.1",
-    "@nuxt/eslint": "1.9.0",
+    "@nuxt/eslint": "catalog:",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/image": "2.0.0",
     "@nuxt/scripts": "0.13.0",
@@ -86,5 +86,5 @@
     "vue-router": "catalog:",
     "zod": "4.1.12"
   },
-  "packageManager": "pnpm@10.19.0"
+  "packageManager": "pnpm@10.23.0"
 }

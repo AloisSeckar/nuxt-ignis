@@ -5,23 +5,22 @@ packages:
 
 catalog:
   better-sqlite3: 12.2.0
-  nuxt: 4.2.0
-  '@nuxt/eslint': 1.9.0
+  nuxt: 4.2.1
+  '@nuxt/eslint': 1.10.0
   typescript: 5.9.3
-  vue: 3.5.22
+  vue: 3.5.24
   vue-router: 4.6.3
-
-overrides:
-  tar: ^7.5.2
-  vite: 'npm:rolldown-vite@latest'
 
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - '@tailwindcss/oxide'
-  - 'better-sqlite3'
-  - 'esbuild'
-  - 'maplibre-gl'
-  - 'puppeteer'
-  - 'sharp'
-  - 'unrs-resolver'
-  - 'vue-demi'
+  - better-sqlite3
+  - esbuild
+  - maplibre-gl
+  - puppeteer
+  - sharp
+  - unrs-resolver
+  - vue-demi
+
+overrides:
+  vite: npm:rolldown-vite@latest
