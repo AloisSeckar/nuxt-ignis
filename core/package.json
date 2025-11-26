@@ -81,7 +81,7 @@
     "postcss-jit-props": "1.0.16",
     "tailwindcss": "4.1.16",
     "typescript": "catalog:",
-    "valibot": "1.1.0",
+    "valibot": "1.2.0",
     "vue": "catalog:",
     "vue-router": "catalog:",
     "zod": "4.1.12"
