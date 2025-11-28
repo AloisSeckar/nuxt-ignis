@@ -7,7 +7,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |
 | `nuxt` | `4.2.1` | [👁️‍🗨️](/3-10-features-nuxt) | Underlying Nuxt application itself |
-| `vue` | `3.5.24` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
+| `vue` | `3.5.25` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
 | `vue-router` | `4.6.3` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
 | `typescript` | `5.9.3` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Explicit dependency included to ensure correct `eslint` functionality |
 | `defu` | `6.1.4` | [👁️‍🗨️](/2-1-configuration.html#defu-merge) | Used for merging user configurations with defaults |
@@ -34,7 +34,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |
-| `@nuxt/ui` | `3.3.7` | [👁️‍🗨️](/3-2-features-ui.html#nuxt-ui) | Official UI library for Nuxt (free version) |
+| `@nuxt/ui` | `4.2.1` | [👁️‍🗨️](/3-2-features-ui.html#nuxt-ui) | Official open-source UI library for Nuxt |
 | `@nuxtjs/tailwindcss` | `6.14.0` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Connector module for `Tailwind CSS` (**TEMP DISABLED**) |
 | `@tailwindcss` | `4.1.16` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Base module for `Tailwind CSS` (**TEMP WORKAROUND**) |
 | `@tailwindcss/vite` | `4.1.16` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Vite connector for `Tailwind CSS` (**TEMP WORKAROUND**) |

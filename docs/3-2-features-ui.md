@@ -15,7 +15,7 @@ If you want to do small adjustments or add more default rules, you can use the C
 
 ## Nuxt UI
 
-<PackagesReference :packages="[{ name: '@nuxt/ui', version: '3.3.7' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/ui', version: '4.2.1' }]" />
 
 [`Nuxt UI`](https://ui.nuxt.com/) is an official UI library for Nuxt, providing a set of components and utilities to build user interfaces. It is designed to be flexible and easy to use and it might be a natural choice when building Nuxt applications. It also brings in `Tailwind CSS` and `Nuxt Icon` modules out of the box.
 

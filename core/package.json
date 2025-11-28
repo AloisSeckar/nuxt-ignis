@@ -53,7 +53,7 @@
     "@nuxt/fonts": "0.11.4",
     "@nuxt/image": "2.0.0",
     "@nuxt/scripts": "0.13.0",
-    "@nuxt/ui": "3.3.7",
+    "@nuxt/ui": "4.2.1",
     "@nuxtjs/i18n": "10.1.1",
     "@nuxtjs/seo": "3.2.2",
     "@nuxtjs/supabase": "1.6.2",
