@@ -2,6 +2,17 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.5.2
+
+2025-11-28
+
+- feat: bring in `Nuxt Social Share` module (#140)
+- feat: bump `Nuxt UI` to v4
+- feat: bump `@nuxt/image` to v2
+- build: bump `Nuxt` to `4.2.1`
+- build: bump Valibot to 1.2.0 (solve CVE-2025-66020)
+- chore: introduced pnpm catalog for easier dependency management (#129)
+
 ## 0.5.1
 
 2025-10-31

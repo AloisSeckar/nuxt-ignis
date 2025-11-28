@@ -39,7 +39,7 @@ The CLI command will perform following steps. You can also do them manually if y
 ```json [package.json]
 {
   "dependencies": {
-    "nuxt-ignis": "0.5.1"
+    "nuxt-ignis": "0.5.2"
   }
 }
 ```

@@ -71,7 +71,7 @@ const formattedDate = format(new Date(), formatString)
 
 ## Error handling
 
-By default, Nuxt Ignis registers global Vue [error](https://vuejs.org/api/application.html#app-config-errorhandler) and [warn](https://vuejs.org/api/application.html#app-config-warnhandler) handler to process errors and warnings in your app. The error/warn object is sent to `consola` error/warn function. Additional info provided by Vue is also captured in debug mode. Check the [implementation](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.1/core/app/plugins/errorHandler.ts).
+By default, Nuxt Ignis registers global Vue [error](https://vuejs.org/api/application.html#app-config-errorhandler) and [warn](https://vuejs.org/api/application.html#app-config-warnhandler) handler to process errors and warnings in your app. The error/warn object is sent to `consola` error/warn function. Additional info provided by Vue is also captured in debug mode. Check the [implementation](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.2/core/app/plugins/errorHandler.ts).
 
 If you don't want to rely on the default behavior, you can disable those handlers by setting `NUXT_PUBLIC_IGNIS_ERROR` to `false`.
 
