@@ -224,6 +224,7 @@ describe('setFeatures() unit tests', () => {
     process.env.NUXT_PUBLIC_IGNIS_PSLO_ENABLED = 'true'
     process.env.NUXT_PUBLIC_IGNIS_SEO = 'true'
     process.env.NUXT_PUBLIC_IGNIS_AUTH = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED = 'true'
     process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES = 'false' // to avoid console log
     setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/enable-all.txt')
@@ -251,6 +252,15 @@ describe('setFeatures() unit tests', () => {
     process.env.NUXT_PUBLIC_IGNIS_CHARTS = 'true'
     setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/charts.txt')
+  })
+
+  // Nuxt Social Share
+
+  test('setFeatures() - Nuxt Social Share', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL = 'https://nuxt-ignis.com'
+    setFeatures(true)
+    await expect(getConsoleOutput()).toMatchFileSnapshot('./features/social.txt')
   })
 
   // HTML

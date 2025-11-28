@@ -80,6 +80,15 @@ describe('nuxtConfig unit tests', () => {
     await expect(nuxtConfig).toMatchFileSnapshot('./config/seo-ssr-false.txt')
   })
 
+  // Nuxt Social Share
+
+  test('nuxtConfig - Nuxt Social Share', async () => {
+    process.env.NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL = 'https://nuxt-ignis.com'
+    const nuxtConfig = setFeatures()
+    await expect(nuxtConfig).toMatchFileSnapshot('./config/social.txt')
+  })
+
   // Open Props
 
   test('nuxtConfig - Open Props', async () => {

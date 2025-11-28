@@ -24,3 +24,4 @@ This folder contains various implementations of `nuxt-ignis` module. Those mini-
 09. Vue Equipment - `@maas/vue-equipment` module enabled
 10. Magic Regexp - `magic-regexp` module enabled
 11. Nuxt Charts - `nuxt-charts` module enabled
+12. Nuxt Social - `@stefanobartoletti/nuxt-social-share` module enabled

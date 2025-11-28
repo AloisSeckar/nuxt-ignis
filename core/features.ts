@@ -221,6 +221,19 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     nuxtConfig.modules!.push('nuxt-auth-utils')
   }
 
+  // social sharre
+  if (process.env.NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED === 'true') {
+    nuxtConfig.modules!.push('@stefanobartoletti/nuxt-social-share')
+    nuxtConfig = defu({
+      socialShare: {
+        baseUrl: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || 'https://nuxt-ignis.com/',
+      },
+    }, nuxtConfig)
+    if (!process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL) {
+      log.warn('Base URL for `nuxt-social-share` is not set. Use `process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL` to point sharing to your domain correctly.')
+    }
+  }
+
   // https://www.vue.equipment/
   if (process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED === 'true') {
     nuxtConfig.modules!.push('@maas/vue-equipment/nuxt')

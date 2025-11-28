@@ -57,6 +57,7 @@ const features = [
   { text: useIgnisT('features.i18n'), active: setup.i18n.enabled },
   { text: useIgnisT('features.seo'), active: setup.seo },
   { text: useIgnisT('features.auth'), active: setup.auth },
+  { text: useIgnisT('features.social'), active: setup.social.enabled },
   { text: useIgnisT('features.equipment'), active: setup.equipment.enabled },
   { text: useIgnisT('features.regexp'), active: setup.regexp },
   { text: useIgnisT('features.charts'), active: setup.charts },

@@ -76,6 +76,22 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`,
 NUXT_PUBLIC_IGNIS_AUTH=true
 ```
 
+## Nuxt Social Share
+
+<PackagesReference :packages="[{ name: '@stefanobartoletti/nuxt-social-share', version: '2.2.1' }]" />
+
+[Nuxt Social Share](https://nuxt-social-share.stefanobartoletti.it/) is a module providing seamless integration for sharing content to various social networks from your Nuxt application.
+
+`Nuxt Social Share` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
+
+```dotenv
+NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED=true
+```
+
+### Additional options
+
+- `NUXT_PUBLIC_IGNIS_SOCIAL_URL` - this is a **required** option that defines the URL to be shared on social networks. Set it to your application's URL or any other relevant link. It falls back to `http://nuxt-ignis.com` if not set manually and a warning is produced to the console.
+
 ## Magic Regexp
 
 <PackagesReference :packages="[{ name: 'magic-regexp', version: '0.10.0' }]" />

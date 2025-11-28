@@ -34,6 +34,7 @@ Following Nuxt modules/features are disabled by default and can be opted-in by s
 | `NUXT_PUBLIC_IGNIS_I18N_ENABLED` | `boolean` | `false` | Enable or disable `@nuxtjs/i18n` module |
 | `NUXT_PUBLIC_IGNIS_SEO` | `boolean` | `false` | Enable or disable `@nuxtjs/seo` module |
 | `NUXT_PUBLIC_IGNIS_AUTH` | `boolean` | `false` | Enable or disable `nuxt-auth-utils` module |
+| `NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED` | `boolean` | `false` | Enable or disable `@stefanobartoletti/nuxt-social-share` module |
 | `NUXT_PUBLIC_IGNIS_REGEXP` | `boolean` | `false` | Enable or disable `magic-regexp` module |
 | `NUXT_PUBLIC_IGNIS_CHARTS` | `boolean` | `false` | Enable or disable `nuxt-charts` module |
 | `NUXT_PUBLIC_IGNIS_OPENPROPS` | `boolean` | `false` | Enable or disable `Open Props CSS` |
@@ -62,6 +63,7 @@ Other configurable options:
 | `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG` | `string` | `/formkit.config.ts` | Set path to `@formkit/nuxt` config file |
 | `NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES` | `string` | `''` | Coma-separated list of `Vue Equipment` composables to be imported |
 | `NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS` | `string` | `''` | Coma-separated list of `Vue Equipment` plugins to be imported |
+| `NUXT_PUBLIC_IGNIS_SOCIAL_URL` | `string` | `''` | URL used by `@stefanobartoletti/nuxt-social-share` module for sharing to social networks |
 | `NUXT_PUBLIC_IGNIS_PSLO_CONTENT` | `boolean` | `false` | If both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function |
 | `NUXT_PUBLIC_IGNIS_HTML_TITLE` | `string` | `Nuxt Ignis App` | HTML title of the application |
 | `NUXT_PUBLIC_IGNIS_HTML_LANG` | `string` | `en-US` | HTML lang attribute of the application |

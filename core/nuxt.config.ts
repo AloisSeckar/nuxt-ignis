@@ -112,6 +112,10 @@ const baseConfig: NuxtConfig = {
         },
         regexp: false, // true/false
         charts: false, // true/false
+        social: {
+          enabled: false, // true/false
+          url: '', // translates to `baseUrl` option in module config
+        },
 
         // extra behavior
         warn: {

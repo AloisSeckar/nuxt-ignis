@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "ignis-demo-12",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "catalog:",
+    "nuxt": "catalog:",
+    "typescript": "catalog:"
+  },
+  "packageManager": "pnpm@10.19.0"
+}
