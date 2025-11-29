@@ -47,7 +47,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `@nuxtjs/i18n` | `10.1.1` | [👁️‍🗨️](/3-6-features-content.html#i18n) | Module for adding `i18n` internalization into apps |
 | `@nuxtjs/seo` | `3.2.2` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-seo) | Official module for easier SEO configuration |
 | `nuxt-auth-utils` | `0.5.25` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-auth-utils) | Module for easier authentication |
-| `@stefanobartoletti/nuxt-social-share` | `2.2.1` | [👁️‍🗨️](/3-7-features-ui.html#nuxt-social-share) | Module for simple sharing to social networks |
+| `@stefanobartoletti/nuxt-social-share` | `2.2.1` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-social-share) | Module for simple sharing to social networks |
 | `magic-regexp` | `0.10.0` | [👁️‍🗨️](/3-7-features-utils.html#magic-regexp) | Library for easier working with regular expressions |
 | `nuxt-charts` | `1.0.2` | [👁️‍🗨️](/3-2-features-ui.html#nuxt-charts) | Library for easier working with charts |
 
