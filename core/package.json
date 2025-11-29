@@ -35,7 +35,7 @@
   "scripts": {
     "analyze": "nuxt analyze",
     "eslint": "eslint .",
-    "build": "pnpm test && cd ../docs && pnpm test && cd ../core && nuxt build",
+    "build": "cd ../docs && pnpm test && pnpm build && cd ../core && pnpm test && nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "prepublishOnly": "pnpm build",
