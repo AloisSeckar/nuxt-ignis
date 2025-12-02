@@ -9,10 +9,10 @@
   },
   "dependencies": {
     "elrh-cosca": "0.3.5",
-    "oxc-minify": "0.95.0",
-    "vitepress": "2.0.0-alpha.12",
-    "vitepress-plugin-group-icons": "1.6.4",
-    "vitest": "4.0.4"
+    "oxc-minify": "^0.101.0",
+    "vitepress": "2.0.0-alpha.15",
+    "vitepress-plugin-group-icons": "^1.6.5",
+    "vitest": "^4.0.15"
   },
-  "packageManager": "pnpm@10.19.0"
+  "packageManager": "pnpm@10.24.0"
 }
