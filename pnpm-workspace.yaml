@@ -27,3 +27,5 @@ overrides:
   '@nuxt/vite-builder': npm:@nuxt/vite-builder-nightly@4.2.2-29390287.ffa14fe8
 
 trustPolicy: no-downgrade
+
+verifyDepsBeforeRun: install
