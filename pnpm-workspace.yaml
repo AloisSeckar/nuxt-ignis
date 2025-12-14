@@ -25,3 +25,5 @@ onlyBuiltDependencies:
 overrides:
   vite: npm:vite@8.0.0-beta.0
   '@nuxt/vite-builder': npm:@nuxt/vite-builder-nightly@4.2.2-29390287.ffa14fe8
+
+trustPolicy: no-downgrade
