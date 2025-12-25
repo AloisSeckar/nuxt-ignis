@@ -10,7 +10,7 @@ export default withNuxt([
   {
     rules: {
       // the default for this rule is "1", but I find it too restrictive
-      // https://eslint.vuejs.org/rules/max-attributes-per-line.html
+      // https://eslint.vuejs.org/rules/max-attributes-per-line
       'vue/max-attributes-per-line': ['error', {
         singleline: {
           max: 4,
@@ -19,8 +19,8 @@ export default withNuxt([
           max: 3,
         },
       }],
-      // the default rule forces newline after "else"
-      // I prefer using "} else {" on single row
+      // do not place new line before HTML TAG closing bracket
+      // https://eslint.vuejs.org/rules/html-closing-bracket-newline
       'vue/html-closing-bracket-newline': [
         'error',
         {
@@ -30,7 +30,10 @@ export default withNuxt([
           },
         },
       ],
-      '@stylistic/brace-style': 'off',
+      // the default rule forces newline after "else"
+      // I prefer using "} else {" on single row
+      // https://eslint.style/rules/brace-style
+      '@stylistic/brace-style': ['error', '1tbs'],
     },
   },
 
