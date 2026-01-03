@@ -2,6 +2,17 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.5.3
+
+`2026-01-03`
+
+- BREAKING: bump `nuxt-neon` to `v8` for security reasons (see [new docs](https://nuxt-neon.netlify.app/))
+- docs: fix two broken links
+- build: bump `Nuxt` to `4.2.2` and `Vue` to `3.5.26` 
+- build: switch to `Vite v8`
+- build: harden `pnpm` security settings ([#146](https://github.com/AloisSeckar/nuxt-ignis/issues/146)) ([#147](https://github.com/AloisSeckar/nuxt-ignis/issues/147))
+- chore: revised ESLint config for the project
+
 ## 0.5.2
 
 `2025-11-28`
@@ -10,14 +21,14 @@ Overview of the newest features in Nuxt Ignis.
 - feat: bump `Nuxt UI` to v4
 - feat: bump `@nuxt/image` to v2
 - build: bump `Nuxt` to `4.2.1`
-- build: bump Valibot to 1.2.0 (solve CVE-2025-66020)
-- chore: introduced pnpm catalog for easier dependency management (#129)
+- build: bump `Valibot` to `1.2.0` (solve CVE-2025-66020)
+- chore: introduced pnpm catalog for easier dependency management ([#129](https://github.com/AloisSeckar/nuxt-ignis/issues/129))
 
 ## 0.5.1
 
 `2025-10-31`
 
-- fix: workaround for Nuxt `v4.2.0` issue with some ESM modules ([#135](https://github.com/AloisSeckar/nuxt-ignis/issues/135))
+- fix: workaround for Nuxt `4.2.0` issue with some ESM modules ([#135](https://github.com/AloisSeckar/nuxt-ignis/issues/135))
 - fix: corrected linked version tags in CLI scripts
 - docs: add usage notice of `better-sqlite3` for `Nuxt Content` ([#55](https://github.com/AloisSeckar/nuxt-ignis/issues/55))
 - docs: add notice about default `app.vue` for projects scaffolded from Nuxt template ([#133](https://github.com/AloisSeckar/nuxt-ignis/issues/133))

@@ -11,7 +11,7 @@ import { createFileFromWebTemplate } from 'elrh-cosca'
  */
 export async function setAppVue() {
   try {
-    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.5.2/core/app/app.vue', 'app/app.vue')
+    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.5.3/core/app/app.vue', 'app/app.vue')
   } catch (error) {
     console.error('Error creating Ignis `app.vue` file:\n', error.message)
   }
