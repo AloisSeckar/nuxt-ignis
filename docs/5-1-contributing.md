@@ -22,6 +22,65 @@ Recommended IDE is [Visual Studio Code](https://code.visualstudio.com/).
 
 Recommended package manager is [pnpm](https://pnpm.io/).
 
+## Package Management
+
+We use `pnpm` as our package manager with monorepo support with `pnpm-workspace.yaml` file located in the repository root.
+
+Following settings are applied:
+
+```yaml [pnpm-workspace.yaml]
+# subfolders where those monorepo settings apply
+packages:
+  - core
+  - demos/*
+  - docs
+
+# https://pnpm.io/catalogs#defining-catalogs
+# global version definition for the repeated packages
+catalog:
+  better-sqlite3: 12.2.0
+  nuxt: 4.2.2
+  '@nuxt/eslint': 1.12.1
+  typescript: 5.9.3
+  vue: 3.5.26
+  vue-router: 4.6.4
+
+# https://pnpm.io/settings#minimumreleaseage
+# new packages cannot be installed earlier than one week after release
+minimumReleaseAge: 10080
+# trusted and verified packages may be excluded using following list
+minimumReleaseAgeExclude:
+# - package-name
+
+# https://pnpm.io/settings#onlybuiltdependencies
+# explicitly allowed post-install scripts
+# TODO revise via https://github.com/AloisSeckar/nuxt-ignis/issues/150
+onlyBuiltDependencies:
+  - '@parcel/watcher'
+  - '@tailwindcss/oxide'
+  - better-sqlite3
+  - esbuild
+  - maplibre-gl
+  - puppeteer
+  - sharp
+  - unrs-resolver
+  - vue-demi
+
+# https://pnpm.io/settings#overrides
+# specific package versions (mostly temporary because known vulnerabilities)
+overrides:
+  vite: npm:vite@8.0.0-beta.0
+
+# https://pnpm.io/settings#trustpolicy
+# packages cannot change from trusted to untrusted
+trustPolicy: no-downgrade
+
+# https://pnpm.io/settings#verifydepsbeforerun
+# check and throw error if node_modules are not installed corectly
+# do NOT auto-install via 'install' value
+verifyDepsBeforeRun: error
+```
+
 ## Testing
 
 Nuxt Ignis ships with proprietary [Nuxt Spec](https://github.com/AloisSeckar/nuxt-spec) package that provides a Vitest-based layer for testing Nuxt modules and applications united under single dependency. See [Testing section](/3-9-features-devex.html#testing) in DevEx features overview for more details.
