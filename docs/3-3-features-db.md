@@ -4,7 +4,7 @@ Nuxt Ignis contains following customizable DB related features:
 
 ## Neon
 
-<PackagesReference :packages="[{ name: 'nuxt-neon', version: '0.7.0' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-neon', version: '0.8.1' }]" />
 
 [Neon](https://neon.tech/) is a serverless Postgres database that is designed to be fast, scalable, and easy to use. It provides a fully managed database service with automatic scaling and high availability.
 

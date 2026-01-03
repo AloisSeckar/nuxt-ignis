@@ -6,6 +6,9 @@
 </template>
 
 <script setup lang="ts">
-const { neonStatus } = useNeon()
-const dbStatus = await neonStatus(false)
+// @ts-expect-error - #imports are available here
+import { useNeonClient } from '#imports'
+
+const { neonStatus } = useNeonClient()
+const dbStatus = await neonStatus()
 </script>

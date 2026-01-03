@@ -13,7 +13,11 @@
 </template>
 
 <script setup lang="ts">
-const { select } = useNeon()
+// @ts-expect-error - #imports are available here
+import { ref, useNeonClient, formatNeonError } from '#imports'
+import type { NeonError } from 'nuxt-neon'
+
+const { select } = useNeonClient()
 
 type ExampleData = {
   id: number

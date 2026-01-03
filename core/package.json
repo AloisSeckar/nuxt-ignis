@@ -74,7 +74,7 @@
     "nuxt": "catalog:",
     "nuxt-auth-utils": "0.5.25",
     "nuxt-charts": "1.0.2",
-    "nuxt-neon": "0.7.0",
+    "nuxt-neon": "0.8.1",
     "nuxt-security": "2.4.0",
     "nuxt-spec": "0.1.14",
     "open-props": "1.7.16",
