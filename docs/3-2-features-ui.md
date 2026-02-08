@@ -44,7 +44,7 @@ Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt#cs
 
 ## Tailwind CSS
 
-<PackagesReference :packages="[{ name: 'tailwindcss', version: '4.1.16' }, { name: '@tailwindcss/vite', version: '4.1.16' }]" />
+<PackagesReference :packages="[{ name: 'tailwindcss', version: '4.1.18' }, { name: '@tailwindcss/vite', version: '4.1.18' }]" />
 
 **NOTE:** Integration via [`@nuxtjs/tailwindcss` module](https://nuxt.com/modules/tailwindcss) is temporarily bridged by direct Vite integration until `v7` with updated `Tailwind v4` support is released.
 
