@@ -46,6 +46,7 @@
     "test-i": "vitest"
   },
   "dependencies": {
+    "@nuxt-ignis/db": "^0.0.4",
     "@formkit/nuxt": "1.6.9",
     "@maas/vue-equipment": "1.0.0-beta.37",
     "@nuxt/content": "3.7.1",
@@ -56,7 +57,6 @@
     "@nuxt/ui": "4.2.1",
     "@nuxtjs/i18n": "10.1.1",
     "@nuxtjs/seo": "3.2.2",
-    "@nuxtjs/supabase": "1.6.2",
     "@nuxtjs/tailwindcss": "6.14.0",
     "@pinia/nuxt": "0.11.2",
     "@stefanobartoletti/nuxt-social-share": "2.2.0",
@@ -74,7 +74,6 @@
     "nuxt": "catalog:",
     "nuxt-auth-utils": "0.5.25",
     "nuxt-charts": "1.0.2",
-    "nuxt-neon": "0.8.1",
     "nuxt-security": "2.4.0",
     "nuxt-spec": "0.1.14",
     "open-props": "1.7.16",

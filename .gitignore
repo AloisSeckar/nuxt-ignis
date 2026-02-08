@@ -19,3 +19,6 @@ demos/**/pnpm-lock.yaml
 # Nuxt Ignis files
 # configuration overview created upon Nuxt Ignis start
 _ignis-config.json
+
+# TODO ???
+.nuxtrc

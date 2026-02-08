@@ -125,16 +125,18 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
   }
 
   if (dbPreset === 'neon' || process.env.NUXT_PUBLIC_IGNIS_NEON === 'true') {
-    // module definition
-    nuxtConfig.modules!.push('nuxt-neon')
+    nuxtConfig.modules!.push('@nuxt-ignis/db/neon')
+    nuxtConfig = defu({
+      ignisDB: {
+        ignisNeon: true,
+      },
+    }, nuxtConfig)
   }
   if (dbPreset === 'supabase' || process.env.NUXT_PUBLIC_IGNIS_SUPABASE === 'true') {
-    // module definition
-    nuxtConfig.modules!.push('@nuxtjs/supabase')
-    // module-specific config key
+    nuxtConfig.modules!.push('@nuxt-ignis/db/supabase')
     nuxtConfig = defu({
-      supabase: {
-        redirect: false, // https://github.com/supabase/supabase/issues/16551#issuecomment-1685300935
+      ignisDB: {
+        ignisSupabase: true,
       },
     }, nuxtConfig)
   }
