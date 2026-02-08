@@ -11,8 +11,8 @@
     "elrh-cosca": "0.3.5",
     "oxc-minify": "^0.101.0",
     "vitepress": "2.0.0-alpha.15",
-    "vitepress-plugin-group-icons": "^1.6.5",
-    "vitest": "^4.0.15"
+    "vitepress-plugin-group-icons": "^1.7.1",
+    "vitest": "^4.0.18"
   },
-  "packageManager": "pnpm@10.26.2"
+  "packageManager": "pnpm@10.29.1"
 }

@@ -6,9 +6,9 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |
-| `nuxt` | `4.2.2` | [👁️‍🗨️](/3-10-features-nuxt) | Underlying Nuxt application itself |
-| `vue` | `3.5.26` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
-| `vue-router` | `4.6.4` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
+| `nuxt` | `4.3.1` | [👁️‍🗨️](/3-10-features-nuxt) | Underlying Nuxt application itself |
+| `vue` | `3.5.27` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
+| `vue-router` | `5.0.2` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
 | `typescript` | `5.9.3` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Explicit dependency included to ensure correct `eslint` functionality |
 | `defu` | `6.1.4` | [👁️‍🗨️](/2-1-configuration.html#defu-merge) | Used for merging user configurations with defaults |
 | `date-fns` | `4.1.0` | [👁️‍🗨️](/3-9-features-devex.html#logging) | Used to get timestamps in readable format |
@@ -20,7 +20,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |
-| `@nuxt/eslint` | `1.12.1` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Official module for code linting via `eslint` |
+| `@nuxt/eslint` | `1.14.0` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Official module for code linting via `eslint` |
 | `@nuxt/fonts` | `0.11.4` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-fonts) | Official module for working with web fonts |
 | `@nuxt/image` | `2.0.0` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-image) | Official module for optimizing images |
 | `@nuxt/scripts` | `0.13.0` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-scripts) | Official module for integrating 3rd party scripts |

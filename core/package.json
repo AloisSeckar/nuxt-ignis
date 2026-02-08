@@ -3,7 +3,7 @@
   "description": "A ready-to-use setup for your next application in Nuxt",
   "version": "0.5.3",
   "config": {
-    "date": "2025-11-20"
+    "date": "2026-02-01"
   },
   "keywords": [
     "nuxt",
@@ -87,5 +87,5 @@
     "vue-router": "catalog:",
     "zod": "4.1.12"
   },
-  "packageManager": "pnpm@10.26.2"
+  "packageManager": "pnpm@10.29.1"
 }

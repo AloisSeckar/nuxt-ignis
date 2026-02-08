@@ -4,7 +4,7 @@ For better developer experience, Nuxt Ignis offers following features:
 
 ## ESlint
 
-<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.12.1' }, { name: 'typescript', version: '5.9.3' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.14.0' }, { name: 'typescript', version: '5.9.3' }]" />
 
 Nuxt Ignis utilizes `@nuxt/eslint` module for convenient [ESLint](https://eslint.org/) integration in your project. For [VS Code](https://code.visualstudio.com/), it is recommended to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for even better integration including "linting on save" configuration.
 

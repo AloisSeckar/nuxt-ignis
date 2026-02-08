@@ -39,11 +39,11 @@ packages:
 # global version definition for the repeated packages
 catalog:
   better-sqlite3: 12.2.0
-  nuxt: 4.2.2
-  '@nuxt/eslint': 1.12.1
+  nuxt: 4.3.1
+  '@nuxt/eslint': 1.14.0
   typescript: 5.9.3
-  vue: 3.5.26
-  vue-router: 4.6.4
+  vue: 3.5.27
+  vue-router: 5.0.2
 
 # https://pnpm.io/settings#minimumreleaseage
 # new packages cannot be installed earlier than one week after release
