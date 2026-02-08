@@ -19,6 +19,8 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
   const extras = [] as string[]
   // list of Nuxt-related settings
   const nuxt = [] as string[]
+  // list of modules loaded through Ignis utility modules
+  const ignis = [] as string[]
 
   // object for optional config that will be merged with global Nuxt config
   // declared in nuxt.config.ts
@@ -99,6 +101,7 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
       // nuxtConfig.modules!.push('@nuxtjs/tailwindcss') // temporary disabled until v7 is released
       extras.push('Tailwind CSS')
       // import tailwind css file
+      // @ts-expect-error https://github.com/tailwindlabs/tailwindcss/issues/18802
       nuxtConfig = defu({
         css: [join(currentDir, './app/assets/css/ignis-tailwind.css')],
         vite: {
@@ -125,7 +128,8 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
   }
 
   if (dbPreset === 'neon' || process.env.NUXT_PUBLIC_IGNIS_NEON === 'true') {
-    nuxtConfig.modules!.push('@nuxt-ignis/db/neon')
+    nuxtConfig.modules!.push('@nuxt-ignis/db')
+    ignis.push('@nuxt-ignis/db/neon')
     nuxtConfig = defu({
       ignisDB: {
         ignisNeon: true,
@@ -133,7 +137,8 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     }, nuxtConfig)
   }
   if (dbPreset === 'supabase' || process.env.NUXT_PUBLIC_IGNIS_SUPABASE === 'true') {
-    nuxtConfig.modules!.push('@nuxt-ignis/db/supabase')
+    nuxtConfig.modules!.push('@nuxt-ignis/db')
+    ignis.push('@nuxt-ignis/db/supabase')
     nuxtConfig = defu({
       ignisDB: {
         ignisSupabase: true,
@@ -373,6 +378,9 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
   // return as string to be logged in 'schema:resolved' hook (to prevent multiple logs)
   let overview = `App title: ${appTitle}\n`
   overview += `Modules: ${nuxtConfig.modules!.join(', ')}\n`
+  if (ignis.length > 0) {
+    overview += `Modules (Ignis): ${ignis.join(', ')}\n`
+  }
   if (extras.length > 0) {
     overview += `Extras: ${extras.join(', ')}\n`
   }
