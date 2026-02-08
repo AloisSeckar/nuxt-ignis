@@ -38,8 +38,8 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `@nuxtjs/tailwindcss` | `6.14.0` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Connector module for `Tailwind CSS` (**TEMP DISABLED**) |
 | `@tailwindcss` | `4.1.16` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Base module for `Tailwind CSS` (**TEMP WORKAROUND**) |
 | `@tailwindcss/vite` | `4.1.16` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Vite connector for `Tailwind CSS` (**TEMP WORKAROUND**) |
-| `nuxt-neon` | `0.8.1` | [👁️‍🗨️](/3-3-features-db.html#neon) | Connector module for `Neon` database |
-| `@nuxtjs/supabase` | `1.6.2` | [👁️‍🗨️](/3-3-features-db.html#supabase) | Connector module for `Supabase` database |
+| `nuxt-neon` | `0.8.2` | [👁️‍🗨️](/3-3-features-db.html#neon) | Connector module for `Neon` database |
+| `@nuxtjs/supabase` | `2.0.3` | [👁️‍🗨️](/3-3-features-db.html#supabase) | Connector module for `Supabase` database |
 | `@vueform/nuxt` | `1.24.0` | [👁️‍🗨️](/3-4-features-forms.html#vueform) | Connector module for `Vueform` form builder |
 | `@formkit/nuxt` | `1.6.9` | [👁️‍🗨️](/3-4-features-forms.html#formkit) | Connector module for `FormKit` form builder |
 | `@nuxt/content` | `3.7.1` | [👁️‍🗨️](/3-6-features-content.html#nuxt-content) | Official module for displaying `.md` content |
