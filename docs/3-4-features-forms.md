@@ -4,7 +4,7 @@ Nuxt Ignis contains following customizable forms related features:
 
 ## Vueform
 
-<PackagesReference :packages="[{ name: '@vueform/nuxt', version: '1.24.0' }]" />
+<PackagesReference :packages="[{ name: '@vueform/nuxt', version: '1.26.0' }]" />
 
 [Vueform](https://vueform.com/) is a powerful form library for Vue.js that provides a set of components and utilities for building forms with ease. It includes features like validation, error handling, and custom components.
 
@@ -38,7 +38,7 @@ Referencing config like this allows to pass in a custom config that will be [def
 
 ## Formkit
 
-<PackagesReference :packages="[{ name: '@formkit/nuxt', version: '1.6.9' }]" />
+<PackagesReference :packages="[{ name: '@formkit/nuxt', version: '1.7.2' }]" />
 
 [Formkit](https://formkit.com/) is a powerful form library for Vue.js that provides a set of components and utilities for building forms with ease. It includes features like validation, error handling, and custom components.
 

@@ -65,13 +65,13 @@ importers:
 
   core:
     dependencies:
-      '@formkit/nuxt':
-        specifier: 1.6.9
-        version: 1.6.9(esbuild@0.25.12)(magicast@0.5.2)(rollup@4.57.1)(tailwindcss@4.1.18)(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.25.12)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))
       '@maas/vue-equipment':
         specifier: 1.0.0-beta.37
         version: 1.0.0-beta.37(57466a26a2a73996cc951ead2d72b19c)
       '@nuxt-ignis/db':
+        specifier: ^0.0.4
+        version: 0.0.4(magicast@0.5.2)
+      '@nuxt-ignis/forms':
         specifier: ^0.0.4
         version: 0.0.4(magicast@0.5.2)
       '@nuxt/content':
@@ -110,9 +110,6 @@ importers:
       '@tailwindcss/vite':
         specifier: 4.1.18
         version: 4.1.18(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.25.12)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))
-      '@vueform/nuxt':
-        specifier: 1.24.0
-        version: 1.24.0(magicast@0.5.2)
       '@vueuse/core':
         specifier: 14.0.0
         version: 14.0.0(vue@3.5.27(typescript@5.9.3))
@@ -471,6 +468,58 @@ importers:
       nuxt-neon:
         specifier: 0.8.2
         version: 0.8.2(magicast@0.5.2)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.18(@types/node@25.2.2)(esbuild@0.27.3)(happy-dom@20.0.8)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)
+      vue-tsc:
+        specifier: 'catalog:'
+        version: 3.2.4(typescript@5.9.3)
+
+  modules/ignis-forms:
+    dependencies:
+      '@nuxt/kit':
+        specifier: 'catalog:'
+        version: 4.3.1(magicast@0.5.2)
+    devDependencies:
+      '@formkit/nuxt':
+        specifier: 1.7.2
+        version: 1.7.2(@nuxt/kit@4.3.1(magicast@0.5.2))(esbuild@0.27.3)(rollup@4.57.1)(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))
+      '@nuxt/devtools':
+        specifier: 'catalog:'
+        version: 3.1.1(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))
+      '@nuxt/eslint-config':
+        specifier: 'catalog:'
+        version: 1.14.0(@typescript-eslint/utils@8.54.0(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.27)(eslint@9.39.2(jiti@2.6.1))(typescript@5.9.3)
+      '@nuxt/module-builder':
+        specifier: 'catalog:'
+        version: 1.0.2(@nuxt/cli@3.33.1(@nuxt/schema@4.3.1)(cac@6.7.14)(magicast@0.5.2))(@vue/compiler-core@3.5.27)(esbuild@0.27.3)(sass@1.97.3)(typescript@5.9.3)(vue-tsc@3.2.4(typescript@5.9.3))(vue@3.5.27(typescript@5.9.3))
+      '@nuxt/schema':
+        specifier: 'catalog:'
+        version: 4.3.1
+      '@nuxt/test-utils':
+        specifier: 'catalog:'
+        version: 4.0.0(@vue/test-utils@2.4.6)(magicast@0.5.2)(playwright-core@1.58.2)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vitest@4.0.18(@types/node@25.2.2)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))
+      '@types/node':
+        specifier: 'catalog:'
+        version: 25.2.2
+      '@vueform/nuxt':
+        specifier: 1.26.0
+        version: 1.26.0(magicast@0.5.2)
+      '@vueform/vueform':
+        specifier: 1.13.8
+        version: 1.13.8
+      changelogen:
+        specifier: 'catalog:'
+        version: 0.6.2(magicast@0.5.2)
+      eslint:
+        specifier: 'catalog:'
+        version: 9.39.2(jiti@2.6.1)
+      nuxt:
+        specifier: 'catalog:'
+        version: 4.3.1(@parcel/watcher@2.5.6)(@types/node@25.2.2)(@vue/compiler-sfc@3.5.27)(better-sqlite3@12.2.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.2(jiti@2.6.1))(ioredis@5.9.2)(magicast@0.5.2)(optionator@0.9.4)(rolldown@1.0.0-rc.3)(rollup@4.57.1)(sass@1.97.3)(terser@5.46.0)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue-tsc@3.2.4(typescript@5.9.3))(yaml@2.8.2)
       typescript:
         specifier: 'catalog:'
         version: 5.9.3
@@ -1151,49 +1200,40 @@ packages:
   '@floating-ui/vue@1.1.10':
     resolution: {integrity: sha512-vdf8f6rHnFPPLRsmL4p12wYl+Ux4mOJOkjzKEMYVnwdf7UFdvBtHlLvQyx8iKG5vhPRbDRgZxdtpmyigDPjzYg==}
 
-  '@formkit/core@1.6.9':
-    resolution: {integrity: sha512-Zb5OkYKMf7Rp1pd4iUMv0TJQvfgl1PdKtRRQoGiTA0XIFLB/7tcRMr1wc5isA2JS+hllfxMTh3RWF8N+64fTMg==}
+  '@formkit/core@1.7.2':
+    resolution: {integrity: sha512-XDRVqkDtOziU3z44hdvgWEqGpiv6nTNeCmP8cnESKkr24a4keQuEwmfDVvibYV0ywyTMg6ylp2lyklCYeRHykQ==}
 
-  '@formkit/dev@1.6.9':
-    resolution: {integrity: sha512-4ueBpZAOiKr8/LZnq3mNePCX4ZB1j1JuJscBEwugWMnDeDwCNo5XWBrng1ER/LlitTRQ3mtEBNy2Qpm0yAHlwA==}
+  '@formkit/dev@1.7.2':
+    resolution: {integrity: sha512-W38xbbFS4h4LTV22kUC6ZbPHBmlM2lVbAz5PSYU3SPaNc4FeXp4GTe4GzLEmcS82B+5L1zbSOgGB43kWZts7wA==}
 
-  '@formkit/i18n@1.6.9':
-    resolution: {integrity: sha512-8NA5bALlspCBEwInuZVgBqgQr0lDfproZdmbs2LciQpGi2B15u74JCjAkEwaKlMs+qgf/ds3QcIgUv2ztyyVEA==}
+  '@formkit/i18n@1.7.2':
+    resolution: {integrity: sha512-Zs6f+rtP2j2Nnt1HkNrL85WU6rtS1l1Q0BAQjCMGQPsbrppiL7/TZ5bNIrVm0DTntLgG3firDS7bNWAxPSwerQ==}
 
-  '@formkit/inputs@1.6.9':
-    resolution: {integrity: sha512-k9gjV1e5F87NxSnu13JtKb30XYt6ndx2KGHZG8Xz0etoP75yJlMaeROHHPvlxdy2gZM6qH7Ex4it51W74Wh2Eg==}
+  '@formkit/inputs@1.7.2':
+    resolution: {integrity: sha512-4xs7RJN8EFGctTCNRXBTvor2O8RvuEEK3q2Hl/RMU5lhhn5tmck90fkkeAr9o+rWRoSNiV8XgbLQArQ/B1IYPw==}
 
-  '@formkit/nuxt@1.6.9':
-    resolution: {integrity: sha512-G2J20hg1XVvP9l0lcclqeH6xIzVbQ1V1XS0LmVTJ3xBXL2QhXV6EUwkN6FGMjjtBJdtK1SMRmTXDc9rcLJgS1A==}
-
-  '@formkit/observer@1.6.9':
-    resolution: {integrity: sha512-p3MCmzp6jwzXIuV3gI9uTJTJl+sN5689C7qf7gdrS8jb1fbX1snKiTyWA8FXOrBXu+ne5z/sA/yBWqYFTSLy8A==}
-
-  '@formkit/rules@1.6.9':
-    resolution: {integrity: sha512-5Vu3JACKyws1kw02qF+024WkS7L9kYZ0lmdSpsaTqg5Wf7+InsxWXFYaG6vCzqIh4Lk9NeffIzq/xyGpGxf5uQ==}
-
-  '@formkit/themes@1.6.9':
-    resolution: {integrity: sha512-/UD+MehQEdcCEadt73eIBGGAMEK8ODN0yq9r9299WvQxIELCOP2MbcxuWCV/g2Vd15Xhl8YFdn4KCzQi4X7QXA==}
+  '@formkit/nuxt@1.7.2':
+    resolution: {integrity: sha512-DuU97V/CU3ejItkWUQNkxtIZSnJqqRXCjTdHBwjJbHQdq0aBsz6GFX85mTcPCBqh849JFDZBV6DdKH4vK7uWhw==}
     peerDependencies:
-      tailwindcss: ^3.2.0
-      unocss: 0.x.x
-      windicss: ^3.0.0
-    peerDependenciesMeta:
-      tailwindcss:
-        optional: true
-      unocss:
-        optional: true
-      windicss:
-        optional: true
+      '@nuxt/kit': ^3.10.3 || ^4.0.0
 
-  '@formkit/utils@1.6.9':
-    resolution: {integrity: sha512-vSFhB/Sm/A+SdwKdBi4WhJcdbePqSYRaB878Ol9HL8roTmmmgQpThvkv6EjLM6aRRP27Il5rS8XtIAIeh8vdTA==}
+  '@formkit/observer@1.7.2':
+    resolution: {integrity: sha512-KUr5mcu2SAeHOOK1FaMyFigtA8hkHLsUkaPFWpTC81j79o1AUjJppmfPaX6PbtlHLeMs2Zq8Qhp6VAhi7D2WJg==}
 
-  '@formkit/validation@1.6.9':
-    resolution: {integrity: sha512-9PGwN0ZDJt3hsrMyaL8KTG3diSQDik1OGogVG6/nFcZhWUycpeamFfXZSQ5pfzmwnvrTHsvyT0FtKitUnWWuPA==}
+  '@formkit/rules@1.7.2':
+    resolution: {integrity: sha512-2e5qKlXzmL9LAetncFp7xkHEX/UAJsU3bo1iL3idloH3HALf5fIdg3lgOKwCNDMdLjbfiKJ6lVwFaeFfFpcDKw==}
 
-  '@formkit/vue@1.6.9':
-    resolution: {integrity: sha512-WrjAtEsKnFJzxQuATWsWKMpTAyJE15PUmRh9hwEAqgTDy2yMog1gxqxfZv3rEAdIdgXNp08tWmRVnQgDIF3vAQ==}
+  '@formkit/themes@1.7.2':
+    resolution: {integrity: sha512-AaZHy7l9D44Ya3cQRqZ8RIpaTTsCjTB1gX13NlpqYSs6yG0yBTmJ7L7kW60bOGdhs/vmIwSel578EBwz98nybQ==}
+
+  '@formkit/utils@1.7.2':
+    resolution: {integrity: sha512-bBF6alUBOqFfJHjVB95Vck0hp36vlw4QfFJxGfTO6BX68AEaFzzzabtpwfy0DbcHtwHh4Yn7l/rOWGxXEve+QQ==}
+
+  '@formkit/validation@1.7.2':
+    resolution: {integrity: sha512-JJsLP7AI/++VujdwtBeUcPhCqY3FXSKZ7hajT7Ow5Feab7JLqVPjxVMFbXDgEOLjq0ex1NX/I+EQHfm5sqMRsA==}
+
+  '@formkit/vue@1.7.2':
+    resolution: {integrity: sha512-jrvXl2ZhS6X5klTbP4N5zc0Dg37AjbAf8SCVoz7mfligVkmwrrF4SN3waMBcH+n9gqT+vrkOYb6bQXdvjUdnCQ==}
     peerDependencies:
       vue: ^3.4.0
 
@@ -1597,6 +1637,9 @@ packages:
 
   '@nuxt-ignis/db@0.0.4':
     resolution: {integrity: sha512-ZAYdhBOXGqNIawhnHMT5JQ4Jh9A8cEW7UK/DP79I8ecfWQ5AVA/WU4YqiECVbzd73fjpDs0rk4o9jUR4IISCUA==}
+
+  '@nuxt-ignis/forms@0.0.4':
+    resolution: {integrity: sha512-vXoCtmdG5hlwyyPStg04uf6cpscYi4L/kwX3GhAwDa28eQOyJ0i/TxlKVWcnJtfa2w/DZA8EukO5plyBfrzAqw==}
 
   '@nuxt/cli@3.33.1':
     resolution: {integrity: sha512-/sCrcI0WemING9zASaXPgPDY7PrQTPlRyCXlSgGx8VwRAkWbxGaPhIc3kZQikgLwVAwy+muWVV4Wks8OTtW5Tw==}
@@ -4282,8 +4325,8 @@ packages:
   '@vueform/multiselect@2.6.11':
     resolution: {integrity: sha512-iG4TGfqE3baftbSGF0PhoS+xZOCnV0ChkDo9rwhJ/Qi2YlCdb6tyQCjvyug3jnzncga8+d85kx0WvG7rDYFqiA==}
 
-  '@vueform/nuxt@1.24.0':
-    resolution: {integrity: sha512-VrZkrGkHVwJwMp/1uGYTiS2gWnrdhcihFcUQ1K6G0LcWOyaWmeVhmuT0ALYJAFcfvf6sUzGiCj1yc3oJEH+Ivw==}
+  '@vueform/nuxt@1.26.0':
+    resolution: {integrity: sha512-XITHpF2JRJ3XVarmdAM6iKq3uaHqsmjHFKk14PIhYx49ejG93N+Iz5nr7NcO3T65g0vMjA+0pr6gpGAlCYpotQ==}
 
   '@vueform/slider@2.1.10':
     resolution: {integrity: sha512-L2G3Ju51Yq6yWF2wzYYsicUUaH56kL1QKGVtimUVHT1K1ADcRT94xVyIeJpS0klliVEeF6iMZFbdXtHq8AsDHw==}
@@ -10227,88 +10270,78 @@ snapshots:
       - '@vue/composition-api'
       - vue
 
-  '@formkit/core@1.6.9':
+  '@formkit/core@1.7.2':
     dependencies:
-      '@formkit/utils': 1.6.9
+      '@formkit/utils': 1.7.2
 
-  '@formkit/dev@1.6.9':
+  '@formkit/dev@1.7.2':
     dependencies:
-      '@formkit/core': 1.6.9
-      '@formkit/utils': 1.6.9
+      '@formkit/core': 1.7.2
+      '@formkit/utils': 1.7.2
 
-  '@formkit/i18n@1.6.9':
+  '@formkit/i18n@1.7.2':
     dependencies:
-      '@formkit/core': 1.6.9
-      '@formkit/utils': 1.6.9
-      '@formkit/validation': 1.6.9
+      '@formkit/core': 1.7.2
+      '@formkit/utils': 1.7.2
+      '@formkit/validation': 1.7.2
 
-  '@formkit/inputs@1.6.9':
+  '@formkit/inputs@1.7.2':
     dependencies:
-      '@formkit/core': 1.6.9
-      '@formkit/utils': 1.6.9
+      '@formkit/core': 1.7.2
+      '@formkit/utils': 1.7.2
 
-  '@formkit/nuxt@1.6.9(esbuild@0.25.12)(magicast@0.5.2)(rollup@4.57.1)(tailwindcss@4.1.18)(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.25.12)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))':
+  '@formkit/nuxt@1.7.2(@nuxt/kit@4.3.1(magicast@0.5.2))(esbuild@0.27.3)(rollup@4.57.1)(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))':
     dependencies:
-      '@formkit/core': 1.6.9
-      '@formkit/i18n': 1.6.9
-      '@formkit/vue': 1.6.9(tailwindcss@4.1.18)(vue@3.5.27(typescript@5.9.3))
-      '@nuxt/kit': 3.21.1(magicast@0.5.2)
-      chokidar: 3.6.0
-      pathe: 1.1.2
-      unplugin: 1.16.1
-      unplugin-formkit: 0.2.13(esbuild@0.25.12)(rollup@4.57.1)(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.25.12)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))
+      '@formkit/core': 1.7.2
+      '@formkit/i18n': 1.7.2
+      '@formkit/vue': 1.7.2(vue@3.5.27(typescript@5.9.3))
+      '@nuxt/kit': 4.3.1(magicast@0.5.2)
+      chokidar: 4.0.3
+      pathe: 2.0.3
+      unplugin: 2.3.11
+      unplugin-formkit: 0.2.13(esbuild@0.27.3)(rollup@4.57.1)(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))
     transitivePeerDependencies:
       - esbuild
-      - magicast
       - rollup
-      - tailwindcss
-      - unocss
       - vite
       - vue
       - webpack
-      - windicss
 
-  '@formkit/observer@1.6.9':
+  '@formkit/observer@1.7.2':
     dependencies:
-      '@formkit/core': 1.6.9
-      '@formkit/utils': 1.6.9
+      '@formkit/core': 1.7.2
+      '@formkit/utils': 1.7.2
 
-  '@formkit/rules@1.6.9':
+  '@formkit/rules@1.7.2':
     dependencies:
-      '@formkit/core': 1.6.9
-      '@formkit/utils': 1.6.9
-      '@formkit/validation': 1.6.9
+      '@formkit/core': 1.7.2
+      '@formkit/utils': 1.7.2
+      '@formkit/validation': 1.7.2
 
-  '@formkit/themes@1.6.9(tailwindcss@4.1.18)':
+  '@formkit/themes@1.7.2':
     dependencies:
-      '@formkit/core': 1.6.9
-    optionalDependencies:
-      tailwindcss: 4.1.18
+      '@formkit/core': 1.7.2
 
-  '@formkit/utils@1.6.9': {}
+  '@formkit/utils@1.7.2': {}
 
-  '@formkit/validation@1.6.9':
+  '@formkit/validation@1.7.2':
     dependencies:
-      '@formkit/core': 1.6.9
-      '@formkit/observer': 1.6.9
-      '@formkit/utils': 1.6.9
+      '@formkit/core': 1.7.2
+      '@formkit/observer': 1.7.2
+      '@formkit/utils': 1.7.2
 
-  '@formkit/vue@1.6.9(tailwindcss@4.1.18)(vue@3.5.27(typescript@5.9.3))':
+  '@formkit/vue@1.7.2(vue@3.5.27(typescript@5.9.3))':
     dependencies:
-      '@formkit/core': 1.6.9
-      '@formkit/dev': 1.6.9
-      '@formkit/i18n': 1.6.9
-      '@formkit/inputs': 1.6.9
-      '@formkit/observer': 1.6.9
-      '@formkit/rules': 1.6.9
-      '@formkit/themes': 1.6.9(tailwindcss@4.1.18)
-      '@formkit/utils': 1.6.9
-      '@formkit/validation': 1.6.9
+      '@formkit/core': 1.7.2
+      '@formkit/dev': 1.7.2
+      '@formkit/i18n': 1.7.2
+      '@formkit/inputs': 1.7.2
+      '@formkit/observer': 1.7.2
+      '@formkit/rules': 1.7.2
+      '@formkit/themes': 1.7.2
+      '@formkit/utils': 1.7.2
+      '@formkit/validation': 1.7.2
       vue: 3.5.27(typescript@5.9.3)
-    transitivePeerDependencies:
-      - tailwindcss
-      - unocss
-      - windicss
 
   '@humanfs/core@0.19.1': {}
 
@@ -10696,6 +10729,12 @@ snapshots:
       fastq: 1.20.1
 
   '@nuxt-ignis/db@0.0.4(magicast@0.5.2)':
+    dependencies:
+      '@nuxt/kit': 4.3.1(magicast@0.5.2)
+    transitivePeerDependencies:
+      - magicast
+
+  '@nuxt-ignis/forms@0.0.4(magicast@0.5.2)':
     dependencies:
       '@nuxt/kit': 4.3.1(magicast@0.5.2)
     transitivePeerDependencies:
@@ -14428,7 +14467,7 @@ snapshots:
 
   '@vueform/multiselect@2.6.11': {}
 
-  '@vueform/nuxt@1.24.0(magicast@0.5.2)':
+  '@vueform/nuxt@1.26.0(magicast@0.5.2)':
     dependencies:
       '@nuxt/kit': 3.21.1(magicast@0.5.2)
       '@vueform/vueform': 1.13.8
@@ -20393,14 +20432,14 @@ snapshots:
       '@nuxt/kit': 4.3.1(magicast@0.5.2)
       '@vueuse/core': 13.9.0(vue@3.5.27(typescript@5.9.3))
 
-  unplugin-formkit@0.2.13(esbuild@0.25.12)(rollup@4.57.1)(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.25.12)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)):
+  unplugin-formkit@0.2.13(esbuild@0.27.3)(rollup@4.57.1)(vite@8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)):
     dependencies:
       pathe: 1.1.2
       unplugin: 1.16.1
     optionalDependencies:
-      esbuild: 0.25.12
+      esbuild: 0.27.3
       rollup: 4.57.1
-      vite: 8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.25.12)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)
+      vite: 8.0.0-beta.13(@types/node@25.2.2)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)
 
   unplugin-remove@1.0.3(rollup@4.57.1):
     dependencies:

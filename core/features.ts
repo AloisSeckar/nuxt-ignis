@@ -176,16 +176,24 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
   }
 
   if (formsPreset === 'vueform' || process.env.NUXT_PUBLIC_IGNIS_VUEFORM === 'true') {
-    nuxtConfig.modules!.push('@vueform/nuxt')
+    nuxtConfig.modules!.push('@nuxt-ignis/forms')
+    ignis.push('@nuxt-ignis/forms/vueform')
+    nuxtConfig = defu({
+      ignisForms: {
+        vueform: true,
+      },
+    }, nuxtConfig)
   }
   if (formsPreset === 'formkit' || process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED === 'true') {
-    // module definition
-    nuxtConfig.modules!.push('@formkit/nuxt')
-    // module-specific config key
+    nuxtConfig.modules!.push('@nuxt-ignis/forms')
+    ignis.push('@nuxt-ignis/forms/formkit')
     nuxtConfig = defu({
-      formkit: {
-        autoImport: true,
-        configFile: process.env.NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG || './formkit.config.ts',
+      ignisForms: {
+        formkit: {
+          enabled: true,
+          default: process.env.NUXT_PUBLIC_IGNIS_FORMKIT_DEFAULT || 'en',
+          config: process.env.NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG || './formkit.config.ts',
+        },
       },
     }, nuxtConfig)
   }
@@ -361,11 +369,10 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
   // 5. warn if duplicate modules find
   // this means e.g. 2 database modules or 2 form solutions
   if (process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES !== 'false') {
-    const used = nuxtConfig.modules!
-    if (used.includes('nuxt-neon') && used.includes('@nuxtjs/supabase')) {
+    if (ignis.includes('@nuxt-ignis/db/neon') && ignis.includes('@nuxt-ignis/db/supabase')) {
       log.warn('You have both DB connector modules (Neon and Supabase) active, which is not recommended. If this is intentional, you can use `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.')
     }
-    if (used.includes('@vueform/nuxt') && used.includes('@formkit/nuxt')) {
+    if (ignis.includes('@nuxt-ignis/forms/vueform') && ignis.includes('@nuxt-ignis/forms/formkit')) {
       log.warn('You have both Form solution provider modules (Vueform and Formkit) active, which is not recommended. If this is intentional, you can use `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.')
     }
     // validation - not imported as modules

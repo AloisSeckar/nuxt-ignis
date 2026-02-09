@@ -47,7 +47,7 @@
   },
   "dependencies": {
     "@nuxt-ignis/db": "^0.0.4",
-    "@formkit/nuxt": "1.6.9",
+    "@nuxt-ignis/forms": "^0.0.4",
     "@maas/vue-equipment": "1.0.0-beta.37",
     "@nuxt/content": "3.7.1",
     "@nuxt/eslint": "catalog:",
@@ -61,7 +61,6 @@
     "@pinia/nuxt": "0.11.2",
     "@stefanobartoletti/nuxt-social-share": "2.2.0",
     "@tailwindcss/vite": "4.1.18",
-    "@vueform/nuxt": "1.24.0",
     "@vueuse/core": "14.0.0",
     "@vueuse/nuxt": "14.0.0",
     "better-sqlite3": "catalog:",
