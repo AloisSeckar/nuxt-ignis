@@ -69,8 +69,8 @@ importers:
         specifier: 1.0.0-beta.37
         version: 1.0.0-beta.37(57466a26a2a73996cc951ead2d72b19c)
       '@nuxt-ignis/db':
-        specifier: ^0.0.4
-        version: 0.0.4(magicast@0.5.2)
+        specifier: ^0.0.5
+        version: 0.0.5(magicast@0.5.2)
       '@nuxt-ignis/forms':
         specifier: ^0.0.4
         version: 0.0.4(magicast@0.5.2)
@@ -1635,8 +1635,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nuxt-ignis/db@0.0.4':
-    resolution: {integrity: sha512-ZAYdhBOXGqNIawhnHMT5JQ4Jh9A8cEW7UK/DP79I8ecfWQ5AVA/WU4YqiECVbzd73fjpDs0rk4o9jUR4IISCUA==}
+  '@nuxt-ignis/db@0.0.5':
+    resolution: {integrity: sha512-z3FAT6vvefO8C0xlkSdpeTqK5X1B5w0xOFiWBSYSz+x60DvUfsoNkOR/85oZghM7jOyjrlD8w7g8aM05ugLBhQ==}
 
   '@nuxt-ignis/forms@0.0.4':
     resolution: {integrity: sha512-vXoCtmdG5hlwyyPStg04uf6cpscYi4L/kwX3GhAwDa28eQOyJ0i/TxlKVWcnJtfa2w/DZA8EukO5plyBfrzAqw==}
@@ -10728,7 +10728,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@nuxt-ignis/db@0.0.4(magicast@0.5.2)':
+  '@nuxt-ignis/db@0.0.5(magicast@0.5.2)':
     dependencies:
       '@nuxt/kit': 4.3.1(magicast@0.5.2)
     transitivePeerDependencies:

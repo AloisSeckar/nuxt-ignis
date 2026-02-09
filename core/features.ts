@@ -132,7 +132,7 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     ignis.push('@nuxt-ignis/db/neon')
     nuxtConfig = defu({
       ignisDB: {
-        ignisNeon: true,
+        neon: true,
       },
     }, nuxtConfig)
   }
@@ -141,7 +141,7 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     ignis.push('@nuxt-ignis/db/supabase')
     nuxtConfig = defu({
       ignisDB: {
-        ignisSupabase: true,
+        supabase: true,
       },
     }, nuxtConfig)
   }

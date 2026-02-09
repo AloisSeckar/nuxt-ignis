@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/db",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Nuxt Ignis module - DB features",
   "publishConfig": {
     "access": "public"

@@ -1,8 +1,8 @@
 import { defineNuxtModule, addPlugin, createResolver, installModule } from '@nuxt/kit'
 
 export interface ModuleOptions {
-  ignisNeon?: boolean
-  ignisSupabase?: boolean
+  neon?: boolean
+  supabase?: boolean
 }
 
 export default defineNuxtModule<ModuleOptions>({
@@ -15,15 +15,15 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.options.runtimeConfig.public.ignis ||= { neon: false, supabase: false }
 
-    nuxt.options.runtimeConfig.public.ignis.neon = options.ignisNeon || false
-    nuxt.options.runtimeConfig.public.ignis.supabase = options.ignisSupabase || false
+    nuxt.options.runtimeConfig.public.ignis.neon = options.neon || false
+    nuxt.options.runtimeConfig.public.ignis.supabase = options.supabase || false
 
-    if (options.ignisNeon === true) {
+    if (options.neon === true) {
       installModule('nuxt-neon')
       console.debug('nuxt-neon module installed')
     }
 
-    if (options.ignisSupabase === true) {
+    if (options.supabase === true) {
       installModule('@nuxtjs/supabase')
       // module-specific config key
       nuxt.options.runtimeConfig.public.supabase = {
