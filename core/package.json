@@ -48,6 +48,7 @@
   "dependencies": {
     "@nuxt-ignis/db": "^0.0.5",
     "@nuxt-ignis/forms": "^0.0.4",
+    "@nuxt-ignis/validation": "^0.0.3",
     "@maas/vue-equipment": "1.0.0-beta.37",
     "@nuxt/content": "3.7.1",
     "@nuxt/eslint": "catalog:",
@@ -80,10 +81,8 @@
     "postcss-jit-props": "1.0.16",
     "tailwindcss": "4.1.18",
     "typescript": "catalog:",
-    "valibot": "1.2.0",
     "vue": "catalog:",
-    "vue-router": "catalog:",
-    "zod": "4.1.12"
+    "vue-router": "catalog:"
   },
   "packageManager": "pnpm@10.29.1"
 }

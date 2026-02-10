@@ -4,7 +4,7 @@ Nuxt Ignis offers two alternatives for schema validation:
 
 ## Zod
 
-<PackagesReference :packages="[{ name: 'zod', version: '4.1.12' }]" />
+<PackagesReference :packages="[{ name: 'zod', version: '4.3.6' }]" />
 
 [Zod](https://zod.dev/) is a TypeScript-first schema declaration and validation library that allows you to define schemas for your data and validate them at runtime. It provides a simple and intuitive API for defining schemas and validating data against them.
 

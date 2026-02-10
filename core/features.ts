@@ -205,10 +205,22 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = validationPreset = 'off'
   }
   if (validationPreset === 'zod' || process.env.NUXT_PUBLIC_IGNIS_ZOD === 'true') {
-    extras.push('zod')
+    nuxtConfig.modules!.push('@nuxt-ignis/validation')
+    ignis.push('@nuxt-ignis/validation/zod')
+    nuxtConfig = defu({
+      ignisValidation: {
+        zod: true,
+      },
+    }, nuxtConfig)
   }
   if (validationPreset === 'valibot' || process.env.NUXT_PUBLIC_IGNIS_VALIBOT === 'true') {
-    extras.push('valibot')
+    nuxtConfig.modules!.push('@nuxt-ignis/validation')
+    ignis.push('@nuxt-ignis/validation/valibot')
+    nuxtConfig = defu({
+      ignisValidation: {
+        valibot: true,
+      },
+    }, nuxtConfig)
   }
 
   // seo
@@ -375,8 +387,7 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     if (ignis.includes('@nuxt-ignis/forms/vueform') && ignis.includes('@nuxt-ignis/forms/formkit')) {
       log.warn('You have both Form solution provider modules (Vueform and Formkit) active, which is not recommended. If this is intentional, you can use `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.')
     }
-    // validation - not imported as modules
-    if (extras.includes('zod') && extras.includes('valibot')) {
+    if (ignis.includes('@nuxt-ignis/validation/zod') && ignis.includes('@nuxt-ignis/validation/valibot')) {
       log.warn('You have both validation libraries (Zod and Valibot) active, which is not recommended. If this is intentional, you can use `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to surpress this warning.')
     }
   }
