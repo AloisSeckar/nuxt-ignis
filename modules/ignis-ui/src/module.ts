@@ -48,13 +48,6 @@ export default defineNuxtModule<ModuleOptions>({
       console.debug('@nuxt/ui module installed')
     }
     else {
-      // remove @nuxt/ui-specific components from resolution if Nuxt UI module is not used
-      nuxt.options.vue = defu({
-        compilerOptions: {
-          isCustomElement: (tag: string) => tag === 'Icon' || tag === 'UApp',
-        },
-      }, nuxt.options.vue)
-
       // evaluate separate Tailwind CSS
       if (options.tailwind === true) {
         tailwindFixRequired = true

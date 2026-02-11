@@ -84,6 +84,16 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
       },
     }, nuxtConfig)
   } else {
+    // remove @nuxt/ui-specific components from resolution if module is not used
+    // must remain here because it should be removed even if @nuxt-ignis/ui is not invoked at all
+    nuxtConfig = defu({
+      vue: {
+        compilerOptions: {
+          isCustomElement: (tag: string) => tag === 'Icon' || tag === 'UApp',
+        },
+      },
+    }, nuxtConfig)
+
     // evaluate separate Tailwind CSS module
     if (uiPreset === 'tailwind' || (process.env.NUXT_PUBLIC_IGNIS_TAILWIND === 'true' && uiPreset !== 'nuxt-ui')) {
       nuxtConfig.modules!.push('@nuxt-ignis/ui')
@@ -114,7 +124,9 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     }, nuxtConfig)
   }
   if (dbPreset === 'supabase' || process.env.NUXT_PUBLIC_IGNIS_SUPABASE === 'true') {
-    nuxtConfig.modules!.push('@nuxt-ignis/db')
+    if (!nuxtConfig.modules!.includes('@nuxt-ignis/db')) {
+      nuxtConfig.modules!.push('@nuxt-ignis/db')
+    }
     ignis.push('@nuxt-ignis/db/supabase')
     nuxtConfig = defu({
       ignisDB: {
@@ -162,7 +174,9 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     }, nuxtConfig)
   }
   if (formsPreset === 'formkit' || process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED === 'true') {
-    nuxtConfig.modules!.push('@nuxt-ignis/forms')
+    if (!nuxtConfig.modules!.includes('@nuxt-ignis/forms')) {
+      nuxtConfig.modules!.push('@nuxt-ignis/forms')
+    }
     ignis.push('@nuxt-ignis/forms/formkit')
     nuxtConfig = defu({
       ignisForms: {
@@ -191,7 +205,9 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     }, nuxtConfig)
   }
   if (validationPreset === 'valibot' || process.env.NUXT_PUBLIC_IGNIS_VALIBOT === 'true') {
-    nuxtConfig.modules!.push('@nuxt-ignis/validation')
+    if (!nuxtConfig.modules!.includes('@nuxt-ignis/validation')) {
+      nuxtConfig.modules!.push('@nuxt-ignis/validation')
+    }
     ignis.push('@nuxt-ignis/validation/valibot')
     nuxtConfig = defu({
       ignisValidation: {
@@ -263,7 +279,9 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // Open Props CSS
   if (process.env.NUXT_PUBLIC_IGNIS_OPENPROPS === 'true') {
-    nuxtConfig.modules!.push('@nuxt-ignis/ui')
+    if (!nuxtConfig.modules!.includes('@nuxt-ignis/ui')) {
+      nuxtConfig.modules!.push('@nuxt-ignis/ui')
+    }
     ignis.push('@nuxt-ignis/ui/openprops')
     nuxtConfig = defu({
       ignisUI: {
@@ -300,7 +318,9 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // nuxt-charts
   if (process.env.NUXT_PUBLIC_IGNIS_CHARTS === 'true') {
-    nuxtConfig.modules!.push('@nuxt-ignis/ui')
+    if (!nuxtConfig.modules!.includes('@nuxt-ignis/ui')) {
+      nuxtConfig.modules!.push('@nuxt-ignis/ui')
+    }
     ignis.push('@nuxt-ignis/ui/charts')
     nuxtConfig = defu({
       ignisUI: {
