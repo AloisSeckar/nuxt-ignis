@@ -3,6 +3,7 @@
 03_full
 04a_nuxt-ui
 04b_tailwind
+04b_open-props
 05a_neon
 05b_supabase
 06a_vueform

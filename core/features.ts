@@ -1,11 +1,8 @@
 import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 import { defu } from 'defu'
-import OpenProps from 'open-props'
-import tailwindcss from '@tailwindcss/vite'
 import { log } from './app/utils/consola'
 import { pslo } from './app/utils/pslo-utils'
-import { ignisTailwindcssFix } from './app/utils/tailwind'
 import type { NuxtConfig } from 'nuxt/schema'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
@@ -77,47 +74,27 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     process.env.NUXT_PUBLIC_IGNIS_PRESET_UI = uiPreset = 'off'
   }
 
-  let tailwindFixRequired = false
   if (uiPreset === 'nuxt-ui' || process.env.NUXT_PUBLIC_IGNIS_UI === 'true') {
-    tailwindFixRequired = true
-    nuxtConfig.modules!.push('@nuxt/ui')
-    // import tailwind css file
+    nuxtConfig.modules!.push('@nuxt-ignis/ui')
+    ignis.push('@nuxt-ignis/ui/nuxt-ui')
     nuxtConfig = defu({
-      css: [join(currentDir, './app/assets/css/ignis-nuxt-ui.css')],
-    }, nuxtConfig)
-  } else {
-    // remove @nuxt/ui-specific components from resolution if module is not used
-    nuxtConfig = defu({
-      vue: {
-        compilerOptions: {
-          isCustomElement: (tag: string) => tag === 'Icon' || tag === 'UApp',
-        },
+      ignisUI: {
+        ui: true,
+        cssDir: join(currentDir, './app/assets/css'),
       },
     }, nuxtConfig)
-
+  } else {
     // evaluate separate Tailwind CSS module
     if (uiPreset === 'tailwind' || (process.env.NUXT_PUBLIC_IGNIS_TAILWIND === 'true' && uiPreset !== 'nuxt-ui')) {
-      tailwindFixRequired = true
-      // nuxtConfig.modules!.push('@nuxtjs/tailwindcss') // temporary disabled until v7 is released
-      extras.push('Tailwind CSS')
-      // import tailwind css file
-      // @ts-expect-error https://github.com/tailwindlabs/tailwindcss/issues/18802
+      nuxtConfig.modules!.push('@nuxt-ignis/ui')
+      ignis.push('@nuxt-ignis/ui/tailwind')
       nuxtConfig = defu({
-        css: [join(currentDir, './app/assets/css/ignis-tailwind.css')],
-        vite: {
-          plugins: [tailwindcss()], // temporary integration using Vite plugin directly
+        ignisUI: {
+          tailwind: true,
+          cssDir: join(currentDir, './app/assets/css'),
         },
       }, nuxtConfig)
     }
-  }
-
-  // TODO occasionaly check https://github.com/tailwindlabs/tailwindcss/discussions/16119 for solution
-  if (tailwindFixRequired) {
-    nuxtConfig = defu({
-      vite: {
-        plugins: [ignisTailwindcssFix],
-      },
-    }, nuxtConfig) as NuxtConfig
   }
 
   // database
@@ -286,15 +263,12 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // Open Props CSS
   if (process.env.NUXT_PUBLIC_IGNIS_OPENPROPS === 'true') {
-    extras.push('Open Props CSS')
+    nuxtConfig.modules!.push('@nuxt-ignis/ui')
+    ignis.push('@nuxt-ignis/ui/openprops')
     nuxtConfig = defu({
-      // import Open Prpops stylesheet
-      css: [join(currentDir, './app/assets/css/ignis-open-props.css')],
-      // CSS processor for Open Props
-      postcss: {
-        plugins: {
-          'postcss-jit-props': OpenProps,
-        },
+      ignisUI: {
+        openprops: true,
+        cssDir: join(currentDir, './app/assets/css'),
       },
     }, nuxtConfig)
   }
@@ -324,9 +298,15 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     nuxtConfig.modules!.push('magic-regexp/nuxt')
   }
 
-  // magic-regexp
+  // nuxt-charts
   if (process.env.NUXT_PUBLIC_IGNIS_CHARTS === 'true') {
-    nuxtConfig.modules!.push('nuxt-charts')
+    nuxtConfig.modules!.push('@nuxt-ignis/ui')
+    ignis.push('@nuxt-ignis/ui/charts')
+    nuxtConfig = defu({
+      ignisUI: {
+        charts: true,
+      },
+    }, nuxtConfig)
   }
 
   // 3. Nuxt-related settings

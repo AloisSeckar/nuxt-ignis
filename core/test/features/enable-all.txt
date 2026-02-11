@@ -1,6 +1,6 @@
 Nuxt Ignis will start using following settings:
 App title: Nuxt Ignis App
-Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt/ui, @nuxt-ignis/db, @nuxt-ignis/db, @nuxtjs/i18n, @nuxt-ignis/forms, @nuxt-ignis/forms, @nuxtjs/seo, @nuxt/content, nuxt-auth-utils, @stefanobartoletti/nuxt-social-share
-Modules (Ignis): @nuxt-ignis/db/neon, @nuxt-ignis/db/supabase, @nuxt-ignis/forms/vueform, @nuxt-ignis/forms/formkit
-Extras: Open Props CSS, elrh-pslo
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt-ignis/ui, @nuxt-ignis/db, @nuxt-ignis/db, @nuxtjs/i18n, @nuxt-ignis/forms, @nuxt-ignis/forms, @nuxt-ignis/ui, @nuxtjs/seo, @nuxt/content, nuxt-auth-utils, @stefanobartoletti/nuxt-social-share
+Modules (Ignis): @nuxt-ignis/ui/nuxt-ui, @nuxt-ignis/db/neon, @nuxt-ignis/db/supabase, @nuxt-ignis/forms/vueform, @nuxt-ignis/forms/formkit, @nuxt-ignis/ui/openprops
+Extras: elrh-pslo
 Nuxt: log-level=info[default], ignis CSS

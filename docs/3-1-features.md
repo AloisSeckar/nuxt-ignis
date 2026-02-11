@@ -34,7 +34,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |
-| `@nuxt/ui` | `4.2.1` | [👁️‍🗨️](/3-2-features-ui.html#nuxt-ui) | Official open-source UI library for Nuxt |
+| `@nuxt/ui` | `4.4.0` | [👁️‍🗨️](/3-2-features-ui.html#nuxt-ui) | Official open-source UI library for Nuxt |
 | `@nuxtjs/tailwindcss` | `6.14.0` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Connector module for `Tailwind CSS` (**TEMP DISABLED**) |
 | `@tailwindcss` | `4.1.18` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Base module for `Tailwind CSS` (**TEMP WORKAROUND**) |
 | `@tailwindcss/vite` | `4.1.18` | [👁️‍🗨️](/3-2-features-ui.html#tailwind-css) | Vite connector for `Tailwind CSS` (**TEMP WORKAROUND**) |
@@ -49,7 +49,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `nuxt-auth-utils` | `0.5.25` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-auth-utils) | Module for easier authentication |
 | `@stefanobartoletti/nuxt-social-share` | `2.2.1` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-social-share) | Module for simple sharing to social networks |
 | `magic-regexp` | `0.10.0` | [👁️‍🗨️](/3-7-features-utils.html#magic-regexp) | Library for easier working with regular expressions |
-| `nuxt-charts` | `1.0.2` | [👁️‍🗨️](/3-2-features-ui.html#nuxt-charts) | Library for easier working with charts |
+| `nuxt-charts` | `2.1.1` | [👁️‍🗨️](/3-2-features-ui.html#nuxt-charts) | Library for easier working with charts |
 
 ## Packages of optional features
 
@@ -57,7 +57,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | --- | :---: | :---: | :-- |
 | `zod` | `4.3.6` | [👁️‍🗨️](/3-5-features-validation.html#zod) | Schema validation solution |
 | `valibot` | `1.2.0` | [👁️‍🗨️](/3-5-features-validation.html#valibot) | Schema validation solution |
-| `open-props` | `1.7.16` | [👁️‍🗨️](/3-2-features-ui.html#open-props) | Pre-defined CSS classes library |
+| `open-props` | `1.7.23` | [👁️‍🗨️](/3-2-features-ui.html#open-props) | Pre-defined CSS classes library |
 | `postcss-jit-props` | `1.0.16` | [👁️‍🗨️](/3-2-features-ui.html#open-props) | PostCSS plugin to inject `open-props` |
 | `@maas/vue-equipment` | `1.0.0-beta.37` | [👁️‍🗨️](/3-7-features-utils.html#vueequipment) | Collection of Vue utilities |
 | `elrh-pslo` | `1.1.6` | [👁️‍🗨️](/3-6-features-content.html#pslo) | Utility for adding non-breakable spaces into text |

@@ -15,7 +15,7 @@ If you want to do small adjustments or add more default rules, you can use the C
 
 ## Nuxt UI
 
-<PackagesReference :packages="[{ name: '@nuxt/ui', version: '4.2.1' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/ui', version: '4.4.0' }]" />
 
 [`Nuxt UI`](https://ui.nuxt.com/) is an official UI library for Nuxt, providing a set of components and utilities to build user interfaces. It is designed to be flexible and easy to use and it might be a natural choice when building Nuxt applications. It also brings in `Tailwind CSS` and `Nuxt Icon` modules out of the box.
 
@@ -84,7 +84,7 @@ Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt#cs
 
 ## Open Props
 
-<PackagesReference :packages="[{ name: 'open-props', version: '1.7.16' }, { name: 'postcss-jit-props', version: '1.0.16' }]" />
+<PackagesReference :packages="[{ name: 'open-props', version: '1.7.23' }, { name: 'postcss-jit-props', version: '1.0.16' }]" />
 
 [`Open Props`](https://open-props.style/) is a collection of CSS custom properties (variables) that can be used to style your application. It provides a set of design tokens that can be used to create consistent and reusable styles across your application.
 
@@ -112,7 +112,7 @@ Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt#cs
 
 ## Nuxt Charts
 
-<PackagesReference :packages="[{ name: 'nuxt-charts', version: '1.0.2' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-charts', version: '2.1.1' }]" />
 
 [Nuxt Charts](https://nuxt.com/modules/charts) is a module for creating visualy appealing charts in your Nuxt application.
 
