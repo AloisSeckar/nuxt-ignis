@@ -11,9 +11,12 @@
     "css": [
       "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
     ],
-    "formkit": {
-      "autoImport": true,
-      "configFile": "./formkit.config.ts",
+    "ignisForms": {
+      "formkit": {
+        "config": "./formkit.config.ts",
+        "default": "en",
+        "enabled": true,
+      },
     },
     "modules": [
       "@nuxt/eslint",
@@ -23,7 +26,7 @@
       "nuxt-security",
       "@vueuse/nuxt",
       "@pinia/nuxt",
-      "@formkit/nuxt",
+      "@nuxt-ignis/forms",
     ],
     "vue": {
       "compilerOptions": {
@@ -32,7 +35,8 @@
     },
   },
   "overview": "App title: Nuxt Ignis App
-Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @formkit/nuxt
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt-ignis/forms
+Modules (Ignis): @nuxt-ignis/forms/formkit
 Nuxt: log-level=info[default], ignis CSS
 ",
 }

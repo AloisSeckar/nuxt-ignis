@@ -11,6 +11,9 @@
     "css": [
       "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
     ],
+    "ignisForms": {
+      "vueform": true,
+    },
     "modules": [
       "@nuxt/eslint",
       "@nuxt/fonts",
@@ -19,7 +22,7 @@
       "nuxt-security",
       "@vueuse/nuxt",
       "@pinia/nuxt",
-      "@vueform/nuxt",
+      "@nuxt-ignis/forms",
     ],
     "vue": {
       "compilerOptions": {
@@ -28,7 +31,8 @@
     },
   },
   "overview": "App title: Nuxt Ignis App
-Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @vueform/nuxt
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt-ignis/forms
+Modules (Ignis): @nuxt-ignis/forms/vueform
 Nuxt: log-level=info[default], ignis CSS
 ",
 }

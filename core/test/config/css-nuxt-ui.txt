@@ -11,8 +11,11 @@
     "css": [
       "custom.css",
       "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
-      "C:\Git\nuxt-ignis\core\app\assets\css\ignis-nuxt-ui.css",
     ],
+    "ignisUI": {
+      "cssDir": "C:\Git\nuxt-ignis\core\app\assets\css",
+      "ui": true,
+    },
     "modules": [
       "@nuxt/eslint",
       "@nuxt/fonts",
@@ -21,20 +24,12 @@
       "nuxt-security",
       "@vueuse/nuxt",
       "@pinia/nuxt",
-      "@nuxt/ui",
+      "@nuxt-ignis/ui",
     ],
-    "vite": {
-      "plugins": [
-        {
-          "apply": "build",
-          "configResolved": [Function],
-          "name": "vite-plugin-ignore-sourcemap-warnings",
-        },
-      ],
-    },
   },
   "overview": "App title: Nuxt Ignis App
-Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt/ui
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt-ignis/ui
+Modules (Ignis): @nuxt-ignis/ui/nuxt-ui
 Nuxt: log-level=info[default], ignis CSS, custom CSS
 ",
 }

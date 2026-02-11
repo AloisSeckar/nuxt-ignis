@@ -11,6 +11,9 @@
     "css": [
       "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
     ],
+    "ignisDB": {
+      "supabase": true,
+    },
     "modules": [
       "@nuxt/eslint",
       "@nuxt/fonts",
@@ -19,11 +22,8 @@
       "nuxt-security",
       "@vueuse/nuxt",
       "@pinia/nuxt",
-      "@nuxtjs/supabase",
+      "@nuxt-ignis/db",
     ],
-    "supabase": {
-      "redirect": false,
-    },
     "vue": {
       "compilerOptions": {
         "isCustomElement": [Function],
@@ -31,7 +31,8 @@
     },
   },
   "overview": "App title: Nuxt Ignis App
-Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxtjs/supabase
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt-ignis/db
+Modules (Ignis): @nuxt-ignis/db/supabase
 Nuxt: log-level=info[default], ignis CSS
 ",
 }

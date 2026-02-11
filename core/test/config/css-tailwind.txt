@@ -11,8 +11,11 @@
     "css": [
       "custom.css",
       "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
-      "C:\Git\nuxt-ignis\core\app\assets\css\ignis-tailwind.css",
     ],
+    "ignisUI": {
+      "cssDir": "C:\Git\nuxt-ignis\core\app\assets\css",
+      "tailwind": true,
+    },
     "modules": [
       "@nuxt/eslint",
       "@nuxt/fonts",
@@ -21,36 +24,8 @@
       "nuxt-security",
       "@vueuse/nuxt",
       "@pinia/nuxt",
+      "@nuxt-ignis/ui",
     ],
-    "vite": {
-      "plugins": [
-        {
-          "apply": "build",
-          "configResolved": [Function],
-          "name": "vite-plugin-ignore-sourcemap-warnings",
-        },
-        [
-          {
-            "configResolved": [Function],
-            "configureServer": [Function],
-            "enforce": "pre",
-            "name": "@tailwindcss/vite:scan",
-          },
-          {
-            "apply": "serve",
-            "enforce": "pre",
-            "name": "@tailwindcss/vite:generate:serve",
-            "transform": [Function],
-          },
-          {
-            "apply": "build",
-            "enforce": "pre",
-            "name": "@tailwindcss/vite:generate:build",
-            "transform": [Function],
-          },
-        ],
-      ],
-    },
     "vue": {
       "compilerOptions": {
         "isCustomElement": [Function],
@@ -58,8 +33,8 @@
     },
   },
   "overview": "App title: Nuxt Ignis App
-Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt
-Extras: Tailwind CSS
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt-ignis/ui
+Modules (Ignis): @nuxt-ignis/ui/tailwind
 Nuxt: log-level=info[default], ignis CSS, custom CSS
 ",
 }
