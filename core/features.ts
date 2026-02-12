@@ -2,7 +2,6 @@ import { fileURLToPath } from 'url'
 import { dirname, join } from 'path'
 import { defu } from 'defu'
 import { log } from './app/utils/consola'
-import { pslo } from './app/utils/pslo-utils'
 import type { NuxtConfig } from 'nuxt/schema'
 
 const currentDir = dirname(fileURLToPath(import.meta.url))
@@ -137,24 +136,17 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // i18n
   if (process.env.NUXT_PUBLIC_IGNIS_I18N_ENABLED === 'true') {
-    // module definition
-    nuxtConfig.modules!.push('@nuxtjs/i18n')
-    // module-specific config key
+    nuxtConfig.modules!.push('@nuxt-ignis/content')
+    ignis.push('@nuxt-ignis/content/i18n')
     nuxtConfig = defu({
-      i18n: {
-        vueI18n: process.env.NUXT_PUBLIC_IGNIS_I18N_CONFIG || './i18n.config.ts',
-        // default to defined here because of the way of possibe initializing of @nuxtjs/seo module
-        // TODO scanI18Names from './app/utils/i18n-sources' would be better, but import.meta.glob fails here...
-        locales: [process.env.NUXT_PUBLIC_IGNIS_I18N_DEFAULT || 'en'],
-        // avoid automatic route-prefixing with multiple locales
-        // TODO this needs to be written in docs
-        strategy: 'no_prefix',
-        // will deprecate in v10
-        bundle: {
-          optimizeTranslationDirective: false,
+      ignisContent: {
+        i18n: {
+          enabled: true,
+          default: process.env.NUXT_PUBLIC_IGNIS_I18N_DEFAULT || 'en',
+          config: process.env.NUXT_PUBLIC_IGNIS_I18N_CONFIG || './i18n.config.ts',
         },
       },
-    }, nuxtConfig) as NuxtConfig
+    }, nuxtConfig)
   }
 
   // forms
@@ -233,7 +225,16 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // content
   if (process.env.NUXT_PUBLIC_IGNIS_CONTENT === 'true') {
-    nuxtConfig.modules!.push('@nuxt/content')
+    if (!nuxtConfig.modules!.includes('@nuxt-ignis/content')) {
+      nuxtConfig.modules!.push('@nuxt-ignis/content')
+    }
+    nuxtConfig = defu({
+      ignisContent: {
+        content: {
+          enabled: true,
+        },
+      },
+    }, nuxtConfig)
   }
 
   // nuxt-auth-utils
@@ -241,7 +242,7 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     nuxtConfig.modules!.push('nuxt-auth-utils')
   }
 
-  // social sharre
+  // social share
   if (process.env.NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED === 'true') {
     nuxtConfig.modules!.push('@stefanobartoletti/nuxt-social-share')
     nuxtConfig = defu({
@@ -293,22 +294,18 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // elrh-pslo
   if (process.env.NUXT_PUBLIC_IGNIS_PSLO_ENABLED === 'true') {
-    extras.push('elrh-pslo')
-
-    // integration with Nuxt Content
-    // if enabled, all Nuxt Content page data will be treated with "preventSingleLetterOrphans" function
-    if (process.env.NUXT_PUBLIC_IGNIS_CONTENT === 'true' && process.env.NUXT_PUBLIC_IGNIS_PSLO_CONTENT === 'true') {
-      nuxtConfig = defu({
-        hooks: {
-          // TODO can we get type of ctx from Nuxt Content?
-          'content:file:beforeParse'(ctx: { file: { id: string, body: string } }) {
-            const { file } = ctx
-            file.body = pslo(file.body)
-            log.debug(`Nuxt Content file ${file.id} processed with elrh-pslo`)
-          },
-        },
-      }, nuxtConfig) as NuxtConfig
+    if (!nuxtConfig.modules!.includes('@nuxt-ignis/content')) {
+      nuxtConfig.modules!.push('@nuxt-ignis/content')
     }
+    ignis.push('@nuxt-ignis/content/pslo')
+    nuxtConfig = defu({
+      ignisContent: {
+        pslo: {
+          enabled: true,
+          content: process.env.NUXT_PUBLIC_IGNIS_PSLO_CONTENT === 'true',
+        },
+      },
+    }, nuxtConfig)
   }
 
   // magic-regexp

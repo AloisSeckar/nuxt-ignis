@@ -11,15 +11,12 @@
     "css": [
       "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
     ],
-    "i18n": {
-      "bundle": {
-        "optimizeTranslationDirective": false,
+    "ignisContent": {
+      "i18n": {
+        "config": "./i18n.config.ts",
+        "default": "en",
+        "enabled": true,
       },
-      "locales": [
-        "en",
-      ],
-      "strategy": "no_prefix",
-      "vueI18n": "./i18n.config.ts",
     },
     "modules": [
       "@nuxt/eslint",
@@ -29,7 +26,7 @@
       "nuxt-security",
       "@vueuse/nuxt",
       "@pinia/nuxt",
-      "@nuxtjs/i18n",
+      "@nuxt-ignis/content",
     ],
     "vue": {
       "compilerOptions": {
@@ -38,7 +35,8 @@
     },
   },
   "overview": "App title: Nuxt Ignis App
-Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxtjs/i18n
+Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt-ignis/content
+Modules (Ignis): @nuxt-ignis/content/i18n
 Nuxt: log-level=info[default], ignis CSS
 ",
 }
