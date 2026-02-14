@@ -48,7 +48,7 @@ Whitespaces around will be trimmed, so it doesn't matter if you add or omit them
 
 ## Nuxt SEO
 
-<PackagesReference :packages="[{ name: '@nuxtjs/seo', version: '3.2.2' }]" />
+<PackagesReference :packages="[{ name: '@nuxtjs/seo', version: '3.4.0' }]" />
 
 [Nuxt SEO](https://nuxtseo.com/) is a collection of Nuxt modules that handles all of the technical aspects in growing your sites organic traffic.
 
@@ -78,7 +78,7 @@ NUXT_PUBLIC_IGNIS_CORE_AUTH=false
 
 ## Nuxt Social Share
 
-<PackagesReference :packages="[{ name: '@stefanobartoletti/nuxt-social-share', version: '2.2.1' }]" />
+<PackagesReference :packages="[{ name: '@stefanobartoletti/nuxt-social-share', version: '2.3.1' }]" />
 
 [Nuxt Social Share](https://nuxt-social-share.stefanobartoletti.it/) is a module providing seamless integration for sharing content to various social networks from your Nuxt application.
 

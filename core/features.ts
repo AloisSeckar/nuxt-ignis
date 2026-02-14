@@ -189,16 +189,18 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
   // seo
   // 2025/04 - must be before @nuxt/content (https://nuxtseo.com/docs/nuxt-seo/guides/nuxt-content)
   if (process.env.NUXT_PUBLIC_IGNIS_SEO === 'true') {
-    nuxtConfig.modules!.push('@nuxtjs/seo')
-
-    // ogImage and Schema.org modules should be disabled with `ssr: false`
-    // note: this won't work if `ssr: false` is set in target's project nuxt.config.ts
-    if (process.env.NUXT_PUBLIC_IGNIS_SSR === 'false') {
-      nuxtConfig = defu({
-        ogImage: { enabled: false },
-        schemaOrg: { enabled: false },
-      }, nuxtConfig)
+    if (!nuxtConfig.modules!.includes('@nuxt-ignis/content')) {
+      nuxtConfig.modules!.push('@nuxt-ignis/content')
     }
+    ignis.push('@nuxt-ignis/content/seo')
+    nuxtConfig = defu({
+      ignisContent: {
+        seo: {
+          enabled: true,
+          ssr: process.env.NUXT_PUBLIC_IGNIS_SSR !== 'false',
+        },
+      },
+    }, nuxtConfig)
   }
 
   // content
@@ -217,15 +219,18 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // social share
   if (process.env.NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED === 'true') {
-    nuxtConfig.modules!.push('@stefanobartoletti/nuxt-social-share')
+    if (!nuxtConfig.modules!.includes('@nuxt-ignis/content')) {
+      nuxtConfig.modules!.push('@nuxt-ignis/content')
+    }
+    ignis.push('@nuxt-ignis/content/social')
     nuxtConfig = defu({
-      socialShare: {
-        baseUrl: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || 'https://nuxt-ignis.com/',
+      ignisContent: {
+        social: {
+          enabled: true,
+          url: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || '',
+        },
       },
     }, nuxtConfig)
-    if (!process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL) {
-      log.warn('Base URL for `nuxt-social-share` is not set. Use `process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL` to point sharing to your domain correctly.')
-    }
   }
 
   // https://www.vue.equipment/

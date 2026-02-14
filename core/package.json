@@ -46,7 +46,7 @@
     "test-i": "vitest"
   },
   "dependencies": {
-    "@nuxt-ignis/content": "^0.0.1",
+    "@nuxt-ignis/content": "^0.0.2",
     "@nuxt-ignis/core": "^0.0.1",
     "@nuxt-ignis/db": "^0.0.5",
     "@nuxt-ignis/forms": "^0.0.4",
@@ -54,8 +54,6 @@
     "@nuxt-ignis/utils": "^0.0.1",
     "@nuxt-ignis/validation": "^0.0.3",
     "@nuxt/eslint": "catalog:",
-    "@nuxtjs/seo": "3.2.2",
-    "@stefanobartoletti/nuxt-social-share": "2.2.0",
     "consola": "3.4.2",
     "date-fns": "4.1.0",
     "defu": "catalog:",

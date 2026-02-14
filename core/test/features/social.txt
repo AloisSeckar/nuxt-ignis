@@ -1,4 +1,5 @@
 Nuxt Ignis will start using following settings:
 App title: Nuxt Ignis App
-Modules: @nuxt-ignis/core, @stefanobartoletti/nuxt-social-share
+Modules: @nuxt-ignis/core, @nuxt-ignis/content
+Modules (Ignis): @nuxt-ignis/content/social
 Nuxt: log-level=info[default], ignis CSS

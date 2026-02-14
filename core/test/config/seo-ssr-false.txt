@@ -11,6 +11,12 @@
     "css": [
       "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
     ],
+    "ignisContent": {
+      "seo": {
+        "enabled": true,
+        "ssr": false,
+      },
+    },
     "ignisCore": {
       "auth": true,
       "eslint": true,
@@ -23,14 +29,8 @@
     },
     "modules": [
       "@nuxt-ignis/core",
-      "@nuxtjs/seo",
+      "@nuxt-ignis/content",
     ],
-    "ogImage": {
-      "enabled": false,
-    },
-    "schemaOrg": {
-      "enabled": false,
-    },
     "ssr": false,
     "vue": {
       "compilerOptions": {
@@ -39,7 +39,8 @@
     },
   },
   "overview": "App title: Nuxt Ignis App
-Modules: @nuxt-ignis/core, @nuxtjs/seo
+Modules: @nuxt-ignis/core, @nuxt-ignis/content
+Modules (Ignis): @nuxt-ignis/content/seo
 Nuxt: log-level=info[default], ssr=false, ignis CSS
 ",
 }

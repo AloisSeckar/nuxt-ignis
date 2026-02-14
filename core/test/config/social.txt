@@ -11,6 +11,12 @@
     "css": [
       "C:\Git\nuxt-ignis\core\app\assets\css\ignis.css",
     ],
+    "ignisContent": {
+      "social": {
+        "enabled": true,
+        "url": "https://nuxt-ignis.com",
+      },
+    },
     "ignisCore": {
       "auth": true,
       "eslint": true,
@@ -23,11 +29,8 @@
     },
     "modules": [
       "@nuxt-ignis/core",
-      "@stefanobartoletti/nuxt-social-share",
+      "@nuxt-ignis/content",
     ],
-    "socialShare": {
-      "baseUrl": "https://nuxt-ignis.com",
-    },
     "vue": {
       "compilerOptions": {
         "isCustomElement": [Function],
@@ -35,7 +38,8 @@
     },
   },
   "overview": "App title: Nuxt Ignis App
-Modules: @nuxt-ignis/core, @stefanobartoletti/nuxt-social-share
+Modules: @nuxt-ignis/core, @nuxt-ignis/content
+Modules (Ignis): @nuxt-ignis/content/social
 Nuxt: log-level=info[default], ignis CSS
 ",
 }

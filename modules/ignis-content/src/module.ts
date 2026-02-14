@@ -12,6 +12,14 @@ export interface ModuleOptions {
     default?: string
     config?: string
   }
+  seo?: {
+    enabled: boolean
+    ssr?: boolean
+  }
+  social?: {
+    enabled: boolean
+    url?: string
+  }
   pslo?: {
     enabled: boolean
     content?: boolean
@@ -29,6 +37,8 @@ export default defineNuxtModule<ModuleOptions>({
     nuxt.options.runtimeConfig.public.ignis ||= {
       content: { enabled: false },
       i18n: { enabled: false, default: 'en', config: './i18n.config.ts' },
+      seo: { enabled: false },
+      social: { enabled: false, url: '' },
       pslo: { enabled: false, content: false },
     }
 
@@ -37,6 +47,13 @@ export default defineNuxtModule<ModuleOptions>({
       enabled: options.i18n?.enabled || false,
       default: options.i18n?.default || 'en',
       config: options.i18n?.config || './i18n.config.ts',
+    }
+    nuxt.options.runtimeConfig.public.ignis.seo = {
+      enabled: options.seo?.enabled || false,
+    }
+    nuxt.options.runtimeConfig.public.ignis.social = {
+      enabled: options.social?.enabled || false,
+      url: options.social?.url || '',
     }
     nuxt.options.runtimeConfig.public.ignis.pslo = {
       enabled: options.pslo?.enabled || false,
@@ -56,10 +73,36 @@ export default defineNuxtModule<ModuleOptions>({
       console.debug('@nuxtjs/i18n module installed')
     }
 
+    // SEO
+    // must be before @nuxt/content (https://nuxtseo.com/docs/nuxt-seo/guides/nuxt-content)
+    if (options.seo?.enabled === true) {
+      const seoConfig: Record<string, unknown> = {}
+
+      // ogImage and Schema.org modules should be disabled with `ssr: false`
+      if (options.seo?.ssr === false) {
+        seoConfig.ogImage = { enabled: false }
+        seoConfig.schemaOrg = { enabled: false }
+      }
+
+      installModule('@nuxtjs/seo', Object.keys(seoConfig).length > 0 ? seoConfig : undefined)
+      console.debug('@nuxtjs/seo module installed')
+    }
+
     // Nuxt Content
     if (options.content?.enabled === true) {
       installModule('@nuxt/content')
       console.debug('@nuxt/content module installed')
+    }
+
+    // Social Share
+    if (options.social?.enabled === true) {
+      installModule('@stefanobartoletti/nuxt-social-share', {
+        baseUrl: options.social?.url || 'https://nuxt-ignis.com/',
+      })
+      if (!options.social?.url) {
+        log.warn('Base URL for `nuxt-social-share` is not set. Use `process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL` to point sharing to your domain correctly.')
+      }
+      console.debug('@stefanobartoletti/nuxt-social-share module installed')
     }
 
     // elrh-pslo
