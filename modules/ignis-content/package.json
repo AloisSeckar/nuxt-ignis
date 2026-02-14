@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/content",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Nuxt Ignis module - Content features",
   "publishConfig": {
     "access": "public"

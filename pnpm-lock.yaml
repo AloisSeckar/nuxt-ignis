@@ -81,8 +81,8 @@ importers:
   core:
     dependencies:
       '@nuxt-ignis/content':
-        specifier: ^0.0.2
-        version: 0.0.2(@unhead/vue@2.1.4(vue@3.5.27(typescript@5.9.3)))(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.2(jiti@2.6.1))(ioredis@5.9.3)(magicast@0.5.2)(rollup@4.57.1)(valibot@1.2.0(typescript@5.9.3))(vite@8.0.0-beta.13(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))
+        specifier: ^0.0.3
+        version: 0.0.3(@unhead/vue@2.1.4(vue@3.5.27(typescript@5.9.3)))(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.2(jiti@2.6.1))(ioredis@5.9.3)(magicast@0.5.2)(rollup@4.57.1)(valibot@1.2.0(typescript@5.9.3))(vite@8.0.0-beta.13(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))
       '@nuxt-ignis/core':
         specifier: ^0.0.1
         version: 0.0.1(@unhead/vue@2.1.4(vue@3.5.27(typescript@5.9.3)))(@vue/compiler-sfc@3.5.28)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.2(jiti@2.6.1))(ioredis@5.9.3)(magicast@0.5.2)(nuxt@4.3.1(@parcel/watcher@2.5.6)(@types/node@25.2.3)(@vue/compiler-sfc@3.5.28)(better-sqlite3@12.2.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.2(jiti@2.6.1))(ioredis@5.9.3)(magicast@0.5.2)(optionator@0.9.4)(rolldown@1.0.0-rc.3)(rollup@4.57.1)(sass@1.97.3)(terser@5.46.0)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue-tsc@3.2.4(typescript@5.9.3))(yaml@2.8.2))(rollup@4.57.1)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))
@@ -1881,8 +1881,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nuxt-ignis/content@0.0.2':
-    resolution: {integrity: sha512-RnSY3zuDIZmpQX2/xLS+gocMQUtPf5Tzycmebgw/sBcmtT0PT4ptq3d5wq7qza6eWXzCE3/4dmHk47o+exX7vQ==}
+  '@nuxt-ignis/content@0.0.3':
+    resolution: {integrity: sha512-91DKDZoz9du1Wp52XIY65KzemZeRv1LW28PAI6xnQ5gJ5lQsRxiyCE7WQq+UZlkA2slS/x1PUJReD5/9nJMYNw==}
 
   '@nuxt-ignis/core@0.0.1':
     resolution: {integrity: sha512-90908vtlu9TWOkYtkarzxuXHc0XsRYjy+XleunvGrr+m5IxQPQUgcKQ1bfvyZLOC5Ev8dM+BrYJo6mIZhnUtfg==}
@@ -10891,7 +10891,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@nuxt-ignis/content@0.0.2(@unhead/vue@2.1.4(vue@3.5.27(typescript@5.9.3)))(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.2(jiti@2.6.1))(ioredis@5.9.3)(magicast@0.5.2)(rollup@4.57.1)(valibot@1.2.0(typescript@5.9.3))(vite@8.0.0-beta.13(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))':
+  '@nuxt-ignis/content@0.0.3(@unhead/vue@2.1.4(vue@3.5.27(typescript@5.9.3)))(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.2(jiti@2.6.1))(ioredis@5.9.3)(magicast@0.5.2)(rollup@4.57.1)(valibot@1.2.0(typescript@5.9.3))(vite@8.0.0-beta.13(@types/node@25.2.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.27(typescript@5.9.3))':
     dependencies:
       '@nuxt/content': 3.11.2(better-sqlite3@12.2.0)(magicast@0.5.2)(valibot@1.2.0(typescript@5.9.3))
       '@nuxt/kit': 4.3.1(magicast@0.5.2)

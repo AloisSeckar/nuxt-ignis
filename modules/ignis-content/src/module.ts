@@ -42,7 +42,9 @@ export default defineNuxtModule<ModuleOptions>({
       pslo: { enabled: false, content: false },
     }
 
-    nuxt.options.runtimeConfig.public.ignis.content = options.content?.enabled || false
+    nuxt.options.runtimeConfig.public.ignis.content = {
+      enabled: options.content?.enabled || false,
+    }
     nuxt.options.runtimeConfig.public.ignis.i18n = {
       enabled: options.i18n?.enabled || false,
       default: options.i18n?.default || 'en',
@@ -112,7 +114,8 @@ export default defineNuxtModule<ModuleOptions>({
       // integration with Nuxt Content
       // if enabled, all Nuxt Content page data will be treated with "preventSingleLetterOrphans" function
       if (options.content?.enabled === true && options.pslo?.content === true) {
-        nuxt.hook('content:file:beforeParse' as any, async (ctx: { file: { id: string, body: string } }) => {
+        // @ts-expect-error the hook will resolve correctly at runtime
+        nuxt.hook('content:file:beforeParse', async (ctx: { file: { id: string, body: string } }) => {
           const { preventSingleLetterOrphans } = await import('elrh-pslo')
           const { file } = ctx
           file.body = preventSingleLetterOrphans(file.body)
