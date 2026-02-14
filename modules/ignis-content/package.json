@@ -49,7 +49,7 @@
     "@nuxtjs/seo": "3.4.0",
     "@stefanobartoletti/nuxt-social-share": "2.3.1",
     "better-sqlite3": "catalog:",
-    "consola": "3.4.2",
+    "consola": "catalog:",
     "elrh-pslo": "1.1.6"
   },
   "devDependencies": {
