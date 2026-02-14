@@ -230,25 +230,20 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // https://www.vue.equipment/
   if (process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED === 'true') {
-    nuxtConfig.modules!.push('@maas/vue-equipment/nuxt')
-    // composables to be included
+    nuxtConfig.modules!.push('@nuxt-ignis/utils')
+    ignis.push('@nuxt-ignis/utils/equipment')
+    const equipmentConfig: Record<string, unknown> = { enabled: true }
     if (process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES) {
-      // values MUST be delimited by "," (spaces will be trimmed)
-      nuxtConfig = defu({
-        vueEquipment: {
-          composables: process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES.split(',').map(p => p?.trim()),
-        },
-      }, nuxtConfig)
+      equipmentConfig.composables = process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES.split(',').map(p => p?.trim())
     }
-    // plugins to be included
     if (process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS) {
-      // values MUST be delimited by "," (spaces will be trimmed)
-      nuxtConfig = defu({
-        vueEquipment: {
-          plugins: process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS.split(',').map(p => p?.trim()),
-        },
-      }, nuxtConfig)
+      equipmentConfig.plugins = process.env.NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS.split(',').map(p => p?.trim())
     }
+    nuxtConfig = defu({
+      ignisUtils: {
+        equipment: equipmentConfig,
+      },
+    }, nuxtConfig)
   }
 
   // Open Props CSS
@@ -283,7 +278,15 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // magic-regexp
   if (process.env.NUXT_PUBLIC_IGNIS_REGEXP === 'true') {
-    nuxtConfig.modules!.push('magic-regexp/nuxt')
+    if (!nuxtConfig.modules!.includes('@nuxt-ignis/utils')) {
+      nuxtConfig.modules!.push('@nuxt-ignis/utils')
+    }
+    ignis.push('@nuxt-ignis/utils/regexp')
+    nuxtConfig = defu({
+      ignisUtils: {
+        regexp: true,
+      },
+    }, nuxtConfig)
   }
 
   // nuxt-charts

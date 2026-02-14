@@ -16,7 +16,7 @@ NUXT_PUBLIC_IGNIS_CORE_VUEUSE=false
 
 ## VueEquipment
 
-<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.37' }]" />
+<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.51' }]" />
 
 [VueEquipment](https://www.vue.equipment/) is a collection of Vue composables and plugins that provides a set of reusable functions and utilities for Vue.js applications.
 

@@ -21,24 +21,28 @@
       "security": true,
       "vueuse": true,
     },
+    "ignisUtils": {
+      "equipment": {
+        "enabled": true,
+        "plugins": [
+          "MagicMenu",
+          "MagicModal",
+        ],
+      },
+    },
     "modules": [
       "@nuxt-ignis/core",
-      "@maas/vue-equipment/nuxt",
+      "@nuxt-ignis/utils",
     ],
     "vue": {
       "compilerOptions": {
         "isCustomElement": [Function],
       },
     },
-    "vueEquipment": {
-      "plugins": [
-        "MagicMenu",
-        "MagicModal",
-      ],
-    },
   },
   "overview": "App title: Nuxt Ignis App
-Modules: @nuxt-ignis/core, @maas/vue-equipment/nuxt
+Modules: @nuxt-ignis/core, @nuxt-ignis/utils
+Modules (Ignis): @nuxt-ignis/utils/equipment
 Nuxt: log-level=info[default], ignis CSS
 ",
 }

@@ -1,4 +1,5 @@
 Nuxt Ignis will start using following settings:
 App title: Nuxt Ignis App
-Modules: @nuxt-ignis/core, magic-regexp/nuxt
+Modules: @nuxt-ignis/core, @nuxt-ignis/utils
+Modules (Ignis): @nuxt-ignis/utils/regexp
 Nuxt: log-level=info[default], ignis CSS
