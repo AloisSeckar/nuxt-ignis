@@ -4,7 +4,7 @@ Nuxt Ignis offers following utility options:
 
 ## VueUse
 
-<PackagesReference :packages="[{ name: '@vueuse/core', version: '14.0.0' }, { name: '@vueuse/nuxt', version: '14.0.0' }]" />
+<PackagesReference :packages="[{ name: '@vueuse/core', version: '14.2.1' }, { name: '@vueuse/nuxt', version: '14.2.1' }]" />
 
 [VueUse](https://vueuse.org/) is a collection of essential Vue Composition Utilities that provides a set of reusable functions and utilities for Vue.js applications. It includes features like reactive state management, event handling, and more.
 
@@ -66,14 +66,14 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`,
 
 ## Nuxt Auth Utils
 
-<PackagesReference :packages="[{ name: 'nuxt-auth-utils', version: '0.5.25' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-auth-utils', version: '0.5.28' }]" />
 
-[Nuxt Auth Utils](https://github.com/AloisSeckar/nuxt-auth-utils) is a set of utilities for handling authentication in Nuxt applications.
+[Nuxt Auth Utils](https://github.com/atinux/nuxt-auth-utils) is a set of utilities for handling authentication in Nuxt applications.
 
-`Nuxt Auth Utils` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
+`Nuxt Auth Utils` is a [core feature](/2-2-core-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
 ```dotenv
-NUXT_PUBLIC_IGNIS_AUTH=true
+NUXT_PUBLIC_IGNIS_CORE_AUTH=false
 ```
 
 ## Nuxt Social Share

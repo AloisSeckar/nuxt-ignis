@@ -18,14 +18,18 @@
         "enabled": true,
       },
     },
+    "ignisCore": {
+      "auth": true,
+      "eslint": true,
+      "fonts": true,
+      "image": true,
+      "pinia": true,
+      "scripts": true,
+      "security": true,
+      "vueuse": true,
+    },
     "modules": [
-      "@nuxt/eslint",
-      "@nuxt/fonts",
-      "@nuxt/image",
-      "@nuxt/scripts",
-      "nuxt-security",
-      "@vueuse/nuxt",
-      "@pinia/nuxt",
+      "@nuxt-ignis/core",
       "@nuxt-ignis/content",
     ],
     "vue": {
@@ -35,7 +39,7 @@
     },
   },
   "overview": "App title: Nuxt Ignis App
-Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt-ignis/content
+Modules: @nuxt-ignis/core, @nuxt-ignis/content
 Modules (Ignis): @nuxt-ignis/content/i18n
 Nuxt: log-level=info[default], ignis CSS
 ",

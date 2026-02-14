@@ -16,13 +16,14 @@ Following packages are currently deeply integrated into Nuxt Ignis and **cannot 
 
 Pre-defined set of Nuxt modules is being automatically included by default. You can opt-out from using them by setting respective config value to `false`.
 
-- use `NUXT_PUBLIC_CORE_ESLINT=false` to disable [`@nuxt/eslint`](/3-9-features-devex.html#eslint)
-- use `NUXT_PUBLIC_CORE_FONTS=false` to disable [`@nuxt/fonts`](/3-8-features-performance.html#nuxt-fonts)
-- use `NUXT_PUBLIC_CORE_IMAGE=false` to disable [`@nuxt/image`](/3-8-features-performance.html#nuxt-image)
-- use `NUXT_PUBLIC_CORE_SCRIPTS=false` to disable [`@nuxt/scripts`](/3-8-features-performance.html#nuxt-scripts)
-- use `NUXT_PUBLIC_CORE_SECURITY=false` to disable [`nuxt-security`](/3-9-features-devex.html#nuxt-security)
-- use `NUXT_PUBLIC_CORE_VUEUSE=false` to disable [`@vueuse/nuxt`](/3-7-features-utils.html#vueuse)
-- use `NUXT_PUBLIC_CORE_PINIA=false` to disable [`@pinia/nuxt`](/3-7-features-utils.html#pinia)
+- use `NUXT_PUBLIC_IGNIS_CORE_ESLINT=false` to disable [`@nuxt/eslint`](/3-9-features-devex.html#eslint)
+- use `NUXT_PUBLIC_IGNIS_CORE_FONTS=false` to disable [`@nuxt/fonts`](/3-8-features-performance.html#nuxt-fonts)
+- use `NUXT_PUBLIC_IGNIS_CORE_IMAGE=false` to disable [`@nuxt/image`](/3-8-features-performance.html#nuxt-image)
+- use `NUXT_PUBLIC_IGNIS_CORE_SCRIPTS=false` to disable [`@nuxt/scripts`](/3-8-features-performance.html#nuxt-scripts)
+- use `NUXT_PUBLIC_IGNIS_CORE_SECURITY=false` to disable [`nuxt-security`](/3-9-features-devex.html#nuxt-security)
+- use `NUXT_PUBLIC_IGNIS_CORE_AUTH=false` to disable [`nuxt-auth-utils`](/3-7-features-utils.html#nuxt-auth-utils)
+- use `NUXT_PUBLIC_IGNIS_CORE_VUEUSE=false` to disable [`@vueuse/nuxt`](/3-7-features-utils.html#vueuse)
+- use `NUXT_PUBLIC_IGNIS_CORE_PINIA=false` to disable [`@pinia/nuxt`](/3-7-features-utils.html#pinia)
 
 ## More info
 

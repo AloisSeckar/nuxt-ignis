@@ -1,5 +1,5 @@
 Nuxt Ignis will start using following settings:
 App title: Nuxt Ignis App
-Modules: @nuxt/eslint, @nuxt/fonts, @nuxt/image, @nuxt/scripts, nuxt-security, @vueuse/nuxt, @pinia/nuxt, @nuxt-ignis/forms
+Modules: @nuxt-ignis/core, @nuxt-ignis/forms
 Modules (Ignis): @nuxt-ignis/forms/vueform
 Nuxt: log-level=info[default], ignis CSS

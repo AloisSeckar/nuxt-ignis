@@ -21,14 +21,15 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |
 | `@nuxt/eslint` | `1.14.0` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Official module for code linting via `eslint` |
-| `@nuxt/fonts` | `0.11.4` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-fonts) | Official module for working with web fonts |
+| `@nuxt/fonts` | `0.13.0` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-fonts) | Official module for working with web fonts |
 | `@nuxt/image` | `2.0.0` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-image) | Official module for optimizing images |
-| `@nuxt/scripts` | `0.13.0` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-scripts) | Official module for integrating 3rd party scripts |
-| `nuxt-security` | `2.4.0` | [👁️‍🗨️](/3-9-features-devex.html#nuxt-security) | Module for establishing best security practices |
-| `@vueuse/core` | `14.0.0` | [👁️‍🗨️](/3-7-features-utils.html#vueuse) | Collection of handy Vue utility functions |
-| `@vueuse/nuxt` | `14.0.0` | [👁️‍🗨️](/3-7-features-utils.html#vueuse) | Nuxt connector for `VueUse` |
-| `pinia` | `3.0.3` | [👁️‍🗨️](/3-8-features-performance.html#pinia) | Current ecosystem standard for state management |
-| `@pinia/nuxt` | `0.11.2` | [👁️‍🗨️](/3-8-features-performance.html#pinia) | Nuxt connector for `pinia` |
+| `@nuxt/scripts` | `0.13.2` | [👁️‍🗨️](/3-8-features-performance.html#nuxt-scripts) | Official module for integrating 3rd party scripts |
+| `nuxt-security` | `2.5.1` | [👁️‍🗨️](/3-9-features-devex.html#nuxt-security) | Module for establishing best security practices |
+| `nuxt-auth-utils` | `0.5.28` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-auth-utils) | Module for easier authentication |
+| `@vueuse/core` | `14.2.1` | [👁️‍🗨️](/3-7-features-utils.html#vueuse) | Collection of handy Vue utility functions |
+| `@vueuse/nuxt` | `14.2.1` | [👁️‍🗨️](/3-7-features-utils.html#vueuse) | Nuxt connector for `VueUse` |
+| `pinia` | `3.0.4` | [👁️‍🗨️](/3-8-features-performance.html#pinia) | Current ecosystem standard for state management |
+| `@pinia/nuxt` | `0.11.3` | [👁️‍🗨️](/3-8-features-performance.html#pinia) | Nuxt connector for `pinia` |
 
 ## Packages of optional modules
 
@@ -46,7 +47,6 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `better-sqlite3` | `12.2.0` | [👁️‍🗨️](/3-6-features-content.html#nuxt-content) | Database package for Nuxt Content v3 |
 | `@nuxtjs/i18n` | `10.2.3` | [👁️‍🗨️](/3-6-features-content.html#i18n) | Module for adding `i18n` internalization into apps |
 | `@nuxtjs/seo` | `3.2.2` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-seo) | Official module for easier SEO configuration |
-| `nuxt-auth-utils` | `0.5.25` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-auth-utils) | Module for easier authentication |
 | `@stefanobartoletti/nuxt-social-share` | `2.2.1` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-social-share) | Module for simple sharing to social networks |
 | `magic-regexp` | `0.10.0` | [👁️‍🗨️](/3-7-features-utils.html#magic-regexp) | Library for easier working with regular expressions |
 | `nuxt-charts` | `2.1.1` | [👁️‍🗨️](/3-2-features-ui.html#nuxt-charts) | Library for easier working with charts |

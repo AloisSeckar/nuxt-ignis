@@ -4,7 +4,7 @@ Following modules helps you with your app performance:
 
 ## Nuxt Fonts
 
-<PackagesReference :packages="[{ name: '@nuxt/fonts', version: '0.11.4' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/fonts', version: '0.13.2' }]" />
 
 [Nuxt Fonts](https://fonts.nuxt.com/) is an official module for working with web fonts. It allows you to easily integrate and optimize web fonts.
 
@@ -42,7 +42,7 @@ NUXT_PUBLIC_IGNIS_CORE_SCRIPTS=false
 
 ## Pinia
 
-<PackagesReference :packages="[{ name: 'pinia', version: '3.0.3' }, { name: '@pinia/nuxt', version: '0.11.2' }]" />
+<PackagesReference :packages="[{ name: 'pinia', version: '3.0.4' }, { name: '@pinia/nuxt', version: '0.11.3' }]" />
 
 [Pinia](https://pinia.vuejs.org/) is a de-facto standard Vue solution for state management. It is type safe, extensible, modular by design and SSR-friendly with tiny runtime. 
 

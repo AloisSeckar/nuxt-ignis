@@ -223,7 +223,6 @@ describe('setFeatures() unit tests', () => {
     process.env.NUXT_PUBLIC_IGNIS_OPENPROPS = 'true'
     process.env.NUXT_PUBLIC_IGNIS_PSLO_ENABLED = 'true'
     process.env.NUXT_PUBLIC_IGNIS_SEO = 'true'
-    process.env.NUXT_PUBLIC_IGNIS_AUTH = 'true'
     process.env.NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED = 'true'
     process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES = 'false' // to avoid console log
     setFeatures(true)

@@ -27,41 +27,19 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // 1. core modules
   // (included unless disabled)
-
-  // https://nuxt.com/modules/eslint
-  if (process.env.NUXT_PUBLIC_IGNIS_CORE_ESLINT !== 'false') {
-    nuxtConfig.modules!.push('@nuxt/eslint')
-  }
-
-  // https://nuxt.com/modules/fonts
-  if (process.env.NUXT_PUBLIC_IGNIS_CORE_FONTS !== 'false') {
-    nuxtConfig.modules!.push('@nuxt/fonts')
-  }
-
-  // https://image.nuxt.com/
-  if (process.env.NUXT_PUBLIC_IGNIS_CORE_IMAGE !== 'false') {
-    nuxtConfig.modules!.push('@nuxt/image')
-  }
-
-  // https://scripts.nuxt.com/
-  if (process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS !== 'false') {
-    nuxtConfig.modules!.push('@nuxt/scripts')
-  }
-
-  // https://nuxt.com/modules/security
-  if (process.env.NUXT_PUBLIC_IGNIS_CORE_SECURITY !== 'false') {
-    nuxtConfig.modules!.push('nuxt-security')
-  }
-
-  // https://nuxt.com/modules/vueuse
-  if (process.env.NUXT_PUBLIC_IGNIS_CORE_VUEUSE !== 'false') {
-    nuxtConfig.modules!.push('@vueuse/nuxt')
-  }
-
-  // https://pinia.vuejs.org/ssr/nuxt.html
-  if (process.env.NUXT_PUBLIC_IGNIS_CORE_PINIA !== 'false') {
-    nuxtConfig.modules!.push('@pinia/nuxt')
-  }
+  nuxtConfig.modules!.push('@nuxt-ignis/core')
+  nuxtConfig = defu({
+    ignisCore: {
+      eslint: process.env.NUXT_PUBLIC_IGNIS_CORE_ESLINT !== 'false',
+      fonts: process.env.NUXT_PUBLIC_IGNIS_CORE_FONTS !== 'false',
+      image: process.env.NUXT_PUBLIC_IGNIS_CORE_IMAGE !== 'false',
+      scripts: process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS !== 'false',
+      security: process.env.NUXT_PUBLIC_IGNIS_CORE_SECURITY !== 'false',
+      auth: process.env.NUXT_PUBLIC_IGNIS_CORE_AUTH !== 'false',
+      vueuse: process.env.NUXT_PUBLIC_IGNIS_CORE_VUEUSE !== 'false',
+      pinia: process.env.NUXT_PUBLIC_IGNIS_CORE_PINIA !== 'false',
+    },
+  }, nuxtConfig)
 
   // 2. optional modules & features
   // (excluded unless enabled)
@@ -235,11 +213,6 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
         },
       },
     }, nuxtConfig)
-  }
-
-  // nuxt-auth-utils
-  if (process.env.NUXT_PUBLIC_IGNIS_AUTH === 'true') {
-    nuxtConfig.modules!.push('nuxt-auth-utils')
   }
 
   // social share

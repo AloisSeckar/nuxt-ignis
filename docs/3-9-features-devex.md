@@ -120,7 +120,7 @@ export default loadVitestConfig({
 
 ## Nuxt Security
 
-<PackagesReference :packages="[{ name: 'nuxt-security', version: '2.4.0' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-security', version: '2.5.1' }]" />
 
 Nuxt Ignis includes [`nuxt-security` module](https://nuxt-security.vercel.app/) by default to help you establish best security practices in your Nuxt application. It provides a set of security headers and other features to protect your app from common vulnerabilities.
 
