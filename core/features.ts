@@ -100,7 +100,7 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
       },
     }, nuxtConfig)
   }
-  if (dbPreset === 'supabase' || process.env.NUXT_PUBLIC_IGNIS_SUPABASE === 'true') {
+  if (dbPreset === 'supabase' || process.env.NUXT_PUBLIC_IGNIS_SUPABASE_ENABLED === 'true') {
     if (!nuxtConfig.modules!.includes('@nuxt-ignis/db')) {
       nuxtConfig.modules!.push('@nuxt-ignis/db')
     }

@@ -44,7 +44,7 @@ The integration is provided via [`@nuxtjs/supabase` module](https://supabase.nux
 `Supabase` integration is **disabled** by default. To enable it, you can use following environment variable:
 
 ```dotenv
-NUXT_PUBLIC_IGNIS_SUPABASE=true
+NUXT_PUBLIC_IGNIS_SUPABASE_ENABLED=true
 ```
 
 Or [DB preset](/2-3-optional-features.html#db-preset):
@@ -61,3 +61,5 @@ To configure `Supabase` connection you need to provide following env variables:
 - `SUPABASE_KEY`
 
 For details and more config options see the [`@nuxtjs/supabase` docs](https://supabase.nuxtjs.org/getting-started/introduction).
+
+By default, module is run with `types: false` option. If you want to use [Supabase types](https://supabase.nuxtjs.org/getting-started/types), pass the string path to your types definition file via `NUXT_PUBLIC_IGNIS_SUPABASE_TYPES`.

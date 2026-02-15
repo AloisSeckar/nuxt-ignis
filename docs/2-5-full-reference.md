@@ -26,7 +26,7 @@ Following Nuxt modules/features are disabled by default and can be opted-in by s
 | `NUXT_PUBLIC_IGNIS_UI` | `boolean` | `false` | Enable or disable `@nuxt/ui` module |
 | `NUXT_PUBLIC_IGNIS_TAILWIND` | `boolean` | `false` | Enable or disable `Tailwind CSS` (ignored if `NUXT_PUBLIC_IGNIS_UI=true`) |
 | `NUXT_PUBLIC_IGNIS_NEON` | `boolean` | `false` | Enable or disable `nuxt-neon` module |
-| `NUXT_PUBLIC_IGNIS_SUPABASE` | `boolean` | `false` | Enable or disable `@nuxtjs/supabase` module |
+| `NUXT_PUBLIC_IGNIS_SUPABASE_ENABLED` | `boolean` | `false` | Enable or disable `@nuxtjs/supabase` module |
 | `NUXT_PUBLIC_IGNIS_VUEFORM` | `boolean` | `false` | Enable or disable `@vueform/nuxt` module |
 | `NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED` | `boolean` | `false` | Enable or disable `@formkit/nuxt` module |
 | `NUXT_PUBLIC_IGNIS_VALIBOT` | `boolean` | `false` | Enable or disable `valibot` |
@@ -59,6 +59,7 @@ Other configurable options:
 | --- | --- | --- | :--  |
 | `NUXT_PUBLIC_IGNIS_I18N_LOCALE` | `string` | `en` | Set default locale for `i18n` |
 | `NUXT_PUBLIC_IGNIS_I18N_CONFIG` | `string` | `/i18n.config.ts` | Set path to `i18n` config file |
+| `NUXT_PUBLIC_IGNIS_SUPABASE_TYPES` | `string` or `false` | `false` | Set path to Supabase types definition file |
 | `NUXT_PUBLIC_IGNIS_FORMKIT_LOCALE` | `string` | `en` | Set default locale for `@formkit/nuxt` |
 | `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG` | `string` | `/formkit.config.ts` | Set path to `@formkit/nuxt` config file |
 | `NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES` | `string` | `''` | Coma-separated list of `Vue Equipment` composables to be imported |

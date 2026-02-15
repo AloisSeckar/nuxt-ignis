@@ -44,7 +44,7 @@ describe('nuxtConfig unit tests', () => {
   })
 
   test('nuxtConfig - DB - Supabase', async () => {
-    process.env.NUXT_PUBLIC_IGNIS_SUPABASE = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_SUPABASE_ENABLED = 'true'
     const nuxtConfig = setFeatures()
     await expect(nuxtConfig).toMatchFileSnapshot('./config/db-supabase.txt')
   })

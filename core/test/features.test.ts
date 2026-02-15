@@ -113,7 +113,7 @@ describe('setFeatures() unit tests', () => {
   })
 
   test('setFeatures() - DB - supabase', async () => {
-    process.env.NUXT_PUBLIC_IGNIS_SUPABASE = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_SUPABASE_ENABLED = 'true'
     setFeatures(true)
     await expect(getConsoleOutput()).toMatchFileSnapshot('./features/db-supabase.txt')
   })
@@ -215,7 +215,7 @@ describe('setFeatures() unit tests', () => {
   test('setFeatures() - enable all features', async () => {
     process.env.NUXT_PUBLIC_IGNIS_UI = 'true'
     process.env.NUXT_PUBLIC_IGNIS_NEON = 'true'
-    process.env.NUXT_PUBLIC_IGNIS_SUPABASE = 'true'
+    process.env.NUXT_PUBLIC_IGNIS_SUPABASE_ENABLED = 'true'
     process.env.NUXT_PUBLIC_IGNIS_I18N_ENABLED = 'true'
     process.env.NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED = 'true'
     process.env.NUXT_PUBLIC_IGNIS_VUEFORM = 'true'

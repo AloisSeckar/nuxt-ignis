@@ -15,7 +15,7 @@ Currently, following modules are optional to use:
 - [`@nuxt/ui`](/3-2-features-ui.html#nuxt-ui) - set `NUXT_PUBLIC_IGNIS_UI` to `true | false`
 - [`@nuxtjs/tailwindcss`](/3-2-features-ui.html#tailwindcss) - set `NUXT_PUBLIC_IGNIS_TAILWIND` to `true | false` (ignored if `NUXT_PUBLIC_IGNIS_UI=true`)
 - [`nuxt-neon`](/3-3-features-db.html#neon) - set `NUXT_PUBLIC_IGNIS_NEON` to `true | false`
-- [`@nuxtjs/supabase`](/3-3-features-db.html#supabase) - set `NUXT_PUBLIC_IGNIS_SUPABASE` to `true | false`
+- [`@nuxtjs/supabase`](/3-3-features-db.html#supabase) - set `NUXT_PUBLIC_IGNIS_SUPABASE_ENABLED` to `true | false`
 - [`@vueform/nuxt`](/3-4-features-forms.html#vueform) - set `NUXT_PUBLIC_IGNIS_VUEFORM` to `true | false`
 - [`@formkit/nuxt`](/3-4-features-forms.html#formkit) - set `NUXT_PUBLIC_IGNIS_FORMKIT_ENABLED` to `true | false`
 - [`@nuxt/content`](/3-6-features-content.html#nuxt-content) - set `NUXT_PUBLIC_IGNIS_CONTENT` to `true | false`
