@@ -28,9 +28,16 @@ catalog:
   vue-router: ^5.0.2
   vue-tsc: ^3.2.4
 
-minimumReleaseAge: 10080
+minimumReleaseAge: 4320
 
-minimumReleaseAgeExclude: null
+minimumReleaseAgeExclude: 
+  - '@nuxt-ignis/content'
+  - '@nuxt-ignis/core'
+  - '@nuxt-ignis/db'
+  - '@nuxt-ignis/forms'
+  - '@nuxt-ignis/ui'
+  - '@nuxt-ignis/utils'
+  - '@nuxt-ignis/validation'
 
 onlyBuiltDependencies:
   - '@parcel/watcher'
