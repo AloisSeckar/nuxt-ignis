@@ -33,7 +33,6 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'ignisContent',
   },
   setup(options, nuxt) {
-    console.warn(options)
     const resolver = createResolver(import.meta.url)
 
     nuxt.options.runtimeConfig.public.ignis ||= {

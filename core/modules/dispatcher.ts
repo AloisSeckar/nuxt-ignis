@@ -1,20 +1,9 @@
 import { defineNuxtModule } from 'nuxt/kit'
+import type { IgnisCoreOptions } from '@nuxt-ignis/core'
 
 export interface IgnisOptions {
   // @nuxt-ignis/core module
-  core: {
-    // activation flag
-    enabled: boolean
-    // module-specific options
-    eslint: boolean
-    fonts: boolean
-    image: boolean
-    scripts: boolean
-    security: boolean
-    auth: boolean
-    vueuse: boolean
-    pinia: boolean
-  }
+  core: IgnisCoreOptions
   // @nuxt-ignis/ui module
   ui: {
     // activation flag
@@ -58,10 +47,11 @@ export default defineNuxtModule<IgnisOptions>({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
 
-    let opts = nuxt.options.ignis
+    const opts = nuxt.options.ignis
+    console.warn(opts)
     if (!opts) {
-      console.warn('Nuxt Ignis Dispatcher - No options provided, setting defaults')
-      opts = { core: { enabled: true } } as IgnisOptions
+      modules['@nuxt-ignis/core'] = { }
+      return modules
     }
 
     if (opts?.core?.enabled !== false) {

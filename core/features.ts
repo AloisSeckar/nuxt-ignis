@@ -108,7 +108,7 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     nuxtConfig = defu({
       ignisDB: {
         supabase: {
-          enabled: true
+          enabled: true,
         },
       },
     }, nuxtConfig)
