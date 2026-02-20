@@ -114,6 +114,10 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     }, nuxtConfig)
   }
 
+  if (process.env.NUXT_PUBLIC_IGNIS_MODULE_CONTENT === 'true') {
+    nuxtConfig.modules!.push('@nuxt-ignis/content')
+  }
+
   // i18n
   if (process.env.NUXT_PUBLIC_IGNIS_I18N_ENABLED === 'true') {
     nuxtConfig.modules!.push('@nuxt-ignis/content')

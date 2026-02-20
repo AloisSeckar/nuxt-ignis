@@ -4,6 +4,7 @@ import { createConsola } from 'consola'
 const log = createConsola({ defaults: { tag: 'nuxt-ignis' } })
 
 export interface ModuleOptions {
+  enabled: boolean
   content?: {
     enabled: boolean
   }
@@ -32,6 +33,7 @@ export default defineNuxtModule<ModuleOptions>({
     configKey: 'ignisContent',
   },
   setup(options, nuxt) {
+    console.warn(options)
     const resolver = createResolver(import.meta.url)
 
     nuxt.options.runtimeConfig.public.ignis ||= {

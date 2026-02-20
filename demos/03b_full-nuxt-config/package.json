@@ -1,0 +1,15 @@
+{
+  "private": true,
+  "name": "ignis-demo-03b",
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev"
+  },
+  "devDependencies": {
+    "better-sqlite3": "catalog:",
+    "@nuxt/eslint": "catalog:",
+    "nuxt": "catalog:",
+    "typescript": "catalog:"
+  },
+  "packageManager": "pnpm@10.29.3"
+}

@@ -125,6 +125,20 @@ const baseConfig: NuxtConfig = {
     },
   },
   hooks: {
+    'ready'(nuxt) {
+      console.warn('Ready!!!')
+      console.info(nuxt.options.runtimeConfig)
+      console.info(nuxt.options.ignisContent)
+    },
+    'app:resolve'() {
+      console.warn('App resolved!')
+    },
+    'modules:before'() {
+      console.warn('Hey, modules are being resolved!')
+    },
+    'modules:done'() {
+      console.warn('Hey, modules were resolved!')
+    },
     'schema:resolved'() {
       // write current config to file (for use in app)
       const configObject = JSON.stringify(currentFeatures.nuxtConfig, null, 2)
