@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/utils",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Nuxt Ignis module - Utility features",
   "publishConfig": {
     "access": "public"

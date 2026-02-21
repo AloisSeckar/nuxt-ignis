@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/core",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Nuxt Ignis module - Core features",
   "publishConfig": {
     "access": "public"

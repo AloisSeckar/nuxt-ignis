@@ -3,7 +3,7 @@ import type { NuxtOptions } from 'nuxt/schema'
 
 export interface IgnisCoreOptions {
   // activation flag (checked by dispatcher)
-  enabled?: boolean
+  active?: boolean
   // module-specific options
   eslint?: boolean
   fonts?: boolean
@@ -31,16 +31,16 @@ export default defineNuxtModule<IgnisCoreOptions>({
     pinia: true,
   },
   moduleDependencies(nuxt) {
-    console.warn('@nuxt-ignis/core - module dependencies are being resolved')
+    console.debug('@nuxt-ignis/core - module dependencies are being resolved')
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
 
-    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { core?: IgnisCoreOptions } }
-    let opts = nuxtOpts.ignisCore || nuxtOpts.ignis?.core
-    if (!opts) {
-      console.warn('@nuxt-ignis/core - No options provided, setting defaults')
-      opts = {
+    const nuxtoptions = nuxt.options as NuxtOptions & { ignis?: { core?: IgnisCoreOptions } }
+    let options = nuxtoptions.ignisCore || nuxtoptions.ignis?.core
+    if (!options) {
+      console.debug('@nuxt-ignis/core - No options provided, setting defaults')
+      options = {
         eslint: true,
         fonts: true,
         image: true,
@@ -52,50 +52,50 @@ export default defineNuxtModule<IgnisCoreOptions>({
       }
     }
 
-    if (opts?.eslint !== false) {
+    if (options?.eslint !== false) {
       // https://nuxt.com/modules/eslint
       modules['@nuxt/eslint'] = { }
       console.debug('@nuxt/eslint module installed')
     }
 
     // https://nuxt.com/modules/fonts
-    if (opts?.fonts !== false) {
+    if (options?.fonts !== false) {
       modules['@nuxt/fonts'] = { }
       console.debug('@nuxt/fonts module installed')
     }
 
     // https://image.nuxt.com/
-    if (opts?.image !== false) {
+    if (options?.image !== false) {
       modules['@nuxt/image'] = { }
       console.debug('@nuxt/image module installed')
     }
 
     // https://scripts.nuxt.com/
-    if (opts?.scripts !== false) {
+    if (options?.scripts !== false) {
       modules['@nuxt/scripts'] = { }
       console.debug('@nuxt/scripts module installed')
     }
 
     // https://nuxt.com/modules/security
-    if (opts?.security !== false) {
+    if (options?.security !== false) {
       modules['nuxt-security'] = { }
       console.debug('nuxt-security module installed')
     }
 
     // https://github.com/atinux/nuxt-auth-utils
-    if (opts?.auth === true) {
+    if (options?.auth === true) {
       modules['nuxt-auth-utils'] = { }
       console.debug('nuxt-auth-utils module installed')
     }
 
     // https://nuxt.com/modules/vueuse
-    if (opts?.vueuse !== false) {
+    if (options?.vueuse !== false) {
       modules['@vueuse/nuxt'] = { }
       console.debug('@vueuse/nuxt module installed')
     }
 
     // https://pinia.vuejs.org/ssr/nuxt.html
-    if (opts?.pinia !== false) {
+    if (options?.pinia !== false) {
       modules['@pinia/nuxt'] = { }
       console.debug('@pinia/nuxt module installed')
     }
@@ -103,8 +103,6 @@ export default defineNuxtModule<IgnisCoreOptions>({
     return modules
   },
   setup(options, nuxt) {
-    const resolver = createResolver(import.meta.url)
-
     nuxt.options.runtimeConfig.public.ignis ||= {
       core: {
         eslint: options?.eslint || true,
@@ -118,7 +116,7 @@ export default defineNuxtModule<IgnisCoreOptions>({
       },
     }
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
+    const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })

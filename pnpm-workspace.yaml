@@ -60,3 +60,6 @@ overrides:
 trustPolicy: no-downgrade
 
 verifyDepsBeforeRun: error
+
+# TODO remove this when modules settle down
+gitChecks: false

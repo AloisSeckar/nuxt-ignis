@@ -1,14 +1,32 @@
 import { defineNuxtModule, addPlugin, createResolver, addImports } from '@nuxt/kit'
+import type { NuxtOptions } from 'nuxt/schema'
 
-export interface ModuleOptions {
+export interface IgnisValidationOptions {
+  // activation flag (checked by dispatcher)
+  active?: boolean
+  // module-specific options
   zod?: boolean
   valibot?: boolean
 }
 
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule<IgnisValidationOptions>({
   meta: {
     name: '@nuxt-ignis/validation',
     configKey: 'ignisValidation',
+  },
+  moduleDependencies(nuxt) {
+    console.debug('@nuxt-ignis/validation - module dependencies are being resolved')
+
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const modules: Record<string, any> = {}
+
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { validation?: IgnisValidationOptions } }
+    const _options = nuxtOpts.ignisValidation || nuxtOpts.ignis?.validation
+
+    // no modules to be activated here yet
+    console.debug('@nuxt-ignis/validation - no modules to be activated')
+
+    return modules
   },
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)

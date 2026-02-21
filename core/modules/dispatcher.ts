@@ -1,39 +1,27 @@
 import { defineNuxtModule } from 'nuxt/kit'
 import type { IgnisCoreOptions } from '@nuxt-ignis/core'
+import type { IgnisUIOptions } from '@nuxt-ignis/ui'
+import type { IgnisDBOptions } from '@nuxt-ignis/db'
+import type { IgnisFormsOptions } from '@nuxt-ignis/forms'
+import type { IgnisValidationOptions } from '@nuxt-ignis/validation'
+import type { IgnisContentOptions } from '@nuxt-ignis/content'
+import type { IgnisUtilsOptions } from '@nuxt-ignis/utils'
 
 export interface IgnisOptions {
   // @nuxt-ignis/core module
-  core: IgnisCoreOptions
+  core?: IgnisCoreOptions
   // @nuxt-ignis/ui module
-  ui: {
-    // activation flag
-    enabled: boolean
-  }
+  ui?: IgnisUIOptions
   // @nuxt-ignis/db module
-  db: {
-    // activation flag
-    enabled: boolean
-  }
+  db?: IgnisDBOptions
   // @nuxt-ignis/forms module
-  forms: {
-    // activation flag
-    enabled: boolean
-  }
+  forms?: IgnisFormsOptions
   // @nuxt-ignis/validation module
-  validation: {
-    // activation flag
-    enabled: boolean
-  }
+  validation?: IgnisValidationOptions
   // @nuxt-ignis/content module
-  content: {
-    // activation flag
-    enabled: boolean
-  }
+  content?: IgnisContentOptions
   // @nuxt-ignis/utils module
-  utils: {
-    // activation flag
-    enabled: boolean
-  }
+  utils?: IgnisUtilsOptions
 }
 
 export default defineNuxtModule<IgnisOptions>({
@@ -42,54 +30,56 @@ export default defineNuxtModule<IgnisOptions>({
     configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
-    console.warn('Nuxt Ignis Dispatcher - module dependencies are being resolved')
+    console.debug('Nuxt Ignis Dispatcher - module dependencies are being resolved')
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
 
     const opts = nuxt.options.ignis
-    console.warn(opts)
+    console.debug('Received options:', opts)
+
     if (!opts) {
+      console.debug('Setting default options')
       modules['@nuxt-ignis/core'] = { }
       return modules
     }
 
-    if (opts?.core?.enabled !== false) {
+    if (opts?.core?.active !== false) {
       modules['@nuxt-ignis/core'] = {
         defaults: opts.core || {},
       }
     }
 
-    if (opts?.ui?.enabled === true) {
+    if (opts?.ui?.active === true) {
       modules['@nuxt-ignis/ui'] = {
         defaults: opts.ui || {},
       }
     }
-    if (opts?.db?.enabled === true) {
+    if (opts?.db?.active === true) {
       modules['@nuxt-ignis/db'] = {
         defaults: opts.db || {},
       }
     }
 
-    if (opts?.forms?.enabled === true) {
+    if (opts?.forms?.active === true) {
       modules['@nuxt-ignis/forms'] = {
         defaults: opts.forms || {},
       }
     }
 
-    if (opts?.validation?.enabled === true) {
+    if (opts?.validation?.active === true) {
       modules['@nuxt-ignis/validation'] = {
         defaults: opts.validation || {},
       }
     }
 
-    if (opts?.content?.enabled === true) {
+    if (opts?.content?.active === true) {
       modules['@nuxt-ignis/content'] = {
         defaults: opts.content || {},
       }
     }
 
-    if (opts?.utils?.enabled === true) {
+    if (opts?.utils?.active === true) {
       modules['@nuxt-ignis/utils'] = {
         defaults: opts.utils || {},
       }
@@ -98,6 +88,6 @@ export default defineNuxtModule<IgnisOptions>({
     return modules
   },
   setup() {
-    console.warn('Nuxt Ignis Dispatcher module setup called!')
+    console.debug('Nuxt Ignis Dispatcher module setup called!')
   },
 })

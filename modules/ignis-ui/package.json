@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/ui",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Nuxt Ignis module - UI features",
   "publishConfig": {
     "access": "public"

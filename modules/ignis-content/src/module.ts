@@ -1,40 +1,99 @@
-import { defineNuxtModule, addPlugin, createResolver, installModule } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 import { createConsola } from 'consola'
+import type { NuxtOptions } from 'nuxt/schema'
 
 const log = createConsola({ defaults: { tag: 'nuxt-ignis' } })
 
-export interface ModuleOptions {
-  enabled: boolean
+export interface IgnisContentOptions {
+  // activation flag (checked by dispatcher)
+  active?: boolean
+  // module-specific options
   content?: {
-    enabled: boolean
+    enabled?: boolean
   }
   i18n?: {
-    enabled: boolean
+    enabled?: boolean
     default?: string
     config?: string
   }
   seo?: {
-    enabled: boolean
+    enabled?: boolean
     ssr?: boolean
   }
   social?: {
-    enabled: boolean
+    enabled?: boolean
     url?: string
   }
   pslo?: {
-    enabled: boolean
+    enabled?: boolean
     content?: boolean
   }
 }
 
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule<IgnisContentOptions>({
   meta: {
     name: '@nuxt-ignis/content',
     configKey: 'ignisContent',
   },
-  setup(options, nuxt) {
-    const resolver = createResolver(import.meta.url)
+  moduleDependencies(nuxt) {
+    console.debug('@nuxt-ignis/content - module dependencies are being resolved')
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const modules: Record<string, any> = {}
+
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { content?: IgnisContentOptions } }
+    const options = nuxtOpts.ignisContent || nuxtOpts.ignis?.content
+
+    // I18N
+    if (options?.i18n?.enabled) {
+      modules['@nuxtjs/i18n'] = {
+        vueI18n: options.i18n?.config || './i18n.config.ts',
+        locales: [options.i18n?.default || 'en'],
+        strategy: 'no_prefix',
+        bundle: {
+          optimizeTranslationDirective: false,
+        },
+      }
+      console.debug('@nuxtjs/i18n module installed')
+    }
+
+    // SEO
+    // module must be installed before @nuxt/content
+    // (https://nuxtseo.com/docs/nuxt-seo/guides/nuxt-content)
+    if (options?.seo?.enabled === true) {
+      const seoConfig: Record<string, unknown> = {}
+
+      // ogImage and Schema.org modules should be disabled with `ssr: false`
+      if (options.seo.ssr === false) {
+        seoConfig.ogImage = { enabled: false }
+        seoConfig.schemaOrg = { enabled: false }
+      }
+
+      modules['@nuxtjs/seo'] = seoConfig
+
+      console.debug('@nuxtjs/seo module installed')
+    }
+
+    // Nuxt Content
+    if (options?.content?.enabled === true) {
+      modules['@nuxt/content'] = { }
+      console.debug('@nuxt/content module installed')
+    }
+
+    // Social Share
+    if (options?.social?.enabled === true) {
+      modules['@stefanobartoletti/nuxt-social-share'] = {
+        baseUrl: options.social?.url || 'https://nuxt-ignis.com/',
+      }
+      if (!options.social?.url) {
+        log.warn('Base URL for `nuxt-social-share` is not set. Use `process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL` to point sharing to your domain correctly.')
+      }
+      console.debug('@stefanobartoletti/nuxt-social-share module installed')
+    }
+
+    return modules
+  },
+  setup(options, nuxt) {
     nuxt.options.runtimeConfig.public.ignis ||= {
       content: { enabled: false },
       i18n: { enabled: false, default: 'en', config: './i18n.config.ts' },
@@ -63,51 +122,6 @@ export default defineNuxtModule<ModuleOptions>({
       content: options.pslo?.content || false,
     }
 
-    // I18N
-    if (options.i18n?.enabled === true) {
-      installModule('@nuxtjs/i18n', {
-        vueI18n: options.i18n?.config || './i18n.config.ts',
-        locales: [options.i18n?.default || 'en'],
-        strategy: 'no_prefix',
-        bundle: {
-          optimizeTranslationDirective: false,
-        },
-      })
-      console.debug('@nuxtjs/i18n module installed')
-    }
-
-    // SEO
-    // must be before @nuxt/content (https://nuxtseo.com/docs/nuxt-seo/guides/nuxt-content)
-    if (options.seo?.enabled === true) {
-      const seoConfig: Record<string, unknown> = {}
-
-      // ogImage and Schema.org modules should be disabled with `ssr: false`
-      if (options.seo?.ssr === false) {
-        seoConfig.ogImage = { enabled: false }
-        seoConfig.schemaOrg = { enabled: false }
-      }
-
-      installModule('@nuxtjs/seo', Object.keys(seoConfig).length > 0 ? seoConfig : undefined)
-      console.debug('@nuxtjs/seo module installed')
-    }
-
-    // Nuxt Content
-    if (options.content?.enabled === true) {
-      installModule('@nuxt/content')
-      console.debug('@nuxt/content module installed')
-    }
-
-    // Social Share
-    if (options.social?.enabled === true) {
-      installModule('@stefanobartoletti/nuxt-social-share', {
-        baseUrl: options.social?.url || 'https://nuxt-ignis.com/',
-      })
-      if (!options.social?.url) {
-        log.warn('Base URL for `nuxt-social-share` is not set. Use `process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL` to point sharing to your domain correctly.')
-      }
-      console.debug('@stefanobartoletti/nuxt-social-share module installed')
-    }
-
     // elrh-pslo
     if (options.pslo?.enabled === true) {
       console.debug('elrh-pslo enabled')
@@ -125,7 +139,7 @@ export default defineNuxtModule<ModuleOptions>({
       }
     }
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
+    const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })

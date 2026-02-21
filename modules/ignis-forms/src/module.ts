@@ -1,22 +1,49 @@
-import { defineNuxtModule, addPlugin, createResolver, installModule } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
+import type { NuxtOptions } from 'nuxt/schema'
 
-export interface ModuleOptions {
-  formkit: {
-    enabled: boolean
-    default: string
-    config: string
+export interface IgnisFormsOptions {
+  // activation flag (checked by dispatcher)
+  active?: boolean
+  // module-specific options
+  formkit?: {
+    enabled?: boolean
+    default?: string
+    config?: string
   }
-  vueform: boolean
+  vueform?: boolean
 }
 
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule<IgnisFormsOptions>({
   meta: {
     name: '@nuxt-ignis/forms',
     configKey: 'ignisForms',
   },
-  setup(options, nuxt) {
-    const resolver = createResolver(import.meta.url)
+  moduleDependencies(nuxt) {
+    console.debug('@nuxt-ignis/forms - module dependencies are being resolved')
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const modules: Record<string, any> = {}
+
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { forms?: IgnisFormsOptions } }
+    const options = nuxtOpts.ignisForms || nuxtOpts.ignis?.forms
+
+    if (options?.vueform === true) {
+      modules['@vueform/nuxt'] = { }
+      console.debug('@vueform/nuxt module installed')
+    }
+
+    if (options?.formkit?.enabled === true) {
+      modules['@formkit/nuxt'] = {
+        autoImport: true,
+        default: options.formkit?.default || 'en',
+        configFile: options?.formkit?.config || './formkit.config.ts',
+      }
+      console.debug('@formkit/nuxt module installed')
+    }
+
+    return modules
+  },
+  setup(options, nuxt) {
     nuxt.options.runtimeConfig.public.ignis ||= {
       formkit: {
         enabled: false,
@@ -33,20 +60,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
     nuxt.options.runtimeConfig.public.ignis.vueform = options.vueform || false
 
-    if (options.vueform === true) {
-      installModule('@vueform/nuxt')
-      console.debug('@vueform/nuxt module installed')
-    }
-
-    if (options.formkit?.enabled === true) {
-      installModule('@formkit/nuxt', {
-        autoImport: true,
-        configFile: options.formkit?.config || './formkit.config.ts',
-      })
-      console.debug('@formkit/nuxt module installed')
-    }
-
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
+    const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })

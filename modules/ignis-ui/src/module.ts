@@ -1,11 +1,15 @@
-import { defineNuxtModule, addPlugin, createResolver, installModule } from '@nuxt/kit'
+import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 import { join } from 'node:path'
 import { defu } from 'defu'
 import OpenProps from 'open-props'
 import tailwindcss from '@tailwindcss/vite'
 import { ignisTailwindcssFix } from './runtime/tailwind'
+import type { NuxtOptions } from 'nuxt/schema'
 
-export interface ModuleOptions {
+export interface IgnisUIOptions {
+  // activation flag (checked by dispatcher)
+  active?: boolean
+  // module-specific options
   ui?: boolean
   tailwind?: boolean
   openprops?: boolean
@@ -14,33 +18,27 @@ export interface ModuleOptions {
   cssDir?: string
 }
 
-export default defineNuxtModule<ModuleOptions>({
+export default defineNuxtModule<IgnisUIOptions>({
   meta: {
     name: '@nuxt-ignis/ui',
     configKey: 'ignisUI',
   },
-  setup(options, nuxt) {
-    const resolver = createResolver(import.meta.url)
+  moduleDependencies(nuxt) {
+    console.debug('@nuxt-ignis/forms - module dependencies are being resolved')
 
-    nuxt.options.runtimeConfig.public.ignis ||= {
-      ui: false,
-      tailwind: false,
-      openprops: false,
-      charts: false,
-    }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    const modules: Record<string, any> = {}
 
-    nuxt.options.runtimeConfig.public.ignis.ui = options.ui || false
-    nuxt.options.runtimeConfig.public.ignis.tailwind = options.tailwind || false
-    nuxt.options.runtimeConfig.public.ignis.openprops = options.openprops || false
-    nuxt.options.runtimeConfig.public.ignis.charts = options.charts || false
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { ui?: IgnisUIOptions } }
+    const options = nuxtOpts.ignisUI || nuxtOpts.ignis?.ui
 
-    const cssDir = options.cssDir || ''
+    const cssDir = options?.cssDir || ''
 
     let tailwindFixRequired = false
 
-    if (options.ui === true) {
+    if (options?.ui === true) {
       tailwindFixRequired = true
-      installModule('@nuxt/ui')
+      modules['@nuxt/ui'] = { }
       // import tailwind css file
       if (cssDir) {
         nuxt.options.css.push(join(cssDir, 'ignis-nuxt-ui.css'))
@@ -49,7 +47,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
     else {
       // evaluate separate Tailwind CSS
-      if (options.tailwind === true) {
+      if (options?.tailwind === true) {
         tailwindFixRequired = true
         // import tailwind css file
         if (cssDir) {
@@ -74,7 +72,7 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     // Open Props CSS
-    if (options.openprops === true) {
+    if (options?.openprops === true) {
       if (cssDir) {
         nuxt.options.css.push(join(cssDir, 'ignis-open-props.css'))
       }
@@ -87,12 +85,27 @@ export default defineNuxtModule<ModuleOptions>({
     }
 
     // Nuxt Charts
-    if (options.charts === true) {
-      installModule('nuxt-charts')
+    if (options?.charts === true) {
+      modules['nuxt-charts'] = { }
       console.debug('nuxt-charts module installed')
     }
 
-    // Do not add the extension since the `.ts` will be transpiled to `.mjs` after `npm run prepack`
+    return modules
+  },
+  setup(options, nuxt) {
+    nuxt.options.runtimeConfig.public.ignis ||= {
+      ui: false,
+      tailwind: false,
+      openprops: false,
+      charts: false,
+    }
+
+    nuxt.options.runtimeConfig.public.ignis.ui = options.ui || false
+    nuxt.options.runtimeConfig.public.ignis.tailwind = options.tailwind || false
+    nuxt.options.runtimeConfig.public.ignis.openprops = options.openprops || false
+    nuxt.options.runtimeConfig.public.ignis.charts = options.charts || false
+
+    const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })
