@@ -22,7 +22,9 @@
       "vueuse": true,
     },
     "ignisDB": {
-      "supabase": true,
+      "supabase": {
+        "enabled": true,
+      },
     },
     "modules": [
       "@nuxt-ignis/core",
