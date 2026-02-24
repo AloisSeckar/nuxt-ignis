@@ -128,7 +128,7 @@ export default loadVitestConfig({
 <details>
 <summary>Reason why</summary>
 
-Technically, this step is not required. Your tests will run even with absolutely zero config with `vitest` defaults. However, written like this, you can mix your override with the additional default setup provided by the test tool. Check more details in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/v0.1.14/README.md#configuration).
+Technically, this step is not required. Your tests will run even with absolutely zero config with `vitest` defaults. However, written like this, you can mix your override with the additional default setup provided by the test tool. Check more details in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.0-alpha.2/README.md#configuration).
 </details>
 
 It is also possible to add following test-related scripts to `package.json` for simplier execution:
@@ -146,7 +146,7 @@ It is also possible to add following test-related scripts to `package.json` for 
 <details>
 <summary>Reason why</summary>
 
-This might be just a matter of personal preference, but someone might find the shorthands useful. Check more detailed explanation for each variant in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec//blob/v0.1.14/README.md#running-tests).
+This might be just a matter of personal preference, but someone might find the shorthands useful. Check more detailed explanation for each variant in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec//blob/v0.2.0-alpha.2/README.md#running-tests).
 </details>
 
 8) Delete `node_modules` folder and your lock file (based on the package manager you're using).
