@@ -1,9 +1,10 @@
+import { readFileSync } from 'node:fs'
 import { describe, expect, test } from 'vitest'
 import { hasText } from 'elrh-cosca'
 import app from '../package.json' assert { type: 'json' }
 
 // extract the versions from package.json
-const { version, config, dependencies, packageManager } = app
+const { version, config, packageManager } = app
 
 // Nuxt Ignis
 
@@ -35,7 +36,11 @@ describe(`Nuxt Ignis version should be the same as in package.json (${version})`
 
 // Nuxt Spec
 
-const specVersion = dependencies['nuxt-spec']
+// parse nuxt-spec version from pnpm-workspace.yaml catalog
+const workspaceYaml = readFileSync(new URL('../../pnpm-workspace.yaml', import.meta.url), 'utf-8')
+const nuxtSpecMatch = workspaceYaml.match(/^\s+nuxt-spec:\s+(.+)$/m)
+const specVersion = nuxtSpecMatch?.[1]?.trim() || 'unknown'
+
 const specLink = `https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v${specVersion}/`
 
 describe(`Nuxt Spec links should lead to same version tag as in package.json (${specVersion})`, () => {
