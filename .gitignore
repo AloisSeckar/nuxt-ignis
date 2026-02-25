@@ -22,3 +22,6 @@ _ignis-config.json
 
 # TODO ???
 .nuxtrc
+
+# nuxt-spec test files
+__current__
