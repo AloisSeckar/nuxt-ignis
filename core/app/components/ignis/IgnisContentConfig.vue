@@ -1,5 +1,5 @@
 <template>
-  <div class="ignis-config-wrapper">
+  <div id="ignis-config" class="ignis-config-wrapper">
     <h1 class="ignis-config-header">
       Configuration Overview
     </h1>

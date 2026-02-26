@@ -11,7 +11,7 @@
 -->
 
 <template>
-  <div class="ignis-feature-wrapper">
+  <div id="ignis-info" class="ignis-feature-wrapper">
     <h1 class="ignis-feature-header">
       Features Overview
     </h1>

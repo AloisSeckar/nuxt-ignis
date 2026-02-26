@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header id="ignis-header">
     <div class="ignis-header">
       <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
       <div class="ignis-title">

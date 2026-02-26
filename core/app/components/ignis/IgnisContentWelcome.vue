@@ -1,5 +1,5 @@
 <template>
-  <div class="ignis-welcome-wrapper">
+  <div id="ignis-welcome" class="ignis-welcome-wrapper">
     <h1 class="ignis-welcome-header">
       Welcome to Ignis
     </h1>

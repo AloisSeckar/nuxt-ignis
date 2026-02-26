@@ -1,5 +1,5 @@
 <template>
-  <footer>
+  <footer id="ignis-footer">
     <NuxtLink to="https://nuxt-ignis.com/" class="ignis-link">
       https://nuxt-ignis.com/
     </NuxtLink>
