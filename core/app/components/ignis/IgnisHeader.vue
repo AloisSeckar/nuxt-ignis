@@ -3,12 +3,12 @@
     <div class="ignis-header">
       <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
       <div class="ignis-title">
-        {{ useIgnisT("title") }}
+        {{ title }}
       </div>
       <img src="/nuxt-ignis.png" class="ignis-logo" :title :alt>
     </div>
     <div class="ignis-subtitle ">
-      {{ useIgnisT("subtitle") }}
+      {{ subtitle }}
     </div>
   </header>
 </template>
@@ -17,6 +17,7 @@
 import { useIgnisT } from '#imports' // requires explicit import for some reason
 
 const title = useIgnisT('title')
+const subtitle = useIgnisT('subtitle')
 const alt = title
 </script>
 

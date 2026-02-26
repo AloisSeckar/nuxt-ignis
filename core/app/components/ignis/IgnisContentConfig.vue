@@ -4,7 +4,7 @@
       Configuration Overview
     </h1>
     <div class="ignis-config-subheader">
-      {{ useIgnisT('config.header') }}
+      {{ header }}
     </div>
     <pre class="ignis-config">{{ ignisConfig || error }};</pre>
   </div>
@@ -16,6 +16,7 @@ const baseURL = `${requestURL.protocol}//${requestURL.host}`
 const { data: ignisConfig, error } = await useFetch('/_ignis-config.json', {
   baseURL,
 })
+const header = useIgnisT('config.header')
 </script>
 
 <style scoped lang="css">
