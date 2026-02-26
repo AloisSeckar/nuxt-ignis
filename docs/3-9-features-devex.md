@@ -84,12 +84,13 @@ If you don't want to rely on the default behavior, you can disable those handler
 
 ## Testing
 
-<PackagesReference :packages="[{ name: 'nuxt-spec', version: 'v0.2.0-alpha.2' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-spec', version: 'v0.2.0-alpha.4' }]" />
 
 Nuxt Ignis embraces [Vitest](https://vitest.dev/) as its test runner library. More specifically, it uses proprietary **Nuxt Spec** package that provides a base layer for testing Nuxt modules and applications united under single dependency. With that you have out-of-the-box access to:
 
 - [vitest](https://www.npmjs.com/package/vitest) **v4** as the fundamental testing framework
-- [@vitest/browser](https://www.npmjs.com/package/@vitest/browser) as the experimental browser runner
+- [@vitest/browser](https://www.npmjs.com/package/@vitest/browser) as more advanced browser-native testing runner
+- [@vitest/ui](https://www.npmjs.com/package/@vitest/ui) as graphic UI above the Vitest test runner
 - [happy-dom](https://www.npmjs.com/package/happy-dom) as the headless browser runtime
 - [playwright-core](https://www.npmjs.com/package/playwright-core) as the headless browser testing framework
 - [@vue/test-utils](https://www.npmjs.com/package/@vue/test-utils) for testing Vue stuff
@@ -117,6 +118,8 @@ export default loadVitestConfig({
 ```
 
 **NOTE**: Based on the [Vitest documentation](https://main.vitest.dev/config/), it is possible to pass in **any configuration option** valid for [Vite](https://vite.dev/config/). Configuration related directly to Vitest must be passed under the `test` key.
+
+Read more in the project [README](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.0-alpha.4/README.md).
 
 ## Nuxt Security
 

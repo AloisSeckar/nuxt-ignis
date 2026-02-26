@@ -9,24 +9,25 @@ describe('demos/01_default', async () => {
     rootDir: fileURLToPath(new URL('../../../demos/01_default', import.meta.url)),
   })
 
-  test('Home page matches screenshot', async () => {
+  test('_ignis-welcome matches screenshot', async () => {
     const page = await createPage()
-    await page.goto(url('/'), { waitUntil: 'hydration' })
+    await page.goto(url('/_ignis-welcome'), { waitUntil: 'hydration' })
 
-    expect(await compareScreenshot(page, 'index.jpg')).toEqual(true)
+    expect(await compareScreenshot(page, { fileName: 'header.jpg', selector: '#ignis-header' })).toEqual(true)
+    expect(await compareScreenshot(page, { fileName: 'welcome.jpg', selector: '#ignis-welcome' })).toEqual(true)
   })
 
   test('_ignis-info matches screenshot', async () => {
     const page = await createPage()
     await page.goto(url('/_ignis-info'), { waitUntil: 'hydration' })
 
-    expect(await compareScreenshot(page, 'info.jpg')).toEqual(true)
+    expect(await compareScreenshot(page, { fileName: 'info.jpg', selector: '#ignis-info' })).toEqual(true)
   })
 
   test('_ignis-config matches screenshot', async () => {
     const page = await createPage()
     await page.goto(url('/_ignis-config'), { waitUntil: 'hydration' })
 
-    expect(await compareScreenshot(page, 'config.jpg')).toEqual(true)
+    expect(await compareScreenshot(page, { fileName: 'config.jpg', selector: '#ignis-config' })).toEqual(true)
   })
 })
