@@ -44,11 +44,11 @@
   },
   "dependencies": {
     "@nuxt/kit": "catalog:",
-    "@tailwindcss/vite": "4.1.18",
+    "@tailwindcss/vite": "catalog:",
     "defu": "catalog:",
-    "nuxt-charts": "2.1.1",
-    "open-props": "1.7.23",
-    "postcss-jit-props": "1.0.16"
+    "nuxt-charts": "catalog:",
+    "open-props": "catalog:",
+    "postcss-jit-props": "catalog:"
   },
   "devDependencies": {
     "@nuxt/devtools": "catalog:",
@@ -56,13 +56,13 @@
     "@nuxt/module-builder": "catalog:",
     "@nuxt/schema": "catalog:",
     "@nuxt/test-utils": "catalog:",
-    "@nuxt/ui": "4.4.0",
-    "@nuxtjs/tailwindcss": "6.14.0",
+    "@nuxt/ui": "catalog:",
+    "@nuxtjs/tailwindcss": "catalog:",
     "@types/node": "catalog:",
     "changelogen": "catalog:",
     "eslint": "catalog:",
     "nuxt": "catalog:",
-    "tailwindcss": "4.1.18",
+    "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
     "vue-tsc": "catalog:"

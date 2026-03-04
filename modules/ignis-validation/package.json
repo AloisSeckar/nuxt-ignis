@@ -56,10 +56,10 @@
     "eslint": "catalog:",
     "nuxt": "catalog:",
     "typescript": "catalog:",
-    "valibot": "1.2.0",
+    "valibot": "catalog:",
     "vitest": "catalog:",
     "vue-tsc": "catalog:",
-    "zod": "4.3.6"
+    "zod": "catalog:"
   },
   "packageManager": "pnpm@10.29.3"
 }

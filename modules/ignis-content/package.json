@@ -44,13 +44,13 @@
   },
   "dependencies": {
     "@nuxt/kit": "catalog:",
-    "@nuxt/content": "3.11.2",
-    "@nuxtjs/i18n": "10.2.3",
-    "@nuxtjs/seo": "3.4.0",
-    "@stefanobartoletti/nuxt-social-share": "2.3.1",
+    "@nuxt/content": "catalog:",
+    "@nuxtjs/i18n": "catalog:",
+    "@nuxtjs/seo": "catalog:",
+    "@stefanobartoletti/nuxt-social-share": "catalog:",
     "better-sqlite3": "catalog:",
     "consola": "catalog:",
-    "elrh-pslo": "1.1.6"
+    "elrh-pslo": "catalog:"
   },
   "devDependencies": {
     "@nuxt/devtools": "catalog:",

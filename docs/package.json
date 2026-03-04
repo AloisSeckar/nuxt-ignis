@@ -8,11 +8,11 @@
     "test": "vitest run"
   },
   "dependencies": {
-    "elrh-cosca": "0.3.5",
-    "oxc-minify": "^0.101.0",
-    "vitepress": "2.0.0-alpha.15",
-    "vitepress-plugin-group-icons": "^1.7.1",
-    "vitest": "^4.0.18"
+    "elrh-cosca": "catalog:",
+    "oxc-minify": "catalog:",
+    "vitepress": "catalog:",
+    "vitepress-plugin-group-icons": "catalog:",
+    "vitest": "catalog:"
   },
   "packageManager": "pnpm@10.29.3"
 }

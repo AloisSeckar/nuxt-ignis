@@ -44,8 +44,8 @@
   },
   "dependencies": {
     "@nuxt/kit": "catalog:",
-    "@maas/vue-equipment": "1.0.0-beta.51",
-    "magic-regexp": "0.10.0"
+    "@maas/vue-equipment": "catalog:",
+    "magic-regexp": "catalog:"
   },
   "devDependencies": {
     "@nuxt/devtools": "catalog:",
