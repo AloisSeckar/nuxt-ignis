@@ -13,6 +13,7 @@
 08a_content
 08b_content-tailwind
 08c_content-pslo
+08d_i18n
 09_equipment
 10_regexp
 11_charts
