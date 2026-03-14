@@ -8,7 +8,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "my-module": "latest",
+    "@nuxt-ignis/content": "link:..",
     "nuxt": "catalog:"
   }
 }
