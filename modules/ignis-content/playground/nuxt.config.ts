@@ -7,7 +7,6 @@ export default defineNuxtConfig({
     },
     i18n: {
       enabled: true,
-      default: 'en',
     },
   },
 })

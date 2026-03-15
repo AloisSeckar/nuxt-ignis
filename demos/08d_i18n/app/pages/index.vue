@@ -16,7 +16,8 @@
 </template>
 
 <script setup lang="ts">
-const { locale, locales, setLocale } = useI18n()
+const { defaultLocale, locale, locales, setLocale } = useI18n()
+console.warn('Default locale:', defaultLocale.value)
 console.warn('Current locale:', locale.value)
 console.warn('Available locales:', locales.value)
 </script>

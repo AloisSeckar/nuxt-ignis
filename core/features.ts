@@ -11,6 +11,8 @@ const currentDir = dirname(fileURLToPath(import.meta.url))
 // and will be defu-merged with provided defaults
 // printOverview = true is used in tests to capture console output
 export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtConfig, overview: string } {
+  console.warn('Nuxt Ignis - features are being resolved')
+
   // list of optional extra features
   const extras = [] as string[]
   // list of Nuxt-related settings
@@ -126,8 +128,8 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
       ignisContent: {
         i18n: {
           enabled: true,
-          default: process.env.NUXT_PUBLIC_IGNIS_I18N_DEFAULT || 'en',
-          config: process.env.NUXT_PUBLIC_IGNIS_I18N_CONFIG || './i18n.config.ts',
+          // default: process.env.NUXT_PUBLIC_IGNIS_I18N_DEFAULT || 'en',
+          // config: process.env.NUXT_PUBLIC_IGNIS_I18N_CONFIG || './i18n.config.ts',
         },
       },
     }, nuxtConfig)
@@ -233,8 +235,11 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
       ignisContent: {
         social: {
           enabled: true,
-          url: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || '',
+          // url: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || 'http://www.defaultignis1.com',
         },
+      },
+      socialShare: {
+        // baseUrl: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || 'http://www.defaultignis2.com',
       },
     }, nuxtConfig)
   }

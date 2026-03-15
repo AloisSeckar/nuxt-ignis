@@ -4,4 +4,8 @@ export default defineNuxtConfig({
     // while having 'nuxt-ignis' as dependency in your package.json
     '../../core',
   ],
+  socialShare: {
+    baseUrl: 'http://www.defaultdemo.com' // required!
+    // other optional module options
+   }
 })

@@ -63,7 +63,7 @@ export default defineNuxtModule<IgnisContentOptions>({
       modules['@nuxtjs/i18n'] = {
         defaults: {
           locales: localeCodes.map(code => ({ code: code, file: `${code}.json` })),
-          defaultLocale: options.i18n?.default || 'en',
+          defaultLocale: options.i18n?.default || 'es',
         },
       }
       console.log('@nuxtjs/i18n module installed with locales:', localeCodes.join(', ') || 'none')
@@ -81,7 +81,9 @@ export default defineNuxtModule<IgnisContentOptions>({
         seoConfig.schemaOrg = { enabled: false }
       }
 
-      modules['@nuxtjs/seo'] = seoConfig
+      modules['@nuxtjs/seo'] = {
+        defaults: seoConfig,
+      }
 
       console.debug('@nuxtjs/seo module installed')
     }
@@ -95,7 +97,9 @@ export default defineNuxtModule<IgnisContentOptions>({
     // Social Share
     if (options?.social?.enabled === true) {
       modules['@stefanobartoletti/nuxt-social-share'] = {
-        baseUrl: options.social?.url || 'https://nuxt-ignis.com/',
+        defaults: {
+          baseUrl: options.social?.url || 'http://www.defaultmoduleconfig.com',
+        },
       }
       if (!options.social?.url) {
         log.warn('Base URL for `nuxt-social-share` is not set. Use `process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL` to point sharing to your domain correctly.')
@@ -103,6 +107,7 @@ export default defineNuxtModule<IgnisContentOptions>({
       console.debug('@stefanobartoletti/nuxt-social-share module installed')
     }
 
+    console.log('[ignis-content] moduleDependencies returning:', JSON.stringify(modules))
     return modules
   },
   setup(options, nuxt) {
@@ -110,9 +115,9 @@ export default defineNuxtModule<IgnisContentOptions>({
 
     nuxt.options.runtimeConfig.public.ignis ||= {
       content: { enabled: false },
-      i18n: { enabled: false, default: 'en', config: resolver.resolve('./i18n.config.ts') },
+      i18n: { enabled: false, default: 'de', config: resolver.resolve('./i18n.config.ts') },
       seo: { enabled: false },
-      social: { enabled: false, url: '' },
+      social: { enabled: false, url: 'http://www.defaultruntimeconfig1.com' },
       pslo: { enabled: false, content: false },
     }
 
@@ -121,7 +126,7 @@ export default defineNuxtModule<IgnisContentOptions>({
     }
     nuxt.options.runtimeConfig.public.ignis.i18n = {
       enabled: options.i18n?.enabled || false,
-      default: options.i18n?.default || 'en',
+      default: options.i18n?.default || 'fr',
       config: options.i18n?.config || resolver.resolve('./i18n.config.ts'),
     }
     nuxt.options.runtimeConfig.public.ignis.seo = {
@@ -129,7 +134,7 @@ export default defineNuxtModule<IgnisContentOptions>({
     }
     nuxt.options.runtimeConfig.public.ignis.social = {
       enabled: options.social?.enabled || false,
-      url: options.social?.url || '',
+      url: options.social?.url || 'http://www.defaultruntimeconfig2.com',
     }
     nuxt.options.runtimeConfig.public.ignis.pslo = {
       enabled: options.pslo?.enabled || false,
@@ -149,7 +154,6 @@ export default defineNuxtModule<IgnisContentOptions>({
       }
 
       const localeCodes = localeFiles.map(f => f.replace('.json', ''))
-      const localeObjects = localeCodes.map(code => ({ code: code, file: `${code}.json` }))
 
       // generate a build-time template with JSON imports
       // uses relative paths from .nuxt/ for cross-platform compatibility
@@ -179,20 +183,13 @@ export default defineNuxtModule<IgnisContentOptions>({
       })
 
       // register alias for both Nuxt app and Nitro server
+      nuxt.options.alias ||= {}
       nuxt.options.alias['#ignis-i18n-locales'] = template.dst
       nuxt.options.nitro ||= {}
       nuxt.options.nitro.alias ||= {}
       nuxt.options.nitro.alias['#ignis-i18n-locales'] = template.dst
 
-      // override runtime config after @nuxtjs/i18n has finished its setup
-      // this ensures locales are available to useI18n().locales at runtime
-      nuxt.hook('modules:done', () => {
-        nuxt.options.i18n ||= {}
-        nuxt.options.i18n.locales = localeObjects
-        nuxt.options.i18n.defaultLocale = options.i18n?.default || 'en'
-      })
-
-      console.log('i18n enabled with default locale:', options.i18n?.default || 'en')
+      console.log('i18n enabled with default locale:', options.i18n?.default, nuxt.options.i18n?.defaultLocale)
       console.log('i18n locale files found:', localeCodes.join(', ') || 'none')
     }
 
@@ -211,6 +208,10 @@ export default defineNuxtModule<IgnisContentOptions>({
           log.debug(`Nuxt Content file ${file.id} processed with elrh-pslo`)
         })
       }
+    }
+
+    if (options.social?.enabled === true) {
+      console.log('[ignis-content] nuxt.options.socialShare =', JSON.stringify(nuxt.options.socialShare))
     }
 
     addPlugin(resolver.resolve('./runtime/plugin'))

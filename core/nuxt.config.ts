@@ -4,6 +4,7 @@ import { defu } from 'defu'
 import { log } from './app/utils/consola'
 import { setFeatures } from './features'
 import type { NuxtConfig } from '@nuxt/schema'
+import { useNuxt } from 'nuxt/kit'
 
 const currentFeatures = setFeatures()
 
@@ -86,7 +87,7 @@ const baseConfig: NuxtConfig = {
         supabase: false, // true/false
         i18n: {
           enabled: false, // true/false
-          default: 'en', // default locale (should be same as formkit)
+          default: 'it', // default locale (should be same as formkit)
           config: './i18n.config.ts', // path to config file
         },
         formkit: {
@@ -140,6 +141,17 @@ const baseConfig: NuxtConfig = {
       // display settings overview in console (just once)
       log.info('\nNuxt Ignis will start using following settings:\n' + currentFeatures.overview)
     },
+    'modules:done'() {
+      const nuxt = useNuxt()
+      console.warn('modules:done')
+      console.log('nuxt.options.socialShare =', nuxt.options.socialShare)
+      console.log('runtimeConfig.public.socialShare =', nuxt.options.runtimeConfig?.public?.socialShare)
+    },
+    ready(nuxt) {
+      console.warn('ready')
+      console.log('nuxt.options.socialShare =', JSON.stringify(nuxt.options.socialShare))
+      console.log('runtimeConfig.public.socialShare =', JSON.stringify(nuxt.options.runtimeConfig?.public?.socialShare))
+    }
   },
 }
 
