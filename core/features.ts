@@ -116,25 +116,6 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     }, nuxtConfig)
   }
 
-  if (process.env.NUXT_PUBLIC_IGNIS_MODULE_CONTENT === 'true') {
-    nuxtConfig.modules!.push('@nuxt-ignis/content')
-  }
-
-  // i18n
-  if (process.env.NUXT_PUBLIC_IGNIS_I18N_ENABLED === 'true') {
-    nuxtConfig.modules!.push('@nuxt-ignis/content')
-    ignis.push('@nuxt-ignis/content/i18n')
-    nuxtConfig = defu({
-      ignisContent: {
-        i18n: {
-          enabled: true,
-          // default: process.env.NUXT_PUBLIC_IGNIS_I18N_DEFAULT || 'en',
-          // config: process.env.NUXT_PUBLIC_IGNIS_I18N_CONFIG || './i18n.config.ts',
-        },
-      },
-    }, nuxtConfig)
-  }
-
   // forms
   let formsPreset = process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS
   if (formsPreset && !['vueform', 'formkit'].includes(formsPreset)) {
@@ -194,6 +175,26 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     }, nuxtConfig)
   }
 
+  // '@nuxt-ignis/content' module
+
+  if (process.env.NUXT_PUBLIC_IGNIS_MODULE_CONTENT === 'true') {
+    nuxtConfig.modules!.push('@nuxt-ignis/content')
+  }
+
+  // i18n
+  if (process.env.NUXT_PUBLIC_IGNIS_I18N_ENABLED === 'true') {
+    nuxtConfig.modules!.push('@nuxt-ignis/content')
+    ignis.push('@nuxt-ignis/content/i18n')
+    nuxtConfig = defu({
+      ignisContent: {
+        i18n: {
+          enabled: true,
+          defaultLocale: process.env.NUXT_PUBLIC_IGNIS_I18N_LOCALE || 'en',
+        },
+      },
+    }, nuxtConfig)
+  }
+
   // seo
   // 2025/04 - must be before @nuxt/content (https://nuxtseo.com/docs/nuxt-seo/guides/nuxt-content)
   if (process.env.NUXT_PUBLIC_IGNIS_SEO === 'true') {
@@ -235,11 +236,8 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
       ignisContent: {
         social: {
           enabled: true,
-          // url: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || 'http://www.defaultignis1.com',
+          url: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || '',
         },
-      },
-      socialShare: {
-        // baseUrl: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || 'http://www.defaultignis2.com',
       },
     }, nuxtConfig)
   }

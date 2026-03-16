@@ -7,7 +7,7 @@ packages:
 catalog:
   '@formkit/nuxt': 1.7.2
   '@maas/vue-equipment': 1.0.0-beta.51
-  '@nuxt-ignis/content': 0.0.24
+  '@nuxt-ignis/content': 0.0.25
   '@nuxt-ignis/core': 0.0.3
   '@nuxt-ignis/db': 0.0.7
   '@nuxt-ignis/forms': 0.0.5

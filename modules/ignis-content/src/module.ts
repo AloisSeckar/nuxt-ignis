@@ -38,7 +38,7 @@ export default defineNuxtModule<IgnisContentOptions>({
     configKey: 'ignisContent',
   },
   moduleDependencies(nuxt) {
-    console.debug('@nuxt-ignis/content - module dependencies are being resolved')
+    console.log('@nuxt-ignis/content - module dependencies are being resolved')
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
@@ -63,7 +63,7 @@ export default defineNuxtModule<IgnisContentOptions>({
       modules['@nuxtjs/i18n'] = {
         defaults: {
           locales: localeCodes.map(code => ({ code: code, file: `${code}.json` })),
-          defaultLocale: options.i18n?.default || 'es',
+          defaultLocale: options.i18n?.default || 'en',
         },
       }
       console.log('@nuxtjs/i18n module installed with locales:', localeCodes.join(', ') || 'none')
@@ -85,48 +85,39 @@ export default defineNuxtModule<IgnisContentOptions>({
         defaults: seoConfig,
       }
 
-      console.debug('@nuxtjs/seo module installed')
+      console.log('@nuxtjs/seo module installed')
     }
 
     // Nuxt Content
     if (options?.content?.enabled === true) {
       modules['@nuxt/content'] = { }
-      console.debug('@nuxt/content module installed')
+      console.log('@nuxt/content module installed')
     }
 
     // Social Share
     if (options?.social?.enabled === true) {
       modules['@stefanobartoletti/nuxt-social-share'] = {
         defaults: {
-          baseUrl: options.social?.url || 'http://www.defaultmoduleconfig.com',
+          baseUrl: options.social?.url || '',
         },
       }
       if (!options.social?.url) {
         log.warn('Base URL for `nuxt-social-share` is not set. Use `process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL` to point sharing to your domain correctly.')
       }
-      console.debug('@stefanobartoletti/nuxt-social-share module installed')
+      console.log('@stefanobartoletti/nuxt-social-share module installed')
     }
 
-    console.log('[ignis-content] moduleDependencies returning:', JSON.stringify(modules))
     return modules
   },
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
-
-    nuxt.options.runtimeConfig.public.ignis ||= {
-      content: { enabled: false },
-      i18n: { enabled: false, default: 'de', config: resolver.resolve('./i18n.config.ts') },
-      seo: { enabled: false },
-      social: { enabled: false, url: 'http://www.defaultruntimeconfig1.com' },
-      pslo: { enabled: false, content: false },
-    }
 
     nuxt.options.runtimeConfig.public.ignis.content = {
       enabled: options.content?.enabled || false,
     }
     nuxt.options.runtimeConfig.public.ignis.i18n = {
       enabled: options.i18n?.enabled || false,
-      default: options.i18n?.default || 'fr',
+      default: options.i18n?.default || 'en',
       config: options.i18n?.config || resolver.resolve('./i18n.config.ts'),
     }
     nuxt.options.runtimeConfig.public.ignis.seo = {
@@ -134,7 +125,7 @@ export default defineNuxtModule<IgnisContentOptions>({
     }
     nuxt.options.runtimeConfig.public.ignis.social = {
       enabled: options.social?.enabled || false,
-      url: options.social?.url || 'http://www.defaultruntimeconfig2.com',
+      url: options.social?.url || '',
     }
     nuxt.options.runtimeConfig.public.ignis.pslo = {
       enabled: options.pslo?.enabled || false,
@@ -189,6 +180,7 @@ export default defineNuxtModule<IgnisContentOptions>({
       nuxt.options.nitro.alias ||= {}
       nuxt.options.nitro.alias['#ignis-i18n-locales'] = template.dst
 
+      // @ts-expect-error 'i18n' option will exist at this point
       console.log('i18n enabled with default locale:', options.i18n?.default, nuxt.options.i18n?.defaultLocale)
       console.log('i18n locale files found:', localeCodes.join(', ') || 'none')
     }
@@ -211,6 +203,7 @@ export default defineNuxtModule<IgnisContentOptions>({
     }
 
     if (options.social?.enabled === true) {
+      // @ts-expect-error 'socialShare' option will exist at this point
       console.log('[ignis-content] nuxt.options.socialShare =', JSON.stringify(nuxt.options.socialShare))
     }
 
