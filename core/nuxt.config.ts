@@ -84,7 +84,9 @@ const baseConfig: NuxtConfig = {
         ui: false, // true/false
         tailwind: false, // true/false (ignored, if ui=true)
         neon: false, // true/false
-        supabase: false, // true/false
+        supabase: {
+          enabled: false, // true/false
+        },
         i18n: {
           enabled: false, // true/false
           default: 'it', // default locale (should be same as formkit)
@@ -98,8 +100,12 @@ const baseConfig: NuxtConfig = {
         vueform: false, // true/false
         valibot: false, // true/false
         zod: false, // true/false
-        content: false, // true/false
-        seo: false, // true/false
+        content: {
+          enabled: false, // true/false
+        },
+        seo: {
+          enabled: false, // true/false
+        },
         auth: false, // true/false
         openprops: false, // true/false
         pslo: {
@@ -141,17 +147,6 @@ const baseConfig: NuxtConfig = {
       // display settings overview in console (just once)
       log.info('\nNuxt Ignis will start using following settings:\n' + currentFeatures.overview)
     },
-    'modules:done'() {
-      const nuxt = useNuxt()
-      console.warn('modules:done')
-      console.log('nuxt.options.socialShare =', nuxt.options.socialShare)
-      console.log('runtimeConfig.public.socialShare =', nuxt.options.runtimeConfig?.public?.socialShare)
-    },
-    ready(nuxt) {
-      console.warn('ready')
-      console.log('nuxt.options.socialShare =', JSON.stringify(nuxt.options.socialShare))
-      console.log('runtimeConfig.public.socialShare =', JSON.stringify(nuxt.options.runtimeConfig?.public?.socialShare))
-    }
   },
 }
 
