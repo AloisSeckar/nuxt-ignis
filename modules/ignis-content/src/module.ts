@@ -101,9 +101,6 @@ export default defineNuxtModule<IgnisContentOptions>({
           baseUrl: options.social?.url || '',
         },
       }
-      if (!options.social?.url) {
-        log.warn('Base URL for `nuxt-social-share` is not set. Use `process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL` to point sharing to your domain correctly.')
-      }
       console.log('@stefanobartoletti/nuxt-social-share module installed')
     }
 
@@ -204,7 +201,9 @@ export default defineNuxtModule<IgnisContentOptions>({
 
     if (options.social?.enabled === true) {
       // @ts-expect-error 'socialShare' option will exist at this point
-      console.log('[ignis-content] nuxt.options.socialShare =', JSON.stringify(nuxt.options.socialShare))
+      if (!nuxt.options.socialShare?.baseUrl && !options.social?.url) {
+        log.warn('Base URL for `nuxt-social-share` is not set. Check https://nuxt-ignis.com/3-7-features-utils.html#nuxt-social-share to set it up correctly.')
+      }
     }
 
     addPlugin(resolver.resolve('./runtime/plugin'))
