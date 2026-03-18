@@ -6,16 +6,34 @@ export default defineNuxtConfig({
   ],
 
   /*
-  ignisContent: {
-    social: {
-      // TODO this is currently not enough to enable the module, .env variable is required for this
-      enabled: true,
-      // however, once enabled, this will have precedence over .env variable
-      url: 'https://nuxt-migni.com',
+  // this config key can be used INSTEAD of .env variables
+  ignis: {
+    content: {
+      // this will activate @nuxt-ignis/content module via a `dispatcher`
+      active: true,
+      // this will provide config for "Social Share" module
+      // if set, this will have precedence over .env variables
+      social: {
+        enabled: true,
+        url: 'https://nuxt-ignis.com',
+      },
     },
   },
+
+  // it is recommended to AVOID using this module-specific config key for clarity
+  ignisContent: {
+    // WARNING: this would not work as `dispatcher` module only reads `ignis` config key!
+    active: true,
+    // this CAN be used to override `ignis.social` config key,
+    // providing `ignis.content.active` is set to true (otherwise this cannot be processed)
+    social: {
+      enabled: true,
+      url: 'https://nuxt-ignis.com',
+    },
+  },
+
+  // if set, this has the highest priority and will OVERRIDE Nuxt Ignis config / .env vars
   socialShare: {
-    // this has the highest priority and will overwrite Nuxt Ignis config / .env variable
     baseUrl: 'https://nuxt-ignis.com',
   },
   */
