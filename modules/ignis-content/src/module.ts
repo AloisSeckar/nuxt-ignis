@@ -35,7 +35,7 @@ export interface IgnisContentOptions {
 export default defineNuxtModule<IgnisContentOptions>({
   meta: {
     name: '@nuxt-ignis/content',
-    configKey: 'ignisContent',
+    configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
     console.log('@nuxt-ignis/content - module dependencies are being resolved')
@@ -44,7 +44,7 @@ export default defineNuxtModule<IgnisContentOptions>({
     const modules: Record<string, any> = {}
 
     const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { content?: IgnisContentOptions } }
-    const options = nuxtOpts.ignisContent || nuxtOpts.ignis?.content
+    const options = nuxtOpts.ignis?.content
 
     // I18N
     if (options?.i18n?.enabled) {

@@ -1,12 +1,14 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   compatibilityDate: 'latest',
-  ignisContent: {
+  ignis: {
     content: {
-      enabled: true,
-    },
-    i18n: {
-      enabled: true,
+      content: {
+        enabled: true,
+      },
+      i18n: {
+        enabled: true,
+      },
     },
   },
 })

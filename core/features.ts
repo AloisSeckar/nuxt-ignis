@@ -186,10 +186,12 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     nuxtConfig.modules!.push('@nuxt-ignis/content')
     ignis.push('@nuxt-ignis/content/i18n')
     nuxtConfig = defu({
-      ignisContent: {
-        i18n: {
-          enabled: true,
-          defaultLocale: process.env.NUXT_PUBLIC_IGNIS_I18N_LOCALE || 'en',
+      ignis: {
+        content: {
+          i18n: {
+            enabled: true,
+            defaultLocale: process.env.NUXT_PUBLIC_IGNIS_I18N_LOCALE || 'en',
+          },
         },
       },
     }, nuxtConfig)
@@ -203,10 +205,12 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     }
     ignis.push('@nuxt-ignis/content/seo')
     nuxtConfig = defu({
-      ignisContent: {
-        seo: {
-          enabled: true,
-          ssr: process.env.NUXT_PUBLIC_IGNIS_SSR !== 'false',
+      ignis: {
+        content: {
+          seo: {
+            enabled: true,
+            ssr: process.env.NUXT_PUBLIC_IGNIS_SSR !== 'false',
+          },
         },
       },
     }, nuxtConfig)
@@ -218,9 +222,11 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
       nuxtConfig.modules!.push('@nuxt-ignis/content')
     }
     nuxtConfig = defu({
-      ignisContent: {
+      ignis: {
         content: {
-          enabled: true,
+          content: {
+            enabled: true,
+          },
         },
       },
     }, nuxtConfig)
@@ -233,10 +239,12 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     }
     ignis.push('@nuxt-ignis/content/social')
     nuxtConfig = defu({
-      ignisContent: {
-        social: {
-          enabled: true,
-          url: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || '',
+      ignis: {
+        content: {
+          social: {
+            enabled: true,
+            url: process.env.NUXT_PUBLIC_IGNIS_SOCIAL_URL || '',
+          },
         },
       },
     }, nuxtConfig)
@@ -281,10 +289,12 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     }
     ignis.push('@nuxt-ignis/content/pslo')
     nuxtConfig = defu({
-      ignisContent: {
-        pslo: {
-          enabled: true,
-          content: process.env.NUXT_PUBLIC_IGNIS_PSLO_CONTENT === 'true',
+      ignis: {
+        content: {
+          pslo: {
+            enabled: true,
+            content: process.env.NUXT_PUBLIC_IGNIS_PSLO_CONTENT === 'true',
+          },
         },
       },
     }, nuxtConfig)
