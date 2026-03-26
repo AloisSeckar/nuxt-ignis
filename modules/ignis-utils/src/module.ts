@@ -7,16 +7,26 @@ export interface IgnisUtilsOptions {
   // module-specific options
   equipment?: {
     enabled?: boolean
-    composables?: string[]
-    plugins?: string[]
+    composables?: string
+    plugins?: string
   }
-  regexp?: boolean
+  regexp?: {
+    enabled?: boolean
+  }
+}
+
+declare module 'nuxt/schema' {
+  interface PublicRuntimeConfig {
+    ignis?: {
+      utils?: IgnisUtilsOptions
+    }
+  }
 }
 
 export default defineNuxtModule<IgnisUtilsOptions>({
   meta: {
     name: '@nuxt-ignis/utils',
-    configKey: 'ignisUtils',
+    configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
     console.debug('@nuxt-ignis/utils - module dependencies are being resolved')
@@ -25,7 +35,7 @@ export default defineNuxtModule<IgnisUtilsOptions>({
     const modules: Record<string, any> = {}
 
     const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { utils?: IgnisUtilsOptions } }
-    const options = nuxtOpts.ignisUtils || nuxtOpts.ignis?.utils
+    const options = nuxtOpts.ignis?.utils
 
     // https://www.vue.equipment/
     if (options?.equipment?.enabled === true) {
@@ -43,7 +53,7 @@ export default defineNuxtModule<IgnisUtilsOptions>({
     }
 
     // https://regexp.dev/
-    if (options?.regexp === true) {
+    if (options?.regexp?.enabled === true) {
       modules['magic-regexp/nuxt'] = {}
       console.debug('magic-regexp/nuxt module installed')
     }
@@ -51,19 +61,21 @@ export default defineNuxtModule<IgnisUtilsOptions>({
     return modules
   },
   setup(options, nuxt) {
-    nuxt.options.runtimeConfig.public.ignis ||= {
-      equipment: { enabled: false, composables: '', plugins: '' },
-      regexp: false,
-    }
-
-    nuxt.options.runtimeConfig.public.ignis.equipment = {
-      enabled: options.equipment?.enabled || false,
-      composables: options.equipment?.composables?.join(',') || '',
-      plugins: options.equipment?.plugins?.join(',') || '',
-    }
-    nuxt.options.runtimeConfig.public.ignis.regexp = options.regexp || false
-
     const resolver = createResolver(import.meta.url)
+
+    // inject runtime config values
+    nuxt.options.runtimeConfig.public.ignis ||= {}
+    nuxt.options.runtimeConfig.public.ignis.utils ||= {
+      equipment: {
+        enabled: options.equipment?.enabled || false,
+        composables: options.equipment?.composables || '',
+        plugins: options.equipment?.plugins || '',
+      },
+      regexp: {
+        enabled: options.regexp?.enabled || false,
+      },
+    }
+
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })

@@ -9,10 +9,18 @@ export interface IgnisValidationOptions {
   valibot?: boolean
 }
 
+declare module 'nuxt/schema' {
+  interface PublicRuntimeConfig {
+    ignis?: {
+      validation?: IgnisValidationOptions
+    }
+  }
+}
+
 export default defineNuxtModule<IgnisValidationOptions>({
   meta: {
     name: '@nuxt-ignis/validation',
-    configKey: 'ignisValidation',
+    configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
     console.debug('@nuxt-ignis/validation - module dependencies are being resolved')
@@ -21,7 +29,7 @@ export default defineNuxtModule<IgnisValidationOptions>({
     const modules: Record<string, any> = {}
 
     const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { validation?: IgnisValidationOptions } }
-    const _options = nuxtOpts.ignisValidation || nuxtOpts.ignis?.validation
+    const _options = nuxtOpts.ignis?.validation
 
     // no modules to be activated here yet
     console.debug('@nuxt-ignis/validation - no modules to be activated')
@@ -31,10 +39,12 @@ export default defineNuxtModule<IgnisValidationOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    nuxt.options.runtimeConfig.public.ignis ||= { zod: false, valibot: false }
-
-    nuxt.options.runtimeConfig.public.ignis.zod = options.zod || false
-    nuxt.options.runtimeConfig.public.ignis.valibot = options.valibot || false
+    // inject runtime config values
+    nuxt.options.runtimeConfig.public.ignis ||= {}
+    nuxt.options.runtimeConfig.public.ignis.validation ||= {
+      zod: options.zod || false,
+      valibot: options.valibot || false,
+    }
 
     if (options.zod === true) {
       addImports([

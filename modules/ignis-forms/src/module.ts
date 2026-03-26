@@ -10,13 +10,23 @@ export interface IgnisFormsOptions {
     default?: string
     config?: string
   }
-  vueform?: boolean
+  vueform?: {
+    enabled?: boolean
+  }
+}
+
+declare module 'nuxt/schema' {
+  interface PublicRuntimeConfig {
+    ignis?: {
+      forms?: IgnisFormsOptions
+    }
+  }
 }
 
 export default defineNuxtModule<IgnisFormsOptions>({
   meta: {
     name: '@nuxt-ignis/forms',
-    configKey: 'ignisForms',
+    configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
     console.debug('@nuxt-ignis/forms - module dependencies are being resolved')
@@ -25,18 +35,20 @@ export default defineNuxtModule<IgnisFormsOptions>({
     const modules: Record<string, any> = {}
 
     const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { forms?: IgnisFormsOptions } }
-    const options = nuxtOpts.ignisForms || nuxtOpts.ignis?.forms
+    const options = nuxtOpts.ignis?.forms
 
-    if (options?.vueform === true) {
+    if (options?.vueform?.enabled === true) {
       modules['@vueform/nuxt'] = { }
       console.debug('@vueform/nuxt module installed')
     }
 
     if (options?.formkit?.enabled === true) {
       modules['@formkit/nuxt'] = {
-        autoImport: true,
-        default: options.formkit?.default || 'en',
-        configFile: options?.formkit?.config || './formkit.config.ts',
+        defaults: {
+          autoImport: true,
+          default: options.formkit?.default || 'en',
+          configFile: options?.formkit?.config || './formkit.config.ts',
+        },
       }
       console.debug('@formkit/nuxt module installed')
     }
@@ -44,23 +56,21 @@ export default defineNuxtModule<IgnisFormsOptions>({
     return modules
   },
   setup(options, nuxt) {
-    nuxt.options.runtimeConfig.public.ignis ||= {
-      formkit: {
-        enabled: false,
-        default: 'en',
-        config: './formkit.config.ts',
-      },
-      vueform: false,
-    }
-
-    nuxt.options.runtimeConfig.public.ignis.formkit = {
-      enabled: options.formkit?.enabled || false,
-      default: options.formkit?.default || 'en',
-      config: options.formkit?.config || './formkit.config.ts',
-    }
-    nuxt.options.runtimeConfig.public.ignis.vueform = options.vueform || false
-
     const resolver = createResolver(import.meta.url)
+
+    // inject runtime config values
+    nuxt.options.runtimeConfig.public.ignis ||= {}
+    nuxt.options.runtimeConfig.public.ignis.forms ||= {
+      formkit: {
+        enabled: options.formkit?.enabled || false,
+        default: options.formkit?.default || 'en',
+        config: options.formkit?.config || './formkit.config.ts',
+      },
+      vueform: {
+        enabled: options.vueform?.enabled || false,
+      },
+    }
+
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })

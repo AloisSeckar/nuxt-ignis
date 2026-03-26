@@ -32,6 +32,14 @@ export interface IgnisContentOptions {
   }
 }
 
+declare module 'nuxt/schema' {
+  interface PublicRuntimeConfig {
+    ignis?: {
+      content?: IgnisContentOptions
+    }
+  }
+}
+
 export default defineNuxtModule<IgnisContentOptions>({
   meta: {
     name: '@nuxt-ignis/content',
@@ -109,24 +117,28 @@ export default defineNuxtModule<IgnisContentOptions>({
   setup(options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    nuxt.options.runtimeConfig.public.ignis.content = {
-      enabled: options.content?.enabled || false,
-    }
-    nuxt.options.runtimeConfig.public.ignis.i18n = {
-      enabled: options.i18n?.enabled || false,
-      default: options.i18n?.default || 'en',
-      config: options.i18n?.config || resolver.resolve('./i18n.config.ts'),
-    }
-    nuxt.options.runtimeConfig.public.ignis.seo = {
-      enabled: options.seo?.enabled || false,
-    }
-    nuxt.options.runtimeConfig.public.ignis.social = {
-      enabled: options.social?.enabled || false,
-      url: options.social?.url || '',
-    }
-    nuxt.options.runtimeConfig.public.ignis.pslo = {
-      enabled: options.pslo?.enabled || false,
-      content: options.pslo?.content || false,
+    // inject runtime config values
+    nuxt.options.runtimeConfig.public.ignis ||= {}
+    nuxt.options.runtimeConfig.public.ignis.content ||= {
+      content: {
+        enabled: options.content?.enabled || false,
+      },
+      i18n: {
+        enabled: options.i18n?.enabled || false,
+        default: options.i18n?.default || 'en',
+        config: options.i18n?.config || resolver.resolve('./i18n.config.ts'),
+      },
+      seo: {
+        enabled: options.seo?.enabled || false,
+      },
+      social: {
+        enabled: options.social?.enabled || false,
+        url: options.social?.url || '',
+      },
+      pslo: {
+        enabled: options.pslo?.enabled || false,
+        content: options.pslo?.content || false,
+      },
     }
 
     // i18n

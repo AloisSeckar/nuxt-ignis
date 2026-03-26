@@ -15,10 +15,18 @@ export interface IgnisCoreOptions {
   auth?: boolean
 }
 
+declare module 'nuxt/schema' {
+  interface PublicRuntimeConfig {
+    ignis?: {
+      core?: IgnisCoreOptions
+    }
+  }
+}
+
 export default defineNuxtModule<IgnisCoreOptions>({
   meta: {
     name: '@nuxt-ignis/core',
-    configKey: 'ignisCore',
+    configKey: 'ignis',
   },
   defaults: {
     eslint: true,
@@ -37,9 +45,9 @@ export default defineNuxtModule<IgnisCoreOptions>({
     const modules: Record<string, any> = {}
 
     const nuxtoptions = nuxt.options as NuxtOptions & { ignis?: { core?: IgnisCoreOptions } }
-    let options = nuxtoptions.ignisCore || nuxtoptions.ignis?.core
+    let options = nuxtoptions.ignis?.core
     if (!options) {
-      console.debug('@nuxt-ignis/core - No options provided, setting defaults')
+      console.debug('@nuxt-ignis/core - No options were provided, setting defaults')
       options = {
         eslint: true,
         fonts: true,
@@ -103,20 +111,21 @@ export default defineNuxtModule<IgnisCoreOptions>({
     return modules
   },
   setup(options, nuxt) {
-    nuxt.options.runtimeConfig.public.ignis ||= {
-      core: {
-        eslint: options?.eslint || true,
-        fonts: options?.fonts || true,
-        image: options?.image || true,
-        scripts: options?.scripts || true,
-        security: options?.security || true,
-        auth: options?.auth || false,
-        vueuse: options?.vueuse || true,
-        pinia: options?.pinia || true,
-      },
+    const resolver = createResolver(import.meta.url)
+
+    // inject runtime config values
+    nuxt.options.runtimeConfig.public.ignis ||= {}
+    nuxt.options.runtimeConfig.public.ignis.core ||= {
+      eslint: options?.eslint ?? true,
+      fonts: options?.fonts ?? true,
+      image: options?.image ?? true,
+      scripts: options?.scripts ?? true,
+      security: options?.security ?? true,
+      auth: options?.auth ?? false,
+      vueuse: options?.vueuse ?? true,
+      pinia: options?.pinia ?? true,
     }
 
-    const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })

@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/content",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "Nuxt Ignis module - Content features",
   "publishConfig": {
     "access": "public"
@@ -26,8 +26,7 @@
     }
   },
   "files": [
-    "dist",
-    "config"
+    "dist"
   ],
   "workspaces": [
     "playground"
