@@ -33,7 +33,7 @@ export const log = createConsola({
  */
 export async function initConsola() {
   // set default log level from config
-  const logLevel = useRuntimeConfig().public.ignis.log.level
+  const logLevel = useRuntimeConfig().public.ignis.config.log.level
   log.level = getLogLevel(logLevel)
   defaultReporter.level = log.level
   log.debug(`[consola] log level set to '${logLevel}'`)

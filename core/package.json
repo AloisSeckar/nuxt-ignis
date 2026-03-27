@@ -36,7 +36,7 @@
     "analyze": "nuxt analyze",
     "eslint": "eslint .",
     "build": "cd ../docs && pnpm test && pnpm build && cd ../core && pnpm test && nuxt build",
-    "dev": "nuxt dev",
+    "dev": "CONSOLA_LEVEL=4 nuxt dev",
     "generate": "nuxt generate",
     "prepublishOnly": "pnpm build",
     "preview": "nuxt preview",

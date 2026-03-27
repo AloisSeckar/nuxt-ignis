@@ -4,7 +4,6 @@ import { defu } from 'defu'
 import { log } from './app/utils/consola'
 import { setFeatures } from './features'
 import type { NuxtConfig } from '@nuxt/schema'
-import { useNuxt } from 'nuxt/kit'
 
 const currentFeatures = setFeatures()
 
@@ -26,111 +25,6 @@ const baseConfig: NuxtConfig = {
     },
   },
 
-  // app configuration
-  runtimeConfig: {
-    // nitro-only secret env-like variables go here
-    public: {
-      // client-exposed env-like variables go here
-
-      // features
-      // NOTE: due to static-like nature of nuxt.config.ts file
-      // actual values MUST BE provided via .env file (or production equivalent)
-      ignis: {
-
-        html: {
-          // HTML lang attribute,
-          lang: 'en',
-          // HTML page title,
-          title: 'Nuxt Ignis App',
-        },
-
-        // logging
-        log: {
-          level: 'info',
-        },
-
-        // central error handler
-        error: true, // true/false
-
-        // nuxt-related config
-        ssr: true, // true/false
-        pages: true, // true/false
-
-        // custom css files
-        css: '',
-
-        // presets
-        preset: {
-          ui: 'off', // nuxt-ui/tailwind/off
-          db: 'off', // neon/supabase/off
-          forms: 'off', // formkit/vueform/off
-          validation: 'off', // valibot/zod/off
-        },
-
-        // core modules
-        // (may be disabled by explicitly setting "false")
-        core: {
-          css: true, // not a module, but a default css file
-          eslint: true,
-          fonts: true,
-          image: true,
-          scripts: true,
-          security: true,
-          vueuse: true,
-          pinia: true,
-        },
-
-        // optional modules
-        ui: false, // true/false
-        tailwind: false, // true/false (ignored, if ui=true)
-        neon: false, // true/false
-        supabase: {
-          enabled: false, // true/false
-        },
-        i18n: {
-          enabled: false, // true/false
-          default: 'it', // default locale (should be same as formkit)
-          config: './i18n.config.ts', // path to config file
-        },
-        formkit: {
-          enabled: false, // true/false
-          default: 'en', // default locale (should be same as i18n)
-          config: './formkit.config.ts', // path to config file
-        },
-        vueform: false, // true/false
-        valibot: false, // true/false
-        zod: false, // true/false
-        content: {
-          enabled: false, // true/false
-        },
-        seo: {
-          enabled: false, // true/false
-        },
-        auth: false, // true/false
-        openprops: false, // true/false
-        pslo: {
-          enabled: false, // true/false (elrh-pslo will (not) be used)
-          content: false, // true/false (elrh-pslo will (not) be aplied on nuxt-content)
-        },
-        equipment: {
-          enabled: false, // true/false
-          composables: '', // list of Vue Equipment composables
-          plugins: '', // list of Vue Equipment plugins
-        },
-        regexp: false, // true/false
-        charts: false, // true/false
-        social: {
-          enabled: false, // true/false
-          url: '', // translates to `baseUrl` option in module config
-        },
-
-        // extra behavior
-        warn: {
-          duplicates: true, // true/false
-        },
-      },
-    },
-  },
   hooks: {
     'schema:resolved'() {
       // write current config to file (for use in app)
