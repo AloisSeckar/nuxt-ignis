@@ -15,10 +15,8 @@ export interface IgnisDBOptions {
 }
 
 declare module 'nuxt/schema' {
-  interface PublicRuntimeConfig {
-    ignis: {
-      db?: IgnisDBOptions
-    }
+  interface IgnisPublicRuntimeConfig {
+    db?: IgnisDBOptions
   }
 }
 

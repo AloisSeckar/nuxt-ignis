@@ -16,10 +16,8 @@ export interface IgnisFormsOptions {
 }
 
 declare module 'nuxt/schema' {
-  interface PublicRuntimeConfig {
-    ignis: {
-      forms?: IgnisFormsOptions
-    }
+  interface IgnisPublicRuntimeConfig {
+    forms?: IgnisFormsOptions
   }
 }
 

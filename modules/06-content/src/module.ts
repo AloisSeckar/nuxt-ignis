@@ -33,10 +33,8 @@ export interface IgnisContentOptions {
 }
 
 declare module 'nuxt/schema' {
-  interface PublicRuntimeConfig {
-    ignis: {
-      content?: IgnisContentOptions
-    }
+  interface IgnisPublicRuntimeConfig {
+    content?: IgnisContentOptions
   }
 }
 

@@ -10,10 +10,8 @@ export interface IgnisValidationOptions {
 }
 
 declare module 'nuxt/schema' {
-  interface PublicRuntimeConfig {
-    ignis: {
-      validation?: IgnisValidationOptions
-    }
+  interface IgnisPublicRuntimeConfig {
+    validation?: IgnisValidationOptions
   }
 }
 

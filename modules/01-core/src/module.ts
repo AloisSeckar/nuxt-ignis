@@ -16,10 +16,8 @@ export interface IgnisCoreOptions {
 }
 
 declare module 'nuxt/schema' {
-  interface PublicRuntimeConfig {
-    ignis: {
-      core?: IgnisCoreOptions
-    }
+  interface IgnisPublicRuntimeConfig {
+    core?: IgnisCoreOptions
   }
 }
 
