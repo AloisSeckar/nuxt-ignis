@@ -551,71 +551,7 @@ importers:
         specifier: 'catalog:'
         version: 4.0.18(@types/node@25.3.3)(@vitest/browser-playwright@4.0.18)(@vitest/ui@4.0.18)(esbuild@0.27.3)(happy-dom@20.7.0)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)
 
-  modules/ignis-content:
-    dependencies:
-      '@nuxt/content':
-        specifier: 'catalog:'
-        version: 3.11.2(better-sqlite3@12.2.0)(magicast@0.5.2)(valibot@1.2.0(typescript@5.9.3))
-      '@nuxt/kit':
-        specifier: 'catalog:'
-        version: 4.3.1(magicast@0.5.2)
-      '@nuxtjs/i18n':
-        specifier: 'catalog:'
-        version: 10.2.3(@vue/compiler-dom@3.5.29)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.3(jiti@2.6.1))(ioredis@5.10.0)(magicast@0.5.2)(rollup@4.59.0)(vue@3.5.29(typescript@5.9.3))
-      '@nuxtjs/seo':
-        specifier: 'catalog:'
-        version: 3.4.0(@unhead/vue@2.1.10(vue@3.5.29(typescript@5.9.3)))(db0@0.3.4(better-sqlite3@12.2.0))(ioredis@5.10.0)(magicast@0.5.2)(rollup@4.59.0)(unhead@2.1.10)(unstorage@1.17.4(db0@0.3.4(better-sqlite3@12.2.0))(ioredis@5.10.0))(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))(zod@3.25.76)
-      '@stefanobartoletti/nuxt-social-share':
-        specifier: 'catalog:'
-        version: 2.3.1(magicast@0.5.2)
-      better-sqlite3:
-        specifier: 'catalog:'
-        version: 12.2.0
-      consola:
-        specifier: 'catalog:'
-        version: 3.4.2
-      elrh-pslo:
-        specifier: 'catalog:'
-        version: 1.1.6
-    devDependencies:
-      '@nuxt/devtools':
-        specifier: 'catalog:'
-        version: 3.2.2(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
-      '@nuxt/eslint-config':
-        specifier: 'catalog:'
-        version: 1.15.2(@typescript-eslint/utils@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.29)(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
-      '@nuxt/module-builder':
-        specifier: 'catalog:'
-        version: 1.0.2(@nuxt/cli@3.33.1(@nuxt/schema@4.3.1)(cac@6.7.14)(magicast@0.5.2))(@vue/compiler-core@3.5.29)(esbuild@0.27.3)(sass@1.97.3)(typescript@5.9.3)(vue-tsc@3.2.5(typescript@5.9.3))(vue@3.5.29(typescript@5.9.3))
-      '@nuxt/schema':
-        specifier: 'catalog:'
-        version: 4.3.1
-      '@nuxt/test-utils':
-        specifier: 'catalog:'
-        version: 4.0.0(@vitest/ui@4.0.18)(@vue/test-utils@2.4.6)(happy-dom@20.7.0)(magicast@0.5.2)(playwright-core@1.58.2)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vitest@4.0.18)
-      '@types/node':
-        specifier: 'catalog:'
-        version: 25.3.3
-      changelogen:
-        specifier: 'catalog:'
-        version: 0.6.2(magicast@0.5.2)
-      eslint:
-        specifier: 'catalog:'
-        version: 9.39.3(jiti@2.6.1)
-      nuxt:
-        specifier: 'catalog:'
-        version: 4.3.1(@parcel/watcher@2.5.6)(@types/node@25.3.3)(@vue/compiler-sfc@3.5.29)(better-sqlite3@12.2.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.3(jiti@2.6.1))(ioredis@5.10.0)(magicast@0.5.2)(optionator@0.9.4)(rolldown@1.0.0-rc.3)(rollup@4.59.0)(sass@1.97.3)(terser@5.46.0)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue-tsc@3.2.5(typescript@5.9.3))(yaml@2.8.2)
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-      vitest:
-        specifier: 'catalog:'
-        version: 4.0.18(@types/node@25.3.3)(@vitest/browser-playwright@4.0.18)(@vitest/ui@4.0.18)(esbuild@0.27.3)(happy-dom@20.7.0)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)
-      vue-tsc:
-        specifier: 'catalog:'
-        version: 3.2.5(typescript@5.9.3)
-
-  modules/ignis-core:
+  modules/01-core:
     dependencies:
       '@nuxt/eslint':
         specifier: 'catalog:'
@@ -688,108 +624,7 @@ importers:
         specifier: 'catalog:'
         version: 3.2.5(typescript@5.9.3)
 
-  modules/ignis-db:
-    dependencies:
-      '@nuxt/kit':
-        specifier: 'catalog:'
-        version: 4.3.1(magicast@0.5.2)
-    devDependencies:
-      '@nuxt/devtools':
-        specifier: 'catalog:'
-        version: 3.2.2(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
-      '@nuxt/eslint-config':
-        specifier: 'catalog:'
-        version: 1.15.2(@typescript-eslint/utils@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.29)(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
-      '@nuxt/module-builder':
-        specifier: 'catalog:'
-        version: 1.0.2(@nuxt/cli@3.33.1(@nuxt/schema@4.3.1)(cac@6.7.14)(magicast@0.5.2))(@vue/compiler-core@3.5.29)(esbuild@0.27.3)(sass@1.97.3)(typescript@5.9.3)(vue-tsc@3.2.5(typescript@5.9.3))(vue@3.5.29(typescript@5.9.3))
-      '@nuxt/schema':
-        specifier: 'catalog:'
-        version: 4.3.1
-      '@nuxt/test-utils':
-        specifier: 'catalog:'
-        version: 4.0.0(@vitest/ui@4.0.18)(@vue/test-utils@2.4.6)(happy-dom@20.7.0)(magicast@0.5.2)(playwright-core@1.58.2)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vitest@4.0.18)
-      '@nuxtjs/supabase':
-        specifier: 'catalog:'
-        version: 2.0.3
-      '@types/node':
-        specifier: 'catalog:'
-        version: 25.3.3
-      changelogen:
-        specifier: 'catalog:'
-        version: 0.6.2(magicast@0.5.2)
-      eslint:
-        specifier: 'catalog:'
-        version: 9.39.3(jiti@2.6.1)
-      nuxt:
-        specifier: 'catalog:'
-        version: 4.3.1(@parcel/watcher@2.5.6)(@types/node@25.3.3)(@vue/compiler-sfc@3.5.29)(better-sqlite3@12.2.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.3(jiti@2.6.1))(ioredis@5.10.0)(magicast@0.5.2)(optionator@0.9.4)(rolldown@1.0.0-rc.3)(rollup@4.59.0)(sass@1.97.3)(terser@5.46.0)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue-tsc@3.2.5(typescript@5.9.3))(yaml@2.8.2)
-      nuxt-neon:
-        specifier: 'catalog:'
-        version: 0.8.2(magicast@0.5.2)
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-      vitest:
-        specifier: 'catalog:'
-        version: 4.0.18(@types/node@25.3.3)(@vitest/browser-playwright@4.0.18)(@vitest/ui@4.0.18)(esbuild@0.27.3)(happy-dom@20.7.0)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)
-      vue-tsc:
-        specifier: 'catalog:'
-        version: 3.2.5(typescript@5.9.3)
-
-  modules/ignis-forms:
-    dependencies:
-      '@nuxt/kit':
-        specifier: 'catalog:'
-        version: 4.3.1(magicast@0.5.2)
-    devDependencies:
-      '@formkit/nuxt':
-        specifier: 'catalog:'
-        version: 1.7.2(@nuxt/kit@4.3.1(magicast@0.5.2))(esbuild@0.27.3)(rollup@4.59.0)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
-      '@nuxt/devtools':
-        specifier: 'catalog:'
-        version: 3.2.2(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
-      '@nuxt/eslint-config':
-        specifier: 'catalog:'
-        version: 1.15.2(@typescript-eslint/utils@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.29)(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
-      '@nuxt/module-builder':
-        specifier: 'catalog:'
-        version: 1.0.2(@nuxt/cli@3.33.1(@nuxt/schema@4.3.1)(cac@6.7.14)(magicast@0.5.2))(@vue/compiler-core@3.5.29)(esbuild@0.27.3)(sass@1.97.3)(typescript@5.9.3)(vue-tsc@3.2.5(typescript@5.9.3))(vue@3.5.29(typescript@5.9.3))
-      '@nuxt/schema':
-        specifier: 'catalog:'
-        version: 4.3.1
-      '@nuxt/test-utils':
-        specifier: 'catalog:'
-        version: 4.0.0(@vitest/ui@4.0.18)(@vue/test-utils@2.4.6)(happy-dom@20.7.0)(magicast@0.5.2)(playwright-core@1.58.2)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vitest@4.0.18)
-      '@types/node':
-        specifier: 'catalog:'
-        version: 25.3.3
-      '@vueform/nuxt':
-        specifier: 'catalog:'
-        version: 1.26.0(magicast@0.5.2)
-      '@vueform/vueform':
-        specifier: 'catalog:'
-        version: 1.13.8
-      changelogen:
-        specifier: 'catalog:'
-        version: 0.6.2(magicast@0.5.2)
-      eslint:
-        specifier: 'catalog:'
-        version: 9.39.3(jiti@2.6.1)
-      nuxt:
-        specifier: 'catalog:'
-        version: 4.3.1(@parcel/watcher@2.5.6)(@types/node@25.3.3)(@vue/compiler-sfc@3.5.29)(better-sqlite3@12.2.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.3(jiti@2.6.1))(ioredis@5.10.0)(magicast@0.5.2)(optionator@0.9.4)(rolldown@1.0.0-rc.3)(rollup@4.59.0)(sass@1.97.3)(terser@5.46.0)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue-tsc@3.2.5(typescript@5.9.3))(yaml@2.8.2)
-      typescript:
-        specifier: 'catalog:'
-        version: 5.9.3
-      vitest:
-        specifier: 'catalog:'
-        version: 4.0.18(@types/node@25.3.3)(@vitest/browser-playwright@4.0.18)(@vitest/ui@4.0.18)(esbuild@0.27.3)(happy-dom@20.7.0)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)
-      vue-tsc:
-        specifier: 'catalog:'
-        version: 3.2.5(typescript@5.9.3)
-
-  modules/ignis-ui:
+  modules/02-ui:
     dependencies:
       '@nuxt/kit':
         specifier: 'catalog:'
@@ -856,18 +691,64 @@ importers:
         specifier: 'catalog:'
         version: 3.2.5(typescript@5.9.3)
 
-  modules/ignis-utils:
+  modules/03-db:
     dependencies:
-      '@maas/vue-equipment':
-        specifier: 'catalog:'
-        version: 1.0.0-beta.51(a3a5921056415e2164994d535baaf5b9)
       '@nuxt/kit':
         specifier: 'catalog:'
         version: 4.3.1(magicast@0.5.2)
-      magic-regexp:
-        specifier: 'catalog:'
-        version: 0.10.0
     devDependencies:
+      '@nuxt/devtools':
+        specifier: 'catalog:'
+        version: 3.2.2(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
+      '@nuxt/eslint-config':
+        specifier: 'catalog:'
+        version: 1.15.2(@typescript-eslint/utils@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.29)(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
+      '@nuxt/module-builder':
+        specifier: 'catalog:'
+        version: 1.0.2(@nuxt/cli@3.33.1(@nuxt/schema@4.3.1)(cac@6.7.14)(magicast@0.5.2))(@vue/compiler-core@3.5.29)(esbuild@0.27.3)(sass@1.97.3)(typescript@5.9.3)(vue-tsc@3.2.5(typescript@5.9.3))(vue@3.5.29(typescript@5.9.3))
+      '@nuxt/schema':
+        specifier: 'catalog:'
+        version: 4.3.1
+      '@nuxt/test-utils':
+        specifier: 'catalog:'
+        version: 4.0.0(@vitest/ui@4.0.18)(@vue/test-utils@2.4.6)(happy-dom@20.7.0)(magicast@0.5.2)(playwright-core@1.58.2)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vitest@4.0.18)
+      '@nuxtjs/supabase':
+        specifier: 'catalog:'
+        version: 2.0.3
+      '@types/node':
+        specifier: 'catalog:'
+        version: 25.3.3
+      changelogen:
+        specifier: 'catalog:'
+        version: 0.6.2(magicast@0.5.2)
+      eslint:
+        specifier: 'catalog:'
+        version: 9.39.3(jiti@2.6.1)
+      nuxt:
+        specifier: 'catalog:'
+        version: 4.3.1(@parcel/watcher@2.5.6)(@types/node@25.3.3)(@vue/compiler-sfc@3.5.29)(better-sqlite3@12.2.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.3(jiti@2.6.1))(ioredis@5.10.0)(magicast@0.5.2)(optionator@0.9.4)(rolldown@1.0.0-rc.3)(rollup@4.59.0)(sass@1.97.3)(terser@5.46.0)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue-tsc@3.2.5(typescript@5.9.3))(yaml@2.8.2)
+      nuxt-neon:
+        specifier: 'catalog:'
+        version: 0.8.2(magicast@0.5.2)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.18(@types/node@25.3.3)(@vitest/browser-playwright@4.0.18)(@vitest/ui@4.0.18)(esbuild@0.27.3)(happy-dom@20.7.0)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)
+      vue-tsc:
+        specifier: 'catalog:'
+        version: 3.2.5(typescript@5.9.3)
+
+  modules/04-forms:
+    dependencies:
+      '@nuxt/kit':
+        specifier: 'catalog:'
+        version: 4.3.1(magicast@0.5.2)
+    devDependencies:
+      '@formkit/nuxt':
+        specifier: 'catalog:'
+        version: 1.7.2(@nuxt/kit@4.3.1(magicast@0.5.2))(esbuild@0.27.3)(rollup@4.59.0)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
       '@nuxt/devtools':
         specifier: 'catalog:'
         version: 3.2.2(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
@@ -886,6 +767,12 @@ importers:
       '@types/node':
         specifier: 'catalog:'
         version: 25.3.3
+      '@vueform/nuxt':
+        specifier: 'catalog:'
+        version: 1.26.0(magicast@0.5.2)
+      '@vueform/vueform':
+        specifier: 'catalog:'
+        version: 1.13.8
       changelogen:
         specifier: 'catalog:'
         version: 0.6.2(magicast@0.5.2)
@@ -905,7 +792,7 @@ importers:
         specifier: 'catalog:'
         version: 3.2.5(typescript@5.9.3)
 
-  modules/ignis-validation:
+  modules/05-validation:
     dependencies:
       '@nuxt/kit':
         specifier: 'catalog:'
@@ -953,6 +840,119 @@ importers:
       zod:
         specifier: 'catalog:'
         version: 4.3.6
+
+  modules/06-content:
+    dependencies:
+      '@nuxt/content':
+        specifier: 'catalog:'
+        version: 3.11.2(better-sqlite3@12.2.0)(magicast@0.5.2)(valibot@1.2.0(typescript@5.9.3))
+      '@nuxt/kit':
+        specifier: 'catalog:'
+        version: 4.3.1(magicast@0.5.2)
+      '@nuxtjs/i18n':
+        specifier: 'catalog:'
+        version: 10.2.3(@vue/compiler-dom@3.5.29)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.3(jiti@2.6.1))(ioredis@5.10.0)(magicast@0.5.2)(rollup@4.59.0)(vue@3.5.29(typescript@5.9.3))
+      '@nuxtjs/seo':
+        specifier: 'catalog:'
+        version: 3.4.0(@unhead/vue@2.1.10(vue@3.5.29(typescript@5.9.3)))(db0@0.3.4(better-sqlite3@12.2.0))(ioredis@5.10.0)(magicast@0.5.2)(rollup@4.59.0)(unhead@2.1.10)(unstorage@1.17.4(db0@0.3.4(better-sqlite3@12.2.0))(ioredis@5.10.0))(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))(zod@3.25.76)
+      '@stefanobartoletti/nuxt-social-share':
+        specifier: 'catalog:'
+        version: 2.3.1(magicast@0.5.2)
+      better-sqlite3:
+        specifier: 'catalog:'
+        version: 12.2.0
+      consola:
+        specifier: 'catalog:'
+        version: 3.4.2
+      elrh-pslo:
+        specifier: 'catalog:'
+        version: 1.1.6
+    devDependencies:
+      '@nuxt/devtools':
+        specifier: 'catalog:'
+        version: 3.2.2(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
+      '@nuxt/eslint-config':
+        specifier: 'catalog:'
+        version: 1.15.2(@typescript-eslint/utils@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.29)(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
+      '@nuxt/module-builder':
+        specifier: 'catalog:'
+        version: 1.0.2(@nuxt/cli@3.33.1(@nuxt/schema@4.3.1)(cac@6.7.14)(magicast@0.5.2))(@vue/compiler-core@3.5.29)(esbuild@0.27.3)(sass@1.97.3)(typescript@5.9.3)(vue-tsc@3.2.5(typescript@5.9.3))(vue@3.5.29(typescript@5.9.3))
+      '@nuxt/schema':
+        specifier: 'catalog:'
+        version: 4.3.1
+      '@nuxt/test-utils':
+        specifier: 'catalog:'
+        version: 4.0.0(@vitest/ui@4.0.18)(@vue/test-utils@2.4.6)(happy-dom@20.7.0)(magicast@0.5.2)(playwright-core@1.58.2)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vitest@4.0.18)
+      '@types/node':
+        specifier: 'catalog:'
+        version: 25.3.3
+      changelogen:
+        specifier: 'catalog:'
+        version: 0.6.2(magicast@0.5.2)
+      eslint:
+        specifier: 'catalog:'
+        version: 9.39.3(jiti@2.6.1)
+      nuxt:
+        specifier: 'catalog:'
+        version: 4.3.1(@parcel/watcher@2.5.6)(@types/node@25.3.3)(@vue/compiler-sfc@3.5.29)(better-sqlite3@12.2.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.3(jiti@2.6.1))(ioredis@5.10.0)(magicast@0.5.2)(optionator@0.9.4)(rolldown@1.0.0-rc.3)(rollup@4.59.0)(sass@1.97.3)(terser@5.46.0)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue-tsc@3.2.5(typescript@5.9.3))(yaml@2.8.2)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.18(@types/node@25.3.3)(@vitest/browser-playwright@4.0.18)(@vitest/ui@4.0.18)(esbuild@0.27.3)(happy-dom@20.7.0)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)
+      vue-tsc:
+        specifier: 'catalog:'
+        version: 3.2.5(typescript@5.9.3)
+
+  modules/07-utils:
+    dependencies:
+      '@maas/vue-equipment':
+        specifier: 'catalog:'
+        version: 1.0.0-beta.51(a3a5921056415e2164994d535baaf5b9)
+      '@nuxt/kit':
+        specifier: 'catalog:'
+        version: 4.3.1(magicast@0.5.2)
+      magic-regexp:
+        specifier: 'catalog:'
+        version: 0.10.0
+    devDependencies:
+      '@nuxt/devtools':
+        specifier: 'catalog:'
+        version: 3.2.2(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue@3.5.29(typescript@5.9.3))
+      '@nuxt/eslint-config':
+        specifier: 'catalog:'
+        version: 1.15.2(@typescript-eslint/utils@8.56.1(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3))(@vue/compiler-sfc@3.5.29)(eslint@9.39.3(jiti@2.6.1))(typescript@5.9.3)
+      '@nuxt/module-builder':
+        specifier: 'catalog:'
+        version: 1.0.2(@nuxt/cli@3.33.1(@nuxt/schema@4.3.1)(cac@6.7.14)(magicast@0.5.2))(@vue/compiler-core@3.5.29)(esbuild@0.27.3)(sass@1.97.3)(typescript@5.9.3)(vue-tsc@3.2.5(typescript@5.9.3))(vue@3.5.29(typescript@5.9.3))
+      '@nuxt/schema':
+        specifier: 'catalog:'
+        version: 4.3.1
+      '@nuxt/test-utils':
+        specifier: 'catalog:'
+        version: 4.0.0(@vitest/ui@4.0.18)(@vue/test-utils@2.4.6)(happy-dom@20.7.0)(magicast@0.5.2)(playwright-core@1.58.2)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vitest@4.0.18)
+      '@types/node':
+        specifier: 'catalog:'
+        version: 25.3.3
+      changelogen:
+        specifier: 'catalog:'
+        version: 0.6.2(magicast@0.5.2)
+      eslint:
+        specifier: 'catalog:'
+        version: 9.39.3(jiti@2.6.1)
+      nuxt:
+        specifier: 'catalog:'
+        version: 4.3.1(@parcel/watcher@2.5.6)(@types/node@25.3.3)(@vue/compiler-sfc@3.5.29)(better-sqlite3@12.2.0)(cac@6.7.14)(db0@0.3.4(better-sqlite3@12.2.0))(eslint@9.39.3(jiti@2.6.1))(ioredis@5.10.0)(magicast@0.5.2)(optionator@0.9.4)(rolldown@1.0.0-rc.3)(rollup@4.59.0)(sass@1.97.3)(terser@5.46.0)(typescript@5.9.3)(vite@8.0.0-beta.13(@types/node@25.3.3)(esbuild@0.27.3)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2))(vue-tsc@3.2.5(typescript@5.9.3))(yaml@2.8.2)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.9.3
+      vitest:
+        specifier: 'catalog:'
+        version: 4.0.18(@types/node@25.3.3)(@vitest/browser-playwright@4.0.18)(@vitest/ui@4.0.18)(esbuild@0.27.3)(happy-dom@20.7.0)(jiti@2.6.1)(sass@1.97.3)(terser@5.46.0)(yaml@2.8.2)
+      vue-tsc:
+        specifier: 'catalog:'
+        version: 3.2.5(typescript@5.9.3)
 
 packages:
 
