@@ -19,7 +19,7 @@ useHead({
 initConsola()
 
 const config = useRuntimeConfig().public.ignis
-const pages = false // config.pages
+const pages = config.config?.pages ?? true
 const ui = false // config.ui || config.preset.ui
 
 log.info('Nuxt Ignis initialized')

@@ -50,44 +50,30 @@ export default defineNuxtModule<IgnisOptions>({
     }
 
     if (ignisOpts?.core?.active !== false) {
-      modules['@nuxt-ignis/core'] = {
-        defaults: ignisOpts.core || {},
-      }
+      modules['@nuxt-ignis/core'] = { }
     }
 
     if (ignisOpts?.ui?.active === true) {
-      modules['@nuxt-ignis/ui'] = {
-        defaults: ignisOpts.ui || {},
-      }
+      modules['@nuxt-ignis/ui'] = { }
     }
     if (ignisOpts?.db?.active === true) {
-      modules['@nuxt-ignis/db'] = {
-        defaults: ignisOpts.db || {},
-      }
+      modules['@nuxt-ignis/db'] = { }
     }
 
     if (ignisOpts?.forms?.active === true) {
-      modules['@nuxt-ignis/forms'] = {
-        defaults: ignisOpts.forms || {},
-      }
+      modules['@nuxt-ignis/forms'] = { }
     }
 
     if (ignisOpts?.validation?.active === true) {
-      modules['@nuxt-ignis/validation'] = {
-        defaults: ignisOpts.validation || {},
-      }
+      modules['@nuxt-ignis/validation'] = { }
     }
 
     if (ignisOpts?.content?.active === true) {
-      modules['@nuxt-ignis/content'] = {
-        defaults: ignisOpts.content || {},
-      }
+      modules['@nuxt-ignis/content'] = { }
     }
 
     if (ignisOpts?.utils?.active === true) {
-      modules['@nuxt-ignis/utils'] = {
-        defaults: ignisOpts.utils || {},
-      }
+      modules['@nuxt-ignis/utils'] = { }
     }
 
     return modules

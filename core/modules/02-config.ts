@@ -32,16 +32,23 @@ export interface IgnisConfigOptions {
   }
 }
 
+declare module 'nuxt/schema' {
+  interface PublicRuntimeConfig {
+    ignis: {
+      config?: IgnisConfigOptions
+    }
+  }
+}
+
 const logger = useLogger('ignis/config')
 
 export default defineNuxtModule<IgnisConfigOptions>({
   meta: {
     name: 'ignis/config',
-    configKey: 'ignis',
   },
   setup(options, nuxt) {
     // inject runtime config values
-    const runtimeConfig = nuxt.options.runtimeConfig.public as PublicRuntimeConfig & { ignis?: { config?: IgnisConfigOptions } }
+    const runtimeConfig = nuxt.options.runtimeConfig.public as PublicRuntimeConfig & { ignis: { config?: IgnisConfigOptions } }
     runtimeConfig.ignis ||= {}
     runtimeConfig.ignis.config ||= {
       html: {

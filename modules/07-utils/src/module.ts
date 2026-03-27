@@ -17,7 +17,7 @@ export interface IgnisUtilsOptions {
 
 declare module 'nuxt/schema' {
   interface PublicRuntimeConfig {
-    ignis?: {
+    ignis: {
       utils?: IgnisUtilsOptions
     }
   }
@@ -26,7 +26,6 @@ declare module 'nuxt/schema' {
 export default defineNuxtModule<IgnisUtilsOptions>({
   meta: {
     name: '@nuxt-ignis/utils',
-    configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
     console.debug('@nuxt-ignis/utils - module dependencies are being resolved')
@@ -34,7 +33,7 @@ export default defineNuxtModule<IgnisUtilsOptions>({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
 
-    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { utils?: IgnisUtilsOptions } }
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { utils?: IgnisUtilsOptions } }
     const options = nuxtOpts.ignis?.utils
 
     // https://www.vue.equipment/
@@ -60,19 +59,22 @@ export default defineNuxtModule<IgnisUtilsOptions>({
 
     return modules
   },
-  setup(options, nuxt) {
+  setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { utils?: IgnisUtilsOptions } }
+    const options = nuxtOpts.ignis?.utils
 
     // inject runtime config values
     nuxt.options.runtimeConfig.public.ignis ||= {}
     nuxt.options.runtimeConfig.public.ignis.utils ||= {
       equipment: {
-        enabled: options.equipment?.enabled || false,
-        composables: options.equipment?.composables || '',
-        plugins: options.equipment?.plugins || '',
+        enabled: options?.equipment?.enabled || false,
+        composables: options?.equipment?.composables || '',
+        plugins: options?.equipment?.plugins || '',
       },
       regexp: {
-        enabled: options.regexp?.enabled || false,
+        enabled: options?.regexp?.enabled || false,
       },
     }
 

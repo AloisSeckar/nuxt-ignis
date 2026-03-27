@@ -17,7 +17,7 @@ export interface IgnisFormsOptions {
 
 declare module 'nuxt/schema' {
   interface PublicRuntimeConfig {
-    ignis?: {
+    ignis: {
       forms?: IgnisFormsOptions
     }
   }
@@ -26,7 +26,6 @@ declare module 'nuxt/schema' {
 export default defineNuxtModule<IgnisFormsOptions>({
   meta: {
     name: '@nuxt-ignis/forms',
-    configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
     console.debug('@nuxt-ignis/forms - module dependencies are being resolved')
@@ -34,7 +33,7 @@ export default defineNuxtModule<IgnisFormsOptions>({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
 
-    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { forms?: IgnisFormsOptions } }
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { forms?: IgnisFormsOptions } }
     const options = nuxtOpts.ignis?.forms
 
     if (options?.vueform?.enabled === true) {
@@ -55,19 +54,22 @@ export default defineNuxtModule<IgnisFormsOptions>({
 
     return modules
   },
-  setup(options, nuxt) {
+  setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { forms?: IgnisFormsOptions } }
+    const options = nuxtOpts.ignis?.forms
 
     // inject runtime config values
     nuxt.options.runtimeConfig.public.ignis ||= {}
     nuxt.options.runtimeConfig.public.ignis.forms ||= {
       formkit: {
-        enabled: options.formkit?.enabled || false,
-        default: options.formkit?.default || 'en',
-        config: options.formkit?.config || './formkit.config.ts',
+        enabled: options?.formkit?.enabled || false,
+        default: options?.formkit?.default || 'en',
+        config: options?.formkit?.config || './formkit.config.ts',
       },
       vueform: {
-        enabled: options.vueform?.enabled || false,
+        enabled: options?.vueform?.enabled || false,
       },
     }
 

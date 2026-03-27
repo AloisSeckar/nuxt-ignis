@@ -17,7 +17,7 @@ export interface IgnisCoreOptions {
 
 declare module 'nuxt/schema' {
   interface PublicRuntimeConfig {
-    ignis?: {
+    ignis: {
       core?: IgnisCoreOptions
     }
   }
@@ -26,7 +26,6 @@ declare module 'nuxt/schema' {
 export default defineNuxtModule<IgnisCoreOptions>({
   meta: {
     name: '@nuxt-ignis/core',
-    configKey: 'ignis',
   },
   defaults: {
     eslint: true,
@@ -44,7 +43,7 @@ export default defineNuxtModule<IgnisCoreOptions>({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
 
-    const nuxtoptions = nuxt.options as NuxtOptions & { ignis?: { core?: IgnisCoreOptions } }
+    const nuxtoptions = nuxt.options as NuxtOptions & { ignis: { core?: IgnisCoreOptions } }
     let options = nuxtoptions.ignis?.core
     if (!options) {
       console.debug('@nuxt-ignis/core - No options were provided, setting defaults')
@@ -110,8 +109,11 @@ export default defineNuxtModule<IgnisCoreOptions>({
 
     return modules
   },
-  setup(options, nuxt) {
+  setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { core?: IgnisCoreOptions } }
+    const options = nuxtOpts.ignis?.core
 
     // inject runtime config values
     nuxt.options.runtimeConfig.public.ignis ||= {}

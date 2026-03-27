@@ -11,7 +11,7 @@ export interface IgnisValidationOptions {
 
 declare module 'nuxt/schema' {
   interface PublicRuntimeConfig {
-    ignis?: {
+    ignis: {
       validation?: IgnisValidationOptions
     }
   }
@@ -20,7 +20,6 @@ declare module 'nuxt/schema' {
 export default defineNuxtModule<IgnisValidationOptions>({
   meta: {
     name: '@nuxt-ignis/validation',
-    configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
     console.debug('@nuxt-ignis/validation - module dependencies are being resolved')
@@ -28,7 +27,7 @@ export default defineNuxtModule<IgnisValidationOptions>({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
 
-    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { validation?: IgnisValidationOptions } }
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { validation?: IgnisValidationOptions } }
     const _options = nuxtOpts.ignis?.validation
 
     // no modules to be activated here yet
@@ -36,17 +35,20 @@ export default defineNuxtModule<IgnisValidationOptions>({
 
     return modules
   },
-  setup(options, nuxt) {
+  setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { validation?: IgnisValidationOptions } }
+    const options = nuxtOpts.ignis?.validation
 
     // inject runtime config values
     nuxt.options.runtimeConfig.public.ignis ||= {}
     nuxt.options.runtimeConfig.public.ignis.validation ||= {
-      zod: options.zod || false,
-      valibot: options.valibot || false,
+      zod: options?.zod || false,
+      valibot: options?.valibot || false,
     }
 
-    if (options.zod === true) {
+    if (options?.zod === true) {
       addImports([
         { name: 'useZod', from: resolver.resolve('runtime/app/composables/useZod') },
         { name: 'isValidByZod', from: resolver.resolve('runtime/app/utils/validationZod') },
@@ -54,7 +56,7 @@ export default defineNuxtModule<IgnisValidationOptions>({
       console.debug('zod validation enabled')
     }
 
-    if (options.valibot === true) {
+    if (options?.valibot === true) {
       addImports([
         { name: 'useValibot', from: resolver.resolve('runtime/app/composables/useValibot') },
         { name: 'isValidByValibot', from: resolver.resolve('runtime/app/utils/validationValibot') },

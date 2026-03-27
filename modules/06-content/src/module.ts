@@ -34,7 +34,7 @@ export interface IgnisContentOptions {
 
 declare module 'nuxt/schema' {
   interface PublicRuntimeConfig {
-    ignis?: {
+    ignis: {
       content?: IgnisContentOptions
     }
   }
@@ -43,7 +43,6 @@ declare module 'nuxt/schema' {
 export default defineNuxtModule<IgnisContentOptions>({
   meta: {
     name: '@nuxt-ignis/content',
-    configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
     console.log('@nuxt-ignis/content - module dependencies are being resolved')
@@ -51,7 +50,7 @@ export default defineNuxtModule<IgnisContentOptions>({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
 
-    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { content?: IgnisContentOptions } }
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { content?: IgnisContentOptions } }
     const options = nuxtOpts.ignis?.content
 
     // I18N
@@ -114,35 +113,38 @@ export default defineNuxtModule<IgnisContentOptions>({
 
     return modules
   },
-  setup(options, nuxt) {
+  setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { content?: IgnisContentOptions } }
+    const options = nuxtOpts.ignis?.content
 
     // inject runtime config values
     nuxt.options.runtimeConfig.public.ignis ||= {}
     nuxt.options.runtimeConfig.public.ignis.content ||= {
       content: {
-        enabled: options.content?.enabled || false,
+        enabled: options?.content?.enabled || false,
       },
       i18n: {
-        enabled: options.i18n?.enabled || false,
-        default: options.i18n?.default || 'en',
-        config: options.i18n?.config || resolver.resolve('./i18n.config.ts'),
+        enabled: options?.i18n?.enabled || false,
+        default: options?.i18n?.default || 'en',
+        config: options?.i18n?.config || resolver.resolve('./i18n.config.ts'),
       },
       seo: {
-        enabled: options.seo?.enabled || false,
+        enabled: options?.seo?.enabled || false,
       },
       social: {
-        enabled: options.social?.enabled || false,
-        url: options.social?.url || '',
+        enabled: options?.social?.enabled || false,
+        url: options?.social?.url || '',
       },
       pslo: {
-        enabled: options.pslo?.enabled || false,
-        content: options.pslo?.content || false,
+        enabled: options?.pslo?.enabled || false,
+        content: options?.pslo?.content || false,
       },
     }
 
     // i18n
-    if (options.i18n?.enabled === true) {
+    if (options?.i18n?.enabled === true) {
       // scan user's i18n/locales/*.json at build time and generate static imports
       const localesDir = join(nuxt.options.rootDir, 'i18n', 'locales')
       let localeFiles: string[] = []
@@ -190,17 +192,17 @@ export default defineNuxtModule<IgnisContentOptions>({
       nuxt.options.nitro.alias['#ignis-i18n-locales'] = template.dst
 
       // @ts-expect-error 'i18n' option will exist at this point
-      console.log('i18n enabled with default locale:', options.i18n?.default, nuxt.options.i18n?.defaultLocale)
+      console.log('i18n enabled with default locale:', options?.i18n?.default, nuxt.options.i18n?.defaultLocale)
       console.log('i18n locale files found:', localeCodes.join(', ') || 'none')
     }
 
     // elrh-pslo
-    if (options.pslo?.enabled === true) {
+    if (options?.pslo?.enabled === true) {
       console.debug('elrh-pslo enabled')
 
       // integration with Nuxt Content
       // if enabled, all Nuxt Content page data will be treated with "preventSingleLetterOrphans" function
-      if (options.content?.enabled === true && options.pslo?.content === true) {
+      if (options?.content?.enabled === true && options?.pslo?.content === true) {
         // @ts-expect-error the hook will resolve correctly at runtime
         nuxt.hook('content:file:beforeParse', async (ctx: { file: { id: string, body: string } }) => {
           const { preventSingleLetterOrphans } = await import('elrh-pslo')
@@ -211,9 +213,9 @@ export default defineNuxtModule<IgnisContentOptions>({
       }
     }
 
-    if (options.social?.enabled === true) {
+    if (options?.social?.enabled === true) {
       // @ts-expect-error 'socialShare' option will exist at this point
-      if (!nuxt.options.socialShare?.baseUrl && !options.social?.url) {
+      if (!nuxt.options.socialShare?.baseUrl && !options?.social?.url) {
         log.warn('Base URL for `nuxt-social-share` is not set. Check https://nuxt-ignis.com/3-7-features-utils.html#nuxt-social-share to set it up correctly.')
       }
     }

@@ -20,7 +20,7 @@ export interface IgnisUIOptions {
 
 declare module 'nuxt/schema' {
   interface PublicRuntimeConfig {
-    ignis?: {
+    ignis: {
       ui?: IgnisUIOptions
     }
   }
@@ -29,7 +29,6 @@ declare module 'nuxt/schema' {
 export default defineNuxtModule<IgnisUIOptions>({
   meta: {
     name: '@nuxt-ignis/ui',
-    configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
     console.debug('@nuxt-ignis/ui - module dependencies are being resolved')
@@ -37,7 +36,7 @@ export default defineNuxtModule<IgnisUIOptions>({
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
 
-    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: { ui?: IgnisUIOptions } }
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { ui?: IgnisUIOptions } }
     const options = nuxtOpts.ignis?.ui
 
     const cssDir = options?.cssDir || ''
@@ -100,16 +99,19 @@ export default defineNuxtModule<IgnisUIOptions>({
 
     return modules
   },
-  setup(options, nuxt) {
+  setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
+
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { ui?: IgnisUIOptions } }
+    const options = nuxtOpts.ignis?.ui
 
     // inject runtime config values
     nuxt.options.runtimeConfig.public.ignis ||= {}
     nuxt.options.runtimeConfig.public.ignis.ui ||= {
-      ui: options.ui || false,
-      tailwind: options.tailwind || false,
-      openprops: options.openprops || false,
-      charts: options.charts || false,
+      ui: options?.ui || false,
+      tailwind: options?.tailwind || false,
+      openprops: options?.openprops || false,
+      charts: options?.charts || false,
     }
 
     addPlugin(resolver.resolve('./runtime/plugin'))

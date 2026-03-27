@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/forms",
-  "version": "0.0.6",
+  "version": "0.0.8",
   "description": "Nuxt Ignis module - Form features",
   "publishConfig": {
     "access": "public"
