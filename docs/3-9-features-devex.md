@@ -146,3 +146,11 @@ Using experimental [elrh-cosca](https://github.com/AloisSeckar/elrh-cosca) libra
 - `npx set-eslint`: Creates a new ESLint configuration file with Nuxt Ignis defaults.
 
 The library is also used internally in CLI setup script and for some tests.
+
+## cross-env
+
+<PackagesReference :packages="[{ name: 'cross-env', version: '10.1.0' }]" />
+
+Used internally for development to bridge differences between Windows and Unix-like OS.
+
+The main use-case is to set `DEBUG` log level early enough to observe interal sub-modules initialization logs. This cannot be done via classic Nuxt `.env` configuration as this gets resolved later.

@@ -15,6 +15,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `consola` | `3.4.2` | [👁️‍🗨️](/3-9-features-devex.html#logging) | Improved centralized logging solution |
 | `nuxt-spec` | `v0.2.0-alpha.4` | [👁️‍🗨️](/5-1-contributing.html#testing) | Experimental aggregated testing solution (`vitest` && `playwright` && Nuxt/Vue test utils) |
 | `elrh-cosca` | `0.3.5` | [👁️‍🗨️](/3-9-features-devex.html#cli-tools) | Experimental library for code-scaffolding Node scripts |
+| `cross-env` | `10.1.0` | [👁️‍🗨️](/3-9-features-devex.html#cross-env) | Used in development to set .env variables in Node scripts |
 
 ## Packages of core features
 
