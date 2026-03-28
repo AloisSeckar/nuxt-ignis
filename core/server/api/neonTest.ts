@@ -1,6 +1,6 @@
+// TODO move this into db module
 export default defineEventHandler(async () => {
-  const config = useRuntimeConfig().public.ignis
-  if (/* config.preset.db === 'neon' || */ config.db.neon.enabled === true) {
+  if (useRuntimeConfig().public.ignis.db.neon.enabled === true) {
     return await select(
       getNeonClient(),
       {

@@ -408,6 +408,10 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     log.info('Nuxt Ignis will start using following settings:\n' + overview)
   }
 
+  // TODO remove modules resolution from features.ts
+  // (only /core/modules/02-features.ts will take care of this)
+  nuxtConfig.modules = []
+
   return {
     nuxtConfig,
     overview,

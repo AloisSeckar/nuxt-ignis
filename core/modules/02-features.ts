@@ -21,9 +21,18 @@ declare module 'nuxt/schema' {
   }
 }
 
+export interface IgnisPresetOptions {
+  ui?: 'nuxt-ui' | 'tailwind' | 'off'
+  db?: 'neon' | 'supabase' | 'off'
+  forms?: 'vueform' | 'formkit' | 'off'
+  validation?: 'zod' | 'valibot' | 'off'
+}
+
 export interface IgnisOptions {
   // core/modules/config.ts
-  config: IgnisConfigOptions
+  config?: IgnisConfigOptions
+  // core/modules/features.ts
+  preset?: IgnisPresetOptions
   // @nuxt-ignis/core module
   core?: IgnisCoreOptions
   // @nuxt-ignis/ui module
@@ -66,18 +75,94 @@ export default defineNuxtModule<IgnisOptions>({
     }
 
     if (ignisOpts?.ui?.active === true) {
-      modules['@nuxt-ignis/ui'] = { }
+      let uiPreset
+      switch (ignisOpts.preset?.ui) {
+        case 'nuxt-ui':
+          uiPreset = { ui: true }
+          break
+        case 'tailwind':
+          uiPreset = { tailwind: true }
+          break
+        case 'off':
+          uiPreset = undefined
+          break
+        default:
+          if (ignisOpts.preset?.ui) {
+            console.warn(`Invalid UI preset value "${ignisOpts.preset.ui}" provided. Supported values are "nuxt-ui" | "tailwind" | "off". Defaulting to "off".`)
+          }
+          uiPreset = undefined
+      }
+      modules['@nuxt-ignis/ui'] = {
+        defaults: uiPreset,
+      }
     }
     if (ignisOpts?.db?.active === true) {
-      modules['@nuxt-ignis/db'] = { }
+      let dbPreset
+      switch (ignisOpts.preset?.db) {
+        case 'neon':
+          dbPreset = { neon: true }
+          break
+        case 'supabase':
+          dbPreset = { supabase: true }
+          break
+        case 'off':
+          dbPreset = undefined
+          break
+        default:
+          if (ignisOpts.preset?.db) {
+            console.warn(`Invalid DB preset value "${ignisOpts.preset.db}" provided. Supported values are "neon" | "supabase" | "off". Defaulting to "off".`)
+          }
+          dbPreset = undefined
+      }
+      modules['@nuxt-ignis/db'] = {
+        defaults: dbPreset,
+      }
     }
 
     if (ignisOpts?.forms?.active === true) {
-      modules['@nuxt-ignis/forms'] = { }
+      let formsPreset
+      switch (ignisOpts.preset?.forms) {
+        case 'vueform':
+          formsPreset = { vueform: { enabled: true } }
+          break
+        case 'formkit':
+          formsPreset = { formkit: { enabled: true } }
+          break
+        case 'off':
+          formsPreset = undefined
+          break
+        default:
+          if (ignisOpts.preset?.forms) {
+            console.warn(`Invalid Forms preset value "${ignisOpts.preset.forms}" provided. Supported values are "vueform" | "formkit" | "off". Defaulting to "off".`)
+          }
+          formsPreset = undefined
+      }
+      modules['@nuxt-ignis/forms'] = {
+        defaults: formsPreset,
+      }
     }
 
     if (ignisOpts?.validation?.active === true) {
-      modules['@nuxt-ignis/validation'] = { }
+      let validationPreset
+      switch (ignisOpts.preset?.validation) {
+        case 'zod':
+          validationPreset = { zod: true }
+          break
+        case 'valibot':
+          validationPreset = { valibot: true }
+          break
+        case 'off':
+          validationPreset = undefined
+          break
+        default:
+          if (ignisOpts.preset?.validation) {
+            console.warn(`Invalid Validation preset value "${ignisOpts.preset.validation}" provided. Supported values are "zod" | "valibot" | "off". Defaulting to "off".`)
+          }
+          validationPreset = undefined
+      }
+      modules['@nuxt-ignis/validation'] = {
+        defaults: validationPreset,
+      }
     }
 
     if (ignisOpts?.content?.active === true) {
@@ -88,6 +173,8 @@ export default defineNuxtModule<IgnisOptions>({
       modules['@nuxt-ignis/utils'] = { }
     }
 
+    console.warn(modules)
+
     return modules
   },
   setup(_options, nuxt) {
@@ -97,6 +184,9 @@ export default defineNuxtModule<IgnisOptions>({
     const ignis = (nuxt.options.runtimeConfig.public.ignis ||= {}) as IgnisOptions
     ignis.core ||= {
       eslint: false, fonts: false, image: false, scripts: false, security: false, auth: false, vueuse: false, pinia: false,
+    }
+    ignis.preset ||= {
+      ui: 'off', db: 'off', forms: 'off', validation: 'off',
     }
     ignis.ui ||= {
       ui: false, tailwind: false, openprops: false, charts: false,

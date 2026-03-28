@@ -53,7 +53,7 @@ const props = defineProps({
  * `Icon` component can only be used if `@nuxt/ui` module is activated.
  */
 const config = useRuntimeConfig().public.ignis
-const showIcon = config.ui.ui ?? false // || config.preset.ui === 'nuxt-ui'
+const showIcon = config.ui.ui ?? false
 
 // In setup section, you have to adress properties like this.
 // You cannot reach them directly like in template.
