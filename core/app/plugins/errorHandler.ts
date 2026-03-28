@@ -2,7 +2,7 @@
 // You can set NUXT_PUBLIC_IGNIS_ERROR to 'false' to disable this feature.
 
 export default defineNuxtPlugin((nuxtApp) => {
-  if (useRuntimeConfig().public.ignis.error) {
+  if (useRuntimeConfig().public.ignis.config.nuxt.error) {
     nuxtApp.vueApp.config.errorHandler = (err, instance, info) => {
       log.error(err)
       // capture additional context

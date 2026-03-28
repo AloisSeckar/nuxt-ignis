@@ -11,7 +11,7 @@ type ZodZ = ZodModule['z']
  * @returns Zod `z` object for schema validation
  */
 export const useZod = async (): Promise<ZodZ | undefined> => {
-  if (useRuntimeConfig().public.ignis.zod === true) {
+  if (useRuntimeConfig().public.ignis.validation.zod === true) {
     const zod = await import('zod/v4')
     return zod.z
   }

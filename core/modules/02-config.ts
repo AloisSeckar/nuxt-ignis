@@ -32,12 +32,9 @@ export interface IgnisConfigOptions {
   }
 }
 
-/**
- * Shared augmentable interface for `useRuntimeConfig().public.ignis`.
- * Each @nuxt-ignis/* submodule extends this via
- * `declare module 'nuxt/schema' { interface IgnisPublicRuntimeConfig { ... } }`
- * ensuring all keys merge correctly regardless of load order.
- */
+// shared augmentable interface for all @nuxt-ignis/* submodules
+// submodules extending this via:
+// `declare module 'nuxt/schema' { interface IgnisPublicRuntimeConfig { ... } }`
 declare module 'nuxt/schema' {
   interface IgnisPublicRuntimeConfig {
     config?: IgnisConfigOptions

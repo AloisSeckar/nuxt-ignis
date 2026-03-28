@@ -1,6 +1,6 @@
 export default defineEventHandler(async () => {
   const config = useRuntimeConfig().public.ignis
-  if (config.preset.db === 'neon' || config.neon === true) {
+  if (/* config.preset.db === 'neon' || */ config.db.neon.enabled === true) {
     return await select(
       getNeonClient(),
       {

@@ -25,7 +25,7 @@
 </template>
 
 <script setup lang="ts">
-const pages = useRuntimeConfig().public.ignis.pages
+const pages = useRuntimeConfig().public.ignis.config.nuxt.pages
 </script>
 
 <style scoped lang="css">

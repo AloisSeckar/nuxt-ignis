@@ -10,7 +10,7 @@ type ValibotModule = typeof import('valibot')
  * @returns Valibot `v` object for schema validation
  */
 export const useValibot = async (): Promise<ValibotModule | undefined> => {
-  if (useRuntimeConfig().public.ignis.valibot === true) {
+  if (useRuntimeConfig().public.ignis.validation.valibot === true) {
     const valibot = await import('valibot')
     return valibot
   }

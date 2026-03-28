@@ -9,7 +9,7 @@ import { getVueformConfig } from './config/vueform'
 export function loadVueformConfig(userVueformConfig) {
   // only if Vueform is allowed
   const config = useRuntimeConfig().public.ignis
-  if (config.preset.forms === 'vueform' || config.vueform === true) {
+  if (/* config.preset.forms === 'vueform' || */ config.forms.vueform.enabled === true) {
     // defu-merge nuxt-ignis default with possible user values
     return getVueformConfig(userVueformConfig)
   }

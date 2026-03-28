@@ -4,7 +4,7 @@ import { useRuntimeConfig, useValibot } from '#imports'
 
 // quick object schema validation - valibot variant
 export async function isValidByValibot(schema: ObjectSchema<ObjectEntries, undefined>, obj: unknown): Promise<boolean> {
-  if (useRuntimeConfig().public.ignis.valibot === true) {
+  if (useRuntimeConfig().public.ignis.validation.valibot === true) {
     const v = (await useValibot())!
     return v.safeParse(schema, obj).success
   }

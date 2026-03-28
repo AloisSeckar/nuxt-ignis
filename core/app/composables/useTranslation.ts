@@ -14,9 +14,9 @@ import lang from '@/../i18n/locales/en.json'
  * @returns translated text from i18n sources
  */
 export function useT(key: string): string {
-  if (useRuntimeConfig().public.ignis.i18n.enabled) {
+  if (useRuntimeConfig().public.ignis.content.i18n.enabled) {
     // i18n available => just use it
-    return useNuxtApp().$i18n.t(key)
+    return (useNuxtApp().$i18n as { t: (key: string) => string }).t(key)
   } else {
     // backdoor for Nuxt Ignis to display values on demo index page
     const backdoorValue = useIgnisT(key)

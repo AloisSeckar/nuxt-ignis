@@ -9,6 +9,21 @@ import type { IgnisContentOptions } from '@nuxt-ignis/content'
 import type { IgnisUtilsOptions } from '@nuxt-ignis/utils'
 import type { IgnisConfigOptions } from './02-config'
 
+// Ensure all submodule keys are visible on IgnisPublicRuntimeConfig
+// even when a submodule is not activated (and thus not referenced
+// in the Nuxt-generated modules.d.ts).
+declare module 'nuxt/schema' {
+  interface IgnisPublicRuntimeConfig {
+    core?: IgnisCoreOptions
+    ui?: IgnisUIOptions
+    db?: IgnisDBOptions
+    forms?: IgnisFormsOptions
+    validation?: IgnisValidationOptions
+    content?: IgnisContentOptions
+    utils?: IgnisUtilsOptions
+  }
+}
+
 export interface IgnisOptions {
   // core/modules/config.ts
   config: IgnisConfigOptions
@@ -78,7 +93,38 @@ export default defineNuxtModule<IgnisOptions>({
 
     return modules
   },
-  setup() {
+  setup(_options, nuxt) {
     console.debug('Nuxt Ignis Dispatcher module setup called!')
+
+    // ensure proper runtime config type inference for modules that were not activated
+    const ignis = (nuxt.options.runtimeConfig.public.ignis ||= {}) as IgnisOptions
+    ignis.core ||= {
+      eslint: false, fonts: false, image: false, scripts: false, security: false, auth: false, vueuse: false, pinia: false,
+    }
+    ignis.ui ||= {
+      ui: false, tailwind: false, openprops: false, charts: false,
+    }
+    ignis.db ||= {
+      neon: { enabled: false },
+      supabase: { enabled: false, types: false },
+    }
+    ignis.forms ||= {
+      formkit: { enabled: false, default: '', config: '' },
+      vueform: { enabled: false },
+    }
+    ignis.validation ||= {
+      zod: false, valibot: false,
+    }
+    ignis.content ||= {
+      content: { enabled: false },
+      i18n: { enabled: false, default: '', config: '' },
+      seo: { enabled: false },
+      social: { enabled: false, url: '' },
+      pslo: { enabled: false, content: false },
+    }
+    ignis.utils ||= {
+      equipment: { enabled: false, composables: '', plugins: '' },
+      regexp: { enabled: false },
+    }
   },
 })

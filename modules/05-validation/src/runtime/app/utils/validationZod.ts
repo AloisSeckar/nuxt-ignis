@@ -3,7 +3,7 @@ import { useRuntimeConfig } from '#imports'
 
 // quick object schema validation - zod variant
 export async function isValidByZod(schema: ZodObject, obj: unknown): Promise<boolean> {
-  if (useRuntimeConfig().public.ignis.zod === true) {
+  if (useRuntimeConfig().public.ignis.validation.zod === true) {
     return schema.safeParse(obj).success
   }
   else {
