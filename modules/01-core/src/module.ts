@@ -2,9 +2,6 @@ import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 import type { NuxtOptions } from 'nuxt/schema'
 
 export interface IgnisCoreOptions {
-  // activation flag (checked by dispatcher)
-  active?: boolean
-  // module-specific options
   eslint?: boolean
   fonts?: boolean
   image?: boolean

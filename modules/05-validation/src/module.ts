@@ -2,9 +2,6 @@ import { defineNuxtModule, addPlugin, createResolver, addImports } from '@nuxt/k
 import type { NuxtOptions } from 'nuxt/schema'
 
 export interface IgnisValidationOptions {
-  // activation flag (checked by dispatcher)
-  active?: boolean
-  // module-specific options
   zod?: boolean
   valibot?: boolean
 }

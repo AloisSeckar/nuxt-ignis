@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-// Service script to release sub-modules (cross-platform)
+// Service script to publish sub-modules (cross-platform)
 // Will prompt for npm login during run
 //
 // Usage:
-//   node release-modules.js              # release all modules
-//   node release-modules.js ui,db        # release only matching modules
+//   node publish-modules.js              # publish all modules
+//   node publish-modules.js ui,db        # publish only matching modules
 
 const { execSync } = require('child_process');
 const fs = require('fs');

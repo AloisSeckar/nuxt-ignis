@@ -7,9 +7,6 @@ import { ignisTailwindcssFix } from './runtime/tailwind'
 import type { NuxtOptions } from 'nuxt/schema'
 
 export interface IgnisUIOptions {
-  // activation flag (checked by dispatcher)
-  active?: boolean
-  // module-specific options
   ui?: boolean
   tailwind?: boolean
   openprops?: boolean

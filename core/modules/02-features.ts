@@ -9,6 +9,7 @@ import type { IgnisValidationOptions } from '@nuxt-ignis/validation'
 import type { IgnisContentOptions } from '@nuxt-ignis/content'
 import type { IgnisUtilsOptions } from '@nuxt-ignis/utils'
 import { resolveUiPreset, resolveDbPreset, resolveFormsPreset, resolveValidationPreset } from './utils/presets'
+import { isCoreActive, isUiActive, isDbActive, isFormsActive, isValidationActive, isContentActive, isUtilsActive } from './utils/activation'
 
 declare module 'nuxt/schema' {
   interface IgnisPublicRuntimeConfig {
@@ -66,43 +67,44 @@ export default defineNuxtModule<IgnisOptions>({
     console.debug('Received options:', ignisOpts)
 
     if (!ignisOpts) {
-      console.debug('Setting default options')
+      console.debug('No Ignis options provided. Setting defaults.')
       modules['@nuxt-ignis/core'] = { }
       return modules
     }
 
-    if (ignisOpts?.core?.active !== false) {
+    if (isCoreActive(ignisOpts)) {
       modules['@nuxt-ignis/core'] = { }
     }
 
-    if (ignisOpts?.ui?.active === true) {
+    if (isUiActive(ignisOpts)) {
       modules['@nuxt-ignis/ui'] = {
         defaults: resolveUiPreset(ignisOpts.preset?.ui),
       }
     }
-    if (ignisOpts?.db?.active === true) {
+
+    if (isDbActive(ignisOpts)) {
       modules['@nuxt-ignis/db'] = {
         defaults: resolveDbPreset(ignisOpts.preset?.db),
       }
     }
 
-    if (ignisOpts?.forms?.active === true) {
+    if (isFormsActive(ignisOpts)) {
       modules['@nuxt-ignis/forms'] = {
         defaults: resolveFormsPreset(ignisOpts.preset?.forms),
       }
     }
 
-    if (ignisOpts?.validation?.active === true) {
+    if (isValidationActive(ignisOpts)) {
       modules['@nuxt-ignis/validation'] = {
         defaults: resolveValidationPreset(ignisOpts.preset?.validation),
       }
     }
 
-    if (ignisOpts?.content?.active === true) {
+    if (isContentActive(ignisOpts)) {
       modules['@nuxt-ignis/content'] = { }
     }
 
-    if (ignisOpts?.utils?.active === true) {
+    if (isUtilsActive(ignisOpts)) {
       modules['@nuxt-ignis/utils'] = { }
     }
 

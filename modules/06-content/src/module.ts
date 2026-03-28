@@ -7,9 +7,6 @@ import type { NuxtOptions } from 'nuxt/schema'
 const log = createConsola({ defaults: { tag: 'nuxt-ignis' } })
 
 export interface IgnisContentOptions {
-  // activation flag (checked by dispatcher)
-  active?: boolean
-  // module-specific options
   content?: {
     enabled?: boolean
   }

@@ -9,8 +9,6 @@ export default defineNuxtConfig({
   // this config key can be used INSTEAD of .env variables
   ignis: {
     content: {
-      // this will activate @nuxt-ignis/content module via a `dispatcher`
-      active: true,
       // this will provide config for "Social Share" module
       // if set, this will have precedence over .env variables
       social: {

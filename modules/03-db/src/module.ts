@@ -2,9 +2,6 @@ import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 import type { NuxtOptions } from 'nuxt/schema'
 
 export interface IgnisDBOptions {
-  // activation flag (checked by dispatcher)
-  active?: boolean
-  // module-specific options
   neon?: {
     enabled?: boolean
   }
