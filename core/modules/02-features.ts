@@ -1,5 +1,6 @@
 import { defineNuxtModule } from 'nuxt/kit'
 import type { NuxtOptions } from 'nuxt/schema'
+import type { IgnisConfigOptions } from './01-config'
 import type { IgnisCoreOptions } from '@nuxt-ignis/core'
 import type { IgnisUIOptions } from '@nuxt-ignis/ui'
 import type { IgnisDBOptions } from '@nuxt-ignis/db'
@@ -7,11 +8,7 @@ import type { IgnisFormsOptions } from '@nuxt-ignis/forms'
 import type { IgnisValidationOptions } from '@nuxt-ignis/validation'
 import type { IgnisContentOptions } from '@nuxt-ignis/content'
 import type { IgnisUtilsOptions } from '@nuxt-ignis/utils'
-import type { IgnisConfigOptions } from './02-config'
 
-// Ensure all submodule keys are visible on IgnisPublicRuntimeConfig
-// even when a submodule is not activated (and thus not referenced
-// in the Nuxt-generated modules.d.ts).
 declare module 'nuxt/schema' {
   interface IgnisPublicRuntimeConfig {
     core?: IgnisCoreOptions
@@ -45,11 +42,11 @@ export interface IgnisOptions {
 
 export default defineNuxtModule<IgnisOptions>({
   meta: {
-    name: 'ignis/dispatcher',
+    name: 'ignis/features',
     configKey: 'ignis',
   },
   moduleDependencies(nuxt) {
-    console.debug('Nuxt Ignis Dispatcher - module dependencies are being resolved')
+    console.debug('Nuxt Ignis Features - module dependencies are being resolved')
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
@@ -94,7 +91,7 @@ export default defineNuxtModule<IgnisOptions>({
     return modules
   },
   setup(_options, nuxt) {
-    console.debug('Nuxt Ignis Dispatcher module setup called!')
+    console.debug('Nuxt Ignis Features module setup called!')
 
     // ensure proper runtime config type inference for modules that were not activated
     const ignis = (nuxt.options.runtimeConfig.public.ignis ||= {}) as IgnisOptions

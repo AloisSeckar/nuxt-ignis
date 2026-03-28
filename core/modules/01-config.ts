@@ -1,6 +1,18 @@
 import { defineNuxtModule, useLogger } from 'nuxt/kit'
 import type { PublicRuntimeConfig } from 'nuxt/schema'
 
+// shared augmentable interface for all @nuxt-ignis/* submodules
+// submodules extending this via:
+// `declare module 'nuxt/schema' { interface IgnisPublicRuntimeConfig { ... } }`
+declare module 'nuxt/schema' {
+  interface IgnisPublicRuntimeConfig {
+    config?: IgnisConfigOptions
+  }
+  interface PublicRuntimeConfig {
+    ignis: IgnisPublicRuntimeConfig
+  }
+}
+
 export interface IgnisConfigOptions {
   html?: {
     // HTML lang attribute,
@@ -29,18 +41,6 @@ export interface IgnisConfigOptions {
     // warn when using more than one preset options
     // i.e. both 'neon' and 'supabase', or both 'valibot' and 'zod'
     duplicates?: boolean
-  }
-}
-
-// shared augmentable interface for all @nuxt-ignis/* submodules
-// submodules extending this via:
-// `declare module 'nuxt/schema' { interface IgnisPublicRuntimeConfig { ... } }`
-declare module 'nuxt/schema' {
-  interface IgnisPublicRuntimeConfig {
-    config?: IgnisConfigOptions
-  }
-  interface PublicRuntimeConfig {
-    ignis: IgnisPublicRuntimeConfig
   }
 }
 
