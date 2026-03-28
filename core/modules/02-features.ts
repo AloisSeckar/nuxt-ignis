@@ -8,6 +8,7 @@ import type { IgnisFormsOptions } from '@nuxt-ignis/forms'
 import type { IgnisValidationOptions } from '@nuxt-ignis/validation'
 import type { IgnisContentOptions } from '@nuxt-ignis/content'
 import type { IgnisUtilsOptions } from '@nuxt-ignis/utils'
+import { resolveUiPreset, resolveDbPreset, resolveFormsPreset, resolveValidationPreset } from './utils/presets'
 
 declare module 'nuxt/schema' {
   interface IgnisPublicRuntimeConfig {
@@ -75,93 +76,25 @@ export default defineNuxtModule<IgnisOptions>({
     }
 
     if (ignisOpts?.ui?.active === true) {
-      let uiPreset
-      switch (ignisOpts.preset?.ui) {
-        case 'nuxt-ui':
-          uiPreset = { ui: true }
-          break
-        case 'tailwind':
-          uiPreset = { tailwind: true }
-          break
-        case 'off':
-          uiPreset = undefined
-          break
-        default:
-          if (ignisOpts.preset?.ui) {
-            console.warn(`Invalid UI preset value "${ignisOpts.preset.ui}" provided. Supported values are "nuxt-ui" | "tailwind" | "off". Defaulting to "off".`)
-          }
-          uiPreset = undefined
-      }
       modules['@nuxt-ignis/ui'] = {
-        defaults: uiPreset,
+        defaults: resolveUiPreset(ignisOpts.preset?.ui),
       }
     }
     if (ignisOpts?.db?.active === true) {
-      let dbPreset
-      switch (ignisOpts.preset?.db) {
-        case 'neon':
-          dbPreset = { neon: true }
-          break
-        case 'supabase':
-          dbPreset = { supabase: true }
-          break
-        case 'off':
-          dbPreset = undefined
-          break
-        default:
-          if (ignisOpts.preset?.db) {
-            console.warn(`Invalid DB preset value "${ignisOpts.preset.db}" provided. Supported values are "neon" | "supabase" | "off". Defaulting to "off".`)
-          }
-          dbPreset = undefined
-      }
       modules['@nuxt-ignis/db'] = {
-        defaults: dbPreset,
+        defaults: resolveDbPreset(ignisOpts.preset?.db),
       }
     }
 
     if (ignisOpts?.forms?.active === true) {
-      let formsPreset
-      switch (ignisOpts.preset?.forms) {
-        case 'vueform':
-          formsPreset = { vueform: { enabled: true } }
-          break
-        case 'formkit':
-          formsPreset = { formkit: { enabled: true } }
-          break
-        case 'off':
-          formsPreset = undefined
-          break
-        default:
-          if (ignisOpts.preset?.forms) {
-            console.warn(`Invalid Forms preset value "${ignisOpts.preset.forms}" provided. Supported values are "vueform" | "formkit" | "off". Defaulting to "off".`)
-          }
-          formsPreset = undefined
-      }
       modules['@nuxt-ignis/forms'] = {
-        defaults: formsPreset,
+        defaults: resolveFormsPreset(ignisOpts.preset?.forms),
       }
     }
 
     if (ignisOpts?.validation?.active === true) {
-      let validationPreset
-      switch (ignisOpts.preset?.validation) {
-        case 'zod':
-          validationPreset = { zod: true }
-          break
-        case 'valibot':
-          validationPreset = { valibot: true }
-          break
-        case 'off':
-          validationPreset = undefined
-          break
-        default:
-          if (ignisOpts.preset?.validation) {
-            console.warn(`Invalid Validation preset value "${ignisOpts.preset.validation}" provided. Supported values are "zod" | "valibot" | "off". Defaulting to "off".`)
-          }
-          validationPreset = undefined
-      }
       modules['@nuxt-ignis/validation'] = {
-        defaults: validationPreset,
+        defaults: resolveValidationPreset(ignisOpts.preset?.validation),
       }
     }
 
