@@ -80,10 +80,17 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
       nuxtConfig = defu({
         ignisUI: {
           tailwind: true,
-          _cssDir: join(currentDir, './app/assets/css'),
         },
       }, nuxtConfig)
     }
+  }
+
+  if (process.env.NUXT_PUBLIC_IGNIS_UI_CSS !== 'false') {
+    nuxtConfig = defu({
+      ignis: {
+        _cssDir: join(currentDir, './app/assets/css'),
+      },
+    }, nuxtConfig)
   }
 
   // database

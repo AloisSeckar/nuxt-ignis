@@ -11,6 +11,8 @@ export interface IgnisUIOptions {
   tailwind?: boolean
   openprops?: boolean
   charts?: boolean
+  // include default css file
+  css?: boolean
   /** Absolute path to the CSS directory (provided by the core layer) */
   _cssDir?: string
 }
@@ -107,6 +109,13 @@ export default defineNuxtModule<IgnisUIOptions>({
       tailwind: options?.tailwind || false,
       openprops: options?.openprops || false,
       charts: options?.charts || false,
+      css: options?.css || false,
+    }
+
+    // add default css file if enabled
+    if (options?.css) {
+      const _cssDir = options?._cssDir || ''
+      nuxt.options.css.push(join(_cssDir, 'ignis.css'))
     }
 
     addPlugin(resolver.resolve('./runtime/plugin'))
