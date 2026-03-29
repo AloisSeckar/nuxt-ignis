@@ -1,5 +1,4 @@
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
-import { join } from 'node:path'
 import { defu } from 'defu'
 import OpenProps from 'open-props'
 import tailwindcss from '@tailwindcss/vite'
@@ -13,8 +12,6 @@ export interface IgnisUIOptions {
   charts?: boolean
   // include default css file
   css?: boolean
-  /** Absolute path to the CSS directory (provided by the core layer) */
-  _cssDir?: string
 }
 
 declare module 'nuxt/schema' {
@@ -30,13 +27,13 @@ export default defineNuxtModule<IgnisUIOptions>({
   moduleDependencies(nuxt) {
     console.debug('@nuxt-ignis/ui - module dependencies are being resolved')
 
+    const resolver = createResolver(import.meta.url)
+
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const modules: Record<string, any> = {}
 
     const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { ui?: IgnisUIOptions } }
     const options = nuxtOpts.ignis?.ui
-
-    const _cssDir = options?._cssDir || ''
 
     let tailwindFixRequired = false
 
@@ -44,9 +41,7 @@ export default defineNuxtModule<IgnisUIOptions>({
       tailwindFixRequired = true
       modules['@nuxt/ui'] = { }
       // import tailwind css file
-      if (_cssDir) {
-        nuxt.options.css.push(join(_cssDir, 'ignis-nuxt-ui.css'))
-      }
+      nuxt.options.css.push(resolver.resolve('./runtime/css/ignis-nuxt-ui.css'))
       console.debug('@nuxt/ui module installed')
     }
     else {
@@ -54,9 +49,7 @@ export default defineNuxtModule<IgnisUIOptions>({
       if (options?.tailwind === true) {
         tailwindFixRequired = true
         // import tailwind css file
-        if (_cssDir) {
-          nuxt.options.css.push(join(_cssDir, 'ignis-tailwind.css'))
-        }
+        nuxt.options.css.push(resolver.resolve('./runtime/css/ignis-tailwind.css'))
         // temporary integration using Vite plugin directly
         // @ts-expect-error https://github.com/tailwindlabs/tailwindcss/issues/18802
         nuxt.options.vite = defu({
@@ -77,9 +70,7 @@ export default defineNuxtModule<IgnisUIOptions>({
 
     // Open Props CSS
     if (options?.openprops === true) {
-      if (_cssDir) {
-        nuxt.options.css.push(join(_cssDir, 'ignis-open-props.css'))
-      }
+      nuxt.options.css.push(resolver.resolve('./runtime/css/ignis-open-props.css'))
       nuxt.options.postcss = defu({
         plugins: {
           'postcss-jit-props': OpenProps,
@@ -109,13 +100,12 @@ export default defineNuxtModule<IgnisUIOptions>({
       tailwind: options?.tailwind || false,
       openprops: options?.openprops || false,
       charts: options?.charts || false,
-      css: options?.css || false,
+      css: options?.css ?? true,
     }
 
     // add default css file if enabled
     if (options?.css) {
-      const _cssDir = options?._cssDir || ''
-      nuxt.options.css.push(join(_cssDir, 'ignis.css'))
+      nuxt.options.css.push(resolver.resolve('./runtime/css/ignis.css'))
     }
 
     addPlugin(resolver.resolve('./runtime/plugin'))

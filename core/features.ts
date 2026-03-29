@@ -59,7 +59,6 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     nuxtConfig = defu({
       ignisUI: {
         ui: true,
-        _cssDir: join(currentDir, './app/assets/css'),
       },
     }, nuxtConfig)
   } else {
@@ -83,14 +82,6 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
         },
       }, nuxtConfig)
     }
-  }
-
-  if (process.env.NUXT_PUBLIC_IGNIS_UI_CSS !== 'false') {
-    nuxtConfig = defu({
-      ignis: {
-        _cssDir: join(currentDir, './app/assets/css'),
-      },
-    }, nuxtConfig)
   }
 
   // database
@@ -284,7 +275,6 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     nuxtConfig = defu({
       ignisUI: {
         openprops: true,
-        _cssDir: join(currentDir, './app/assets/css'),
       },
     }, nuxtConfig)
   }
