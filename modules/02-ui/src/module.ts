@@ -12,7 +12,7 @@ export interface IgnisUIOptions {
   openprops?: boolean
   charts?: boolean
   /** Absolute path to the CSS directory (provided by the core layer) */
-  cssDir?: string
+  _cssDir?: string
 }
 
 declare module 'nuxt/schema' {
@@ -34,7 +34,7 @@ export default defineNuxtModule<IgnisUIOptions>({
     const nuxtOpts = nuxt.options as NuxtOptions & { ignis: { ui?: IgnisUIOptions } }
     const options = nuxtOpts.ignis?.ui
 
-    const cssDir = options?.cssDir || ''
+    const _cssDir = options?._cssDir || ''
 
     let tailwindFixRequired = false
 
@@ -42,8 +42,8 @@ export default defineNuxtModule<IgnisUIOptions>({
       tailwindFixRequired = true
       modules['@nuxt/ui'] = { }
       // import tailwind css file
-      if (cssDir) {
-        nuxt.options.css.push(join(cssDir, 'ignis-nuxt-ui.css'))
+      if (_cssDir) {
+        nuxt.options.css.push(join(_cssDir, 'ignis-nuxt-ui.css'))
       }
       console.debug('@nuxt/ui module installed')
     }
@@ -52,8 +52,8 @@ export default defineNuxtModule<IgnisUIOptions>({
       if (options?.tailwind === true) {
         tailwindFixRequired = true
         // import tailwind css file
-        if (cssDir) {
-          nuxt.options.css.push(join(cssDir, 'ignis-tailwind.css'))
+        if (_cssDir) {
+          nuxt.options.css.push(join(_cssDir, 'ignis-tailwind.css'))
         }
         // temporary integration using Vite plugin directly
         // @ts-expect-error https://github.com/tailwindlabs/tailwindcss/issues/18802
@@ -75,8 +75,8 @@ export default defineNuxtModule<IgnisUIOptions>({
 
     // Open Props CSS
     if (options?.openprops === true) {
-      if (cssDir) {
-        nuxt.options.css.push(join(cssDir, 'ignis-open-props.css'))
+      if (_cssDir) {
+        nuxt.options.css.push(join(_cssDir, 'ignis-open-props.css'))
       }
       nuxt.options.postcss = defu({
         plugins: {

@@ -59,7 +59,7 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     nuxtConfig = defu({
       ignisUI: {
         ui: true,
-        cssDir: join(currentDir, './app/assets/css'),
+        _cssDir: join(currentDir, './app/assets/css'),
       },
     }, nuxtConfig)
   } else {
@@ -80,7 +80,7 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
       nuxtConfig = defu({
         ignisUI: {
           tailwind: true,
-          cssDir: join(currentDir, './app/assets/css'),
+          _cssDir: join(currentDir, './app/assets/css'),
         },
       }, nuxtConfig)
     }
@@ -277,7 +277,7 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
     nuxtConfig = defu({
       ignisUI: {
         openprops: true,
-        cssDir: join(currentDir, './app/assets/css'),
+        _cssDir: join(currentDir, './app/assets/css'),
       },
     }, nuxtConfig)
   }
