@@ -1,0 +1,4 @@
+# settings for Nuxt & pnpm
+
+# https://pnpm.io/settings#shamefullyhoist
+shamefullyHoist: true

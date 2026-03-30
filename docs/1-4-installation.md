@@ -91,10 +91,10 @@ The `packageManager` tries to ensure same `pnpm` version is used as during the d
 }
 ```
 
-5) If you use `pnpm`, create or adjust `.npmrc` file to contain following line:
+5) If you use `pnpm`, create or adjust `pnpm-workspace.yaml` file to contain following line:
 
-```[.npmrc]
-shamefully-hoist=true
+```yaml [pnpm-workspace.yaml]
+shamefully-hoist: true
 ```
 
 <details>

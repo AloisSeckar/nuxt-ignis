@@ -16,7 +16,7 @@ import {
  * The script will:
  *  1) add `nuxt-ignis` into `package.json` dependencies, remove `nuxt`, `vue` and `vue-router` if present and adjust `pnpm` settings if `pnpm` is used
  *  2) add `extends: ['nuxt-ignis']` to `nuxt.config.ts`
- *  3) create/update `.npmrc` file (only if pnpm is used)
+ *  3) create/update `pnpm-workspace.yaml` file (only if pnpm is used)
  *  4) update `.gitignore` file
  *  5) create default `vitest.config.ts` file and add test-related scripts into `package.json`
  *  6) clear node_modules and lock file(s)
@@ -128,18 +128,18 @@ export async function nuxtIgnisSetup(autoRun = false) {
     console.error('Error enabling \'nuxt-ignis\' module:\n', error.message)
   }
 
-  // 3 - .npmrc file (only if pnpm is used)
+  // 3 - pnpm-workspace.yaml file (only if pnpm is used)
   if (packageManager === 'pnpm') {
     try {
-      if (pathExists('.npmrc')) {
-        await updateTextFile('.npmrc', ['shamefully-hoist=true'], isAutoRun,
-          'This will adjust \'.npmrc\' file in your project. Continue?')
+      if (pathExists('pnpm-workspace.yaml')) {
+        await updateTextFile('pnpm-workspace.yaml', ['shamefully-hoist: true'], isAutoRun,
+          'This will adjust \'pnpm-workspace.yaml\' file in your project. Continue?')
       } else {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.5.3/core/.npmrc',
-          '.npmrc', isAutoRun, 'This will add \'.npmrc\' file for your project. Continue?')
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.5.3/bin/templates/pnpm-workspace.yaml.template',
+          'pnpm-workspace.yaml', isAutoRun, 'This will add \'pnpm-workspace.yaml\' file for your project. Continue?')
       }
     } catch (error) {
-      console.error('Error setting \'.npmrc\':\n', error.message)
+      console.error('Error setting \'pnpm-workspace.yaml\':\n', error.message)
     }
   }
 
