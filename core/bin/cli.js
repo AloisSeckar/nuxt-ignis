@@ -7,9 +7,10 @@ import { getPackageManager } from 'elrh-cosca'
  *
  * Supported commands:
  * `setup` - setup Nuxt Ignis in current folder
+ * `set-app-vue` - scaffolds default app/app.vue file to allow editing it
  * `set-css` - scaffolds default CSS file to allow editing it
  * `set-eslint` - scaffolds default ESLint config file to allow editing it
- * `set-app-vue` - scaffolds default app/app.vue file to allow editing it
+ * `set-netlify` - scaffolds default netlify.toml file to allow editing it
  *
  * Second parameter for `setup` might be a boolean to indicate auto mode
  * (no prompts, force = true) or manual mode (with prompts, force = false).
@@ -27,17 +28,20 @@ const args = process.argv.slice(2);
       case 'setup':
         await (await import('./setup.js')).nuxtIgnisSetup(args[1] || false)
         break
+      case 'set-app-vue':
+        await (await import('./set-app-vue.js')).setAppVue()
+        break
       case 'set-css':
         await (await import('./set-css.js')).setCSS()
         break
       case 'set-eslint':
         await (await import('./set-eslint.js')).setESLint()
         break
-      case 'set-app-vue':
-        await (await import('./set-app-vue.js')).setAppVue()
+      case 'set-netlify':
+        await (await import('./set-netlify.js')).setNetlify()
         break
       default:
-        console.log(`Usage: \`${getCmd()} nuxt-ignis setup|set-css|set-eslint|set-app-vue [true|false]\``)
+        console.log(`Usage: \`${getCmd()} nuxt-ignis setup|set-css|set-eslint|set-app-vue|set-netlify [true|false]\``)
         status = 1
     }
   } catch (error) {

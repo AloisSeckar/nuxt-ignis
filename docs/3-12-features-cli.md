@@ -128,3 +128,31 @@ $ deno run --allow-run npm:npx nuxt-ignis set-eslint
 :::
 
 The file will be created as `eslint.config.mjs` and will be equal to the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/eslint.config.mjs).
+
+### set-netlify
+
+For easy deplyoment to [Netlify](https://www.netlify.com/), you can scaffold the default `netlify.toml` file into your project using:
+
+::: code-group
+```sh [pnpm]
+pnpx nuxt-ignis set-netlify
+```
+
+```sh [npm]
+npx nuxt-ignis set-netlify
+```
+
+```sh [yarn]
+yarn dlx nuxt-ignis set-netlify
+```
+
+```sh [bun]
+$ bunx nuxt-ignis set-netlify
+```
+
+```sh [deno]
+$ deno run --allow-run npm:npx nuxt-ignis set-netlify
+```
+:::
+
+The file will be created as `netlify.toml` in project root with [default contents](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/bin/templates/netlify.toml.template).

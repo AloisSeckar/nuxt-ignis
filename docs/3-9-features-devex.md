@@ -144,6 +144,7 @@ Using experimental [elrh-cosca](https://github.com/AloisSeckar/elrh-cosca) libra
 - `npx set-app-vue`: Copies Nuxt Ignis default `app.vue` file into target project to allow modifications.
 - `npx set-css`: Copies Nuxt Ignis default CSS file into target project to allow modifications.
 - `npx set-eslint`: Creates a new ESLint configuration file with Nuxt Ignis defaults.
+- `npx set-netlify`: Creates a new `netlify.toml` configuration file for seamless deplyoment to Netlify.
 
 The library is also used internally in CLI setup script and for some tests.
 

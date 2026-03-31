@@ -23,6 +23,10 @@ describe(`Nuxt Ignis links should lead to same version tag as in package.json ($
     expect(hasText('bin/set-eslint.js', ignisLink)).toBe(true)
   })
 
+  test('set-netlify.js', () => {
+    expect(hasText('bin/set-netlify.js', ignisLink)).toBe(true)
+  })
+
   test('setup.js', () => {
     expect(hasText('bin/setup.js', ignisLink)).toBe(true)
   })
