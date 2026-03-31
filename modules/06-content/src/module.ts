@@ -115,27 +115,21 @@ export default defineNuxtModule<IgnisContentOptions>({
 
     // inject runtime config values
     const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { content?: IgnisContentOptions } }
-    runtimeConfig.ignis ||= {}
-    runtimeConfig.ignis.content ||= {
-      content: {
-        enabled: options?.content?.enabled || false,
-      },
-      i18n: {
-        enabled: options?.i18n?.enabled || false,
-        default: options?.i18n?.default || 'en',
-      },
-      seo: {
-        enabled: options?.seo?.enabled || false,
-      },
-      social: {
-        enabled: options?.social?.enabled || false,
-        url: options?.social?.url || '',
-      },
-      pslo: {
-        enabled: options?.pslo?.enabled || false,
-        content: options?.pslo?.content || false,
-      },
-    }
+    runtimeConfig.ignis ??= {}
+    runtimeConfig.ignis.content ??= {}
+    runtimeConfig.ignis.content.content ??= {}
+    runtimeConfig.ignis.content.content.enabled ??= options?.content?.enabled ?? false
+    runtimeConfig.ignis.content.i18n ??= {}
+    runtimeConfig.ignis.content.i18n.enabled ??= options?.i18n?.enabled ?? false
+    runtimeConfig.ignis.content.i18n.default ??= options?.i18n?.default ?? 'en'
+    runtimeConfig.ignis.content.seo ??= {}
+    runtimeConfig.ignis.content.seo.enabled ??= options?.seo?.enabled ?? false
+    runtimeConfig.ignis.content.social ??= {}
+    runtimeConfig.ignis.content.social.enabled ??= options?.social?.enabled ?? false
+    runtimeConfig.ignis.content.social.url ??= options?.social?.url ?? ''
+    runtimeConfig.ignis.content.pslo ??= {}
+    runtimeConfig.ignis.content.pslo.enabled ??= options?.pslo?.enabled ?? false
+    runtimeConfig.ignis.content.pslo.content ??= options?.pslo?.content ?? false
 
     // additional processing
     const effectiveOptions = runtimeConfig.ignis.content
@@ -182,10 +176,10 @@ export default defineNuxtModule<IgnisContentOptions>({
       })
 
       // register alias for both Nuxt app and Nitro server
-      nuxt.options.alias ||= {}
+      nuxt.options.alias ??= {}
       nuxt.options.alias['#ignis-i18n-locales'] = template.dst
-      nuxt.options.nitro ||= {}
-      nuxt.options.nitro.alias ||= {}
+      nuxt.options.nitro ??= {}
+      nuxt.options.nitro.alias ??= {}
       nuxt.options.nitro.alias['#ignis-i18n-locales'] = template.dst
 
       // @ts-expect-error 'i18n' option will exist at this point

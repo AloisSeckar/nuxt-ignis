@@ -38,11 +38,10 @@ export default defineNuxtModule<IgnisValidationOptions>({
 
     // inject runtime config values
     const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { validation?: IgnisValidationOptions } }
-    runtimeConfig.ignis ||= {}
-    runtimeConfig.ignis.validation ||= {
-      zod: options?.zod || false,
-      valibot: options?.valibot || false,
-    }
+    runtimeConfig.ignis ??= {}
+    runtimeConfig.ignis.validation ??= {}
+    runtimeConfig.ignis.validation.zod ??= options?.zod ?? false
+    runtimeConfig.ignis.validation.valibot ??= options?.valibot ?? false
 
     // additional processing
     const effectiveOptions = runtimeConfig.ignis.validation

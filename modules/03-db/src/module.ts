@@ -55,16 +55,13 @@ export default defineNuxtModule<IgnisDBOptions>({
 
     // inject runtime config values
     const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { db?: IgnisDBOptions } }
-    runtimeConfig.ignis ||= {}
-    runtimeConfig.ignis.db ||= {
-      neon: {
-        enabled: options?.neon?.enabled || false,
-      },
-      supabase: {
-        enabled: options?.supabase?.enabled || false,
-        types: options?.supabase?.types || false,
-      },
-    }
+    runtimeConfig.ignis ??= {}
+    runtimeConfig.ignis.db ??= {}
+    runtimeConfig.ignis.db.neon ??= {}
+    runtimeConfig.ignis.db.neon.enabled ??= options?.neon?.enabled ?? false
+    runtimeConfig.ignis.db.supabase ??= {}
+    runtimeConfig.ignis.db.supabase.enabled ??= options?.supabase?.enabled ?? false
+    runtimeConfig.ignis.db.supabase.types ??= options?.supabase?.types ?? false
 
     addPlugin(resolver.resolve('./runtime/plugin'))
   },

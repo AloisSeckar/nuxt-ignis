@@ -116,18 +116,17 @@ export default defineNuxtModule<IgnisCoreOptions>({
 
     // inject runtime config values
     const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { core?: IgnisCoreOptions } }
-    runtimeConfig.ignis ||= {}
-    runtimeConfig.ignis.core ||= {
-      eslint: options?.eslint ?? true,
-      fonts: options?.fonts ?? true,
-      image: options?.image ?? true,
-      scripts: options?.scripts ?? true,
-      security: options?.security ?? true,
-      auth: options?.auth ?? false,
-      vueuse: options?.vueuse ?? true,
-      pinia: options?.pinia ?? true,
-      css: options?.css ?? true,
-    }
+    runtimeConfig.ignis ??= {}
+    runtimeConfig.ignis.core ??= {}
+    runtimeConfig.ignis.core.eslint ??= options?.eslint ?? true
+    runtimeConfig.ignis.core.fonts ??= options?.fonts ?? true
+    runtimeConfig.ignis.core.image ??= options?.image ?? true
+    runtimeConfig.ignis.core.scripts ??= options?.scripts ?? true
+    runtimeConfig.ignis.core.security ??= options?.security ?? true
+    runtimeConfig.ignis.core.auth ??= options?.auth ?? true
+    runtimeConfig.ignis.core.vueuse ??= options?.vueuse ?? true
+    runtimeConfig.ignis.core.pinia ??= options?.pinia ?? true
+    runtimeConfig.ignis.core.css ??= options?.css ?? true
 
     // additional processing
     const effectiveOptions = runtimeConfig.ignis.core

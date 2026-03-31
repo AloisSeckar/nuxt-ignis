@@ -93,13 +93,12 @@ export default defineNuxtModule<IgnisUIOptions>({
 
     // inject runtime config values
     const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { ui?: IgnisUIOptions } }
-    runtimeConfig.ignis ||= {}
-    runtimeConfig.ignis.ui ||= {
-      ui: options?.ui || false,
-      tailwind: options?.tailwind || false,
-      openprops: options?.openprops || false,
-      charts: options?.charts || false,
-    }
+    runtimeConfig.ignis ??= {}
+    runtimeConfig.ignis.ui ??= {}
+    runtimeConfig.ignis.ui.ui ??= options?.ui ?? false
+    runtimeConfig.ignis.ui.tailwind ??= options?.tailwind ?? false
+    runtimeConfig.ignis.ui.openprops ??= options?.openprops ?? false
+    runtimeConfig.ignis.ui.charts ??= options?.charts ?? false
 
     addPlugin(resolver.resolve('./runtime/plugin'))
   },

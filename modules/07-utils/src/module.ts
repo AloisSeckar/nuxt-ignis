@@ -62,17 +62,14 @@ export default defineNuxtModule<IgnisUtilsOptions>({
 
     // inject runtime config values
     const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { utils?: IgnisUtilsOptions } }
-    runtimeConfig.ignis ||= {}
-    runtimeConfig.ignis.utils ||= {
-      equipment: {
-        enabled: options?.equipment?.enabled || false,
-        composables: options?.equipment?.composables || '',
-        plugins: options?.equipment?.plugins || '',
-      },
-      regexp: {
-        enabled: options?.regexp?.enabled || false,
-      },
-    }
+    runtimeConfig.ignis ??= {}
+    runtimeConfig.ignis.utils ??= {}
+    runtimeConfig.ignis.utils.equipment ??= {}
+    runtimeConfig.ignis.utils.equipment.enabled ??= options?.equipment?.enabled ?? false
+    runtimeConfig.ignis.utils.equipment.composables ??= options?.equipment?.composables ?? ''
+    runtimeConfig.ignis.utils.equipment.plugins ??= options?.equipment?.plugins ?? ''
+    runtimeConfig.ignis.utils.regexp ??= {}
+    runtimeConfig.ignis.utils.regexp.enabled ??= options?.regexp?.enabled ?? false
 
     addPlugin(resolver.resolve('./runtime/plugin'))
   },

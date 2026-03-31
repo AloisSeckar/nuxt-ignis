@@ -57,17 +57,14 @@ export default defineNuxtModule<IgnisFormsOptions>({
 
     // inject runtime config values
     const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { forms?: IgnisFormsOptions } }
-    runtimeConfig.ignis ||= {}
-    runtimeConfig.ignis.forms ||= {
-      formkit: {
-        enabled: options?.formkit?.enabled || false,
-        default: options?.formkit?.default || 'en',
-        config: options?.formkit?.config || './formkit.config.ts',
-      },
-      vueform: {
-        enabled: options?.vueform?.enabled || false,
-      },
-    }
+    runtimeConfig.ignis ??= {}
+    runtimeConfig.ignis.forms ??= {}
+    runtimeConfig.ignis.forms.formkit ??= {}
+    runtimeConfig.ignis.forms.formkit.enabled ??= options?.formkit?.enabled ?? false
+    runtimeConfig.ignis.forms.formkit.default ??= options?.formkit?.default ?? 'en'
+    runtimeConfig.ignis.forms.formkit.config ??= options?.formkit?.config ?? './formkit.config.ts'
+    runtimeConfig.ignis.forms.vueform ??= {}
+    runtimeConfig.ignis.forms.vueform.enabled ??= options?.vueform?.enabled ?? false
 
     addPlugin(resolver.resolve('./runtime/plugin'))
   },

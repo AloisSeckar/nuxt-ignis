@@ -53,25 +53,20 @@ export default defineNuxtModule<IgnisConfigOptions>({
   setup(options, nuxt) {
     // inject runtime config values
     const runtimeConfig = nuxt.options.runtimeConfig.public as PublicRuntimeConfig & { ignis: { config?: IgnisConfigOptions } }
-    runtimeConfig.ignis ||= {}
-    runtimeConfig.ignis.config ||= {
-      html: {
-        lang: options.html?.lang || 'en',
-        title: options.html?.title || 'Nuxt Ignis App',
-      },
-      nuxt: {
-        ssr: options.nuxt?.ssr ?? true,
-        pages: options.nuxt?.pages ?? true,
-        css: options.nuxt?.css || '',
-        error: options.nuxt?.error ?? true,
-      },
-      log: {
-        level: options.log?.level || 'info',
-      },
-      warn: {
-        duplicates: options.warn?.duplicates ?? true,
-      },
-    }
+    runtimeConfig.ignis ??= {}
+    runtimeConfig.ignis.config ??= {}
+    runtimeConfig.ignis.config.html ??= {}
+    runtimeConfig.ignis.config.html.lang ??= options.html?.lang ?? 'en'
+    runtimeConfig.ignis.config.html.title ??= options.html?.title ?? 'Nuxt Ignis App'
+    runtimeConfig.ignis.config.nuxt ??= {}
+    runtimeConfig.ignis.config.nuxt.ssr ??= options.nuxt?.ssr ?? true
+    runtimeConfig.ignis.config.nuxt.pages ??= options.nuxt?.pages ?? true
+    runtimeConfig.ignis.config.nuxt.css ??= options.nuxt?.css ?? ''
+    runtimeConfig.ignis.config.nuxt.error ??= options.nuxt?.error ?? true
+    runtimeConfig.ignis.config.log ??= {}
+    runtimeConfig.ignis.config.log.level ??= options.log?.level ?? 'info'
+    runtimeConfig.ignis.config.warn ??= {}
+    runtimeConfig.ignis.config.warn.duplicates ??= options.warn?.duplicates ?? true
 
     logger.debug('Nuxt Ignis Config module setup called!')
   },
