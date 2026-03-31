@@ -84,7 +84,7 @@ If you don't want to rely on the default behavior, you can disable those handler
 
 ## Testing
 
-<PackagesReference :packages="[{ name: 'nuxt-spec', version: 'v0.2.0-alpha.4' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-spec', version: 'v0.2.1' }]" />
 
 Nuxt Ignis embraces [Vitest](https://vitest.dev/) as its test runner library. More specifically, it uses proprietary **Nuxt Spec** package that provides a base layer for testing Nuxt modules and applications united under single dependency. With that you have out-of-the-box access to:
 
@@ -119,7 +119,7 @@ export default loadVitestConfig({
 
 **NOTE**: Based on the [Vitest documentation](https://main.vitest.dev/config/), it is possible to pass in **any configuration option** valid for [Vite](https://vite.dev/config/). Configuration related directly to Vitest must be passed under the `test` key.
 
-Read more in the project [README](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.0-alpha.4/README.md).
+Read more in the project [README](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.1/README.md).
 
 ## Nuxt Security
 
