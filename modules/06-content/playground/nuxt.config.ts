@@ -1,4 +1,5 @@
 export default defineNuxtConfig({
+  modules: ['@nuxt-ignis/content'],
   devtools: { enabled: true },
   compatibilityDate: 'latest',
   ignis: {

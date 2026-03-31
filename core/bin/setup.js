@@ -96,7 +96,6 @@ export async function nuxtIgnisSetup(autoRun = false) {
           onlyBuiltDependencies: [
             '@parcel/watcher',
             '@tailwindcss/oxide',
-            'better-sqlite3',
             'esbuild',
             'maplibre-gl',
             'puppeteer',

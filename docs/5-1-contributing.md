@@ -16,7 +16,7 @@ Thank you for your interest in contributing to our project! We welcome contribut
 
 <p style="color: gold">TODO instructions</p>
 
-Necessary prerequisite is to have Node.js installed on your machine. Should be at least version 18.x, but we recommend using the latest LTS version.
+Necessary prerequisite is to have Node.js installed on your machine. At least `v22.5.0` is required, but we recommend using the latest LTS version.
 
 Recommended IDE is [Visual Studio Code](https://code.visualstudio.com/).
 
@@ -38,7 +38,6 @@ packages:
 # https://pnpm.io/catalogs#defining-catalogs
 # global version definition for the repeated packages
 catalog:
-  better-sqlite3: 12.2.0
   nuxt: 4.3.1
   '@nuxt/eslint': 1.14.0
   typescript: 5.9.3
@@ -58,7 +57,6 @@ minimumReleaseAgeExclude:
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - '@tailwindcss/oxide'
-  - better-sqlite3
   - esbuild
   - maplibre-gl
   - puppeteer
@@ -123,7 +121,7 @@ export default defineNuxtConfig({
 
 This allows us to immediately test new changes without the need to publish them first as a new version of `nuxt-ignis` NPM package.
 
-Technically, the apps only require to be directly dependent on `nuxt` itself. The only exception is `Nuxt Content` module, that also requires `better-sqlite3` as it is using it for creating in-memory database for content collections.
+Technically, the apps only require to be directly dependent on `nuxt` itself.
 
 We are adding `@nuxt/eslint` and `typescript` dependencies as well to allow lint checks and updates on save via VS Code [`ESLint` extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint). The required eslint configuration is defined inside `/.vscode/settings.json` file and should be thus automatically applied when you open Nuxt Ignis in VS Code.
 

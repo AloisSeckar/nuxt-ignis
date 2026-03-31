@@ -2,6 +2,8 @@
 
 `nuxt-ignis` is available as an [NPM package](https://www.npmjs.com/package/nuxt-ignis) that can be referenced as a single dependency with all the features wrapped up.
 
+[Node.js](https://nodejs.org/) version `v22.5.0` or higher is required. Latest LTS version is recommended.
+
 ## Adding to your project
 
 To include `nuxt-ignis` in your Nuxt project, you can use the CLI tool to set everything up quickly:
@@ -60,7 +62,6 @@ Those dependencies are already included in `nuxt-ignis`. Removing is recommended
     "onlyBuiltDependencies": [
       "@parcel/watcher",
       "@tailwindcss/oxide",
-      "better-sqlite3",
       "esbuild",
       "maplibre-gl",
       "puppeteer",
@@ -78,7 +79,7 @@ Those dependencies are already included in `nuxt-ignis`. Removing is recommended
 
 Without `onlyBuiltDependencies`, `pnpm` will block any scripts that are being executed during the installation of these packages. This may lead to errors and inconsistencies. You will be still prompted to allow them manually using `pnpm approve-builds`. This is the way to ease things up. Check more in the [pnpm docs](https://pnpm.io/cli/approve-builds).
 
-The `packageManager` tries to ensure same `pnpm` version is used as during the development of testing `nuxt-ignis`. However, extra setup might be required. Check more in the [Node.js docs](https://nodejs.org/docs/latest-v20.x/api/all.html#all_packages_packagemanager).
+The `packageManager` tries to ensure same `pnpm` version is used as during the development of testing `nuxt-ignis`. However, extra setup might be required. Check more in the [Node.js docs](https://nodejs.org/download/release/v22.11.0/docs/api/packages.html#packagemanager).
 </details>
 
 4) Add following section into your `nuxt.config.ts` to extend the `nuxt-ignis` layer:

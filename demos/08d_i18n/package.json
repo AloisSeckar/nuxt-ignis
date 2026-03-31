@@ -6,7 +6,6 @@
     "dev": "nuxt dev"
   },
   "devDependencies": {
-    "better-sqlite3": "catalog:",
     "@nuxt/eslint": "catalog:",
     "nuxt": "catalog:",
     "typescript": "catalog:",

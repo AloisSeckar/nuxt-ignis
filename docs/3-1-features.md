@@ -45,7 +45,6 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `@vueform/nuxt` | `1.26.0` | [👁️‍🗨️](/3-4-features-forms.html#vueform) | Connector module for `Vueform` form builder |
 | `@formkit/nuxt` | `1.7.2` | [👁️‍🗨️](/3-4-features-forms.html#formkit) | Connector module for `FormKit` form builder |
 | `@nuxt/content` | `3.11.2` | [👁️‍🗨️](/3-6-features-content.html#nuxt-content) | Official module for displaying `.md` content |
-| `better-sqlite3` | `12.2.0` | [👁️‍🗨️](/3-6-features-content.html#nuxt-content) | Database package for Nuxt Content v3 |
 | `@nuxtjs/i18n` | `10.2.3` | [👁️‍🗨️](/3-6-features-content.html#i18n) | Module for adding `i18n` internalization into apps |
 | `@nuxtjs/seo` | `3.4.0` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-seo) | Official module for easier SEO configuration |
 | `@stefanobartoletti/nuxt-social-share` | `2.3.1` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-social-share) | Module for simple sharing to social networks |

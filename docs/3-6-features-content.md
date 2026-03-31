@@ -4,7 +4,7 @@ Nuxt Ignis contains following customizable features related to content generatio
 
 ## Nuxt Content
 
-<PackagesReference :packages="[{ name: '@nuxt/content', version: '3.11.2' }, { name: 'better-sqlite3', version: '12.2.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/content', version: '3.11.2' }]" />
 
 [Nuxt Content](https://content.nuxt.com/) is a powerful content management system for Nuxt applications that allows you to write content in Markdown, JSON, YAML, or CSV formats. It provides a flexible way to manage and display content in your application.
 
@@ -41,9 +41,11 @@ This will reference [default config file](https://github.com/AloisSeckar/nuxt-ig
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can completely ignore Nuxt Ignis' default config and create your own file based on [Nuxt Content docs](https://content.nuxt.com/docs/getting-started/installation#create-your-first-collection).
 
-### Usage notice - `better-sqlite3`
+### Usage notice - SQLite database
 
-Currently, it appears to be **necessary** to have an explicit dependency on `"better-sqlite3": "12.2.0"` in your project's `package.json` in order to make `@nuxt/content` work properly ([opened task to solve this inconvenience](https://github.com/AloisSeckar/nuxt-ignis/issues/55)).
+Currently, integration relies on [Node native SQLite connector](https://content.nuxt.com/docs/getting-started/configuration#experimentalsqliteconnector) by default to eliminate external dependencies. This requires Node.js `v22.5.0` or higher.
+
+If you need backward compatibility with older Node versions, you can use `content.experimental.sqliteConnector` option in `nuxt.config.ts` to set different connector. Note that this will force you to **add an explicit depenency** on selected package (either `sqlite` or `better-sqlite`) to your `package.json`.
 
 ## I18N
 
