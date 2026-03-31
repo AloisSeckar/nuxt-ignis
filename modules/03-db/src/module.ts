@@ -54,8 +54,9 @@ export default defineNuxtModule<IgnisDBOptions>({
     const options = nuxtOpts.ignis?.db
 
     // inject runtime config values
-    nuxt.options.runtimeConfig.public.ignis ||= {}
-    nuxt.options.runtimeConfig.public.ignis.db ||= {
+    const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { db?: IgnisDBOptions } }
+    runtimeConfig.ignis ||= {}
+    runtimeConfig.ignis.db ||= {
       neon: {
         enabled: options?.neon?.enabled || false,
       },

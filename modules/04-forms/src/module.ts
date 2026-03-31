@@ -56,8 +56,9 @@ export default defineNuxtModule<IgnisFormsOptions>({
     const options = nuxtOpts.ignis?.forms
 
     // inject runtime config values
-    nuxt.options.runtimeConfig.public.ignis ||= {}
-    nuxt.options.runtimeConfig.public.ignis.forms ||= {
+    const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { forms?: IgnisFormsOptions } }
+    runtimeConfig.ignis ||= {}
+    runtimeConfig.ignis.forms ||= {
       formkit: {
         enabled: options?.formkit?.enabled || false,
         default: options?.formkit?.default || 'en',

@@ -92,8 +92,9 @@ export default defineNuxtModule<IgnisUIOptions>({
     const options = nuxtOpts.ignis?.ui
 
     // inject runtime config values
-    nuxt.options.runtimeConfig.public.ignis ||= {}
-    nuxt.options.runtimeConfig.public.ignis.ui ||= {
+    const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { ui?: IgnisUIOptions } }
+    runtimeConfig.ignis ||= {}
+    runtimeConfig.ignis.ui ||= {
       ui: options?.ui || false,
       tailwind: options?.tailwind || false,
       openprops: options?.openprops || false,

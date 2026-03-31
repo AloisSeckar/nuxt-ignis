@@ -37,13 +37,17 @@ export default defineNuxtModule<IgnisValidationOptions>({
     const options = nuxtOpts.ignis?.validation
 
     // inject runtime config values
-    nuxt.options.runtimeConfig.public.ignis ||= {}
-    nuxt.options.runtimeConfig.public.ignis.validation ||= {
+    const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { validation?: IgnisValidationOptions } }
+    runtimeConfig.ignis ||= {}
+    runtimeConfig.ignis.validation ||= {
       zod: options?.zod || false,
       valibot: options?.valibot || false,
     }
 
-    if (options?.zod === true) {
+    // additional processing
+    const effectiveOptions = runtimeConfig.ignis.validation
+
+    if (effectiveOptions.zod === true) {
       addImports([
         { name: 'useZod', from: resolver.resolve('runtime/app/composables/useZod') },
         { name: 'isValidByZod', from: resolver.resolve('runtime/app/utils/validationZod') },
@@ -51,7 +55,7 @@ export default defineNuxtModule<IgnisValidationOptions>({
       console.debug('zod validation enabled')
     }
 
-    if (options?.valibot === true) {
+    if (effectiveOptions.valibot === true) {
       addImports([
         { name: 'useValibot', from: resolver.resolve('runtime/app/composables/useValibot') },
         { name: 'isValidByValibot', from: resolver.resolve('runtime/app/utils/validationValibot') },

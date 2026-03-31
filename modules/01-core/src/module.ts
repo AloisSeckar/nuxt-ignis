@@ -115,8 +115,9 @@ export default defineNuxtModule<IgnisCoreOptions>({
     const options = nuxtOpts.ignis?.core
 
     // inject runtime config values
-    nuxt.options.runtimeConfig.public.ignis ||= {}
-    nuxt.options.runtimeConfig.public.ignis.core ||= {
+    const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { core?: IgnisCoreOptions } }
+    runtimeConfig.ignis ||= {}
+    runtimeConfig.ignis.core ||= {
       eslint: options?.eslint ?? true,
       fonts: options?.fonts ?? true,
       image: options?.image ?? true,
@@ -128,8 +129,11 @@ export default defineNuxtModule<IgnisCoreOptions>({
       css: options?.css ?? true,
     }
 
+    // additional processing
+    const effectiveOptions = runtimeConfig.ignis.core
+
     // include default css file if enabled
-    if (options?.css) {
+    if (effectiveOptions.css) {
       nuxt.options.css.push(resolver.resolve('./runtime/css/ignis.css'))
       console.debug('default CSS file included')
     }

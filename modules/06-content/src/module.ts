@@ -114,8 +114,9 @@ export default defineNuxtModule<IgnisContentOptions>({
     const options = nuxtOpts.ignis?.content
 
     // inject runtime config values
-    nuxt.options.runtimeConfig.public.ignis ||= {}
-    nuxt.options.runtimeConfig.public.ignis.content ||= {
+    const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { content?: IgnisContentOptions } }
+    runtimeConfig.ignis ||= {}
+    runtimeConfig.ignis.content ||= {
       content: {
         enabled: options?.content?.enabled || false,
       },
@@ -136,8 +137,11 @@ export default defineNuxtModule<IgnisContentOptions>({
       },
     }
 
+    // additional processing
+    const effectiveOptions = runtimeConfig.ignis.content
+
     // i18n
-    if (options?.i18n?.enabled === true) {
+    if (effectiveOptions.i18n?.enabled === true) {
       // scan user's i18n/locales/*.json at build time and generate static imports
       const localesDir = join(nuxt.options.rootDir, 'i18n', 'locales')
       let localeFiles: string[] = []
@@ -185,17 +189,17 @@ export default defineNuxtModule<IgnisContentOptions>({
       nuxt.options.nitro.alias['#ignis-i18n-locales'] = template.dst
 
       // @ts-expect-error 'i18n' option will exist at this point
-      console.log('i18n enabled with default locale:', options?.i18n?.default, nuxt.options.i18n?.defaultLocale)
+      console.log('i18n enabled with default locale:', effectiveOptions.i18n?.default, nuxt.options.i18n?.defaultLocale)
       console.log('i18n locale files found:', localeCodes.join(', ') || 'none')
     }
 
     // elrh-pslo
-    if (options?.pslo?.enabled === true) {
+    if (effectiveOptions.pslo?.enabled === true) {
       console.debug('elrh-pslo enabled')
 
       // integration with Nuxt Content
       // if enabled, all Nuxt Content page data will be treated with "preventSingleLetterOrphans" function
-      if (options?.content?.enabled === true && options?.pslo?.content === true) {
+      if (effectiveOptions.content?.enabled === true && effectiveOptions.pslo?.content === true) {
         // @ts-expect-error the hook will resolve correctly at runtime
         nuxt.hook('content:file:beforeParse', async (ctx: { file: { id: string, body: string } }) => {
           const { preventSingleLetterOrphans } = await import('elrh-pslo')
@@ -206,9 +210,9 @@ export default defineNuxtModule<IgnisContentOptions>({
       }
     }
 
-    if (options?.social?.enabled === true) {
+    if (effectiveOptions.social?.enabled === true) {
       // @ts-expect-error 'socialShare' option will exist at this point
-      if (!nuxt.options.socialShare?.baseUrl && !options?.social?.url) {
+      if (!nuxt.options.socialShare?.baseUrl && !effectiveOptions.social?.url) {
         log.warn('Base URL for `nuxt-social-share` is not set. Check https://nuxt-ignis.com/3-7-features-utils.html#nuxt-social-share to set it up correctly.')
       }
     }

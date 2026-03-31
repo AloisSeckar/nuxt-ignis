@@ -61,8 +61,9 @@ export default defineNuxtModule<IgnisUtilsOptions>({
     const options = nuxtOpts.ignis?.utils
 
     // inject runtime config values
-    nuxt.options.runtimeConfig.public.ignis ||= {}
-    nuxt.options.runtimeConfig.public.ignis.utils ||= {
+    const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { utils?: IgnisUtilsOptions } }
+    runtimeConfig.ignis ||= {}
+    runtimeConfig.ignis.utils ||= {
       equipment: {
         enabled: options?.equipment?.enabled || false,
         composables: options?.equipment?.composables || '',
