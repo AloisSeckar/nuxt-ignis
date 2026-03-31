@@ -22,7 +22,6 @@ NUXT_PUBLIC_IGNIS_TAILWIND=true
 
 # enable nuxt-i18n with custom config file
 NUXT_PUBLIC_IGNIS_I18N_ENABLED=true
-NUXT_PUBLIC_IGNIS_I18N_CONFIG="./i18n/i18n.config.ts"
 ```
 
 <details>

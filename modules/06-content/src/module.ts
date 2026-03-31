@@ -13,7 +13,6 @@ export interface IgnisContentOptions {
   i18n?: {
     enabled?: boolean
     default?: string
-    config?: string
   }
   seo?: {
     enabled?: boolean
@@ -123,7 +122,6 @@ export default defineNuxtModule<IgnisContentOptions>({
       i18n: {
         enabled: options?.i18n?.enabled || false,
         default: options?.i18n?.default || 'en',
-        config: options?.i18n?.config || resolver.resolve('./i18n.config.ts'),
       },
       seo: {
         enabled: options?.seo?.enabled || false,

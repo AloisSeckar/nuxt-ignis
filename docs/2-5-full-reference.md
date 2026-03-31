@@ -58,7 +58,6 @@ Other configurable options:
 | .env variable | Values | Default | Description |
 | --- | --- | --- | :--  |
 | `NUXT_PUBLIC_IGNIS_I18N_LOCALE` | `string` | `en` | Set default locale for `i18n` |
-| `NUXT_PUBLIC_IGNIS_I18N_CONFIG` | `string` | `/i18n.config.ts` | Set path to `i18n` config file |
 | `NUXT_PUBLIC_IGNIS_SUPABASE_TYPES` | `string` or `false` | `false` | Set path to Supabase types definition file |
 | `NUXT_PUBLIC_IGNIS_FORMKIT_LOCALE` | `string` | `en` | Set default locale for `@formkit/nuxt` |
 | `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG` | `string` | `/formkit.config.ts` | Set path to `@formkit/nuxt` config file |

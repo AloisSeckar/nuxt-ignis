@@ -54,14 +54,14 @@ Currently, it appears to be **necessary** to have an explicit dependency on `"be
 `Nuxt I18N` integration is **disabled** by default. To enable it, you can use following environment variable:
 
 ```dotenv
-NUXT_PUBLIC_IGNIS_I18N_ENABLED=true
+NUXT_PUBLIC_IGNIS_CONTENT_I18N_ENABLED=true
 ```
 
 ### Additional options
 
-- All `.json` files with messages in `@/i18n/locales` folder will be auto-scanned.
-- You can select default language locale via `NUXT_PUBLIC_IGNIS_I18N_LOCALE`.
-- If [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/i18n/i18n.config.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_I18N_CONFIG`.
+- All `.json` files with messages in `@/i18n/locales` folder will be auto-scanned and registered as available locales.
+- You can select default language locale via `NUXT_PUBLIC_IGNIS_CONTENT_I18N_LOCALE` (fallbacks to `en` if not set).
+- For other configuration refer to [module docs](https://i18n.nuxtjs.org/docs/getting-started/vue-i18n).
 
 ### Additional utils
 
