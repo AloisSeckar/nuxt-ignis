@@ -1,31 +1,57 @@
-/* based on https://www.howtogeek.com/get-a-clean-attractive-site-with-lines-of-css/ */
+/* 
+based on recommendations from: 
+- https://www.howtogeek.com/get-a-clean-attractive-site-with-lines-of-css
+- https://www.swyx.io/css-100-bytes
+*/
 
 html {
+    /* ensure sizes are calculated including margin and padding */
     box-sizing: border-box;
+    /* limit content width to aviod long lines of text */
     max-width: 80ch;
+    /* center content by default */
     margin: auto;
-    font-size: 1.2em;
+    /* add some room around the content */
+    padding: 2em 1em;
+    /* increase base font size to mitigate higher screen resolution */
+    font-size: 1.25em;
+    /* improve readability by increased space between lines of text */
+    line-height: 1.5;
+    /* pure black text on white background is exhaustive for eyes */
     color: #333;
-    line-height: 1.4;
 }
 
-* {
+*, *:before, *:after {
+    /* ensure sizes are calculated including margin and padding */
     box-sizing: inherit;
 }
 
 h1, h2, h3, h4, h5, h6 {
+    /* sans-serif fonts are better for readability */
     font-family: sans-serif;
+    /* add some room around the headers */
+    margin: 1.5em 0 1em;
 }
 
+/* image responsiveness out-of-the-box */
 img {
     max-width: 100%;
     height: auto;
 }
 
+/* underlined links (default) are rather distractive on modern websites */
 a:link {
     text-decoration: none;
 }
 
+/* only underline active links on hover */
 a:hover {
     text-decoration: underline;
+}
+
+p,ul,ol {
+    /* sans-serif fonts are better for readability */
+    font-family: sans-serif;
+    /* add some room under paragraphs and lists */
+    margin-bottom: 1.5em;
 }

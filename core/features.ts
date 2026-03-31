@@ -1,10 +1,6 @@
-import { fileURLToPath } from 'url'
-import { dirname, join } from 'path'
 import { defu } from 'defu'
 import { log } from './app/utils/consola'
 import type { NuxtConfig } from 'nuxt/schema'
-
-const currentDir = dirname(fileURLToPath(import.meta.url))
 
 // core function to determine effective config for the current Nuxt app instance
 // custom settings are based on passed in environment variables
@@ -343,9 +339,6 @@ export function setFeatures(printOverview: boolean = false): { nuxtConfig: NuxtC
 
   // default CSS file
   if (process.env.NUXT_PUBLIC_IGNIS_CORE_CSS !== 'false') {
-    nuxtConfig = defu({
-      css: [join(currentDir, './app/assets/css/ignis.css')],
-    }, nuxtConfig)
     nuxt.push('ignis CSS')
   }
 
