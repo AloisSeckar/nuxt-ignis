@@ -10,6 +10,8 @@ export interface IgnisCoreOptions {
   vueuse?: boolean
   pinia?: boolean
   auth?: boolean
+  // include default css file
+  css?: boolean
 }
 
 declare module 'nuxt/schema' {
@@ -31,6 +33,7 @@ export default defineNuxtModule<IgnisCoreOptions>({
     auth: true,
     vueuse: true,
     pinia: true,
+    css: true,
   },
   moduleDependencies(nuxt) {
     console.debug('@nuxt-ignis/core - module dependencies are being resolved')
@@ -51,6 +54,7 @@ export default defineNuxtModule<IgnisCoreOptions>({
         auth: true,
         vueuse: true,
         pinia: true,
+        css: true,
       }
     }
 
@@ -121,6 +125,13 @@ export default defineNuxtModule<IgnisCoreOptions>({
       auth: options?.auth ?? false,
       vueuse: options?.vueuse ?? true,
       pinia: options?.pinia ?? true,
+      css: options?.css ?? true,
+    }
+
+    // include default css file if enabled
+    if (options?.css) {
+      nuxt.options.css.push(resolver.resolve('./runtime/css/ignis.css'))
+      console.debug('default CSS file included')
     }
 
     addPlugin(resolver.resolve('./runtime/plugin'))

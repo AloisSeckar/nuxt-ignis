@@ -10,10 +10,10 @@ catalog:
   '@formkit/nuxt': 1.7.2
   '@maas/vue-equipment': 1.0.0-beta.51
   '@nuxt-ignis/content': 0.0.37
-  '@nuxt-ignis/core': 0.0.9
+  '@nuxt-ignis/core': 0.0.10
   '@nuxt-ignis/db': 0.0.12
   '@nuxt-ignis/forms': 0.0.10
-  '@nuxt-ignis/ui': 0.0.8
+  '@nuxt-ignis/ui': 0.0.9
   '@nuxt-ignis/utils': 0.0.7
   '@nuxt-ignis/validation': 0.0.10
   '@nuxt/content': 3.11.2

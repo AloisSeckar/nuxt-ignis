@@ -10,8 +10,6 @@ export interface IgnisUIOptions {
   tailwind?: boolean
   openprops?: boolean
   charts?: boolean
-  // include default css file
-  css?: boolean
 }
 
 declare module 'nuxt/schema' {
@@ -100,12 +98,6 @@ export default defineNuxtModule<IgnisUIOptions>({
       tailwind: options?.tailwind || false,
       openprops: options?.openprops || false,
       charts: options?.charts || false,
-      css: options?.css ?? true,
-    }
-
-    // add default css file if enabled
-    if (options?.css) {
-      nuxt.options.css.push(resolver.resolve('./runtime/css/ignis.css'))
     }
 
     addPlugin(resolver.resolve('./runtime/plugin'))

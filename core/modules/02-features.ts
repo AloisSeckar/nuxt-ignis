@@ -139,7 +139,7 @@ export default defineNuxtModule<IgnisOptions>({
     }
     ignis.content ||= {
       content: { enabled: false },
-      i18n: { enabled: false, default: '', config: '' },
+      i18n: { enabled: false, default: '' },
       seo: { enabled: false },
       social: { enabled: false, url: '' },
       pslo: { enabled: false, content: false },
