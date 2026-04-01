@@ -40,7 +40,6 @@ catalog:
   '@vueform/vueform': 1.13.8
   '@vueuse/core': 14.2.1
   '@vueuse/nuxt': 14.2.1
-  'better-sqlite3': 12.2.0
   'changelogen': ^0.6.2
   'consola': ^3.4.2
   'cross-env': ^10.1.0
@@ -86,7 +85,6 @@ minimumReleaseAgeExclude:
 onlyBuiltDependencies:
   - '@parcel/watcher'
   - '@tailwindcss/oxide'
-  # - better-sqlite3
   - esbuild
   - maplibre-gl
   - puppeteer

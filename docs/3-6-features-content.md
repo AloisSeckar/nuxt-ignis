@@ -45,7 +45,7 @@ Referencing config like this allows to pass in a custom config that will be [def
 
 Currently, integration relies on [Node native SQLite connector](https://content.nuxt.com/docs/getting-started/configuration#experimentalsqliteconnector) by default to eliminate external dependencies. This requires Node.js `v22.5.0` or higher.
 
-If you need backward compatibility with older Node versions, you can use `content.experimental.sqliteConnector` option in `nuxt.config.ts` to set different connector. Note that this will force you to **add an explicit depenency** on selected package (either `sqlite` or `better-sqlite`) to your `package.json`.
+If you need backward compatibility with older Node versions, you can use `content.experimental.sqliteConnector` option in `nuxt.config.ts` to set different connector. Note that this will force you to **add an explicit depenency** on selected package (either `sqlite` or `better-sqlite3`) to your `package.json`.
 
 ## I18N
 
