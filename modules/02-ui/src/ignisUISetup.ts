@@ -62,12 +62,14 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisUIOptions) {
   if (effectiveOptions.ui === true) {
     tailwindFixRequired = true
     // import tailwind css file
+    nuxtOptions.css ||= []
     nuxtOptions.css.push(resolver.resolve('./runtime/css/ignis-nuxt-ui.css'))
     console.debug('Nuxt UI CSS file included')
   }
   else if (effectiveOptions.tailwind === true) {
     tailwindFixRequired = true
     // import tailwind css file
+    nuxtOptions.css ||= []
     nuxtOptions.css.push(resolver.resolve('./runtime/css/ignis-tailwind.css'))
     // temporary integration using Vite plugin directly
     // @ts-expect-error https://github.com/tailwindlabs/tailwindcss/issues/18802
@@ -88,7 +90,10 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisUIOptions) {
 
   // Open Props CSS
   if (options?.openprops === true) {
+    // import Open Props CSS file
+    nuxtOptions.css ||= []
     nuxtOptions.css.push(resolver.resolve('./runtime/css/ignis-open-props.css'))
+    // add plugin for processing
     nuxtOptions.postcss = defu({
       plugins: {
         'postcss-jit-props': OpenProps,
