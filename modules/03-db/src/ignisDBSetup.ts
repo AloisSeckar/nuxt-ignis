@@ -1,3 +1,4 @@
+import type { PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
 import type { IgnisDBOptions, NuxtIgnisDBOptions } from './module'
 
 export function ignisModuleDependencies(nuxtOptions: NuxtIgnisDBOptions) {
@@ -32,6 +33,10 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisDBOptions) {
   const options = nuxtOptions.ignis?.db
 
   // inject runtime config values
+  nuxtOptions.runtimeConfig ||= {
+    public: {} as PublicRuntimeConfig,
+  } as RuntimeConfig
+
   const runtimeConfig = nuxtOptions.runtimeConfig.public as { ignis?: { db?: IgnisDBOptions } }
   runtimeConfig.ignis ??= {}
   runtimeConfig.ignis.db ??= {}
