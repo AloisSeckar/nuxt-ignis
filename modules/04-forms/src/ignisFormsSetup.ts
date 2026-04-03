@@ -1,3 +1,4 @@
+import type { PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
 import type { IgnisFormsOptions, NuxtIgnisFormsOptions } from './module'
 
 export function ignisModuleDependencies(nuxtOptions: NuxtIgnisFormsOptions) {
@@ -33,6 +34,10 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisFormsOptions) {
   const options = nuxtOptions.ignis?.forms
 
   // inject runtime config values
+  nuxtOptions.runtimeConfig ||= {
+    public: {} as PublicRuntimeConfig,
+  } as RuntimeConfig
+
   const runtimeConfig = nuxtOptions.runtimeConfig.public as { ignis?: { forms?: IgnisFormsOptions } }
   runtimeConfig.ignis ??= {}
   runtimeConfig.ignis.forms ??= {}
