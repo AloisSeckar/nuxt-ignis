@@ -43,7 +43,9 @@
     "start": "nuxt start",
     "test": "vitest run",
     "test-u": "vitest run -u",
-    "test-i": "vitest"
+    "test-i": "vitest",
+    "modules-test": "node ../modules/ignis-modules-test.js",
+    "modules-publish": "node ../modules/ignis-modules-publish.js"
   },
   "dependencies": {
     "@nuxt-ignis/content": "catalog:",

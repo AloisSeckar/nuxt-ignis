@@ -3,14 +3,16 @@
 // Will prompt for npm login during run
 //
 // Usage:
-//   node publish-modules.js              # publish all modules
-//   node publish-modules.js ui,db        # publish only matching modules
+//   node modules/ignis-modules-publish.js              # publish all modules
+//   node modules/ignis-modules-publish.js ui,db        # publish only matching modules
 
-const { execSync } = require('child_process');
-const fs = require('fs');
-const path = require('path');
+import { execSync } from 'child_process';
+import { readFileSync, writeFileSync } from 'fs';
+import { dirname, join } from 'path';
+import { fileURLToPath } from 'url';
 
-const ROOT_DIR = __dirname;
+const MODULES_DIR = dirname(fileURLToPath(import.meta.url));
+const ROOT_DIR = join(MODULES_DIR, '..');
 
 const ALL_MODULES = [
   '01-core',
@@ -43,12 +45,14 @@ if (filterArg) {
 
 console.log('');
 
+const startTime = performance.now();
+
 function run(cmd, cwd) {
   execSync(cmd, { cwd, stdio: 'inherit' });
 }
 
 function readPkg(moduleDir) {
-  return JSON.parse(fs.readFileSync(path.join(moduleDir, 'package.json'), 'utf8'));
+  return JSON.parse(readFileSync(join(moduleDir, 'package.json'), 'utf8'));
 }
 
 function bumpPatch(version) {
@@ -59,15 +63,15 @@ function bumpPatch(version) {
 
 // Step 1: Bump patch version and publish each module
 for (const mod of modules) {
-  const moduleDir = path.join(ROOT_DIR, 'modules', mod);
+  const moduleDir = join(MODULES_DIR, mod);
   const pkg = readPkg(moduleDir);
   const newVersion = bumpPatch(pkg.version);
 
   console.log(`[${mod}] ${pkg.name}: ${pkg.version} -> ${newVersion}`);
 
   pkg.version = newVersion;
-  fs.writeFileSync(
-    path.join(moduleDir, 'package.json'),
+  writeFileSync(
+    join(moduleDir, 'package.json'),
     JSON.stringify(pkg, null, 2) + '\n'
   );
 
@@ -79,11 +83,11 @@ console.log('=== Updating pnpm-workspace.yaml catalog ===');
 console.log('');
 
 // Step 2: Update @nuxt-ignis/* versions in pnpm-workspace.yaml
-const workspaceYamlPath = path.join(ROOT_DIR, 'pnpm-workspace.yaml');
-let workspaceYaml = fs.readFileSync(workspaceYamlPath, 'utf8');
+const workspaceYamlPath = join(ROOT_DIR, 'pnpm-workspace.yaml');
+let workspaceYaml = readFileSync(workspaceYamlPath, 'utf8');
 
 for (const mod of modules) {
-  const moduleDir = path.join(ROOT_DIR, 'modules', mod);
+  const moduleDir = join(MODULES_DIR, mod);
   const pkg = readPkg(moduleDir);
 
   const pattern = new RegExp(
@@ -94,7 +98,7 @@ for (const mod of modules) {
   console.log(`  catalog: ${pkg.name} -> ${pkg.version}`);
 }
 
-fs.writeFileSync(workspaceYamlPath, workspaceYaml);
+writeFileSync(workspaceYamlPath, workspaceYaml);
 
 console.log('');
 console.log('=== Waiting 10s for npm registry to update ===');
@@ -110,8 +114,10 @@ function sleep(ms) {
   console.log('=== Running pnpm install in /core ===');
   console.log('');
 
-  run('pnpm install', path.join(ROOT_DIR, 'core'));
+  run('pnpm install', join(ROOT_DIR, 'core'));
+
+  const duration = ((performance.now() - startTime) / 1000).toFixed(1);
 
   console.log('');
-  console.log('=== Release complete ===');
+  console.log(`=== Release complete in ${duration}s ===`);
 })();
