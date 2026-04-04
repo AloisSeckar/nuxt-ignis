@@ -1,3 +1,4 @@
+import type { PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
 import type { IgnisUtilsOptions, NuxtIgnisUtilsOptions } from './module'
 
 export function ignisModuleDependencies(nuxtOptions: NuxtIgnisUtilsOptions) {
@@ -19,7 +20,9 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisUtilsOptions) {
       equipmentConfig.plugins = options.equipment.plugins
     }
 
-    modules['@maas/vue-equipment/nuxt'] = equipmentConfig
+    modules['@maas/vue-equipment/nuxt'] = {
+      defaults: equipmentConfig,
+    }
     console.debug('@maas/vue-equipment/nuxt module installed')
   }
 
@@ -38,6 +41,10 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisUtilsOptions) {
   const options = nuxtOptions.ignis?.utils
 
   // inject runtime config values
+  nuxtOptions.runtimeConfig ||= {
+    public: {} as PublicRuntimeConfig,
+  } as RuntimeConfig
+
   const runtimeConfig = nuxtOptions.runtimeConfig.public as { ignis?: { utils?: IgnisUtilsOptions } }
   runtimeConfig.ignis ??= {}
   runtimeConfig.ignis.utils ??= {}
