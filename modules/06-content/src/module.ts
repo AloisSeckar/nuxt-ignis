@@ -1,5 +1,5 @@
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
-import { log, ignisModuleDependencies, ignisModuleSetup } from './ignisContentSetup'
+import { ignisModuleDependencies, ignisModuleSetup } from './ignisContentSetup'
 import type { NuxtOptions } from 'nuxt/schema'
 
 export interface IgnisContentOptions {
@@ -59,7 +59,7 @@ export default defineNuxtModule<IgnisContentOptions>({
         const { preventSingleLetterOrphans } = await import('elrh-pslo')
         const { file } = ctx
         file.body = preventSingleLetterOrphans(file.body)
-        log.debug(`Nuxt Content file ${file.id} processed with elrh-pslo`)
+        console.debug(`Nuxt Content file ${file.id} processed with elrh-pslo`)
       })
     }
 
