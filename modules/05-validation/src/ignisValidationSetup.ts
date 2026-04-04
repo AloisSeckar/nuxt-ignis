@@ -1,5 +1,6 @@
 import { createResolver, addImports } from '@nuxt/kit'
 import type { IgnisValidationOptions, NuxtIgnisValidationOptions } from './module'
+import type { PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
 
 export function ignisModuleDependencies(nuxtOptions: NuxtIgnisValidationOptions) {
   console.debug('@nuxt-ignis/validation - module dependencies are being resolved')
@@ -23,6 +24,10 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisValidationOptions) {
   const options = nuxtOptions.ignis?.validation
 
   // inject runtime config values
+  nuxtOptions.runtimeConfig ||= {
+    public: {} as PublicRuntimeConfig,
+  } as RuntimeConfig
+
   const runtimeConfig = nuxtOptions.runtimeConfig.public as { ignis?: { validation?: IgnisValidationOptions } }
   runtimeConfig.ignis ??= {}
   runtimeConfig.ignis.validation ??= {}
