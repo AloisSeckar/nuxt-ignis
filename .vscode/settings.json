@@ -6,6 +6,12 @@
     },
     // ESlint flat config
     "eslint.useFlatConfig": true,
+    // should resolve issues with tracking newly added files
+    "eslint.validate": [
+        "javascript",
+        "typescript",
+        "vue",
+    ],
     // allow multiple eslint configurations
     "eslint.workingDirectories": [
         { "mode": "auto" },
