@@ -34,7 +34,7 @@ export interface IgnisConfigOptions {
   // logging
   log?: {
     // default logging level
-    level?: 'info'
+    level?: 'info' | 'warn' | 'error' | 'debug'
   }
   // extra behavior
   warn?: {

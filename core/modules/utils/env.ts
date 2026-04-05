@@ -16,14 +16,14 @@ export function applyEnv(opts: IgnisOptions) {
   opts.config.html.title = process.env.NUXT_PUBLIC_IGNIS_CONFIG_HTML_TITLE || opts.config.html.title || 'Nuxt Ignis App'
   opts.config.html.lang = process.env.NUXT_PUBLIC_IGNIS_CONFIG_HTML_LANG || opts.config.html.lang || 'en'
   opts.config.nuxt ??= {}
-  opts.config.nuxt.ssr = process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR === 'true' : opts.config.nuxt.ssr ?? undefined
-  opts.config.nuxt.pages = process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_PAGES !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_PAGES === 'true' : opts.config.nuxt.pages ?? undefined
+  opts.config.nuxt.ssr = process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR === 'true' : opts.config.nuxt.ssr ?? true
+  opts.config.nuxt.pages = process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_PAGES !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_PAGES === 'true' : opts.config.nuxt.pages ?? true
   opts.config.nuxt.css = process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_CSS || opts.config.nuxt.css || undefined
-  opts.config.nuxt.error = process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_ERROR === 'true' || opts.config.nuxt.error || undefined
+  opts.config.nuxt.error = process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_ERROR !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CONFIG_NUXT_ERROR === 'true' : opts.config.nuxt.error ?? true
   opts.config.log ??= {}
-  opts.config.log.level = process.env.NUXT_PUBLIC_IGNIS_CONFIG_LOG_LEVEL as 'info' || opts.config.log.level || undefined
+  opts.config.log.level = process.env.NUXT_PUBLIC_IGNIS_CONFIG_LOG_LEVEL as 'info' | 'warn' | 'error' | 'debug' | undefined || opts.config.log.level || 'info'
   opts.config.warn ??= {}
-  opts.config.warn.duplicates = process.env.NUXT_PUBLIC_IGNIS_CONFIG_WARN_DUPLICATES !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CONFIG_WARN_DUPLICATES === 'true' : opts.config.warn.duplicates ?? undefined
+  opts.config.warn.duplicates = process.env.NUXT_PUBLIC_IGNIS_CONFIG_WARN_DUPLICATES !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CONFIG_WARN_DUPLICATES === 'true' : opts.config.warn.duplicates ?? true
 
   // @nuxt-ignis/core
   opts.core ??= {}
