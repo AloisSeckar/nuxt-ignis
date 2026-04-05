@@ -8,6 +8,7 @@ import type { IgnisFormsOptions } from '@nuxt-ignis/forms'
 import type { IgnisValidationOptions } from '@nuxt-ignis/validation'
 import type { IgnisContentOptions } from '@nuxt-ignis/content'
 import type { IgnisUtilsOptions } from '@nuxt-ignis/utils'
+import { applyEnv } from './utils/env'
 import { resolveUiPreset, resolveDbPreset, resolveFormsPreset, resolveValidationPreset } from './utils/presets'
 import { isCoreActive, isUiActive, isDbActive, isFormsActive, isValidationActive, isContentActive, isUtilsActive } from './utils/activation'
 
@@ -63,8 +64,23 @@ export default defineNuxtModule<IgnisOptions>({
     const modules: Record<string, any> = {}
 
     const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: IgnisOptions }
+    if (!nuxtOpts.ignis) {
+      nuxtOpts.ignis = {}
+    }
     const ignisOpts = nuxtOpts.ignis
+
+    // options that were set directly in nuxt.config.ts
     console.debug('Received options:', ignisOpts)
+
+    // Nuxt Ignis supports configuration via .env variables
+    // but at this time, they are not yet evaluated and applied
+    // we are resolving them manually so they can take effect in Ignis module resolution
+    // note .env variables take precedence over options passed directly from nuxt.config.ts
+    // when neither is, Ignis will apply defaults
+    applyEnv(ignisOpts)
+
+    // options after applying .env variables or Ignis defaults
+    console.debug('Enhanced options:', ignisOpts)
 
     if (!ignisOpts) {
       console.debug('No Ignis options provided. Setting defaults.')
@@ -118,7 +134,7 @@ export default defineNuxtModule<IgnisOptions>({
     // ensure proper runtime config type inference for modules that were not activated
     const ignis = (nuxt.options.runtimeConfig.public.ignis ||= {}) as IgnisOptions
     ignis.core ||= {
-      eslint: false, fonts: false, image: false, scripts: false, security: false, auth: false, vueuse: false, pinia: false,
+      eslint: false, fonts: false, image: false, scripts: false, security: false, auth: false, vueuse: false, pinia: false, css: false,
     }
     ignis.preset ||= {
       ui: 'off', db: 'off', forms: 'off', validation: 'off',

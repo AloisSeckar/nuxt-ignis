@@ -22,6 +22,8 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisCoreOptions) {
 
   let options = nuxtOptions.ignis?.core
   if (!options) {
+    // NOTE: this would never happen unless the module runs in isolation
+    // otherwise Nuxt Ignis startup will always provide defaults via core\modules\utils\env.ts
     console.debug('@nuxt-ignis/core - No options were provided, setting defaults')
     options = { ...ignisDefaultOptions }
   }
