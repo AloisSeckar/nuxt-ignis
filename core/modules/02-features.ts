@@ -9,6 +9,7 @@ import type { IgnisValidationOptions } from '@nuxt-ignis/validation'
 import type { IgnisContentOptions } from '@nuxt-ignis/content'
 import type { IgnisUtilsOptions } from '@nuxt-ignis/utils'
 import { applyEnv } from './utils/env'
+import { checkForDuplicateModules } from './utils/duplicates'
 import { resolveUiPreset, resolveDbPreset, resolveFormsPreset, resolveValidationPreset } from './utils/presets'
 import { isCoreActive, isUiActive, isDbActive, isFormsActive, isValidationActive, isContentActive, isUtilsActive } from './utils/activation'
 
@@ -163,6 +164,15 @@ export default defineNuxtModule<IgnisOptions>({
     ignis.utils ||= {
       equipment: { enabled: false, composables: '', plugins: '' },
       regexp: { enabled: false },
+    }
+
+    // additional processing
+
+    // warn if duplicate modules find
+    // this means e.g. 2 database modules or 2 form solutions
+    const nuxtConfig = nuxt.options as NuxtOptions & { ignis?: IgnisOptions }
+    if (nuxtConfig.ignis?.config?.warn?.duplicates) {
+      checkForDuplicateModules(nuxtConfig.ignis)
     }
   },
 })
