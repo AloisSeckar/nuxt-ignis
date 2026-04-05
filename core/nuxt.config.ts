@@ -1,8 +1,8 @@
 import { writeFileSync, existsSync, mkdirSync } from 'fs'
 import { dirname } from 'path'
 import { defu } from 'defu'
-import { log } from './app/utils/consola'
 import { setFeatures } from './features'
+import { getIgnisFeaturesOverview } from './overview'
 import type { NuxtConfig } from '@nuxt/schema'
 
 const currentFeatures = setFeatures()
@@ -26,9 +26,9 @@ const baseConfig: NuxtConfig = {
   },
 
   hooks: {
-    'schema:resolved'() {
+    'ready'(nuxt) {
       // write current config to file (for use in app)
-      const configObject = JSON.stringify(currentFeatures.nuxtConfig, null, 2)
+      const configObject = JSON.stringify(nuxt.options, null, 2)
 
       const outPath = './public/_ignis-config.json'
       const outDir = dirname(outPath)
@@ -38,8 +38,9 @@ const baseConfig: NuxtConfig = {
 
       writeFileSync(outPath, configObject)
 
-      // display settings overview in console (just once)
-      log.info('\nNuxt Ignis will start using following settings:\n' + currentFeatures.overview)
+      // evaluate and display settings overview in console
+      // (when placed into this hook, it will only run once)
+      getIgnisFeaturesOverview(nuxt.options.ignis)
     },
   },
 }
