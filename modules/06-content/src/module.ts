@@ -12,7 +12,6 @@ export interface IgnisContentOptions {
   }
   seo?: {
     enabled?: boolean
-    ssr?: boolean
   }
   social?: {
     enabled?: boolean
@@ -27,6 +26,12 @@ export interface IgnisContentOptions {
 export type NuxtIgnisContentOptions = NuxtOptions & {
   ignis: {
     content?: IgnisContentOptions
+    // TODO temp workaround for seo+ssr config
+    config?: {
+      nuxt?: {
+        ssr?: boolean
+      }
+    }
   }
 }
 

@@ -45,7 +45,7 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisContentOptions) {
     const seoConfig: Record<string, unknown> = {}
 
     // ogImage and Schema.org modules should be disabled with `ssr: false`
-    if (options.seo.ssr === false) {
+    if (nuxtOptions.ignis?.config?.nuxt?.ssr === false) {
       seoConfig.ogImage = { enabled: false }
       seoConfig.schemaOrg = { enabled: false }
     }

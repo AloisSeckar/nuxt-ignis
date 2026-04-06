@@ -165,11 +165,16 @@ describe('@nuxt-ignis/content - resolving module dependencies', () => {
     expect(warnSpy).toHaveBeenCalledTimes(0)
   })
 
-  test('should auto-disable ogImage and schemaOrg if seo.ssr is false', () => {
+  test('should auto-disable ogImage and schemaOrg if ssr is set to false', () => {
     expect(ignisModuleDependencies({
       ignis: {
         content: {
-          seo: { enabled: true, ssr: false },
+          seo: { enabled: true },
+        },
+        config: {
+          nuxt: {
+            ssr: false,
+          },
         },
       },
     } as NuxtIgnisContentOptions)).toEqual({
