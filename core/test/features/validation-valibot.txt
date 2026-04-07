@@ -1,5 +1,0 @@
-Nuxt Ignis will start using following settings:
-App title: Nuxt Ignis App
-Modules: @nuxt-ignis/core, @nuxt-ignis/validation
-Modules (Ignis): @nuxt-ignis/validation/valibot
-Nuxt: log-level=info[default], ignis CSS

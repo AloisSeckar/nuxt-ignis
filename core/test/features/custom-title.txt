@@ -1,4 +1,0 @@
-Nuxt Ignis will start using following settings:
-App title: Custom Title
-Modules: @nuxt-ignis/core
-Nuxt: log-level=info[default], ignis CSS
