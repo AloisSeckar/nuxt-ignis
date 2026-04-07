@@ -1,11 +1,12 @@
+import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { describe, expect, test } from 'vitest'
 import { hasText } from 'elrh-cosca'
-import app from '../../core/package.json' assert { type: 'json' }
+import app from '../../core/package.json' with { type: 'json' }
 
-// extract the versions from package.json
-const { version, dependencies, packageManager } = app
+const { version, packageManager } = app
 
-// Nuxt Ignis
+// Nuxt Ignis version - should match package.json
 
 const ignisLink = `https://github.com/AloisSeckar/nuxt-ignis/blob/v${version}/`
 
@@ -45,23 +46,26 @@ describe(`Nuxt Ignis version should be the same as in package.json (${version})`
   })
 })
 
-// Nuxt Spec
-
-const specVersion = dependencies['nuxt-spec']
-const specLink = `https://github.com/AloisSeckar/nuxt-spec/blob/v${specVersion}/`
-
-describe(`Nuxt Spec links should lead to same version tag as in package.json (${specVersion})`, () => {
-  test('1-4-installation.md', () => {
-    expect(hasText('1-4-installation.md', specLink)).toBe(true)
-  })
-})
-
-// pnpm
+// pnpm version - should match package.json
 
 const pnpmVersion = packageManager?.split('@')[1] || 'unknown'
 
 describe(`pnpm version should be the same as in package.json (${pnpmVersion})`, () => {
   test('1-4-installation.md', () => {
     expect(hasText('1-4-installation.md', `"packageManager": "pnpm@${pnpmVersion}"`)).toBe(true)
+  })
+})
+
+
+// Nuxt Spec version - should match pnpm catalog
+
+const workspaceYaml = readFileSync(resolve(__dirname, '../../pnpm-workspace.yaml'), 'utf-8')
+const specVersion = workspaceYaml.match(/'nuxt-spec':\s*(.+)/)?.[1]?.trim()
+
+const specLink = `https://github.com/AloisSeckar/nuxt-spec/blob/v${specVersion}/`
+
+describe(`Nuxt Spec links should lead to same version tag as in package.json (${specVersion})`, () => {
+  test('1-4-installation.md', () => {
+    expect(hasText('1-4-installation.md', specLink)).toBe(true)
   })
 })
