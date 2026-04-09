@@ -1,7 +1,6 @@
 import type { IgnisOptions } from '../02-features'
 
 export function checkForDuplicateModules(ignis: IgnisOptions) {
-  console.log(ignis)
   // UI
   if (ignis.ui?.ui === true && ignis.ui?.tailwind === true) {
     console.warn('You have both Nuxt UI and Tailwind CSS active. Nuxt Ignis is ignoring Tailwind CSS setting, as Nuxt UI already includes it. If this is intentional, you can set `ignis.config.warn.duplicates` to `false` to surpress this warning.')

@@ -1,9 +1,8 @@
 import { beforeEach, describe, expect, test } from 'vitest'
 import { applyEnv } from '../modules/utils/env'
 
-// `applyEnv()` is the helper function that transforms given .env variables
+// `applyEnv` is the helper function that transforms given .env variables
 // into `ignis` config object prior to Nuxt Ignis module resolution
-// this suite tests if the process works as intended
 
 describe('unit tests for `applyEnv` function', () => {
   // store original process.env to restore it after tests

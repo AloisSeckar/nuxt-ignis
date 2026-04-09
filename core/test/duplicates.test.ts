@@ -1,7 +1,10 @@
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
 import { checkForDuplicateModules } from '../modules/utils/duplicates'
 
-describe('checkForDuplicateModules', () => {
+// `checkForDuplicateModules` is the helper function that checks the Ignis configuration
+// for duplicated modules and issues warnings if necessary
+
+describe('unit tests for `checkForDuplicateModules` function', () => {
   let warnSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
