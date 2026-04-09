@@ -4,6 +4,7 @@ import type { IgnisOptions } from '../02-features'
 export function isCoreActive(opts: IgnisOptions): boolean {
   const c = opts.core
   if (!c) return true
+  if (!Object.keys(c).length) return true // empty object (all features are still true by defaut)
   return !!(c.eslint || c.fonts || c.image || c.scripts || c.security || c.auth || c.vueuse || c.pinia)
 }
 

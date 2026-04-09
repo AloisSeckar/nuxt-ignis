@@ -5,7 +5,7 @@ import { applyEnv } from '../modules/utils/env'
 // into `ignis` config object prior to Nuxt Ignis module resolution
 // this suite tests if the process works as intended
 
-describe('nuxtConfig unit tests', () => {
+describe('unit tests for `applyEnv` function', () => {
   // store original process.env to restore it after tests
   const OLD_ENV = process.env
 
