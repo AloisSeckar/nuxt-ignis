@@ -11,6 +11,7 @@ describe('demos/01_default', async () => {
 
   test('_ignis-welcome matches screenshot', async () => {
     const page = await createPage()
+    await page.setViewportSize({ width: 1280, height: 720 }) // important for consistent results!
     await page.goto(url('/_ignis-welcome'), { waitUntil: 'hydration' })
 
     expect(await compareScreenshot(page, { fileName: 'header.jpg', selector: '#ignis-header' })).toEqual(true)
@@ -19,6 +20,7 @@ describe('demos/01_default', async () => {
 
   test('_ignis-info matches screenshot', async () => {
     const page = await createPage()
+    await page.setViewportSize({ width: 1280, height: 720 }) // important for consistent results!
     await page.goto(url('/_ignis-info'), { waitUntil: 'hydration' })
 
     expect(await compareScreenshot(page, { fileName: 'info.jpg', selector: '#ignis-info' })).toEqual(true)
@@ -26,6 +28,7 @@ describe('demos/01_default', async () => {
 
   test('_ignis-config matches screenshot', async () => {
     const page = await createPage()
+    await page.setViewportSize({ width: 1280, height: 720 }) // important for consistent results!
     await page.goto(url('/_ignis-config'), { waitUntil: 'hydration' })
 
     expect(await compareScreenshot(page, { fileName: 'config.jpg', selector: '#ignis-config' })).toEqual(true)

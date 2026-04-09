@@ -33,12 +33,12 @@ const pages = useRuntimeConfig().public.ignis.config.nuxt.pages
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   gap: 0.75rem;
   padding: 2rem;
 }
 
 .ignis-welcome-header {
-  text-align: center;
   font-family: monospace;
   font-size: 1.75rem;
   margin-bottom: 0.5rem;
@@ -46,7 +46,6 @@ const pages = useRuntimeConfig().public.ignis.config.nuxt.pages
 }
 
 .ignis-welcome-subheader {
-  text-align: center;
   font-family: monospace;
   font-size: 1.5rem;
   color: #fbbf24;
