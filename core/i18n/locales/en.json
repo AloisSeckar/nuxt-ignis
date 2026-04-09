@@ -36,6 +36,7 @@
         "charts" : "Nuxt Charts for drawing charts with ease"
     },
     "config" : {
-        "header" : "Current Nuxt Ignis iteration was started with following config applied:"
+        "ignis" : "Current Nuxt Ignis iteration was started with following config applied:",
+        "nuxt" : "Fully resolved Nuxt config object for reference:"
     }
 }

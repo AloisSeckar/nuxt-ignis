@@ -32,7 +32,7 @@ The page route starts with an underscore to avoid clashes with your own routes.
 
 ### Usage notice
 
-To display data on this page, Nuxt Ignis auto-generates a `/public/_ignis-config.json` on startup to hold the configuration object that was used. This file is not meant to be stored in Git and should be added into `.gitignore`. You can use the CLI tool `npx set-gitignore` to automatically adjust your `.gitignore` file:
+To display data on this page, Nuxt Ignis auto-generates `/public/_ignis-config.json` and `/public/_nuxt-config.json` on startup to hold the configuration that was used. Those files are not meant to be stored in Git and should be added into `.gitignore`. You can use the CLI tool `npx set-gitignore` to automatically adjust your `.gitignore` file:
 
 ```bash
 npx set-gitignore

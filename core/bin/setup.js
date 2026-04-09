@@ -149,6 +149,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
       '# Nuxt Ignis files',
       '# configuration overview created upon Nuxt Ignis start',
       '_ignis-config.json',
+      '_nuxt-config.json',
     ], isAutoRun, 'This will add Nuxt Ignis-related entries into your \'.gitignore\'. Continue?')
   } catch (error) {
     console.error('Error updating .gitignore file:\n', error.message)

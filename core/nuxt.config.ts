@@ -15,15 +15,14 @@ export default defineNuxtConfig({
   hooks: {
     'ready'(nuxt) {
       // write current config to file (for use in app)
-      const configObject = JSON.stringify(nuxt.options, null, 2)
-
-      const outPath = './public/_ignis-config.json'
-      const outDir = dirname(outPath)
+      const outDir = dirname('./public/')
       if (!existsSync(outDir)) {
         mkdirSync(outDir, { recursive: true })
       }
-
-      writeFileSync(outPath, configObject)
+      // resolved ignis configuration for quick reference
+      writeFileSync('./public/_ignis-config.json', JSON.stringify(nuxt.options.ignis, null, 2))
+      // full Nuxt config object for possible debugging
+      writeFileSync('./public/_nuxt-config.json', JSON.stringify(nuxt.options, null, 2))
 
       // evaluate and display settings overview in console
       // (when placed into this hook, it will only run once)

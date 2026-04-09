@@ -108,12 +108,13 @@ This is required to ensure `pnpm` will hoist all dependences from `nuxt-ignis` w
 
 ```[.gitignore]
 _ignis-config.json
+_nuxt-config.json
 ```
 
 <details>
 <summary>Reason why</summary>
 
-Nuxt Ignis always creates a `public/_ignis-config.json` file when resolving `nuxt.config.ts` to expose the actual configuration for reference and potential debugging. As this file is re-generated automatically everytime the app starts, it is not recommended to add it to Git. It _could_ be stored for reference but this might tempt devs to edit it manually which would have no effect and should cause unnecessary confusion. Since the file is a JSON, comment can't be included to add auto-generation warning.
+Nuxt Ignis always creates `public/_ignis-config.json` and `public/_nuxt-config.json` files when done with resolving `nuxt.config.ts` to expose the actual configuration used for reference and potential debugging. As those files are re-generated automatically everytime the app starts, it is not recommended to add it to Git. They _could_ be stored for reference but this might tempt devs to edit it manually which would have no effect and should cause unnecessary confusion. Since the files are JSONs, comments can't be included to add auto-generation warning.
 </details>
 
 7) Optionally set things up for built-in testing provided by [`nuxt-spec`](/3-9-features-devex.html#testing) package. The dependencies are included in `nuxt-ignis` itself, so you just need to create `vitest.config.ts` with following content:
