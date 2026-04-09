@@ -43,25 +43,25 @@ const features = [
   { text: useIgnisT('features.fonts'), active: setup.core.fonts, class: 'fonts' },
   { text: useIgnisT('features.pinia'), active: setup.core.pinia },
   { text: useIgnisT('features.vueuse'), active: setup.core.vueuse },
+  { text: useIgnisT('features.auth'), active: setup.core.auth },
   { text: useIgnisT('features.time'), active: true },
-  { text: useIgnisT('features.ui'), active: ui === 'nuxt-ui' || setup.ui },
-  { text: useIgnisT('features.tailwind'), active: ui !== 'off' || setup.ui || setup.tailwind },
-  { text: useIgnisT('features.icon'), active: ui === 'nuxt-ui' || setup.ui },
-  { text: useIgnisT('features.neon'), active: db === 'neon' || (db === 'off' && setup.neon) },
-  { text: useIgnisT('features.supabase'), active: db === 'supabase' || (db === 'off' && setup.supabase.enabled) },
-  { text: useIgnisT('features.vueform'), active: forms === 'vueform' || (forms === 'off' && setup.vueform) },
-  { text: useIgnisT('features.formkit'), active: forms === 'formkit' || (forms === 'off' && setup.formkit.enabled) },
-  { text: useIgnisT('features.valibot'), active: validation === 'valibot' || (validation === 'off' && setup.valibot) },
-  { text: useIgnisT('features.zod'), active: validation === 'zod' || (validation === 'off' && setup.zod) },
-  { text: useIgnisT('features.content'), active: setup.content.enabled },
-  { text: useIgnisT('features.i18n'), active: setup.i18n.enabled },
-  { text: useIgnisT('features.seo'), active: setup.seo.enabled },
-  { text: useIgnisT('features.auth'), active: setup.auth },
-  { text: useIgnisT('features.social'), active: setup.social.enabled },
-  { text: useIgnisT('features.equipment'), active: setup.equipment.enabled },
-  { text: useIgnisT('features.regexp'), active: setup.regexp },
-  { text: useIgnisT('features.charts'), active: setup.charts },
-  { text: useIgnisT('features.openprops'), active: setup.openprops, class: 'openprops-feature' },
+  { text: useIgnisT('features.ui'), active: ui === 'nuxt-ui' || setup.ui.ui },
+  { text: useIgnisT('features.tailwind'), active: ui !== 'off' || setup.ui.tailwind || setup.ui.tailwind },
+  { text: useIgnisT('features.icon'), active: ui === 'nuxt-ui' || setup.ui.ui },
+  { text: useIgnisT('features.neon'), active: db === 'neon' || (db === 'off' && setup.db.neon.enabled) },
+  { text: useIgnisT('features.supabase'), active: db === 'supabase' || (db === 'off' && setup.db.supabase.enabled) },
+  { text: useIgnisT('features.vueform'), active: forms === 'vueform' || (forms === 'off' && setup.forms.vueform.enabled) },
+  { text: useIgnisT('features.formkit'), active: forms === 'formkit' || (forms === 'off' && setup.forms.formkit.enabled) },
+  { text: useIgnisT('features.valibot'), active: validation === 'valibot' || (validation === 'off' && setup.validation.valibot) },
+  { text: useIgnisT('features.zod'), active: validation === 'zod' || (validation === 'off' && setup.validation.zod) },
+  { text: useIgnisT('features.content'), active: setup.content.content.enabled },
+  { text: useIgnisT('features.i18n'), active: setup.content.i18n.enabled },
+  { text: useIgnisT('features.seo'), active: setup.content.seo.enabled },
+  { text: useIgnisT('features.social'), active: setup.content.social.enabled },
+  { text: useIgnisT('features.equipment'), active: setup.utils.equipment.enabled },
+  { text: useIgnisT('features.regexp'), active: setup.utils.regexp.enabled },
+  { text: useIgnisT('features.charts'), active: setup.ui.charts },
+  { text: useIgnisT('features.openprops'), active: setup.ui.openprops, class: 'openprops-feature' },
 ]
 </script>
 
@@ -76,7 +76,7 @@ const features = [
 .ignis-feature-wrapper {
   text-align: center;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 800px;
 }
 
 .ignis-feature-header {
