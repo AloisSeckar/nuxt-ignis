@@ -3,10 +3,10 @@ import { setup, createPage, url } from '@nuxt/test-utils/e2e'
 import { describe, expect, test } from 'vitest'
 import { compareScreenshot } from 'nuxt-spec/utils'
 
-describe('demos/01_default', async () => {
+describe('demos/01-01-default', async () => {
   // start the Nuxt application
   await setup({
-    rootDir: fileURLToPath(new URL('../../../demos/01_default', import.meta.url)),
+    rootDir: fileURLToPath(new URL('../../../demos/01-01-default', import.meta.url)),
   })
 
   test('_ignis-welcome matches screenshot', async () => {
