@@ -9,7 +9,6 @@ while read -r dir; do
   cd "$dir" || continue
 
   rm -rf node_modules
-  rm -f pnpm-lock.yaml
 
   pnpm install
   pnpm audit --production fix
