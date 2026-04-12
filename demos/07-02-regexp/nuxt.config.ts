@@ -1,7 +1,12 @@
 export default defineNuxtConfig({
   extends: [
-    // in real-world project you will extend from 'nuxt-ignis'
-    // while having 'nuxt-ignis' as dependency in your package.json
+    // in real-world project Nuxt Ignis will extend from 'nuxt-ignis'
+    // while having it as a dependency in project's `package.json`
     '../../core',
   ],
+
+  // 07-02-regexp - how to enable magic-regexp utility
+  ignis: {
+    regexp: true,
+  },
 })

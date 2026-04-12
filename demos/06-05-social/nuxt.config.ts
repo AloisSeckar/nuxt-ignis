@@ -1,16 +1,14 @@
 export default defineNuxtConfig({
   extends: [
-    // in real-world project you will extend from 'nuxt-ignis'
-    // while having 'nuxt-ignis' as dependency in your package.json
+    // in real-world project Nuxt Ignis will extend from 'nuxt-ignis'
+    // while having it as a dependency in project's `package.json`
     '../../core',
   ],
 
-  /*
-  // this config key can be used INSTEAD of .env variables
+  // 06-05-social - how to enable Social Share module
   ignis: {
     content: {
       // this will provide config for "Social Share" module
-      // if set, this will have precedence over .env variables
       social: {
         enabled: true,
         url: 'https://nuxt-ignis.com',
@@ -18,6 +16,7 @@ export default defineNuxtConfig({
     },
   },
 
+  /*
   // if set, native module options have the highest priority
   // and will OVERRIDE Nuxt Ignis config / .env vars
   socialShare: {
