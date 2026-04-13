@@ -70,18 +70,12 @@ export default defineNuxtModule<IgnisOptions>({
     }
     const ignisOpts = nuxtOpts.ignis
 
-    // options that were set directly in nuxt.config.ts
-    console.debug('Received options:', ignisOpts)
-
     // Nuxt Ignis supports configuration via .env variables
     // but at this time, they are not yet evaluated and applied
     // we are resolving them manually so they can take effect in Ignis module resolution
     // note .env variables take precedence over options passed directly from nuxt.config.ts
     // when neither is, Ignis will apply defaults
     applyEnv(ignisOpts)
-
-    // options after applying .env variables or Ignis defaults
-    console.debug('Enhanced options:', ignisOpts)
 
     if (!ignisOpts) {
       console.debug('No Ignis options provided. Setting defaults.')
@@ -124,8 +118,6 @@ export default defineNuxtModule<IgnisOptions>({
     if (isUtilsActive(ignisOpts)) {
       modules['@nuxt-ignis/utils'] = { }
     }
-
-    console.warn(modules)
 
     return modules
   },

@@ -5,7 +5,7 @@
 import { getFormkitConfig, type FormkitConfigOptions } from './config/formkit'
 
 export function loadFormkitConfig(userFormkitConfig: FormkitConfigOptions) {
-  console.warn('formkit config running now')
+  log.debug('formkit config running now')
   // only if Formkit is allowed
   if (process.env.NUXT_PUBLIC_IGNIS_PRESET_FORMS === 'formkit' || process.env.NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_ENABLED === 'true') {
     // defu-merge nuxt-ignis default with possible user values
