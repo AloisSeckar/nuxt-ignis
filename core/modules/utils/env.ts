@@ -39,32 +39,32 @@ export function applyEnv(opts: IgnisOptions) {
 
   // @nuxt-ignis/ui
   opts.ui ??= {}
-  opts.ui.tailwind = process.env.NUXT_PUBLIC_IGNIS_UI_TAILWIND === 'true' || opts.ui.tailwind || false
+  opts.ui.tailwind = process.env.NUXT_PUBLIC_IGNIS_UI_TAILWIND === 'true' || opts.ui.tailwind || opts.preset.ui === 'tailwind' || false
   opts.ui.openprops = process.env.NUXT_PUBLIC_IGNIS_UI_OPENPROPS === 'true' || opts.ui.openprops || false
   opts.ui.charts = process.env.NUXT_PUBLIC_IGNIS_UI_CHARTS === 'true' || opts.ui.charts || false
-  opts.ui.ui = process.env.NUXT_PUBLIC_IGNIS_UI_UI === 'true' || opts.ui.ui || false
+  opts.ui.ui = process.env.NUXT_PUBLIC_IGNIS_UI_UI === 'true' || opts.ui.ui || opts.preset.ui === 'nuxt-ui' || false
 
   // @nuxt-ignis/db
   opts.db ??= {}
   opts.db.neon ??= {}
-  opts.db.neon.enabled = process.env.NUXT_PUBLIC_IGNIS_DB_NEON_ENABLED === 'true' || opts.db.neon.enabled || false
+  opts.db.neon.enabled = process.env.NUXT_PUBLIC_IGNIS_DB_NEON_ENABLED === 'true' || opts.db.neon.enabled || opts.preset.db === 'neon' || false
   opts.db.supabase ??= {}
-  opts.db.supabase.enabled = process.env.NUXT_PUBLIC_IGNIS_DB_SUPABASE_ENABLED === 'true' || opts.db.supabase.enabled || false
+  opts.db.supabase.enabled = process.env.NUXT_PUBLIC_IGNIS_DB_SUPABASE_ENABLED === 'true' || opts.db.supabase.enabled || opts.preset.db === 'supabase' || false
   opts.db.supabase.types = process.env.NUXT_PUBLIC_IGNIS_DB_SUPABASE_TYPES || opts.db.supabase.types || false
 
   // @nuxt-ignis/forms
   opts.forms ??= {}
   opts.forms.formkit ??= {}
-  opts.forms.formkit.enabled = process.env.NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_ENABLED === 'true' || opts.forms.formkit.enabled || false
+  opts.forms.formkit.enabled = process.env.NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_ENABLED === 'true' || opts.forms.formkit.enabled || opts.preset.forms === 'formkit' || false
   opts.forms.formkit.default = process.env.NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_DEFAULT || opts.forms.formkit.default || ''
   opts.forms.formkit.config = process.env.NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_CONFIG || opts.forms.formkit.config || ''
   opts.forms.vueform ??= {}
-  opts.forms.vueform.enabled = process.env.NUXT_PUBLIC_IGNIS_FORMS_VUEFORM_ENABLED === 'true' || opts.forms.vueform.enabled || false
+  opts.forms.vueform.enabled = process.env.NUXT_PUBLIC_IGNIS_FORMS_VUEFORM_ENABLED === 'true' || opts.forms.vueform.enabled || opts.preset.forms === 'vueform' || false
 
   // @nuxt-ignis/validation
   opts.validation ??= {}
-  opts.validation.zod = process.env.NUXT_PUBLIC_IGNIS_VALIDATION_ZOD === 'true' || opts.validation.zod || false
-  opts.validation.valibot = process.env.NUXT_PUBLIC_IGNIS_VALIDATION_VALIBOT === 'true' || opts.validation.valibot || false
+  opts.validation.zod = process.env.NUXT_PUBLIC_IGNIS_VALIDATION_ZOD === 'true' || opts.validation.zod || opts.preset.validation === 'zod' || false
+  opts.validation.valibot = process.env.NUXT_PUBLIC_IGNIS_VALIDATION_VALIBOT === 'true' || opts.validation.valibot || opts.preset.validation === 'valibot' || false
 
   // @nuxt-ignis/content
   opts.content ??= {}

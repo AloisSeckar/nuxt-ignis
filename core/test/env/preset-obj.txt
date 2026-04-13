@@ -50,7 +50,7 @@
   },
   "db": {
     "neon": {
-      "enabled": false,
+      "enabled": true,
     },
     "supabase": {
       "enabled": false,
@@ -61,7 +61,7 @@
     "formkit": {
       "config": "",
       "default": "",
-      "enabled": false,
+      "enabled": true,
     },
     "vueform": {
       "enabled": false,
@@ -76,7 +76,7 @@
   "ui": {
     "charts": false,
     "openprops": false,
-    "tailwind": false,
+    "tailwind": true,
     "ui": false,
   },
   "utils": {
@@ -91,6 +91,6 @@
   },
   "validation": {
     "valibot": false,
-    "zod": false,
+    "zod": true,
   },
 }

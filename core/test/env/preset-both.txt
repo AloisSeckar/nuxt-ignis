@@ -53,7 +53,7 @@
       "enabled": false,
     },
     "supabase": {
-      "enabled": false,
+      "enabled": true,
       "types": false,
     },
   },
@@ -64,7 +64,7 @@
       "enabled": false,
     },
     "vueform": {
-      "enabled": false,
+      "enabled": true,
     },
   },
   "preset": {
@@ -77,7 +77,7 @@
     "charts": false,
     "openprops": false,
     "tailwind": false,
-    "ui": false,
+    "ui": true,
   },
   "utils": {
     "equipment": {
@@ -90,7 +90,7 @@
     },
   },
   "validation": {
-    "valibot": false,
+    "valibot": true,
     "zod": false,
   },
 }
