@@ -3,7 +3,7 @@
   "name": "ignis-demo-03-02",
   "type": "module",
   "scripts": {
-    "dev": "nuxt dev"
+    "dev": "cross-env CONSOLA_LEVEL=4 nuxt dev"
   },
   "devDependencies": {
     "@nuxt/eslint": "catalog:",

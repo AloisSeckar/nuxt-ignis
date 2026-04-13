@@ -3,7 +3,7 @@
   "name": "@nuxt-ignis/ui-playground",
   "type": "module",
   "scripts": {
-    "dev": "nuxt dev",
+    "dev": "cross-env CONSOLA_LEVEL=4 nuxt dev",
     "build": "nuxt build",
     "generate": "nuxt generate"
   },

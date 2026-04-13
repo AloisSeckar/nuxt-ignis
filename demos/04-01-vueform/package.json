@@ -3,7 +3,7 @@
   "name": "ignis-demo-04-01",
   "type": "module",
   "scripts": {
-    "dev": "nuxt dev",
+    "dev": "cross-env CONSOLA_LEVEL=4 nuxt dev",
     "build": "nuxt build"
   },
   "devDependencies": {
