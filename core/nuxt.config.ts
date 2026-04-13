@@ -1,5 +1,4 @@
 import { writeFileSync, existsSync, mkdirSync } from 'fs'
-import { dirname } from 'path'
 import { getIgnisFeaturesOverview } from './overview'
 
 // https://nuxt.com/docs/4.x/directory-structure/nuxt-config
@@ -15,7 +14,7 @@ export default defineNuxtConfig({
   hooks: {
     'ready'(nuxt) {
       // write current config to file (for use in app)
-      const outDir = dirname('./public/')
+      const outDir = './public'
       if (!existsSync(outDir)) {
         mkdirSync(outDir, { recursive: true })
       }
