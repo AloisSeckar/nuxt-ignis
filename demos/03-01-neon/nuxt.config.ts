@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   // 03-01-neon - how to use Neon DB as the database preset
   ignis: {
-    presets: {
+    preset: {
       db: 'neon',
     },
   },

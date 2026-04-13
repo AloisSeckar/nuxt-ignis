@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   // 03-02-supabase - how to use Supabase as the database preset
   ignis: {
-    presets: {
+    preset: {
       db: 'supabase',
     },
   },

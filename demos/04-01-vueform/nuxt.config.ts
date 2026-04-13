@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   // 04-01-vueform - how to use Vueform as the forms preset
   ignis: {
-    presets: {
+    preset: {
       forms: 'vueform',
     },
     ssr: false,  // the form is <ClientOnly> anyway

@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   // 02-01-nuxt-ui - how to use Nuxt UI as the UI preset
   ignis: {
-    presets: {
+    preset: {
       ui: 'nuxt-ui',
     },
   },

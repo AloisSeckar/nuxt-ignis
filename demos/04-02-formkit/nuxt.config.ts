@@ -7,7 +7,7 @@ export default defineNuxtConfig({
 
   // 04-02-formkit - how to use FormKit as the forms preset
   ignis: {
-    presets: {
+    preset: {
       forms: 'formkit',
     },
   },
