@@ -7,7 +7,13 @@ export default defineNuxtConfig({
 
   // 06-02-content-tailwind - how to use Nuxt Content with Tailwind CSS
   ignis: {
-    content: true,
-    tailwind: true,
+    content: {
+      content: {
+        enabled: true,
+      },
+    },
+    ui: {
+      tailwind: true,
+    },
   },
 })

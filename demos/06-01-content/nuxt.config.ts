@@ -7,6 +7,10 @@ export default defineNuxtConfig({
 
   // 06-01-content - how to enable Nuxt Content module
   ignis: {
-    content: true,
+    content: {
+      content: {
+        enabled: true,
+      },
+    },
   },
 })

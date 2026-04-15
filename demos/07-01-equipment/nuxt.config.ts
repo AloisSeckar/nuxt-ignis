@@ -8,11 +8,13 @@ export default defineNuxtConfig({
   // 07-01-equipment - how to enable Equipment plugins (MagicNoise, MagicMarquee)
   ignis: {
     ui: {
-      preset: 'tailwind',
+      tailwind: true,
     },
-    equipment: {
-      enabled: true,
-      plugins: ['MagicNoise', 'MagicMarquee'],
+    utils: {
+      equipment: {
+        enabled: true,
+        plugins: ['MagicNoise', 'MagicMarquee'],
+      },
     },
   },
 })

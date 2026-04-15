@@ -7,7 +7,14 @@ export default defineNuxtConfig({
 
   // 02-04-charts - how to enable nuxt-charts integration
   ignis: {
-    charts: true,
-    ssr: false,  // nuxt-charts don't work with SSR
+    ui: {
+      charts: true,
+    },
+    // nuxt-charts don't work with SSR
+    config: { 
+      nuxt: {
+        ssr: false,
+      },
+    },
   },
 })

@@ -7,6 +7,10 @@ export default defineNuxtConfig({
 
   // 07-02-regexp - how to enable magic-regexp utility
   ignis: {
-    regexp: true,
+    utils: {
+      regexp: {
+        enabled: true,
+      },
+    },
   },
 })

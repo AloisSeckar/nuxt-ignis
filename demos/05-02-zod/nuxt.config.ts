@@ -7,6 +7,8 @@ export default defineNuxtConfig({
 
   // 05-02-zod - how to enable Zod validation library
   ignis: {
-    zod: true,
+    preset: {
+      validation: 'zod',
+    }
   },
 })

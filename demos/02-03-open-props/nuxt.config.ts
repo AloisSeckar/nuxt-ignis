@@ -7,6 +7,8 @@ export default defineNuxtConfig({
 
   // 02-03-open-props - how to enable Open Props CSS framework
   ignis: {
-    openProps: true,
+    ui: {
+      openprops: true,
+    },
   },
 })

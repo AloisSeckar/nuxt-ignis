@@ -10,6 +10,11 @@ export default defineNuxtConfig({
     preset: {
       forms: 'vueform',
     },
-    ssr: false,  // the form is <ClientOnly> anyway
+    // the form is <ClientOnly> anyway
+    config: { 
+      nuxt: {
+        ssr: false,
+      },
+    },
   },
 })

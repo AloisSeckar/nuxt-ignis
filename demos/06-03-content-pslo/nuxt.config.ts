@@ -7,10 +7,14 @@ export default defineNuxtConfig({
 
   // 06-03-content-pslo - how to use Nuxt Content with PSLOnly integration
   ignis: {
-    content: true,
-    pslo: {
-      enabled: true,
-      content: true,
+    content: {
+      content: {
+        enabled: true,
+      },
+      pslo: {
+        enabled: true,
+        content: true,
+      },
     },
   },
 })
