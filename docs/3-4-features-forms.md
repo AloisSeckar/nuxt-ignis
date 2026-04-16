@@ -38,7 +38,7 @@ Referencing config like this allows to pass in a custom config that will be [def
 
 ## Formkit
 
-<PackagesReference :packages="[{ name: '@formkit/nuxt', version: '1.7.2' }]" />
+<PackagesReference :packages="[{ name: '@formkit/nuxt', version: '2.0.0' }]" />
 
 [Formkit](https://formkit.com/) is a powerful form library for Vue.js that provides a set of components and utilities for building forms with ease. It includes features like validation, error handling, and custom components.
 

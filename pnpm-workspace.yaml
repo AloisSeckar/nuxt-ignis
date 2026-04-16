@@ -9,12 +9,12 @@ shamefullyHoist: true
 nodeLinker: hoisted
 
 catalog:
-  '@formkit/nuxt': 1.7.2
+  '@formkit/nuxt': 2.0.0
   '@maas/vue-equipment': 1.0.0-beta.51
   '@nuxt-ignis/content': 0.0.42
   '@nuxt-ignis/core': 0.0.15
   '@nuxt-ignis/db': 0.0.15
-  '@nuxt-ignis/forms': 0.0.13
+  '@nuxt-ignis/forms': 0.0.14
   '@nuxt-ignis/ui': 0.0.12
   '@nuxt-ignis/utils': 0.0.10
   '@nuxt-ignis/validation': 0.0.13
