@@ -70,7 +70,7 @@ Those dependencies are already included in `nuxt-ignis`. Removing is recommended
       "vue-demi"
     ]
   },
-  "packageManager": "pnpm@10.30.3"
+  "packageManager": "pnpm@10.33.0"
 }
 ```
 
