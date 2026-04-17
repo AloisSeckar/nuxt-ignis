@@ -14,7 +14,7 @@ catalog:
   '@nuxt-ignis/content': 0.0.42
   '@nuxt-ignis/core': 0.0.15
   '@nuxt-ignis/db': 0.0.15
-  '@nuxt-ignis/forms': 0.0.14
+  '@nuxt-ignis/forms': 0.0.17
   '@nuxt-ignis/ui': 0.0.12
   '@nuxt-ignis/utils': 0.0.10
   '@nuxt-ignis/validation': 0.0.13
@@ -39,7 +39,7 @@ catalog:
   '@tailwindcss/vite': 4.1.18
   '@types/node': ^25.2.2
   '@vueform/nuxt': 1.26.0
-  '@vueform/vueform': 1.13.8
+  '@vueform/vueform': 1.13.10
   '@vueuse/core': 14.2.1
   '@vueuse/nuxt': 14.2.1
   'changelogen': ^0.6.2

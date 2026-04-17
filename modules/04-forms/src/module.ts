@@ -33,9 +33,10 @@ export default defineNuxtModule<IgnisFormsOptions>({
     return ignisModuleDependencies(nuxt.options as NuxtIgnisFormsOptions)
   },
   setup(_options, nuxt) {
-    ignisModuleSetup(nuxt.options as NuxtIgnisFormsOptions)
-
     const resolver = createResolver(import.meta.url)
+
+    ignisModuleSetup(nuxt.options as NuxtIgnisFormsOptions, resolver.resolve('./runtime'))
+
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })
