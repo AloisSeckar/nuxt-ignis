@@ -24,9 +24,9 @@ catalog:
   '@nuxt/eslint-config': ^1.15.1
   '@nuxt/fonts': 0.13.0
   '@nuxt/image': 2.0.0
-  '@nuxt/kit': 4.3.1
+  '@nuxt/kit': 4.4.2
   '@nuxt/module-builder': ^1.0.2
-  '@nuxt/schema': 4.3.1
+  '@nuxt/schema': 4.4.2
   '@nuxt/scripts': 0.13.2
   '@nuxt/test-utils': ^4.0.0
   '@nuxt/ui': 4.4.0
@@ -51,7 +51,7 @@ catalog:
   'elrh-pslo': ^1.1.6
   'eslint': ^9.39.2
   'magic-regexp': 0.10.0
-  'nuxt': 4.3.1
+  'nuxt': 4.4.2
   'nuxt-auth-utils': 0.5.28
   'nuxt-charts': 2.1.1
   'nuxt-neon': 0.8.2
@@ -67,8 +67,8 @@ catalog:
   'vitepress': 2.0.0-alpha.15
   'vitepress-plugin-group-icons': ^1.7.1
   'vitest': ^4.0.18
-  'vue': 3.5.27
-  'vue-router': ^5.0.2
+  'vue': 3.5.32
+  'vue-router': 5.0.4
   'vue-tsc': ^3.2.4
   'zod': 4.3.6
 
@@ -95,12 +95,11 @@ onlyBuiltDependencies:
   - vue-demi
 
 overrides:
-  vite: npm:vite@8.0.0-beta.13
   chokidar: ^5.0.0
-  koa: ^3.1.0
   semver: ^7.7.0
   undici-types: ^7.22.0
-  rollup: ^4.59.0
+  # https://github.com/Rich-Harris/estree-walker/issues/26
+  estree-walker: 2.0.2
   # TODO check https://github.com/nuxt/nuxt/issues/34812 for permanent solution
   unimport: 6.0.2
 

@@ -39,11 +39,11 @@ packages:
 # https://pnpm.io/catalogs#defining-catalogs
 # global version definition for the repeated packages
 catalog:
-  nuxt: 4.3.1
+  nuxt: 4.4.2
   '@nuxt/eslint': 1.14.0
   typescript: 5.9.3
-  vue: 3.5.27
-  vue-router: 5.0.2
+  vue: 3.5.32
+  vue-router: 5.0.4
 
 # https://pnpm.io/settings#minimumreleaseage
 # new packages cannot be installed earlier than one week after release
