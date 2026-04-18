@@ -11,7 +11,7 @@ nodeLinker: hoisted
 catalog:
   '@formkit/nuxt': 2.0.0
   '@maas/vue-equipment': 1.0.0-beta.51
-  '@nuxt-ignis/content': 0.0.42
+  '@nuxt-ignis/content': 0.0.43
   '@nuxt-ignis/db': 0.0.15
   '@nuxt-ignis/default': 0.0.16
   '@nuxt-ignis/forms': 0.0.17
