@@ -11,6 +11,18 @@ export default defineNuxtConfig({
   // https://nuxt.com/docs/4.x/api/nuxt-config#compatibilitydate
   compatibilityDate: '2026-02-01',
 
+  // Nuxt automated recommendation based on https://vite.dev/guide/dep-pre-bundling.html
+  vite: {
+    optimizeDeps: {
+      include: [
+        'sqlstring', // CJS
+        '@vue/devtools-core',
+        '@vue/devtools-kit',
+        'date-fns',
+      ],
+    },
+  },
+
   hooks: {
     'ready'(nuxt) {
       // write current config to file (for use in app)
