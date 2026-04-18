@@ -15,7 +15,7 @@ Configuration:
 NUXT_PUBLIC_IGNIS_HTML_LANG=en
 
 # disable Ignis default CSS
-NUXT_PUBLIC_IGNIS_CORE_CSS=false
+NUXT_PUBLIC_IGNIS_DEFAULT_CSS=false
 
 # enable Tailwind CSS
 NUXT_PUBLIC_IGNIS_TAILWIND=true

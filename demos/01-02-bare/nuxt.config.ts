@@ -5,9 +5,9 @@ export default defineNuxtConfig({
     '../../core',
   ],
 
-  // 01-02-bare - how to disable all default Nuxt Ignis core features (minimal setup)
+  // 01-02-bare - how to disable all default Nuxt Ignis default features (minimal setup)
   ignis: {
-    core: {
+    default: {
       eslint: false,
       fonts: false,
       image: false,

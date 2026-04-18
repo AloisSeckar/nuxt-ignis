@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@nuxt-ignis/core-playground",
+  "name": "@nuxt-ignis/default-playground",
   "type": "module",
   "scripts": {
     "dev": "cross-env CONSOLA_LEVEL=4 nuxt dev",
@@ -8,7 +8,7 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "@nuxt-ignis/core": "link:..",
+    "@nuxt-ignis/default": "link:..",
     "nuxt": "catalog:"
   }
 }

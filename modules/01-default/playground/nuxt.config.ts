@@ -1,8 +1,8 @@
 export default defineNuxtConfig({
-  modules: ['@nuxt-ignis/core'],
+  modules: ['@nuxt-ignis/default'],
   devtools: { enabled: true },
   compatibilityDate: 'latest',
-  ignisCore: {
+  ignisDefault: {
     eslint: true,
     fonts: true,
     image: true,

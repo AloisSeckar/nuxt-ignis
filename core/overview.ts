@@ -20,36 +20,36 @@ export function getIgnisFeaturesOverview(ignisConfig: Partial<IgnisOptions> | fa
   // list of Nuxt-related settings
   const nuxt = [] as string[]
 
-  // 01 - @nuxt-ignis/core
-  const coreConfig = ignisConfig.core
-  if (coreConfig) {
+  // 01 - @nuxt-ignis/default
+  const defaultConfig = ignisConfig.default
+  if (defaultConfig) {
     // modules
-    if (coreConfig.eslint) {
+    if (defaultConfig.eslint) {
       modules.push('@nuxt/eslint')
     }
-    if (coreConfig.fonts) {
+    if (defaultConfig.fonts) {
       modules.push('@nuxt/fonts')
     }
-    if (coreConfig.image) {
+    if (defaultConfig.image) {
       modules.push('@nuxt/image')
     }
-    if (coreConfig.scripts) {
+    if (defaultConfig.scripts) {
       modules.push('@nuxt/scripts')
     }
-    if (coreConfig.security) {
+    if (defaultConfig.security) {
       modules.push('nuxt-security')
     }
-    if (coreConfig.auth) {
+    if (defaultConfig.auth) {
       modules.push('nuxt-auth-utils')
     }
-    if (coreConfig.vueuse) {
+    if (defaultConfig.vueuse) {
       modules.push('@vueuse/nuxt')
     }
-    if (coreConfig.pinia) {
+    if (defaultConfig.pinia) {
       modules.push('@pinia/nuxt')
     }
     // extras
-    if (coreConfig.css) {
+    if (defaultConfig.css) {
       extras.push('Ignis CSS')
     }
   }

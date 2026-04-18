@@ -12,8 +12,8 @@ catalog:
   '@formkit/nuxt': 2.0.0
   '@maas/vue-equipment': 1.0.0-beta.51
   '@nuxt-ignis/content': 0.0.42
-  '@nuxt-ignis/core': 0.0.15
   '@nuxt-ignis/db': 0.0.15
+  '@nuxt-ignis/default': 0.0.16
   '@nuxt-ignis/forms': 0.0.17
   '@nuxt-ignis/ui': 0.0.12
   '@nuxt-ignis/utils': 0.0.10
@@ -76,7 +76,7 @@ minimumReleaseAge: 4320
 
 minimumReleaseAgeExclude: 
   - '@nuxt-ignis/content'
-  - '@nuxt-ignis/core'
+  - '@nuxt-ignis/default'
   - '@nuxt-ignis/db'
   - '@nuxt-ignis/forms'
   - '@nuxt-ignis/ui'

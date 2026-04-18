@@ -1,8 +1,8 @@
 import { createResolver } from '@nuxt/kit'
-import type { IgnisCoreOptions, NuxtIgnisCoreOptions } from './module'
+import type { IgnisDefaultOptions, NuxtIgnisDefaultOptions } from './module'
 import type { PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
 
-export const ignisDefaultOptions: IgnisCoreOptions = {
+export const ignisDefaultOptions: IgnisDefaultOptions = {
   eslint: true,
   fonts: true,
   image: true,
@@ -14,17 +14,17 @@ export const ignisDefaultOptions: IgnisCoreOptions = {
   css: true,
 }
 
-export function ignisModuleDependencies(nuxtOptions: NuxtIgnisCoreOptions) {
-  console.debug('@nuxt-ignis/core - module dependencies are being resolved')
+export function ignisModuleDependencies(nuxtOptions: NuxtIgnisDefaultOptions) {
+  console.debug('@nuxt-ignis/default - module dependencies are being resolved')
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const modules: Record<string, any> = {}
 
-  let options = nuxtOptions.ignis?.core
+  let options = nuxtOptions.ignis?.default
   if (!options) {
     // NOTE: this would never happen unless the module runs in isolation
     // otherwise Nuxt Ignis startup will always provide defaults via core\modules\utils\env.ts
-    console.debug('@nuxt-ignis/core - No options were provided, setting defaults')
+    console.debug('@nuxt-ignis/default - No options were provided, setting defaults')
     options = { ...ignisDefaultOptions }
   }
 
@@ -79,31 +79,31 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisCoreOptions) {
   return modules
 }
 
-export function ignisModuleSetup(nuxtOptions: NuxtIgnisCoreOptions) {
-  console.debug('@nuxt-ignis/core - module setup function runs')
+export function ignisModuleSetup(nuxtOptions: NuxtIgnisDefaultOptions) {
+  console.debug('@nuxt-ignis/default - module setup function runs')
 
-  const options = nuxtOptions.ignis?.core
+  const options = nuxtOptions.ignis?.default
 
   // inject runtime config values
   nuxtOptions.runtimeConfig ||= {
     public: {} as PublicRuntimeConfig,
   } as RuntimeConfig
 
-  const runtimeConfig = nuxtOptions.runtimeConfig!.public as { ignis?: { core?: IgnisCoreOptions } }
+  const runtimeConfig = nuxtOptions.runtimeConfig!.public as { ignis?: { default?: IgnisDefaultOptions } }
   runtimeConfig.ignis ??= {}
-  runtimeConfig.ignis.core ??= {}
-  runtimeConfig.ignis.core.eslint ??= options?.eslint ?? true
-  runtimeConfig.ignis.core.fonts ??= options?.fonts ?? true
-  runtimeConfig.ignis.core.image ??= options?.image ?? true
-  runtimeConfig.ignis.core.scripts ??= options?.scripts ?? true
-  runtimeConfig.ignis.core.security ??= options?.security ?? true
-  runtimeConfig.ignis.core.auth ??= options?.auth ?? true
-  runtimeConfig.ignis.core.vueuse ??= options?.vueuse ?? true
-  runtimeConfig.ignis.core.pinia ??= options?.pinia ?? true
-  runtimeConfig.ignis.core.css ??= options?.css ?? true
+  runtimeConfig.ignis.default ??= {}
+  runtimeConfig.ignis.default.eslint ??= options?.eslint ?? true
+  runtimeConfig.ignis.default.fonts ??= options?.fonts ?? true
+  runtimeConfig.ignis.default.image ??= options?.image ?? true
+  runtimeConfig.ignis.default.scripts ??= options?.scripts ?? true
+  runtimeConfig.ignis.default.security ??= options?.security ?? true
+  runtimeConfig.ignis.default.auth ??= options?.auth ?? true
+  runtimeConfig.ignis.default.vueuse ??= options?.vueuse ?? true
+  runtimeConfig.ignis.default.pinia ??= options?.pinia ?? true
+  runtimeConfig.ignis.default.css ??= options?.css ?? true
 
   // additional processing
-  const effectiveOptions = runtimeConfig.ignis.core
+  const effectiveOptions = runtimeConfig.ignis.default
 
   // include default css file if enabled
   if (effectiveOptions.css) {

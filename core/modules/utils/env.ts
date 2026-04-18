@@ -25,17 +25,17 @@ export function applyEnv(opts: IgnisOptions) {
   opts.config.warn ??= {}
   opts.config.warn.duplicates = process.env.NUXT_PUBLIC_IGNIS_CONFIG_WARN_DUPLICATES !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CONFIG_WARN_DUPLICATES === 'true' : opts.config.warn.duplicates ?? true
 
-  // @nuxt-ignis/core
-  opts.core ??= {}
-  opts.core.eslint = process.env.NUXT_PUBLIC_IGNIS_CORE_ESLINT !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CORE_ESLINT === 'true' : opts.core.eslint ?? true
-  opts.core.fonts = process.env.NUXT_PUBLIC_IGNIS_CORE_FONTS !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CORE_FONTS === 'true' : opts.core.fonts ?? true
-  opts.core.image = process.env.NUXT_PUBLIC_IGNIS_CORE_IMAGE !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CORE_IMAGE === 'true' : opts.core.image ?? true
-  opts.core.scripts = process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS === 'true' : opts.core.scripts ?? true
-  opts.core.security = process.env.NUXT_PUBLIC_IGNIS_CORE_SECURITY !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CORE_SECURITY === 'true' : opts.core.security ?? true
-  opts.core.auth = process.env.NUXT_PUBLIC_IGNIS_CORE_AUTH !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CORE_AUTH === 'true' : opts.core.auth ?? true
-  opts.core.vueuse = process.env.NUXT_PUBLIC_IGNIS_CORE_VUEUSE !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CORE_VUEUSE === 'true' : opts.core.vueuse ?? true
-  opts.core.pinia = process.env.NUXT_PUBLIC_IGNIS_CORE_PINIA !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CORE_PINIA === 'true' : opts.core.pinia ?? true
-  opts.core.css = process.env.NUXT_PUBLIC_IGNIS_CORE_CSS !== undefined ? process.env.NUXT_PUBLIC_IGNIS_CORE_CSS === 'true' : opts.core.css ?? true
+  // @nuxt-ignis/default
+  opts.default ??= {}
+  opts.default.eslint = process.env.NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT !== undefined ? process.env.NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT === 'true' : opts.default.eslint ?? true
+  opts.default.fonts = process.env.NUXT_PUBLIC_IGNIS_DEFAULT_FONTS !== undefined ? process.env.NUXT_PUBLIC_IGNIS_DEFAULT_FONTS === 'true' : opts.default.fonts ?? true
+  opts.default.image = process.env.NUXT_PUBLIC_IGNIS_DEFAULT_IMAGE !== undefined ? process.env.NUXT_PUBLIC_IGNIS_DEFAULT_IMAGE === 'true' : opts.default.image ?? true
+  opts.default.scripts = process.env.NUXT_PUBLIC_IGNIS_DEFAULT_SCRIPTS !== undefined ? process.env.NUXT_PUBLIC_IGNIS_DEFAULT_SCRIPTS === 'true' : opts.default.scripts ?? true
+  opts.default.security = process.env.NUXT_PUBLIC_IGNIS_DEFAULT_SECURITY !== undefined ? process.env.NUXT_PUBLIC_IGNIS_DEFAULT_SECURITY === 'true' : opts.default.security ?? true
+  opts.default.auth = process.env.NUXT_PUBLIC_IGNIS_DEFAULT_AUTH !== undefined ? process.env.NUXT_PUBLIC_IGNIS_DEFAULT_AUTH === 'true' : opts.default.auth ?? true
+  opts.default.vueuse = process.env.NUXT_PUBLIC_IGNIS_DEFAULT_VUEUSE !== undefined ? process.env.NUXT_PUBLIC_IGNIS_DEFAULT_VUEUSE === 'true' : opts.default.vueuse ?? true
+  opts.default.pinia = process.env.NUXT_PUBLIC_IGNIS_DEFAULT_PINIA !== undefined ? process.env.NUXT_PUBLIC_IGNIS_DEFAULT_PINIA === 'true' : opts.default.pinia ?? true
+  opts.default.css = process.env.NUXT_PUBLIC_IGNIS_DEFAULT_CSS !== undefined ? process.env.NUXT_PUBLIC_IGNIS_DEFAULT_CSS === 'true' : opts.default.css ?? true
 
   // @nuxt-ignis/ui
   opts.ui ??= {}

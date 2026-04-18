@@ -49,8 +49,8 @@
   },
   "dependencies": {
     "@nuxt-ignis/content": "catalog:",
-    "@nuxt-ignis/core": "catalog:",
     "@nuxt-ignis/db": "catalog:",
+    "@nuxt-ignis/default": "catalog:",
     "@nuxt-ignis/forms": "catalog:",
     "@nuxt-ignis/ui": "catalog:",
     "@nuxt-ignis/utils": "catalog:",

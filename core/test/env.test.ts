@@ -115,10 +115,10 @@ describe('unit tests for `applyEnv` function', () => {
     await expect(ignisConfig).toMatchFileSnapshot('./env/preset-both.txt')
   })
 
-  // --- core ---
+  // --- default ---
 
-  const CORE_OBJECT = {
-    core: {
+  const DEFAULT_OBJECT = {
+    default: {
       eslint: false,
       fonts: false,
       image: false,
@@ -131,36 +131,36 @@ describe('unit tests for `applyEnv` function', () => {
     },
   }
 
-  function setCoreEnv() {
-    process.env.NUXT_PUBLIC_IGNIS_CORE_ESLINT = 'false'
-    process.env.NUXT_PUBLIC_IGNIS_CORE_FONTS = 'false'
-    process.env.NUXT_PUBLIC_IGNIS_CORE_IMAGE = 'false'
-    process.env.NUXT_PUBLIC_IGNIS_CORE_SCRIPTS = 'false'
-    process.env.NUXT_PUBLIC_IGNIS_CORE_SECURITY = 'false'
-    process.env.NUXT_PUBLIC_IGNIS_CORE_AUTH = 'false'
-    process.env.NUXT_PUBLIC_IGNIS_CORE_VUEUSE = 'false'
-    process.env.NUXT_PUBLIC_IGNIS_CORE_PINIA = 'false'
-    process.env.NUXT_PUBLIC_IGNIS_CORE_CSS = 'false'
+  function setDefaultEnv() {
+    process.env.NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_DEFAULT_FONTS = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_DEFAULT_IMAGE = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_DEFAULT_SCRIPTS = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_DEFAULT_SECURITY = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_DEFAULT_AUTH = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_DEFAULT_VUEUSE = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_DEFAULT_PINIA = 'false'
+    process.env.NUXT_PUBLIC_IGNIS_DEFAULT_CSS = 'false'
   }
 
-  test('applyEnv - core via ignisConfig', async () => {
-    const ignisConfig = { ...CORE_OBJECT }
+  test('applyEnv - default via ignisConfig', async () => {
+    const ignisConfig = { ...DEFAULT_OBJECT }
     applyEnv(ignisConfig)
-    await expect(ignisConfig).toMatchFileSnapshot('./env/core-obj.txt')
+    await expect(ignisConfig).toMatchFileSnapshot('./env/default-obj.txt')
   })
 
-  test('applyEnv - core via process.env', async () => {
+  test('applyEnv - default via process.env', async () => {
     const ignisConfig = {}
-    setCoreEnv()
+    setDefaultEnv()
     applyEnv(ignisConfig)
-    await expect(ignisConfig).toMatchFileSnapshot('./env/core-env.txt')
+    await expect(ignisConfig).toMatchFileSnapshot('./env/default-env.txt')
   })
 
-  test('applyEnv - core env takes precedence over ignisConfig', async () => {
-    const ignisConfig = { ...CORE_OBJECT }
-    setCoreEnv()
+  test('applyEnv - default env takes precedence over ignisConfig', async () => {
+    const ignisConfig = { ...DEFAULT_OBJECT }
+    setDefaultEnv()
     applyEnv(ignisConfig)
-    await expect(ignisConfig).toMatchFileSnapshot('./env/core-both.txt')
+    await expect(ignisConfig).toMatchFileSnapshot('./env/default-both.txt')
   })
 
   // --- ui ---

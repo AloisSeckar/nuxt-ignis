@@ -2,20 +2,20 @@
 
 Detailed list of all configuration options
 
-## Core features
+## Default features
 
 Following Nuxt modules are enabled by default and can be opted-out by setting respective config value:
 
 | .env variable | Values | Default | Description |
 | --- | --- | --- | :--  |
-| `NUXT_PUBLIC_IGNIS_CORE_ESLINT` | `boolean` | `true` | Enable or disable `@nuxt/eslint` module |
-| `NUXT_PUBLIC_IGNIS_CORE_FONTS` | `boolean` | `true` | Enable or disable `@nuxt/fonts` module |
-| `NUXT_PUBLIC_IGNIS_CORE_IMAGE` | `boolean` | `true` | Enable or disable `@nuxt/image` module |
-| `NUXT_PUBLIC_IGNIS_CORE_SCRIPTS` | `boolean` | `true` | Enable or disable `@nuxt/scripts` module |
-| `NUXT_PUBLIC_IGNIS_CORE_SECURITY` | `boolean` | `true` | Enable or disable `nuxt-security` module |
-| `NUXT_PUBLIC_IGNIS_CORE_AUTH` | `boolean` | `true` | Enable or disable `nuxt-auth-utils` module |
-| `NUXT_PUBLIC_IGNIS_CORE_VUEUSE` | `boolean` | `true` | Enable or disable `@vueuse/nuxt` module |
-| `NUXT_PUBLIC_IGNIS_CORE_PINIA` | `boolean` | `true` | Enable or disable `@pinia/nuxt` module |
+| `NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT` | `boolean` | `true` | Enable or disable `@nuxt/eslint` module |
+| `NUXT_PUBLIC_IGNIS_DEFAULT_FONTS` | `boolean` | `true` | Enable or disable `@nuxt/fonts` module |
+| `NUXT_PUBLIC_IGNIS_DEFAULT_IMAGE` | `boolean` | `true` | Enable or disable `@nuxt/image` module |
+| `NUXT_PUBLIC_IGNIS_DEFAULT_SCRIPTS` | `boolean` | `true` | Enable or disable `@nuxt/scripts` module |
+| `NUXT_PUBLIC_IGNIS_DEFAULT_SECURITY` | `boolean` | `true` | Enable or disable `nuxt-security` module |
+| `NUXT_PUBLIC_IGNIS_DEFAULT_AUTH` | `boolean` | `true` | Enable or disable `nuxt-auth-utils` module |
+| `NUXT_PUBLIC_IGNIS_DEFAULT_VUEUSE` | `boolean` | `true` | Enable or disable `@vueuse/nuxt` module |
+| `NUXT_PUBLIC_IGNIS_DEFAULT_PINIA` | `boolean` | `true` | Enable or disable `@pinia/nuxt` module |
 
 ## Optional modules/features
 
@@ -67,7 +67,7 @@ Other configurable options:
 | `NUXT_PUBLIC_IGNIS_PSLO_CONTENT` | `boolean` | `false` | If both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function |
 | `NUXT_PUBLIC_IGNIS_HTML_TITLE` | `string` | `Nuxt Ignis App` | HTML title of the application |
 | `NUXT_PUBLIC_IGNIS_HTML_LANG` | `string` | `en-US` | HTML lang attribute of the application |
-| `NUXT_PUBLIC_IGNIS_CORE_CSS` | `boolean` | `true` | Default `ignis.css` stylesheet will (not) be included |
+| `NUXT_PUBLIC_IGNIS_DEFAULT_CSS` | `boolean` | `true` | Default `ignis.css` stylesheet will (not) be included |
 | `NUXT_PUBLIC_IGNIS_CSS` | `string` | `''` | Comma-separated list of paths to custom CSS files to be included |
 | `NUXT_PUBLIC_IGNIS_PAGES` | `boolean` | `true` | Set to `false` to disable multiple pages and routing |
 | `NUXT_PUBLIC_IGNIS_SSR` | `boolean` | `true` | Set to `false` to disable server side rendering |

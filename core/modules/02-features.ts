@@ -1,7 +1,7 @@
 import { defineNuxtModule } from 'nuxt/kit'
 import type { NuxtOptions } from 'nuxt/schema'
 import type { IgnisConfigOptions } from './01-config'
-import type { IgnisCoreOptions } from '@nuxt-ignis/core'
+import type { IgnisDefaultOptions } from '@nuxt-ignis/default'
 import type { IgnisUIOptions } from '@nuxt-ignis/ui'
 import type { IgnisDBOptions } from '@nuxt-ignis/db'
 import type { IgnisFormsOptions } from '@nuxt-ignis/forms'
@@ -11,11 +11,11 @@ import type { IgnisUtilsOptions } from '@nuxt-ignis/utils'
 import { applyEnv } from './utils/env'
 import { checkForDuplicateModules } from './utils/duplicates'
 import { resolveUiPreset, resolveDbPreset, resolveFormsPreset, resolveValidationPreset } from './utils/presets'
-import { isCoreActive, isUiActive, isDbActive, isFormsActive, isValidationActive, isContentActive, isUtilsActive } from './utils/activation'
+import { isDefaultActive, isUiActive, isDbActive, isFormsActive, isValidationActive, isContentActive, isUtilsActive } from './utils/activation'
 
 declare module 'nuxt/schema' {
   interface IgnisPublicRuntimeConfig {
-    core?: IgnisCoreOptions
+    default?: IgnisDefaultOptions
     ui?: IgnisUIOptions
     db?: IgnisDBOptions
     forms?: IgnisFormsOptions
@@ -37,8 +37,8 @@ export interface IgnisOptions {
   config?: IgnisConfigOptions
   // core/modules/features.ts
   preset?: IgnisPresetOptions
-  // @nuxt-ignis/core module
-  core?: IgnisCoreOptions
+  // @nuxt-ignis/default module
+  default?: IgnisDefaultOptions
   // @nuxt-ignis/ui module
   ui?: IgnisUIOptions
   // @nuxt-ignis/db module
@@ -79,12 +79,12 @@ export default defineNuxtModule<IgnisOptions>({
 
     if (!ignisOpts) {
       console.debug('No Ignis options provided. Setting defaults.')
-      modules['@nuxt-ignis/core'] = { }
+      modules['@nuxt-ignis/default'] = { }
       return modules
     }
 
-    if (isCoreActive(ignisOpts)) {
-      modules['@nuxt-ignis/core'] = { }
+    if (isDefaultActive(ignisOpts)) {
+      modules['@nuxt-ignis/default'] = { }
     }
 
     if (isUiActive(ignisOpts)) {
@@ -126,7 +126,7 @@ export default defineNuxtModule<IgnisOptions>({
 
     // ensure proper runtime config type inference for modules that were not activated
     const ignis = (nuxt.options.runtimeConfig.public.ignis ||= {}) as IgnisOptions
-    ignis.core ||= {
+    ignis.default ||= {
       eslint: false, fonts: false, image: false, scripts: false, security: false, auth: false, vueuse: false, pinia: false, css: false,
     }
     ignis.preset ||= {

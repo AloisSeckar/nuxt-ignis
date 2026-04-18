@@ -8,10 +8,10 @@ Nuxt Ignis offers following utility options:
 
 [VueUse](https://vueuse.org/) is a collection of essential Vue Composition Utilities that provides a set of reusable functions and utilities for Vue.js applications. It includes features like reactive state management, event handling, and more.
 
-`VueUse` integration is a [core feature](/2-2-core-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
+`VueUse` integration is a [default feature](/2-2-default-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
 ```dotenv
-NUXT_PUBLIC_IGNIS_CORE_VUEUSE=false
+NUXT_PUBLIC_IGNIS_DEFAULT_VUEUSE=false
 ```
 
 ## VueEquipment
@@ -70,10 +70,10 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`,
 
 [Nuxt Auth Utils](https://github.com/atinux/nuxt-auth-utils) is a set of utilities for handling authentication in Nuxt applications.
 
-`Nuxt Auth Utils` is a [core feature](/2-2-core-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
+`Nuxt Auth Utils` is a [default feature](/2-2-default-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
 ```dotenv
-NUXT_PUBLIC_IGNIS_CORE_AUTH=false
+NUXT_PUBLIC_IGNIS_DEFAULT_AUTH=false
 ```
 
 ## Nuxt Social Share

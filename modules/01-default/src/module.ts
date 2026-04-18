@@ -1,8 +1,8 @@
 import { addPlugin, createResolver, defineNuxtModule } from '@nuxt/kit'
-import { ignisDefaultOptions, ignisModuleDependencies, ignisModuleSetup } from './ignisCoreSetup'
+import { ignisDefaultOptions, ignisModuleDependencies, ignisModuleSetup } from './ignisDefaultSetup'
 import type { NuxtOptions } from 'nuxt/schema'
 
-export interface IgnisCoreOptions {
+export interface IgnisDefaultOptions {
   eslint?: boolean
   fonts?: boolean
   image?: boolean
@@ -15,30 +15,30 @@ export interface IgnisCoreOptions {
   css?: boolean
 }
 
-export type NuxtIgnisCoreOptions = Partial<NuxtOptions> & {
+export type NuxtIgnisDefaultOptions = Partial<NuxtOptions> & {
   ignis: {
-    core?: IgnisCoreOptions
+    default?: IgnisDefaultOptions
   }
 }
 
 declare module 'nuxt/schema' {
   interface IgnisPublicRuntimeConfig {
-    core?: IgnisCoreOptions
+    default?: IgnisDefaultOptions
   }
 }
 
-export default defineNuxtModule<IgnisCoreOptions>({
+export default defineNuxtModule<IgnisDefaultOptions>({
   meta: {
-    name: '@nuxt-ignis/core',
+    name: '@nuxt-ignis/default',
   },
   defaults: {
     ...ignisDefaultOptions,
   },
   moduleDependencies(nuxt) {
-    return ignisModuleDependencies(nuxt.options as NuxtIgnisCoreOptions)
+    return ignisModuleDependencies(nuxt.options as NuxtIgnisDefaultOptions)
   },
   setup(_options, nuxt) {
-    ignisModuleSetup(nuxt.options as NuxtIgnisCoreOptions)
+    ignisModuleSetup(nuxt.options as NuxtIgnisDefaultOptions)
 
     const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugin'))

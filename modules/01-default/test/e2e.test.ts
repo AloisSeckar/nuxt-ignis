@@ -9,6 +9,6 @@ describe('ssr e2e test', async () => {
 
   test('should render the playground index page', async () => {
     const html = await $fetch('/')
-    expect(html).toContain('<h1>@nuxt-ignis/core</h1>')
+    expect(html).toContain('<h1>@nuxt-ignis/default</h1>')
   })
 })

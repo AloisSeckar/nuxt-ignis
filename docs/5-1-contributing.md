@@ -34,6 +34,7 @@ packages:
   - core
   - demos/*
   - docs
+  - modules/*
 
 # https://pnpm.io/catalogs#defining-catalogs
 # global version definition for the repeated packages

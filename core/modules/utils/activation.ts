@@ -1,8 +1,8 @@
 import type { IgnisOptions } from '../02-features'
 
-/** Core module is active unless every feature is explicitly disabled. */
-export function isCoreActive(opts: IgnisOptions): boolean {
-  const c = opts.core
+/** Default module is active unless every feature is explicitly disabled. */
+export function isDefaultActive(opts: IgnisOptions): boolean {
+  const c = opts.default
   if (!c) return true
   if (!Object.keys(c).length) return true // empty object (all features are still true by defaut)
   return !!(c.eslint || c.fonts || c.image || c.scripts || c.security || c.auth || c.vueuse || c.pinia)

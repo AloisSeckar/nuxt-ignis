@@ -1,12 +1,12 @@
 <template>
   <header>
-    <h1>@nuxt-ignis/core</h1>
+    <h1>@nuxt-ignis/default</h1>
     <p>Module playground</p>
   </header>
   <main>
     <section>
       <h2>About</h2>
-      <p>Service module providing Core features for <a href="https://nuxt-ignis.com/">Nuxt Ignis</a></p>
+      <p>Service module providing Default features for <a href="https://nuxt-ignis.com/">Nuxt Ignis</a></p>
     </section>
     <section>
       <h2>Lorem Ipsum</h2>

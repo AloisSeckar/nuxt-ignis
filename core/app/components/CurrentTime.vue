@@ -27,7 +27,7 @@
 </template>
 
 <script setup lang="ts">
-const vueuse = useRuntimeConfig().public.ignis.core.vueuse
+const vueuse = useRuntimeConfig().public.ignis.default.vueuse
 const currentDate = vueuse ? useNow() : ignisDate()
 </script>
 

@@ -17,7 +17,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `elrh-cosca` | `0.3.5` | [👁️‍🗨️](/3-9-features-devex.html#cli-tools) | Experimental library for code-scaffolding Node scripts |
 | `cross-env` | `10.1.0` | [👁️‍🗨️](/3-9-features-devex.html#cross-env) | Used in development to set .env variables in Node scripts |
 
-## Packages of core features
+## Packages of default features
 
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |

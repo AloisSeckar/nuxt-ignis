@@ -3,12 +3,12 @@
 Nuxt Ignis contains following customizable UI related features:
 
 ## Default CSS file
-There is a default CSS file [`ignis.css`](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/modules/01-core/src/runtime/css/ignis.css) that is included in the project by default. It contains basic styling for the HTML apps based on good practices and recommendations.
+There is a default CSS file [`ignis.css`](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/modules/01-default/src/runtime/css/ignis.css) that is included in the project by default. It contains basic styling for the HTML apps based on good practices and recommendations.
 
 You can disable its inclusion by setting the following environment variable:
 
 ```dotenv
-NUXT_PUBLIC_IGNIS_CORE_CSS=false
+NUXT_PUBLIC_IGNIS_DEFAULT_CSS=false
 ```
 
 If you want to do small adjustments or add more default rules, you can use the CLI tool to [scaffold the default file](/3-12-features-cli.html#set-css) into your project.

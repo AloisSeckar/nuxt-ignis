@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   ],
 
   // 01-03-full - how to enable all available Nuxt Ignis features
+  // TODO fix setting up full demo
   ignis: {
     ui: true,
     neon: true,

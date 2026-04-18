@@ -10,10 +10,10 @@ Nuxt Ignis utilizes `@nuxt/eslint` module for convenient [ESLint](https://eslint
 
 To ensure correct functionality, `typescript` [must be included](https://eslint.nuxt.com/packages/module#quick-setup) as an explicit dependency.
 
-`@nuxt/eslint` is a [core feature](/2-2-core-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
+`@nuxt/eslint` is a [default feature](/2-2-default-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
 ```dotenv
-NUXT_PUBLIC_IGNIS_CORE_ESLINT=false
+NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT=false
 ```
 
 The default configuration in Nuxt Ignis' `nuxt.config.ts` is:
@@ -132,7 +132,7 @@ The module is imported as-is with default configuration used. Its behavior can b
 You can disable module inclusion by setting the following environment variable:
 
 ```dotenv
-NUXT_PUBLIC_IGNIS_CORE_SECURITY=false
+NUXT_PUBLIC_IGNIS_DEFAULT_SECURITY=false
 ```
 
 ## CLI tools

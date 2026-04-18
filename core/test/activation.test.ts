@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest'
 import {
-  isCoreActive, isUiActive, isDbActive, isFormsActive,
+  isDefaultActive, isUiActive, isDbActive, isFormsActive,
   isValidationActive, isContentActive, isUtilsActive,
 } from '../modules/utils/activation'
 
@@ -8,34 +8,34 @@ import {
 // whether a sub-module should be registered during module setup phase
 
 describe('unit tests for checker functions for sub-modules activation', () => {
-  describe('isCoreActive', () => {
-    test('returns true when opts.core is undefined', () => {
-      expect(isCoreActive({})).toBe(true)
+  describe('isDefaultActive', () => {
+    test('returns true when opts.default is undefined', () => {
+      expect(isDefaultActive({})).toBe(true)
     })
 
-    test('returns true when opts.core is empty object', () => {
-      expect(isCoreActive({ core: {} })).toBe(true)
+    test('returns true when opts.default is empty object', () => {
+      expect(isDefaultActive({ default: {} })).toBe(true)
     })
 
-    test('returns true when at least one core feature is enabled', () => {
-      expect(isCoreActive({ core: { eslint: true } })).toBe(true)
-      expect(isCoreActive({ core: { fonts: true } })).toBe(true)
-      expect(isCoreActive({ core: { image: true } })).toBe(true)
-      expect(isCoreActive({ core: { scripts: true } })).toBe(true)
-      expect(isCoreActive({ core: { security: true } })).toBe(true)
-      expect(isCoreActive({ core: { auth: true } })).toBe(true)
-      expect(isCoreActive({ core: { vueuse: true } })).toBe(true)
-      expect(isCoreActive({ core: { pinia: true } })).toBe(true)
+    test('returns true when at least one default feature is enabled', () => {
+      expect(isDefaultActive({ default: { eslint: true } })).toBe(true)
+      expect(isDefaultActive({ default: { fonts: true } })).toBe(true)
+      expect(isDefaultActive({ default: { image: true } })).toBe(true)
+      expect(isDefaultActive({ default: { scripts: true } })).toBe(true)
+      expect(isDefaultActive({ default: { security: true } })).toBe(true)
+      expect(isDefaultActive({ default: { auth: true } })).toBe(true)
+      expect(isDefaultActive({ default: { vueuse: true } })).toBe(true)
+      expect(isDefaultActive({ default: { pinia: true } })).toBe(true)
     })
 
-    test('returns false only when all core features are explicitly false', () => {
-      expect(isCoreActive({
-        core: { eslint: false, fonts: false, image: false, scripts: false, security: false, auth: false, vueuse: false, pinia: false },
+    test('returns false only when all default features are explicitly false', () => {
+      expect(isDefaultActive({
+        default: { eslint: false, fonts: false, image: false, scripts: false, security: false, auth: false, vueuse: false, pinia: false },
       })).toBe(false)
     })
 
-    test('returns true when multiple core features are enabled', () => {
-      expect(isCoreActive({ core: { eslint: true, pinia: true } })).toBe(true)
+    test('returns true when multiple default features are enabled', () => {
+      expect(isDefaultActive({ default: { eslint: true, pinia: true } })).toBe(true)
     })
   })
 

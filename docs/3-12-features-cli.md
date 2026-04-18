@@ -97,9 +97,9 @@ $ deno run --allow-run npm:npx nuxt-ignis set-css
 ```
 :::
 
-The file will be created as `app/assets/css/ignis.css` and will be equal to the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/modules/01-core/src/runtime/css/ignis.css).
+The file will be created as `app/assets/css/ignis.css` and will be equal to the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/modules/01-default/src/runtime/css/ignis.css).
 
-**NOTE:** If `NUXT_PUBLIC_IGNIS_CORE_CSS` is set to `false`, this file is **NOT** included in the project automatially. You either need to re-enable it or [set it manually](https://nuxt.com/docs/4.x/api/nuxt-config#css).
+**NOTE:** If `NUXT_PUBLIC_IGNIS_DEFAULT_CSS` is set to `false`, this file is **NOT** included in the project automatially. You either need to re-enable it or [set it manually](https://nuxt.com/docs/4.x/api/nuxt-config#css).
 
 ### set-eslint
 

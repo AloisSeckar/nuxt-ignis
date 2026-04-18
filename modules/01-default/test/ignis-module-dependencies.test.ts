@@ -1,8 +1,8 @@
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
-import { ignisModuleDependencies } from '../src/ignisCoreSetup'
-import type { NuxtIgnisCoreOptions } from '../src/module'
+import { ignisModuleDependencies } from '../src/ignisDefaultSetup'
+import type { NuxtIgnisDefaultOptions } from '../src/module'
 
-describe('@nuxt-ignis/core - resolving module dependencies', () => {
+describe('@nuxt-ignis/default - resolving module dependencies', () => {
   let debugSpy: ReturnType<typeof vi.spyOn>
 
   beforeEach(() => {
@@ -13,8 +13,8 @@ describe('@nuxt-ignis/core - resolving module dependencies', () => {
     debugSpy.mockRestore()
   })
 
-  test('should add all core modules by default', () => {
-    expect(ignisModuleDependencies({} as NuxtIgnisCoreOptions)).toEqual({
+  test('should add all default modules by default', () => {
+    expect(ignisModuleDependencies({} as NuxtIgnisDefaultOptions)).toEqual({
       '@nuxt/eslint': {},
       '@nuxt/fonts': {},
       '@nuxt/image': {},
@@ -25,8 +25,8 @@ describe('@nuxt-ignis/core - resolving module dependencies', () => {
       '@pinia/nuxt': {},
     })
 
-    expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/core - module dependencies are being resolved')
-    expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/core - No options were provided, setting defaults')
+    expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/default - module dependencies are being resolved')
+    expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/default - No options were provided, setting defaults')
     expect(debugSpy).toHaveBeenCalledWith('@nuxt/eslint module installed')
     expect(debugSpy).toHaveBeenCalledWith('@nuxt/fonts module installed')
     expect(debugSpy).toHaveBeenCalledWith('@nuxt/image module installed')
@@ -38,10 +38,10 @@ describe('@nuxt-ignis/core - resolving module dependencies', () => {
     expect(debugSpy).toHaveBeenCalledTimes(10)
   })
 
-  test('should add all core modules if all enabled', () => {
+  test('should add all default modules if all enabled', () => {
     expect(ignisModuleDependencies({
       ignis: {
-        core: {
+        default: {
           eslint: true,
           fonts: true,
           image: true,
@@ -52,7 +52,7 @@ describe('@nuxt-ignis/core - resolving module dependencies', () => {
           pinia: true,
         },
       },
-    } as NuxtIgnisCoreOptions)).toEqual({
+    } as NuxtIgnisDefaultOptions)).toEqual({
       '@nuxt/eslint': {},
       '@nuxt/fonts': {},
       '@nuxt/image': {},
@@ -63,7 +63,7 @@ describe('@nuxt-ignis/core - resolving module dependencies', () => {
       '@pinia/nuxt': {},
     })
 
-    expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/core - module dependencies are being resolved')
+    expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/default - module dependencies are being resolved')
     expect(debugSpy).toHaveBeenCalledWith('@nuxt/eslint module installed')
     expect(debugSpy).toHaveBeenCalledWith('@nuxt/fonts module installed')
     expect(debugSpy).toHaveBeenCalledWith('@nuxt/image module installed')
@@ -78,7 +78,7 @@ describe('@nuxt-ignis/core - resolving module dependencies', () => {
   test('should add no modules if all disabled', () => {
     expect(ignisModuleDependencies({
       ignis: {
-        core: {
+        default: {
           eslint: false,
           fonts: false,
           image: false,
@@ -89,9 +89,9 @@ describe('@nuxt-ignis/core - resolving module dependencies', () => {
           pinia: false,
         },
       },
-    } as NuxtIgnisCoreOptions)).toEqual({})
+    } as NuxtIgnisDefaultOptions)).toEqual({})
 
-    expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/core - module dependencies are being resolved')
+    expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/default - module dependencies are being resolved')
     expect(debugSpy).toHaveBeenCalledTimes(1)
   })
 })

@@ -10,13 +10,13 @@
 
 With Nuxt Ignis you have guaranteed control over the final shape of your app via environment variables. Learn more in the [configuration](/2-1-configuration) section.
 
-## Core features
+## Default features
 
 Nuxt Ignis is designed to be as **optionated** as possible. You can control most of the behavior via `.env` provided to the build process. This allows to keep the `nuxt.config.ts` file static, while still being able to adjust the final build. Like that, the project should not bloat with tons of actually unused depeondencies.
 
-With that in mind, some packages are still enabled by default, because they provide functionality that are often repeatedly used. Those we call _**"core features"**_. Most of them can be turned off via respective environment variables. A small number of excptions cannot be turned off at all due to current technical limitations.
+With that in mind, some packages are still enabled by default, because they provide functionality that are often repeatedly used. Those we call _**"default features"**_. Most of them can be turned off via respective environment variables. A small number of excptions cannot be turned off at all due to current technical limitations.
 
-[More info about the core features](/2-2-core-features)
+[More info about the default features](/2-2-default-features)
 
 ## Optional features
 

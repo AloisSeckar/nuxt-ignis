@@ -3,7 +3,7 @@ This folder contains various implementations of `nuxt-ignis` module. Those mini-
 
 ## Available demos
 01. `default` - default setting with no `.env` modifications
-02. `bare` - core features disabled (so basically only `Nuxt` + `Consola` + Test suite)
+02. `bare` - default features disabled (so basically only `Nuxt` + `Consola` + Test suite)
 03. `full` - all features enabled
 04. UI features
     - a) `nuxt-ui` module enabled
@@ -21,7 +21,8 @@ This folder contains various implementations of `nuxt-ignis` module. Those mini-
 08. Content 
     - a) `@nuxt/content` module enabled
     - b) `@nuxt/content` AND `tailwind` module enabled
-    - b) `@nuxt/content` module enabled with `pslo` integration
+    - c) `@nuxt/content` module enabled with `pslo` integration
+    - d) `i18n` module enabled
 09. Vue Equipment - `@maas/vue-equipment` module enabled
 10. Magic Regexp - `magic-regexp` module enabled
 11. Nuxt Charts - `nuxt-charts` module enabled

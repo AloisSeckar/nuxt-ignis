@@ -14,7 +14,7 @@ import { fileURLToPath } from 'url';
 const MODULES_DIR = dirname(fileURLToPath(import.meta.url));
 
 const ALL_MODULES = [
-  '01-core',
+  '01-default',
   '02-ui',
   '03-db',
   '04-forms',
