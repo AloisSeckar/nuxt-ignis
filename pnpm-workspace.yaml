@@ -101,6 +101,8 @@ overrides:
   semver: ^7.7.0
   undici-types: ^7.22.0
   rollup: ^4.59.0
+  # TODO check https://github.com/nuxt/nuxt/issues/34812 for permanent solution
+  unimport: 6.0.2
 
 trustPolicy: no-downgrade
 
