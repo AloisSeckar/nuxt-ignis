@@ -47,7 +47,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `@formkit/nuxt` | `2.0.0` | [👁️‍🗨️](/3-4-features-forms.html#formkit) | Connector module for `FormKit` form builder |
 | `@nuxt/content` | `3.11.2` | [👁️‍🗨️](/3-6-features-content.html#nuxt-content) | Official module for displaying `.md` content |
 | `@nuxtjs/i18n` | `10.2.3` | [👁️‍🗨️](/3-6-features-content.html#i18n) | Module for adding `i18n` internalization into apps |
-| `@nuxtjs/seo` | `3.4.0` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-seo) | Official module for easier SEO configuration |
+| `@nuxtjs/seo` | `5.1.3` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-seo) | Official module for easier SEO configuration |
 | `@stefanobartoletti/nuxt-social-share` | `2.3.1` | [👁️‍🗨️](/3-7-features-utils.html#nuxt-social-share) | Module for simple sharing to social networks |
 | `magic-regexp` | `0.10.0` | [👁️‍🗨️](/3-7-features-utils.html#magic-regexp) | Library for easier working with regular expressions |
 | `nuxt-charts` | `2.1.1` | [👁️‍🗨️](/3-2-features-ui.html#nuxt-charts) | Library for easier working with charts |

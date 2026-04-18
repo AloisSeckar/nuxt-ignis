@@ -48,7 +48,7 @@ Whitespaces around will be trimmed, so it doesn't matter if you add or omit them
 
 ## Nuxt SEO
 
-<PackagesReference :packages="[{ name: '@nuxtjs/seo', version: '3.4.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxtjs/seo', version: '5.1.3' }]" />
 
 [Nuxt SEO](https://nuxtseo.com/) is a collection of Nuxt modules that handles all of the technical aspects in growing your sites organic traffic.
 
