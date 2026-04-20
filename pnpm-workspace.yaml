@@ -8,6 +8,18 @@ shamefullyHoist: true
 
 nodeLinker: hoisted
 
+peerDependencyRules:
+  ignoreMissing:
+    - tailwindcss
+    - embla-carousel
+    - '@tiptap/y-tiptap'
+    - '@tiptap/extensions'
+    - yjs
+    - unstorage
+    - '@unhead/bundler'
+  allowedVersions:
+    focus-trap: '8'
+
 catalog:
   '@formkit/nuxt': 2.0.0
   '@maas/vue-equipment': 1.0.0-beta.57
