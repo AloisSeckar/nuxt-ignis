@@ -4,7 +4,7 @@ Nuxt Ignis contains following customizable forms related features:
 
 ## Vueform
 
-<PackagesReference :packages="[{ name: '@vueform/nuxt', version: '1.26.0' }, { name: '@vueform/vueform', version: '1.13.10' }]" />
+<PackagesReference :packages="[{ name: '@vueform/nuxt', version: '1.29.0' }, { name: '@vueform/vueform', version: '1.13.11' }]" />
 
 [Vueform](https://vueform.com/) is a powerful form library for Vue.js that provides a set of components and utilities for building forms with ease. It includes features like validation, error handling, and custom components.
 

@@ -16,7 +16,7 @@ The typical application is to include or exclude certain Nuxt module. For exampl
 
 ### Defu-merge
 
-<PackagesReference :packages="[{ name: 'defu', version: '6.1.4' }]" />
+<PackagesReference :packages="[{ name: 'defu', version: '6.1.7' }]" />
 
 Handling varying configuration options could become tricky pretty fast. That's why Nuxt itself uses [`unjs/defu`](https://github.com/unjs/defu) which is the smart tool for deep merging (config) objects together. It allows to supply default values while being able to override them with user-defined values.
 

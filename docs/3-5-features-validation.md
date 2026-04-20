@@ -48,7 +48,7 @@ const isValid: boolean = await isValidByZod(ZodSchema, object)
 
 ## Valibot
 
-<PackagesReference :packages="[{ name: 'valibot', version: '1.2.0' }]" />
+<PackagesReference :packages="[{ name: 'valibot', version: '1.3.1' }]" />
 
 [Valibot](https://valibot.dev/) is a TypeScript-first schema validation library that allows you to define schemas for your data and validate them at runtime. It provides a simple and intuitive API for defining schemas and validating data against them.
 

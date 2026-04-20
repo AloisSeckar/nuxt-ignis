@@ -4,7 +4,7 @@ Nuxt Ignis contains following customizable features related to content generatio
 
 ## Nuxt Content
 
-<PackagesReference :packages="[{ name: '@nuxt/content', version: '3.11.2' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/content', version: '3.13.0' }]" />
 
 [Nuxt Content](https://content.nuxt.com/) is a powerful content management system for Nuxt applications that allows you to write content in Markdown, JSON, YAML, or CSV formats. It provides a flexible way to manage and display content in your application.
 
@@ -49,7 +49,7 @@ If you need backward compatibility with older Node versions, you can use `conten
 
 ## I18N
 
-<PackagesReference :packages="[{ name: '@nuxtjs/i18n', version: '10.2.3' }]" />
+<PackagesReference :packages="[{ name: '@nuxtjs/i18n', version: '10.2.4' }]" />
 
 [Nuxt I18N](https://i18n.nuxtjs.org/) is a module that provides internationalization support for your application. It allows you to easily manage translations and switch between different languages.
 

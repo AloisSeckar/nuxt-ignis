@@ -40,7 +40,7 @@ packages:
 # global version definition for the repeated packages
 catalog:
   nuxt: 4.4.2
-  '@nuxt/eslint': 1.14.0
+  '@nuxt/eslint': 1.15.2
   typescript: 5.9.3
   vue: 3.5.32
   vue-router: 5.0.4

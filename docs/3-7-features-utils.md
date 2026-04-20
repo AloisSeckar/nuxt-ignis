@@ -16,7 +16,7 @@ NUXT_PUBLIC_IGNIS_DEFAULT_VUEUSE=false
 
 ## VueEquipment
 
-<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.51' }]" />
+<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.57' }]" />
 
 [VueEquipment](https://www.vue.equipment/) is a collection of Vue composables and plugins that provides a set of reusable functions and utilities for Vue.js applications.
 
@@ -66,7 +66,7 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`,
 
 ## Nuxt Auth Utils
 
-<PackagesReference :packages="[{ name: 'nuxt-auth-utils', version: '0.5.28' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-auth-utils', version: '0.5.29' }]" />
 
 [Nuxt Auth Utils](https://github.com/atinux/nuxt-auth-utils) is a set of utilities for handling authentication in Nuxt applications.
 
@@ -78,7 +78,7 @@ NUXT_PUBLIC_IGNIS_DEFAULT_AUTH=false
 
 ## Nuxt Social Share
 
-<PackagesReference :packages="[{ name: '@stefanobartoletti/nuxt-social-share', version: '2.3.1' }]" />
+<PackagesReference :packages="[{ name: '@stefanobartoletti/nuxt-social-share', version: '3.0.0' }]" />
 
 [Nuxt Social Share](https://nuxt-social-share.stefanobartoletti.it/) is a module providing seamless integration for sharing content to various social networks from your Nuxt application.
 
@@ -94,7 +94,7 @@ NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED=true
 
 ## Magic Regexp
 
-<PackagesReference :packages="[{ name: 'magic-regexp', version: '0.10.0' }]" />
+<PackagesReference :packages="[{ name: 'magic-regexp', version: '0.11.0' }]" />
 
 [Magic Regexp](https://regexp.dev/) is a utility library for working with regular expressions in more natural way.
 
