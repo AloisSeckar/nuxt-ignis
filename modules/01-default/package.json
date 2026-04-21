@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/default",
-  "version": "0.0.16",
+  "version": "0.0.17",
   "description": "Nuxt Ignis module - Default features",
   "publishConfig": {
     "access": "public"
