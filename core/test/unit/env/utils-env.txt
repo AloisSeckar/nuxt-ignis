@@ -1,0 +1,96 @@
+{
+  "config": {
+    "html": {
+      "lang": "en",
+      "title": "Nuxt Ignis App",
+    },
+    "log": {
+      "level": "info",
+    },
+    "nuxt": {
+      "css": undefined,
+      "error": true,
+      "pages": true,
+      "ssr": true,
+    },
+    "warn": {
+      "duplicates": true,
+    },
+  },
+  "content": {
+    "content": {
+      "enabled": false,
+    },
+    "i18n": {
+      "default": "",
+      "enabled": false,
+    },
+    "pslo": {
+      "content": false,
+      "enabled": false,
+    },
+    "seo": {
+      "enabled": false,
+    },
+    "social": {
+      "enabled": false,
+      "url": "",
+    },
+  },
+  "db": {
+    "neon": {
+      "enabled": false,
+    },
+    "supabase": {
+      "enabled": false,
+      "types": false,
+    },
+  },
+  "default": {
+    "auth": true,
+    "css": true,
+    "eslint": true,
+    "fonts": true,
+    "image": true,
+    "pinia": true,
+    "scripts": true,
+    "security": true,
+    "vueuse": true,
+  },
+  "forms": {
+    "formkit": {
+      "config": "",
+      "default": "",
+      "enabled": false,
+    },
+    "vueform": {
+      "enabled": false,
+    },
+  },
+  "preset": {
+    "db": "off",
+    "forms": "off",
+    "ui": "off",
+    "validation": "off",
+  },
+  "ui": {
+    "charts": false,
+    "openprops": false,
+    "tailwind": false,
+    "ui": false,
+  },
+  "utils": {
+    "equipment": {
+      "composables": "env-composables/",
+      "enabled": true,
+      "plugins": "env-plugins/",
+    },
+    "regexp": {
+      "enabled": true,
+    },
+  },
+  "validation": {
+    "valibot": false,
+    "zod": false,
+  },
+}

@@ -35,7 +35,7 @@
   "scripts": {
     "analyze": "nuxt analyze",
     "eslint": "eslint .",
-    "build": "cd ../docs && pnpm test && pnpm build && cd ../core && pnpm test && nuxt build",
+    "build": "cd ../docs && pnpm test-unit && pnpm build && cd ../core && pnpm test-unit && nuxt build",
     "dev": "cross-env CONSOLA_LEVEL=4 nuxt dev",
     "generate": "nuxt generate",
     "prepublishOnly": "pnpm build",
@@ -44,6 +44,8 @@
     "test": "vitest run",
     "test-u": "vitest run -u",
     "test-i": "vitest",
+    "test-unit": "vitest run unit",
+    "test-e2e": "vitest run e2e",
     "modules-test": "node ../modules/ignis-modules-test.js",
     "modules-publish": "node ../modules/ignis-modules-publish.js"
   },
