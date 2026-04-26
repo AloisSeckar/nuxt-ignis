@@ -72,7 +72,6 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisUIOptions) {
     nuxtOptions.css ||= []
     nuxtOptions.css.push(resolver.resolve('./runtime/css/ignis-tailwind.css'))
     // temporary integration using Vite plugin directly
-    // @ts-expect-error https://github.com/tailwindlabs/tailwindcss/issues/18802
     nuxtOptions.vite = defu({
       plugins: [tailwindcss()],
     }, nuxtOptions.vite)
