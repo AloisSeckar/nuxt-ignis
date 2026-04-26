@@ -109,6 +109,7 @@ onlyBuiltDependencies:
   - vue-demi
 
 overrides:
+  '@nuxt/test-utils': ^4.0.2
   chokidar: ^5.0.0
   semver: ^7.7.0
   undici-types: ^7.22.0
