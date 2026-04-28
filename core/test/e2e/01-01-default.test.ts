@@ -19,8 +19,8 @@ describe('demos/01-01-default', async () => {
     await page.setViewportSize({ width: 1280, height: 720 }) // important for consistent results!
     await page.goto(url('/_ignis-welcome'), { waitUntil: 'hydration' })
 
-    expect(await compareScreenshot(page, { fileName: 'header.jpg', selector: '#ignis-header', maxDiffPixelRatio: diffRatio })).toEqual(true)
-    expect(await compareScreenshot(page, { fileName: 'welcome.jpg', selector: '#ignis-welcome', maxDiffPixelRatio: diffRatio })).toEqual(true)
+    expect(await compareScreenshot(page, { fileName: '01-01-header.jpg', selector: '#ignis-header', maxDiffPixelRatio: diffRatio })).toEqual(true)
+    expect(await compareScreenshot(page, { fileName: '01-01-welcome.jpg', selector: '#ignis-welcome', maxDiffPixelRatio: diffRatio })).toEqual(true)
   })
 
   test('_ignis-info matches screenshot', async () => {
@@ -28,7 +28,7 @@ describe('demos/01-01-default', async () => {
     await page.setViewportSize({ width: 1280, height: 720 }) // important for consistent results!
     await page.goto(url('/_ignis-info'), { waitUntil: 'hydration' })
 
-    expect(await compareScreenshot(page, { fileName: 'info.jpg', selector: '#ignis-info', maxDiffPixelRatio: diffRatio })).toEqual(true)
+    expect(await compareScreenshot(page, { fileName: '01-01-info.jpg', selector: '#ignis-info', maxDiffPixelRatio: diffRatio })).toEqual(true)
   })
 
   test('_ignis-config matches screenshot', async () => {
@@ -36,6 +36,6 @@ describe('demos/01-01-default', async () => {
     await page.setViewportSize({ width: 1280, height: 720 }) // important for consistent results!
     await page.goto(url('/_ignis-config'), { waitUntil: 'hydration' })
 
-    expect(await compareScreenshot(page, { fileName: 'config.jpg', selector: '#ignis-config', maxDiffPixelRatio: diffRatio })).toEqual(true)
+    expect(await compareScreenshot(page, { fileName: '01-01-config.jpg', selector: '#ignis-config', maxDiffPixelRatio: diffRatio })).toEqual(true)
   })
 })
