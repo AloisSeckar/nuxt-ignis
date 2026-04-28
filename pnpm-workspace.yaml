@@ -68,7 +68,7 @@ catalog:
   'nuxt-charts': 2.1.4
   'nuxt-neon': 0.8.3
   'nuxt-security': 2.5.1
-  'nuxt-spec': 0.2.1
+  'nuxt-spec': 0.2.2
   'open-props': 1.7.23
   'oxc-minify': ^0.125.0
   'pinia': 3.0.4
@@ -97,6 +97,8 @@ minimumReleaseAgeExclude:
   - '@maas/vue-equipment'
   - '@vueform/nuxt'
   - '@vueform/vueform'
+  - 'nuxt-spec'
+  - 'nuxt-neon'
 
 onlyBuiltDependencies:
   - '@parcel/watcher'

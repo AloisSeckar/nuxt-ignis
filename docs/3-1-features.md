@@ -13,7 +13,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `defu` | `6.1.7` | [👁️‍🗨️](/2-1-configuration.html#defu-merge) | Used for merging user configurations with defaults |
 | `date-fns` | `4.1.0` | [👁️‍🗨️](/3-9-features-devex.html#logging) | Used to get timestamps in readable format |
 | `consola` | `3.4.2` | [👁️‍🗨️](/3-9-features-devex.html#logging) | Improved centralized logging solution |
-| `nuxt-spec` | `v0.2.1` | [👁️‍🗨️](/5-1-contributing.html#testing) | Experimental aggregated testing solution (`vitest` && `playwright` && Nuxt/Vue test utils) |
+| `nuxt-spec` | `v0.2.2` | [👁️‍🗨️](/5-1-contributing.html#testing) | Experimental aggregated testing solution (`vitest` && `playwright` && Nuxt/Vue test utils) |
 | `elrh-cosca` | `0.3.5` | [👁️‍🗨️](/3-9-features-devex.html#cli-tools) | Experimental library for code-scaffolding Node scripts |
 | `cross-env` | `10.1.0` | [👁️‍🗨️](/3-9-features-devex.html#cross-env) | Used in development to set .env variables in Node scripts |
 
