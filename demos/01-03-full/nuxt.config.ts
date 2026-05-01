@@ -6,27 +6,80 @@ export default defineNuxtConfig({
   ],
 
   // 01-03-full - how to enable all available Nuxt Ignis features
-  // TODO fix setting up full demo
   ignis: {
-    ui: true,
-    neon: true,
-    supabase: {
-      enabled: true,
+    config: {
+      warn: {
+        duplicates: false,
+      },
     },
-    i18n: {
-      enabled: true,
+    content: {
+      content: {
+        enabled: true,
+      },
+      i18n: {
+        default: "en",
+        enabled: true,
+      },
+      pslo: {
+        content: true,
+        enabled: true,
+      },
+      seo: {
+        enabled: true,
+      },
+      social: {
+        enabled: true,
+        url: "https://nuxt-ignis.com",
+      },
     },
-    formkit: {
-      enabled: true,
+    db: {
+      neon: {
+        enabled: true,
+      },
+      supabase: {
+        enabled: true,
+        types: false,
+      },
     },
-    vueform: true,
-    content: true,
-    openProps: true,
-    pslo: {
-      enabled: true,
-      content: true,
+    default: {
+      auth: true,
+      css: true,
+      eslint: true,
+      fonts: true,
+      image: true,
+      pinia: true,
+      scripts: true,
+      security: true,
+      vueuse: true,
     },
-    seo: true,
-    warnDuplicates: false,
+    forms: {
+      formkit: {
+        default: "en",
+        enabled: true,
+      },
+      vueform: {
+        enabled: true,
+      },
+    },
+    ui: {
+      charts: true,
+      openprops: true,
+      tailwind: true,
+      ui: true,
+    },
+    utils: {
+      equipment: {
+        enabled: true,
+        composables: "",
+        plugins: "",
+      },
+      regexp: {
+        enabled: true,
+      },
+    },
+    validation: {
+      valibot: true,
+      zod: true,
+    },
   },
 })
