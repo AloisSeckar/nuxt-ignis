@@ -124,47 +124,63 @@ export default defineNuxtModule<IgnisOptions>({
   setup(_options, nuxt) {
     console.debug('Nuxt Ignis Features module setup called!')
 
-    // ensure proper runtime config type inference for modules that were not activated
+    const nuxtOpts = nuxt.options as NuxtOptions & { ignis?: IgnisOptions }
+    const ignisOpts = nuxtOpts.ignis || {}
+
+    // ensure proper runtime config type inference for modules that are NOT active
     const ignis = (nuxt.options.runtimeConfig.public.ignis ||= {}) as IgnisOptions
-    ignis.default ||= {
-      eslint: false, fonts: false, image: false, scripts: false, security: false, auth: false, vueuse: false, pinia: false, css: false,
+    if (!isDefaultActive(ignisOpts)) {
+      ignis.default ||= {
+        eslint: false, fonts: false, image: false, scripts: false, security: false, auth: false, vueuse: false, pinia: false, css: false,
+      }
     }
     ignis.preset ||= {
       ui: 'off', db: 'off', forms: 'off', validation: 'off',
     }
-    ignis.ui ||= {
-      ui: false, tailwind: false, openprops: false, charts: false,
+    if (!isUiActive(ignisOpts)) {
+      ignis.ui ||= {
+        ui: false, tailwind: false, openprops: false, charts: false,
+      }
     }
-    ignis.db ||= {
-      neon: { enabled: false },
-      supabase: { enabled: false, types: false },
+    if (!isDbActive(ignisOpts)) {
+      ignis.db ||= {
+        neon: { enabled: false },
+        supabase: { enabled: false, types: false },
+      }
     }
-    ignis.forms ||= {
-      formkit: { enabled: false, default: '', config: '' },
-      vueform: { enabled: false },
+    if (!isFormsActive(ignisOpts)) {
+      ignis.forms ||= {
+        formkit: { enabled: false, default: '', config: '' },
+        vueform: { enabled: false },
+      }
     }
-    ignis.validation ||= {
-      zod: false, valibot: false,
+    if (!isValidationActive(ignisOpts)) {
+      ignis.validation ||= {
+        zod: false, valibot: false,
+      }
     }
-    ignis.content ||= {
-      content: { enabled: false },
-      i18n: { enabled: false, default: '' },
-      seo: { enabled: false },
-      social: { enabled: false, url: '' },
-      pslo: { enabled: false, content: false },
+    if (!isContentActive(ignisOpts)) {
+      ignis.content ||= {
+        content: { enabled: false },
+        i18n: { enabled: false, default: '' },
+        seo: { enabled: false },
+        social: { enabled: false, url: '' },
+        pslo: { enabled: false, content: false },
+      }
     }
-    ignis.utils ||= {
-      equipment: { enabled: false, composables: '', plugins: '' },
-      regexp: { enabled: false },
+    if (!isUtilsActive(ignisOpts)) {
+      ignis.utils ||= {
+        equipment: { enabled: false, composables: '', plugins: '' },
+        regexp: { enabled: false },
+      }
     }
 
     // additional processing
 
     // warn if duplicate modules find
     // this means e.g. 2 database modules or 2 form solutions
-    const nuxtConfig = nuxt.options as NuxtOptions & { ignis?: IgnisOptions }
-    if (nuxtConfig.ignis?.config?.warn?.duplicates) {
-      checkForDuplicateModules(nuxtConfig.ignis)
+    if (ignisOpts.config?.warn?.duplicates) {
+      checkForDuplicateModules(ignisOpts)
     }
   },
 })
