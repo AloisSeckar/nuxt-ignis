@@ -36,9 +36,9 @@ catalog:
   '@nuxt/eslint-config': 1.15.2
   '@nuxt/fonts': 0.14.0
   '@nuxt/image': 2.0.0
-  '@nuxt/kit': 4.4.2
+  '@nuxt/kit': 4.4.4
   '@nuxt/module-builder': ^1.0.2
-  '@nuxt/schema': 4.4.2
+  '@nuxt/schema': 4.4.4
   '@nuxt/scripts': 1.0.1
   '@nuxt/test-utils': ^4.0.2
   '@nuxt/ui': 4.6.1
@@ -63,7 +63,7 @@ catalog:
   'elrh-pslo': 1.1.6
   'eslint': ^9.39.4
   'magic-regexp': 0.11.0
-  'nuxt': 4.4.2
+  'nuxt': 4.4.4
   'nuxt-auth-utils': 0.5.29
   'nuxt-charts': 2.1.4
   'nuxt-neon': 0.8.3
@@ -79,14 +79,15 @@ catalog:
   'vitepress': ^2.0.0-alpha.17
   'vitepress-plugin-group-icons': ^1.7.5
   'vitest': ^4.1.4
-  'vue': 3.5.32
-  'vue-router': 5.0.4
+  'vue': 3.5.33
+  'vue-router': 5.0.6
   'vue-tsc': ^3.2.6
   'zod': 4.3.6
 
 minimumReleaseAge: 4320
 
 minimumReleaseAgeExclude: 
+  # exclusions for internal modules
   - '@nuxt-ignis/content'
   - '@nuxt-ignis/default'
   - '@nuxt-ignis/db'
@@ -94,11 +95,18 @@ minimumReleaseAgeExclude:
   - '@nuxt-ignis/ui'
   - '@nuxt-ignis/utils'
   - '@nuxt-ignis/validation'
-  - '@maas/vue-equipment'
-  - '@vueform/nuxt'
-  - '@vueform/vueform'
+  # exclusions for modules authored by AloisSeckar
   - 'nuxt-spec'
   - 'nuxt-neon'
+  # exclusions for trusted Vue/Nuxt packages
+  - 'nuxt'
+  - 'nitropack'
+  - '@nuxt/kit'
+  - '@nuxt/nitro-server'
+  - '@nuxt/schema'
+  - '@nuxt/vite-builder'
+  # manually checked one-time exceptions
+  - ufo
 
 onlyBuiltDependencies:
   - '@parcel/watcher'
