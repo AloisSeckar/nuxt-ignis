@@ -3,12 +3,14 @@
 // but the related module is not allowed by .env settings
 
 import { getContentConfig } from './config/content'
+import { log } from './consola'
 
 // @ts-expect-error no-implicit-any
 // TODO set proper type for the object
 export function loadContentConfig(userContentConfig) {
   // only Nuxt Content is allowed
-  if (process.env.NUXT_PUBLIC_IGNIS_CONTENT === 'true') {
+  // TODO move this into @nuxt-ignis/content module
+  if (process.env.NUXT_PUBLIC_IGNIS_CONTENT_CONTENT_ENABLED === 'true') {
     // defu-merge nuxt-ignis default with possible user values
     return getContentConfig(userContentConfig)
   }
