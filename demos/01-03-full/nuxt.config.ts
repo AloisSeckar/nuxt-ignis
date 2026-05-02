@@ -17,7 +17,7 @@ export default defineNuxtConfig({
         enabled: true,
       },
       i18n: {
-        default: "en",
+        default: 'en',
         enabled: true,
       },
       pslo: {
@@ -29,7 +29,7 @@ export default defineNuxtConfig({
       },
       social: {
         enabled: true,
-        url: "https://nuxt-ignis.com",
+        url: 'https://nuxt-ignis.com',
       },
     },
     db: {
@@ -54,7 +54,7 @@ export default defineNuxtConfig({
     },
     forms: {
       formkit: {
-        default: "en",
+        default: 'en',
         enabled: true,
       },
       vueform: {
@@ -70,8 +70,8 @@ export default defineNuxtConfig({
     utils: {
       equipment: {
         enabled: true,
-        composables: "",
-        plugins: "",
+        composables: '',
+        plugins: '',
       },
       regexp: {
         enabled: true,

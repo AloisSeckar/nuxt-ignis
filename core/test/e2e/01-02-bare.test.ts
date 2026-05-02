@@ -12,7 +12,18 @@ describe('demos/01-02-bare', async () => {
   // start the Nuxt application
   await setup({
     rootDir: fileURLToPath(new URL('../../../demos/01-02-bare', import.meta.url)),
+    build: false,
+    server: true,
+    nuxtConfig: {
+      nitro: {
+        output: {
+          dir: fileURLToPath(new URL('../../../demos/01-02-bare/.output', import.meta.url)),
+        },
+      },
+    },
   })
+
+  // VISUAL TESTS
 
   test('_ignis-info matches screenshot', async () => {
     const page = await createPage()
@@ -28,5 +39,15 @@ describe('demos/01-02-bare', async () => {
     await page.goto(url('/_ignis-config'), { waitUntil: 'hydration' })
 
     expect(await compareScreenshot(page, { fileName: '01-02-config.jpg', selector: '#ignis-config', maxDiffPixelRatio: diffRatio })).toEqual(true)
+  })
+
+  // ADDITIONAL DOM-only TESTS
+
+  test('features - @nuxt/image', async () => {
+    const page = await createPage()
+    await page.goto(url('/feat-image'), { waitUntil: 'hydration' })
+    const html = await page.content()
+    expect(html).not.toContain('alt="NuxtImg demo image"')
+    expect(html).toContain('Image module is not enabled')
   })
 })
