@@ -26,16 +26,14 @@ describe('demos/01-03-full', async () => {
   // VISUAL TESTS
 
   test('_ignis-info matches screenshot', async () => {
-    const page = await createPage()
-    await page.setViewportSize({ width: 1280, height: 720 }) // important for consistent results!
+    const page = await createPage(undefined, { viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1 })
     await page.goto(url('/_ignis-info'), { waitUntil: 'hydration' })
 
     expect(await compareScreenshot(page, { fileName: '01-03-info.jpg', selector: '#ignis-info', maxDiffPixelRatio: diffRatio })).toEqual(true)
   })
 
   test('_ignis-config matches screenshot', async () => {
-    const page = await createPage()
-    await page.setViewportSize({ width: 1280, height: 720 }) // important for consistent results!
+    const page = await createPage(undefined, { viewport: { width: 1280, height: 720 }, deviceScaleFactor: 1 })
     await page.goto(url('/_ignis-config'), { waitUntil: 'hydration' })
 
     expect(await compareScreenshot(page, { fileName: '01-03-config.jpg', selector: '#ignis-config', maxDiffPixelRatio: diffRatio })).toEqual(true)
