@@ -20,7 +20,7 @@ In order to use `@nuxt-content` via Nuxt Ignis, it is currently required to crea
 
 ```ts [content.config.ts]
 // NOTE: explicit import seems to be required
-import { loadContentConfig } from '#ignis-content/content-config'
+import { loadContentConfig } from '@nuxt-ignis/content/config'
 
 export default loadContentConfig({
   // custom config here

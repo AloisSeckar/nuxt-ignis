@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/content",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "Nuxt Ignis module - Content features",
   "publishConfig": {
     "access": "public"
@@ -15,6 +15,10 @@
     ".": {
       "types": "./dist/types.d.mts",
       "import": "./dist/module.mjs"
+    },
+    "./config": {
+      "types": "./dist/runtime/content-config.d.ts",
+      "import": "./dist/runtime/content-config.js"
     }
   },
   "main": "./dist/module.mjs",
@@ -22,6 +26,9 @@
     "*": {
       ".": [
         "./dist/types.d.mts"
+      ],
+      "config": [
+        "./dist/runtime/content-config.d.ts"
       ]
     }
   },

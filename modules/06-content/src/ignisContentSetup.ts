@@ -82,7 +82,7 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisContentOptions) {
   return modules
 }
 
-export function ignisModuleSetup(nuxtOptions: NuxtIgnisContentOptions, runtimeDir: string) {
+export function ignisModuleSetup(nuxtOptions: NuxtIgnisContentOptions) {
   console.debug('@nuxt-ignis/content - module setup function runs')
 
   const options = nuxtOptions.ignis?.content
@@ -111,10 +111,6 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisContentOptions, runtimeDi
 
   // additional processing
   const effectiveOptions = runtimeConfig.ignis.content
-
-  // register alias so users can import load functions in their custom `content.config.ts`
-  nuxtOptions.alias ??= {}
-  nuxtOptions.alias['#ignis-content/content-config'] = join(runtimeDir, 'content-config')
 
   // i18n
   if (effectiveOptions.i18n?.enabled === true) {

@@ -51,7 +51,7 @@ export default defineNuxtModule<IgnisContentOptions>({
   setup(_options, nuxt) {
     const resolver = createResolver(import.meta.url)
 
-    ignisModuleSetup(nuxt.options as NuxtIgnisContentOptions, resolver.resolve('./runtime'))
+    ignisModuleSetup(nuxt.options as NuxtIgnisContentOptions)
 
     // pslo content hook (requires nuxt instance)
     const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { content?: IgnisContentOptions } }
