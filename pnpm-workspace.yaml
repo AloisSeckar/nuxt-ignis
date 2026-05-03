@@ -23,7 +23,7 @@ peerDependencyRules:
 catalog:
   '@formkit/nuxt': 2.0.0
   '@maas/vue-equipment': 1.0.0-beta.57
-  '@nuxt-ignis/content': 0.0.44
+  '@nuxt-ignis/content': 0.0.45
   '@nuxt-ignis/db': 0.0.16
   '@nuxt-ignis/default': 0.0.17
   '@nuxt-ignis/forms': 0.0.18

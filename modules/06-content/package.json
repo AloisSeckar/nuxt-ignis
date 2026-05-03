@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/content",
-  "version": "0.0.44",
+  "version": "0.0.45",
   "description": "Nuxt Ignis module - Content features",
   "publishConfig": {
     "access": "public"
@@ -49,6 +49,7 @@
     "@nuxtjs/seo": "catalog:",
     "@stefanobartoletti/nuxt-social-share": "catalog:",
     "consola": "catalog:",
+    "defu": "catalog:",
     "elrh-pslo": "catalog:"
   },
   "devDependencies": {

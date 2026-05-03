@@ -49,7 +49,9 @@ export default defineNuxtModule<IgnisContentOptions>({
     return ignisModuleDependencies(nuxt.options as NuxtIgnisContentOptions)
   },
   setup(_options, nuxt) {
-    ignisModuleSetup(nuxt.options as NuxtIgnisContentOptions)
+    const resolver = createResolver(import.meta.url)
+
+    ignisModuleSetup(nuxt.options as NuxtIgnisContentOptions, resolver.resolve('./runtime'))
 
     // pslo content hook (requires nuxt instance)
     const runtimeConfig = nuxt.options.runtimeConfig.public as { ignis?: { content?: IgnisContentOptions } }
@@ -59,7 +61,6 @@ export default defineNuxtModule<IgnisContentOptions>({
       && effectiveOptions?.pslo?.content === true) {
       // integration with Nuxt Content
       // if enabled, all Nuxt Content page data will be treated with "preventSingleLetterOrphans" function
-      // @ts-expect-error the hook will resolve correctly at runtime
       nuxt.hook('content:file:beforeParse', async (ctx: { file: { id: string, body: string } }) => {
         const { preventSingleLetterOrphans } = await import('elrh-pslo')
         const { file } = ctx
@@ -68,7 +69,6 @@ export default defineNuxtModule<IgnisContentOptions>({
       })
     }
 
-    const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
 })
