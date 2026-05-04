@@ -1,9 +1,20 @@
 import { readdirSync } from 'node:fs'
 import { join, relative } from 'node:path'
 import { addTemplate } from '@nuxt/kit'
-// import { createConsola } from 'consola'
 import type { IgnisContentOptions, NuxtIgnisContentOptions } from './module'
-import type { PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
+import type { Nuxt, PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
+
+// type augment for 'i18n:registerModule' hook
+type I18nRegisterFn = (cfg: {
+  langDir: string
+  locales: Array<{ code: string, language: string, file: string }>
+}) => void
+
+declare module '@nuxt/schema' {
+  interface NuxtHooks {
+    'i18n:registerModule': (register: I18nRegisterFn) => void
+  }
+}
 
 // export const log = createConsola({ defaults: { tag: 'nuxt-ignis' } })
 
@@ -82,7 +93,7 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisContentOptions) {
   return modules
 }
 
-export function ignisModuleSetup(nuxtOptions: NuxtIgnisContentOptions) {
+export function ignisModuleSetup(nuxtOptions: NuxtIgnisContentOptions, nuxt?: Nuxt) {
   console.debug('@nuxt-ignis/content - module setup function runs')
 
   const options = nuxtOptions.ignis?.content
@@ -160,6 +171,21 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisContentOptions) {
     const nitro = ((nuxtOptions as any).nitro ??= {})
     nitro.alias ??= {}
     nitro.alias['#ignis-i18n-locales'] = template.dst
+
+    // register discovered locales with @nuxtjs/i18n via its dedicated hook
+    // see: https://i18n.nuxtjs.org/docs/guide/extend-messages
+    if (nuxt && localeCodes.length > 0) {
+      nuxt.hook('i18n:registerModule', (register) => {
+        register({
+          langDir: localesDir,
+          locales: localeCodes.map(code => ({
+            code,
+            language: code,
+            file: `${code}.json`,
+          })),
+        })
+      })
+    }
 
     // @ts-expect-error 'i18n' option will exist at this point
     console.debug(`i18n enabled with default locale: ${effectiveOptions.i18n?.default}, ${nuxtOptions.i18n?.defaultLocale}`)

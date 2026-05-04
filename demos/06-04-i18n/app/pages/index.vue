@@ -1,6 +1,6 @@
 <template>
   <div style="padding: 20px;">
-    <div>{{ $t('welcome') }}</div>
+    <div>{{ useT('welcome') }}</div>
     <div style="padding-top: 10px;">
       <button
         v-for="loc in locales"
@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 const { defaultLocale, locale, locales, setLocale } = useI18n()
-console.warn('Default locale:', defaultLocale.value)
+console.warn('Default locale:', defaultLocale)
 console.warn('Current locale:', locale.value)
 console.warn('Available locales:', locales.value)
 </script>
