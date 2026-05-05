@@ -1,4 +1,6 @@
-// This registeres custom error and warn handlers within Nuxt Ignis app.
+// #154 - this should remain in core as the error handler must be globally available
+
+// This plugin registeres custom error and warn handlers within Nuxt Ignis app.
 // You can set NUXT_PUBLIC_IGNIS_ERROR to 'false' to disable this feature.
 
 export default defineNuxtPlugin((nuxtApp) => {

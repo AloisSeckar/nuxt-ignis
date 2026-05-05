@@ -1,3 +1,5 @@
+// #154 - this should remain in core as the logging solution must be globally available
+
 // centralized logging system
 // https://github.com/unjs/consola
 

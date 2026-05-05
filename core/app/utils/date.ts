@@ -1,3 +1,5 @@
+// #154 - this should remain in core as the date utility must be globally available
+
 import { format } from 'date-fns'
 
 /** Wraps `date-fns` format function and re-exports it as Nuxt auto-import util.

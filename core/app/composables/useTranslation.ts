@@ -1,3 +1,6 @@
+// #154 - this should remain in core as useT and useIgnisT must be globally available
+// even if @nuxt-ignis/content module is not active and i18n integration is disabled
+
 import lang from '@/../i18n/locales/en.json'
 
 /**

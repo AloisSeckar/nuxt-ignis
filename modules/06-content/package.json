@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/content",
-  "version": "0.0.48",
+  "version": "0.0.49",
   "description": "Nuxt Ignis module - Content features",
   "publishConfig": {
     "access": "public"
@@ -19,6 +19,10 @@
     "./config": {
       "types": "./dist/runtime/content-config.d.ts",
       "import": "./dist/runtime/content-config.js"
+    },
+    "./pslo": {
+      "types": "./dist/runtime/pslo.d.ts",
+      "import": "./dist/runtime/pslo.js"
     }
   },
   "main": "./dist/module.mjs",
@@ -29,6 +33,9 @@
       ],
       "config": [
         "./dist/runtime/content-config.d.ts"
+      ],
+      "pslo": [
+        "./dist/runtime/pslo.d.ts"
       ]
     }
   },
