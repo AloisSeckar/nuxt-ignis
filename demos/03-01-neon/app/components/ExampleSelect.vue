@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-// @ts-expect-error - #imports are available here
 import { ref, useNeonClient, formatNeonError } from '#imports'
 import type { NeonError } from 'nuxt-neon'
 
