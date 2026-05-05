@@ -53,4 +53,4 @@
 - Env variables follow the `NUXT_PUBLIC_IGNIS_<MODULE>_<KEY>` pattern and override `nuxt.config.ts` values.
 - Configs are merged with `defu()`; runtime gating is done via `useRuntimeConfig().public.ignis.*`.
 - When touching forms/validation/UI/db/content, check both `core/` (layer-level wiring) and `modules/<feature>/` (module implementation).
-- Run `pnpm test-unit` after changes in `core/` or any module.
+- Do not try to verify solution by running tests or starting dev server. Do not build or deploy new versions of core package and/or modules. Only perform code changes and do a summary of them.
