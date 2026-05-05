@@ -12,8 +12,19 @@ To ensure correct functionality, `typescript` [must be included](https://eslint.
 
 `@nuxt/eslint` is a [default feature](/2-2-default-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT=false
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: { eslint: false },
+  },
+})
 ```
 
 The default configuration in Nuxt Ignis' `nuxt.config.ts` is:
@@ -60,9 +71,9 @@ The file introduces following changes from the default linting behavior:
 
 <PackagesReference :packages="[{ name: 'consola', version: '3.4.2' }, { name: 'date-fns', version: '4.1.0' }]" />
 
-Use `NUXT_PUBLIC_IGNIS_LOG_LEVEL` to set level of log messages captured with `consola`. The default value is `info`.
+Use `NUXT_PUBLIC_IGNIS_CONFIG_LOG_LEVEL` (or `ignis.config.log.level` in `nuxt.config.ts`) to set level of log messages captured with `consola`. The default value is `info`.
 
-Possible values are: `fatal`, `error`, `warn`, `log`, `info`, `success`, `debug`, `trace`, `silent`, `verbose`
+Possible values are: `info`, `warn`, `error`, `debug`
 
 Timestamps for logs are formatted using `date-fns` library, which is also available in target apps. You can invoke it like this:
 
@@ -80,7 +91,7 @@ const formattedDate = format(new Date(), formatString)
 
 By default, Nuxt Ignis registers global Vue [error](https://vuejs.org/api/application.html#app-config-errorhandler) and [warn](https://vuejs.org/api/application.html#app-config-warnhandler) handler to process errors and warnings in your app. The error/warn object is sent to `consola` error/warn function. Additional info provided by Vue is also captured in debug mode. Check the [implementation](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/plugins/errorHandler.ts).
 
-If you don't want to rely on the default behavior, you can disable those handlers by setting `NUXT_PUBLIC_IGNIS_ERROR` to `false`.
+If you don't want to rely on the default behavior, you can disable those handlers by setting `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_ERROR` to `false` (or `ignis.config.nuxt.error: false` in `nuxt.config.ts`).
 
 ## Testing
 
@@ -131,8 +142,19 @@ The module is imported as-is with default configuration used. Its behavior can b
 
 You can disable module inclusion by setting the following environment variable:
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_DEFAULT_SECURITY=false
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: { security: false },
+  },
+})
 ```
 
 ## CLI tools

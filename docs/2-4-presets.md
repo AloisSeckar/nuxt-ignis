@@ -58,4 +58,22 @@ You can still use individual settings for `valibot` and  `zod` modules (check [o
 
 ## Warning for duplicates
 
-By default, Nuxt Ignis doesn't recommend mixing preset solutions. If for example both `Neon` and `Supabase` database solutions are used, a warning will be triggered on startup. For use cases when having both variants together is appropriate and desired, you can set `process.env.NUXT_PUBLIC_IGNIS_WARN_DUPLICATES=false` to suppress this warning.
+By default, Nuxt Ignis doesn't recommend mixing preset solutions. If for example both `Neon` and `Supabase` database solutions are used, a warning will be triggered on startup. For use cases when having both variants together is appropriate and desired, you can set `NUXT_PUBLIC_IGNIS_CONFIG_WARN_DUPLICATES=false` (or `ignis.config.warn.duplicates: false` in `nuxt.config.ts`) to suppress this warning.
+
+## `nuxt.config.ts` equivalent
+
+All preset values can also be passed via the `ignis.preset` key in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    preset: {
+      ui: 'nuxt-ui',       // 'nuxt-ui' | 'tailwind' | 'off'
+      db: 'neon',          // 'neon' | 'supabase' | 'off'
+      forms: 'vueform',    // 'vueform' | 'formkit' | 'off'
+      validation: 'zod',   // 'zod' | 'valibot' | 'off'
+    },
+  },
+})
+```

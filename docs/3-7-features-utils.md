@@ -10,8 +10,19 @@ Nuxt Ignis offers following utility options:
 
 `VueUse` integration is a [default feature](/2-2-default-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_DEFAULT_VUEUSE=false
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: { vueuse: false },
+  },
+})
 ```
 
 ## VueEquipment
@@ -22,8 +33,19 @@ NUXT_PUBLIC_IGNIS_DEFAULT_VUEUSE=false
 
 `VueEquipment` integration is an [optional feature](/2-3-optional-features.html) and it is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_EQUIPMENT_ENABLED=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_ENABLED=true
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    utils: { equipment: { enabled: true } },
+  },
+})
 ```
 
 ### Additional options
@@ -32,16 +54,33 @@ Simply enabling `VueEquipment` actually does **nothing** as you also need to spe
 
 There are two config values for this purpose:
 
-- `NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES` - which `Vue Equipment` composables should be imported (coma-separated list)
-- `NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS` - which `Vue Equipment` plugins should be imported (coma-separated list)
+- `NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_COMPOSABLES` (or `ignis.utils.equipment.composables` in `nuxt.config.ts`) - which `Vue Equipment` composables should be imported (coma-separated list)
+- `NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_PLUGINS` (or `ignis.utils.equipment.plugins` in `nuxt.config.ts`) - which `Vue Equipment` plugins should be imported (coma-separated list)
 
 The values must be a coma-separated list of available composables and plugins(see [the docs](https://www.vue.equipment/overview/getting-started.html)).
 
 For example:
 
-```[.env]
-NUXT_PUBLIC_IGNIS_EQUIPMENT_COMPOSABLES=useCountdown
-NUXT_PUBLIC_IGNIS_EQUIPMENT_PLUGINS=MagicNoise, MagicMarquee
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_COMPOSABLES=useCountdown
+NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_PLUGINS=MagicNoise, MagicMarquee
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    utils: {
+      equipment: {
+        enabled: true,
+        composables: 'useCountdown',
+        plugins: 'MagicNoise, MagicMarquee',
+      },
+    },
+  },
+})
 ```
 
 Whitespaces around will be trimmed, so it doesn't matter if you add or omit them.
@@ -54,13 +93,24 @@ Whitespaces around will be trimmed, so it doesn't matter if you add or omit them
 
 `Nuxt SEO` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_SEO=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_CONTENT_SEO_ENABLED=true
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    content: { seo: { enabled: true } },
+  },
+})
 ```
 
 ### Usage notice
 
-If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`, modules from `Nuxt SEO` pack requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce their built-in warning on startup.
+If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR=false` (or `ignis.config.nuxt.ssr: false` in `nuxt.config.ts`), modules from `Nuxt SEO` pack requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce their built-in warning on startup.
 
 **NOTE**: If you don't use Nuxt Ignis configuration and set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.
 
@@ -72,8 +122,19 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_SSR=false`,
 
 `Nuxt Auth Utils` is a [default feature](/2-2-default-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_DEFAULT_AUTH=false
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: { auth: false },
+  },
+})
 ```
 
 ## Nuxt Social Share
@@ -84,13 +145,24 @@ NUXT_PUBLIC_IGNIS_DEFAULT_AUTH=false
 
 `Nuxt Social Share` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_CONTENT_SOCIAL_ENABLED=true
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    content: { social: { enabled: true, url: 'https://example.com' } },
+  },
+})
 ```
 
 ### Additional options
 
-- `NUXT_PUBLIC_IGNIS_SOCIAL_URL` - this is a **required** option that defines the URL to be shared on social networks. Set it to your application's URL or any other relevant link. It falls back to `http://nuxt-ignis.com` if not set manually and a warning is produced to the console.
+- `NUXT_PUBLIC_IGNIS_CONTENT_SOCIAL_URL` (or `ignis.content.social.url` in `nuxt.config.ts`) - this is a **required** option that defines the URL to be shared on social networks. Set it to your application's URL or any other relevant link. It falls back to `http://nuxt-ignis.com` if not set manually and a warning is produced to the console.
 
 ## Magic Regexp
 
@@ -100,6 +172,17 @@ NUXT_PUBLIC_IGNIS_SOCIAL_ENABLED=true
 
 `Magic Regexp` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_REGEXP=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_UTILS_REGEXP_ENABLED=true
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    utils: { regexp: { enabled: true } },
+  },
+})
 ```

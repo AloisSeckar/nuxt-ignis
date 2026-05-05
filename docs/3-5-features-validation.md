@@ -10,14 +10,27 @@ Nuxt Ignis offers two alternatives for schema validation:
 
 `Zod` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_ZOD=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_VALIDATION_ZOD=true
 ```
 
 Or [Validation preset](/2-3-optional-features.html#validation-preset):
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=zod
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    validation: { zod: true },
+    // or via preset:
+    // preset: { validation: 'zod' },
+  },
+})
 ```
 
 ### Usage notice
@@ -54,14 +67,27 @@ const isValid: boolean = await isValidByZod(ZodSchema, object)
 
 `Valibot` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_VALIBOT=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_VALIDATION_VALIBOT=true
 ```
 
 Or [Validation preset](/2-3-optional-features.html#validation-preset):
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=valibot
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    validation: { valibot: true },
+    // or via preset:
+    // preset: { validation: 'valibot' },
+  },
+})
 ```
 
 ### Usage notice

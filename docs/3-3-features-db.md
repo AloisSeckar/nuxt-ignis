@@ -12,14 +12,27 @@ The [`nuxt-neon`](https://github.com/AloisSeckar/nuxt-neon) module integrates `N
 
 `Neon` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_NEON=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_DB_NEON_ENABLED=true
 ```
 
 Or [DB preset](/2-3-optional-features.html#db-preset):
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_PRESET_DB=neon
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    db: { neon: { enabled: true } },
+    // or via preset:
+    // preset: { db: 'neon' },
+  },
+})
 ```
 
 ### Usage notice
@@ -43,14 +56,27 @@ The integration is provided via [`@nuxtjs/supabase` module](https://supabase.nux
 
 `Supabase` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_SUPABASE_ENABLED=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_DB_SUPABASE_ENABLED=true
 ```
 
 Or [DB preset](/2-3-optional-features.html#db-preset):
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_PRESET_DB=supabase
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    db: { supabase: { enabled: true } },
+    // or via preset:
+    // preset: { db: 'supabase' },
+  },
+})
 ```
 
 ### Usage notice
@@ -62,4 +88,4 @@ To configure `Supabase` connection you need to provide following env variables:
 
 For details and more config options see the [`@nuxtjs/supabase` docs](https://supabase.nuxtjs.org/getting-started/introduction).
 
-By default, module is run with `types: false` option. If you want to use [Supabase types](https://supabase.nuxtjs.org/getting-started/types), pass the string path to your types definition file via `NUXT_PUBLIC_IGNIS_SUPABASE_TYPES`.
+By default, module is run with `types: false` option. If you want to use [Supabase types](https://supabase.nuxtjs.org/getting-started/types), pass the string path to your types definition file via `NUXT_PUBLIC_IGNIS_DB_SUPABASE_TYPES` (or `ignis.db.supabase.types` in `nuxt.config.ts`).

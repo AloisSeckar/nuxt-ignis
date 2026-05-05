@@ -2,7 +2,33 @@
 
 It is possible to select which Nuxt modules and other features will be activated in your project. All dependencies are being downloaded into local `node_modules`, but Nuxt build process will ensure only relevant packages will be bundled for production.
 
-The "magic" is done via environment variables, which you can set in your `.env` file or directly in your hosting provider's settings.
+There are **two equivalent ways** to configure Nuxt Ignis:
+
+1. **`ignis` key in `nuxt.config.ts`** - pass a typed configuration object directly to the Nuxt config. This is a bit more convenient way, but creates rather "static" state that is fixed on build time and requires code changes to adjust.
+2. **Environment variables** - set `NUXT_PUBLIC_IGNIS_*` values in your `.env` file or directly in your hosting provider's settings. This is more flexible for different environments.
+
+Both approaches can be even mixed. When the same option is provided in both places, **environment variables take precedence** over values from `nuxt.config.ts` (this allows you to override per-environment without editing the static config). 
+
+When nothing is provided, Nuxt Ignis falls back to its default settings.
+
+For example, disabling ESLint can be expressed in either of these ways:
+
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT=false
+```
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: {
+      eslint: false,
+    },
+  },
+})
+```
+
+The full structure of the `ignis` key mirrors the env variable namespaces (`NUXT_PUBLIC_IGNIS_<SECTION>_<KEY>` &harr; `ignis.<section>.<key>`). See [full reference](/2-5-full-reference) for the complete list.
 
 ## The big picture
 
@@ -26,7 +52,7 @@ This principle is addressed as _"defu-merge"_ throughout the docs and in source 
 
 ### Runtime config
 
-All existing config options are also defined as [public runtime config values](https://nuxt.com/docs/guide/directory-structure/nuxt.config#runtime-config) in a standard Nuxt fashion - i.e. `NUXT_PUBLIC_IGNIS_SSR` can be accessed as `useRuntimeConfig().public.ignis.ssr`. While this doesn't affect the build process itself, it can be used for runtime checks if certain feature is enabled or not.
+All existing config options are also defined as [public runtime config values](https://nuxt.com/docs/guide/directory-structure/nuxt.config#runtime-config) in a standard Nuxt fashion - i.e. `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR` (or `ignis.config.nuxt.ssr` in `nuxt.config.ts`) can be accessed as `useRuntimeConfig().public.ignis.config.nuxt.ssr`. While this doesn't affect the build process itself, it can be used for runtime checks if certain feature is enabled or not.
 
 There are several examples of such usage in Nuxt Ignis codebase, starting in [`app.vue` file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/app.vue).
 

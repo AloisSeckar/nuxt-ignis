@@ -10,8 +10,19 @@ Nuxt Ignis contains following customizable features related to content generatio
 
 `Nuxt Content` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_CONTENT=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_CONTENT_CONTENT_ENABLED=true
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    content: { content: { enabled: true } },
+  },
+})
 ```
 
 ### Usage notice
@@ -55,14 +66,25 @@ If you need backward compatibility with older Node versions, you can use `conten
 
 `Nuxt I18N` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_CONTENT_I18N_ENABLED=true
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    content: { i18n: { enabled: true } },
+  },
+})
 ```
 
 ### Additional options
 
 - All `.json` files with messages in `@/i18n/locales` folder will be auto-scanned and registered as available locales.
-- You can select default language locale via `NUXT_PUBLIC_IGNIS_CONTENT_I18N_LOCALE` (fallbacks to `en` if not set).
+- You can select default language locale via `NUXT_PUBLIC_IGNIS_CONTENT_I18N_DEFAULT` (or `ignis.content.i18n.default` in `nuxt.config.ts`). Falls back to `en` if not set.
 - For other configuration refer to [module docs](https://i18n.nuxtjs.org/docs/getting-started/vue-i18n).
 
 ### Additional utils
@@ -85,10 +107,21 @@ Nuxt Ignis allows simple integration of this function for more convenience.
 
 `elrh-pslo` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_PSLO_ENABLED=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_CONTENT_PSLO_ENABLED=true
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    content: { pslo: { enabled: true } },
+  },
+})
 ```
 
 ### Additional options
 
-- `NUXT_PUBLIC_IGNIS_PSLO_CONTENT` - if both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function
+- `NUXT_PUBLIC_IGNIS_CONTENT_PSLO_CONTENT` (or `ignis.content.pslo.content` in `nuxt.config.ts`) - if both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function

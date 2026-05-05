@@ -10,8 +10,19 @@ Following modules helps you with your app performance:
 
 `@nuxt/fonts` is a [default feature](/2-2-default-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_DEFAULT_FONTS=false
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: { fonts: false },
+  },
+})
 ```
 
 ## Nuxt Image
@@ -22,8 +33,19 @@ NUXT_PUBLIC_IGNIS_DEFAULT_FONTS=false
 
 `@nuxt/image` is a [default feature](/2-2-default-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_DEFAULT_IMAGE=false
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: { image: false },
+  },
+})
 ```
 
 **Note**: Nuxt Ignis uses [`@nuxt/image` v2](https://nuxt.com/blog/nuxt-image-v2) which includes some breaking changes. Please refer to the [migration guide](https://image.nuxt.com/migration/v2) if you experience troubles after switching.
@@ -36,8 +58,19 @@ NUXT_PUBLIC_IGNIS_DEFAULT_IMAGE=false
 
 `@nuxt/scripts` is a [default feature](/2-2-default-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_DEFAULT_SCRIPTS=false
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: { scripts: false },
+  },
+})
 ```
 
 ## Pinia
@@ -48,6 +81,17 @@ NUXT_PUBLIC_IGNIS_DEFAULT_SCRIPTS=false
 
 `pinia` is a [default feature](/2-2-default-features.html) and it is **enabled** by default. To disable it, you can use following environment variable:
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_DEFAULT_PINIA=false
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: { pinia: false },
+  },
+})
 ```

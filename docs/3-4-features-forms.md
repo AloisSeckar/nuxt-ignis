@@ -12,14 +12,27 @@ The integration is provided via [`@vueform/nuxt` module](https://vueform.com/doc
 
 `Vueform` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_VUEFORM=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_FORMS_VUEFORM_ENABLED=true
 ```
 
 Or [Forms preset](/2-3-optional-features.html#forms-preset):
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_PRESET_FORMS=vueform
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    forms: { vueform: { enabled: true } },
+    // or via preset:
+    // preset: { forms: 'vueform' },
+  },
+})
 ```
 
 ### Usage notice
@@ -46,14 +59,27 @@ The integration is provided via [`@formkit/nuxt` module](https://formkit.com/get
 
 `Formkit` integration is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_FORMKIT=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_ENABLED=true
 ```
 
 Or [Forms preset](/2-3-optional-features.html#forms-preset):
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_PRESET_FORMS=formkit
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    forms: { formkit: { enabled: true } },
+    // or via preset:
+    // preset: { forms: 'formkit' },
+  },
+})
 ```
 
 ### Usage notice
@@ -74,5 +100,5 @@ Referencing config like this allows to pass in a custom config that will be [def
 
 ### Additional options
 
-- you can select default language locale via `NUXT_PUBLIC_IGNIS_FORMKIT_LOCALE`
-- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/utils/config/formkit.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMKIT_CONFIG`
+- you can select default language locale via `NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_DEFAULT` (or `ignis.forms.formkit.default` in `nuxt.config.ts`)
+- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/utils/config/formkit.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_CONFIG` (or `ignis.forms.formkit.config` in `nuxt.config.ts`)

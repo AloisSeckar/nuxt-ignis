@@ -182,7 +182,7 @@ Ways to fix this:
 
 1) Add `<NuxtPage />` into your existing `/app/app.vue` file manually
 2) Use CLI tool to [scaffold Nuxt Ignis default `/app/app.vue`](/3-12-features-cli#set-app-vue) into your project
-3) Set `NUXT_PUBLIC_IGNIS_PAGES=false` in your `.env` file to declare your project is not using pages (you will lose access to built-in pages)
+3) Set `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_PAGES=false` in your `.env` file (or `ignis: { config: { nuxt: { pages: false } } }` in `nuxt.config.ts`) to declare your project is not using pages (you will lose access to built-in pages)
 
 We are currently [investigating ways](https://github.com/AloisSeckar/nuxt-ignis/issues/133) to improve this experience in future releases.
 

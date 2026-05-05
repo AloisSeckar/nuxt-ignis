@@ -44,26 +44,39 @@ export default defineNuxtConfig({
 
 Aside from that, some config options can be controlled via **special Nuxt Ignis environment variables** as well. There is a reason behind that. While the direct edits to `nuxt.config.ts` are always possible, this allows us to provide out-of-the-box solutions for some scenarios.
 
-For example, disabling SSR has an impact on [`Nuxt SEO`](/3-7-features-utils.html#nuxt-seo) module as some of its parts cannot work without SSR. If you set `ssr: false` in `nuxt.config.ts`, you would need additional config to resolve the warnings. But with `NUXT_PUBLIC_IGNIS_SSR=false` we provide, Nuxt Ignis handles this automatically, because it the value be accessed during evaluating features for the final build and process can act accordingly.
+For example, disabling SSR has an impact on [`Nuxt SEO`](/3-7-features-utils.html#nuxt-seo) module as some of its parts cannot work without SSR. If you set `ssr: false` in `nuxt.config.ts`, you would need additional config to resolve the warnings. But with `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR=false` (or `ignis.config.nuxt.ssr: false` in `nuxt.config.ts`) we provide, Nuxt Ignis handles this automatically, because it the value be accessed during evaluating features for the final build and process can act accordingly.
 
-Currently, following Nuxt config options can be controlled via environment variables:
+Currently, following Nuxt config options can be controlled via environment variables (or via the `ignis` key in `nuxt.config.ts`):
 
 ### SSR
 
-- `NUXT_PUBLIC_IGNIS_SSR` - set to `false` to disable SSR (results in `ssr: false` in Nuxt Config)
+- `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR` / `ignis.config.nuxt.ssr` - set to `false` to disable SSR (results in `ssr: false` in Nuxt Config)
 
 ### Pages
 
-- `NUXT_PUBLIC_IGNIS_PAGES` - set to `false` to disable multiple pages in simple projects (results in `pages: false` in Nuxt Config)
+- `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_PAGES` / `ignis.config.nuxt.pages` - set to `false` to disable multiple pages in simple projects (results in `pages: false` in Nuxt Config)
 
 ### CSS
 
-You can provide paths to your custom CSS files via `NUXT_PUBLIC_IGNIS_CSS` environment variable. The values must be valid CSS file paths delimited by commas (`,`). Nuxt aliases (eg. `@` or `~`) are supported. Whitespaces around will be trimmed, so it doesn't matter if you add or omit them.
+You can provide paths to your custom CSS files via `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_CSS` environment variable (or `ignis.config.nuxt.css` in `nuxt.config.ts`). The values must be valid CSS file paths delimited by commas (`,`). Nuxt aliases (eg. `@` or `~`) are supported. Whitespaces around will be trimmed, so it doesn't matter if you add or omit them.
 
 For example:
 
-```[.env]
-NUXT_PUBLIC_IGNIS_CSS='@/assets/custom1.css, @/assets/custom2.css'
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_CONFIG_NUXT_CSS='@/assets/custom1.css, @/assets/custom2.css'
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    config: {
+      nuxt: { css: '@/assets/custom1.css, @/assets/custom2.css' },
+    },
+  },
+})
 ```
 
 Provided values will be [defu-merged](/2-1-configuration.html#defu-merge) into `nuxt.config.ts` under `css` property:
@@ -101,8 +114,19 @@ Currently, following HTML attributes can be set:
 
 Environment variable:
 
-```[.env]
-NUXT_PUBLIC_IGNIS_HTML_LANG=<LANG_CODE>
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_CONFIG_HTML_LANG=<LANG_CODE>
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    config: { html: { lang: '<LANG_CODE>' } },
+  },
+})
 ```
 
 Will set value `<LANG_CODE>` into [HTML lang attribute](https://www.w3schools.com/tags/ref_language_codes.asp) of your app. According to the [HTML specification](https://html.spec.whatwg.org/multipage/dom.html#attr-lang), the value should be a valid [BCP 47 tag](https://www.rfc-editor.org/rfc/rfc5646.html).
@@ -115,8 +139,19 @@ If no custom value is provided, the default is `en`.
 
 Environment variable:
 
-```[.env]
-NUXT_PUBLIC_IGNIS_HTML_TITLE=<YOUR APP TITLE>
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_CONFIG_HTML_TITLE=<YOUR APP TITLE>
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    config: { html: { title: '<YOUR APP TITLE>' } },
+  },
+})
 ```
 
 Will set value `<YOUR APP TITLE>` into [HTML title tag](https://www.w3schools.com/tags/tag_title.asp) of your app.

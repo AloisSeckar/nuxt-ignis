@@ -25,6 +25,26 @@ Pre-defined set of Nuxt modules is being automatically included by default. You 
 - use `NUXT_PUBLIC_IGNIS_DEFAULT_VUEUSE=false` to disable [`@vueuse/nuxt`](/3-7-features-utils.html#vueuse)
 - use `NUXT_PUBLIC_IGNIS_DEFAULT_PINIA=false` to disable [`@pinia/nuxt`](/3-7-features-utils.html#pinia)
 
+The above can also be expressed via the `ignis` key in `nuxt.config.ts` like this:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: {
+      eslint: false,
+      fonts: false,
+      image: false,
+      scripts: false,
+      security: false,
+      auth: false,
+      vueuse: false,
+      pinia: false,
+    },
+  },
+})
+```
+
 ## More info
 
 - See details about technologies available via Nuxt Ignis in [features section](/3-1-features).

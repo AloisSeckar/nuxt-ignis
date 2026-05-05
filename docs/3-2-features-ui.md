@@ -7,8 +7,19 @@ There is a default CSS file [`ignis.css`](https://github.com/AloisSeckar/nuxt-ig
 
 You can disable its inclusion by setting the following environment variable:
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_DEFAULT_CSS=false
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    default: { css: false },
+  },
+})
 ```
 
 If you want to do small adjustments or add more default rules, you can use the CLI tool to [scaffold the default file](/3-12-features-cli.html#set-css) into your project.
@@ -21,14 +32,27 @@ If you want to do small adjustments or add more default rules, you can use the C
 
 `Nuxt UI` is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_UI=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_UI_UI=true
 ```
 
 Or [UI preset](/2-3-optional-features.html#ui-preset):
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_PRESET_UI=nuxt-ui
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    ui: { ui: true },
+    // or via preset:
+    // preset: { ui: 'nuxt-ui' },
+  },
+})
 ```
 
 ### Usage notice
@@ -52,14 +76,27 @@ Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt#cs
 
 `Tailwind CSS` is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_TAILWIND=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_UI_TAILWIND=true
 ```
 
 Or [UI preset](/2-3-optional-features.html#ui-preset):
 
-```dotenv
+```dotenv [.env]
 NUXT_PUBLIC_IGNIS_PRESET_UI=tailwind
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    ui: { tailwind: true },
+    // or via preset:
+    // preset: { ui: 'tailwind' },
+  },
+})
 ```
 
 **NOTE:** If `@nuxt/ui` is enabled, this setting is <span style="color: red">**ignored**</span> as `Tailwind CSS` is already included.
@@ -90,8 +127,19 @@ Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt#cs
 
 Open Props are **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_OPENPROPS=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_UI_OPENPROPS=true
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    ui: { openprops: true },
+  },
+})
 ```
 
 ### Usage notice
@@ -118,8 +166,19 @@ Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt#cs
 
 `Nuxt Charts` integration is an [optional module](/2-3-optional-features.html#optional-modules) and it is **disabled** by default. To enable it, you can use following environment variable:
 
-```dotenv
-NUXT_PUBLIC_IGNIS_CHARTS=true
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_UI_CHARTS=true
+```
+
+Or equivalently in `nuxt.config.ts`:
+
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  extends: ['nuxt-ignis'],
+  ignis: {
+    ui: { charts: true },
+  },
+})
 ```
 
 ### Usage notice
@@ -130,6 +189,6 @@ You might also need to explicitly add `@unovis/ts` dependency in your `package.j
 
 ## Custom CSS
 
-If you have custom CSS files you want to include in your project, you can do so by defining a comma-delimited array of paths as a value for the `NUXT_PUBLIC_IGNIS_CSS` environment variable.
+If you have custom CSS files you want to include in your project, you can do so by defining a comma-delimited array of paths as a value for the `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_CSS` environment variable (or `ignis.config.nuxt.css` in `nuxt.config.ts`).
 
 Refer to [this page](/3-10-features-nuxt#css) for more details.

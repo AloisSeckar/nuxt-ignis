@@ -12,16 +12,16 @@ Configuration:
 
 ```[.env]
 # general HTML settings
-NUXT_PUBLIC_IGNIS_HTML_LANG=en
+NUXT_PUBLIC_IGNIS_CONFIG_HTML_LANG=en
 
 # disable Ignis default CSS
 NUXT_PUBLIC_IGNIS_DEFAULT_CSS=false
 
 # enable Tailwind CSS
-NUXT_PUBLIC_IGNIS_TAILWIND=true
+NUXT_PUBLIC_IGNIS_UI_TAILWIND=true
 
 # enable nuxt-i18n with custom config file
-NUXT_PUBLIC_IGNIS_I18N_ENABLED=true
+NUXT_PUBLIC_IGNIS_CONTENT_I18N_ENABLED=true
 ```
 
 <details>
@@ -65,8 +65,8 @@ Configuration:
 
 ```[.env]
 # general HTML settings
-NUXT_PUBLIC_IGNIS_HTML_LANG=cs
-NUXT_PUBLIC_IGNIS_HTML_TITLE=Alois-Seckar.cz
+NUXT_PUBLIC_IGNIS_CONFIG_HTML_LANG=cs
+NUXT_PUBLIC_IGNIS_CONFIG_HTML_TITLE=Alois-Seckar.cz
 
 # UI preset
 NUXT_PUBLIC_IGNIS_PRESET_UI=nuxt-ui
@@ -119,15 +119,15 @@ Configuration:
 
 ```[.env]
 # general HTML settings
-NUXT_PUBLIC_IGNIS_HTML_LANG=cs
+NUXT_PUBLIC_IGNIS_CONFIG_HTML_LANG=cs
 
 # UI preset
 NUXT_PUBLIC_IGNIS_PRESET_UI='tailwind'
 
 # Nuxt Content with "pslo" integration
-NUXT_PUBLIC_IGNIS_CONTENT=true
-NUXT_PUBLIC_IGNIS_PSLO_ENABLED=true
-NUXT_PUBLIC_IGNIS_PSLO_CONTENT=true
+NUXT_PUBLIC_IGNIS_CONTENT_CONTENT_ENABLED=true
+NUXT_PUBLIC_IGNIS_CONTENT_PSLO_ENABLED=true
+NUXT_PUBLIC_IGNIS_CONTENT_PSLO_CONTENT=true
 ```
 
 <details>
