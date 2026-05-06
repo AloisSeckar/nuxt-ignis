@@ -182,5 +182,13 @@ export default defineNuxtModule<IgnisOptions>({
     if (ignisOpts.config?.warn?.duplicates) {
       checkForDuplicateModules(ignisOpts)
     }
+
+    // temporary fix for Nuxt 4.4.4 regression
+    // see https://github.com/nuxt/nuxt/issues/34957#issuecomment-4355775463
+    // TODO remove after patched version Nuxt 4.4.5 is integrated
+    if (ignisOpts.config?.nuxt?.ssr === false) {
+      nuxt.options.experimental ||= {} as NuxtOptions['experimental']
+      nuxt.options.experimental.viteEnvironmentApi = true
+    }
   },
 })
