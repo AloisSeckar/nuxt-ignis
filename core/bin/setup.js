@@ -93,23 +93,23 @@ export async function nuxtIgnisSetup(autoRun = false) {
       try {
         // allow related build scripts
         await updateJsonFile('package.json', 'pnpm', {
-          onlyBuiltDependencies: [
-            '@parcel/watcher',
-            '@tailwindcss/oxide',
-            'esbuild',
-            'maplibre-gl',
-            'puppeteer',
-            'sharp',
-            'unrs-resolver',
-            'vue-demi',
-          ],
+          allowBuilds: {
+            '@parcel/watcher': true,
+            '@tailwindcss/oxide': true,
+            'esbuild': true,
+            'maplibre-gl': true,
+            'puppeteer': true,
+            'sharp': true,
+            'unrs-resolver': true,
+            'vue-demi': true,
+          },
         }, true)
       } catch (error) {
         console.error('Error adjusting pnpm settings:\n', error.message)
       }
       // set pnpm as package manager
       try {
-        await updateJsonFile('package.json', 'packageManager', 'pnpm@10.33.0', true)
+        await updateJsonFile('package.json', 'packageManager', 'pnpm@11.0.8', true)
       } catch (error) {
         console.error('Error setting packageManager:\n', error.message)
       }

@@ -108,15 +108,15 @@ minimumReleaseAgeExclude:
   # manually checked one-time exceptions
   - ufo
 
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - '@tailwindcss/oxide'
-  - esbuild
-  - maplibre-gl
-  - puppeteer
-  - sharp
-  - unrs-resolver
-  - vue-demi
+allowBuilds:
+  '@parcel/watcher': true
+  '@tailwindcss/oxide': true
+  esbuild: true
+  maplibre-gl: true
+  puppeteer: true
+  sharp: true
+  unrs-resolver: true
+  vue-demi: true
 
 overrides:
   '@nuxt/test-utils': ^4.0.2

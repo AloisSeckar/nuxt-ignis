@@ -27,7 +27,7 @@
   "type": "module",
   "main": "./nuxt.config.ts",
   "engines": {
-    "node": "^20.19.0 || >=22.12.0"
+    "node": ">=22.12.0"
   },
   "bin": {
     "nuxt-ignis": "./bin/cli.js"
@@ -69,5 +69,5 @@
     "vue": "catalog:",
     "vue-router": "catalog:"
   },
-  "packageManager": "pnpm@10.33.0"
+  "packageManager": "pnpm@11.0.8"
 }

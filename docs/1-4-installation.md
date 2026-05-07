@@ -54,30 +54,16 @@ The CLI command will perform following steps. You can also do them manually if y
 Those dependencies are already included in `nuxt-ignis`. Removing is recommended to avoid version clashes and potential issues. If you need to rely on specific versions, you are advised to use [deduping](https://www.youtube.com/watch?v=TTlgfMPFYwM).
 </details>
 
-3) If `pnpm` is used (will be detected from the command used), set of `onlyBuiltDependencies` and `packageManager` entries will be added into `package.json`:
+3) If `pnpm` is used. optionally add `packageManager` entry into `package.json`:
 
 ```json [package.json]
 {
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "@parcel/watcher",
-      "@tailwindcss/oxide",
-      "esbuild",
-      "maplibre-gl",
-      "puppeteer",
-      "sharp",
-      "unrs-resolver",
-      "vue-demi"
-    ]
-  },
-  "packageManager": "pnpm@10.33.0"
+  "packageManager": "pnpm@11.0.8"
 }
 ```
 
 <details>
 <summary>Reason why</summary>
-
-Without `onlyBuiltDependencies`, `pnpm` will block any scripts that are being executed during the installation of these packages. This may lead to errors and inconsistencies. You will be still prompted to allow them manually using `pnpm approve-builds`. This is the way to ease things up. Check more in the [pnpm docs](https://pnpm.io/cli/approve-builds).
 
 The `packageManager` tries to ensure same `pnpm` version is used as during the development of testing `nuxt-ignis`. However, extra setup might be required. Check more in the [Node.js docs](https://nodejs.org/download/release/v22.11.0/docs/api/packages.html#packagemanager).
 </details>
@@ -92,16 +78,28 @@ The `packageManager` tries to ensure same `pnpm` version is used as during the d
 }
 ```
 
-5) If you use `pnpm`, create or adjust `pnpm-workspace.yaml` file to contain following line:
+5) If you use `pnpm`, create or adjust `pnpm-workspace.yaml` file to contain following lines:
 
 ```yaml [pnpm-workspace.yaml]
 shamefully-hoist: true
+
+allowBuilds:
+  '@parcel/watcher': true
+  '@tailwindcss/oxide': true
+  esbuild: true
+  maplibre-gl: true
+  puppeteer: true
+  sharp: true
+  unrs-resolver: true
+  vue-demi: true
 ```
 
 <details>
 <summary>Reason why</summary>
 
-This is required to ensure `pnpm` will hoist all dependences from `nuxt-ignis` without you having to specify them in your own `package.json`. It is also recommened practice for Nuxt apps managed by `pnpm` in general. Check more in the [pnpm docs](https://pnpm.io/npmrc#shamefully-hoist).
+Setting `shamefully-hoist` is **required** to ensure `pnpm` will hoist all dependences from `nuxt-ignis` without you having to specify them in your own `package.json`. It is also recommened practice for Nuxt apps managed by `pnpm` in general. Check more in the [pnpm docs](https://pnpm.io/npmrc#shamefully-hoist).
+
+Without `allowBuilds` entries set to `true`, `pnpm` will block any scripts that are being executed during the installation of these packages. This may lead to errors and inconsistencies. You will be still prompted to allow them manually using `pnpm approve-builds`. This is the way to ease things up. Check more in the [pnpm docs](https://pnpm.io/cli/approve-builds).
 </details>
 
 6) Create or adjust `.gitignore` file to exclude Nuxt Ignis-related auxiliary files:

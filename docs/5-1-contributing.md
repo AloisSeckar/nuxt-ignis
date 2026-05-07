@@ -20,7 +20,7 @@ Necessary prerequisite is to have Node.js installed on your machine. At least `v
 
 Recommended IDE is [Visual Studio Code](https://code.visualstudio.com/).
 
-Recommended package manager is [pnpm](https://pnpm.io/).
+Recommended package manager is [pnpm](https://pnpm.io/) (version `11.0.8` is used across the project).
 
 ## Package Management
 
@@ -47,28 +47,28 @@ catalog:
 
 # https://pnpm.io/settings#minimumreleaseage
 # new packages cannot be installed earlier than one week after release
-minimumReleaseAge: 10080
+minimumReleaseAge: 4320
 # trusted and verified packages may be excluded using following list
 minimumReleaseAgeExclude:
 # - package-name
 
-# https://pnpm.io/settings#onlybuiltdependencies
+# https://pnpm.io/settings#allowBuilds
 # explicitly allowed post-install scripts
 # TODO revise via https://github.com/AloisSeckar/nuxt-ignis/issues/150
-onlyBuiltDependencies:
-  - '@parcel/watcher'
-  - '@tailwindcss/oxide'
-  - esbuild
-  - maplibre-gl
-  - puppeteer
-  - sharp
-  - unrs-resolver
-  - vue-demi
+allowBuilds:
+  '@parcel/watcher': true
+  '@tailwindcss/oxide': true
+  esbuild: true
+  maplibre-gl: true
+  puppeteer: true
+  sharp: true
+  unrs-resolver: true
+  vue-demi: true
 
 # https://pnpm.io/settings#overrides
 # specific package versions (mostly temporary because known vulnerabilities)
 overrides:
-  vite: npm:vite@8.0.0-beta.0
+# - package-name
 
 # https://pnpm.io/settings#trustpolicy
 # packages cannot change from trusted to untrusted
