@@ -1,5 +1,5 @@
 import { defineNuxtModule, useLogger } from 'nuxt/kit'
-import type { PublicRuntimeConfig } from 'nuxt/schema'
+import type { NuxtOptions, PublicRuntimeConfig } from 'nuxt/schema'
 
 // shared augmentable interface for all @nuxt-ignis/* submodules
 // submodules extending this via:
@@ -44,13 +44,27 @@ export interface IgnisConfigOptions {
   }
 }
 
+// this module has no configKey of its own; the actual user-provided config
+// lives under `ignis.config` (configKey of the sibling 02-features module),
+// which is already normalized via `applyEnv()` in its moduleDependencies hook
+// before this setup runs.
+export type NuxtIgnisConfigOptions = Partial<NuxtOptions> & {
+  ignis: {
+    config?: IgnisConfigOptions
+  }
+}
+
 const logger = useLogger('ignis/config')
 
 export default defineNuxtModule<IgnisConfigOptions>({
   meta: {
     name: 'ignis/config',
   },
-  setup(options, nuxt) {
+  setup(_options, nuxt) {
+    logger.debug('Nuxt Ignis Config module setup called!')
+
+    const options = (nuxt.options as NuxtIgnisConfigOptions).ignis?.config ?? {}
+
     // inject runtime config values
     const runtimeConfig = nuxt.options.runtimeConfig.public as PublicRuntimeConfig & { ignis: { config?: IgnisConfigOptions } }
     runtimeConfig.ignis ??= {}
@@ -68,6 +82,24 @@ export default defineNuxtModule<IgnisConfigOptions>({
     runtimeConfig.ignis.config.warn ??= {}
     runtimeConfig.ignis.config.warn.duplicates ??= options.warn?.duplicates ?? true
 
-    logger.debug('Nuxt Ignis Config module setup called!')
+    // additional processing
+
+    // apply Nuxt config options, if they differ from defaults
+    if (options.nuxt?.ssr === false) {
+      nuxt.options.ssr = false
+    }
+    if (options.nuxt?.pages === false) {
+      nuxt.options.pages = false
+    }
+    if (options.nuxt?.css) {
+      nuxt.options.css = options.nuxt.css.split(',').map(path => path.trim())
+    }
+
+    // apply basic HTML options
+    nuxt.options.app.head ||= {}
+    nuxt.options.app.head.title = runtimeConfig.ignis.config.html.title
+    nuxt.options.app.head.htmlAttrs = {
+      ...(nuxt.options.app.head.htmlAttrs || {}), lang: runtimeConfig.ignis.config.html.lang,
+    }
   },
 })
