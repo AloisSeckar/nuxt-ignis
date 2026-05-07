@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Ignis Nuxt Charts demo</h1>
+    <h1>Nuxt Ignis demo - Nuxt Charts</h1>
     <DemoLineChart />
   </div>
 </template>

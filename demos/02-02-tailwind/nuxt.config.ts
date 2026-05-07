@@ -6,9 +6,15 @@ export default defineNuxtConfig({
   ],
 
   // 02-02-tailwind - how to use Tailwind CSS as the UI preset
+  // + using "css" option for custom CSS files
   ignis: {
     preset: {
       ui: 'tailwind',
+    },
+    config: {
+      nuxt: {
+        css: '~/assets/custom.css',
+      },
     },
   },
 })

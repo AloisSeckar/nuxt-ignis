@@ -6,6 +6,8 @@
 html {
   /* https://open-props.style/#gradients */
   background: var(--gradient-18);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 body {
