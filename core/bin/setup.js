@@ -14,12 +14,14 @@ import {
  * The script will first ask whether to run in "auto" mode (no prompts, force = true) or "manual" mode (with prompts, force = false). If `autoRun = true` is passed, no prompt will be shown.
  *
  * The script will:
- *  1) add `nuxt-ignis` into `package.json` dependencies, remove `nuxt`, `vue` and `vue-router` if present and adjust `pnpm` settings if `pnpm` is used
- *  2) add `extends: ['nuxt-ignis']` to `nuxt.config.ts`
- *  3) create/update `pnpm-workspace.yaml` file (only if pnpm is used)
- *  4) update `.gitignore` file
- *  5) create default `vitest.config.ts` file and add test-related scripts into `package.json`
- *  6) clear node_modules and lock file(s)
+ *  1) add `nuxt-ignis` into `package.json` dependencies
+ *  2) remove `nuxt`, `vue` and `vue-router` if present
+ *  3) and `packageManager` setting (only if pnpm is used)
+ *  4) create/update `pnpm-workspace.yaml` file (only if pnpm is used)
+ *  5) add `extends: ['nuxt-ignis']` to `nuxt.config.ts`
+ *  6) update `.gitignore` file
+ *  7) create default `vitest.config.ts` file and add test-related scripts into `package.json`
+ *  8) clear node_modules and lock file(s)
  */
 export async function nuxtIgnisSetup(autoRun = false) {
   showMessage('NUXT IGNIS SETUP')
@@ -31,7 +33,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
 
   const packageManager = getPackageManager()
 
-  // 1.1 - add nuxt-ignis dependency
+  // 1 - add nuxt-ignis dependency to package.json
   try {
     await updateJsonFile('package.json', 'dependencies', { 'nuxt-ignis': '0.5.3' },
       isAutoRun, 'This will add \'nuxt-ignis\' dependency to your \'package.json\'. Proceed?')
@@ -39,7 +41,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
     console.error('Error adding \'nuxt-ignis\' dependency:\n', error.message)
   }
 
-  // 1.2 - remove now obsolete nuxt, vue and vue-router
+  // 2 - remove now obsolete nuxt, vue and vue-router from package.json
   const removeDeps = isAutoRun || await promptUser('As \'nuxt-ignis\' provides \'nuxt\', \'vue\' and \'vue-router\' dependencies out of the box, do you want to remove them from your \'package.json\' to avoid duplications and possible version clashes?')
   if (removeDeps) {
     if (hasJsonKey('package.json', 'dependencies.nuxt')) {
@@ -86,27 +88,10 @@ export async function nuxtIgnisSetup(autoRun = false) {
     }
   }
 
-  // 1.3 - adjust pnpm settings
+  // 3 - adjust pnpm settings in package.json (only if pnpm is used)
   if (packageManager === 'pnpm') {
-    const pnpmSettings = isAutoRun || await promptUser('This will adjust pnpm settings in your \'package.json\'. Proceed?')
+    const pnpmSettings = isAutoRun || await promptUser('This will add package manager definition in your \'package.json\'. Proceed?')
     if (pnpmSettings) {
-      try {
-        // allow related build scripts
-        await updateJsonFile('package.json', 'pnpm', {
-          allowBuilds: {
-            '@parcel/watcher': true,
-            '@tailwindcss/oxide': true,
-            'esbuild': true,
-            'maplibre-gl': true,
-            'puppeteer': true,
-            'sharp': true,
-            'unrs-resolver': true,
-            'vue-demi': true,
-          },
-        }, true)
-      } catch (error) {
-        console.error('Error adjusting pnpm settings:\n', error.message)
-      }
       // set pnpm as package manager
       try {
         await updateJsonFile('package.json', 'packageManager', 'pnpm@11.0.8', true)
@@ -116,18 +101,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
     }
   }
 
-  // 2 - add nuxt-ignis module to nuxt.config.ts
-  try {
-    await updateConfigFile('nuxt.config.ts', {
-      extends: [
-        'nuxt-ignis',
-      ],
-    }, isAutoRun, 'This will add \'nuxt-ignis\' module to your \'nuxt.config.ts\'. Continue?')
-  } catch (error) {
-    console.error('Error enabling \'nuxt-ignis\' module:\n', error.message)
-  }
-
-  // 3 - pnpm-workspace.yaml file (only if pnpm is used)
+  // 4 - pnpm-workspace.yaml file (only if pnpm is used)
   if (packageManager === 'pnpm') {
     try {
       if (pathExists('pnpm-workspace.yaml')) {
@@ -142,7 +116,18 @@ export async function nuxtIgnisSetup(autoRun = false) {
     }
   }
 
-  // 4 - .gitignore file
+  // 5 - add nuxt-ignis module to nuxt.config.ts
+  try {
+    await updateConfigFile('nuxt.config.ts', {
+      extends: [
+        'nuxt-ignis',
+      ],
+    }, isAutoRun, 'This will add \'nuxt-ignis\' module to your \'nuxt.config.ts\'. Continue?')
+  } catch (error) {
+    console.error('Error enabling \'nuxt-ignis\' module:\n', error.message)
+  }
+
+  // 6 - .gitignore file
   try {
     await updateTextFile('.gitignore', [
       '',
@@ -155,7 +140,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
     console.error('Error updating .gitignore file:\n', error.message)
   }
 
-  // 5) nuxt-spec related setup
+  // 7 - nuxt-spec related setup
   const setupNuxtSpec = isAutoRun || await promptUser('Nuxt Ignis comes with support for testing. Do you want to set up the default test settings now?')
   if (setupNuxtSpec) {
     // create vitest.config.ts
@@ -213,7 +198,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
     }
   }
 
-  // 6) clear node_modules and lock file(s)
+  // 8 - clear node_modules and lock file(s)
   const prepareForReinstall = isAutoRun || await promptUser('Dependencies should be re-installed now. Do you want to remove node_modules and the lock file?')
   if (prepareForReinstall) {
     if (pathExists('node_modules')) {
@@ -260,7 +245,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
     }
   }
 
-  // 7) inform user
+  // 9 - inform user
   showMessage('')
   showMessage('NUXT IGNIS SETUP COMPLETE', 2)
   showMessage(`Proceed with \`${packageManager} install\` to get started.`)

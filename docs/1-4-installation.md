@@ -54,7 +54,7 @@ The CLI command will perform following steps. You can also do them manually if y
 Those dependencies are already included in `nuxt-ignis`. Removing is recommended to avoid version clashes and potential issues. If you need to rely on specific versions, you are advised to use [deduping](https://www.youtube.com/watch?v=TTlgfMPFYwM).
 </details>
 
-3) If `pnpm` is used. optionally add `packageManager` entry into `package.json`:
+3) If `pnpm` is used, add `packageManager` entry into `package.json`:
 
 ```json [package.json]
 {
@@ -65,20 +65,10 @@ Those dependencies are already included in `nuxt-ignis`. Removing is recommended
 <details>
 <summary>Reason why</summary>
 
-The `packageManager` tries to ensure same `pnpm` version is used as during the development of testing `nuxt-ignis`. However, extra setup might be required. Check more in the [Node.js docs](https://nodejs.org/download/release/v22.11.0/docs/api/packages.html#packagemanager).
+The `packageManager` tries to ensure same `pnpm` version is used as during the development of testing `nuxt-ignis`. However, extra setup (for Corepack) might be required. Check more in the [Node.js docs](https://nodejs.org/download/release/v22.11.0/docs/api/packages.html#packagemanager).
 </details>
 
-4) Add following section into your `nuxt.config.ts` to extend the `nuxt-ignis` layer:
-
-```ts [nuxt.config.ts]
-{
-  "extends": [
-    "nuxt-ignis"
-  ]
-}
-```
-
-5) If you use `pnpm`, create or adjust `pnpm-workspace.yaml` file to contain following lines:
+4) If you use `pnpm`, create or adjust `pnpm-workspace.yaml` file to contain following lines:
 
 ```yaml [pnpm-workspace.yaml]
 shamefully-hoist: true
@@ -101,6 +91,16 @@ Setting `shamefully-hoist` is **required** to ensure `pnpm` will hoist all depen
 
 Without `allowBuilds` entries set to `true`, `pnpm` will block any scripts that are being executed during the installation of these packages. This may lead to errors and inconsistencies. You will be still prompted to allow them manually using `pnpm approve-builds`. This is the way to ease things up. Check more in the [pnpm docs](https://pnpm.io/cli/approve-builds).
 </details>
+
+5) Add following section into your `nuxt.config.ts` to extend the `nuxt-ignis` layer:
+
+```ts [nuxt.config.ts]
+{
+  "extends": [
+    "nuxt-ignis"
+  ]
+}
+```
 
 6) Create or adjust `.gitignore` file to exclude Nuxt Ignis-related auxiliary files:
 
