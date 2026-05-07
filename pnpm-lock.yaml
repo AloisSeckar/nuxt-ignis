@@ -200,6 +200,8 @@ overrides:
 
 importers:
 
+  .: {}
+
   core:
     dependencies:
       '@nuxt-ignis/content':
