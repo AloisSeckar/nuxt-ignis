@@ -32,7 +32,7 @@ export default defineNuxtModule<IgnisDBOptions>({
     return ignisModuleDependencies(nuxt.options as NuxtIgnisDBOptions)
   },
   setup(_options, nuxt) {
-    ignisModuleSetup(nuxt.options as NuxtIgnisDBOptions)
+    ignisModuleSetup(nuxt.options as NuxtIgnisDBOptions, nuxt)
 
     const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugin'))

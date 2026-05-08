@@ -1,4 +1,4 @@
-import type { PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
+import type { Nuxt, PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
 import type { IgnisDBOptions, NuxtIgnisDBOptions } from './module'
 
 export function ignisModuleDependencies(nuxtOptions: NuxtIgnisDBOptions) {
@@ -27,7 +27,7 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisDBOptions) {
   return modules
 }
 
-export function ignisModuleSetup(nuxtOptions: NuxtIgnisDBOptions) {
+export function ignisModuleSetup(nuxtOptions: NuxtIgnisDBOptions, nuxt: Nuxt) {
   console.debug('@nuxt-ignis/db - module setup function runs')
 
   const options = nuxtOptions.ignis?.db
@@ -45,4 +45,17 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisDBOptions) {
   runtimeConfig.ignis.db.supabase ??= {}
   runtimeConfig.ignis.db.supabase.enabled ??= options?.supabase?.enabled ?? false
   runtimeConfig.ignis.db.supabase.types ??= options?.supabase?.types ?? false
+
+  // additional processing
+
+  // fix for nuxt-neon integration - increase default limit of Node.js event listeners
+  // to prevent possible MaxListenersExceededWarning in dev mode
+  if (options?.neon?.enabled) {
+    nuxt.hook('vite:serverCreated', (viteServer) => {
+      viteServer.middlewares.use((_req, res, next) => {
+        res.setMaxListeners(20)
+        next()
+      })
+    })
+  }
 }

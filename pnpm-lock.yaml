@@ -16,8 +16,8 @@ catalogs:
       specifier: 0.0.49
       version: 0.0.49
     '@nuxt-ignis/db':
-      specifier: 0.0.16
-      version: 0.0.16
+      specifier: 0.0.17
+      version: 0.0.17
     '@nuxt-ignis/default':
       specifier: 0.0.17
       version: 0.0.17
@@ -209,7 +209,7 @@ importers:
         version: 0.0.49(34a3bc49cecef9c2dce587df83891342)
       '@nuxt-ignis/db':
         specifier: 'catalog:'
-        version: 0.0.16(magicast@0.5.2)
+        version: 0.0.17(magicast@0.5.2)
       '@nuxt-ignis/default':
         specifier: 'catalog:'
         version: 0.0.17(2b76745211e844617a8c9d177563cab4)
@@ -829,7 +829,7 @@ importers:
         version: 10.2.4(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)(@vue/compiler-dom@3.5.33)(db0@0.3.4)(eslint@9.39.4(jiti@2.6.1))(ioredis@5.10.1)(magicast@0.5.2)(pinia@3.0.4(typescript@5.9.3)(vue@3.5.33(typescript@5.9.3)))(rollup@4.60.2)(typescript@5.9.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))(vue@3.5.33(typescript@5.9.3))
       '@nuxtjs/seo':
         specifier: 'catalog:'
-        version: 5.1.3(baef2039af633cc13ad6ceb0c26ad3a9)
+        version: 5.1.3(5bbe1df38121f2acd7b6a66553a8e030)
       '@stefanobartoletti/nuxt-social-share':
         specifier: 'catalog:'
         version: 3.0.0(magicast@0.5.2)
@@ -2223,8 +2223,8 @@ packages:
   '@nuxt-ignis/content@0.0.49':
     resolution: {integrity: sha512-Qy+Mo0cMTWxNTj7i/6ClJJ0XhFu34PbPZC45kN+E968a2ehfdFig+GPo4TV65B1CQlL3w5xrfVGHesx+XRf61A==}
 
-  '@nuxt-ignis/db@0.0.16':
-    resolution: {integrity: sha512-oEC77l2o9gfV/W6sSGHYKpFpOekGEkcSg1dsy327r8EppCz8oL3qYzT8RjA6YyG17dzU8qXZodqXpgjAk4k3MA==}
+  '@nuxt-ignis/db@0.0.17':
+    resolution: {integrity: sha512-f/TGXL627bbm+mgV/lM8Mdqr/P8GRD2RziQRUAS8WEaJFfwa6DyrzDmtLCLAOdgoUuUt6T15uPqSjB7LNkXUSw==}
 
   '@nuxt-ignis/default@0.0.17':
     resolution: {integrity: sha512-BbyzfLmgS0hv+39B42ZXHdWqzrlyHKIes6kDHTB1ITnNudkBBmeaegyZi2eMeLaMcGSKCCRauwcq04tDU2WUsQ==}
@@ -12264,9 +12264,9 @@ snapshots:
       - yup
       - zod
 
-  '@nuxt-ignis/db@0.0.16(magicast@0.5.2)':
+  '@nuxt-ignis/db@0.0.17(magicast@0.5.2)':
     dependencies:
-      '@nuxt/kit': 4.4.2(magicast@0.5.2)
+      '@nuxt/kit': 4.4.4(magicast@0.5.2)
     transitivePeerDependencies:
       - magicast
 
@@ -14789,7 +14789,7 @@ snapshots:
       - yup
       - zod
 
-  '@nuxtjs/seo@5.1.3(baef2039af633cc13ad6ceb0c26ad3a9)':
+  '@nuxtjs/seo@5.1.3(5bbe1df38121f2acd7b6a66553a8e030)':
     dependencies:
       '@nuxt/kit': 4.4.4(magicast@0.5.2)
       '@nuxtjs/robots': 6.0.8(3fd2d6ed9ba4a95fbe29c6c70df50591)
@@ -14798,7 +14798,7 @@ snapshots:
       nuxt-link-checker: 5.0.10(2b8caa246abfbb29b5fea7e64effb29a)
       nuxt-og-image: 6.4.11(8c6c87d747d999ce5dcd92d809667300)
       nuxt-schema-org: 6.0.4(5b6cc6b4c84664c2d06c50f269dbe562)
-      nuxt-seo-utils: 8.1.11(0e62dead4029f46567397ecf06b16749)
+      nuxt-seo-utils: 8.1.11(7c21fb1b9da2baaf102a4b3d720e8c38)
       nuxt-site-config: 4.0.8(3fd2d6ed9ba4a95fbe29c6c70df50591)
       nuxtseo-shared: 5.1.3(b430a54c2b58cf71589b56035b451915)
     transitivePeerDependencies:
@@ -17127,7 +17127,7 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@unhead/bundler@3.1.0(@nuxt/kit@4.4.4(magicast@0.5.2))(esbuild@0.28.0)(lightningcss@1.32.0)(typescript@5.9.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))':
+  '@unhead/bundler@3.1.0(@nuxt/kit@4.4.4(magicast@0.5.2))(esbuild@0.28.0)(launch-editor@2.13.2)(lightningcss@1.32.0)(typescript@5.9.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))':
     dependencies:
       '@vitejs/devtools-kit': 0.1.18(@nuxt/kit@4.4.4(magicast@0.5.2))(launch-editor@2.13.2)(typescript@5.9.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))
       magic-string: 0.30.21
@@ -22203,10 +22203,10 @@ snapshots:
       - webpack
       - zod
 
-  nuxt-seo-utils@8.1.11(0e62dead4029f46567397ecf06b16749):
+  nuxt-seo-utils@8.1.11(7c21fb1b9da2baaf102a4b3d720e8c38):
     dependencies:
       '@nuxt/kit': 4.4.4(magicast@0.5.2)
-      '@unhead/bundler': 3.1.0(@nuxt/kit@4.4.4(magicast@0.5.2))(esbuild@0.28.0)(lightningcss@1.32.0)(typescript@5.9.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))
+      '@unhead/bundler': 3.1.0(@nuxt/kit@4.4.4(magicast@0.5.2))(esbuild@0.28.0)(launch-editor@2.13.2)(lightningcss@1.32.0)(typescript@5.9.3)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))
       citty: 0.2.2
       defu: 6.1.7
       escape-string-regexp: 5.0.0

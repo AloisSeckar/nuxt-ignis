@@ -1,11 +1,15 @@
-import { describe, expect, test } from 'vitest'
+import { describe, expect, test, vi } from 'vitest'
 import { ignisModuleSetup } from '../src/ignisDBSetup'
 import type { NuxtIgnisDBOptions } from '../src/module'
+import type { Nuxt } from 'nuxt/schema'
+
+// setup can call nuxt.hook function...
+const nuxtMock = { hook: vi.fn() } as unknown as Nuxt
 
 describe('@nuxt-ignis/db - running module setup', () => {
   test('should mark all features as disabled in runtime config by default', () => {
     const nuxtOptions = {} as NuxtIgnisDBOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.db).toEqual({
       neon: {
         enabled: false,
@@ -31,7 +35,7 @@ describe('@nuxt-ignis/db - running module setup', () => {
         },
       },
     } as NuxtIgnisDBOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.db).toEqual({
       neon: {
         enabled: true,
@@ -57,7 +61,7 @@ describe('@nuxt-ignis/db - running module setup', () => {
         },
       },
     } as NuxtIgnisDBOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.db).toEqual({
       neon: {
         enabled: false,
@@ -79,7 +83,7 @@ describe('@nuxt-ignis/db - running module setup', () => {
         },
       },
     } as NuxtIgnisDBOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.db).toEqual({
       neon: {
         enabled: true,
@@ -101,7 +105,7 @@ describe('@nuxt-ignis/db - running module setup', () => {
         },
       },
     } as NuxtIgnisDBOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.db).toEqual({
       neon: {
         enabled: false,
@@ -124,7 +128,7 @@ describe('@nuxt-ignis/db - running module setup', () => {
         },
       },
     } as NuxtIgnisDBOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.db?.supabase?.types).toBe('supabase')
   })
 
@@ -138,7 +142,7 @@ describe('@nuxt-ignis/db - running module setup', () => {
         },
       },
     } as NuxtIgnisDBOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.db?.supabase?.types).toBe(false)
   })
 })
