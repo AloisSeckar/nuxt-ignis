@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       charts: true,
     },
     // nuxt-charts don't work with SSR
-    config: { 
+    config: {
       nuxt: {
         ssr: false,
       },

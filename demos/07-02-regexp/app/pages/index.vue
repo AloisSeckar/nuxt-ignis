@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Ignis Magic Regexp demo</h1>
+    <h1>Nuxt Ignis demo - Magic RegExp</h1>
     <h2>Literal string</h2>
     <div>
       {{ literalString }}
@@ -11,10 +11,10 @@
     </div>
     <h2>RegExp matching</h2>
     <div>
-      {{ matchResult[0] }}
+      {{ matchResult?.[0] }}
     </div>
     <div>
-      {{ matchResult[3] }}
+      {{ matchResult?.[3] }}
     </div>
   </div>
 </template>

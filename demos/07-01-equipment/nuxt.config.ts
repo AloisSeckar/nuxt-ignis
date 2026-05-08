@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     utils: {
       equipment: {
         enabled: true,
-        plugins: ['MagicNoise', 'MagicMarquee'],
+        plugins: 'MagicNoise, MagicMarquee',
       },
     },
   },

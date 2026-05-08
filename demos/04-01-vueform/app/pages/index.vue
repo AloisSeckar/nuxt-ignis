@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Ignis Vueform demo</h1>
+    <h1>Nuxt Ignis demo - Vueform</h1>
     <TheVueform />
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Ignis Zod demo</h1>
+    <h1>Nuxt Ignis demo - Zod</h1>
     <div>Valid: {{ validObject }}</div>
     <div>Invalid: {{ invalidObject }}</div>
     <div>Validator: {{ isValid1 }} {{ isValid2 }}</div>

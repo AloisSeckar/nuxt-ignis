@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Ignis Supabase demo</h1>
+    <h1>Nuxt Ignis demo - Supabase</h1>
     <ExampleSelect />
   </div>
 </template>

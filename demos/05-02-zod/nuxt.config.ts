@@ -9,6 +9,6 @@ export default defineNuxtConfig({
   ignis: {
     preset: {
       validation: 'zod',
-    }
+    },
   },
 })
