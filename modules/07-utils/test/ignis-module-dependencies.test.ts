@@ -54,8 +54,29 @@ describe('@nuxt-ignis/utils - resolving module dependencies', () => {
     } as NuxtIgnisUtilsOptions)).toEqual({
       '@maas/vue-equipment/nuxt': {
         defaults: {
-          composables: 'useComposable',
-          plugins: 'myPlugin',
+          composables: ['useComposable'],
+          plugins: ['myPlugin'],
+        },
+      },
+    })
+  })
+
+  test('should add @maas/vue-equipment/nuxt module and handle comma-separated values', () => {
+    expect(ignisModuleDependencies({
+      ignis: {
+        utils: {
+          equipment: {
+            enabled: true,
+            plugins: 'myFirstPlugin, mySecondPlugin',
+            composables: ' useFirstComposable, useSecondComposable ',
+          },
+        },
+      },
+    } as NuxtIgnisUtilsOptions)).toEqual({
+      '@maas/vue-equipment/nuxt': {
+        defaults: {
+          composables: ['useFirstComposable', 'useSecondComposable'],
+          plugins: ['myFirstPlugin', 'mySecondPlugin'],
         },
       },
     })

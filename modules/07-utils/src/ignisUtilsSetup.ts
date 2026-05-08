@@ -14,10 +14,10 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisUtilsOptions) {
     const equipmentConfig: Record<string, unknown> = {}
 
     if (options.equipment.composables && options.equipment.composables.length > 0) {
-      equipmentConfig.composables = options.equipment.composables
+      equipmentConfig.composables = options.equipment.composables.split(',').map(s => s.trim())
     }
     if (options.equipment.plugins && options.equipment.plugins.length > 0) {
-      equipmentConfig.plugins = options.equipment.plugins
+      equipmentConfig.plugins = options.equipment.plugins.split(',').map(s => s.trim())
     }
 
     modules['@maas/vue-equipment/nuxt'] = {

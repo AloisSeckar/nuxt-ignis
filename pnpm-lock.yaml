@@ -28,8 +28,8 @@ catalogs:
       specifier: 0.0.13
       version: 0.0.13
     '@nuxt-ignis/utils':
-      specifier: 0.0.11
-      version: 0.0.11
+      specifier: 0.0.12
+      version: 0.0.12
     '@nuxt-ignis/validation':
       specifier: 0.0.14
       version: 0.0.14
@@ -221,7 +221,7 @@ importers:
         version: 0.0.13(magicast@0.5.2)(postcss@8.5.13)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))(vue@3.5.33(typescript@5.9.3))
       '@nuxt-ignis/utils':
         specifier: 'catalog:'
-        version: 0.0.11(99ae7b5a8d8e911a76993c9362ee6b66)
+        version: 0.0.12(99ae7b5a8d8e911a76993c9362ee6b66)
       '@nuxt-ignis/validation':
         specifier: 'catalog:'
         version: 0.0.14(magicast@0.5.2)
@@ -2235,8 +2235,8 @@ packages:
   '@nuxt-ignis/ui@0.0.13':
     resolution: {integrity: sha512-B8PzmGr+YTl2UNI7V5TATDA4MUdf1RiieSOZvN4Q5+4W8uuFKkyrbMeirsAEn4XeAHnubkxJuQ2MiVgSjE+PoA==}
 
-  '@nuxt-ignis/utils@0.0.11':
-    resolution: {integrity: sha512-vqMlv2jmg7oZTDXKjbEHBvk2P5v5v6wH+SGpjrVirRUN77oAo3YA/Pf4xqzzzt6aEe6bEd3HjMO8WaPQlGnOMw==}
+  '@nuxt-ignis/utils@0.0.12':
+    resolution: {integrity: sha512-/Lajm55llstRqWa6BTNfzbQc/eCZY/uIRPFJsqK5UYEFxVXo0P2vOwXiq/YEJZBvt5RTBUbvR1qL4yUJQdGB8w==}
 
   '@nuxt-ignis/validation@0.0.14':
     resolution: {integrity: sha512-pS5JZuLDJopHo6HUrnR+h418akqdwyumspvKzy0c2hiQfw/+oD4w5gz7+oh+X7EmnVTQDR/L4jjwLBgCKRARqg==}
@@ -12037,13 +12037,13 @@ snapshots:
       '@vueuse/core': 14.3.0(vue@3.5.33(typescript@5.9.3))
       vue: 3.5.33(typescript@5.9.3)
 
-  '@maas/vue-equipment@1.0.0-beta.57(0ca3311533f74aab28713cae194aa417)':
+  '@maas/vue-equipment@1.0.0-beta.57(63260f1c357d0e8a42c990e906b1f7f0)':
     dependencies:
       '@floating-ui/vue': 1.1.11(vue@3.5.33(typescript@5.9.3))
       '@maas/magic-timer': 1.2.0(eventemitter3@5.0.4)
       '@maas/vue-autosize': 1.7.0(@vueuse/core@14.3.0(vue@3.5.33(typescript@5.9.3)))(vue@3.5.33(typescript@5.9.3))
       '@maas/vue-primitive': 1.4.0
-      '@nuxt/kit': 4.4.2(magicast@0.5.2)
+      '@nuxt/kit': 4.4.4(magicast@0.5.2)
       '@vueuse/core': 14.3.0(vue@3.5.33(typescript@5.9.3))
       '@vueuse/integrations': 14.3.0(axios@1.16.0)(change-case@5.4.4)(focus-trap@8.2.0)(fuse.js@7.3.0)(universal-cookie@7.2.2)(vue@3.5.33(typescript@5.9.3))
       defu: 6.1.7
@@ -12357,10 +12357,10 @@ snapshots:
       - vite
       - vue
 
-  '@nuxt-ignis/utils@0.0.11(99ae7b5a8d8e911a76993c9362ee6b66)':
+  '@nuxt-ignis/utils@0.0.12(99ae7b5a8d8e911a76993c9362ee6b66)':
     dependencies:
-      '@maas/vue-equipment': 1.0.0-beta.57(0ca3311533f74aab28713cae194aa417)
-      '@nuxt/kit': 4.4.2(magicast@0.5.2)
+      '@maas/vue-equipment': 1.0.0-beta.57(63260f1c357d0e8a42c990e906b1f7f0)
+      '@nuxt/kit': 4.4.4(magicast@0.5.2)
       magic-regexp: 0.11.0
     transitivePeerDependencies:
       - '@floating-ui/vue'
