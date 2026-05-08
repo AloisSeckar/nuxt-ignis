@@ -1,6 +1,7 @@
 {
   "name": "@nuxt-ignis/validation",
   "version": "0.0.14",
+  "type": "module",
   "description": "Nuxt Ignis module - Validation features",
   "publishConfig": {
     "access": "public"
@@ -10,7 +11,6 @@
     "url": "git+https://github.com/AloisSeckar/nuxt-ignis.git"
   },
   "license": "MIT",
-  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/types.d.mts",

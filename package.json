@@ -1,5 +1,6 @@
 {
   "name": "nuxt-ignis-root",
   "private": true,
+  "type": "module",
   "packageManager": "pnpm@11.0.8"
 }

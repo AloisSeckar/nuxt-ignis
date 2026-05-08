@@ -1,6 +1,7 @@
 {
   "name": "@nuxt-ignis/forms",
   "version": "0.0.18",
+  "type": "module",
   "description": "Nuxt Ignis module - Form features",
   "publishConfig": {
     "access": "public"
@@ -10,7 +11,6 @@
     "url": "git+https://github.com/AloisSeckar/nuxt-ignis.git"
   },
   "license": "MIT",
-  "type": "module",
   "exports": {
     ".": {
       "types": "./dist/types.d.mts",

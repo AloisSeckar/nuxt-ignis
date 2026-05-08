@@ -1,6 +1,7 @@
 {
   "name": "nuxt-ignis",
   "description": "A ready-to-use setup for your next application in Nuxt",
+  "type": "module",
   "version": "0.5.3",
   "config": {
     "date": "2026-02-01"
@@ -24,7 +25,6 @@
     "email": "alois.seckar@gmail.com"
   },
   "license": "MIT",
-  "type": "module",
   "main": "./nuxt.config.ts",
   "engines": {
     "node": ">=22.12.0"
