@@ -1,14 +1,26 @@
 <template>
   <div>
-    <h1>nuxt-content + tailwind demo</h1>
+    <h1 class="text-red-500">
+      Nuxt Ignis demo - Nuxt Content + Tailwind
+    </h1>
     <hr>
     <div>
       <NuxtPage />
     </div>
     <div>
-      <NuxtLink to="/first" :external="true">First</NuxtLink>
+      <NuxtLink
+        to="/first"
+        :external="true"
+      >
+        First
+      </NuxtLink>
       &bull;
-      <NuxtLink to="/second" :external="true">Second</NuxtLink>
+      <NuxtLink
+        to="/second"
+        :external="true"
+      >
+        Second
+      </NuxtLink>
     </div>
     <hr>
   </div>
