@@ -2,7 +2,8 @@ import { createResolver } from '@nuxt/kit'
 import { defu } from 'defu'
 import OpenProps from 'open-props'
 import tailwindcss from '@tailwindcss/vite'
-import { ignisTailwindcssFix } from './runtime/tailwind'
+import { ignisTailwindFix } from './runtime/tailwind-fix'
+import { ignisTailwindSource } from './runtime/tailwind-source'
 import type { IgnisUIOptions, NuxtIgnisUIOptions } from './module'
 import type { PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
 
@@ -57,17 +58,17 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisUIOptions) {
 
   const resolver = createResolver(import.meta.url)
 
-  let tailwindFixRequired = false
+  let tailwindIncluded = false
 
   if (effectiveOptions.ui === true) {
-    tailwindFixRequired = true
+    tailwindIncluded = true
     // import tailwind css file
     nuxtOptions.css ||= []
     nuxtOptions.css.push(resolver.resolve('./runtime/css/ignis-nuxt-ui.css'))
     console.debug('Nuxt UI CSS file included')
   }
   else if (effectiveOptions.tailwind === true) {
-    tailwindFixRequired = true
+    tailwindIncluded = true
     // import tailwind css file
     nuxtOptions.css ||= []
     nuxtOptions.css.push(resolver.resolve('./runtime/css/ignis-tailwind.css'))
@@ -78,12 +79,18 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisUIOptions) {
     console.debug('Tailwind CSS file included')
   }
 
-  // TODO occasionaly check https://github.com/tailwindlabs/tailwindcss/discussions/16119 for solution
-  if (tailwindFixRequired) {
+  if (tailwindIncluded) {
+    // rewrite `@import "tailwindcss"` in shipped CSS to point Tailwind's source
+    // detection at the consumer project's rootDir (otherwise it scans inside
+    // the published @nuxt-ignis/ui module and misses files like content/**/*.md)
     nuxtOptions.vite = defu({
-      vite: {
-        plugins: [ignisTailwindcssFix],
-      },
+      plugins: [
+        // add explict path to Tailwind CSS sources into @import statement
+        ignisTailwindSource(nuxtOptions.rootDir),
+        // temporary fix to surpress irrelevant warnings on startup
+        // TODO occasionaly check https://github.com/tailwindlabs/tailwindcss/discussions/16119 for solution
+        ignisTailwindFix(),
+      ],
     }, nuxtOptions.vite)
   }
 

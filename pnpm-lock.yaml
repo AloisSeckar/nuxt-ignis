@@ -25,8 +25,8 @@ catalogs:
       specifier: 0.0.18
       version: 0.0.18
     '@nuxt-ignis/ui':
-      specifier: 0.0.13
-      version: 0.0.13
+      specifier: 0.0.14
+      version: 0.0.14
     '@nuxt-ignis/utils':
       specifier: 0.0.12
       version: 0.0.12
@@ -218,7 +218,7 @@ importers:
         version: 0.0.18(magicast@0.5.2)
       '@nuxt-ignis/ui':
         specifier: 'catalog:'
-        version: 0.0.13(magicast@0.5.2)(postcss@8.5.13)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))(vue@3.5.33(typescript@5.9.3))
+        version: 0.0.14(magicast@0.5.2)(postcss@8.5.13)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))(vue@3.5.33(typescript@5.9.3))
       '@nuxt-ignis/utils':
         specifier: 'catalog:'
         version: 0.0.12(99ae7b5a8d8e911a76993c9362ee6b66)
@@ -2232,8 +2232,8 @@ packages:
   '@nuxt-ignis/forms@0.0.18':
     resolution: {integrity: sha512-PjT/gt5MMBIwFUJpaDnuw4pVmkfzDPiKUSnzLQwWe72lBV0oHaUSgmXrpX9DcB1Pe9qFQC5UswHlF41jF3kfIA==}
 
-  '@nuxt-ignis/ui@0.0.13':
-    resolution: {integrity: sha512-B8PzmGr+YTl2UNI7V5TATDA4MUdf1RiieSOZvN4Q5+4W8uuFKkyrbMeirsAEn4XeAHnubkxJuQ2MiVgSjE+PoA==}
+  '@nuxt-ignis/ui@0.0.14':
+    resolution: {integrity: sha512-nfy1jr9hyxd8J7tUirP/5pA8WPrLNhAA2Zh80j0sHYnp+OaOYjojkCV/OekUw8ZMf04abHyStvmfxPCgFOtnXg==}
 
   '@nuxt-ignis/utils@0.0.12':
     resolution: {integrity: sha512-/Lajm55llstRqWa6BTNfzbQc/eCZY/uIRPFJsqK5UYEFxVXo0P2vOwXiq/YEJZBvt5RTBUbvR1qL4yUJQdGB8w==}
@@ -12342,9 +12342,9 @@ snapshots:
     transitivePeerDependencies:
       - magicast
 
-  '@nuxt-ignis/ui@0.0.13(magicast@0.5.2)(postcss@8.5.13)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))(vue@3.5.33(typescript@5.9.3))':
+  '@nuxt-ignis/ui@0.0.14(magicast@0.5.2)(postcss@8.5.13)(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))(vue@3.5.33(typescript@5.9.3))':
     dependencies:
-      '@nuxt/kit': 4.4.2(magicast@0.5.2)
+      '@nuxt/kit': 4.4.4(magicast@0.5.2)
       '@tailwindcss/vite': 4.2.2(vite@7.3.2(@types/node@25.6.0)(jiti@2.6.1)(lightningcss@1.32.0)(sass@1.99.0)(terser@5.46.2)(yaml@2.8.4))
       defu: 6.1.7
       nuxt-charts: 2.1.4(vue@3.5.33(typescript@5.9.3))
