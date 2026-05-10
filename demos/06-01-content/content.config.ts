@@ -1,11 +1,16 @@
-// explicit imports due to some issue with auto-loading in /demo folder
+import { fileURLToPath } from 'node:url'
 import { defineContentCollection, loadContentConfig } from '@nuxt-ignis/content/config'
 
 export default loadContentConfig({
   collections: {
-    // custom collections are be defined here via exposed `defineContentCollection`
+    // Nuxt Ignis provide defaults for displaying files inside "/content" folder
+    // additional collections can be defined here via exposed `defineContentCollection`
     demo: defineContentCollection({
-      source: '**',
+      source: {
+        // correct path needs to be resolved
+        cwd: fileURLToPath(new URL('demo', import.meta.url)),
+        include: '**/*.md',
+      },
       type: 'page',
     }),
   },
