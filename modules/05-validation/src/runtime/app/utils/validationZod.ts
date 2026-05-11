@@ -7,7 +7,7 @@ export async function isValidByZod(schema: ZodObject, obj: unknown): Promise<boo
     return schema.safeParse(obj).success
   }
   else {
-    console.warn('Zod is not enabled (set NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=zod or NUXT_PUBLIC_IGNIS_ZOD=true)')
+    console.warn('Zod is not enabled, validation is not available.')
     return false
   }
 }

@@ -9,7 +9,7 @@ export async function isValidByValibot(schema: ObjectSchema<ObjectEntries, undef
     return v.safeParse(schema, obj).success
   }
   else {
-    console.warn('Valibot is not enabled (set NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=valibot or NUXT_PUBLIC_IGNIS_VALIBOT=true)')
+    console.warn('Valibot is not enabled, validation is not available.')
     return false
   }
 }

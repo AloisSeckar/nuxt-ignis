@@ -2,7 +2,7 @@
   This will import Open Props CSS styles
   https://open-props.style/
 
-  NUXT_PUBLIC_IGNIS_OPENPROPS=true is required to use this feature
+  If `open-props` integration is enabled, this file will be included in `css` section of nuxt.config.ts.
 */
 
 @import "open-props/style";

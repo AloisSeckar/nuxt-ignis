@@ -27,7 +27,7 @@ export function useT(key: string): string {
       return backdoorValue
     }
     // for other custom values a warning will be produced and a placeholder will be returned
-    log.warn('@nuxtjs/i18n turned off, translations are not available (set NUXT_PUBLIC_IGNIS_I18N_ENABLED=true)')
+    log.warn('@nuxtjs/i18n is not enabled, translations are not available.')
     return 'Translation not available'
   }
 }

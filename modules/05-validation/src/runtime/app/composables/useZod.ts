@@ -4,7 +4,8 @@ type ZodModule = typeof import('zod/v4')
 type ZodZ = ZodModule['z']
 
 /**
- * Exposes Zod schema validation functions. Requires `NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=zod` or `NUXT_PUBLIC_IGNIS_ZOD=true` to work properly.
+ * Exposes Zod schema validation functions.
+ * Requires Zod integration to be enabled.
  *
  * Usage: `const z = (await useZod())!`
  *
@@ -16,6 +17,6 @@ export const useZod = async (): Promise<ZodZ | undefined> => {
     return zod.z
   }
   else {
-    console.warn('Zod is not enabled (set NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=zod or NUXT_PUBLIC_IGNIS_ZOD=true)')
+    console.warn('Zod is not enabled, validation is not available.')
   }
 }

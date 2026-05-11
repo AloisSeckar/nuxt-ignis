@@ -17,8 +17,7 @@
 
     Icon
      - icons are provided by "nuxt-icon" module
-     - module is auto-imported via "@nuxt/ui"
-     - NUXT_PUBLIC_IGNIS_UI=nuxt-ui is required to use this feature
+     - module is auto-imported via "@nuxt/ui" (if enabled)
 -->
 
 <template>

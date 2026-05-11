@@ -3,7 +3,8 @@ import { useRuntimeConfig } from '#imports'
 type ValibotModule = typeof import('valibot')
 
 /**
- * Exposes Valibot schema validation functions. Requires `NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=valibot` or `NUXT_PUBLIC_IGNIS_VALIBOT=true` to work properly.
+ * Exposes Valibot schema validation functions.
+ * Requires Valibot integration to be enabled.
  *
  * Usage: `const v = (await useValibot())!`
  *
@@ -15,6 +16,6 @@ export const useValibot = async (): Promise<ValibotModule | undefined> => {
     return valibot
   }
   else {
-    console.warn('Valibot is not enabled (set NUXT_PUBLIC_IGNIS_PRESET_VALIDATION=valibot or NUXT_PUBLIC_IGNIS_VALIBOT=true)')
+    console.warn('Valibot is not enabled, validation is not available.')
   }
 }
