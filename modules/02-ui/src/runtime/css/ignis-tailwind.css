@@ -2,10 +2,12 @@
   This will import Tailwind CSS
   https://tailwindcss.com/docs/installation/
 
-  NUXT_PUBLIC_IGNIS_PRESET_UI=tailwind or NUXT_PUBLIC_IGNIS_TAILWIND=true is required for se this feature.
+  If `Tailwind CSS` integration is enabled, this file will be included in `css` section of nuxt.config.ts.
+  If `Nuxt UI` integration is enabled, `ignis-nuxt-ui.css` will be used instead.
 
-  If enabled, this file will be included in `css` section of nuxt.config.ts.
-  If Nuxt UI is enabled, `ignis-nuxt-ui.css` will be used instead.
+  Custom Vite plugin defined in `modules/02-ui/src/runtime/tailwind-source.ts`
+  will append `source(dir)` to the tailwindcss import during build to ensure Tailwind CSS files
+  can be correctly discovered by other integrations (i.e. Nuxt Content)
 */
 
 @import "tailwindcss";
