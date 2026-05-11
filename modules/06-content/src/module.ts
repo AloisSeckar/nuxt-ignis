@@ -1,6 +1,7 @@
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 import { ignisModuleDependencies, ignisModuleSetup } from './ignisContentSetup'
 import type { NuxtOptions } from 'nuxt/schema'
+import type { ModuleOptions as NuxtContentModuleOptions } from '@nuxt/content'
 
 export interface IgnisContentOptions {
   content?: {
@@ -35,6 +36,10 @@ export type NuxtIgnisContentOptions = NuxtOptions & {
   }
 }
 
+type NuxtContentOptions = NuxtOptions & {
+  content?: Partial<NuxtContentModuleOptions>
+}
+
 declare module 'nuxt/schema' {
   interface IgnisPublicRuntimeConfig {
     content?: IgnisContentOptions
@@ -61,12 +66,24 @@ export default defineNuxtModule<IgnisContentOptions>({
       && effectiveOptions?.pslo?.content === true) {
       // integration with Nuxt Content
       // if enabled, all Nuxt Content page data will be treated with "preventSingleLetterOrphans" function
+
+      // transformation hook to apply the changes
       nuxt.hook('content:file:beforeParse', async (ctx: { file: { id: string, body: string } }) => {
         const { preventSingleLetterOrphans } = await import('elrh-pslo')
         const { file } = ctx
         file.body = preventSingleLetterOrphans(file.body)
         console.debug(`Nuxt Content file ${file.id} processed with elrh-pslo`)
       })
+
+      // fix to force Nuxt Content to invalidate its cache
+      // otherwise the hook won't be applied for the first time
+      // and we would have to manually delete cached files
+      const options = nuxt.options as NuxtContentOptions
+      options.content ??= {}
+      options.content.build ??= {}
+      options.content.build.markdown ??= {}
+      const markdown = options.content.build.markdown as Record<string, unknown>
+      markdown.__ignisPsloContent = true
     }
 
     addPlugin(resolver.resolve('./runtime/plugin'))
