@@ -17,7 +17,7 @@
 
 <script setup lang="ts">
 const { defaultLocale, locale, locales, setLocale } = useI18n()
-console.warn('Default locale:', defaultLocale)
-console.warn('Current locale:', locale.value)
-console.warn('Available locales:', locales.value)
+log.debug('Default locale: ' + defaultLocale)
+log.debug('Current locale: ' + locale.value)
+log.debug('Available locales: ' + JSON.stringify(locales.value))
 </script>

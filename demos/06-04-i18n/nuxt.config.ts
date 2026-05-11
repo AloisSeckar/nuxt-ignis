@@ -11,7 +11,7 @@ export default defineNuxtConfig({
       i18n: {
         enabled: true,
         // to set different default locale than 'en'
-        // locale: 'es',
+        // default: 'es',
       },
     },
   },
