@@ -72,7 +72,7 @@ export function applyEnv(opts: IgnisOptions) {
   opts.content.content.enabled = process.env.NUXT_PUBLIC_IGNIS_CONTENT_CONTENT_ENABLED === 'true' || opts.content.content.enabled || false
   opts.content.i18n ??= {}
   opts.content.i18n.enabled = process.env.NUXT_PUBLIC_IGNIS_CONTENT_I18N_ENABLED === 'true' || opts.content.i18n.enabled || false
-  opts.content.i18n.default = process.env.NUXT_PUBLIC_IGNIS_CONTENT_I18N_DEFAULT || opts.content.i18n.default || ''
+  opts.content.i18n.default = process.env.NUXT_PUBLIC_IGNIS_CONTENT_I18N_DEFAULT || opts.content.i18n.default || 'en'
   opts.content.seo ??= {}
   opts.content.seo.enabled = process.env.NUXT_PUBLIC_IGNIS_CONTENT_SEO_ENABLED === 'true' || opts.content.seo.enabled || false
   opts.content.social ??= {}

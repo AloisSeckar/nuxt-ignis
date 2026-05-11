@@ -118,7 +118,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
     expect(addTemplate).toHaveBeenCalled()
     expect(nuxtOptions.alias?.['#ignis-i18n-locales']).toBe('/mock/.nuxt/ignis-i18n-locales.mjs')
 
-    expect(debugSpy).toHaveBeenCalledWith('i18n enabled with default locale: en, undefined')
+    expect(debugSpy).toHaveBeenCalledWith('i18n enabled with default locale: en')
     expect(debugSpy).toHaveBeenCalledWith('i18n locale files found: en, de')
   })
 

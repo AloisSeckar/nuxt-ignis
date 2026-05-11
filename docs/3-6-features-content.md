@@ -85,6 +85,7 @@ export default defineNuxtConfig({
 
 - All `.json` files with messages in `@/i18n/locales` folder will be auto-scanned and registered as available locales.
 - You can select default language locale via `NUXT_PUBLIC_IGNIS_CONTENT_I18N_DEFAULT` (or `ignis.content.i18n.default` in `nuxt.config.ts`). Falls back to `en` if not set.
+- If configured default locale (or fallback `en`) is not found in `@/i18n/locales` directory, warn is produced and the first available locale (if any) will be used as default instead.
 - For other configuration refer to [module docs](https://i18n.nuxtjs.org/docs/getting-started/vue-i18n).
 
 ### Additional utils

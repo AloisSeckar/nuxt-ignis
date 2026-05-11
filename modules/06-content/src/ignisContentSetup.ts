@@ -28,6 +28,9 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisContentOptions) {
 
   // I18N
   if (options?.i18n?.enabled) {
+    // evaluate passed in default locale
+    let ignisDefaultLocale = options.i18n?.default || 'en'
+
     // scan locale files now so @nuxtjs/i18n has them when it initializes
     const localesDir = join(nuxtOptions.rootDir, 'i18n', 'locales')
     let localeFiles: string[] = []
@@ -39,11 +42,18 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisContentOptions) {
     }
     const localeCodes = localeFiles.map(f => f.replace('.json', ''))
 
+    // ensure default locale exists and warn about misconfiguration
+    if (localeCodes.length > 0 && !localeCodes.includes(ignisDefaultLocale)) {
+      console.warn(`Configured default locale "${ignisDefaultLocale}" not found in ${localesDir}.`)
+      console.warn(`Falling back to available "${localeCodes[0]}"`)
+      ignisDefaultLocale = localeCodes[0]!
+    }
+
     // pass config via `defaults` — moduleDependencies merges this into nuxt.options.i18n
     modules['@nuxtjs/i18n'] = {
       defaults: {
         locales: localeCodes.map(code => ({ code: code, file: `${code}.json` })),
-        defaultLocale: options.i18n?.default || 'en',
+        defaultLocale: ignisDefaultLocale,
       },
     }
     console.debug(`@nuxtjs/i18n module installed with locales: ${localeCodes.join(', ') || 'none'}`)
@@ -187,8 +197,7 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisContentOptions, nuxt?: Nu
       })
     }
 
-    // @ts-expect-error 'i18n' option will exist at this point
-    console.debug(`i18n enabled with default locale: ${effectiveOptions.i18n?.default}, ${nuxtOptions.i18n?.defaultLocale}`)
+    console.debug(`i18n enabled with default locale: ${effectiveOptions.i18n?.default}`)
     console.debug(`i18n locale files found: ${localeCodes.join(', ') || 'none'}`)
   }
 

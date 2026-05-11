@@ -1,4 +1,4 @@
 {
     "hello": "Hello",
-    "welcome": "Welcome to @nuxt-ignis/content!"
+    "welcome": "Welcome to {'@'}nuxt-ignis/content!"
 }
