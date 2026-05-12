@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h1>Ignis Nuxt Social demo</h1>
+    <h1>Nuxt Ignis demo - Social Share</h1>
     <DemoSocialShare />
   </div>
 </template>
