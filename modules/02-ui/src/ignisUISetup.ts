@@ -1,4 +1,4 @@
-import { createResolver } from '@nuxt/kit'
+import { createResolver, useNuxt } from '@nuxt/kit'
 import { defu } from 'defu'
 import OpenProps from 'open-props'
 import tailwindcss from '@tailwindcss/vite'
@@ -92,6 +92,19 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisUIOptions) {
         ignisTailwindFix(),
       ],
     }, nuxtOptions.vite)
+  }
+
+  // Fix for Nuxt Charts module
+  // https://github.com/AloisSeckar/nuxt-ignis/issues/175
+  // TODO occasionally check for upstream fix
+  if (effectiveOptions.charts === true) {
+    const nuxt = useNuxt()
+    nuxt.hook('modules:done', () => {
+      nuxt.options.build.transpile = nuxt.options.build.transpile.filter(
+        t => t !== 'vue-chrts',
+      )
+    })
+    console.debug('Fix for nuxt-charts module applied')
   }
 
   // Open Props CSS

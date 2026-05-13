@@ -27,7 +27,7 @@ catalog:
   '@nuxt-ignis/db': 0.0.17
   '@nuxt-ignis/default': 0.0.17
   '@nuxt-ignis/forms': 0.0.18
-  '@nuxt-ignis/ui': 0.0.14
+  '@nuxt-ignis/ui': 0.0.15
   '@nuxt-ignis/utils': 0.0.12
   '@nuxt-ignis/validation': 0.0.14
   '@nuxt/content': 3.13.0
