@@ -37,7 +37,9 @@ export default loadContentConfig({
 })
 ```
 
-This will reference the default config provided by `@nuxt-ignis/content` to enable default `@nuxt-content` collection in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
+Nuxt Ignis will scaffold default `content.config.ts` file on startup if none exists yet.
+
+This will reference the default config provided by `@nuxt-ignis/content` that enables the default `@nuxt-content` collection in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
 
 To alter the default behavior, you can enhance the empty `{}` object passed to `loadContentConfig()` with your custom config.
 

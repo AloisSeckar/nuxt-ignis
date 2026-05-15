@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/forms",
-  "version": "0.0.18",
+  "version": "0.0.21",
   "type": "module",
   "description": "Nuxt Ignis module - Form features",
   "publishConfig": {
@@ -15,6 +15,14 @@
     ".": {
       "types": "./dist/types.d.mts",
       "import": "./dist/module.mjs"
+    },
+    "./vueform-config": {
+      "types": "./dist/runtime/vueform-config.d.ts",
+      "import": "./dist/runtime/vueform-config.js"
+    },
+    "./formkit-config": {
+      "types": "./dist/runtime/formkit-config.d.ts",
+      "import": "./dist/runtime/formkit-config.js"
     }
   },
   "main": "./dist/module.mjs",
@@ -22,6 +30,12 @@
     "*": {
       ".": [
         "./dist/types.d.mts"
+      ],
+      "vueform-config": [
+        "./dist/runtime/vueform-config.d.ts"
+      ],
+      "formkit-config": [
+        "./dist/runtime/formkit-config.d.ts"
       ]
     }
   },

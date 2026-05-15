@@ -40,12 +40,16 @@ export default defineNuxtConfig({
 In order to use `vueform` via Nuxt Ignis, it is currently required to create a custom config file in the root of your project named `vueform.config.ts` with following contents:
 
 ```ts [vueform.config.ts]
+import { loadVueformConfig } from '@nuxt-ignis/forms/vueform-config'
+
 export default loadVueformConfig({
-  // custom config here
+  // your custom config here
 })
 ```
 
-This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/utils/config/vueform.ts) to inject `Vueform` into your project. The extra step is required as it seems not possible to transfer the config file from the layer.
+Nuxt Ignis will scaffold default `vueform.config.ts` file on startup if none exists yet.
+
+This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/utils/config/vueform.ts) for `Vueform` in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can ignore Nuxt Ignis' default config and create your own file based on [Vueform docs](https://vueform.com/docs/installation#manual-installation) (check instructions for Nuxt).
 
@@ -84,17 +88,22 @@ export default defineNuxtConfig({
 
 ### Usage notice
 
-In order to use `formkit` via Nuxt Ignis, it is currently _advised_ to create a custom config file in the root of your project named `formkit.config.ts` with following contents:
+In order to use `formkit` via Nuxt Ignis, you need a config file in the root of your project named `formkit.config.ts` with following contents:
 
 ```ts [formkit.config.ts]
+import { loadFormkitConfig } from '@nuxt-ignis/forms/formkit-config'
+
 const config = loadFormkitConfig({
-  // custom config here
+  // your custom config here
 })
-// needs to be exported like this
+
+// required for Formkit
 export default config
 ```
 
-This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/utils/config/formkit.ts) to inject `Formkit` into your project. The extra step is required as it seems not possible to transfer the config file from the layer. Note that `export default config` is a required syntax as `Formkit` expects such export in `formkit.config.ts` file.
+Nuxt Ignis will scaffold default `formkit.config.ts` file on startup if none exists yet.
+
+This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/utils/config/formkit.ts) for `Formkit` in your project. The extra step is required as it seems not possible to transfer the config file from the layer. Note that `export default config` is a required syntax as `Formkit` expects such export in `formkit.config.ts` file.
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can provide your own config file (see [Additional options](#additional-options)) ignore Nuxt Ignis' default config and create your own file based on [Formkit docs](https://formkit.com/getting-started/installation) (check instructions for Nuxt).
 
