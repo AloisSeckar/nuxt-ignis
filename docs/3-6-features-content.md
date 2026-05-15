@@ -30,25 +30,36 @@ export default defineNuxtConfig({
 In order to use `@nuxt-content` via Nuxt Ignis, it is currently required to create a custom config file in the root of your project named `content.config.ts` with following contents:
 
 ```ts [content.config.ts]
-// NOTE: explicit import seems to be required
 import { loadContentConfig } from '@nuxt-ignis/content/config'
 
 export default loadContentConfig({
-  // custom config here
-  //
-  // custom collections (different than the default "content")
-  // can be defined here via special `defineContentCollection`, e.g.:
-  //
-  // collections: {
-  //   demo: defineContentCollection({
-  //     source: '**',
-  //     type: 'page',
-  //   }),
-  // },
+  // your custom config here
 })
 ```
 
 This will reference the default config provided by `@nuxt-ignis/content` to enable default `@nuxt-content` collection in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
+
+To alter the default behavior, you can enhance the empty `{}` object passed to `loadContentConfig()` with your custom config.
+
+Custom collections (different than the default `content`) can be defined here via special `defineContentCollection` helper. However, to overcome issues with path resolution, you need to specify where the source folder is located.
+
+For example, collection residing `./demo` folder in your project root can be defined like this:
+
+```ts
+import { fileURLToPath } from 'node:url'
+import { loadContentConfig } from '@nuxt-ignis/content/config'
+
+export default loadContentConfig({
+  collections: {
+    demo: defineContentCollection({
+      source: {
+        cwd: fileURLToPath(new URL('demo', import.meta.url)),
+      },
+      type: 'page',
+    }),
+  },
+})
+```
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can completely ignore Nuxt Ignis' default config and create your own file based on [Nuxt Content docs](https://content.nuxt.com/docs/getting-started/installation#create-your-first-collection).
 
