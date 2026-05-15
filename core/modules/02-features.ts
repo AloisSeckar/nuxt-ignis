@@ -9,6 +9,7 @@ import type { IgnisValidationOptions } from '@nuxt-ignis/validation'
 import type { IgnisContentOptions } from '@nuxt-ignis/content'
 import type { IgnisUtilsOptions } from '@nuxt-ignis/utils'
 import { applyEnv } from './utils/env'
+import { validateEnv } from './utils/validate-env'
 import { checkForDuplicateModules } from './utils/duplicates'
 import { resolveUiPreset, resolveDbPreset, resolveFormsPreset, resolveValidationPreset } from './utils/presets'
 import { isDefaultActive, isUiActive, isDbActive, isFormsActive, isValidationActive, isContentActive, isUtilsActive } from './utils/activation'
@@ -75,6 +76,10 @@ export default defineNuxtModule<IgnisOptions>({
     // we are resolving them manually so they can take effect in Ignis module resolution
     // note .env variables take precedence over options passed directly from nuxt.config.ts
     // when neither is, Ignis will apply defaults
+
+    // #171 - guard rejecting corrupted .env variables that does not match expected values
+    validateEnv()
+
     applyEnv(ignisOpts)
 
     if (!ignisOpts) {

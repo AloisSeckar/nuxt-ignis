@@ -1,0 +1,142 @@
+// https://github.com/AloisSeckar/nuxt-ignis/issues/171
+// Invalid .env variables would override expected config objects and may cause
+// unpredicted behavior. This rejects such variables before resolution starts.
+
+const IGNIS_CONFIG_NODES: Record<string, string[]> = {
+  // 1-level: top-level section roots
+  NUXT_PUBLIC_IGNIS_CONFIG: [
+    'NUXT_PUBLIC_IGNIS_CONFIG_HTML_TITLE',
+    'NUXT_PUBLIC_IGNIS_CONFIG_HTML_LANG',
+    'NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR',
+    'NUXT_PUBLIC_IGNIS_CONFIG_NUXT_PAGES',
+    'NUXT_PUBLIC_IGNIS_CONFIG_LOG_LEVEL',
+  ],
+  NUXT_PUBLIC_IGNIS_PRESET: [
+    'NUXT_PUBLIC_IGNIS_PRESET_UI',
+    'NUXT_PUBLIC_IGNIS_PRESET_DB',
+    'NUXT_PUBLIC_IGNIS_PRESET_FORMS',
+    'NUXT_PUBLIC_IGNIS_PRESET_VALIDATION',
+  ],
+  NUXT_PUBLIC_IGNIS_DEFAULT: [
+    'NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT',
+    'NUXT_PUBLIC_IGNIS_DEFAULT_FONTS',
+    'NUXT_PUBLIC_IGNIS_DEFAULT_IMAGE',
+    'NUXT_PUBLIC_IGNIS_DEFAULT_VUEUSE',
+    'NUXT_PUBLIC_IGNIS_DEFAULT_PINIA',
+  ],
+  NUXT_PUBLIC_IGNIS_UI: [
+    'NUXT_PUBLIC_IGNIS_UI_UI',
+    'NUXT_PUBLIC_IGNIS_UI_TAILWIND',
+    'NUXT_PUBLIC_IGNIS_UI_OPENPROPS',
+    'NUXT_PUBLIC_IGNIS_UI_CHARTS',
+  ],
+  NUXT_PUBLIC_IGNIS_DB: [
+    'NUXT_PUBLIC_IGNIS_DB_NEON_ENABLED',
+    'NUXT_PUBLIC_IGNIS_DB_SUPABASE_ENABLED',
+  ],
+  NUXT_PUBLIC_IGNIS_FORMS: [
+    'NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_ENABLED',
+    'NUXT_PUBLIC_IGNIS_FORMS_VUEFORM_ENABLED',
+  ],
+  NUXT_PUBLIC_IGNIS_VALIDATION: [
+    'NUXT_PUBLIC_IGNIS_VALIDATION_ZOD',
+    'NUXT_PUBLIC_IGNIS_VALIDATION_VALIBOT',
+  ],
+  NUXT_PUBLIC_IGNIS_CONTENT: [
+    'NUXT_PUBLIC_IGNIS_CONTENT_CONTENT_ENABLED',
+    'NUXT_PUBLIC_IGNIS_CONTENT_I18N_ENABLED',
+    'NUXT_PUBLIC_IGNIS_CONTENT_SEO_ENABLED',
+    'NUXT_PUBLIC_IGNIS_CONTENT_SOCIAL_ENABLED',
+    'NUXT_PUBLIC_IGNIS_CONTENT_PSLO_ENABLED',
+  ],
+  NUXT_PUBLIC_IGNIS_UTILS: [
+    'NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_ENABLED',
+    'NUXT_PUBLIC_IGNIS_UTILS_REGEXP_ENABLED',
+  ],
+
+  // 2-level: sub-section roots
+  NUXT_PUBLIC_IGNIS_CONFIG_HTML: [
+    'NUXT_PUBLIC_IGNIS_CONFIG_HTML_TITLE',
+    'NUXT_PUBLIC_IGNIS_CONFIG_HTML_LANG',
+  ],
+  NUXT_PUBLIC_IGNIS_CONFIG_NUXT: [
+    'NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR',
+    'NUXT_PUBLIC_IGNIS_CONFIG_NUXT_PAGES',
+    'NUXT_PUBLIC_IGNIS_CONFIG_NUXT_CSS',
+    'NUXT_PUBLIC_IGNIS_CONFIG_NUXT_ERROR',
+  ],
+  NUXT_PUBLIC_IGNIS_CONFIG_LOG: [
+    'NUXT_PUBLIC_IGNIS_CONFIG_LOG_LEVEL',
+  ],
+  NUXT_PUBLIC_IGNIS_CONFIG_WARN: [
+    'NUXT_PUBLIC_IGNIS_CONFIG_WARN_DUPLICATES',
+  ],
+  NUXT_PUBLIC_IGNIS_DB_NEON: [
+    'NUXT_PUBLIC_IGNIS_DB_NEON_ENABLED',
+  ],
+  NUXT_PUBLIC_IGNIS_DB_SUPABASE: [
+    'NUXT_PUBLIC_IGNIS_DB_SUPABASE_ENABLED',
+    'NUXT_PUBLIC_IGNIS_DB_SUPABASE_TYPES',
+  ],
+  NUXT_PUBLIC_IGNIS_FORMS_FORMKIT: [
+    'NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_ENABLED',
+    'NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_DEFAULT',
+    'NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_CONFIG',
+  ],
+  NUXT_PUBLIC_IGNIS_FORMS_VUEFORM: [
+    'NUXT_PUBLIC_IGNIS_FORMS_VUEFORM_ENABLED',
+  ],
+  NUXT_PUBLIC_IGNIS_CONTENT_CONTENT: [
+    'NUXT_PUBLIC_IGNIS_CONTENT_CONTENT_ENABLED',
+  ],
+  NUXT_PUBLIC_IGNIS_CONTENT_I18N: [
+    'NUXT_PUBLIC_IGNIS_CONTENT_I18N_ENABLED',
+    'NUXT_PUBLIC_IGNIS_CONTENT_I18N_DEFAULT',
+  ],
+  NUXT_PUBLIC_IGNIS_CONTENT_SEO: [
+    'NUXT_PUBLIC_IGNIS_CONTENT_SEO_ENABLED',
+  ],
+  NUXT_PUBLIC_IGNIS_CONTENT_SOCIAL: [
+    'NUXT_PUBLIC_IGNIS_CONTENT_SOCIAL_ENABLED',
+    'NUXT_PUBLIC_IGNIS_CONTENT_SOCIAL_URL',
+  ],
+  NUXT_PUBLIC_IGNIS_CONTENT_PSLO: [
+    'NUXT_PUBLIC_IGNIS_CONTENT_PSLO_ENABLED',
+    'NUXT_PUBLIC_IGNIS_CONTENT_PSLO_CONTENT',
+  ],
+  NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT: [
+    'NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_ENABLED',
+    'NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_COMPOSABLES',
+    'NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_PLUGINS',
+  ],
+  NUXT_PUBLIC_IGNIS_UTILS_REGEXP: [
+    'NUXT_PUBLIC_IGNIS_UTILS_REGEXP_ENABLED',
+  ],
+}
+
+/**
+ * Validates that no protected config variable is set directly via env.
+ * I.e. having `NUXT_PUBLIC_IGNIS_CONFIG=true` would trigger the error.
+ * This guard causes startup to fail fast when such issues are detected.
+ */
+export function validateEnv(): void {
+  const violations: string[] = []
+
+  for (const [forbiddenKey, suggestions] of Object.entries(IGNIS_CONFIG_NODES)) {
+    if (process.env[forbiddenKey] !== undefined) {
+      violations.push(
+        `  • "${forbiddenKey}" is an object node and must not be set directly.\n`
+        + `    Use one of: ${suggestions.join(', ')}`,
+      )
+    }
+  }
+
+  if (violations.length) {
+    throw new Error(
+      `[nuxt-ignis] Invalid env variable(s) detected.\n`
+      + `Resolution stopped. Fix your configuration before proceeding.\n\n`
+      + violations.join('\n\n')
+      + `\n\nSee https://nuxt-ignis.com/2-5-full-reference.html for the full list of valid env variables.`,
+    )
+  }
+}
