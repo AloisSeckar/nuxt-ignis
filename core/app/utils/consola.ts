@@ -6,7 +6,7 @@
 import type { LogLevel, LogObject } from 'consola/core'
 import { LogLevels, createConsola } from 'consola/core'
 import { consola } from 'consola'
-import { format } from 'date-fns'
+import { ignisDate } from './date'
 
 // default instance to write into browser's console
 const defaultReporter = consola
@@ -84,7 +84,7 @@ function transformLog(logObj: LogObject): string {
   }
 
   // add timestamp to the log body
-  const timestamp = format(new Date(), 'yyyy-MM-dd HH:mm:ss.SSS')
+  const timestamp = ignisDate(new Date(), 'yyyy-MM-dd HH:mm:ss.SSS')
   logBody = timestamp + '\n' + logBody
 
   // for warns and errors the stack is parsed to display only relevant records
