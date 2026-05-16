@@ -1,8 +1,13 @@
 import { existsSync, readdirSync, writeFileSync } from 'node:fs'
 import { join, relative } from 'node:path'
 import { addTemplate } from '@nuxt/kit'
+import type { Nuxt, PublicRuntimeConfig, RuntimeConfig, NuxtOptions } from 'nuxt/schema'
 import type { IgnisContentOptions, NuxtIgnisContentOptions } from './module'
-import type { Nuxt, PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
+import type { ModuleOptions as NuxtContentModuleOptions } from '@nuxt/content'
+
+type NuxtContentOptions = NuxtOptions & {
+  content?: Partial<NuxtContentModuleOptions>
+}
 
 // type augment for 'i18n:registerModule' hook
 type I18nRegisterFn = (cfg: {
@@ -232,6 +237,34 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisContentOptions, nuxt: Nux
   // elrh-pslo
   if (effectiveOptions.pslo?.enabled === true) {
     console.debug('elrh-pslo enabled')
+  }
+
+  // pslo content hook (requires nuxt instance)
+  if (effectiveOptions?.pslo?.enabled === true
+    && effectiveOptions?.content?.enabled === true
+    && effectiveOptions?.pslo?.content === true) {
+    // integration with Nuxt Content
+    // if enabled, all Nuxt Content page data will be treated with "preventSingleLetterOrphans" function
+
+    // transformation hook to apply the changes
+    nuxt.hook('content:file:beforeParse', async (ctx: { file: { id: string, body: string } }) => {
+      const { preventSingleLetterOrphans } = await import('elrh-pslo')
+      const { file } = ctx
+      file.body = preventSingleLetterOrphans(file.body)
+      console.debug(`Nuxt Content file ${file.id} processed with elrh-pslo`)
+    })
+
+    // fix to force Nuxt Content to invalidate its cache
+    // otherwise the hook won't be applied for the first time
+    // and we would have to manually delete cached files
+    const options = nuxt.options as NuxtContentOptions
+    options.content ??= {}
+    options.content.build ??= {}
+    options.content.build.markdown ??= {}
+    const markdown = options.content.build.markdown as Record<string, unknown>
+    markdown.__ignisPsloContent = true
+
+    console.debug('elrh-pslo + @nuxt/content integration enabled')
   }
 
   if (effectiveOptions.social?.enabled === true) {
