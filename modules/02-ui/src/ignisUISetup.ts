@@ -1,11 +1,11 @@
-import { createResolver, useNuxt } from '@nuxt/kit'
+import { createResolver } from '@nuxt/kit'
 import { defu } from 'defu'
 import OpenProps from 'open-props'
 import tailwindcss from '@tailwindcss/vite'
 import { ignisTailwindFix } from './runtime/tailwind-fix'
 import { ignisTailwindSource } from './runtime/tailwind-source'
 import type { IgnisUIOptions, NuxtIgnisUIOptions } from './module'
-import type { PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
+import type { Nuxt, PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
 
 export function ignisModuleDependencies(nuxtOptions: NuxtIgnisUIOptions) {
   console.debug('@nuxt-ignis/ui - module dependencies are being resolved')
@@ -35,7 +35,7 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisUIOptions) {
   return modules
 }
 
-export function ignisModuleSetup(nuxtOptions: NuxtIgnisUIOptions) {
+export function ignisModuleSetup(nuxtOptions: NuxtIgnisUIOptions, nuxt: Nuxt) {
   console.debug('@nuxt-ignis/ui - module setup function runs')
 
   const options = nuxtOptions.ignis?.ui
@@ -97,7 +97,6 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisUIOptions) {
   // https://github.com/AloisSeckar/nuxt-ignis/issues/175
   // TODO occasionally check for upstream fix
   if (effectiveOptions.charts === true) {
-    const nuxt = useNuxt()
     nuxt.hook('modules:done', () => {
       nuxt.options.build.transpile = nuxt.options.build.transpile.filter(
         t => t !== 'vue-chrts',

@@ -29,7 +29,7 @@ export default defineNuxtModule<IgnisUIOptions>({
     return ignisModuleDependencies(nuxt.options as NuxtIgnisUIOptions)
   },
   setup(_options, nuxt) {
-    ignisModuleSetup(nuxt.options as NuxtIgnisUIOptions)
+    ignisModuleSetup(nuxt.options as NuxtIgnisUIOptions, nuxt)
 
     const resolver = createResolver(import.meta.url)
     addPlugin(resolver.resolve('./runtime/plugin'))
