@@ -48,11 +48,10 @@ So the module is also checking for styling issues. [Prettier](https://prettier.i
 The template looks like this:
 
 ```js [eslint.config.mjs]
-// @ts-check
 import withNuxt from './.nuxt/eslint.config.mjs'
 
 export default withNuxt(
-  // Your custom configs here
+  // your custom config here
 )
 ```
 
