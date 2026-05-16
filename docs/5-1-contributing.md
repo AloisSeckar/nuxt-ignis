@@ -39,11 +39,7 @@ packages:
 # https://pnpm.io/catalogs#defining-catalogs
 # global version definition for the repeated packages
 catalog:
-  nuxt: 4.4.4
-  '@nuxt/eslint': 1.15.2
-  typescript: 5.9.3
-  vue: 3.5.33
-  vue-router: 5.0.6
+  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/pnpm-workspace.yaml for current values
 
 # https://pnpm.io/settings#minimumreleaseage
 # new packages cannot be installed earlier than one week after release
@@ -53,22 +49,23 @@ minimumReleaseAgeExclude:
 # - package-name
 
 # https://pnpm.io/settings#allowBuilds
-# explicitly allowed post-install scripts
-# TODO revise via https://github.com/AloisSeckar/nuxt-ignis/issues/150
 allowBuilds:
+  # post-install scripts required for correct behavior
   '@parcel/watcher': true
   '@tailwindcss/oxide': true
   esbuild: true
-  maplibre-gl: true
-  puppeteer: true
   sharp: true
   unrs-resolver: true
   vue-demi: true
+  # post-install scripts that can be ignored
+  maplibre-gl: false
+  puppeteer: false
 
 # https://pnpm.io/settings#overrides
 # specific package versions (mostly temporary because known vulnerabilities)
 overrides:
-# - package-name
+  # - package-name
+  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/pnpm-workspace.yaml for current values
 
 # https://pnpm.io/settings#trustpolicy
 # packages cannot change from trusted to untrusted

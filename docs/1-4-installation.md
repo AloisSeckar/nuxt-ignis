@@ -74,14 +74,16 @@ The `packageManager` tries to ensure same `pnpm` version is used as during the d
 shamefully-hoist: true
 
 allowBuilds:
+  # post-install scripts required for correct behavior
   '@parcel/watcher': true
   '@tailwindcss/oxide': true
   esbuild: true
-  maplibre-gl: true
-  puppeteer: true
   sharp: true
   unrs-resolver: true
   vue-demi: true
+  # post-install scripts that can be ignored
+  maplibre-gl: false
+  puppeteer: false
 ```
 
 <details>

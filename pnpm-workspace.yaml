@@ -112,11 +112,12 @@ allowBuilds:
   '@parcel/watcher': true
   '@tailwindcss/oxide': true
   esbuild: true
-  maplibre-gl: true
-  puppeteer: true
   sharp: true
   unrs-resolver: true
   vue-demi: true
+  # following post-install scripts are not needed (#150)
+  maplibre-gl: false
+  puppeteer: false
 
 overrides:
   '@nuxt/test-utils': ^4.0.2
