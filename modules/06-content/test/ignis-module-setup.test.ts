@@ -1,11 +1,15 @@
+import { readdirSync } from 'node:fs'
+import { addTemplate } from '@nuxt/kit'
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
 import { ignisModuleSetup } from '../src/ignisContentSetup'
 import type { NuxtIgnisContentOptions } from '../src/module'
+import type { Nuxt } from '@nuxt/schema'
 
-import { readdirSync } from 'node:fs'
-import { addTemplate } from '@nuxt/kit'
+// setup can call nuxt.hook function and can access nuxt.options...
+const nuxtMock = { hook: vi.fn(), options: {} } as unknown as Nuxt
 
 vi.mock('node:fs', () => ({
+  existsSync: vi.fn(),
   readdirSync: vi.fn(),
 }))
 
@@ -39,7 +43,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
 
   test('should mark all features as disabled in runtime config by default', () => {
     const nuxtOptions = {} as NuxtIgnisContentOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.content).toEqual({
       content: { enabled: false },
       i18n: { enabled: false, default: 'en' },
@@ -68,7 +72,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
         },
       },
     } as NuxtIgnisContentOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.content).toEqual({
       content: { enabled: true },
       i18n: { enabled: true, default: 'de' },
@@ -90,7 +94,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
         },
       },
     } as NuxtIgnisContentOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.content).toEqual({
       content: { enabled: false },
       i18n: { enabled: false, default: 'en' },
@@ -112,7 +116,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
         },
       },
     } as NuxtIgnisContentOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
 
     expect(readdirSync).toHaveBeenCalled()
     expect(addTemplate).toHaveBeenCalled()
@@ -136,7 +140,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
         },
       },
     } as NuxtIgnisContentOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
 
     expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('No i18n locale files found'))
     expect(debugSpy).toHaveBeenCalledWith('i18n locale files found: none')
@@ -154,7 +158,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
         },
       },
     } as NuxtIgnisContentOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.content?.i18n?.default).toBe('en')
   })
 
@@ -166,7 +170,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
         },
       },
     } as NuxtIgnisContentOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
 
     expect(debugSpy).toHaveBeenCalledWith('elrh-pslo enabled')
   })
@@ -179,7 +183,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
         },
       },
     } as NuxtIgnisContentOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
 
     expect(warnSpy).toHaveBeenCalledWith(expect.stringContaining('Base URL for `nuxt-social-share` is not set'))
   })
@@ -192,7 +196,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
         },
       },
     } as NuxtIgnisContentOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
 
     expect(warnSpy).not.toHaveBeenCalledWith(expect.stringContaining('Base URL for `nuxt-social-share` is not set'))
   })

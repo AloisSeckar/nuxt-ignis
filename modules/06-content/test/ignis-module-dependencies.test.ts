@@ -1,11 +1,12 @@
+import { readdirSync } from 'node:fs'
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest'
 import { ignisModuleDependencies } from '../src/ignisContentSetup'
 import type { NuxtIgnisContentOptions } from '../src/module'
 
-import { readdirSync } from 'node:fs'
-
 vi.mock('node:fs', () => ({
   readdirSync: vi.fn(),
+  existsSync: vi.fn(),
+  writeFileSync: vi.fn(),
 }))
 
 vi.mock('@nuxt/kit', () => ({
@@ -187,7 +188,7 @@ describe('@nuxt-ignis/content - resolving module dependencies', () => {
 
     expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/content - module dependencies are being resolved')
     expect(debugSpy).toHaveBeenCalledWith('@nuxtjs/seo module installed')
-    expect(debugSpy).toHaveBeenCalledTimes(2)
+    expect(debugSpy).toHaveBeenCalledTimes(3)
 
     expect(warnSpy).toHaveBeenCalledTimes(0)
   })
@@ -208,13 +209,14 @@ describe('@nuxt-ignis/content - resolving module dependencies', () => {
 
     expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/content - module dependencies are being resolved')
     expect(debugSpy).toHaveBeenCalledWith('@nuxtjs/seo module installed')
-    expect(debugSpy).toHaveBeenCalledTimes(2)
+    expect(debugSpy).toHaveBeenCalledTimes(3)
 
     expect(warnSpy).toHaveBeenCalledTimes(0)
   })
 
   test('should add @nuxt/content module if content enabled', () => {
     expect(ignisModuleDependencies({
+      rootDir: '/mock',
       ignis: {
         content: {
           content: { enabled: true },
@@ -232,7 +234,7 @@ describe('@nuxt-ignis/content - resolving module dependencies', () => {
 
     expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/content - module dependencies are being resolved')
     expect(debugSpy).toHaveBeenCalledWith('@nuxt/content module installed')
-    expect(debugSpy).toHaveBeenCalledTimes(2)
+    expect(debugSpy).toHaveBeenCalledTimes(3)
 
     expect(warnSpy).toHaveBeenCalledTimes(0)
   })

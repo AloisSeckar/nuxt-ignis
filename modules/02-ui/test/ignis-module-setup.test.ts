@@ -1,11 +1,15 @@
-import { describe, expect, test } from 'vitest'
+import { describe, expect, test, vi } from 'vitest'
 import { ignisModuleSetup } from '../src/ignisUISetup'
 import type { NuxtIgnisUIOptions } from '../src/module'
+import type { Nuxt } from 'nuxt/schema'
+
+// setup can call nuxt.hook function...
+const nuxtMock = { hook: vi.fn() } as unknown as Nuxt
 
 describe('@nuxt-ignis/ui - running module setup', () => {
   test('should mark all features as disabled in runtime config by default', () => {
     const nuxtOptions = {} as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.ui).toEqual({
       ui: false,
       tailwind: false,
@@ -25,7 +29,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.ui).toEqual({
       ui: true,
       tailwind: true,
@@ -45,7 +49,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.ui).toEqual({
       ui: false,
       tailwind: false,
@@ -62,7 +66,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     // should include the Nuxt UI CSS file
     expect(nuxtOptions.css).toEqual(
       expect.arrayContaining([expect.stringContaining('ignis-nuxt-ui.css')]),
@@ -84,7 +88,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.css).toEqual(
       expect.not.arrayContaining([expect.stringContaining('ignis-nuxt-ui.css')]),
     )
@@ -98,7 +102,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     // should include the Nuxt UI CSS file
     expect(nuxtOptions.css).toEqual(
       expect.arrayContaining([expect.stringContaining('ignis-tailwind.css')]),
@@ -120,7 +124,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.css).toEqual(
       expect.not.arrayContaining([expect.stringContaining('ignis-tailwind.css')]),
     )
@@ -135,7 +139,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     // should include the Nuxt UI CSS file
     expect(nuxtOptions.css).toEqual(
       expect.arrayContaining([expect.stringContaining('ignis-nuxt-ui.css')]),
@@ -155,7 +159,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     // should include the Tailwind CSS file
     expect(nuxtOptions.css).toEqual(
       expect.arrayContaining([expect.stringContaining('ignis-tailwind.css')]),
@@ -174,7 +178,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     // should include the Open Props CSS file
     expect(nuxtOptions.css).toEqual(
       expect.arrayContaining([expect.stringContaining('ignis-open-props.css')]),
@@ -196,7 +200,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     expect(nuxtOptions.css).toEqual(
       expect.not.arrayContaining([expect.stringContaining('ignis-open-props.css')]),
     )
@@ -210,7 +214,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     // should include the Vite plugin for Tailwind CSS
     expect(JSON.stringify(nuxtOptions.vite.plugins)).toContain('@tailwindcss/vite')
   })
@@ -223,9 +227,9 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     // should include custom plugin to fix sourcemap warnings
-    expect(JSON.stringify(nuxtOptions.vite)).toContain('vite-plugin-ignore-sourcemap-warnings')
+    expect(JSON.stringify(nuxtOptions.vite)).toContain('ignore-tailwind-sourcemap-warnings')
   })
 
   test('should include Tailwind fix if Nuxt UI is enabled', () => {
@@ -236,9 +240,9 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     // should include custom plugin to fix sourcemap warnings
-    expect(JSON.stringify(nuxtOptions.vite)).toContain('vite-plugin-ignore-sourcemap-warnings')
+    expect(JSON.stringify(nuxtOptions.vite)).toContain('ignore-tailwind-sourcemap-warnings')
   })
 
   test('should include PostCSS plugin if Open Props is enabled', () => {
@@ -249,7 +253,7 @@ describe('@nuxt-ignis/ui - running module setup', () => {
         },
       },
     } as NuxtIgnisUIOptions
-    ignisModuleSetup(nuxtOptions)
+    ignisModuleSetup(nuxtOptions, nuxtMock)
     // should include the PostCSS plugin for Open Props
     expect(JSON.stringify(nuxtOptions.postcss.plugins)).toContain('"postcss-jit-props":')
   })

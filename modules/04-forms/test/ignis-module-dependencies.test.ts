@@ -11,6 +11,8 @@ vi.mock('node:fs', () => ({
   writeFileSync: vi.fn(),
 }))
 
+const MOCK_ROOT_DIR = '/mock/project'
+
 describe('@nuxt-ignis/forms - resolving module dependencies', () => {
   let debugSpy: ReturnType<typeof vi.spyOn>
 
@@ -34,8 +36,7 @@ describe('@nuxt-ignis/forms - resolving module dependencies', () => {
 
   test('should add @vueform/nuxt module if Vueform enabled', () => {
     expect(ignisModuleDependencies({
-      rootDir: '/mock/project',
-      buildDir: '/mock/project/.nuxt',
+      rootDir: MOCK_ROOT_DIR,
       ignis: {
         forms: {
           vueform: {
@@ -44,20 +45,16 @@ describe('@nuxt-ignis/forms - resolving module dependencies', () => {
         },
       },
     } as NuxtIgnisFormsOptions)).toEqual({
-      '@vueform/nuxt': {
-        defaults: {
-          configPath: join('/mock/project/.nuxt', 'vueform.config.ts'),
-        },
-      },
+      '@vueform/nuxt': {},
     })
 
     expect(writeFileSync).toHaveBeenCalledWith(
-      join('/mock/project/.nuxt', 'vueform.config.ts'),
+      join(MOCK_ROOT_DIR, 'vueform.config.ts'),
       expect.stringContaining('loadVueformConfig'),
     )
     expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/forms - module dependencies are being resolved')
     expect(debugSpy).toHaveBeenCalledWith('@vueform/nuxt module installed')
-    expect(debugSpy).toHaveBeenCalledTimes(2)
+    expect(debugSpy).toHaveBeenCalledTimes(3)
   })
 
   test('should add no modules if Vueform disabled', () => {
@@ -77,8 +74,7 @@ describe('@nuxt-ignis/forms - resolving module dependencies', () => {
 
   test('should add @formkit/nuxt module if FormKit enabled', () => {
     expect(ignisModuleDependencies({
-      rootDir: '/mock/project',
-      buildDir: '/mock/project/.nuxt',
+      rootDir: MOCK_ROOT_DIR,
       ignis: {
         forms: {
           formkit: {
@@ -91,20 +87,19 @@ describe('@nuxt-ignis/forms - resolving module dependencies', () => {
         defaults: {
           autoImport: true,
           default: 'en',
-          configFile: join('/mock/project/.nuxt', 'formkit.config.ts'),
+          configFile: './formkit.config.ts',
         },
       },
     })
 
     expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/forms - module dependencies are being resolved')
     expect(debugSpy).toHaveBeenCalledWith('@formkit/nuxt module installed')
-    expect(debugSpy).toHaveBeenCalledTimes(2)
+    expect(debugSpy).toHaveBeenCalledTimes(3)
   })
 
   test('should add @formkit/nuxt module with custom config if FormKit enabled with options', () => {
     expect(ignisModuleDependencies({
-      rootDir: '/mock/project',
-      buildDir: '/mock/project/.nuxt',
+      rootDir: MOCK_ROOT_DIR,
       ignis: {
         forms: {
           formkit: {
@@ -146,8 +141,7 @@ describe('@nuxt-ignis/forms - resolving module dependencies', () => {
 
   test('should add both modules if both Vueform and FormKit enabled', () => {
     expect(ignisModuleDependencies({
-      rootDir: '/mock/project',
-      buildDir: '/mock/project/.nuxt',
+      rootDir: MOCK_ROOT_DIR,
       ignis: {
         forms: {
           vueform: {
@@ -159,16 +153,12 @@ describe('@nuxt-ignis/forms - resolving module dependencies', () => {
         },
       },
     } as NuxtIgnisFormsOptions)).toEqual({
-      '@vueform/nuxt': {
-        defaults: {
-          configPath: join('/mock/project/.nuxt', 'vueform.config.ts'),
-        },
-      },
+      '@vueform/nuxt': {},
       '@formkit/nuxt': {
         defaults: {
           autoImport: true,
           default: 'en',
-          configFile: join('/mock/project/.nuxt', 'formkit.config.ts'),
+          configFile: './formkit.config.ts',
         },
       },
     })
@@ -176,16 +166,15 @@ describe('@nuxt-ignis/forms - resolving module dependencies', () => {
     expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/forms - module dependencies are being resolved')
     expect(debugSpy).toHaveBeenCalledWith('@vueform/nuxt module installed')
     expect(debugSpy).toHaveBeenCalledWith('@formkit/nuxt module installed')
-    expect(debugSpy).toHaveBeenCalledTimes(3)
+    expect(debugSpy).toHaveBeenCalledTimes(5)
   })
 
   test('should use user vueform.config.ts when it exists in project root', () => {
     vi.mocked(existsSync).mockImplementation((p) => {
-      return String(p) === join('/mock/project', 'vueform.config.ts')
+      return String(p) === join(MOCK_ROOT_DIR, 'vueform.config.ts')
     })
     expect(ignisModuleDependencies({
-      rootDir: '/mock/project',
-      buildDir: '/mock/project/.nuxt',
+      rootDir: MOCK_ROOT_DIR,
       ignis: {
         forms: {
           vueform: {
@@ -201,11 +190,10 @@ describe('@nuxt-ignis/forms - resolving module dependencies', () => {
 
   test('should use user formkit.config.ts when it exists in project root', () => {
     vi.mocked(existsSync).mockImplementation((p) => {
-      return String(p) === join('/mock/project', 'formkit.config.ts')
+      return String(p) === join(MOCK_ROOT_DIR, 'formkit.config.ts')
     })
     expect(ignisModuleDependencies({
-      rootDir: '/mock/project',
-      buildDir: '/mock/project/.nuxt',
+      rootDir: MOCK_ROOT_DIR,
       ignis: {
         forms: {
           formkit: {
