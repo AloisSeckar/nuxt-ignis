@@ -2,7 +2,7 @@ import type { IgnisOptions } from '../02-features'
 
 // custom bridge used to populate Ignis options from .env variables (if present)
 // .env variables take precedence over options passed directly from nuxt.config.ts
-export function applyEnv(opts: IgnisOptions) {
+export function envApply(opts: IgnisOptions) {
   // presets
   opts.preset ??= {}
   opts.preset.ui = process.env.NUXT_PUBLIC_IGNIS_PRESET_UI as 'nuxt-ui' | 'tailwind' | 'off' || opts.preset.ui || 'off'

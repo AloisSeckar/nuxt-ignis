@@ -119,7 +119,7 @@ const IGNIS_CONFIG_NODES: Record<string, string[]> = {
  * I.e. having `NUXT_PUBLIC_IGNIS_CONFIG=true` would trigger the error.
  * This guard causes startup to fail fast when such issues are detected.
  */
-export function validateEnv(): void {
+export function envValidate(): void {
   const violations: string[] = []
 
   for (const [forbiddenKey, suggestions] of Object.entries(IGNIS_CONFIG_NODES)) {

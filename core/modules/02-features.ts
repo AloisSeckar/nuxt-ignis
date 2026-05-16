@@ -8,8 +8,8 @@ import type { IgnisFormsOptions } from '@nuxt-ignis/forms'
 import type { IgnisValidationOptions } from '@nuxt-ignis/validation'
 import type { IgnisContentOptions } from '@nuxt-ignis/content'
 import type { IgnisUtilsOptions } from '@nuxt-ignis/utils'
-import { applyEnv } from './utils/env'
-import { validateEnv } from './utils/validate-env'
+import { envApply } from './utils/env-apply'
+import { envValidate } from './utils/env-validate'
 import { checkForDuplicateModules } from './utils/duplicates'
 import { resolveUiPreset, resolveDbPreset, resolveFormsPreset, resolveValidationPreset } from './utils/presets'
 import { isDefaultActive, isUiActive, isDbActive, isFormsActive, isValidationActive, isContentActive, isUtilsActive } from './utils/activation'
@@ -78,9 +78,9 @@ export default defineNuxtModule<IgnisOptions>({
     // when neither is, Ignis will apply defaults
 
     // #171 - guard rejecting corrupted .env variables that does not match expected values
-    validateEnv()
+    envValidate()
 
-    applyEnv(ignisOpts)
+    envApply(ignisOpts)
 
     if (!ignisOpts) {
       console.debug('No Ignis options provided. Setting defaults.')
