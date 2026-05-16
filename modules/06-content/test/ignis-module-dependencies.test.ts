@@ -6,6 +6,7 @@ import type { NuxtIgnisContentOptions } from '../src/module'
 vi.mock('node:fs', () => ({
   readdirSync: vi.fn(),
   existsSync: vi.fn(),
+  readFileSync: vi.fn(),
   writeFileSync: vi.fn(),
 }))
 
@@ -29,11 +30,14 @@ describe('@nuxt-ignis/content - resolving module dependencies', () => {
     debugSpy = vi.spyOn(console, 'debug').mockImplementation(() => {})
     warnSpy = vi.spyOn(console, 'warn').mockImplementation(() => {})
     vi.mocked(readdirSync).mockReset()
+    // prevent auto-generation of NUXT_OG_IMAGE_SECRET in unrelated tests
+    process.env.NUXT_OG_IMAGE_SECRET = 'test-secret'
   })
 
   afterEach(() => {
     debugSpy.mockRestore()
     warnSpy.mockRestore()
+    delete process.env.NUXT_OG_IMAGE_SECRET
   })
 
   test('should add no modules by default', () => {
@@ -205,6 +209,9 @@ describe('@nuxt-ignis/content - resolving module dependencies', () => {
       '@nuxtjs/sitemap': {
         defaults: { zeroRuntime: true },
       },
+      'nuxt-og-image': {
+        defaults: { zeroRuntime: true },
+      },
     })
 
     expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/content - module dependencies are being resolved')
@@ -335,5 +342,220 @@ describe('@nuxt-ignis/content - resolving module dependencies', () => {
     expect(result['@stefanobartoletti/nuxt-social-share']).toBeDefined()
 
     expect(warnSpy).toHaveBeenCalledTimes(0)
+  })
+
+  describe('NUXT_OG_IMAGE_SECRET auto-generation', () => {
+    beforeEach(async () => {
+      // ensure auto-generation can occur in this sub-suite
+      delete process.env.NUXT_OG_IMAGE_SECRET
+      const fs = await import('node:fs')
+      vi.mocked(fs.existsSync).mockReset()
+      vi.mocked(fs.readFileSync).mockReset()
+      vi.mocked(fs.writeFileSync).mockReset()
+    })
+
+    test('should auto-generate NUXT_OG_IMAGE_SECRET in dev mode when seo enabled and ssr on (default)', async () => {
+      const fs = await import('node:fs')
+      vi.mocked(fs.existsSync).mockReturnValue(false)
+
+      ignisModuleDependencies({
+        dev: true,
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: true },
+          },
+        },
+      } as NuxtIgnisContentOptions)
+
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toBeDefined()
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toMatch(/^[0-9a-f]{64}$/)
+      expect(debugSpy).toHaveBeenCalledWith('NUXT_OG_IMAGE_SECRET auto-generated for nuxt-og-image (dev only, in-memory)')
+    })
+
+    test('should NOT auto-generate NUXT_OG_IMAGE_SECRET in production mode (dev !== true)', () => {
+      ignisModuleDependencies({
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: true },
+          },
+        },
+      } as NuxtIgnisContentOptions)
+
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toBeUndefined()
+    })
+
+    test('should not overwrite NUXT_OG_IMAGE_SECRET if already set by the user', () => {
+      process.env.NUXT_OG_IMAGE_SECRET = 'user-provided-secret'
+
+      ignisModuleDependencies({
+        dev: true,
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: true },
+          },
+        },
+      } as NuxtIgnisContentOptions)
+
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toBe('user-provided-secret')
+      expect(debugSpy).not.toHaveBeenCalledWith('NUXT_OG_IMAGE_SECRET auto-generated for nuxt-og-image (dev only, in-memory)')
+    })
+
+    test('should not auto-generate NUXT_OG_IMAGE_SECRET when ssr is false', () => {
+      ignisModuleDependencies({
+        dev: true,
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: true },
+          },
+          config: {
+            nuxt: { ssr: false },
+          },
+        },
+      } as NuxtIgnisContentOptions)
+
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toBeUndefined()
+    })
+
+    test('should not auto-generate NUXT_OG_IMAGE_SECRET when ogImage is explicitly disabled', () => {
+      ignisModuleDependencies({
+        dev: true,
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: true },
+          },
+        },
+        ogImage: { enabled: false },
+      } as unknown as NuxtIgnisContentOptions)
+
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toBeUndefined()
+    })
+
+    test('should not auto-generate NUXT_OG_IMAGE_SECRET when ogImage zeroRuntime is true', () => {
+      ignisModuleDependencies({
+        dev: true,
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: true },
+          },
+        },
+        ogImage: { zeroRuntime: true },
+      } as unknown as NuxtIgnisContentOptions)
+
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toBeUndefined()
+    })
+
+    test('should not auto-generate NUXT_OG_IMAGE_SECRET when staticsite is true', () => {
+      ignisModuleDependencies({
+        dev: true,
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: true, staticsite: true },
+          },
+        },
+      } as NuxtIgnisContentOptions)
+
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toBeUndefined()
+    })
+
+    test('should not auto-generate NUXT_OG_IMAGE_SECRET when seo is disabled', () => {
+      ignisModuleDependencies({
+        dev: true,
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: false },
+          },
+        },
+      } as NuxtIgnisContentOptions)
+
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toBeUndefined()
+    })
+
+    test('should persist secret to .env when file does not exist', async () => {
+      const fs = await import('node:fs')
+      vi.mocked(fs.existsSync).mockReturnValue(false)
+
+      ignisModuleDependencies({
+        dev: true,
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: true },
+          },
+        },
+      } as NuxtIgnisContentOptions)
+
+      expect(fs.writeFileSync).toHaveBeenCalledTimes(1)
+      const [path, content] = vi.mocked(fs.writeFileSync).mock.calls[0]!
+      expect(String(path)).toMatch(/\.env$/)
+      expect(String(content)).toContain(`NUXT_OG_IMAGE_SECRET=${process.env.NUXT_OG_IMAGE_SECRET}`)
+      expect(String(content)).toContain('Auto-generated by @nuxt-ignis/content')
+      expect(String(content)).toContain('npx nuxt-og-image generate-secret')
+      expect(debugSpy).toHaveBeenCalledWith(expect.stringContaining('persisted to'))
+    })
+
+    test('should append secret to existing .env when variable not present', async () => {
+      const fs = await import('node:fs')
+      vi.mocked(fs.existsSync).mockReturnValue(true)
+      vi.mocked(fs.readFileSync).mockReturnValue('FOO=bar\n' as unknown as ReturnType<typeof fs.readFileSync>)
+
+      ignisModuleDependencies({
+        dev: true,
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: true },
+          },
+        },
+      } as NuxtIgnisContentOptions)
+
+      expect(fs.writeFileSync).toHaveBeenCalledTimes(1)
+      const [, content] = vi.mocked(fs.writeFileSync).mock.calls[0]!
+      expect(String(content)).toMatch(/^FOO=bar\n/)
+      expect(String(content)).toContain('NUXT_OG_IMAGE_SECRET=')
+    })
+
+    test('should NOT write to .env when variable is already declared there', async () => {
+      const fs = await import('node:fs')
+      vi.mocked(fs.existsSync).mockReturnValue(true)
+      vi.mocked(fs.readFileSync).mockReturnValue('NUXT_OG_IMAGE_SECRET=existing\n' as unknown as ReturnType<typeof fs.readFileSync>)
+
+      ignisModuleDependencies({
+        dev: true,
+        rootDir: '/app',
+        ignis: {
+          content: {
+            seo: { enabled: true },
+          },
+        },
+      } as NuxtIgnisContentOptions)
+
+      // secret still generated in-memory, but file untouched
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toMatch(/^[0-9a-f]{64}$/)
+      expect(fs.writeFileSync).not.toHaveBeenCalled()
+    })
+
+    test('should not attempt to write .env when rootDir is missing', async () => {
+      const fs = await import('node:fs')
+
+      ignisModuleDependencies({
+        dev: true,
+        ignis: {
+          content: {
+            seo: { enabled: true },
+          },
+        },
+      } as NuxtIgnisContentOptions)
+
+      expect(process.env.NUXT_OG_IMAGE_SECRET).toMatch(/^[0-9a-f]{64}$/)
+      expect(fs.writeFileSync).not.toHaveBeenCalled()
+    })
   })
 })

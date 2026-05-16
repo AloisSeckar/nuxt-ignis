@@ -116,7 +116,27 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_CONFIG_NUXT
 
 ### Additional options
 
-- `NUXT_PUBLIC_IGNIS_CONTENT_SEO_STATICSITE` (or `ignis.content.seo.staticsite` in `nuxt.config.ts`) - set to `true` to enable [zero-runtime sitemap generation](https://nuxtseo.com/docs/sitemap/guides/zero-runtime), which is recommended for fully static sites with pre-rendered pages to optimize bundle size. Defaults to `false`.
+- `NUXT_PUBLIC_IGNIS_CONTENT_SEO_STATICSITE` (or `ignis.content.seo.staticsite` in `nuxt.config.ts`) - set to `true` to enable [zero-runtime sitemap generation](https://nuxtseo.com/docs/sitemap/guides/zero-runtime) and [zero-runtime OG Image generation](https://nuxtseo.com/docs/og-image/guides/zero-runtime), which is recommended for fully static sites with pre-rendered pages to optimize bundle sizes. Defaults to `false`.
+
+### Nuxt OG Image secret
+
+[Nuxt OG Image](https://nuxtseo.com/docs/og-image/getting-started/introduction) (bundled in `@nuxtjs/seo`) should receive the `NUXT_OG_IMAGE_SECRET` environment variable for URL tamper protection when running in SSR mode. **In DEV mode only**, Nuxt Ignis auto-generates a cryptographically secure 64-character hex secret and assigns it to `process.env.NUXT_OG_IMAGE_SECRET` under the following conditions:
+
+- the project is running in DEV mode
+- `NUXT_OG_IMAGE_SECRET` is not set yet
+- `@nuxtjs/seo` module integration is enabled
+- SSR is not disabled via the respective Nuxt Ignis config option
+- Zero Runtime is not enabled via the respective Nuxt Ignis config option
+- `nuxt-og-image` is not explicitly disabled (`ogImage: { enabled: false }` in `nuxt.config.ts`)
+- `nuxt-og-image` is not running in zero-runtime mode (`ogImage: { zeroRuntime: true }` in `nuxt.config.ts`)
+
+The generated value is also written into the project's `.env` file (with a warning comment) so it stays stable across dev server restarts and is visible to the developer. If `NUXT_OG_IMAGE_SECRET` is already declared in `.env`, the file is left untouched.
+
+**For production**
+
+It is **DISCOURAGED** to use the auto-generated secret from development in production as it poses a potential security risk. 
+
+Rather than reuse the local value, generate a fresh value with `npx nuxt-og-image generate-secret` for your production environment.
 
 ## Nuxt Auth Utils
 
