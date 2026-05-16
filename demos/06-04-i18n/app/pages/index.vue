@@ -7,8 +7,7 @@
         :key="loc.code"
         :disabled="locale === loc.code"
         style="margin-right: 8px; padding: 4px 12px; cursor: pointer;"
-        @click="setLocale(loc.code)"
-      >
+        @click="setLocale(loc.code)">
         {{ loc.code.toUpperCase() }}
       </button>
     </div>

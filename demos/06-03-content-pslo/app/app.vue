@@ -8,15 +8,13 @@
     <div>
       <NuxtLink
         to="/first"
-        :external="true"
-      >
+        :external="true">
         First
       </NuxtLink>
       &bull;
       <NuxtLink
         to="/second"
-        :external="true"
-      >
+        :external="true">
         Second
       </NuxtLink>
     </div>

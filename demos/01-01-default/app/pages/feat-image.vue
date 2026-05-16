@@ -7,8 +7,7 @@
         src="01.jpg"
         alt="NuxtImg demo image"
         width="300"
-        height="225"
-      />
+        height="225" />
     </div>
     <div v-else>
       Image module is not enabled

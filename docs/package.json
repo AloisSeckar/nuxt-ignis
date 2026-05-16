@@ -1,6 +1,6 @@
 {
   "private": true,
-  "name": "@nuxt-ignis/docs",
+  "name": "nuxt-ignis-docs",
   "type": "module",
   "scripts": {
     "dev": "vitepress dev",

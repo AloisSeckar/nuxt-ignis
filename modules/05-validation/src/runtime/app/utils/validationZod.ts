@@ -5,8 +5,7 @@ import { useRuntimeConfig } from '#imports'
 export async function isValidByZod(schema: ZodObject, obj: unknown): Promise<boolean> {
   if (useRuntimeConfig().public.ignis.validation.zod === true) {
     return schema.safeParse(obj).success
-  }
-  else {
+  } else {
     console.warn('Zod is not enabled, validation is not available.')
     return false
   }

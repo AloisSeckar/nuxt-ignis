@@ -10,8 +10,7 @@
       :src="value?.image"
       :alt="value?.name"
       :title="`${value?.name} - ${value?.dscr}`"
-      class="supabase"
-    >
+      class="supabase">
   </div>
 </template>
 
@@ -23,7 +22,9 @@ const { data } = useAsyncData(async () => {
     .select('id, name, dscr, image')
     .order('name', { ascending: true })
     .limit(12)
-    .then((data) => { results = data.data })
+    .then((data) => {
+      results = data.data
+    })
   return results
 })
 </script>

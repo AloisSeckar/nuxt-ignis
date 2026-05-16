@@ -7,8 +7,7 @@
       v-slot="{ value }"
       type="form"
       submit-label="Odeslat"
-      @submit="handleSave"
-    >
+      @submit="handleSave">
       Current form data:
       <pre>{{ value }}</pre>
       <br>
@@ -19,8 +18,7 @@
         name="name"
         label="Name:"
         validation="required"
-        help="Insert text"
-      />
+        help="Insert text" />
       <FormKit
         id="age"
         v-model="bio.age"
@@ -29,8 +27,7 @@
         name="age"
         label="Age:"
         validation="required|min:18|max:99"
-        help="Select number"
-      />
+        help="Select number" />
       <FormKit
         id="gender"
         v-model="bio.gender"
@@ -39,8 +36,7 @@
         label="Gender:"
         :options="{ m: 'male', f: 'female', x: 'other' }"
         validation="required"
-        help="Pick one"
-      />
+        help="Pick one" />
       <FormKit
         id="bio"
         v-model="bio.bio"
@@ -48,16 +44,14 @@
         name="bio"
         label="Bio:"
         validation="required"
-        help="Write text"
-      />
+        help="Write text" />
       <FormKit
         id="completed"
         v-model="bio.completed"
         type="checkbox"
         name="completed"
         label="Completed"
-        help="Check to mark as completed"
-      />
+        help="Check to mark as completed" />
     </FormKit>
   </div>
 </template>

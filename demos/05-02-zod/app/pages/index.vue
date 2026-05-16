@@ -36,8 +36,7 @@ let invalidObject: Login
 try {
   validObject = LoginSchema.parse({ email: 'jane.doe@example.com', password: '12345' })
   invalidObject = LoginSchema.parse({ email: 'jane.doe@example.com', password: 12345 })
-}
-catch (error) {
+} catch (error) {
   // ZodError: Expected string, received number
   console.log((error as Error).message)
 }

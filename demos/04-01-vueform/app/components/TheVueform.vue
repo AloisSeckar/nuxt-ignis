@@ -3,38 +3,33 @@
     :endpoint="submitForm"
     method="post"
     @response="vueformResponse"
-    @error="vueformError"
-  >
+    @error="vueformError">
     <StaticElement
       name="title"
       tag="h1"
       content="User Profile Form"
-      description="Please fill out the following information to complete your user profile."
-    />
+      description="Please fill out the following information to complete your user profile." />
     <TextElement
       name="first_name"
       label="First Name"
       placeholder="Enter your first name"
       :rules="[
         'required',
-      ]"
-    />
+      ]" />
     <TextElement
       name="last_name"
       label="Last Name"
       placeholder="Enter your last name"
       :rules="[
         'required',
-      ]"
-    />
+      ]" />
     <TextElement
       name="age"
       label="Age"
       placeholder="Enter your age"
       :rules="[
         'required',
-      ]"
-    />
+      ]" />
     <RadiogroupElement
       name="gender"
       label="Gender"
@@ -45,8 +40,7 @@
         'Male',
         'Female',
         'Other',
-      ]"
-    />
+      ]" />
     <TextElement
       name="genderText"
       label="Please specify gender:"
@@ -58,8 +52,7 @@
             'Other',
           ],
         ],
-      ]"
-    />
+      ]" />
     <RadiogroupElement
       name="country"
       label="Country"
@@ -69,8 +62,7 @@
       :items="[
         '(List of countries)',
         'Other',
-      ]"
-    />
+      ]" />
     <TextElement
       name="countryText"
       label="Please specify country:"
@@ -82,8 +74,7 @@
             'Other',
           ],
         ],
-      ]"
-    />
+      ]" />
     <!--
         <FileElement
             name="profile_picture"
@@ -100,8 +91,7 @@
       button-label="Submit"
       :submits="true"
       :full="true"
-      align="center"
-    />
+      align="center" />
   </Vueform>
 </template>
 

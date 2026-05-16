@@ -2,8 +2,7 @@
   <div>
     <ContentRenderer
       v-if="page"
-      :value="page"
-    />
+      :value="page" />
   </div>
 </template>
 

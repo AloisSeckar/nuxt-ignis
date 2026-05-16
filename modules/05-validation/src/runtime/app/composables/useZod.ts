@@ -15,8 +15,7 @@ export const useZod = async (): Promise<ZodZ | undefined> => {
   if (useRuntimeConfig().public.ignis.validation.zod === true) {
     const zod = await import('zod/v4')
     return zod.z
-  }
-  else {
+  } else {
     console.warn('Zod is not enabled, validation is not available.')
   }
 }

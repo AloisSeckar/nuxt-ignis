@@ -5,8 +5,7 @@
     :height="300"
     :x-formatter="xFormatter"
     x-label="Month"
-    y-label="Amount"
-  />
+    y-label="Amount" />
 </template>
 
 <script setup lang="ts">

@@ -10,8 +10,7 @@ export default defineEventHandler(async () => {
         limit: 2,
       },
     )
-  }
-  else {
+  } else {
     return 'Neon DB module not enabled'
   }
 })

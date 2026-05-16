@@ -32,8 +32,7 @@ async function doSelect() {
   })
   if (Array.isArray(res)) {
     result.value = res as ExampleData[]
-  }
-  else {
+  } else {
     alert(formatNeonError(res as NeonError))
   }
 }

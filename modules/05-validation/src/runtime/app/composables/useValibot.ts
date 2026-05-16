@@ -14,8 +14,7 @@ export const useValibot = async (): Promise<ValibotModule | undefined> => {
   if (useRuntimeConfig().public.ignis.validation.valibot === true) {
     const valibot = await import('valibot')
     return valibot
-  }
-  else {
+  } else {
     console.warn('Valibot is not enabled, validation is not available.')
   }
 }

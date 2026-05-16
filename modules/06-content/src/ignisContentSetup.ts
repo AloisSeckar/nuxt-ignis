@@ -34,8 +34,7 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisContentOptions) {
     let localeFiles: string[] = []
     try {
       localeFiles = readdirSync(localesDir).filter(f => f.endsWith('.json'))
-    }
-    catch {
+    } catch {
       console.warn(`No i18n locale files found in ${localesDir}`)
     }
     const localeCodes = localeFiles.map(f => f.replace('.json', ''))
@@ -160,8 +159,7 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisContentOptions, nuxt: Nux
     let localeFiles: string[] = []
     try {
       localeFiles = readdirSync(localesDir).filter(f => f.endsWith('.json'))
-    }
-    catch {
+    } catch {
       console.warn(`No i18n locale files found in ${localesDir}`)
     }
 

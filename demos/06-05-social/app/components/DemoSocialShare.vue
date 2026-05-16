@@ -6,8 +6,7 @@
       :network="network"
       :styled="true"
       :aria-label="`Share to ${network}`"
-      :title="`Share to ${network}`"
-    >
+      :title="`Share to ${network}`">
       <template #label>
         Share
       </template>

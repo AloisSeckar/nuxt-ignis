@@ -66,8 +66,7 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisUIOptions) {
     nuxtOptions.css ||= []
     nuxtOptions.css.push(resolver.resolve('./runtime/css/ignis-nuxt-ui.css'))
     console.debug('Nuxt UI CSS file included')
-  }
-  else if (effectiveOptions.tailwind === true) {
+  } else if (effectiveOptions.tailwind === true) {
     tailwindIncluded = true
     // import tailwind css file
     nuxtOptions.css ||= []

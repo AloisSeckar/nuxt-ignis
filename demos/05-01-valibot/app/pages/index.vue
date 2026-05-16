@@ -36,8 +36,7 @@ let invalidObject: Login
 try {
   validObject = v.parse(LoginSchema, { email: 'jane.doe@example.com', password: '12345' })
   invalidObject = v.parse(LoginSchema, { email: 'jane.doe@example.com', password: 12345 })
-}
-catch (error) {
+} catch (error) {
   // ValiError: Invalid type: Expected string but received 12345
   console.log((error as Error).message)
 }

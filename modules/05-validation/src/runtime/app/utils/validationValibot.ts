@@ -7,8 +7,7 @@ export async function isValidByValibot(schema: ObjectSchema<ObjectEntries, undef
   if (useRuntimeConfig().public.ignis.validation.valibot === true) {
     const v = (await useValibot())!
     return v.safeParse(schema, obj).success
-  }
-  else {
+  } else {
     console.warn('Valibot is not enabled, validation is not available.')
     return false
   }
