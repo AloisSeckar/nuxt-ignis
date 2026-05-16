@@ -77,6 +77,22 @@ trustPolicy: no-downgrade
 verifyDepsBeforeRun: error
 ```
 
+### Reasoning for `allowBuilds` setup
+
+Following packages require their post-install scripts to run:
+
+- **`@parcel/watcher`** — runs `node-gyp-build`: picks a precompiled native `.node` binary for your OS/arch (falls back to compiling C++ via node-gyp). Provides fast FS watching used by Nuxt/Vite.
+- **`@tailwindcss/oxide`** — runs `node-gyp-build`: selects the prebuilt Rust binary for Tailwind v4's engine.
+- **`esbuild`** — runs `node install.js`: verifies/links the platform-specific `@esbuild/<os>-<arch>` binary into `node_modules/esbuild/bin`.
+- **`sharp`** — runs `node install/check`: verifies the prebuilt `libvips`/`@img/sharp-*` native binaries are usable; can rebuild from source if not. Required by `@nuxt/image` and similar.
+- **`unrs-resolver`** — runs `napi-postinstall`: links the platform-specific `@unrs/resolver-binding-*` (Rust/NAPI) native binary used by ESLint and Nuxt module resolution.
+- **`vue-demi`** — runs `node scripts/postinstall.js`: switches its own `dist/` shim files to point at Vue 2 or Vue 3 based on the resolved `vue` version. Required by Pinia and VueUse.
+
+Following packages may be skipped as their post-install scripts are not related:
+
+- **`maplibre-gl`** — has a `prepare` script that is a no-op for registry installs; only relevant when installed directly from a git ref, which we don't do.
+- **`puppeteer`** — runs `node install.mjs`: would download a full Chromium (~150–300 MB) from `storage.googleapis.com`. Not needed — e2e tests use Playwright via `@nuxt/test-utils`. Chromium download is also blocked at source via `PUPPETEER_SKIP_DOWNLOAD=true` in `.npmrc`.
+
 ## Testing
 
 Nuxt Ignis ships with proprietary [Nuxt Spec](https://github.com/AloisSeckar/nuxt-spec) package that provides a Vitest-based layer for testing Nuxt modules and applications united under single dependency. See [Testing section](/3-9-features-devex.html#testing) in DevEx features overview for more details.
