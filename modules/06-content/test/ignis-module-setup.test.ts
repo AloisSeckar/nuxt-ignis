@@ -43,7 +43,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.content).toEqual({
       content: { enabled: false },
       i18n: { enabled: false, default: 'en' },
-      seo: { enabled: false },
+      seo: { enabled: false, staticsite: false },
       social: { enabled: false, url: '' },
       pslo: { enabled: false, content: false },
     })
@@ -72,7 +72,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.content).toEqual({
       content: { enabled: true },
       i18n: { enabled: true, default: 'de' },
-      seo: { enabled: true },
+      seo: { enabled: true, staticsite: false },
       social: { enabled: true, url: 'https://example.com' },
       pslo: { enabled: true, content: true },
     })
@@ -94,7 +94,7 @@ describe('@nuxt-ignis/content - running module setup', () => {
     expect(nuxtOptions.runtimeConfig?.public?.ignis?.content).toEqual({
       content: { enabled: false },
       i18n: { enabled: false, default: 'en' },
-      seo: { enabled: false },
+      seo: { enabled: false, staticsite: false },
       social: { enabled: false, url: '' },
       pslo: { enabled: false, content: false },
     })

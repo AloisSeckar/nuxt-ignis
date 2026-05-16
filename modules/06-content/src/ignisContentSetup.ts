@@ -59,25 +59,29 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisContentOptions) {
   // SEO
   // module must be installed before @nuxt/content
   // (https://nuxtseo.com/docs/nuxt-seo/guides/nuxt-content)
+  // + additional processing for modules included in SEO meta-module
   if (options?.seo?.enabled === true) {
-    const seoConfig: Record<string, unknown> = {}
+    modules['@nuxtjs/seo'] = {}
+    console.debug('@nuxtjs/seo module installed')
 
     // ogImage and Schema.org modules should be disabled with `ssr: false`
     if (nuxtOptions.ignis?.config?.nuxt?.ssr === false) {
-      seoConfig.ogImage = { enabled: false }
-      seoConfig.schemaOrg = { enabled: false }
+      modules['nuxt-og-image'] = {
+        defaults: { enabled: false },
+      }
+      modules['nuxt-schema-org'] = {
+        defaults: { enabled: false },
+      }
+      console.debug('nuxt-og-image and nuxt-schema-org modules disabled due to ssr: false')
     }
 
     // enable zero-runtime sitemap generation for static sites
     if (options.seo?.staticsite === true) {
-      seoConfig.sitemap = { zeroRuntime: true }
+      modules['@nuxtjs/sitemap'] = {
+        defaults: { zeroRuntime: true },
+      }
+      console.debug('@nuxtjs/sitemap configured to use zero-runtime')
     }
-
-    modules['@nuxtjs/seo'] = {
-      defaults: seoConfig,
-    }
-
-    console.debug('@nuxtjs/seo module installed')
   }
 
   // Nuxt Content

@@ -153,9 +153,7 @@ describe('@nuxt-ignis/content - resolving module dependencies', () => {
         },
       },
     } as NuxtIgnisContentOptions)).toEqual({
-      '@nuxtjs/seo': {
-        defaults: {},
-      },
+      '@nuxtjs/seo': {},
     })
 
     expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/content - module dependencies are being resolved')
@@ -178,11 +176,33 @@ describe('@nuxt-ignis/content - resolving module dependencies', () => {
         },
       },
     } as NuxtIgnisContentOptions)).toEqual({
-      '@nuxtjs/seo': {
-        defaults: {
-          ogImage: { enabled: false },
-          schemaOrg: { enabled: false },
+      '@nuxtjs/seo': {},
+      'nuxt-og-image': {
+        defaults: { enabled: false },
+      },
+      'nuxt-schema-org': {
+        defaults: { enabled: false },
+      },
+    })
+
+    expect(debugSpy).toHaveBeenCalledWith('@nuxt-ignis/content - module dependencies are being resolved')
+    expect(debugSpy).toHaveBeenCalledWith('@nuxtjs/seo module installed')
+    expect(debugSpy).toHaveBeenCalledTimes(2)
+
+    expect(warnSpy).toHaveBeenCalledTimes(0)
+  })
+
+  test('should enable zero-runtime sitemap if staticsite is true', () => {
+    expect(ignisModuleDependencies({
+      ignis: {
+        content: {
+          seo: { enabled: true, staticsite: true },
         },
+      },
+    } as NuxtIgnisContentOptions)).toEqual({
+      '@nuxtjs/seo': {},
+      '@nuxtjs/sitemap': {
+        defaults: { zeroRuntime: true },
       },
     })
 
