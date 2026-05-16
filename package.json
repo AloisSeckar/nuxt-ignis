@@ -2,5 +2,8 @@
   "name": "nuxt-ignis-root",
   "private": true,
   "type": "module",
-  "packageManager": "pnpm@11.0.8"
+  "packageManager": "pnpm@11.0.8",
+  "scripts": {
+    "eslint-all": "pnpm --filter nuxt-ignis --filter \"ignis-demo-*\" --filter \"@nuxt-ignis/*\" --no-bail exec eslint ."
+  }
 }

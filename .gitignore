@@ -11,9 +11,7 @@ docs/.vitepress/cache
 docs/.vitepress/.temp
 
 # special rules for `/demos` folder
-# TODO trying to find a way how to re-use definition from core layer
-demos/**/eslint.config.mjs
-# no need to keep track on this for demo apps
+# no need to keep track on demo apps lock files
 demos/**/pnpm-lock.yaml
 
 # Nuxt Ignis files
