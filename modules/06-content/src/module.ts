@@ -13,6 +13,7 @@ export interface IgnisContentOptions {
   }
   seo?: {
     enabled?: boolean
+    staticsite?: boolean
   }
   social?: {
     enabled?: boolean

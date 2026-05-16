@@ -1,0 +1,14 @@
+{
+  "private": true,
+  "name": "ignis-demo-06-06",
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env CONSOLA_LEVEL=4 nuxt dev"
+  },
+  "devDependencies": {
+    "@nuxt/eslint": "catalog:",
+    "nuxt": "catalog:",
+    "typescript": "catalog:"
+  },
+  "packageManager": "pnpm@11.0.8"
+}

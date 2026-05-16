@@ -114,6 +114,10 @@ If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_CONFIG_NUXT
 
 **NOTE**: If you don't use Nuxt Ignis configuration and set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.
 
+### Additional options
+
+- `NUXT_PUBLIC_IGNIS_CONTENT_SEO_STATICSITE` (or `ignis.content.seo.staticsite` in `nuxt.config.ts`) - set to `true` to enable [zero-runtime sitemap generation](https://nuxtseo.com/docs/sitemap/guides/zero-runtime), which is recommended for fully static sites with pre-rendered pages to optimize bundle size. Defaults to `false`.
+
 ## Nuxt Auth Utils
 
 <PackagesReference :packages="[{ name: 'nuxt-auth-utils', version: '0.5.29' }]" />

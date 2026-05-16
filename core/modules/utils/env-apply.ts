@@ -75,6 +75,8 @@ export function envApply(opts: IgnisOptions) {
   opts.content.i18n.default = process.env.NUXT_PUBLIC_IGNIS_CONTENT_I18N_DEFAULT || opts.content.i18n.default || 'en'
   opts.content.seo ??= {}
   opts.content.seo.enabled = process.env.NUXT_PUBLIC_IGNIS_CONTENT_SEO_ENABLED === 'true' || opts.content.seo.enabled || false
+  opts.content.seo.staticsite = process.env.NUXT_PUBLIC_IGNIS_CONTENT_SEO_STATICSITE === 'true' || opts.content.seo.staticsite || false
+
   opts.content.social ??= {}
   opts.content.social.enabled = process.env.NUXT_PUBLIC_IGNIS_CONTENT_SOCIAL_ENABLED === 'true' || opts.content.social.enabled || false
   opts.content.social.url = process.env.NUXT_PUBLIC_IGNIS_CONTENT_SOCIAL_URL || opts.content.social.url || ''

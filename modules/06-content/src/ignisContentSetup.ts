@@ -68,6 +68,11 @@ export function ignisModuleDependencies(nuxtOptions: NuxtIgnisContentOptions) {
       seoConfig.schemaOrg = { enabled: false }
     }
 
+    // enable zero-runtime sitemap generation for static sites
+    if (options.seo?.staticsite === true) {
+      seoConfig.sitemap = { zeroRuntime: true }
+    }
+
     modules['@nuxtjs/seo'] = {
       defaults: seoConfig,
     }
@@ -142,6 +147,7 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisContentOptions, nuxt: Nux
   runtimeConfig.ignis.content.i18n.default ??= options?.i18n?.default ?? 'en'
   runtimeConfig.ignis.content.seo ??= {}
   runtimeConfig.ignis.content.seo.enabled ??= options?.seo?.enabled ?? false
+  runtimeConfig.ignis.content.seo.staticsite ??= options?.seo?.staticsite ?? false
   runtimeConfig.ignis.content.social ??= {}
   runtimeConfig.ignis.content.social.enabled ??= options?.social?.enabled ?? false
   runtimeConfig.ignis.content.social.url ??= options?.social?.url ?? ''

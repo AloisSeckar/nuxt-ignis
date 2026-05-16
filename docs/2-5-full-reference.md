@@ -39,6 +39,7 @@ Following Nuxt modules/features are disabled by default and can be opted-in by s
 | `NUXT_PUBLIC_IGNIS_CONTENT_CONTENT_ENABLED` | `content.content.enabled` | `boolean` | `false` | Enable or disable `@nuxt/content` module |
 | `NUXT_PUBLIC_IGNIS_CONTENT_I18N_ENABLED` | `content.i18n.enabled` | `boolean` | `false` | Enable or disable `@nuxtjs/i18n` module |
 | `NUXT_PUBLIC_IGNIS_CONTENT_SEO_ENABLED` | `content.seo.enabled` | `boolean` | `false` | Enable or disable `@nuxtjs/seo` module |
+| `NUXT_PUBLIC_IGNIS_CONTENT_SEO_STATICSITE` | `content.seo.staticsite` | `boolean` | `false` | If SEO is enabled, set to `true` for zero-runtime sitemap generation |
 | `NUXT_PUBLIC_IGNIS_CONTENT_SOCIAL_ENABLED` | `content.social.enabled` | `boolean` | `false` | Enable or disable `@stefanobartoletti/nuxt-social-share` module |
 | `NUXT_PUBLIC_IGNIS_CONTENT_PSLO_ENABLED` | `content.pslo.enabled` | `boolean` | `false` | Enable or disable `elrh-pslo` |
 | `NUXT_PUBLIC_IGNIS_UTILS_REGEXP_ENABLED` | `utils.regexp.enabled` | `boolean` | `false` | Enable or disable `magic-regexp` module |
