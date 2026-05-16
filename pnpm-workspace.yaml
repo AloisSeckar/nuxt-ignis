@@ -4,8 +4,9 @@ packages:
   - docs
   - modules/*
 
-shamefullyHoist: true
-
+# for end-users of Nuxt Ignis `shamefullyHoist: true` should be enough
+# but because of the monorepo design and some tooling issues with pnpm symlinks,
+# the project itself should physically hoist all dependencies into root /node_modules
 nodeLinker: hoisted
 
 peerDependencyRules:

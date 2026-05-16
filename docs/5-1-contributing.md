@@ -36,6 +36,10 @@ packages:
   - docs
   - modules/*
 
+# https://pnpm.io/settings#nodelinker
+# avoid certain linking issues by having all deps physically in root /node_modules
+nodeLinker: hoisted
+
 # https://pnpm.io/catalogs#defining-catalogs
 # global version definition for the repeated packages
 catalog:
