@@ -1,3 +1,3 @@
 import { testDemo } from './e2e-tests'
 
-await testDemo('01-01-default')
+await testDemo('02-01-nuxt-ui')
