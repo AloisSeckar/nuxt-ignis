@@ -102,6 +102,8 @@ minimumReleaseAgeExclude:
   # manually checked one-time exceptions
   # build @ 2026-05-17 12:21 UTC+2
   - '@nuxt/scripts'
+  # https://github.com/AloisSeckar/nuxt-ignis/security/dependabot/203
+  - 'devalue'
 
 allowBuilds:
   '@parcel/watcher': true
@@ -125,6 +127,8 @@ overrides:
   estree-walker: 2.0.2
   # TODO check https://github.com/nuxt/nuxt/issues/34812 for permanent solution
   unimport: 6.0.2
+  # https://github.com/AloisSeckar/nuxt-ignis/security/dependabot/203
+  devalue: ^5.8.1
 
 verifyDepsBeforeRun: error
 
