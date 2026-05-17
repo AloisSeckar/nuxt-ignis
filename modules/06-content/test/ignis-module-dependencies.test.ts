@@ -370,11 +370,12 @@ describe('@nuxt-ignis/content - resolving module dependencies', () => {
 
       expect(process.env.NUXT_OG_IMAGE_SECRET).toBeDefined()
       expect(process.env.NUXT_OG_IMAGE_SECRET).toMatch(/^[0-9a-f]{64}$/)
-      expect(debugSpy).toHaveBeenCalledWith('NUXT_OG_IMAGE_SECRET auto-generated for nuxt-og-image (dev only, in-memory)')
+      expect(debugSpy).toHaveBeenCalledWith('NUXT_OG_IMAGE_SECRET auto-generated for nuxt-og-image')
     })
 
-    test('should NOT auto-generate NUXT_OG_IMAGE_SECRET in production mode (dev !== true)', () => {
+    test('should NOT auto-generate NUXT_OG_IMAGE_SECRET in production mode', () => {
       ignisModuleDependencies({
+        dev: false,
         rootDir: '/app',
         ignis: {
           content: {
