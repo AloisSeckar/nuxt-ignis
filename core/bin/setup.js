@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { readFileSync } from 'node:fs'
 import {
   createFileFromWebTemplate, deletePath, getPackageManager, hasJsonKey,
   pathExists, promptUser, removeFromJsonFile, showMessage,
@@ -20,8 +21,9 @@ import {
  *  4) create/update `pnpm-workspace.yaml` file (only if pnpm is used)
  *  5) add `extends: ['nuxt-ignis']` to `nuxt.config.ts`
  *  6) update `.gitignore` file
- *  7) create default `vitest.config.ts` file and add test-related scripts into `package.json`
- *  8) clear node_modules and lock file(s)
+ *  7) replace default Nuxt `app/app.vue` with Nuxt Ignis default (if detected)
+ *  8) create default `vitest.config.ts` file and add test-related scripts into `package.json`
+ *  9) clear node_modules and lock file(s)
  */
 export async function nuxtIgnisSetup(autoRun = false) {
   showMessage('NUXT IGNIS SETUP')
@@ -140,7 +142,28 @@ export async function nuxtIgnisSetup(autoRun = false) {
     console.error('Error updating .gitignore file:\n', error.message)
   }
 
-  // 7 - nuxt-spec related setup
+  // 7 - replace default Nuxt app.vue with Nuxt Ignis default
+  if (pathExists('app/app.vue')) {
+    let appVueContent = ''
+    try {
+      appVueContent = readFileSync('app/app.vue', 'utf-8')
+    } catch (error) {
+      // ignore read errors
+      console.warn('Failed to read existing \'app/app.vue\':\n', error.message)
+    }
+    if (appVueContent.includes('<NuxtWelcome />')) {
+      const replaceAppVue = isAutoRun || await promptUser('Default Nuxt \'app/app.vue\' detected. This will replace it with Nuxt Ignis default. Continue?')
+      if (replaceAppVue) {
+        try {
+          await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.5.3/core/app/app.vue', 'app/app.vue', true)
+        } catch (error) {
+          console.error('Error replacing \'app/app.vue\':\n', error.message)
+        }
+      }
+    }
+  }
+
+  // 8 - nuxt-spec related setup
   const setupNuxtSpec = isAutoRun || await promptUser('Nuxt Ignis comes with support for testing. Do you want to set up the default test settings now?')
   if (setupNuxtSpec) {
     // create vitest.config.ts
@@ -198,7 +221,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
     }
   }
 
-  // 8 - clear node_modules and lock file(s)
+  // 9 - clear node_modules and lock file(s)
   const prepareForReinstall = isAutoRun || await promptUser('Dependencies should be re-installed now. Do you want to remove node_modules and the lock file?')
   if (prepareForReinstall) {
     if (pathExists('node_modules')) {

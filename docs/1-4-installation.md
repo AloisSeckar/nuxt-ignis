@@ -129,7 +129,17 @@ _nuxt-config.json
 Nuxt Ignis always creates `public/_ignis-config.json` and `public/_nuxt-config.json` files when done with resolving `nuxt.config.ts` to expose the actual configuration used for reference and potential debugging. As those files are re-generated automatically everytime the app starts, it is not recommended to add it to Git. They _could_ be stored for reference but this might tempt devs to edit it manually which would have no effect and should cause unnecessary confusion. Since the files are JSONs, comments can't be included to add auto-generation warning.
 </details>
 
-7) Optionally set things up for built-in testing provided by [`nuxt-spec`](/3-9-features-devex.html#testing) package. The dependencies are included in `nuxt-ignis` itself, so you just need to create `vitest.config.ts` with following content:
+7) Optionally replace default `app/app.vue` in fresh project (the file contains `<NuxtWelcome />` component) with the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/app.vue).
+
+<details>
+<summary>Reason why</summary>
+
+Projects scaffolded using `pnpm create nuxt@latest` include a default `/app/app.vue` that only displays the Nuxt welcome page and does **not** contain the `<NuxtPage />` component. This clashes with default `nuxt-ignis` behavior that starts with the assumption that pages are used (unless [explicitly turned off](/3-10-features-nuxt.html#pages)) and results into runtime warning. Plus the [built-in pages](/3-11-features-built-ins.html) won't be accessible without manual changes.
+
+Nuxt Ignis' [default `app.vue`](/3-11-features-built-ins.html#default-app-vue) integrates gracefully with other Nuxt Ignis config and allows to you start implementing your pages right away. 
+</details>
+
+8) Optionally set things up for built-in testing provided by [`nuxt-spec`](/3-9-features-devex.html#testing) package. The dependencies are included in `nuxt-ignis` itself, so you just need to create `vitest.config.ts` with following content:
 
 ```ts [vitest.config.ts]
 import { loadVitestConfig } from 'nuxt-spec/config'
@@ -163,7 +173,7 @@ It is also possible to add following test-related scripts to `package.json` for 
 This might be just a matter of personal preference, but someone might find the shorthands useful. Check more detailed explanation for each variant in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec//blob/v0.2.2/README.md#running-tests).
 </details>
 
-8) Delete `node_modules` folder and your lock file (based on the package manager you're using).
+9) Delete `node_modules` folder and your lock file (based on the package manager you're using).
 
 <details>
 <summary>Reason why</summary>
@@ -185,7 +195,9 @@ Start your dev server with `pnpm dev` (or `nuxt dev` if you don't have the scrip
 
 #### Notice for projects scaffolded from Nuxt template
 
-Please note, that project scaffolded using `pnpm create nuxt@latest` will have default `/app/app.vue` that doesn't contain `<NuxtPage />` component. Applying `nuxt-ignis` setup as described above will have following consequences:
+Projects scaffolded using `pnpm create nuxt@latest` include a default `/app/app.vue` that does **not** contain the `<NuxtPage />` component. The `setup` CLI command automatically detects and replaces this file with the Nuxt Ignis' default during [step 7](#setup-steps).
+
+If you performed the setup manually, or chose not to replace the default file during setup, you may still encounter the following issues:
 
 1) You will get `Your project has pages but the <NuxtPage /> component has not been used.` warning upon starting the dev server
 2) You will not be able to navigate to [built-in pages](/3-11-features-built-ins.html) as there is nowhere to display them
@@ -193,10 +205,8 @@ Please note, that project scaffolded using `pnpm create nuxt@latest` will have d
 Ways to fix this:
 
 1) Add `<NuxtPage />` into your existing `/app/app.vue` file manually
-2) Use CLI tool to [scaffold Nuxt Ignis default `/app/app.vue`](/3-12-features-cli#set-app-vue) into your project
-3) Set `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_PAGES=false` in your `.env` file (or `ignis: { config: { nuxt: { pages: false } } }` in `nuxt.config.ts`) to declare your project is not using pages (you will lose access to built-in pages)
-
-We are currently [investigating ways](https://github.com/AloisSeckar/nuxt-ignis/issues/133) to improve this experience in future releases.
+2) Use the CLI tool to [scaffold Nuxt Ignis default `/app/app.vue`](/3-12-features-cli.html#set-app-vue) into your project any time
+3) Set `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_PAGES=false` in your `.env` file or `ignis: { config: { nuxt: { pages: false } } }` in `nuxt.config.ts` to declare your project is not using pages (you will lose access to built-in pages)
 
 ## More info
 
