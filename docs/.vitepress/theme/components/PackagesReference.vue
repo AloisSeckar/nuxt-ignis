@@ -25,7 +25,7 @@ const props = defineProps<{
 }>()
 
 function getPackageLink(pkg: Package): string {
-  return `https://www.npmjs.com/package/${pkg.name}/v/${pkg.version}`;
+  return `https://npmx.dev/package/${pkg.name}/v/${pkg.version}`;
 }
 
 const { isDark } = useData()
