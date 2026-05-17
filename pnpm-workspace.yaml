@@ -4,9 +4,6 @@ packages:
   - docs
   - modules/*
 
-# for end-users of Nuxt Ignis `shamefullyHoist: true` should be enough
-# but because of the monorepo design and some tooling issues with pnpm symlinks,
-# the project itself should physically hoist all dependencies into root /node_modules
 nodeLinker: hoisted
 
 peerDependencyRules:
@@ -85,6 +82,8 @@ catalog:
   'vue-tsc': ^3.2.6
   'zod': 4.3.6
 
+trustPolicy: no-downgrade
+
 minimumReleaseAge: 4320
 
 minimumReleaseAgeExclude: 
@@ -130,9 +129,8 @@ overrides:
   # TODO check https://github.com/nuxt/nuxt/issues/34812 for permanent solution
   unimport: 6.0.2
 
-trustPolicy: no-downgrade
-
 verifyDepsBeforeRun: error
 
-# TODO remove this when modules settle down
+# allow iterating over sub-module versions without having to commit
+# before the feature is finally settled
 gitChecks: false

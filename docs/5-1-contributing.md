@@ -36,23 +36,40 @@ packages:
   - docs
   - modules/*
 
+# https://pnpm.io/settings#shamefullyhoist
 # https://pnpm.io/settings#nodelinker
-# avoid certain linking issues by having all deps physically in root /node_modules
+# for end-users of Nuxt Ignis `shamefullyHoist: true` should be enough
+# but because of the monorepo design and some linking issues with pnpm symlinks,
+# the project itself must physically hoist all dependencies into root /node_modules
 nodeLinker: hoisted
 
+# https://pnpm.io/settings#peerdependencyrules
+# pnpm notoriously warn about some dependency issues that are actually not a problem
+# in current Nuxt Ignis setup - thus we are ignoring them to avoid noise 
+peerDependencyRules:
+  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/pnpm-workspace.yaml for current values
+
 # https://pnpm.io/catalogs#defining-catalogs
-# global version definition for the repeated packages
+# global version definition for all the dependencies
 catalog:
   # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/pnpm-workspace.yaml for current values
 
+# https://pnpm.io/settings#trustpolicy
+# packages cannot change from trusted to untrusted
+trustPolicy: no-downgrade
+
 # https://pnpm.io/settings#minimumreleaseage
-# new packages cannot be installed earlier than one week after release
+# new packages cannot be installed earlier than three days after release
 minimumReleaseAge: 4320
 # trusted and verified packages may be excluded using following list
 minimumReleaseAgeExclude:
-# - package-name
+  # - package-name
+  # all internal @nuxt-ignis/* packages are excluded to allow new development
+  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/pnpm-workspace.yaml for current values
 
 # https://pnpm.io/settings#allowBuilds
+# pnpm naturally blocks all post-install scripts
+# some are required for development, others are not relevant
 allowBuilds:
   # post-install scripts required for correct behavior
   '@parcel/watcher': true
@@ -71,14 +88,14 @@ overrides:
   # - package-name
   # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/pnpm-workspace.yaml for current values
 
-# https://pnpm.io/settings#trustpolicy
-# packages cannot change from trusted to untrusted
-trustPolicy: no-downgrade
-
 # https://pnpm.io/settings#verifydepsbeforerun
-# check and throw error if node_modules are not installed corectly
-# do NOT auto-install via 'install' value
+# check and throw error if node_modules need to be updated
 verifyDepsBeforeRun: error
+
+# https://pnpm.io/cli/publish#--no-git-checks
+# allow iterating over sub-module versions without commit being enforced
+# before the feature is finally settled
+gitChecks: false
 ```
 
 ### Reasoning for `allowBuilds` setup

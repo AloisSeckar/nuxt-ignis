@@ -1,4 +1,40 @@
 # settings for Nuxt & pnpm
 
 # https://pnpm.io/settings#shamefullyhoist
+# required to handle transitive dependencies 
+# without having to explicitly declare them
 shamefullyHoist: true
+
+# https://pnpm.io/settings#trustpolicy
+# for better supply-chain attack protection, new packages
+# cannot change their state from trusted to untrusted
+trustPolicy: no-downgrade
+
+# https://pnpm.io/settings#minimumreleaseage
+# for better supply-chain attack protection, new packages
+# cannot be installed unless they are at least 3 days old
+minimumReleaseAge: 4320
+
+# trusted and verified packages may be excluded
+minimumReleaseAgeExclude:
+  # nuxt-ignis must be excluded to allow installing latest
+  - nuxt-ignis 
+  # add more if needed
+  # - package-name
+
+# https://pnpm.io/settings#allowBuilds
+# pnpm naturally blocks all post-install scripts
+# some are required for development, others are not relevant
+allowBuilds:
+  # post-install scripts required for correct behavior
+  '@parcel/watcher': true
+  '@tailwindcss/oxide': true
+  esbuild: true
+  sharp: true
+  unrs-resolver: true
+  vue-demi: true
+  # post-install scripts that can be ignored
+  maplibre-gl: false
+  puppeteer: false
+  # add more if needed
+  # - package-name: boolean

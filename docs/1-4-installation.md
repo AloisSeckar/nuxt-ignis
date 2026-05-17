@@ -73,6 +73,15 @@ The `packageManager` tries to ensure same `pnpm` version is used as during the d
 ```yaml [pnpm-workspace.yaml]
 shamefully-hoist: true
 
+trustPolicy: no-downgrade
+
+minimumReleaseAge: 4320
+
+minimumReleaseAgeExclude:
+  - nuxt-ignis
+  # add more if needed
+  # - package-name
+
 allowBuilds:
   # post-install scripts required for correct behavior
   '@parcel/watcher': true
@@ -84,6 +93,9 @@ allowBuilds:
   # post-install scripts that can be ignored
   maplibre-gl: false
   puppeteer: false
+  # add more if needed
+  # - package-name: boolean
+
 ```
 
 <details>
