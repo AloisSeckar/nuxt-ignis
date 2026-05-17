@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/content",
-  "version": "0.0.64",
+  "version": "0.0.65",
   "type": "module",
   "description": "Nuxt Ignis module - Content features",
   "publishConfig": {
