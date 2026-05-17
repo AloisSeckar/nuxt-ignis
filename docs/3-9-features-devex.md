@@ -133,7 +133,7 @@ Read more in the project [README](https://github.com/AloisSeckar/nuxt-spec/blob/
 
 ## Nuxt Security
 
-<PackagesReference :packages="[{ name: 'nuxt-security', version: '2.5.1' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-security', version: '2.6.0' }]" />
 
 Nuxt Ignis includes [`nuxt-security` module](https://nuxt-security.vercel.app/) by default to help you establish best security practices in your Nuxt application. It provides a set of security headers and other features to protect your app from common vulnerabilities.
 

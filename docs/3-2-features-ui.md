@@ -26,7 +26,7 @@ If you want to do small adjustments or add more default rules, you can use the C
 
 ## Nuxt UI
 
-<PackagesReference :packages="[{ name: '@nuxt/ui', version: '4.6.1' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/ui', version: '4.7.1' }]" />
 
 [`Nuxt UI`](https://ui.nuxt.com/) is an official UI library for Nuxt, providing a set of components and utilities to build user interfaces. It is designed to be flexible and easy to use and it might be a natural choice when building Nuxt applications. It also brings in `Tailwind CSS` and `Nuxt Icon` modules out of the box.
 
@@ -68,7 +68,7 @@ Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt#cs
 
 ## Tailwind CSS
 
-<PackagesReference :packages="[{ name: 'tailwindcss', version: '4.2.2' }, { name: '@tailwindcss/vite', version: '4.2.2' }]" />
+<PackagesReference :packages="[{ name: 'tailwindcss', version: '4.3.0' }, { name: '@tailwindcss/vite', version: '4.3.0' }]" />
 
 **NOTE:** Integration via [`@nuxtjs/tailwindcss` module](https://nuxt.com/modules/tailwindcss) is temporarily bridged by direct Vite integration until `v7` with updated `Tailwind v4` support is released.
 

@@ -4,7 +4,7 @@ Following modules helps you with your app performance:
 
 ## Nuxt Fonts
 
-<PackagesReference :packages="[{ name: '@nuxt/fonts', version: '1.0.1' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/fonts', version: '0.14.0' }]" />
 
 [Nuxt Fonts](https://fonts.nuxt.com/) is an official module for working with web fonts. It allows you to easily integrate and optimize web fonts.
 
@@ -52,7 +52,7 @@ export default defineNuxtConfig({
 
 ## Nuxt Scripts
 
-<PackagesReference :packages="[{ name: '@nuxt/scripts', version: '0.14.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/scripts', version: '1.1.0' }]" />
 
 [Nuxt Scripts](https://scripts.nuxt.com/) is an official module for working with scripts. It lets you load third-party scripts with better performance, privacy, security and DX. It includes many popular third-parties out of the box.
 
