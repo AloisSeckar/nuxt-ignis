@@ -4,11 +4,13 @@
 
 Nuxt Ignis is a _not-another-template-starter_ for [Nuxt](https://nuxt.com/) web applications. Unlike other heavily opinionated solutions, this one is designed to be **optionated**.
 
-The main goal is to abstract from difficult and repetitive dependency management across multiple Nuxt projects. Instead of managing a long list of dependencies in `package.json`, you can depend just on single `nuxt-ignis` package.
+The main goal is to abstract from difficult and repetitive dependency management across multiple Nuxt projects. Instead of managing a long list of dependencies in `package.json`, you can depend on just a single `nuxt-ignis` package.
 
-This is possible, because we are leveraging the power of [Nuxt Layers](https://nuxt.com/docs/getting-started/layers). Not only you can re-use the components, composables and utils like that. You can also bring in the NPM packages that are defined in the layer and use them in the extending application.
+This is possible, because we are leveraging the power of [Nuxt Layers](https://nuxt.com/docs/getting-started/layers). Not only you can re-use the components, composables and utils by _extending_ from the layer, you can also bring in the NPM packages that are defined in there and use them in the extending application.
 
-Nuxt Ignis incorporates a number of modules and features. But to keep the setup flexible as well, the end user controls what will appear in the final bundle. This is technically achieved by (not) adding modules and configuration into `nuxt.config.ts`. Although this file must remain static at build time and cannot be changed afterwards, it can be dynamically prepared. During this phase, environment variables can be used to adjust what makes it into the actual build.
+Like so, Nuxt Ignis incorporates a number of modules and features and it is super simple to start using them. But this alone would mean bloated "fat" packages full of things you don't really need and want. Thus the goal is also to keep the setup flexible as possible and the end user shall control what will really appear in the final bundle. This is technically achieved thanks to another cool Nuxt feature - [Nuxt Modules](https://nuxt.com/docs/getting-started/modules).
+
+Nuxt Ignis is divided into several internal modules. Based on flexible configuration, the core mechanism decides which modules are requested to be activated and then those modules decide, what will be activated, during their setup phases. The configuration can either be inlined in `nuxt.config.ts` in the `ignis` config key, or passed via the Nuxt runtime config mechanism using `.env` variables. The result is almost fully customizable based on your needs. And you still import only one package!
 
 Learn more about the idea in the [configuration section](/2-1-configuration).
 

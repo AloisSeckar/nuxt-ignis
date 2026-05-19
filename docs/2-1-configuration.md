@@ -11,11 +11,7 @@ Both approaches can be even mixed. When the same option is provided in both plac
 
 When nothing is provided, Nuxt Ignis falls back to its default settings.
 
-For example, disabling ESLint can be expressed in either of these ways:
-
-```dotenv [.env]
-NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT=false
-```
+For example, disabling default ESLint integration can be expressed in either of these ways:
 
 ```ts [nuxt.config.ts]
 export default defineNuxtConfig({
@@ -28,17 +24,33 @@ export default defineNuxtConfig({
 })
 ```
 
-The full structure of the `ignis` key mirrors the env variable namespaces (`NUXT_PUBLIC_IGNIS_<SECTION>_<KEY>` &harr; `ignis.<section>.<key>`). See [full reference](/2-5-full-reference) for the complete list.
+```dotenv [.env]
+NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT=false
+```
+
+The full structure of the `ignis` key mirrors the env variable namespaces (`NUXT_PUBLIC_IGNIS_<SECTION>_<KEY>` &harr; `ignis.<section>.<key>`). 
+
+See [full reference](/2-5-full-reference) for the complete list of configuration options.
 
 ## The big picture
 
-[Nuxt](https://nuxt.com/) application is (by default) being assembled by [Vite](https://vitejs.dev/) during a phase called `build step`. Vite is a smart `bundler` responsible for putting all parts into a working package. Aside from `package.json` common to all Node.js-based JavaScript projects, Nuxt apps use `nuxt.config.ts` file to describe additional config and modules that should be included in the final build.
+The _first generation_ of Nuxt Ignis (pre-release versions prior to `v0.6.0`) was trying to generate "dynamic `nuxt.config.ts`" via reading `process.env.*` variables and dynamically construct config object for `defineNuxtConfig` function before the actual build. While the contents of `nuxt.config.ts` must be and remain static at build time, there was a chance to call an utility function before the build really happened.
 
-The very nature of the process requires `nuxt.config.ts` to be static. The bundler must get a snapshot of its current state and construct the output based on it. However, this doesn't mean you have to hardcode everything in it. The build process itself runs in Node.js (or other JS runtime) and thanks to that, environment variables are available via `process.env` object.
+This was working, but it was limited only to use `.env` variables, and it quickly choke upon itself as the number of possible integrations and dependencies listed in `package.json` grew. Also the size of the output bundle become concerning.
 
-Nuxt Ignis emerged from embracing this fact. Provided environment variables are processed in [`setFeatures()` function](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/features.ts) which happens to return a Nuxt config-like object. The output of this function is then merged into the final `nuxt.config.ts` file. This happens before the build step is executed, so the environment variables apply as intended.
+### Modules for the rescue
 
-The typical application is to include or exclude certain Nuxt module. For example Nuxt Ignis is including [`@nuxt/eslint`](https://nuxt.com/modules/eslint) into `module` array of the config object, but if the feature function sees `NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT=false` environment variable, it will omit it. Some config options also imply other modifications in the config object, but the idea remains the same.
+The natural steer was to split up the big monolith. We introduced several internal modules, that are responsible only for a certain domain. We have `@nuxt-ignis/ui` for UI integrations, `@nuxt-ignis/db` for database drivers and so on. Those Nuxt modules are distributed as standalone packages and the core `nuxt-ignis` package is depending on them. In its core, there is a special "dispatcher" module that checks the received config and calls the sub-module, if at least one relevant config option was passed. If not (i.e. user doesn't want to include any database solution), the module is completely skipped. If the module runs, it is conditionally turning on integrations, that are mostly done via an existing Nuxt module. We use `moduleDependencies` section of `@nuxt/kit`'s standard `defineNuxtModule` function to say which modules shall also be included, resolve and pass special configuration, if needed, and then Nuxt automatically does the rest. For some extra features, `setup` function is also used.
+
+Because Nuxt modules can expose their own config keys, that are then automatically augmented into standard `NuxtOptions`, this change also allowed Nuxt Ignis to be conveniently and type-safely configured via `nuxt.config.ts` using `ignis` config key. You just need to run the dev server for the first time to let Nuxt generate necessary files.
+
+Last, but not least. This mechanism allows you to pass configuration into modules used for integrations as you are used to and they will just flow into the final resolution. There are only a few exceptions where Nuxt Ignis passes some configuration into the modules on its own and they are described in each integration detail in [section 3](/3-1-features.html).
+
+### Default vs. optional
+
+Nuxt Ignis aims to provide maximum flexibility and freedom. Still, we feel like some integrations (mostly to Nuxt official modules) are important and useful enough to have them turned on by default. You can still opt-out from most of them. Those integrations are grouped into `@nuxt-ignis/default` module.
+
+All other integrations and features are opt-in and their modules won't even run, if nothing is requested from them.
 
 ### Defu-merge
 

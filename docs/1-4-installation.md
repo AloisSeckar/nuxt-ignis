@@ -34,7 +34,9 @@ Details about the CLI setup command can be found in the [CLI section](/3-12-feat
 
 ### Setup steps
 
-The CLI command will perform following steps. You can also do them manually if you want to keep more control.
+The CLI command will perform following steps. Each step is prompted unless you select to do everything without asking. 
+
+You can also make the steps manually if you want to keep more control.
 
 1) Add the required dependency into `package.json`:
 
@@ -100,6 +102,8 @@ allowBuilds:
 
 <details>
 <summary>Reason why</summary>
+
+Having `pnpm-workspace.yaml` in your project root is the recommended way of keeping the configuration for `pnpm`. Technically, you can aslo use `pnpm` key inside `package.json`, but it is not an official config key and the support might be eventually dropped.
 
 Setting `shamefully-hoist` is **required** to ensure `pnpm` will hoist all dependences from `nuxt-ignis` without you having to specify them in your own `package.json`. It is also recommened practice for Nuxt apps managed by `pnpm` in general. Check more in the [pnpm docs](https://pnpm.io/npmrc#shamefully-hoist).
 
@@ -170,7 +174,7 @@ It is also possible to add following test-related scripts to `package.json` for 
 <details>
 <summary>Reason why</summary>
 
-This might be just a matter of personal preference, but someone might find the shorthands useful. Check more detailed explanation for each variant in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec//blob/v0.2.2/README.md#running-tests).
+This might be just a matter of personal preference, but someone might find the shorthands useful. Check more detailed explanation for each variant in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.2/README.md#running-tests).
 </details>
 
 9) Delete `node_modules` folder and your lock file (based on the package manager you're using).
@@ -185,7 +189,7 @@ In rare cases, when you need to keep your dependencies intact due to specific ov
 
 ### Customization
 
-To tailor Nuxt Ignis to fit your project needs, setup your `.env` file accordingly. Check [the reference](/2-5-full-reference.html) for all available config options.
+To tailor Nuxt Ignis to fit your project needs, pass optional `ignis` config object into `nuxt.config.ts` or setup your `.env` file accordingly. Check [the reference](/2-5-full-reference.html) for all available configuration options.
 
 ### Running the app
 
