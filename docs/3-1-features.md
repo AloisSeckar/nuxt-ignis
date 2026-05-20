@@ -6,7 +6,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 
 | Package | Version | Detail | Description |
 | --- | :---: | :---: | :-- |
-| `nuxt` | `4.4.5` | [👁️‍🗨️](/3-10-features-nuxt) | Underlying Nuxt application itself |
+| `nuxt` | `4.4.6` | [👁️‍🗨️](/3-10-features-nuxt) | Underlying Nuxt application itself |
 | `vue` | `3.5.34` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
 | `vue-router` | `5.0.7` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
 | `typescript` | `5.9.3` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Explicit dependency included to ensure correct `eslint` functionality |

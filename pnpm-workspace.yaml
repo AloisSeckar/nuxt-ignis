@@ -34,9 +34,9 @@ catalog:
   '@nuxt/eslint-config': 1.15.2
   '@nuxt/fonts': 0.14.0
   '@nuxt/image': 2.0.0
-  '@nuxt/kit': 4.4.5
+  '@nuxt/kit': 4.4.6
   '@nuxt/module-builder': ^1.0.2
-  '@nuxt/schema': 4.4.5
+  '@nuxt/schema': 4.4.6
   '@nuxt/scripts': 1.1.0
   '@nuxt/test-utils': ^4.0.3
   '@nuxt/ui': 4.7.1
@@ -61,7 +61,7 @@ catalog:
   'elrh-pslo': 1.1.6
   'eslint': ^9.39.4
   'magic-regexp': 0.11.0
-  'nuxt': 4.4.5
+  'nuxt': 4.4.6
   'nuxt-auth-utils': 0.5.29
   'nuxt-charts': 2.1.4
   'nuxt-neon': 0.8.3
@@ -86,7 +86,7 @@ trustPolicy: no-downgrade
 
 minimumReleaseAge: 4320
 
-minimumReleaseAgeExclude: 
+minimumReleaseAgeExclude:
   # exclusions for internal modules
   - '@nuxt-ignis/content'
   - '@nuxt-ignis/default'
@@ -100,10 +100,12 @@ minimumReleaseAgeExclude:
   - 'nuxt-neon'
   # exclusions for trusted Vue/Nuxt packages
   # manually checked one-time exceptions
-  # build @ 2026-05-17 12:21 UTC+2
-  - '@nuxt/scripts'
-  # https://github.com/AloisSeckar/nuxt-ignis/security/dependabot/203
-  - 'devalue'
+  # build @ 2026-05-20 23:00 UTC+2
+  - '@nuxt/kit@4.4.6'
+  - '@nuxt/nitro-server@4.4.6'
+  - '@nuxt/schema@4.4.6'
+  - '@nuxt/vite-builder@4.4.6'
+  - 'nuxt@4.4.6'
 
 allowBuilds:
   '@parcel/watcher': true
