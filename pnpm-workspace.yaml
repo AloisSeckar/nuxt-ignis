@@ -119,6 +119,8 @@ allowBuilds:
   puppeteer: false
 
 overrides:
+  # Vite v8
+  vite: ^8.0.0
   # suspicious v4 comming from @formkit/nuxt@2.0.0
   chokidar: ^5.0.0
   # suspicious v6 comming from nuxt-security@2.6.0
