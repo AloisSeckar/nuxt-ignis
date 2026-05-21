@@ -112,6 +112,8 @@ export default defineNuxtConfig({
 
 If you use `@nuxtjs/seo` module and also have set `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_SSR=false` (or `ignis.config.nuxt.ssr: false` in `nuxt.config.ts`), modules from `Nuxt SEO` pack requiring SSR (`ogImage` and `schemaOrg`) will be disabled by default. You may still override this in your project's `nuxt.config.ts`, but it will produce their built-in warning on startup.
 
+With `ssr:false` it is currently **required** to additionally provide value for `NUXT_PUBLIC_SITE_URL` to allow static sitemap prerender.
+
 **NOTE**: If you don't use Nuxt Ignis configuration and set `ssr: false` directly in your project's `nuxt.config.ts`, modules mentioned above won't be disabled and you will get the warning, unless you turn them off manually.
 
 ### Additional options

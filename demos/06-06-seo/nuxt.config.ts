@@ -9,6 +9,7 @@ export default defineNuxtConfig({
   ignis: {
     content: {
       // this will provide config for "SEO" module
+      // NOTE: it is required to provide NUXT_PUBLIC_SITE_URL in .env for ssr: false sitemap pre-rendering
       seo: {
         enabled: true,
         // test https://github.com/AloisSeckar/nuxt-ignis/issues/170
