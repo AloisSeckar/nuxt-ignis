@@ -45,7 +45,8 @@
     "test-u": "vitest run -u",
     "test-i": "vitest",
     "test-unit": "vitest run unit",
-    "test-e2e": "vitest run e2e"
+    "test-e2e": "vitest run e2e",
+    "test:types": "vue-tsc --noEmit"
   },
   "dependencies": {
     "@nuxt-ignis/content": "catalog:",

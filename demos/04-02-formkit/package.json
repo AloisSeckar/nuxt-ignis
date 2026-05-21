@@ -3,7 +3,8 @@
   "name": "ignis-demo-04-02",
   "type": "module",
   "scripts": {
-    "dev": "cross-env CONSOLA_LEVEL=4 nuxt dev"
+    "dev": "cross-env CONSOLA_LEVEL=4 nuxt dev",
+    "test:types": "node ../../tsc-demo.js"
   },
   "devDependencies": {
     "@nuxt/eslint": "catalog:",

@@ -5,6 +5,7 @@
   "packageManager": "pnpm@11.1.3",
   "scripts": {
     "eslint-all": "pnpm --filter nuxt-ignis --filter \"ignis-demo-*\" --filter \"@nuxt-ignis/*\" --no-bail exec eslint .",
+    "tsc-all": "node ./tsc-all.js",
     "demos-test": "node ./demos/ignis-demos-test.js",
     "modules-test": "node ./modules/ignis-modules-test.js",
     "modules-publish": "node ./modules/ignis-modules-publish.js"
