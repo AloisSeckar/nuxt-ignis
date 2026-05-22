@@ -59,6 +59,8 @@ const object = {
 const isValid: boolean = await isValidByZod(ZodSchema, object)
 ```
 
+**Server-side:** Both `useZod` and `isValidByZod` are also available as auto-imports in server routes and utilities (e.g. `server/api/*.ts`, `server/utils/*.ts`).
+
 ## Valibot
 
 <PackagesReference :packages="[{ name: 'valibot', version: '1.4.0' }]" />
@@ -115,3 +117,5 @@ const object = {
 
 const isValid: boolean = await isValidByValibot(ValibotSchema, object)
 ```
+
+**Server-side:** Both `useValibot` and `isValidByValibot` are also available as auto-imports in server routes and utilities (e.g. `server/api/*.ts`, `server/utils/*.ts`).

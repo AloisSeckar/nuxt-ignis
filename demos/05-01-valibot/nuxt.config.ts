@@ -5,6 +5,16 @@ export default defineNuxtConfig({
     '../../core',
   ],
 
+  // to prevent possible MaxListenersExceededWarning in dev mode
+  hooks: {
+    'vite:serverCreated': (viteServer) => {
+      viteServer.middlewares.use((_req, res, next) => {
+        res.setMaxListeners(20)
+        next()
+      })
+    },
+  },
+
   // 05-01-valibot - how to enable Valibot validation library
   ignis: {
     preset: {

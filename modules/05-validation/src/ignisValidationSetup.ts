@@ -1,4 +1,4 @@
-import { createResolver, addImports } from '@nuxt/kit'
+import { createResolver, addImports, addServerImports } from '@nuxt/kit'
 import type { IgnisValidationOptions, NuxtIgnisValidationOptions } from './module'
 import type { PublicRuntimeConfig, RuntimeConfig } from 'nuxt/schema'
 
@@ -42,6 +42,10 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisValidationOptions) {
       { name: 'useZod', from: resolver.resolve('runtime/app/composables/useZod') },
       { name: 'isValidByZod', from: resolver.resolve('runtime/app/utils/validationZod') },
     ])
+    addServerImports([
+      { name: 'useZod', from: resolver.resolve('runtime/server/utils/useZod') },
+      { name: 'isValidByZod', from: resolver.resolve('runtime/server/utils/validationZod') },
+    ])
     console.debug('zod validation enabled')
   }
 
@@ -49,6 +53,10 @@ export function ignisModuleSetup(nuxtOptions: NuxtIgnisValidationOptions) {
     addImports([
       { name: 'useValibot', from: resolver.resolve('runtime/app/composables/useValibot') },
       { name: 'isValidByValibot', from: resolver.resolve('runtime/app/utils/validationValibot') },
+    ])
+    addServerImports([
+      { name: 'useValibot', from: resolver.resolve('runtime/server/utils/useValibot') },
+      { name: 'isValidByValibot', from: resolver.resolve('runtime/server/utils/validationValibot') },
     ])
     console.debug('valibot validation enabled')
   }

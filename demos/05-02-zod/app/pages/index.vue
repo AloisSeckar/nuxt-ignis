@@ -4,6 +4,17 @@
     <div>Valid: {{ validObject }}</div>
     <div>Invalid: {{ invalidObject }}</div>
     <div>Validator: {{ isValid1 }} {{ isValid2 }}</div>
+    <hr>
+    <h2>Server-side validation</h2>
+    <button @click="validateOnServer(true)">
+      Validate valid object (server)
+    </button>
+    <button @click="validateOnServer(false)">
+      Validate invalid object (server)
+    </button>
+    <div v-if="serverResult !== null">
+      Server result: {{ serverResult }}
+    </div>
   </div>
 </template>
 
@@ -44,4 +55,15 @@ try {
 // test built-in validator
 const isValid1 = await isValidByZod(LoginSchema, { email: 'jane.doe@example.com', password: '12345' })
 const isValid2 = await isValidByZod(LoginSchema, { email: 'jane.doe@example.com', password: 12345 })
+
+// server-side validation via /api/validate
+// proves isValidByZod is auto-imported in Nitro server routes (addServerImports)
+const serverResult = ref<{ isValid: boolean, body: unknown } | null>(null)
+
+async function validateOnServer(useValid: boolean) {
+  const body = useValid
+    ? { email: 'jane.doe@example.com', password: '12345' }
+    : { email: 'jane.doe@example.com', password: 12345 }
+  serverResult.value = await $fetch('/api/validate', { method: 'POST', body })
+}
 </script>

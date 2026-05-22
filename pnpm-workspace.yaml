@@ -27,7 +27,7 @@ catalog:
   '@nuxt-ignis/forms': 0.0.22
   '@nuxt-ignis/ui': 0.0.17
   '@nuxt-ignis/utils': 0.0.13
-  '@nuxt-ignis/validation': 0.0.15
+  '@nuxt-ignis/validation': 0.0.16
   '@nuxt/content': 3.13.0
   '@nuxt/devtools': ^4.0.0-alpha.4
   '@nuxt/eslint': 1.15.2

@@ -7,6 +7,7 @@ vi.mock('@nuxt/kit', () => ({
     resolve: (path: string) => path,
   }),
   addImports: vi.fn(),
+  addServerImports: vi.fn(),
 }))
 
 describe('@nuxt-ignis/validation - resolving module dependencies', () => {

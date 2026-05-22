@@ -31,8 +31,8 @@ catalogs:
       specifier: 0.0.13
       version: 0.0.13
     '@nuxt-ignis/validation':
-      specifier: 0.0.15
-      version: 0.0.15
+      specifier: 0.0.16
+      version: 0.0.16
     '@nuxt/content':
       specifier: 3.13.0
       version: 3.13.0
@@ -226,7 +226,7 @@ importers:
         version: 0.0.13(b9a8f7694710d26d0c1a9a077e564be5)
       '@nuxt-ignis/validation':
         specifier: 'catalog:'
-        version: 0.0.15(magicast@0.5.3)
+        version: 0.0.16(magicast@0.5.3)
       '@nuxt/eslint':
         specifier: 'catalog:'
         version: 1.15.2(@typescript-eslint/utils@8.59.3(eslint@9.39.4(jiti@2.7.0))(typescript@6.0.3))(@vue/compiler-sfc@3.5.34)(eslint@9.39.4(jiti@2.7.0))(magicast@0.5.3)(typescript@6.0.3)(vite@8.0.13)
@@ -2285,8 +2285,8 @@ packages:
   '@nuxt-ignis/utils@0.0.13':
     resolution: {integrity: sha512-dDZjEAmon3im+I4hjQnJS1f8EwGlec5+HN8k584Sr9VwaN6PkrsKMHZTcwGibf0PwNrDujPcIcJXk/QIjIE/Zg==}
 
-  '@nuxt-ignis/validation@0.0.15':
-    resolution: {integrity: sha512-bZSNnoMJzHM//NVF3mElu7SXArAnC0+CVy3FJshtElLVtTfQjqbI5GbpesaMcBSY2LMs1JkbSwa76arbpb+QQA==}
+  '@nuxt-ignis/validation@0.0.16':
+    resolution: {integrity: sha512-zMpqQe8JoASFNJgrTj6IEmk0qI7cJUQHa0eYtMJZbmPEfSbxCCbzSYsKmop0w/Ft3h2dU1+AApTgcJDlwetwMg==}
 
   '@nuxt/cli@3.35.2':
     resolution: {integrity: sha512-sCxNnFuYamqippdj+Cj4Nue55yaUvasaneyf2mnowK5/F1TKln/WVqTH18McxQ4baLlIlVapIFovKjJx1L8XMQ==}
@@ -13035,9 +13035,9 @@ snapshots:
       - vue
       - wheel-gestures
 
-  '@nuxt-ignis/validation@0.0.15(magicast@0.5.3)':
+  '@nuxt-ignis/validation@0.0.16(magicast@0.5.3)':
     dependencies:
-      '@nuxt/kit': 4.4.5(magicast@0.5.3)
+      '@nuxt/kit': 4.4.6(magicast@0.5.3)
     transitivePeerDependencies:
       - magicast
 
