@@ -50,6 +50,10 @@ export default defineNuxtConfig({
 
 **Note**: Nuxt Ignis uses [`@nuxt/image` v2](https://nuxt.com/blog/nuxt-image-v2) which includes some breaking changes. Please refer to the [migration guide](https://image.nuxt.com/migration/v2) if you experience troubles after switching.
 
+### Usage notice
+
+Keep in mind that with the default `ipx` provider, [sharp](https://sharp.pixelplumbing.com/) runtime is being bundled into server-side code. This both increases the server bundle size (by more than 20 MB) and especially makes the build potentially platform-dependant. See the [Sharp Cross-Platform Installation](https://image.nuxt.com/get-started/installation#sharp-cross-platform-installation) in the module docs.
+
 ## Nuxt Scripts
 
 <PackagesReference :packages="[{ name: '@nuxt/scripts', version: '1.1.0' }]" />
