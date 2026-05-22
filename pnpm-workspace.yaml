@@ -72,7 +72,7 @@ catalog:
   'pinia': 3.0.4
   'postcss-jit-props': 1.0.16
   'tailwindcss': 4.3.0
-  'typescript': 5.9.3
+  'typescript': 6.0.3
   'valibot': 1.4.0
   'vitepress': ^2.0.0-alpha.17
   'vitepress-plugin-group-icons': ^1.7.5
@@ -121,6 +121,8 @@ allowBuilds:
 overrides:
   # Vite v8
   vite: ^8.0.0
+  # TypeScript v6
+  typescript: ^6.0.0
   # suspicious v4 comming from @formkit/nuxt@2.0.0
   chokidar: ^5.0.0
   # suspicious v6 comming from nuxt-security@2.6.0

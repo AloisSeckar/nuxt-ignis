@@ -9,7 +9,7 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `nuxt` | `4.4.6` | [👁️‍🗨️](/3-10-features-nuxt) | Underlying Nuxt application itself |
 | `vue` | `3.5.34` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
 | `vue-router` | `5.0.7` | [👁️‍🗨️](/3-10-features-nuxt)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
-| `typescript` | `5.9.3` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Explicit dependency included to ensure correct `eslint` functionality |
+| `typescript` | `6.0.3` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Explicit dependency included to ensure correct `eslint` functionality |
 | `defu` | `6.1.7` | [👁️‍🗨️](/2-1-configuration.html#defu-merge) | Used for merging user configurations with defaults |
 | `date-fns` | `4.1.0` | [👁️‍🗨️](/3-9-features-devex.html#logging) | Used to get timestamps in readable format |
 | `consola` | `3.4.2` | [👁️‍🗨️](/3-9-features-devex.html#logging) | Improved centralized logging solution |

@@ -75,7 +75,6 @@ for (const mod of modules) {
     JSON.stringify(pkg, null, 2) + '\n'
   );
 
-  run('pnpm install', moduleDir);
   run('pnpm publish --access public --no-git-checks', moduleDir);
 }
 
