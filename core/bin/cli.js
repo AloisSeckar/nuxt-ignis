@@ -11,6 +11,7 @@ import { getPackageManager } from 'elrh-cosca'
  * `set-css` - scaffolds default CSS file to allow editing it
  * `set-eslint` - scaffolds default ESLint config file to allow editing it
  * `set-netlify` - scaffolds default netlify.toml file to allow editing it
+ * `set-vscode` - scaffolds default .vscode/settings.json file to allow editing it
  *
  * Second parameter for `setup` might be a boolean to indicate auto mode
  * (no prompts, force = true) or manual mode (with prompts, force = false).
@@ -40,8 +41,11 @@ const args = process.argv.slice(2);
       case 'set-netlify':
         await (await import('./set-netlify.js')).setNetlify()
         break
+      case 'set-vscode':
+        await (await import('./set-vscode.js')).setVSCode()
+        break
       default:
-        console.log(`Usage: \`${getCmd()} nuxt-ignis setup|set-css|set-eslint|set-app-vue|set-netlify [true|false]\``)
+        console.log(`Usage: \`${getCmd()} nuxt-ignis setup|set-css|set-eslint|set-app-vue|set-netlify|set-vscode [true|false]\``)
         status = 1
     }
   } catch (error) {

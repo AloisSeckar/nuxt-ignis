@@ -156,3 +156,31 @@ $ deno run --allow-run npm:npx nuxt-ignis set-netlify
 :::
 
 The file will be created as `netlify.toml` in project root with [default contents](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/bin/templates/netlify.toml.template).
+
+### set-vscode
+
+To scaffold the recommended VS Code workspace settings for a Nuxt Ignis project, run:
+
+::: code-group
+```sh [pnpm]
+pnpx nuxt-ignis set-vscode
+```
+
+```sh [npm]
+npx nuxt-ignis set-vscode
+```
+
+```sh [yarn]
+yarn dlx nuxt-ignis set-vscode
+```
+
+```sh [bun]
+$ bunx nuxt-ignis set-vscode
+```
+
+```sh [deno]
+$ deno run --allow-run npm:npx nuxt-ignis set-vscode
+```
+:::
+
+The file will be created as `.vscode/settings.json` with [default contents](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/bin/templates/vscode-settings.json.template).
