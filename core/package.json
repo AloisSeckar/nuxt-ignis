@@ -25,6 +25,17 @@
     "email": "alois.seckar@gmail.com"
   },
   "license": "MIT",
+  "files": [
+    "app",
+    "bin",
+    "i18n",
+    "modules",
+    "public",
+    "nuxt.config.ts",
+    "overview.ts",
+    "tsconfig.json",
+    "README.md"
+  ],
   "main": "./nuxt.config.ts",
   "engines": {
     "node": ">=22.12.0"
