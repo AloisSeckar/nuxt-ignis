@@ -2,7 +2,7 @@
   "name": "nuxt-ignis",
   "description": "A ready-to-use setup for your next application in Nuxt",
   "type": "module",
-  "version": "0.5.3",
+  "version": "0.6.0-rc.1",
   "config": {
     "date": "2026-02-01"
   },
@@ -35,7 +35,7 @@
   "scripts": {
     "analyze": "nuxt analyze",
     "eslint": "eslint .",
-    "build": "cd ../docs && pnpm test-unit && pnpm build && cd ../core && pnpm test-unit && nuxt build",
+    "build": "cd ../docs && pnpm test && pnpm build && cd ../core && pnpm test-unit && nuxt build",
     "dev": "cross-env CONSOLA_LEVEL=4 nuxt dev",
     "generate": "nuxt generate",
     "prepublishOnly": "pnpm build",

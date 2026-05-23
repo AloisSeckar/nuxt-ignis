@@ -2,6 +2,14 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.6.0-rc.1
+
+`2026-05-23`
+
+- BREAKING: new modular structure, re-named variables and couple of other important changes
+- this is the initial release candidate to test the new modular structure and setup on real projects
+- full change log will be included in the final `v0.6.0` release
+
 ## 0.5.3
 
 `2026-01-03`

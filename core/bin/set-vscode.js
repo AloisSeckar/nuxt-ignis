@@ -11,7 +11,7 @@ import { createFileFromWebTemplate } from 'elrh-cosca'
  */
 export async function setVSCode() {
   try {
-    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.5.3/core/bin/templates/vscode-settings.json.template', '.vscode/settings.json')
+    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0-rc.1/core/bin/templates/vscode-settings.json.template', '.vscode/settings.json')
   } catch (error) {
     console.error('Error creating VS Code settings file:\n', error.message)
   }

@@ -49,7 +49,7 @@ export default loadVueformConfig({
 
 Nuxt Ignis will scaffold default `vueform.config.ts` file on startup if none exists yet.
 
-This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/utils/config/vueform.ts) for `Vueform` in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
+This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.1/core/app/utils/config/vueform.ts) for `Vueform` in your project. The extra step is required as it seems not possible to transfer the config file from the layer.
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can ignore Nuxt Ignis' default config and create your own file based on [Vueform docs](https://vueform.com/docs/installation#manual-installation) (check instructions for Nuxt).
 
@@ -103,11 +103,11 @@ export default config
 
 Nuxt Ignis will scaffold default `formkit.config.ts` file on startup if none exists yet.
 
-This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/utils/config/formkit.ts) for `Formkit` in your project. The extra step is required as it seems not possible to transfer the config file from the layer. Note that `export default config` is a required syntax as `Formkit` expects such export in `formkit.config.ts` file.
+This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.1/core/app/utils/config/formkit.ts) for `Formkit` in your project. The extra step is required as it seems not possible to transfer the config file from the layer. Note that `export default config` is a required syntax as `Formkit` expects such export in `formkit.config.ts` file.
 
 Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can provide your own config file (see [Additional options](#additional-options)) ignore Nuxt Ignis' default config and create your own file based on [Formkit docs](https://formkit.com/getting-started/installation) (check instructions for Nuxt).
 
 ### Additional options
 
 - you can select default language locale via `NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_DEFAULT` (or `ignis.forms.formkit.default` in `nuxt.config.ts`)
-- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.5.3/core/app/utils/config/formkit.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_CONFIG` (or `ignis.forms.formkit.config` in `nuxt.config.ts`)
+- if [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.1/core/app/utils/config/formkit.ts) is not suitable for your project, you may specify path to your own using `NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_CONFIG` (or `ignis.forms.formkit.config` in `nuxt.config.ts`)
