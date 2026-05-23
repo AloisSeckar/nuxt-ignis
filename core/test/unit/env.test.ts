@@ -1,10 +1,10 @@
 import { beforeEach, describe, expect, test } from 'vitest'
-import { applyEnv } from '../../modules/utils/env'
+import { envApply } from '../../modules/utils/env-apply'
 
-// `applyEnv` is the helper function that transforms given .env variables
+// `envApply` is the helper function that transforms given .env variables
 // into `ignis` config object prior to Nuxt Ignis module resolution
 
-describe('unit tests for `applyEnv` function', () => {
+describe('unit tests for `envApply` function', () => {
   // store original process.env to restore it after tests
   const OLD_ENV = process.env
 
@@ -15,15 +15,15 @@ describe('unit tests for `applyEnv` function', () => {
 
   // output with no settings and no .env provided
 
-  test('applyEnv - empty .env + no settings', async () => {
+  test('envApply - empty .env + no settings', async () => {
     const ignisConfig = {}
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/empty.txt')
   })
 
   // output with some settings and no .env provided
 
-  test('applyEnv - empty .env + custom settings', async () => {
+  test('envApply - empty .env + custom settings', async () => {
     const ignisConfig = {
       config: {
         html: {
@@ -31,7 +31,7 @@ describe('unit tests for `applyEnv` function', () => {
         },
       },
     }
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/custom.txt')
   })
 
@@ -57,23 +57,23 @@ describe('unit tests for `applyEnv` function', () => {
     process.env.NUXT_PUBLIC_IGNIS_CONFIG_WARN_DUPLICATES = 'false'
   }
 
-  test('applyEnv - config via ignisConfig', async () => {
+  test('envApply - config via ignisConfig', async () => {
     const ignisConfig = { ...CONFIG_OBJECT }
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/config-obj.txt')
   })
 
-  test('applyEnv - config via process.env', async () => {
+  test('envApply - config via process.env', async () => {
     const ignisConfig = {}
     setConfigEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/config-env.txt')
   })
 
-  test('applyEnv - config env takes precedence over ignisConfig', async () => {
+  test('envApply - config env takes precedence over ignisConfig', async () => {
     const ignisConfig = { ...CONFIG_OBJECT }
     setConfigEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/config-both.txt')
   })
 
@@ -95,23 +95,23 @@ describe('unit tests for `applyEnv` function', () => {
     process.env.NUXT_PUBLIC_IGNIS_PRESET_VALIDATION = 'valibot'
   }
 
-  test('applyEnv - preset via ignisConfig', async () => {
+  test('envApply - preset via ignisConfig', async () => {
     const ignisConfig = { ...PRESET_OBJECT }
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/preset-obj.txt')
   })
 
-  test('applyEnv - preset via process.env', async () => {
+  test('envApply - preset via process.env', async () => {
     const ignisConfig = {}
     setPresetEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/preset-env.txt')
   })
 
-  test('applyEnv - preset env takes precedence over ignisConfig', async () => {
+  test('envApply - preset env takes precedence over ignisConfig', async () => {
     const ignisConfig = { ...PRESET_OBJECT }
     setPresetEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/preset-both.txt')
   })
 
@@ -143,23 +143,23 @@ describe('unit tests for `applyEnv` function', () => {
     process.env.NUXT_PUBLIC_IGNIS_DEFAULT_CSS = 'false'
   }
 
-  test('applyEnv - default via ignisConfig', async () => {
+  test('envApply - default via ignisConfig', async () => {
     const ignisConfig = { ...DEFAULT_OBJECT }
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/default-obj.txt')
   })
 
-  test('applyEnv - default via process.env', async () => {
+  test('envApply - default via process.env', async () => {
     const ignisConfig = {}
     setDefaultEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/default-env.txt')
   })
 
-  test('applyEnv - default env takes precedence over ignisConfig', async () => {
+  test('envApply - default env takes precedence over ignisConfig', async () => {
     const ignisConfig = { ...DEFAULT_OBJECT }
     setDefaultEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/default-both.txt')
   })
 
@@ -181,23 +181,23 @@ describe('unit tests for `applyEnv` function', () => {
     process.env.NUXT_PUBLIC_IGNIS_UI_CHARTS = 'true'
   }
 
-  test('applyEnv - ui via ignisConfig', async () => {
+  test('envApply - ui via ignisConfig', async () => {
     const ignisConfig = { ...UI_OBJECT }
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/ui-obj.txt')
   })
 
-  test('applyEnv - ui via process.env', async () => {
+  test('envApply - ui via process.env', async () => {
     const ignisConfig = {}
     setUiEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/ui-env.txt')
   })
 
-  test('applyEnv - ui env takes precedence over ignisConfig', async () => {
+  test('envApply - ui env takes precedence over ignisConfig', async () => {
     const ignisConfig = { ...UI_OBJECT }
     setUiEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/ui-both.txt')
   })
 
@@ -216,23 +216,23 @@ describe('unit tests for `applyEnv` function', () => {
     process.env.NUXT_PUBLIC_IGNIS_DB_SUPABASE_TYPES = 'env-types'
   }
 
-  test('applyEnv - db via ignisConfig', async () => {
+  test('envApply - db via ignisConfig', async () => {
     const ignisConfig = { ...DB_OBJECT }
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/db-obj.txt')
   })
 
-  test('applyEnv - db via process.env', async () => {
+  test('envApply - db via process.env', async () => {
     const ignisConfig = {}
     setDbEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/db-env.txt')
   })
 
-  test('applyEnv - db env takes precedence over ignisConfig', async () => {
+  test('envApply - db env takes precedence over ignisConfig', async () => {
     const ignisConfig = { ...DB_OBJECT }
     setDbEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/db-both.txt')
   })
 
@@ -252,23 +252,23 @@ describe('unit tests for `applyEnv` function', () => {
     process.env.NUXT_PUBLIC_IGNIS_FORMS_VUEFORM_ENABLED = 'true'
   }
 
-  test('applyEnv - forms via ignisConfig', async () => {
+  test('envApply - forms via ignisConfig', async () => {
     const ignisConfig = { ...FORMS_OBJECT }
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/forms-obj.txt')
   })
 
-  test('applyEnv - forms via process.env', async () => {
+  test('envApply - forms via process.env', async () => {
     const ignisConfig = {}
     setFormsEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/forms-env.txt')
   })
 
-  test('applyEnv - forms env takes precedence over ignisConfig', async () => {
+  test('envApply - forms env takes precedence over ignisConfig', async () => {
     const ignisConfig = { ...FORMS_OBJECT }
     setFormsEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/forms-both.txt')
   })
 
@@ -286,23 +286,23 @@ describe('unit tests for `applyEnv` function', () => {
     process.env.NUXT_PUBLIC_IGNIS_VALIDATION_VALIBOT = 'true'
   }
 
-  test('applyEnv - validation via ignisConfig', async () => {
+  test('envApply - validation via ignisConfig', async () => {
     const ignisConfig = { ...VALIDATION_OBJECT }
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/validation-obj.txt')
   })
 
-  test('applyEnv - validation via process.env', async () => {
+  test('envApply - validation via process.env', async () => {
     const ignisConfig = {}
     setValidationEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/validation-env.txt')
   })
 
-  test('applyEnv - validation env takes precedence over ignisConfig', async () => {
+  test('envApply - validation env takes precedence over ignisConfig', async () => {
     const ignisConfig = { ...VALIDATION_OBJECT }
     setValidationEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/validation-both.txt')
   })
 
@@ -329,23 +329,23 @@ describe('unit tests for `applyEnv` function', () => {
     process.env.NUXT_PUBLIC_IGNIS_CONTENT_PSLO_CONTENT = 'true'
   }
 
-  test('applyEnv - content via ignisConfig', async () => {
+  test('envApply - content via ignisConfig', async () => {
     const ignisConfig = { ...CONTENT_OBJECT }
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/content-obj.txt')
   })
 
-  test('applyEnv - content via process.env', async () => {
+  test('envApply - content via process.env', async () => {
     const ignisConfig = {}
     setContentEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/content-env.txt')
   })
 
-  test('applyEnv - content env takes precedence over ignisConfig', async () => {
+  test('envApply - content env takes precedence over ignisConfig', async () => {
     const ignisConfig = { ...CONTENT_OBJECT }
     setContentEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/content-both.txt')
   })
 
@@ -365,23 +365,23 @@ describe('unit tests for `applyEnv` function', () => {
     process.env.NUXT_PUBLIC_IGNIS_UTILS_REGEXP_ENABLED = 'true'
   }
 
-  test('applyEnv - utils via ignisConfig', async () => {
+  test('envApply - utils via ignisConfig', async () => {
     const ignisConfig = { ...UTILS_OBJECT }
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/utils-obj.txt')
   })
 
-  test('applyEnv - utils via process.env', async () => {
+  test('envApply - utils via process.env', async () => {
     const ignisConfig = {}
     setUtilsEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/utils-env.txt')
   })
 
-  test('applyEnv - utils env takes precedence over ignisConfig', async () => {
+  test('envApply - utils env takes precedence over ignisConfig', async () => {
     const ignisConfig = { ...UTILS_OBJECT }
     setUtilsEnv()
-    applyEnv(ignisConfig)
+    envApply(ignisConfig)
     await expect(ignisConfig).toMatchFileSnapshot('./env/utils-both.txt')
   })
 })

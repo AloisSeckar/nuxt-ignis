@@ -31,6 +31,7 @@
     },
     "seo": {
       "enabled": true,
+      "staticsite": false,
     },
     "social": {
       "enabled": true,

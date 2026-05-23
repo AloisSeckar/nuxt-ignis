@@ -22,7 +22,7 @@
       "enabled": false,
     },
     "i18n": {
-      "default": "",
+      "default": "en",
       "enabled": false,
     },
     "pslo": {
@@ -31,6 +31,7 @@
     },
     "seo": {
       "enabled": false,
+      "staticsite": false,
     },
     "social": {
       "enabled": false,
