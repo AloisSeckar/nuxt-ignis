@@ -11,6 +11,21 @@ export default defineNuxtConfig({
   // https://nuxt.com/docs/4.x/api/nuxt-config#compatibilitydate
   compatibilityDate: '2026-02-01',
 
+  // supressing misleading Windows warnings (#179)
+  // based on https://github.com/nuxt/nuxt/issues/27424#issuecomment-4128539968
+  // TODO verify the solution (why 'CIRCULAR_DEPENDENCY' warnings start appearing when 'UNRESOLVED_IMPORT' is silenced and if isn't this filter too broad for other use.cases?)
+  nitro: {
+    rollupConfig: {
+      onwarn: (warning, warn) => {
+        if (warning.code === 'UNRESOLVED_IMPORT' || warning.code === 'CIRCULAR_DEPENDENCY') {
+          return
+        } else {
+          warn(warning)
+        }
+      },
+    },
+  },
+
   // Nuxt automated recommendation based on https://vite.dev/guide/dep-pre-bundling.html
   vite: {
     optimizeDeps: {
