@@ -25,19 +25,19 @@ const ALL_MODULES = [
 ];
 
 // Filter modules by comma-separated partial names (e.g. "ui,db")
-const filterArg = process.argv[2] || '';
+// Unquoted commas in PowerShell produce a space-joined string, so split on both commas and whitespace.
+const filters = process.argv.slice(2).join(' ').split(/[,\s]+/).filter(Boolean);
 let modules;
 
-if (filterArg) {
-  const filters = filterArg.split(',').map(f => f.trim());
+if (filters.length) {
   modules = ALL_MODULES.filter(mod =>
     filters.some(filter => mod.includes(filter))
   );
   if (modules.length === 0) {
-    console.error(`No modules matched filter: ${filterArg}`);
+    console.error(`No modules matched filter: ${filters.join(', ')}`);
     process.exit(1);
   }
-  console.log(`=== Nuxt Ignis Module Release (filtered: ${filterArg}) ===`);
+  console.log(`=== Nuxt Ignis Module Release (filtered: ${filters.join(', ')}) ===`);
 } else {
   modules = [...ALL_MODULES];
   console.log('=== Nuxt Ignis Module Release (all modules) ===');

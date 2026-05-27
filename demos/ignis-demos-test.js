@@ -23,17 +23,17 @@ const ALL_DEMOS = readdirSync(DEMOS_DIR)
   .sort();
 
 // Filter demos by comma-separated "starts with" patterns
-const filterArg = process.argv[2] || '';
+// Unquoted commas in PowerShell produce a space-joined string, so split on both commas and whitespace.
+const filters = process.argv.slice(2).join(' ').split(/[,\s]+/).filter(Boolean);
 let demos;
 
-if (filterArg) {
-  const filters = filterArg.split(',').map(f => f.trim());
+if (filters.length) {
   demos = ALL_DEMOS.filter(demo => filters.some(filter => demo.startsWith(filter)));
   if (demos.length === 0) {
-    console.error(`No demos matched filter: ${filterArg}`);
+    console.error(`No demos matched filter: ${filters.join(', ')}`);
     process.exit(1);
   }
-  console.log(`=== Nuxt Ignis Demo Tests (filtered: ${filterArg}) ===`);
+  console.log(`=== Nuxt Ignis Demo Tests (filtered: ${filters.join(', ')}) ===`);
 } else {
   demos = [...ALL_DEMOS];
   console.log('=== Nuxt Ignis Demo Tests (all demos) ===');
