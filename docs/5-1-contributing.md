@@ -47,12 +47,12 @@ nodeLinker: hoisted
 # pnpm notoriously warn about some dependency issues that are actually not a problem
 # in current Nuxt Ignis setup - thus we are ignoring them to avoid noise 
 peerDependencyRules:
-  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.1/pnpm-workspace.yaml for current values
+  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.2/pnpm-workspace.yaml for current values
 
 # https://pnpm.io/catalogs#defining-catalogs
 # global version definition for all the dependencies
 catalog:
-  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.1/pnpm-workspace.yaml for current values
+  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.2/pnpm-workspace.yaml for current values
 
 # https://pnpm.io/settings#trustpolicy
 # packages cannot change from trusted to untrusted
@@ -65,7 +65,7 @@ minimumReleaseAge: 4320
 minimumReleaseAgeExclude:
   # - package-name
   # all internal @nuxt-ignis/* packages are excluded to allow new development
-  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.1/pnpm-workspace.yaml for current values
+  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.2/pnpm-workspace.yaml for current values
 
 # https://pnpm.io/settings#allowBuilds
 # pnpm naturally blocks all post-install scripts
@@ -86,7 +86,7 @@ allowBuilds:
 # specific package versions (mostly temporary because known vulnerabilities)
 overrides:
   # - package-name
-  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.1/pnpm-workspace.yaml for current values
+  # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.2/pnpm-workspace.yaml for current values
 
 # https://pnpm.io/settings#verifydepsbeforerun
 # check and throw error if node_modules need to be updated

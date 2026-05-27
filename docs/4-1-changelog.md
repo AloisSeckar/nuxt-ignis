@@ -2,6 +2,14 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.6.0-rc.2
+
+`2026-05-27`
+
+- fix: review dependencies and devDependencies in sub-modules (#185)
+- fix: hide misleading warning (#179)
+- refactor: optimize `nuxt-ignis` package size by omitting local build files
+
 ## 0.6.0-rc.1
 
 `2026-05-23`

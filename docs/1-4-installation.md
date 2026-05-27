@@ -43,7 +43,7 @@ You can also make the steps manually if you want to keep more control.
 ```json [package.json]
 {
   "dependencies": {
-    "nuxt-ignis": "0.6.0-rc.1"
+    "nuxt-ignis": "0.6.0-rc.2"
   }
 }
 ```
@@ -133,7 +133,7 @@ _nuxt-config.json
 Nuxt Ignis always creates `public/_ignis-config.json` and `public/_nuxt-config.json` files when done with resolving `nuxt.config.ts` to expose the actual configuration used for reference and potential debugging. As those files are re-generated automatically everytime the app starts, it is not recommended to add it to Git. They _could_ be stored for reference but this might tempt devs to edit it manually which would have no effect and should cause unnecessary confusion. Since the files are JSONs, comments can't be included to add auto-generation warning.
 </details>
 
-7) Optionally replace default `app/app.vue` in fresh project (the file contains `<NuxtWelcome />` component) with the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.1/core/app/app.vue).
+7) Optionally replace default `app/app.vue` in fresh project (the file contains `<NuxtWelcome />` component) with the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.2/core/app/app.vue).
 
 <details>
 <summary>Reason why</summary>
