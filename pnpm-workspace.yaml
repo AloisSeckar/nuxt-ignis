@@ -22,12 +22,12 @@ catalog:
   '@formkit/nuxt': 2.0.0
   '@maas/vue-equipment': 1.0.0-beta.57
   '@nuxt-ignis/content': 0.0.66
-  '@nuxt-ignis/db': 0.0.19
+  '@nuxt-ignis/db': 0.0.20
   '@nuxt-ignis/default': 0.0.19
-  '@nuxt-ignis/forms': 0.0.23
-  '@nuxt-ignis/ui': 0.0.18
+  '@nuxt-ignis/forms': 0.0.24
+  '@nuxt-ignis/ui': 0.0.19
   '@nuxt-ignis/utils': 0.0.14
-  '@nuxt-ignis/validation': 0.0.17
+  '@nuxt-ignis/validation': 0.0.18
   '@nuxt/content': 3.13.0
   '@nuxt/devtools': ^4.0.0-alpha.4
   '@nuxt/eslint': 1.15.2

@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/ui",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "type": "module",
   "description": "Nuxt Ignis module - UI features",
   "publishConfig": {
@@ -44,11 +44,14 @@
   },
   "dependencies": {
     "@nuxt/kit": "catalog:",
+    "@nuxt/ui": "catalog:",
+    "@nuxtjs/tailwindcss": "catalog:",
     "@tailwindcss/vite": "catalog:",
     "defu": "catalog:",
     "nuxt-charts": "catalog:",
     "open-props": "catalog:",
-    "postcss-jit-props": "catalog:"
+    "postcss-jit-props": "catalog:",
+    "tailwindcss": "catalog:"
   },
   "devDependencies": {
     "@nuxt/devtools": "catalog:",
@@ -56,13 +59,10 @@
     "@nuxt/module-builder": "catalog:",
     "@nuxt/schema": "catalog:",
     "@nuxt/test-utils": "catalog:",
-    "@nuxt/ui": "catalog:",
-    "@nuxtjs/tailwindcss": "catalog:",
     "@types/node": "catalog:",
     "changelogen": "catalog:",
     "eslint": "catalog:",
     "nuxt": "catalog:",
-    "tailwindcss": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
     "vue-tsc": "catalog:"

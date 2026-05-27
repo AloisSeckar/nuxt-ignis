@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/db",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "type": "module",
   "description": "Nuxt Ignis module - DB features",
   "publishConfig": {
@@ -43,7 +43,9 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "catalog:"
+    "@nuxt/kit": "catalog:",
+    "@nuxtjs/supabase": "catalog:",
+    "nuxt-neon": "catalog:"
   },
   "devDependencies": {
     "@nuxt/devtools": "catalog:",
@@ -51,12 +53,10 @@
     "@nuxt/module-builder": "catalog:",
     "@nuxt/schema": "catalog:",
     "@nuxt/test-utils": "catalog:",
-    "@nuxtjs/supabase": "catalog:",
     "@types/node": "catalog:",
     "changelogen": "catalog:",
     "eslint": "catalog:",
     "nuxt": "catalog:",
-    "nuxt-neon": "catalog:",
     "typescript": "catalog:",
     "vitest": "catalog:",
     "vue-tsc": "catalog:"

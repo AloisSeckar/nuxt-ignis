@@ -1,6 +1,6 @@
 {
   "name": "@nuxt-ignis/validation",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "type": "module",
   "description": "Nuxt Ignis module - Validation features",
   "publishConfig": {
@@ -43,7 +43,9 @@
     "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
   },
   "dependencies": {
-    "@nuxt/kit": "catalog:"
+    "@nuxt/kit": "catalog:",
+    "valibot": "catalog:",
+    "zod": "catalog:"
   },
   "devDependencies": {
     "@nuxt/devtools": "catalog:",
@@ -56,10 +58,8 @@
     "eslint": "catalog:",
     "nuxt": "catalog:",
     "typescript": "catalog:",
-    "valibot": "catalog:",
     "vitest": "catalog:",
-    "vue-tsc": "catalog:",
-    "zod": "catalog:"
+    "vue-tsc": "catalog:"
   },
   "packageManager": "pnpm@11.1.3"
 }
