@@ -6,7 +6,7 @@ import { preventSingleLetterOrphans } from 'elrh-pslo'
 import { consola } from 'consola'
 
 export function pslo(text: string) {
-  if (useRuntimeConfig().public.ignis.content.pslo.enabled === 'true') {
+  if (useRuntimeConfig().public.ignis.content?.pslo?.enabled === 'true') {
     consola.debug(`treating text input with elrh-pslo`)
     return preventSingleLetterOrphans(text)
   } else {

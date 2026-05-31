@@ -4,7 +4,7 @@
 // This feature can be disbled via `ignis.config.nuxt.error` flag.
 
 export default defineNuxtPlugin((nuxtApp) => {
-  if (useRuntimeConfig().public.ignis.config.nuxt.error) {
+  if (useRuntimeConfig().public.ignis.config?.nuxt?.error) {
     nuxtApp.vueApp.config.errorHandler = (err, instance, info) => {
       log.error(err)
       // capture additional context

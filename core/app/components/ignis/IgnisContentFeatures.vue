@@ -28,40 +28,40 @@ import { useIgnisT } from '#imports' // requires explicit import for some reason
 
 const setup = useRuntimeConfig().public.ignis
 
-const ui = setup.preset.ui
-const db = setup.preset.db
-const forms = setup.preset.forms
-const validation = setup.preset.validation
+const ui = setup.preset?.ui
+const db = setup.preset?.db
+const forms = setup.preset?.forms
+const validation = setup.preset?.validation
 
 const features = [
   { text: useIgnisT('features.nuxt'), active: true },
   { text: useIgnisT('features.consola'), active: true },
-  { text: useIgnisT('features.eslint'), active: setup.default.eslint },
-  { text: useIgnisT('features.security'), active: setup.default.security },
-  { text: useIgnisT('features.image'), active: setup.default.image },
-  { text: useIgnisT('features.scripts'), active: setup.default.scripts },
-  { text: useIgnisT('features.fonts'), active: setup.default.fonts, class: 'fonts' },
-  { text: useIgnisT('features.pinia'), active: setup.default.pinia },
-  { text: useIgnisT('features.vueuse'), active: setup.default.vueuse },
-  { text: useIgnisT('features.auth'), active: setup.default.auth },
+  { text: useIgnisT('features.eslint'), active: setup.default?.eslint },
+  { text: useIgnisT('features.security'), active: setup.default?.security },
+  { text: useIgnisT('features.image'), active: setup.default?.image },
+  { text: useIgnisT('features.scripts'), active: setup.default?.scripts },
+  { text: useIgnisT('features.fonts'), active: setup.default?.fonts, class: 'fonts' },
+  { text: useIgnisT('features.pinia'), active: setup.default?.pinia },
+  { text: useIgnisT('features.vueuse'), active: setup.default?.vueuse },
+  { text: useIgnisT('features.auth'), active: setup.default?.auth },
   { text: useIgnisT('features.time'), active: true },
-  { text: useIgnisT('features.ui'), active: ui === 'nuxt-ui' || setup.ui.ui },
-  { text: useIgnisT('features.tailwind'), active: ui !== 'off' || setup.ui.tailwind || setup.ui.tailwind },
-  { text: useIgnisT('features.icon'), active: ui === 'nuxt-ui' || setup.ui.ui },
-  { text: useIgnisT('features.neon'), active: db === 'neon' || (db === 'off' && setup.db.neon.enabled) },
-  { text: useIgnisT('features.supabase'), active: db === 'supabase' || (db === 'off' && setup.db.supabase.enabled) },
-  { text: useIgnisT('features.vueform'), active: forms === 'vueform' || (forms === 'off' && setup.forms.vueform.enabled) },
-  { text: useIgnisT('features.formkit'), active: forms === 'formkit' || (forms === 'off' && setup.forms.formkit.enabled) },
-  { text: useIgnisT('features.valibot'), active: validation === 'valibot' || (validation === 'off' && setup.validation.valibot) },
-  { text: useIgnisT('features.zod'), active: validation === 'zod' || (validation === 'off' && setup.validation.zod) },
-  { text: useIgnisT('features.content'), active: setup.content.content.enabled },
-  { text: useIgnisT('features.i18n'), active: setup.content.i18n.enabled },
-  { text: useIgnisT('features.seo'), active: setup.content.seo.enabled },
-  { text: useIgnisT('features.social'), active: setup.content.social.enabled },
-  { text: useIgnisT('features.equipment'), active: setup.utils.equipment.enabled },
-  { text: useIgnisT('features.regexp'), active: setup.utils.regexp.enabled },
-  { text: useIgnisT('features.charts'), active: setup.ui.charts },
-  { text: useIgnisT('features.openprops'), active: setup.ui.openprops, class: 'openprops-feature' },
+  { text: useIgnisT('features.ui'), active: ui === 'nuxt-ui' || setup.ui?.ui },
+  { text: useIgnisT('features.tailwind'), active: ui !== 'off' || setup.ui?.tailwind || setup.ui?.tailwind },
+  { text: useIgnisT('features.icon'), active: ui === 'nuxt-ui' || setup.ui?.ui },
+  { text: useIgnisT('features.neon'), active: db === 'neon' || (db === 'off' && setup.db?.neon?.enabled) },
+  { text: useIgnisT('features.supabase'), active: db === 'supabase' || (db === 'off' && setup.db?.supabase?.enabled) },
+  { text: useIgnisT('features.vueform'), active: forms === 'vueform' || (forms === 'off' && setup.forms?.vueform?.enabled) },
+  { text: useIgnisT('features.formkit'), active: forms === 'formkit' || (forms === 'off' && setup.forms?.formkit?.enabled) },
+  { text: useIgnisT('features.valibot'), active: validation === 'valibot' || (validation === 'off' && setup.validation?.valibot) },
+  { text: useIgnisT('features.zod'), active: validation === 'zod' || (validation === 'off' && setup.validation?.zod) },
+  { text: useIgnisT('features.content'), active: setup.content?.content?.enabled },
+  { text: useIgnisT('features.i18n'), active: setup.content?.i18n?.enabled },
+  { text: useIgnisT('features.seo'), active: setup.content?.seo?.enabled },
+  { text: useIgnisT('features.social'), active: setup.content?.social?.enabled },
+  { text: useIgnisT('features.equipment'), active: setup.utils?.equipment?.enabled },
+  { text: useIgnisT('features.regexp'), active: setup.utils?.regexp?.enabled },
+  { text: useIgnisT('features.charts'), active: setup.ui?.charts },
+  { text: useIgnisT('features.openprops'), active: setup.ui?.openprops, class: 'openprops-feature' },
 ]
 </script>
 
