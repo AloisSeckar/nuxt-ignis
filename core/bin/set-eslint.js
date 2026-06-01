@@ -9,7 +9,7 @@ import { createFileFromWebTemplate } from 'elrh-cosca'
  */
 export async function setESLint() {
   try {
-    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0-rc.2/core/bin/templates/eslint.config.mjs.template', 'eslint.config.mjs')
+    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0-rc.3/core/bin/templates/eslint.config.mjs.template', 'eslint.config.mjs')
   } catch (error) {
     console.error('Error creating ESLint config file:\n', error.message)
   }

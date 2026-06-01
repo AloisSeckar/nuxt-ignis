@@ -2,6 +2,13 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.6.0-rc.3
+
+`2026-06-01`
+
+- fix: prevent @nuxt/test-utils from auto-running its setup (#187)
+- fix: use optional chaining when checking runtime config
+
 ## 0.6.0-rc.2
 
 `2026-05-27`
