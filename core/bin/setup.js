@@ -177,8 +177,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
     // create .nuxtrc to prevent @nuxt/test-utils setup from running automatically on first start
     if (!pathExists('.nuxtrc')) {
       try {
-        await updateTextFile('.nuxtrc', ['setups.@nuxt/test-utils="4.0.2"'], isAutoRun,
-          'This will create a \'.nuxtrc\' file to prevent @nuxt/test-utils setup from running automatically when dev server starts. Continue?')
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0-rc.3/core/bin/templates/nuxtrc.template', '.nuxtrc', isAutoRun, 'This will create a \'.nuxtrc\' file to prevent @nuxt/test-utils setup from running automatically when dev server starts. Continue?')
       } catch (error) {
         console.error('Error creating \'.nuxtrc\':\n', error.message)
       }
