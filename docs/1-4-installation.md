@@ -159,7 +159,19 @@ export default loadVitestConfig({
 Technically, this step is not required. Your tests will run even with absolutely zero config with `vitest` defaults. However, written like this, you can mix your override with the additional default setup provided by the test tool. Check more details in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.2/README.md#configuration).
 </details>
 
-It is also possible to add following test-related scripts to `package.json` for simplier execution:
+It is also advised to create a `.nuxtrc` file in your project root (if not present yet) with the following content:
+
+```[.nuxtrc]
+setups.@nuxt/test-utils="4.0.2"
+```
+
+<details>
+<summary>Reason why</summary>
+
+Without this file, `@nuxt/test-utils` automatically runs its interactive setup the first time the dev server starts. This process is rather intrusive, cannot be skipped and will create the `.nuxtrc` file anyway (along with other changes).
+</details>
+
+You may want to add following test-related scripts to `package.json` for simpler execution:
 
 ```json [package.json]
 {
@@ -177,12 +189,14 @@ It is also possible to add following test-related scripts to `package.json` for 
 This might be just a matter of personal preference, but someone might find the shorthands useful. Check more detailed explanation for each variant in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.2/README.md#running-tests).
 </details>
 
+The automatic CLI setup is also capable of creating sample test files based on experience from the `nuxt-spec` package. If you chose to skip this step, you can [check the project](https://github.com/AloisSeckar/nuxt-spec/tree/main/test) to get the idea for manual creation.
+
 9) Delete `node_modules` folder and your lock file (based on the package manager you're using).
 
 <details>
 <summary>Reason why</summary>
 
-Hands-on eachxperience shows things may end up acting weirdly if new packages from `nuxt-ignis` are just added into existing `node_modules`. Deleting current set of modules and the lock file ensures all dependencies are freshly resolved and correctly wired up. In most scenarios this is a simple and convenient way to avoid potential issues.
+Hands-on experience shows things may end up acting weirdly if new packages from `nuxt-ignis` are just added into existing `node_modules`. Deleting current set of modules and the lock file ensures all dependencies are freshly resolved and correctly wired up. In most scenarios this is a simple and convenient way to avoid potential issues.
 
 In rare cases, when you need to keep your dependencies intact due to specific overrides, [deduping](https://www.youtube.com/watch?v=TTlgfMPFYwM) might help to mitigate some of the more common problems related to package resolution.
 </details>

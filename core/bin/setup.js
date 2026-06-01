@@ -22,7 +22,7 @@ import {
  *  5) add `extends: ['nuxt-ignis']` to `nuxt.config.ts`
  *  6) update `.gitignore` file
  *  7) replace default Nuxt `app/app.vue` with Nuxt Ignis default (if detected)
- *  8) create default `vitest.config.ts` file and add test-related scripts into `package.json`
+ *  8) create default `vitest.config.ts` and `.nuxtrc` file, add test-related scripts into `package.json` and create sample test files
  *  9) clear node_modules and lock file(s)
  */
 export async function nuxtIgnisSetup(autoRun = false) {
@@ -172,6 +172,16 @@ export async function nuxtIgnisSetup(autoRun = false) {
         'vitest.config.ts', true, 'This will create a new \'vitest.config.ts\' file for your project. Continue?')
     } catch (error) {
       console.error('Error setting up \'vitest.config.ts\':\n', error.message)
+    }
+
+    // create .nuxtrc to prevent @nuxt/test-utils setup from running automatically on first start
+    if (!pathExists('.nuxtrc')) {
+      try {
+        await updateTextFile('.nuxtrc', ['setups.@nuxt/test-utils="4.0.2"'], isAutoRun,
+          'This will create a \'.nuxtrc\' file to prevent @nuxt/test-utils setup from running automatically when dev server starts. Continue?')
+      } catch (error) {
+        console.error('Error creating \'.nuxtrc\':\n', error.message)
+      }
     }
 
     // add scripts for running tests into package.json
