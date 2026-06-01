@@ -9,7 +9,7 @@ export default defineNuxtConfig({
   ],
 
   // https://nuxt.com/docs/4.x/api/nuxt-config#compatibilitydate
-  compatibilityDate: '2026-02-01',
+  compatibilityDate: '2026-06-01',
 
   // supressing misleading Windows warnings (#179)
   // based on https://github.com/nuxt/nuxt/issues/27424#issuecomment-4128539968

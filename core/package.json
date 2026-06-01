@@ -4,7 +4,7 @@
   "type": "module",
   "version": "0.6.0-rc.2",
   "config": {
-    "date": "2026-02-01"
+    "date": "2026-06-01"
   },
   "keywords": [
     "nuxt",
