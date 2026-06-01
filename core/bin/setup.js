@@ -110,7 +110,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
         await updateTextFile('pnpm-workspace.yaml', ['shamefully-hoist: true'], isAutoRun,
           'This will adjust \'pnpm-workspace.yaml\' file in your project. Continue?')
       } else {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0-rc.3/bin/templates/pnpm-workspace.yaml.template',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0-rc.3/core/bin/templates/pnpm-workspace.yaml.template',
           'pnpm-workspace.yaml', isAutoRun, 'This will add \'pnpm-workspace.yaml\' file for your project. Continue?')
       }
     } catch (error) {
