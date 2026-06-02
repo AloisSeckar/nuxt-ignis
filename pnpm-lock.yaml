@@ -121,8 +121,8 @@ catalogs:
       specifier: 6.1.7
       version: 6.1.7
     elrh-cosca:
-      specifier: 0.3.5
-      version: 0.3.5
+      specifier: 0.3.6
+      version: 0.3.6
     elrh-pslo:
       specifier: 1.1.6
       version: 1.1.6
@@ -244,7 +244,7 @@ importers:
         version: 6.1.7
       elrh-cosca:
         specifier: 'catalog:'
-        version: 0.3.5
+        version: 0.3.6
       nuxt:
         specifier: 'catalog:'
         version: 4.4.6(@babel/plugin-syntax-jsx@7.28.6(@babel/core@7.29.0))(@babel/plugin-syntax-typescript@7.28.6(@babel/core@7.29.0))(@parcel/watcher@2.5.6)(@types/node@25.8.0)(@vitejs/devtools@0.1.23(@pnpm/logger@1001.0.1)(crossws@0.4.5(srvx@0.11.15))(db0@0.3.4)(ioredis@5.10.1)(typescript@6.0.3)(vite@8.0.13))(@vue/compiler-sfc@3.5.34)(cac@6.7.14)(db0@0.3.4)(esbuild@0.27.7)(eslint@9.39.4(jiti@2.7.0))(ioredis@5.10.1)(magicast@0.5.3)(optionator@0.9.4)(pinia@3.0.4(typescript@6.0.3)(vue@3.5.34(typescript@6.0.3)))(rolldown@1.0.1)(rollup-plugin-visualizer@7.0.1(rolldown@1.0.1)(rollup@4.60.4))(rollup@4.60.4)(sass@1.99.0)(srvx@0.11.15)(terser@5.47.1)(typescript@6.0.3)(vite@8.0.13)(vue-tsc@3.2.9(typescript@6.0.3))(yaml@2.9.0)
@@ -535,7 +535,7 @@ importers:
     dependencies:
       elrh-cosca:
         specifier: 'catalog:'
-        version: 0.3.5
+        version: 0.3.6
       oxc-minify:
         specifier: 'catalog:'
         version: 0.130.0
@@ -7164,6 +7164,10 @@ packages:
 
   elrh-cosca@0.3.5:
     resolution: {integrity: sha512-u3NM3/N4PlTtzqh+lLXZx5WUbOxNQgdIsscXcn0yZQZDqw4BqFtyYJEFBb1y2TrSRErTE/JFydalJwIL0c3VsA==}
+    hasBin: true
+
+  elrh-cosca@0.3.6:
+    resolution: {integrity: sha512-3lf1LQF/6nJv/CpQzVoU52GybH4IDEYAeo3GNc9W+BO4ooT93ISKywICRdty+zlkUJWdg+ZSnT42z1i2XSui+w==}
     hasBin: true
 
   elrh-pslo@1.1.6:
@@ -19243,6 +19247,8 @@ snapshots:
   elkjs@0.10.2: {}
 
   elrh-cosca@0.3.5: {}
+
+  elrh-cosca@0.3.6: {}
 
   elrh-pslo@1.1.6: {}
 

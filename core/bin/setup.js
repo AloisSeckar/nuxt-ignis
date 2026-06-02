@@ -3,7 +3,7 @@
 import { readFileSync } from 'node:fs'
 import {
   createFileFromWebTemplate, deletePath, getPackageManager, hasJsonKey,
-  pathExists, promptUser, removeFromJsonFile, showMessage,
+  pathExists, promptUser, removeFromJsonFile, removeFromTextFile, showMessage,
   updateConfigFile, updateJsonFile, updateTextFile,
 } from 'elrh-cosca'
 
@@ -19,7 +19,7 @@ import {
  *  2) remove `nuxt`, `vue` and `vue-router` if present
  *  3) and `packageManager` setting (only if pnpm is used)
  *  4) create/update `pnpm-workspace.yaml` file (only if pnpm is used)
- *  5) add `extends: ['nuxt-ignis']` to `nuxt.config.ts`
+ *  5) add `extends: ['nuxt-ignis']` to `nuxt.config.ts` and remove compatibility date if present
  *  6) update `.gitignore` file
  *  7) replace default Nuxt `app/app.vue` with Nuxt Ignis default (if detected)
  *  8) create default `vitest.config.ts` and `.nuxtrc` file, add test-related scripts into `package.json` and create sample test files
@@ -118,15 +118,19 @@ export async function nuxtIgnisSetup(autoRun = false) {
     }
   }
 
-  // 5 - add nuxt-ignis module to nuxt.config.ts
+  // 5 - adjust nuxt.config.ts
   try {
+    // extend from nuxt-ignis layer
     await updateConfigFile('nuxt.config.ts', {
       extends: [
         'nuxt-ignis',
       ],
     }, isAutoRun, 'This will add \'nuxt-ignis\' module to your \'nuxt.config.ts\'. Continue?')
+
+    // remove compatibility date if present
+    await removeFromTextFile('nuxt.config.ts', 'compatibilityDate', isAutoRun, 'This will remove existing compatibility date from your \'nuxt.config.ts\'. Continue?')
   } catch (error) {
-    console.error('Error enabling \'nuxt-ignis\' module:\n', error.message)
+    console.error('Error adjusting \'nuxt.config.ts\':\n', error.message)
   }
 
   // 6 - .gitignore file

@@ -120,6 +120,21 @@ Without `allowBuilds` entries set to `true`, `pnpm` will block any scripts that 
 }
 ```
 
+<details>
+<summary>Reason why</summary>
+
+Nuxt Ignis is being shipped as a Nuxt layer and this sets your project to **extend** from this layer.
+</details>
+
+Optionally, remove existing `compatibilityDate` from your `nuxt.config.ts`.
+
+<details>
+<summary>Reason why</summary>
+
+Nuxt Ignis defines its own `compatibilityDate`. Unless you maintain specific date for your project, there is no need to duplicate it (your value will always take precedence though).
+</details>
+
+
 6) Create or adjust `.gitignore` file to exclude Nuxt Ignis-related auxiliary files:
 
 ```[.gitignore]
