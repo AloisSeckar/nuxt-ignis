@@ -34,9 +34,9 @@ catalog:
   '@nuxt/eslint-config': 1.15.2
   '@nuxt/fonts': 0.14.0
   '@nuxt/image': 2.0.0
-  '@nuxt/kit': 4.4.6
+  '@nuxt/kit': 4.4.7
   '@nuxt/module-builder': ^1.0.2
-  '@nuxt/schema': 4.4.6
+  '@nuxt/schema': 4.4.7
   '@nuxt/scripts': 1.1.0
   '@nuxt/test-utils': ^4.0.3
   '@nuxt/ui': 4.7.1
@@ -61,12 +61,12 @@ catalog:
   'elrh-pslo': 1.1.6
   'eslint': ^9.39.4
   'magic-regexp': 0.11.0
-  'nuxt': 4.4.6
+  'nuxt': 4.4.7
   'nuxt-auth-utils': 0.5.29
   'nuxt-charts': 2.1.4
   'nuxt-neon': 0.8.3
   'nuxt-security': 2.6.0
-  'nuxt-spec': 0.2.2
+  'nuxt-spec': 0.2.3
   'open-props': 1.7.23
   'oxc-minify': ~0.130.0
   'pinia': 3.0.4
@@ -76,9 +76,9 @@ catalog:
   'valibot': 1.4.0
   'vitepress': ^2.0.0-alpha.17
   'vitepress-plugin-group-icons': ^1.7.5
-  'vitest': ^4.1.6
-  'vue': 3.5.34
-  'vue-router': 5.0.7
+  'vitest': ^4.1.8
+  'vue': 3.5.35
+  'vue-router': 5.1.0
   'vue-tsc': ^3.2.9
   'zod': 4.4.3
 
@@ -101,7 +101,25 @@ minimumReleaseAgeExclude:
   # exclusions for trusted Vue/Nuxt packages
   # and manually checked one-time exceptions
   # build @ 2026-06-02 13:20 UTC+2
-  - 'elrh-cosca'
+  - 'elrh-cosca@0.3.6'
+  # build @ 2026-06-02 20:05 GMT+2
+  - '@nuxt/kit@4.4.7'
+  - '@nuxt/nitro-server@4.4.7'
+  - '@nuxt/schema@4.4.7'
+  - '@nuxt/vite-builder@4.4.7'
+  - '@vitest/browser-playwright@4.1.8'
+  - '@vitest/browser@4.1.8'
+  - '@vitest/expect@4.1.8'
+  - '@vitest/mocker@4.1.8'
+  - '@vitest/pretty-format@4.1.8'
+  - '@vitest/runner@4.1.8'
+  - '@vitest/snapshot@4.1.8'
+  - '@vitest/spy@4.1.8'
+  - '@vitest/ui@4.1.8'
+  - '@vitest/utils@4.1.8'
+  - 'nuxt@4.4.7'
+  - 'tinyglobby@0.2.17'
+  - 'vitest@4.1.8'
 
 allowBuilds:
   '@parcel/watcher': true
@@ -129,8 +147,6 @@ overrides:
   estree-walker: 2.0.2
   # TODO check https://github.com/nuxt/nuxt/issues/34812 for permanent solution
   unimport: 6.0.2
-  # https://github.com/AloisSeckar/nuxt-ignis/security/dependabot/203
-  devalue: ^5.8.1
 
 verifyDepsBeforeRun: error
 

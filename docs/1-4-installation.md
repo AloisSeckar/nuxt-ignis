@@ -171,7 +171,7 @@ export default loadVitestConfig({
 <details>
 <summary>Reason why</summary>
 
-Technically, this step is not required. Your tests will run even with absolutely zero config with `vitest` defaults. However, written like this, you can mix your override with the additional default setup provided by the test tool. Check more details in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.2/README.md#configuration).
+Technically, this step is not required. Your tests will run even with absolutely zero config with `vitest` defaults. However, written like this, you can mix your override with the additional default setup provided by the test tool. Check more details in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.3/README.md#configuration).
 </details>
 
 It is also advised to create a `.nuxtrc` file in your project root (if not present yet) with the following content:
@@ -201,7 +201,7 @@ You may want to add following test-related scripts to `package.json` for simpler
 <details>
 <summary>Reason why</summary>
 
-This might be just a matter of personal preference, but someone might find the shorthands useful. Check more detailed explanation for each variant in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.2/README.md#running-tests).
+This might be just a matter of personal preference, but someone might find the shorthands useful. Check more detailed explanation for each variant in [`nuxt-spec` docs](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.3/README.md#running-tests).
 </details>
 
 The automatic CLI setup is also capable of creating sample test files based on experience from the `nuxt-spec` package. If you chose to skip this step, you can [check the project](https://github.com/AloisSeckar/nuxt-spec/tree/main/test) to get the idea for manual creation.

@@ -172,7 +172,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
   if (setupNuxtSpec) {
     // create vitest.config.ts
     try {
-      await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.2/config/templates/vitest.config.ts.template',
+      await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.3/config/templates/vitest.config.ts.template',
         'vitest.config.ts', true, 'This will create a new \'vitest.config.ts\' file for your project. Continue?')
     } catch (error) {
       console.error('Error setting up \'vitest.config.ts\':\n', error.message)
@@ -202,31 +202,31 @@ export async function nuxtIgnisSetup(autoRun = false) {
     const createSampleTests = isAutoRun || await promptUser('Do you want to create sample tests in \'/test\' folder?')
     if (createSampleTests) {
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.2/test/browser/vitest-browser.test.ts',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.3/test/browser/vitest-browser.test.ts',
           'test/browser/vitest-browser.test.ts', true)
       } catch (error) {
         console.error('Error setting up \'vitest-browser.test.ts\':\n', error.message)
       }
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.2/test/e2e/nuxt-e2e.test.ts',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.3/test/e2e/nuxt-e2e.test.ts',
           'test/e2e/nuxt-e2e.test.ts', true)
       } catch (error) {
         console.error('Error setting up \'nuxt-e2e.test.ts\':\n', error.message)
       }
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.2/test/e2e/nuxt-visual.test.ts',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.3/test/e2e/nuxt-visual.test.ts',
           'test/e2e/nuxt-visual.test.ts', true)
       } catch (error) {
         console.error('Error setting up \'nuxt-visual.test.ts\':\n', error.message)
       }
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.2/test/nuxt/nuxt-unit.test.ts',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.3/test/nuxt/nuxt-unit.test.ts',
           'test/nuxt/nuxt-unit.test.ts', true)
       } catch (error) {
         console.error('Error setting up \'nuxt-unit.test.ts\':\n', error.message)
       }
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.2/test/unit/vitest-unit.test.ts',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.2.3/test/unit/vitest-unit.test.ts',
           'test/unit/vitest-unit.test.ts', true)
       } catch (error) {
         console.error('Error setting up \'vitest-unit.test.ts\':\n', error.message)
