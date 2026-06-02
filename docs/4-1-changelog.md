@@ -2,6 +2,16 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.6.0-rc.4
+
+`2026-06-02`
+
+- feat: remove `compatibilityDate` from `nuxt.config.ts` during CLI setup (#190)
+- fix: add overrides to `pnpm-workspace.yaml` template (#188)
+- fix: set correct path to `pnpm-workspace.yaml` template in CLI setup
+- fix: create `.nuxtrc` file in CLI setup to avoid `@nuxt/test-utils` auto-setup
+- build: bump `Nuxt` to `4.4.7` + other deps
+
 ## 0.6.0-rc.3
 
 `2026-06-01`

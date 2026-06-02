@@ -11,7 +11,7 @@ import { createFileFromWebTemplate } from 'elrh-cosca'
  */
 export async function setNetlify() {
   try {
-    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0-rc.3/core/bin/templates/netlify.toml.template', 'netlify.toml')
+    await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0-rc.4/core/bin/templates/netlify.toml.template', 'netlify.toml')
   } catch (error) {
     console.error('Error creating Netlify TOML file:\n', error.message)
   }
