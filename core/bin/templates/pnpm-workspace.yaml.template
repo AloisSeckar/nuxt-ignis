@@ -38,3 +38,12 @@ allowBuilds:
   puppeteer: false
   # add more if needed
   # - package-name: boolean
+
+# recommended overrides for various (mostly security) reasons
+overrides:
+  # suspicious v4 comming from @formkit/nuxt@2.0.0
+  chokidar: ^5.0.0
+  # suspicious v6 comming from nuxt-security@2.6.0
+  semver: ^7.7.0
+  # suspicious v6 comming from nuxt-neon@0.8.3
+  undici-types: ^7.22.0
