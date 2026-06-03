@@ -2,6 +2,15 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.6.0-rc.5
+
+`2026-06-03`
+
+- feat: ability to install node_modules automatically in CLI setup (#191)
+- fix: exclude nuxt-ui components from Vue resolution if integration is not active (#193)
+- fix: adjust pnpm setup for smoother installation experience
+- fix: bump version in `.nuxtrc` to match latest `nuxt-spec`
+
 ## 0.6.0-rc.4
 
 `2026-06-02`
