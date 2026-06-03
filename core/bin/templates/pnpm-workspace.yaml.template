@@ -17,8 +17,16 @@ minimumReleaseAge: 4320
 
 # trusted and verified packages may be excluded
 minimumReleaseAgeExclude:
-  # nuxt-ignis must be excluded to allow installing latest
+  # nuxt-ignis and its submodules must be excluded to allow 
+  # installing latest version without 3 days cooldown
   - nuxt-ignis 
+  - '@nuxt-ignis/content'
+  - '@nuxt-ignis/default'
+  - '@nuxt-ignis/db'
+  - '@nuxt-ignis/forms'
+  - '@nuxt-ignis/ui'
+  - '@nuxt-ignis/utils'
+  - '@nuxt-ignis/validation'
   # add more if needed
   # - package-name
 
