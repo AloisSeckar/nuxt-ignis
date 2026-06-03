@@ -182,6 +182,11 @@ export default defineNuxtModule<IgnisOptions>({
 
     // additional processing
 
+    // remove Nuxt UI-specific components from Vue resolution
+    // if Nuxt UI integration is disabled
+    nuxt.options.vue.compilerOptions ||= {}
+    nuxt.options.vue.compilerOptions.isCustomElement = (tag: string) => tag === 'Icon' || tag === 'UApp'
+
     // warn if duplicate modules find
     // this means e.g. 2 database modules or 2 form solutions
     if (ignisOpts.config?.warn?.duplicates) {
