@@ -47,3 +47,5 @@ overrides:
   semver: ^7.7.0
   # suspicious v6 comming from nuxt-neon@0.8.3
   undici-types: ^7.22.0
+  # untrusted version included in nuxt@4.4.7
+  tinyclip: ^0.1.14
