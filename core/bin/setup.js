@@ -1,5 +1,6 @@
 #!/usr/bin/env node
 
+import { execSync } from 'node:child_process'
 import { readFileSync } from 'node:fs'
 import {
   createFileFromWebTemplate, deletePath, getPackageManager, hasJsonKey,
@@ -24,6 +25,7 @@ import {
  *  7) replace default Nuxt `app/app.vue` with Nuxt Ignis default (if detected)
  *  8) create default `vitest.config.ts` and `.nuxtrc` file, add test-related scripts into `package.json` and create sample test files
  *  9) clear node_modules and lock file(s)
+ * 10) run install command
  */
 export async function nuxtIgnisSetup(autoRun = false) {
   showMessage('NUXT IGNIS SETUP')
@@ -281,10 +283,23 @@ export async function nuxtIgnisSetup(autoRun = false) {
     }
   }
 
-  // 9 - inform user
+  // 10 - run install command
+  const runInstall = isAutoRun || await promptUser(`Fresh \`${packageManager} install\` is required. Do you want to run it now?`)
+  if (runInstall) {
+    try {
+      showMessage(`Running \`${packageManager} install\`...`)
+      execSync(`${packageManager} install`, { stdio: 'inherit' })
+    } catch (error) {
+      console.error(`Error running \`${packageManager} install\`:\n`, error.message)
+    }
+  }
+
+  // inform user
   showMessage('')
   showMessage('NUXT IGNIS SETUP COMPLETE', 2)
-  showMessage(`Proceed with \`${packageManager} install\` to get started.`)
+  if (!runInstall) {
+    showMessage(`Proceed with \`${packageManager} install\` to get started.`)
+  }
 
   // make sure the process won't hang
   process.exit(0)

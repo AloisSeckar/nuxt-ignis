@@ -216,6 +216,14 @@ Hands-on experience shows things may end up acting weirdly if new packages from 
 In rare cases, when you need to keep your dependencies intact due to specific overrides, [deduping](https://www.youtube.com/watch?v=TTlgfMPFYwM) might help to mitigate some of the more common problems related to package resolution.
 </details>
 
+10) Run fresh `install` command.
+
+<details>
+<summary>Reason why</summary>
+
+After clearing `node_modules` and the lock file, a fresh `install` is obviously required to resolve and download all dependencies correctly.
+</details>
+
 ### Customization
 
 To tailor Nuxt Ignis to fit your project needs, pass optional `ignis` config object into `nuxt.config.ts` or setup your `.env` file accordingly. Check [the reference](/2-5-full-reference.html) for all available configuration options.
