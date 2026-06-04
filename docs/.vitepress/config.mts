@@ -64,6 +64,7 @@ export default defineConfig({
         text: 'Contributing',
         items: [
           { text: 'Contributing guide', link: '/5-1-contributing' },
+          { text: 'Road map', link: '/5-2-roadmap' },
         ]
       },
     ],
