@@ -10,18 +10,34 @@
 
 Configuration:
 
-```[.env]
-# general HTML settings
-NUXT_PUBLIC_IGNIS_CONFIG_HTML_LANG=en
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  // rest of the Nuxt config
 
-# disable Ignis default CSS
-NUXT_PUBLIC_IGNIS_DEFAULT_CSS=false
-
-# enable Tailwind CSS
-NUXT_PUBLIC_IGNIS_UI_TAILWIND=true
-
-# enable nuxt-i18n with custom config file
-NUXT_PUBLIC_IGNIS_CONTENT_I18N_ENABLED=true
+  ignis: {
+    config: {
+      // set HTML language attribute
+      html: {
+        lang: 'en',
+      },
+    },
+    default: {
+      // do not use default CSS file
+      // (because of clashes with custom styling)
+      css: false,
+    },
+    preset: {
+      // use Nuxt UI integration
+      ui: 'nuxt-ui',
+    },
+    content: {
+      // use I18N integration
+      i18n: {
+        enabled: true,
+      },
+    },
+  },
+})
 ```
 
 <details>
@@ -46,10 +62,9 @@ To demonstrate the biggest benefit of using Nuxt Ignis, lets compare the number 
 - vue-router
 - vue-tsc
 
-**After** `(3 packages)`
+**After** `(2 packages)`
 - nuxt-ignis
 - swiper
-- vue-tsc
 
 </details>
 
@@ -63,22 +78,33 @@ Nuxt Ignis author's simple personal website with links to socials, blog and othe
 
 Configuration:
 
-```[.env]
-# general HTML settings
-NUXT_PUBLIC_IGNIS_CONFIG_HTML_LANG=cs
-NUXT_PUBLIC_IGNIS_CONFIG_HTML_TITLE=Alois-Seckar.cz
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  // rest of the Nuxt config
 
-# UI preset
-NUXT_PUBLIC_IGNIS_PRESET_UI=nuxt-ui
+  ignis: {
+    config: {
+      // set HTML title and language attribute
+      html: {
+        title: 'Alois-Seckar.cz',
+        lang: 'cs',
+      },
+    },
+    preset: {
+      // use Nuxt UI integration
+      ui: 'nuxt-ui',
+      // use Neon database integration
+      db: 'neon',
+      // use Vueform form integration
+      forms: 'vueform',
+    },
+  },
 
-# DB preset
-NUXT_PUBLIC_IGNIS_PRESET_DB=neon
-
-# Forms preset
-NUXT_PUBLIC_IGNIS_PRESET_FORMS=vueform
-
-# further connection to Neon database 
-# (see https://github.com/AloisSeckar/nuxt-neon)
+  // NOTE
+  // additional config for connection to Neon database 
+  // must be provided via the .env file
+  // see https://github.com/AloisSeckar/nuxt-neon
+})
 ```
 
 <details>
@@ -117,17 +143,43 @@ To demonstrate the biggest benefit of using Nuxt Ignis, lets compare the number 
 
 Configuration:
 
-```[.env]
-# general HTML settings
-NUXT_PUBLIC_IGNIS_CONFIG_HTML_LANG=cs
-
-# UI preset
-NUXT_PUBLIC_IGNIS_PRESET_UI='tailwind'
-
-# Nuxt Content with "pslo" integration
-NUXT_PUBLIC_IGNIS_CONTENT_CONTENT_ENABLED=true
-NUXT_PUBLIC_IGNIS_CONTENT_PSLO_ENABLED=true
-NUXT_PUBLIC_IGNIS_CONTENT_PSLO_CONTENT=true
+```ts [nuxt.config.ts]
+export default defineNuxtConfig({
+  // rest of the Nuxt config
+  ignis: {
+    config: {
+      // set HTML language attribute
+      html: {
+        lang: 'cs',
+      },
+    },
+    default: {
+      // do not use default CSS file
+      // (because of clashes with custom styling)
+      css: false,
+    },
+    preset: {
+      // use Nuxt UI integration
+      ui: 'nuxt-ui',
+    },
+    content: {
+      // use Nuxt Content integration
+      content: {
+        enabled: true,
+      },
+      // use `pslo` integration
+      pslo: {
+        enabled: true,
+        content: true,
+      },
+      // use Nuxt Social Share integration
+      social: {
+        enabled: true,
+        url: 'https://master-coda.cz/',
+      },
+    },
+  },
+})
 ```
 
 <details>
@@ -135,13 +187,14 @@ NUXT_PUBLIC_IGNIS_CONTENT_PSLO_CONTENT=true
 
 To demonstrate the biggest benefit of using Nuxt Ignis, lets compare the number of dependencies in [`package.json`](https://github.com/AloisSeckar/master-coda/blob/master/package.json) before and after Nuxt Ignis was introduced:
 
-**Before** `(15 packages)`
+**Before** `(16 packages)`
 - @nuxt/content
 - @nuxt/eslint
 - @nuxt/icon
 - @nuxt/image
 - @nuxtjs/tailwindcss
 - @pinia/nuxt
+- @stefanobartoletti/nuxt-social-share
 - better-sqlite3
 - elrh-pslo
 - nuxt
@@ -152,8 +205,7 @@ To demonstrate the biggest benefit of using Nuxt Ignis, lets compare the number 
 - vue
 - vue-router
 
-**After** `(2 packages)`
-- better-sqlite3
+**After** `(1 package)`
 - nuxt-ignis
 
 </details>
