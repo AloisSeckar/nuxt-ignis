@@ -88,4 +88,4 @@ To configure `Supabase` connection you need to provide following env variables:
 
 For details and more config options see the [`@nuxtjs/supabase` docs](https://supabase.nuxtjs.org/getting-started/introduction).
 
-By default, module is run with `types: false` option. If you want to use [Supabase types](https://supabase.nuxtjs.org/getting-started/types), pass the string path to your types definition file via `NUXT_PUBLIC_IGNIS_DB_SUPABASE_TYPES` (or `ignis.db.supabase.types` in `nuxt.config.ts`).
+By default, module is run with `types: false` option. If you want to use [Supabase types](https://supabase.nuxtjs.org/getting-started/introduction#types), pass the string path to your types definition file via `NUXT_PUBLIC_IGNIS_DB_SUPABASE_TYPES` (or `ignis.db.supabase.types` in `nuxt.config.ts`).

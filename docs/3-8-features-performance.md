@@ -48,7 +48,7 @@ export default defineNuxtConfig({
 })
 ```
 
-**Note**: Nuxt Ignis uses [`@nuxt/image` v2](https://nuxt.com/blog/nuxt-image-v2) which includes some breaking changes. Please refer to the [migration guide](https://image.nuxt.com/migration/v2) if you experience troubles after switching.
+**Note**: Nuxt Ignis uses [`@nuxt/image` v2](https://nuxt.com/blog/nuxt-image-v2) which includes some breaking changes. Please refer to the [migration guide](https://image.nuxt.com/get-started/migration) if you experience troubles after switching.
 
 ### Usage notice
 
