@@ -2,6 +2,39 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.6.0
+
+`2026-06-06`
+
+- BREAKING: former monolithic project structure was split into several internal `@nuxt-ignis/*` module packages - instead of "manual" assembling of `nuxt.config.ts` inside custom `features.ts` file, those Nuxt modules are now orchestrated to turn various integrations and features on/off
+- BREAKING: many configuration variables were renamed for better consistency and clarity - please refer to the [configuration reference](https://nuxt-ignis.com/2-5-full-reference) for details
+- BREAKING: re-designed i18n integration - default config file dropped in favor of direct config in `nuxt.config.ts` or environment variables (as suggested in module docs) (#159)
+- feat: thanks to switching to Nuxt modules, it is now possible to use `ignis` config key in `nuxt.config.ts` along with the environment variables - it is also recommended because of the intellisense and type-safety (using environment variables is still possible and will override the config values if used together)
+- feat: incorrect environment variable values now get rejected upon startup (#171)
+- feat: new internal option for Supabase integration to control usage of [types](https://supabase.nuxtjs.org/getting-started/introduction#types)
+- feat: use Node-native SQLite connector in Nuxt Content (#162)
+- feat: bumped Formkit to v2
+- feat: expose Valibot and Zod features server-side (#152)
+- feat: revised and updated default CSS file (#161)
+- feat: scaffold default .vscode/settings.json (#117)
+- feat: scaffold default netlify.toml (#130)
+- feat: gracefully handle latest changes into Nuxt SEO behavior (#169) (#170)
+- feat: setup for default `pnpm-workspace.yaml` reviewed and updated (#150) (#167)
+- feat: various updates and improvements in CLI setup script (#133) (#190) (#191)
+- fix: exclude Nuxt UI components from Vue resolution if integration is not active (#193)
+- refactor: re-implemented Vueform, Formkit and Nuxt Content config setup
+- refactor: new way of getting Nuxt Ignis startup config into `ignis-config.json` + storing full `_nuxt-config.json` for debug reference
+- refactor: reorganized demo apps in `/demo` folder to align better with the new modular structure
+- build: bump `Nuxt` to `4.4.7` + updated other deps to latest versions (as of 2026-06-03)
+- build: use `pnpm` catalog and establish monorepo setup with root `pnpm-workspace.yaml` (#160)
+- build: new `pnpm` scripts to manage running tests and building modules more easily
+- build: bump TypeScript to v6 (#177)
+- build: bump `Vite` to v8
+- test: added more Vitest unit tests to ensure core and module packages stability
+- test: added basic visual regression tests for demo apps in `/demo` folder
+- docs: updated info to reflect latest changes
+- docs: added [road map overview](https://nuxt-ignis.com/5-2-roadmap) to give future insight
+
 ## 0.6.0-rc.5
 
 `2026-06-03`
@@ -40,7 +73,7 @@ Overview of the newest features in Nuxt Ignis.
 
 `2026-05-23`
 
-- BREAKING: new modular structure, re-named variables and couple of other important changes
+- BREAKING: new modular structure, renamed variables and a couple of other important changes
 - this is the initial release candidate to test the new modular structure and setup on real projects
 - full change log will be included in the final `v0.6.0` release
 
@@ -171,7 +204,7 @@ Overview of the newest features in Nuxt Ignis.
 - BREAKING CHANGE: changed way of locating i18n JSON files from `@assets/lang` to `@/i18n/locales` to match current `i18n` module default structure
 - feat: `@nuxtjs/seo`, `nuxt-auth-utils`, `Vueform`  added as optional modules
 - feat: new preset for `forms` to choose between `Vueform` and `FormKit`
-- feat: warn when duplicate db/forms solutions are used (can be surpressed by config)
+- feat: warn when duplicate db/forms solutions are used (can be suppressed by config)
 - feat: even "core" modules can be disabled by configuration
 - feat: improved overview page - display enabled/disabled status for ALL features, implemented as separate page/component, non-dependant on any optional features
 - feat: `nuxt-time` module dropped in favor of now-native `<NuxtTime>` component
@@ -184,7 +217,7 @@ Overview of the newest features in Nuxt Ignis.
 
 `2025-03-26`
 
-- build: move `vue` and `vue-router` to devDepencencies (should allow smooth Netlify deployment)
+- build: move `vue` and `vue-router` to devDependencies (should allow smooth Netlify deployment)
 - build: fix Vite security issue
 
 ## 0.2.4
