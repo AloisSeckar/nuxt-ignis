@@ -1,4 +1,4 @@
-# Forms features
+# Content features
 
 Nuxt Ignis contains following customizable features related to content generation and displaying:
 
@@ -45,7 +45,7 @@ To alter the default behavior, you can enhance the empty `{}` object passed to `
 
 Custom collections (different than the default `content`) can be defined here via special `defineContentCollection` helper. However, to overcome issues with path resolution, you need to specify where the source folder is located.
 
-For example, collection residing `./demo` folder in your project root can be defined like this:
+For example, a collection residing in the `./demo` folder in your project root can be defined like this:
 
 ```ts
 import { fileURLToPath } from 'node:url'
@@ -98,7 +98,7 @@ export default defineNuxtConfig({
 
 - All `.json` files with messages in `@/i18n/locales` folder will be auto-scanned and registered as available locales.
 - You can select default language locale via `NUXT_PUBLIC_IGNIS_CONTENT_I18N_DEFAULT` (or `ignis.content.i18n.default` in `nuxt.config.ts`). Falls back to `en` if not set.
-- If configured default locale (or fallback `en`) is not found in `@/i18n/locales` directory, warn is produced and the first available locale (if any) will be used as default instead.
+- If configured default locale (or fallback `en`) is not found in `@/i18n/locales` directory, a warning is produced and the first available locale (if any) will be used as default instead.
 - For other configuration refer to [module docs](https://i18n.nuxtjs.org/docs/getting-started/vue-i18n).
 
 ### Additional utils

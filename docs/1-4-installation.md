@@ -34,7 +34,7 @@ Details about the CLI setup command can be found in the [CLI section](/3-12-feat
 
 ### Setup steps
 
-The CLI command will perform following steps. Each step is prompted unless you select to do everything without asking. 
+The CLI command will perform the following steps. Each step is prompted unless you select to do everything without asking. 
 
 You can also make the steps manually if you want to keep more control.
 
@@ -103,9 +103,9 @@ allowBuilds:
 <details>
 <summary>Reason why</summary>
 
-Having `pnpm-workspace.yaml` in your project root is the recommended way of keeping the configuration for `pnpm`. Technically, you can aslo use `pnpm` key inside `package.json`, but it is not an official config key and the support might be eventually dropped.
+Having `pnpm-workspace.yaml` in your project root is the recommended way of keeping the configuration for `pnpm`. Technically, you can also use `pnpm` key inside `package.json`, but it is not an official config key and the support might be eventually dropped.
 
-Setting `shamefully-hoist` is **required** to ensure `pnpm` will hoist all dependences from `nuxt-ignis` without you having to specify them in your own `package.json`. It is also recommened practice for Nuxt apps managed by `pnpm` in general. Check more in the [pnpm docs](https://pnpm.io/npmrc#shamefully-hoist).
+Setting `shamefully-hoist` is **required** to ensure `pnpm` will hoist all dependencies from `nuxt-ignis` without you having to specify them in your own `package.json`. It is also recommended practice for Nuxt apps managed by `pnpm` in general. Check more in the [pnpm docs](https://pnpm.io/npmrc#shamefully-hoist).
 
 Without `allowBuilds` entries set to `true`, `pnpm` will block any scripts that are being executed during the installation of these packages. This may lead to errors and inconsistencies. You will be still prompted to allow them manually using `pnpm approve-builds`. This is the way to ease things up. Check more in the [pnpm docs](https://pnpm.io/cli/approve-builds).
 </details>

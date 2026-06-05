@@ -8,13 +8,13 @@
 
 ### Notice on `pnpm` usage
 
-Technically, you shouldn't be forced into using `pnpm` in order to use Nuxt Ignis. The other package managers should, in theory, behave similar enough to allow the same experience. But so far we are unable to provide reliable support for alternative tooling.
+Technically, you shouldn't be forced into using `pnpm` in order to use Nuxt Ignis. The other package managers should, in theory, behave similarly enough to allow the same experience. But so far we are unable to provide reliable support for alternative tooling.
 
-The most limiting factor is that you need mechanism that allows automated hoising of transitive dependencies into root level `node_modules` to avoid having them listed in `package.json`. Plain old `npm` just does so by default (but it comes with several other drawbacks which is why it wasn't the first choice). Making `pnpm` behave like this requires some adjustments, but we provide then and regulary test our setups. For `yarn`, `bun`, `deno` and whatever else may exists, the behavior is not tested and not guaranteed. Contribution is welcome, if you have something to say regarding any alternative.
+The most limiting factor is that you need mechanism that allows automated hoising of transitive dependencies into root level `node_modules` to avoid having them listed in `package.json`. Plain old `npm` just does so by default (but it comes with several other drawbacks which is why it wasn't the first choice). Making `pnpm` behave like this requires some adjustments, but we provide them and regularly test our setups. For `yarn`, `bun`, `deno` and whatever else may exists, the behavior is not tested and not guaranteed. Contribution is welcome, if you have something to say regarding any alternative.
 
 ## Flexibility
 
-With Nuxt Ignis you are in full control over the final shape of your app via `nuxt.config.ts` configuration and/or `.env` variables. We recommend the first option thanks to better type support. On the other hand, environment variables does not require code changes and re-build upon change and allow having different instances.
+With Nuxt Ignis you are in full control over the final shape of your app via `nuxt.config.ts` configuration and/or `.env` variables. We recommend the first option thanks to better type support. On the other hand, environment variables do not require code changes and re-build upon change and allow having different instances.
 
 Learn more in the [configuration](/2-1-configuration) section.
 
@@ -26,7 +26,7 @@ Nuxt Ignis is designed to be as **optionated** as possible and you can configure
 
 ## Optional features
 
-Most of the available ingerations are disabled by default and are meant to be opted-in by a respective configuration. Those we address as _**"optional features"**_. This general term also inclues all other Nuxt Ignis specific configuration that is available.
+Most of the available integrations are disabled by default and are meant to be opted-in by a respective configuration. Those we address as _**"optional features"**_. This general term also includes all other Nuxt Ignis specific configuration that is available.
 
 [More info about the optional features](/2-3-optional-features)
 

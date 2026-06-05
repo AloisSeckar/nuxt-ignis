@@ -142,7 +142,7 @@ pnpm test -i
 
 ### Demo applications
 
-Inside `/demos` folder there are growing collection of simple demo apps that can be used for evaluating and testing Nuxt Ignis features.
+Inside `/demos` folder there is a growing collection of simple demo apps that can be used for evaluating and testing Nuxt Ignis features.
 
 Unlike real applications that extend `nuxt-ignis` layer from an NPM package, those demos follow the mono-repo pattern with:
 

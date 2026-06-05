@@ -131,7 +131,7 @@ The file will be created as `eslint.config.mjs` and will be equal to the [Nuxt I
 
 ### set-netlify
 
-For easy deplyoment to [Netlify](https://www.netlify.com/), you can scaffold the default `netlify.toml` file into your project using:
+For easy deployment to [Netlify](https://www.netlify.com/), you can scaffold the default `netlify.toml` file into your project using:
 
 ::: code-group
 ```sh [pnpm]

@@ -66,8 +66,8 @@ Other configurable options:
 | `NUXT_PUBLIC_IGNIS_DB_SUPABASE_TYPES` | `db.supabase.types` | `string` or `false` | `false` | Set path to Supabase types definition file |
 | `NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_DEFAULT` | `forms.formkit.default` | `string` | `''` | Set default locale for `@formkit/nuxt` |
 | `NUXT_PUBLIC_IGNIS_FORMS_FORMKIT_CONFIG` | `forms.formkit.config` | `string` | `''` | Set path to `@formkit/nuxt` config file |
-| `NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_COMPOSABLES` | `utils.equipment.composables` | `string` | `''` | Coma-separated list of `Vue Equipment` composables to be imported |
-| `NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_PLUGINS` | `utils.equipment.plugins` | `string` | `''` | Coma-separated list of `Vue Equipment` plugins to be imported |
+| `NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_COMPOSABLES` | `utils.equipment.composables` | `string` | `''` | Comma-separated list of `Vue Equipment` composables to be imported |
+| `NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_PLUGINS` | `utils.equipment.plugins` | `string` | `''` | Comma-separated list of `Vue Equipment` plugins to be imported |
 | `NUXT_PUBLIC_IGNIS_CONTENT_SOCIAL_URL` | `content.social.url` | `string` | `''` | URL used by `@stefanobartoletti/nuxt-social-share` module for sharing to social networks |
 | `NUXT_PUBLIC_IGNIS_CONTENT_PSLO_CONTENT` | `content.pslo.content` | `boolean` | `false` | If both `elrh-pslo` and `@nuxt/content` are enabled, this allows or disallows Markdown content pre-processing with `pslo` function |
 | `NUXT_PUBLIC_IGNIS_CONFIG_HTML_TITLE` | `config.html.title` | `string` | `Nuxt Ignis App` | HTML title of the application |

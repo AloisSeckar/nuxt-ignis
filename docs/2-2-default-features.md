@@ -1,12 +1,12 @@
 # Default features
 
-So-called _"default features"_ are enabled by default in Nuxt Ignis. Once you include `nuxt-ignis` module in your project, all of them are available for you to use. However, to keep things most configurable as possible, you can disable most of them via environment variables.
+So-called _"default features"_ are enabled by default in Nuxt Ignis. Once you include `nuxt-ignis` module in your project, all of them are available for you to use. However, to keep things as configurable as possible, you can disable most of them via environment variables.
 
 ## Integrated features
 
 Following packages are currently deeply integrated into Nuxt Ignis and **cannot be disabled**:
 
-- [Nuxt](https://nuxt.com/) itself - because obviously it is required to run everything uder the hood
+- [Nuxt](https://nuxt.com/) itself - because obviously it is required to run everything under the hood
 - merging configurations via [`defu`](https://github.com/unjs/defu) - used for merging defaults with user-defined config in various modules
 - date operations via [`date-fns`](https://github.com/date-fns/date-fns) - `format` function is used to get timestamps
 - logging via [`consola`](https://github.com/unjs/consola) ([opened task to make it optional](https://github.com/AloisSeckar/nuxt-ignis/issues/79))

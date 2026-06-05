@@ -35,7 +35,7 @@ export default defineNuxtConfig({
 
 ### Usage notice
 
-In order to  use `zod` in Nuxt Ignis conditionally, we wrapped its import into a composable. In order to use it, you need to import it in a file like this:
+In order to use `zod` in Nuxt Ignis conditionally, we wrapped its import into a composable. In order to use it, you need to import it in a file like this:
 
 ```ts [your-zod-validator.ts]
 const z = (await useZod())!
@@ -94,7 +94,7 @@ export default defineNuxtConfig({
 
 ### Usage notice
 
-In order to  use `valibot` in Nuxt Ignis conditionally, we wrapped its import into a composable. In order to use it, you need to import it in a file like this:
+In order to use `valibot` in Nuxt Ignis conditionally, we wrapped its import into a composable. In order to use it, you need to import it in a file like this:
 
 ```ts [your-valibot-validator.ts]
 const v = (await useValibot())!

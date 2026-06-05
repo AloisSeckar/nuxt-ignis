@@ -14,7 +14,7 @@ If you need something else, you can overwrite it with your own file in the targe
 
 There is a default content for the `/` or `/index` page featuring a simple welcome component with basic info and links. If your project is using pages (default), the component is served from `/pages/index.vue` within a `<NuxtPage />` boundary. If pages are disabled [via env variable](/3-10-features-nuxt.html#pages) (or via `ignis.config.nuxt.pages: false` in `nuxt.config.ts`), the component is served directly from `/app.vue` instead.
 
-If you provide your own `/pages/index.vue` or `/app.vue`, the defaults will be overriden.
+If you provide your own `/pages/index.vue` or `/app.vue`, the defaults will be overridden.
 
 This page is also available at `/_ignis-welcome`, where it prevails even in case of overwriting the default routes.
 
@@ -44,7 +44,7 @@ However, if you want to store the configuration for reference, there is no probl
 
 The `ignisDate` function is available for date-formatting based on `date-fns`. Unlike `useDateFormat` from VueUse, this function works even if VueUse is disabled.
 
-By default, it returns `new Date()` formatted as `yyyy-MM-dd HH:mm:ss`. Both parameters cane be provided for custom output.
+By default, it returns `new Date()` formatted as `yyyy-MM-dd HH:mm:ss`. Both parameters can be provided for custom output.
 
 ```ts
 function ignisDate(date: Date = new Date(), formatString: string = 'yyyy-MM-dd HH:mm:ss'): string

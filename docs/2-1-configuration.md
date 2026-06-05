@@ -36,7 +36,7 @@ See [full reference](/2-5-full-reference) for the complete list of configuration
 
 The _first generation_ of Nuxt Ignis (pre-release versions prior to `v0.6.0`) was trying to generate "dynamic `nuxt.config.ts`" via reading `process.env.*` variables and dynamically construct config object for `defineNuxtConfig` function before the actual build. While the contents of `nuxt.config.ts` must be and remain static at build time, there was a chance to call an utility function before the build really happened.
 
-This was working, but it was limited only to use `.env` variables, and it quickly choke upon itself as the number of possible integrations and dependencies listed in `package.json` grew. Also the size of the output bundle become concerning.
+This was working, but it was limited only to use `.env` variables, and it quickly choked upon itself as the number of possible integrations and dependencies listed in `package.json` grew. Also the size of the output bundle became concerning.
 
 ### Modules for the rescue
 

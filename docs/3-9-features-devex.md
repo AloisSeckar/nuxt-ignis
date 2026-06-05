@@ -2,7 +2,7 @@
 
 For better developer experience, Nuxt Ignis offers following features:
 
-## ESlint
+## ESLint
 
 <PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.15.2' }, { name: 'typescript', version: '6.0.3' }]" />
 

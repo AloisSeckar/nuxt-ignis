@@ -57,7 +57,7 @@ export default defineNuxtConfig({
 
 ### Usage notice
 
-To abstract users from the requirment of [adding CSS files manually](https://ui.nuxt.com/getting-started/installation/nuxt#import-tailwind-css-and-nuxt-ui-in-your-css), Nuxt Ignis is automatically including `ignis-nuxt-ui.css` with necessary import directives:
+To abstract users from the requirement of [adding CSS files manually](https://ui.nuxt.com/getting-started/installation/nuxt#import-tailwind-css-and-nuxt-ui-in-your-css), Nuxt Ignis is automatically including `ignis-nuxt-ui.css` with necessary import directives:
 
 ```css [ignis-nuxt-ui.css ~vscode-icons:file-type-css~]
 @import "tailwindcss";

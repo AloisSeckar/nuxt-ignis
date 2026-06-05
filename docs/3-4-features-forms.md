@@ -105,7 +105,7 @@ Nuxt Ignis will scaffold default `formkit.config.ts` file on startup if none exi
 
 This will reference [default config file](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.5/core/app/utils/config/formkit.ts) for `Formkit` in your project. The extra step is required as it seems not possible to transfer the config file from the layer. Note that `export default config` is a required syntax as `Formkit` expects such export in `formkit.config.ts` file.
 
-Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can provide your own config file (see [Additional options](#additional-options)) ignore Nuxt Ignis' default config and create your own file based on [Formkit docs](https://formkit.com/getting-started/installation) (check instructions for Nuxt).
+Referencing config like this allows to pass in a custom config that will be [defu-merged](/2-1-configuration.html#defu-merge) with the defaults provided by Nuxt Ignis. Alternatively, you can provide your own config file (see [Additional options](#additional-options)) and ignore Nuxt Ignis' default config and create your own file based on [Formkit docs](https://formkit.com/getting-started/installation) (check instructions for Nuxt).
 
 ### Additional options
 

@@ -43,7 +43,7 @@ export default defineNuxtConfig({
 <details>
 <summary>Dependency management</summary>
 
-To demonstrate the biggest benefit of using Nuxt Ignis, lets compare the number of dependencies in [`package.json`](https://github.com/AloisSeckar/PragVue/blob/main/package.json) before and after Nuxt Ignis was introduced:
+To demonstrate the biggest benefit of using Nuxt Ignis, let's compare the number of dependencies in [`package.json`](https://github.com/AloisSeckar/PragVue/blob/main/package.json) before and after Nuxt Ignis was introduced:
 
 **Before** `(15 packages)`
 - @nuxt/eslint
@@ -72,7 +72,7 @@ To demonstrate the biggest benefit of using Nuxt Ignis, lets compare the number 
 
 [`https://alois-seckar.cz/`](https://alois-seckar.cz/)
 
-Nuxt Ignis author's simple personal website with links to socials, blog and other projects. [`Tailwind CSS`](/3-2-features-ui.html#tailwind-css) and [`Nuxt UI`](/3-2-features-ui.html#nuxt-ui) are used on frontend in combination with cutom CSS. Page also has few Nuxt server-side endpoints like [`https://alois-seckar.cz/nuxt-news`](https://alois-seckar.cz/nuxt-news). Under [`https://alois-seckar.cz/run`](https://alois-seckar.cz/run) there is also a test implementation of [`nuxt-neon`](/3-3-features-db.html#neon) module along with little of [`Vueform`](/3-4-features-forms.html#vueform).
+Nuxt Ignis author's simple personal website with links to socials, blog and other projects. [`Tailwind CSS`](/3-2-features-ui.html#tailwind-css) and [`Nuxt UI`](/3-2-features-ui.html#nuxt-ui) are used on frontend in combination with custom CSS. Page also has few Nuxt server-side endpoints like [`https://alois-seckar.cz/nuxt-news`](https://alois-seckar.cz/nuxt-news). Under [`https://alois-seckar.cz/run`](https://alois-seckar.cz/run) there is also a test implementation of [`nuxt-neon`](/3-3-features-db.html#neon) module along with little of [`Vueform`](/3-4-features-forms.html#vueform).
 
 [![Alois-Seckar.cz](/thumbs/alois-seckar.jpg)](https://alois-seckar.cz/)
 
@@ -110,7 +110,7 @@ export default defineNuxtConfig({
 <details>
 <summary>Dependency management</summary>
 
-To demonstrate the biggest benefit of using Nuxt Ignis, lets compare the number of dependencies in [`package.json`](https://github.com/AloisSeckar/Alois-Seckar.cz/blob/main/package.json) before and after Nuxt Ignis was introduced:
+To demonstrate the biggest benefit of using Nuxt Ignis, let's compare the number of dependencies in [`package.json`](https://github.com/AloisSeckar/Alois-Seckar.cz/blob/main/package.json) before and after Nuxt Ignis was introduced:
 
 **Before** `(11 packages)`
 - @nuxt/eslint
@@ -185,7 +185,7 @@ export default defineNuxtConfig({
 <details>
 <summary>Dependency management</summary>
 
-To demonstrate the biggest benefit of using Nuxt Ignis, lets compare the number of dependencies in [`package.json`](https://github.com/AloisSeckar/master-coda/blob/master/package.json) before and after Nuxt Ignis was introduced:
+To demonstrate the biggest benefit of using Nuxt Ignis, let's compare the number of dependencies in [`package.json`](https://github.com/AloisSeckar/master-coda/blob/master/package.json) before and after Nuxt Ignis was introduced:
 
 **Before** `(16 packages)`
 - @nuxt/content

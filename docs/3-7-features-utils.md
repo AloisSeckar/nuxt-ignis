@@ -50,14 +50,14 @@ export default defineNuxtConfig({
 
 ### Additional options
 
-Simply enabling `VueEquipment` actually does **nothing** as you also need to specifify which composables and/or plugins you want to use.
+Simply enabling `VueEquipment` actually does **nothing** as you also need to specify which composables and/or plugins you want to use.
 
 There are two config values for this purpose:
 
-- `NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_COMPOSABLES` (or `ignis.utils.equipment.composables` in `nuxt.config.ts`) - which `Vue Equipment` composables should be imported (coma-separated list)
-- `NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_PLUGINS` (or `ignis.utils.equipment.plugins` in `nuxt.config.ts`) - which `Vue Equipment` plugins should be imported (coma-separated list)
+- `NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_COMPOSABLES` (or `ignis.utils.equipment.composables` in `nuxt.config.ts`) - which `Vue Equipment` composables should be imported (comma-separated list)
+- `NUXT_PUBLIC_IGNIS_UTILS_EQUIPMENT_PLUGINS` (or `ignis.utils.equipment.plugins` in `nuxt.config.ts`) - which `Vue Equipment` plugins should be imported (comma-separated list)
 
-The values must be a coma-separated list of available composables and plugins(see [the docs](https://www.vue.equipment/overview/getting-started.html)).
+The values must be a comma-separated list of available composables and plugins(see [the docs](https://www.vue.equipment/overview/getting-started.html)).
 
 For example:
 
