@@ -6,13 +6,17 @@ So far, this is rather an un-ordered list that might get prioritized later.
 
 Do you have other ideas? Feel free to [open an issue](https://github.com/AloisSeckar/nuxt-ignis/issues).
 
+## (build) Set staged publishing + GitHub provenance
+
+To harden Nuxt Ignis from future supply-chain attacks, better publishing process should be established. Right now it is a manual action requiring to login and fill 2FA code every time. This is sub-optimal and current best practices should be adopted as soon as possible.
+
 ## (docs) Rewrite to honor new modular structure
 
-The features described in chapter 3 were divided by some domain-driven logic, but now it feels "random" in comparison to newly introduced internal `@nuxt-ignis/*` modules. It makes more sense to re-organize them to align with each module. And possibly introduce new modules (i.e. `@nuxt-ignis/devex)` is one of the candidates) if we identify some new domains.
+The features described in chapter 3 were divided by some domain-driven logic, but now it feels "random" in comparison to newly introduced internal `@nuxt-ignis/*` modules. It makes more sense to re-organize them to align with each module. And possibly introduce new modules (i.e. `@nuxt-ignis/devex` is one of the candidates) if we identify some new domains.
 
 ## (docs) Interactive configuration editor
 
-Nuxt Ignis relies heavilly on configuration and know it might not be easy to set it up properly (afterall, we see it when working with demo apps). Therefore, we plan to enhance docs website with _WYSWYG_ editor allowing you to pick features you want to have and immideately see the `nuxt.ignis.ts` config object or `.env` values required to make it work in your app.
+Nuxt Ignis relies heavily on configuration and we know it might not be easy to set it up properly (after all, we see it when working with demo apps). Therefore, we plan to enhance the docs website with a _WYSIWYG_ editor allowing you to pick features you want to have and immediately see the `nuxt.ignis.ts` config object or `.env` values required to make it work in your app.
 
 ## (cli) CLI configuration editor
 
