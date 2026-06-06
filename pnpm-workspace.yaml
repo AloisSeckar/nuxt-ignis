@@ -21,13 +21,13 @@ peerDependencyRules:
 catalog:
   '@formkit/nuxt': 2.0.0
   '@maas/vue-equipment': 1.0.0-beta.57
-  '@nuxt-ignis/content': 0.0.67
-  '@nuxt-ignis/db': 0.0.21
-  '@nuxt-ignis/default': 0.0.20
-  '@nuxt-ignis/forms': 0.0.25
-  '@nuxt-ignis/ui': 0.0.20
-  '@nuxt-ignis/utils': 0.0.15
-  '@nuxt-ignis/validation': 0.0.19
+  '@nuxt-ignis/content': 0.1.0
+  '@nuxt-ignis/db': 0.1.0
+  '@nuxt-ignis/default': 0.1.0
+  '@nuxt-ignis/forms': 0.1.0
+  '@nuxt-ignis/ui': 0.1.0
+  '@nuxt-ignis/utils': 0.1.0
+  '@nuxt-ignis/validation': 0.1.0
   '@nuxt/content': 3.13.0
   '@nuxt/devtools': ^4.0.0-alpha.4
   '@nuxt/eslint': 1.15.2
@@ -100,27 +100,7 @@ minimumReleaseAgeExclude:
   - 'nuxt-neon'
   # exclusions for trusted Vue/Nuxt packages
   # and manually checked one-time exceptions
-  # build @ 2026-06-02 13:20 UTC+2
-  - 'elrh-cosca@0.3.6'
-  # build @ 2026-06-02 20:05 GMT+2
-  - '@nuxt/kit@4.4.7'
-  - '@nuxt/nitro-server@4.4.7'
-  - '@nuxt/schema@4.4.7'
-  - '@nuxt/vite-builder@4.4.7'
-  - '@vitest/browser-playwright@4.1.8'
-  - '@vitest/browser@4.1.8'
-  - '@vitest/expect@4.1.8'
-  - '@vitest/mocker@4.1.8'
-  - '@vitest/pretty-format@4.1.8'
-  - '@vitest/runner@4.1.8'
-  - '@vitest/snapshot@4.1.8'
-  - '@vitest/spy@4.1.8'
-  - '@vitest/ui@4.1.8'
-  - '@vitest/utils@4.1.8'
-  - 'nuxt@4.4.7'
-  - 'tinyglobby@0.2.17'
-  - 'vitest@4.1.8'
-  # build @ 2026-06-04 10:45 GMT+2
+  # build @ 2026-06-06 07:45 GMT+2
   - 'tinyclip@0.1.14'
 
 allowBuilds:
