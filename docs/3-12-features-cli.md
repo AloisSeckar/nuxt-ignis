@@ -69,7 +69,7 @@ $ deno run --allow-run npm:npx nuxt-ignis set-app-vue
 ```
 :::
 
-The file will be created as `app/app.vue` and will be equal to the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.5/core/app/app.vue).
+The file will be created as `app/app.vue` and will be equal to the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0/core/app/app.vue).
 
 ### set-css
 
@@ -97,7 +97,7 @@ $ deno run --allow-run npm:npx nuxt-ignis set-css
 ```
 :::
 
-The file will be created as `app/assets/css/ignis.css` and will be equal to the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.5/modules/01-default/src/runtime/css/ignis.css).
+The file will be created as `app/assets/css/ignis.css` and will be equal to the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0/modules/01-default/src/runtime/css/ignis.css).
 
 **NOTE:** If `NUXT_PUBLIC_IGNIS_DEFAULT_CSS` is set to `false` (or `ignis.default.css: false` in `nuxt.config.ts`), this file is **NOT** included in the project automatially. You either need to re-enable it or [set it manually](https://nuxt.com/docs/4.x/api/nuxt-config#css).
 
@@ -127,7 +127,7 @@ $ deno run --allow-run npm:npx nuxt-ignis set-eslint
 ```
 :::
 
-The file will be created as `eslint.config.mjs` and will be equal to the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.5/core/eslint.config.mjs).
+The file will be created as `eslint.config.mjs` and will be equal to the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0/core/eslint.config.mjs).
 
 ### set-netlify
 
@@ -155,7 +155,7 @@ $ deno run --allow-run npm:npx nuxt-ignis set-netlify
 ```
 :::
 
-The file will be created as `netlify.toml` in project root with [default contents](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.5/core/bin/templates/netlify.toml.template).
+The file will be created as `netlify.toml` in project root with [default contents](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0/core/bin/templates/netlify.toml.template).
 
 ### set-vscode
 
@@ -183,4 +183,4 @@ $ deno run --allow-run npm:npx nuxt-ignis set-vscode
 ```
 :::
 
-The file will be created as `.vscode/settings.json` with [default contents](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0-rc.5/core/bin/templates/vscode-settings.json.template).
+The file will be created as `.vscode/settings.json` with [default contents](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0/core/bin/templates/vscode-settings.json.template).
