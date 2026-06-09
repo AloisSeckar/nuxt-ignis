@@ -14,6 +14,19 @@ To harden Nuxt Ignis from future supply-chain attacks, better publishing process
 
 The features described in chapter 3 were divided by some domain-driven logic, but now it feels "random" in comparison to newly introduced internal `@nuxt-ignis/*` modules. It makes more sense to re-organize them to align with each module. And possibly introduce new modules (i.e. `@nuxt-ignis/devex` is one of the candidates) if we identify some new domains.
 
+## (config) Unify config keys (for real)
+
+The config keys were significatnly update just recently in `v0.6.0` with the new modular structure. But I am still not 100% happy about it. Some integrations are turned on via `<MODULE>.<PACKAGE_NAME>: true` (i.e. in "default" and "ui" sub-modules). Others require `<MODULE>.<PACKAGE_NAME>: { enabled: true }` - this is mostly when more options are supported. But for some of them it is just to have it the same for the whole module. The user can never be sure what to use without checking the docs.
+
+My proposed solutiuon I plan to implement soon: For EVERY integration allow the same following pattern:
+
+- `<MODULE>.<PACKAGE_NAME>: false` - disable the integration
+- `<MODULE>.<PACKAGE_NAME>: true` - enable the integration with defaults
+- `<MODULE>.<PACKAGE_NAME>: { enabled: false }` - disable the integration
+- `<MODULE>.<PACKAGE_NAME>: { enabled: true; // other config }` - enable the integration and allow overwritting defaults (if any)
+
+Like this, the configuration will be unified and predictable for all current and future features.
+
 ## (docs) Interactive configuration editor
 
 Nuxt Ignis relies heavily on configuration and we know it might not be easy to set it up properly (after all, we see it when working with demo apps). Therefore, we plan to enhance the docs website with a _WYSIWYG_ editor allowing you to pick features you want to have and immediately see the `nuxt.ignis.ts` config object or `.env` values required to make it work in your app.
