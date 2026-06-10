@@ -100,8 +100,6 @@ minimumReleaseAgeExclude:
   - 'nuxt-neon'
   # exclusions for trusted Vue/Nuxt packages
   # and manually checked one-time exceptions
-  # build @ 2026-06-06 07:45 GMT+2
-  - 'tinyclip@0.1.14'
 
 allowBuilds:
   '@parcel/watcher': true
