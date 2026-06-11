@@ -127,6 +127,8 @@ overrides:
   estree-walker: 2.0.2
   # TODO check https://github.com/nuxt/nuxt/issues/34812 for permanent solution
   unimport: 6.0.2
+  # CVE-2026-9277
+  shell-quote: 1.8.4
 
 verifyDepsBeforeRun: error
 
