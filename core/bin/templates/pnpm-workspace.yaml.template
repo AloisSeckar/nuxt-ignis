@@ -57,4 +57,5 @@ overrides:
   undici-types: ^7.22.0
   # CVE-2026-9277
   shell-quote: 1.8.4
-  
+  # CVE-2026-45736 (old version being pulled via @nuxt/content@3.14.0)
+  ws: ^8.20.1

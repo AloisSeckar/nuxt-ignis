@@ -21,14 +21,14 @@ peerDependencyRules:
 catalog:
   '@formkit/nuxt': 2.0.0
   '@maas/vue-equipment': 1.0.0-beta.57
-  '@nuxt-ignis/content': 0.1.0
+  '@nuxt-ignis/content': 0.1.2
   '@nuxt-ignis/db': 0.1.0
   '@nuxt-ignis/default': 0.1.0
   '@nuxt-ignis/forms': 0.1.0
-  '@nuxt-ignis/ui': 0.1.0
+  '@nuxt-ignis/ui': 0.1.2
   '@nuxt-ignis/utils': 0.1.0
   '@nuxt-ignis/validation': 0.1.0
-  '@nuxt/content': 3.13.0
+  '@nuxt/content': 3.14.0
   '@nuxt/devtools': ^4.0.0-alpha.4
   '@nuxt/eslint': 1.15.2
   '@nuxt/eslint-config': 1.15.2
@@ -39,7 +39,7 @@ catalog:
   '@nuxt/schema': 4.4.7
   '@nuxt/scripts': 1.1.0
   '@nuxt/test-utils': ^4.0.3
-  '@nuxt/ui': 4.7.1
+  '@nuxt/ui': 4.8.2
   '@nuxtjs/i18n': 10.3.0
   '@nuxtjs/tailwindcss': 6.14.0
   '@nuxtjs/seo': 5.1.3
@@ -129,6 +129,8 @@ overrides:
   unimport: 6.0.2
   # CVE-2026-9277
   shell-quote: 1.8.4
+  # CVE-2026-45736 (old version being pulled via @nuxt/content@3.14.0)
+  ws: ^8.20.1
 
 verifyDepsBeforeRun: error
 
