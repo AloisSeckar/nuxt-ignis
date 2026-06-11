@@ -131,6 +131,8 @@ overrides:
   shell-quote: 1.8.4
   # CVE-2026-45736 (old version being pulled via @nuxt/content@3.14.0)
   ws: ^8.20.1
+  # CVE-2026-46625 (old version being pulled via @vue/test-utils)
+  js-cookie: ^3.0.7
 
 verifyDepsBeforeRun: error
 
