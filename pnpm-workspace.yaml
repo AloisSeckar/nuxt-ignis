@@ -30,8 +30,8 @@ catalog:
   '@nuxt-ignis/validation': 0.1.0
   '@nuxt/content': 3.14.0
   '@nuxt/devtools': ^4.0.0-alpha.4
-  '@nuxt/eslint': 1.15.2
-  '@nuxt/eslint-config': 1.15.2
+  '@nuxt/eslint': 1.16.0
+  '@nuxt/eslint-config': 1.16.0
   '@nuxt/fonts': 0.14.0
   '@nuxt/image': 2.0.0
   '@nuxt/kit': 4.4.7
@@ -59,7 +59,7 @@ catalog:
   'defu': 6.1.7
   'elrh-cosca': 0.3.6
   'elrh-pslo': 1.1.6
-  'eslint': ^9.39.4
+  'eslint': ^10.5.0
   'magic-regexp': 0.11.0
   'nuxt': 4.4.7
   'nuxt-auth-utils': 0.5.29
@@ -100,6 +100,8 @@ minimumReleaseAgeExclude:
   - 'nuxt-neon'
   # exclusions for trusted Vue/Nuxt packages
   # and manually checked one-time exceptions
+  # build @ 2026-06-15 08:45 GMT+2 
+  - eslint@10.5.0
 
 allowBuilds:
   '@parcel/watcher': true
