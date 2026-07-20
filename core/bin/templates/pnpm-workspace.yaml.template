@@ -34,16 +34,27 @@ minimumReleaseAgeExclude:
 # pnpm naturally blocks all post-install scripts
 # some are required for development, others are not relevant
 allowBuilds:
-  # post-install scripts required for correct behavior
-  '@parcel/watcher': true
-  '@tailwindcss/oxide': true
-  esbuild: true
+  # allows node-gyp build of associated native binaries from local sources
+  # kept enabled because 'sharp' is a runtime dependency
   sharp: true
+  # provides fallback repair of platform-specific Rust native engine
+  # kept enabled because it can actively detect and fix problems on some platforms
   unrs-resolver: true
-  vue-demi: true
-  # post-install scripts that can be ignored
+  # allows node-gyp build of associated native binaries from local sources
+  # disabled because it would require an explicit opt-in
+  '@parcel/watcher': false
+  # provides fallback download of platform-specific Rust native engine
+  # disabled because the required dependency is already resolved by pnpm install
+  '@tailwindcss/oxide': false
+  # optimization for CLI usage of 'esbuild'
+  # disabled because its runtime resolves native binaries itself
+  esbuild: false
+  # compatibility feature for Vue 2 and Vue 3
+  # disabled because project is Vue 3 only
+  vue-demi: false
+  # post-install script is empty in published package
+  # disabled because there is no action executed
   maplibre-gl: false
-  puppeteer: false
   # add more if needed
   # - package-name: boolean
 
