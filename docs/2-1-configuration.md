@@ -30,7 +30,7 @@ NUXT_PUBLIC_IGNIS_DEFAULT_ESLINT=false
 
 The full structure of the `ignis` key mirrors the env variable namespaces (`NUXT_PUBLIC_IGNIS_<SECTION>_<KEY>` &harr; `ignis.<section>.<key>`). 
 
-See [full reference](/2-5-full-reference) for the complete list of configuration options.
+See [full reference](/2-5-full-reference.html) for the complete list of configuration options.
 
 ## The big picture
 
@@ -70,6 +70,6 @@ There are several examples of such usage in Nuxt Ignis codebase, starting in [`a
 
 ## More info
 
-- See [default features](/2-2-default-features) for features that are included by default, but (mostly) can be disabled.
-- See [optional features](/2-3-optional-features) for extra features that can be enabled in your project.
-- See [features section](/3-1-features) for more details about each individual Nuxt Ignis feature.
+- See [default features](/2-2-default-features.html) for features that are included by default, but (mostly) can be disabled.
+- See [optional features](/2-3-optional-features.html) for extra features that can be enabled in your project.
+- See [features section](/3-1-features.html) for more details about each individual Nuxt Ignis feature.

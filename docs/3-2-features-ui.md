@@ -64,7 +64,7 @@ To abstract users from the requirement of [adding CSS files manually](https://ui
 @import "@nuxt/ui";
 ```
 
-Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt#css).
+Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt.html#css).
 
 ## Tailwind CSS
 
@@ -109,7 +109,7 @@ To abstract users from the requirment of [adding CSS files manually](https://tai
 @import "tailwindcss";
 ```
 
-Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt#css).
+Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt.html#css).
 
 **NOTE:** In order to use `Tailwind CSS` utility classes in your custom CSS files, you still need to import `tailwindcss` set in each of them:
 
@@ -156,7 +156,7 @@ To abstract users from the requirment of adding CSS files manually, Nuxt Ignis i
 }
 ```
 
-Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt#css).
+Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt.html#css).
 
 ## Nuxt Charts
 
@@ -191,4 +191,4 @@ You might also need to explicitly add `@unovis/ts` dependency in your `package.j
 
 If you have custom CSS files you want to include in your project, you can do so by defining a comma-delimited array of paths as a value for the `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_CSS` environment variable (or `ignis.config.nuxt.css` in `nuxt.config.ts`).
 
-Refer to [this page](/3-10-features-nuxt#css) for more details.
+Refer to [this page](/3-10-features-nuxt.html#css) for more details.

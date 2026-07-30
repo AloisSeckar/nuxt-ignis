@@ -16,27 +16,27 @@ The most limiting factor is that you need mechanism that allows automated hoisin
 
 With Nuxt Ignis you are in full control over the final shape of your app via `nuxt.config.ts` configuration and/or `.env` variables. We recommend the first option thanks to better type support. On the other hand, environment variables do not require code changes and re-build upon change and allow having different instances.
 
-Learn more in the [configuration](/2-1-configuration) section.
+Learn more in the [configuration](/2-1-configuration.html) section.
 
 ## Default features
 
 Nuxt Ignis is designed to be as **optionated** as possible and you can configure almost everything. With that in mind, some packages are still enabled by default, because they provide functionality that are often repeatedly used. Those we call _**"default features"**_. Most of them can be turned off via respective environment variables. A small number of excptions cannot be turned off at all due to current technical limitations.
 
-[More info about the default features](/2-2-default-features)
+[More info about the default features](/2-2-default-features.html)
 
 ## Optional features
 
 Most of the available integrations are disabled by default and are meant to be opted-in by a respective configuration. Those we address as _**"optional features"**_. This general term also includes all other Nuxt Ignis specific configuration that is available.
 
-[More info about the optional features](/2-3-optional-features)
+[More info about the optional features](/2-3-optional-features.html)
 
 ## CLI tools
 
 A number of CLI commands is available to help you moving on faster.
 
-[More info about the CLI](/3-12-features-cli)
+[More info about the CLI](/3-12-features-cli.html)
 
 ## More info
 
-- Check [showcase](/1-3-showcase) of live projects using `nuxt-ignis`.
-- Go to [installation](/1-4-installation) to learn how to start using Nuxt Ignis.
+- Check [showcase](/1-3-showcase.html) of live projects using `nuxt-ignis`.
+- Go to [installation](/1-4-installation.html) to learn how to start using Nuxt Ignis.

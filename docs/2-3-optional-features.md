@@ -4,7 +4,7 @@ So-called _"optional features"_ are disabled by default in Nuxt Ignis. You can t
 
 ## Presets
 
-Some of the optional solutions are meant to be alternatives. Nuxt Ignis defines simplified configuration _"presets"_ for such cases. Learn more about this concept in [presets section](/2-4-presets).
+Some of the optional solutions are meant to be alternatives. Nuxt Ignis defines simplified configuration _"presets"_ for such cases. Learn more about this concept in [presets section](/2-4-presets.html).
 
 However, you are not limited to presets only. Every optional module or feature can be enabled individually.
 
@@ -82,4 +82,4 @@ export default defineNuxtConfig({
 
 ## More info
 
-- See details about technologies available via Nuxt Ignis in [features section](/3-1-features).
+- See details about technologies available via Nuxt Ignis in [features section](/3-1-features.html).

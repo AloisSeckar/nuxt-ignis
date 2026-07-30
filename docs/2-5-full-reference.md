@@ -81,4 +81,4 @@ Other configurable options:
 
 ## More info
 
-- See details about Nuxt Ignis in [features section](/3-1-features).
+- See details about Nuxt Ignis in [features section](/3-1-features.html).

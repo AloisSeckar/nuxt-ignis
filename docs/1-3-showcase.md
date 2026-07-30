@@ -212,4 +212,4 @@ To demonstrate the biggest benefit of using Nuxt Ignis, let's compare the number
 
 ## More info
 
-- Go to [installation](/1-4-installation) to learn how to start using Nuxt Ignis.
+- Go to [installation](/1-4-installation.html) to learn how to start using Nuxt Ignis.

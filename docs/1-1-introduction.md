@@ -12,10 +12,10 @@ Like so, Nuxt Ignis incorporates a number of modules and features and it is supe
 
 Nuxt Ignis is divided into several internal modules. Based on flexible configuration, the core mechanism decides which modules are requested to be activated and then those modules decide, what will be activated, during their setup phases. The configuration can either be inlined in `nuxt.config.ts` in the `ignis` config key, or passed via the Nuxt runtime config mechanism using `.env` variables. The result is almost fully customizable based on your needs. And you still import only one package!
 
-Learn more about the idea in the [configuration section](/2-1-configuration).
+Learn more about the idea in the [configuration section](/2-1-configuration.html).
 
 ## More info
 
-- Continue to the [overview](/1-2-overview) for summary of all the available features.
-- Go to [installation](/1-4-installation) to learn how to start using Nuxt Ignis.
-- See [changelog](4-1-changelog.html) to display the latest changes.
+- Continue to the [overview](/1-2-overview.html) for summary of all the available features.
+- Go to [installation](/1-4-installation.html) to learn how to start using Nuxt Ignis.
+- See [changelog](/4-1-changelog.html) to display the latest changes.
