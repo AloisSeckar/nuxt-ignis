@@ -138,14 +138,15 @@ overrides:
   semver: ^7.7.0
   # suspicious v6 comming from nuxt-neon@0.9.0 (via @neondatabase/serverless@1.0.2)
   undici-types: ^8.0.0
-  # https://github.com/Rich-Harris/estree-walker/issues/26
-  # estree-walker: 2.0.2
-  # TODO check https://github.com/nuxt/nuxt/issues/34812 for permanent solution
-  # unimport: 6.0.2
-  # CVE-2026-9277
-  # shell-quote: 1.8.4
-  # CVE-2026-46625 (old version being pulled via @vue/test-utils)
-  # js-cookie: ^3.0.7
+  # security overrides 2026-08-12
+  brace-expansion: ^5.0.9
+  dompurify: ^3.4.13
+  esbuild: ^0.28.1
+  js-yaml: ^4.3.1
+  sharp: ^0.35.3
+  shell-quote: ^1.10.0
+  tar: ^7.5.22
+  # currently no fix for 'image-size' package (CVE-2025-71329 & CVE-2025-71330)
 
 verifyDepsBeforeRun: error
 
