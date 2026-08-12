@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
 ## Nuxt Image
 
-<PackagesReference :packages="[{ name: '@nuxt/image', version: '2.0.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/image', version: '2.1.2' }]" />
 
 [Nuxt Image](https://image.nuxt.com/) is an official module for working with images. Resize and transform your images using built-in optimizer or your favorite images CDN.
 
@@ -56,7 +56,7 @@ Keep in mind that with the default `ipx` provider, [sharp](https://sharp.pixelpl
 
 ## Nuxt Scripts
 
-<PackagesReference :packages="[{ name: '@nuxt/scripts', version: '1.1.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/scripts', version: '1.3.3' }]" />
 
 [Nuxt Scripts](https://scripts.nuxt.com/) is an official module for working with scripts. It lets you load third-party scripts with better performance, privacy, security and DX. It includes many popular third-parties out of the box.
 
@@ -79,7 +79,7 @@ export default defineNuxtConfig({
 
 ## Pinia
 
-<PackagesReference :packages="[{ name: 'pinia', version: '3.0.4' }, { name: '@pinia/nuxt', version: '0.11.3' }]" />
+<PackagesReference :packages="[{ name: 'pinia', version: '4.0.2' }, { name: '@pinia/nuxt', version: '1.0.1' }]" />
 
 [Pinia](https://pinia.vuejs.org/) is a de-facto standard Vue solution for state management. It is type safe, extensible, modular by design and SSR-friendly with tiny runtime. 
 

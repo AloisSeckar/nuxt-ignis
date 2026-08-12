@@ -60,15 +60,11 @@ allowBuilds:
 
 # recommended overrides for various (mostly security) reasons
 overrides:
-  # suspicious v4 comming from @formkit/nuxt@2.0.0
+  # suspicious v4 comming from @formkit/nuxt@2.1.2
   chokidar: ^5.0.0
   # suspicious v6 comming from nuxt-security@2.6.0
   semver: ^7.7.0
-  # suspicious v6 comming from nuxt-neon@0.8.3
-  undici-types: ^7.22.0
   # CVE-2026-9277
   shell-quote: 1.8.4
-  # CVE-2026-45736 (old version being pulled via @nuxt/content@3.14.0)
-  ws: ^8.20.1
   # CVE-2026-46625 (old version being pulled via @vue/test-utils)
   js-cookie: ^3.0.7

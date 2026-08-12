@@ -1,6 +1,6 @@
 # Nuxt
 
-<PackagesReference :packages="[{ name: 'nuxt', version: '4.4.7' }, { name: 'vue', version: '3.5.35' }, { name: 'vue-router', version: '5.1.0' }]" />
+<PackagesReference :packages="[{ name: 'nuxt', version: '4.5.2' }, { name: 'vue', version: '3.5.41' }, { name: 'vue-router', version: '5.2.0' }]" />
 
 The goal of Nuxt Ignis is to bring [Nuxt framework](https://nuxt.com/) into your apps.
 

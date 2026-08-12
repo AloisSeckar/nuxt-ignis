@@ -4,7 +4,7 @@ Nuxt Ignis contains following customizable DB related features:
 
 ## Neon
 
-<PackagesReference :packages="[{ name: 'nuxt-neon', version: '0.8.3' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-neon', version: '0.9.0' }]" />
 
 [Neon](https://neon.tech/) is a serverless Postgres database that is designed to be fast, scalable, and easy to use. It provides a fully managed database service with automatic scaling and high availability.
 
@@ -48,7 +48,7 @@ For details and more config options see the [`nuxt-neon` docs](https://github.co
 
 ## Supabase
 
-<PackagesReference :packages="[{ name: '@nuxtjs/supabase', version: '2.0.8' }]" />
+<PackagesReference :packages="[{ name: '@nuxtjs/supabase', version: '2.0.10' }]" />
 
 [Supabase](https://supabase.com/) is an open-source Firebase alternative that provides a suite of tools for building applications, including a Postgres database, authentication, and real-time subscriptions.
 

@@ -4,7 +4,7 @@ Nuxt Ignis offers following utility options:
 
 ## VueUse
 
-<PackagesReference :packages="[{ name: '@vueuse/core', version: '14.3.0' }, { name: '@vueuse/nuxt', version: '14.3.0' }]" />
+<PackagesReference :packages="[{ name: '@vueuse/core', version: '14.4.0' }, { name: '@vueuse/nuxt', version: '14.4.0' }]" />
 
 [VueUse](https://vueuse.org/) is a collection of essential Vue Composition Utilities that provides a set of reusable functions and utilities for Vue.js applications. It includes features like reactive state management, event handling, and more.
 
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
 
 ## VueEquipment
 
-<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.57' }]" />
+<PackagesReference :packages="[{ name: '@maas/vue-equipment', version: '1.0.0-beta.81' }]" />
 
 [VueEquipment](https://www.vue.equipment/) is a collection of Vue composables and plugins that provides a set of reusable functions and utilities for Vue.js applications.
 
@@ -87,7 +87,7 @@ Whitespaces around will be trimmed, so it doesn't matter if you add or omit them
 
 ## Nuxt SEO
 
-<PackagesReference :packages="[{ name: '@nuxtjs/seo', version: '5.1.3' }]" />
+<PackagesReference :packages="[{ name: '@nuxtjs/seo', version: '5.3.12' }]" />
 
 [Nuxt SEO](https://nuxtseo.com/) is a collection of Nuxt modules that handles all of the technical aspects in growing your sites organic traffic.
 
@@ -142,7 +142,7 @@ Rather than reuse the local value, generate a fresh value with `npx nuxt-og-imag
 
 ## Nuxt Auth Utils
 
-<PackagesReference :packages="[{ name: 'nuxt-auth-utils', version: '0.5.29' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-auth-utils', version: '0.5.30' }]" />
 
 [Nuxt Auth Utils](https://github.com/atinux/nuxt-auth-utils) is a set of utilities for handling authentication in Nuxt applications.
 
@@ -165,7 +165,7 @@ export default defineNuxtConfig({
 
 ## Nuxt Social Share
 
-<PackagesReference :packages="[{ name: '@stefanobartoletti/nuxt-social-share', version: '3.0.0' }]" />
+<PackagesReference :packages="[{ name: '@stefanobartoletti/nuxt-social-share', version: '3.2.0' }]" />
 
 [Nuxt Social Share](https://nuxt-social-share.stefanobartoletti.it/) is a module providing seamless integration for sharing content to various social networks from your Nuxt application.
 

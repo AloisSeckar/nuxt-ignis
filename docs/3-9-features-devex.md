@@ -4,7 +4,7 @@ For better developer experience, Nuxt Ignis offers following features:
 
 ## ESLint
 
-<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.16.0' }, { name: 'typescript', version: '6.0.3' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/eslint', version: '1.17.0' }, { name: 'typescript', version: '6.0.3' }]" />
 
 Nuxt Ignis utilizes `@nuxt/eslint` module for convenient [ESLint](https://eslint.org/) integration in your project. For [VS Code](https://code.visualstudio.com/), it is recommended to install the [ESLint extension](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) for even better integration including "linting on save" configuration.
 
@@ -68,7 +68,7 @@ The file introduces following changes from the default linting behavior:
 
 ## Logging
 
-<PackagesReference :packages="[{ name: 'consola', version: '3.4.2' }, { name: 'date-fns', version: '4.1.0' }]" />
+<PackagesReference :packages="[{ name: 'consola', version: '3.4.2' }, { name: 'date-fns', version: '4.4.0' }]" />
 
 Use `NUXT_PUBLIC_IGNIS_CONFIG_LOG_LEVEL` (or `ignis.config.log.level` in `nuxt.config.ts`) to set level of log messages captured with `consola`. The default value is `info`.
 
@@ -94,7 +94,7 @@ If you don't want to rely on the default behavior, you can disable those handler
 
 ## Testing
 
-<PackagesReference :packages="[{ name: 'nuxt-spec', version: 'v0.2.3' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-spec', version: 'v0.3.1' }]" />
 
 Nuxt Ignis embraces [Vitest](https://vitest.dev/) as its test runner library. More specifically, it uses proprietary **Nuxt Spec** package that provides a base layer for testing Nuxt modules and applications united under single dependency. With that you have out-of-the-box access to:
 
@@ -105,6 +105,8 @@ Nuxt Ignis embraces [Vitest](https://vitest.dev/) as its test runner library. Mo
 - [playwright-core](https://www.npmjs.com/package/playwright-core) as the headless browser testing framework
 - [@vue/test-utils](https://www.npmjs.com/package/@vue/test-utils) for testing Vue stuff
 - [@nuxt/test-utils](https://www.npmjs.com/package/@nuxt/test-utils) for testing Nuxt stuff
+
+It also provides couple of nice features like side-by-side screenshot comparator for more streamlined visual regression testing.
 
 Nuxt Spec is currently an opinionated solution and one of the few features that are fully baked into Nuxt Ignis without an opt-out. I am sorry for that, but hopefully it will provide you enough options to test your apps in a meaningful and convenient way.
 
@@ -129,7 +131,7 @@ export default loadVitestConfig({
 
 **NOTE**: Based on the [Vitest documentation](https://main.vitest.dev/config/), it is possible to pass in **any configuration option** valid for [Vite](https://vite.dev/config/). Configuration related directly to Vitest must be passed under the `test` key.
 
-Read more in the project [README](https://github.com/AloisSeckar/nuxt-spec/blob/v0.2.3/README.md).
+Read more in the project [README](https://github.com/AloisSeckar/nuxt-spec/blob/v0.3.1/README.md).
 
 ## Nuxt Security
 
