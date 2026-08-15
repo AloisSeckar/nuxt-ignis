@@ -52,7 +52,7 @@ function parseCatalog(yamlText) {
   const lineRe = /^\s*'([^']+)':\s*(\^|~)?(\S+)/
   return yamlText
     .slice(bodyStart, bodyEnd)
-    .split('\n')
+    .split(/\r?\n/)
     .map(line => line.match(lineRe))
     .filter(Boolean)
     .map(m => ({ name: m[1], prefix: m[2] || '', version: m[3] }))
