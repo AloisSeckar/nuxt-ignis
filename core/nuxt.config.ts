@@ -30,7 +30,6 @@ export default defineNuxtConfig({
   vite: {
     optimizeDeps: {
       include: [
-        'sqlstring', // CJS
         '@vue/devtools-core',
         '@vue/devtools-kit',
         'date-fns',
