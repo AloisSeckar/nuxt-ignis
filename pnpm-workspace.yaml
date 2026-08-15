@@ -66,7 +66,7 @@ catalog:
   'nuxt-charts': 2.2.0
   'nuxt-neon': 0.9.0
   'nuxt-security': 2.6.0
-  'nuxt-spec': 0.3.1
+  'nuxt-spec': 0.3.2
   'open-props': 1.7.23
   'oxc-minify': ^0.143.0
   'pinia': 4.0.2
@@ -98,12 +98,8 @@ minimumReleaseAgeExclude:
   - '@nuxt-ignis/validation'
   # exclusions for trusted Vue/Nuxt packages
   # and manually checked one-time exceptions
-  # build @ 2026-08-12 12:15 GMT+2 
-  - '@nuxtjs/seo' # v5.3.12
-  - 'nuxtseo-shared' # v5.3.12
-  - '@nuxtjs/supabase' # v2.0.10
-  - 'nuxt-neon' # v0.9.0
-  - 'vue' # v3.5.41
+  # build @ 2026-08-15 11:25 GMT+2 
+  - 'nuxt-spec' # v0.3.2
 
 allowBuilds:
   # allows node-gyp build of associated native binaries from local sources
