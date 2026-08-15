@@ -1,0 +1,5 @@
+interface:
+  display_name: "Bump Nuxt Ignis dependencies"
+  short_description: "Bump npm package dependencies in the pnpm-workspace.yaml catalog"
+policy:
+  allow_implicit_invocation: false

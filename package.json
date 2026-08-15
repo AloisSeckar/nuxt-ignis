@@ -9,5 +9,8 @@
     "demos-test": "node ./demos/ignis-demos-test.js",
     "modules-test": "node ./modules/ignis-modules-test.js",
     "modules-publish": "node ./modules/ignis-modules-publish.js"
+  },
+  "devDependencies": {
+    "semver": "catalog:"
   }
 }
