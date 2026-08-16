@@ -105,6 +105,7 @@ Nuxt Ignis embraces [Vitest](https://vitest.dev/) as its test runner library. Mo
 - [playwright-core](https://www.npmjs.com/package/playwright-core) as the headless browser testing framework
 - [@vue/test-utils](https://www.npmjs.com/package/@vue/test-utils) for testing Vue stuff
 - [@nuxt/test-utils](https://www.npmjs.com/package/@nuxt/test-utils) for testing Nuxt stuff
+- [@nuxt/hints](https://nuxt.com/modules/hints) for DevTools performance, hydration, and security tips
 
 It also provides couple of nice features like side-by-side screenshot comparator for more streamlined visual regression testing.
 
@@ -131,7 +132,11 @@ export default loadVitestConfig({
 
 **NOTE**: Based on the [Vitest documentation](https://main.vitest.dev/config/), it is possible to pass in **any configuration option** valid for [Vite](https://vite.dev/config/). Configuration related directly to Vitest must be passed under the `test` key.
 
-Read more in the project [README](https://github.com/AloisSeckar/nuxt-spec/blob/v0.3.1/README.md).
+Read more in the project [DOCUMENTATION](https://nuxt-spec.netlify.app/2-1-configuration.html).
+
+### Configuring Nuxt Spec
+
+- It is possible to opt-out from `@nuxt/hints` module inclusion by adding `hints: false` in your `nuxt.config.ts` or setting `NUXT_SPEC_HINTS_ENABLED=false` in your `.env` file.
 
 ## Nuxt Security
 
