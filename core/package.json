@@ -57,7 +57,7 @@
     "test-i": "vitest",
     "test-unit": "vitest run unit",
     "test-e2e": "vitest run e2e",
-    "test:types": "vue-tsc --noEmit"
+    "test:types": "vue-tsc --build --noEmit"
   },
   "dependencies": {
     "@nuxt-ignis/content": "catalog:",
@@ -77,7 +77,10 @@
     "nuxt-spec": "catalog:",
     "typescript": "catalog:",
     "vue": "catalog:",
-    "vue-router": "catalog:"
+    "vue-component-meta": "catalog:",
+    "vue-component-type-helpers": "catalog:",
+    "vue-router": "catalog:",
+    "vue-tsc": "catalog:"
   },
   "packageManager": "pnpm@11.21.0"
 }

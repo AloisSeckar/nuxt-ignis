@@ -9,6 +9,9 @@ This section contains the full list of NPM packages included in Nuxt Ignis. More
 | `nuxt` | `4.5.2` | [👁️‍🗨️](/3-10-features-nuxt.html) | Underlying Nuxt application itself |
 | `vue` | `3.5.41` | [👁️‍🗨️](/3-10-features-nuxt.html)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
 | `vue-router` | `5.2.0` | [👁️‍🗨️](/3-10-features-nuxt.html)  | Explicit devDependency to align with Nuxt defaults and also due to [Netlify behavior](https://github.com/nuxt/nuxt/discussions/30187) |
+| `vue-tsc` | `3.3.10` | [👁️‍🗨️](/3-9-features-devex.html#vue-language-tools) | Vue-aware typechecking tool (zero runtime dependency) |
+| `vue-component-meta` | `3.3.10` | [👁️‍🗨️](/3-9-features-devex.html#vue-language-tools) | Helpers for extracting metadata from components (zero runtime dependency if not explicitly used) |
+| `vue-vue-component-type-helpers` | `3.3.10` | [👁️‍🗨️](/3-9-features-devex.html#vue-language-tools) | Helpers for extracting types from components (zero runtime dependency, only type definitions) |
 | `typescript` | `6.0.3` | [👁️‍🗨️](/3-9-features-devex.html#eslint) | Explicit dependency included to ensure correct `eslint` functionality |
 | `defu` | `6.1.7` | [👁️‍🗨️](/2-1-configuration.html#defu-merge) | Used for merging user configurations with defaults |
 | `date-fns` | `4.4.0` | [👁️‍🗨️](/3-9-features-devex.html#logging) | Used to get timestamps in readable format |

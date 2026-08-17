@@ -79,8 +79,10 @@ catalog:
   'vitepress-plugin-group-icons': ^1.7.6
   'vitest': ^4.1.10
   'vue': 3.5.41
+  'vue-component-meta': '3.3.10'
+  'vue-component-type-helpers': '3.3.10'
   'vue-router': 5.2.0
-  'vue-tsc': ^3.3.9
+  'vue-tsc': 3.3.10
   'zod': 4.4.3
 
 trustPolicy: no-downgrade
@@ -99,7 +101,12 @@ minimumReleaseAgeExclude:
   # exclusions for trusted Vue/Nuxt packages
   # and manually checked one-time exceptions
   # build @ 2026-08-15 11:25 GMT+2 
-  - 'nuxt-spec' # v0.3.2
+  - 'nuxt-spec@0.3.2'
+  # build @ 2026-08-17 15:30 GMT+2 
+  - '@vue/language-core@3.3.10'
+  - 'vue-component-meta@3.3.10'
+  - 'vue-component-type-helpers@3.3.10'
+  - 'vue-tsc@3.3.10'
 
 allowBuilds:
   # allows node-gyp build of associated native binaries from local sources

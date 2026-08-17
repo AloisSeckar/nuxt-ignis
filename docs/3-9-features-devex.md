@@ -163,6 +163,18 @@ export default defineNuxtConfig({
 })
 ```
 
+## Vue Language Tools
+
+<PackagesReference :packages="[{ name: 'vue-tsc', version: '3.3.10' }, { name: 'vue-component-meta', version: '3.3.10' }, { name: 'vue-component-type-helpers', version: '3.3.10' }]" />
+
+Following pacakges are automatically made available:
+
+- [vue-tsc](https://www.npmjs.com/package/vue-tsc) - CLI type checking tool for Vue that is aware of `.vue` files
+- [vue-component-meta](https://www.npmjs.com/package/vue-component-meta) - a tool for extracting components metadata (i.e. exposed props, emits and slots)
+- [vue-component-type-helpers](https://www.npmjs.com/package/vue-component-type-helpers) - a tool for extracting types from internal components' definition
+
+As of now, this cannot be configured. But unless some of the functions from `vue-component-meta` are explicitly imported and used in your code, they'll be stripped at build time and won't affect the final bundle.
+
 ## CLI tools
 
 <PackagesReference :packages="[{ name: 'elrh-cosca', version: '0.3.5' }]" />
