@@ -65,7 +65,7 @@ describe(`pnpm version should be the same as in package.json (${pnpmVersion})`, 
 const workspaceYaml = readFileSync(resolve(__dirname, '../../pnpm-workspace.yaml'), 'utf-8')
 const specVersion = workspaceYaml.match(/'nuxt-spec':\s*(.+)/)?.[1]?.trim()
 
-const specLink = `https://github.com/AloisSeckar/nuxt-spec/blob/v${specVersion}/`
+const specLink = `https://github.com/AloisSeckar/nuxt-spec/tree/v${specVersion}/`
 
 describe(`Nuxt Spec links should lead to same version tag as in package.json (${specVersion})`, () => {
   test('1-4-installation.md', () => {

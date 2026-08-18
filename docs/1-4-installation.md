@@ -43,7 +43,7 @@ You can also make the steps manually if you want to keep more control.
 ```json [package.json]
 {
   "dependencies": {
-    "nuxt-ignis": "0.6.0"
+    "nuxt-ignis": "0.6.1"
   }
 }
 ```
@@ -148,7 +148,7 @@ _nuxt-config.json
 Nuxt Ignis always creates `public/_ignis-config.json` and `public/_nuxt-config.json` files when done with resolving `nuxt.config.ts` to expose the actual configuration used for reference and potential debugging. As those files are re-generated automatically everytime the app starts, it is not recommended to add it to Git. They _could_ be stored for reference but this might tempt devs to edit it manually which would have no effect and should cause unnecessary confusion. Since the files are JSONs, comments can't be included to add auto-generation warning.
 </details>
 
-7) Optionally replace default `app/app.vue` in fresh project (the file contains `<NuxtWelcome />` component) with the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0/core/app/app.vue).
+7) Optionally replace default `app/app.vue` in fresh project (the file contains `<NuxtWelcome />` component) with the [Nuxt Ignis default](https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.1/core/app/app.vue).
 
 <details>
 <summary>Reason why</summary>
@@ -177,7 +177,7 @@ Technically, this step is not required. Your tests will run even with absolutely
 It is also advised to create a `.nuxtrc` file in your project root (if not present yet) with the following content:
 
 ```[.nuxtrc]
-setups.@nuxt/test-utils="4.0.2"
+setups.@nuxt/test-utils="4.1.0"
 ```
 
 <details>
@@ -204,7 +204,7 @@ You may want to add following test-related scripts to `package.json` for simpler
 This might be just a matter of personal preference, but someone might find the shorthands useful. Check more detailed explanation for each variant in [`nuxt-spec` docs](https://nuxt-spec.netlify.app/1-2-installation.html#running-tests).
 </details>
 
-The automatic CLI setup is also capable of creating sample test files based on experience from the `nuxt-spec` package. If you chose to skip this step, you can [check the project](https://github.com/AloisSeckar/nuxt-spec/tree/v0.3.1/test) to get the idea for manual creation.
+The automatic CLI setup is also capable of creating sample test files based on experience from the `nuxt-spec` package. If you chose to skip this step, you can [check the project](https://github.com/AloisSeckar/nuxt-spec/tree/v0.3.2/test) to get the idea for manual creation.
 
 9) Delete `node_modules` folder and your lock file (based on the package manager you're using).
 

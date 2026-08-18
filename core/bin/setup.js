@@ -8,6 +8,8 @@ import {
   updateConfigFile, updateJsonFile, updateTextFile,
 } from 'elrh-cosca'
 
+const TARGET_VERSION = '0.6.1'
+
 /**
  * CLI tool to setup Nuxt Ignis for a new project.
  *
@@ -39,7 +41,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
 
   // 1 - add nuxt-ignis dependency to package.json
   try {
-    await updateJsonFile('package.json', 'dependencies', { 'nuxt-ignis': '0.6.0' },
+    await updateJsonFile('package.json', 'dependencies', { 'nuxt-ignis': TARGET_VERSION },
       isAutoRun, 'This will add \'nuxt-ignis\' dependency to your \'package.json\'. Proceed?')
   } catch (error) {
     console.error('Error adding \'nuxt-ignis\' dependency:\n', error.message)
@@ -112,7 +114,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
         await updateTextFile('pnpm-workspace.yaml', ['shamefully-hoist: true'], isAutoRun,
           'This will adjust \'pnpm-workspace.yaml\' file in your project. Continue?')
       } else {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0/core/bin/templates/pnpm-workspace.yaml.template',
+        await createFileFromWebTemplate(`https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/${TARGET_VERSION}/core/bin/templates/pnpm-workspace.yaml.template`,
           'pnpm-workspace.yaml', isAutoRun, 'This will add \'pnpm-workspace.yaml\' file for your project. Continue?')
       }
     } catch (error) {
@@ -161,7 +163,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
       const replaceAppVue = isAutoRun || await promptUser('Default Nuxt \'app/app.vue\' detected. This will replace it with Nuxt Ignis default. Continue?')
       if (replaceAppVue) {
         try {
-          await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0/core/app/app.vue', 'app/app.vue', true)
+          await createFileFromWebTemplate(`https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/${TARGET_VERSION}/core/app/app.vue`, 'app/app.vue', true)
         } catch (error) {
           console.error('Error replacing \'app/app.vue\':\n', error.message)
         }
@@ -174,7 +176,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
   if (setupNuxtSpec) {
     // create vitest.config.ts
     try {
-      await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.1/config/templates/vitest.config.ts.template',
+      await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.2/config/templates/vitest.config.ts.template',
         'vitest.config.ts', true, 'This will create a new \'vitest.config.ts\' file for your project. Continue?')
     } catch (error) {
       console.error('Error setting up \'vitest.config.ts\':\n', error.message)
@@ -183,7 +185,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
     // create .nuxtrc to prevent @nuxt/test-utils setup from running automatically on first start
     if (!pathExists('.nuxtrc')) {
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v0.6.0/core/bin/templates/nuxtrc.template', '.nuxtrc', isAutoRun, 'This will create a \'.nuxtrc\' file to prevent @nuxt/test-utils setup from running automatically when dev server starts. Continue?')
+        await createFileFromWebTemplate(`https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/${TARGET_VERSION}/core/bin/templates/nuxtrc.template`, '.nuxtrc', isAutoRun, 'This will create a \'.nuxtrc\' file to prevent @nuxt/test-utils setup from running automatically when dev server starts. Continue?')
       } catch (error) {
         console.error('Error creating \'.nuxtrc\':\n', error.message)
       }
@@ -204,31 +206,31 @@ export async function nuxtIgnisSetup(autoRun = false) {
     const createSampleTests = isAutoRun || await promptUser('Do you want to create sample tests in \'/test\' folder?')
     if (createSampleTests) {
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.1/test/browser/vitest-browser.test.ts',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.2/test/browser/vitest-browser.test.ts',
           'test/browser/vitest-browser.test.ts', true)
       } catch (error) {
         console.error('Error setting up \'vitest-browser.test.ts\':\n', error.message)
       }
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.1/test/e2e/nuxt-e2e.test.ts',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.2/test/e2e/nuxt-e2e.test.ts',
           'test/e2e/nuxt-e2e.test.ts', true)
       } catch (error) {
         console.error('Error setting up \'nuxt-e2e.test.ts\':\n', error.message)
       }
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.1/test/e2e/nuxt-visual.test.ts',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.2/test/e2e/nuxt-visual.test.ts',
           'test/e2e/nuxt-visual.test.ts', true)
       } catch (error) {
         console.error('Error setting up \'nuxt-visual.test.ts\':\n', error.message)
       }
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.1/test/nuxt/nuxt-unit.test.ts',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.2/test/nuxt/nuxt-unit.test.ts',
           'test/nuxt/nuxt-unit.test.ts', true)
       } catch (error) {
         console.error('Error setting up \'nuxt-unit.test.ts\':\n', error.message)
       }
       try {
-        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.1/test/unit/vitest-unit.test.ts',
+        await createFileFromWebTemplate('https://raw.githubusercontent.com/AloisSeckar/nuxt-spec/refs/tags/v0.3.2/test/unit/vitest-unit.test.ts',
           'test/unit/vitest-unit.test.ts', true)
       } catch (error) {
         console.error('Error setting up \'vitest-unit.test.ts\':\n', error.message)

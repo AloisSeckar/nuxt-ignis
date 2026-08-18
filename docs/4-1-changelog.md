@@ -2,6 +2,15 @@
 
 Overview of the newest features in Nuxt Ignis.
 
+## 0.6.1
+
+`2026-08-19`
+
+- feat: added `Vue Language Tools` helpers (#124)
+- feat: added `@nuxt/hints` module integration (via `nuxt-spec`) (#137)
+- fix: ignore misleading Rollup warnings during startup
+- build: bump `Nuxt` to `4.5.2` + updated other deps to latest versions (as of 2026-08-12)
+
 ## 0.6.0
 
 `2026-06-06`

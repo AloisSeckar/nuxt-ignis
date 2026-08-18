@@ -8,6 +8,14 @@ const { version, packageManager, config } = app
 
 // Nuxt Ignis version - should match package.json
 
+const ignisVersion = `TARGET_VERSION = '${version}'`
+
+describe(`Nuxt Ignis version should be the same in setup.js as in package.json (${version})`, () => {
+  test('setup.js', () => {
+    expect(hasText('bin/setup.js', ignisVersion)).toBe(true)
+  })
+})
+
 const ignisLink = `https://raw.githubusercontent.com/AloisSeckar/nuxt-ignis/refs/tags/v${version}/`
 
 describe(`Nuxt Ignis links should lead to same version tag as in package.json (${version})`, () => {
@@ -25,16 +33,6 @@ describe(`Nuxt Ignis links should lead to same version tag as in package.json ($
 
   test('set-netlify.js', () => {
     expect(hasText('bin/set-netlify.js', ignisLink)).toBe(true)
-  })
-
-  test('setup.js', () => {
-    expect(hasText('bin/setup.js', ignisLink)).toBe(true)
-  })
-})
-
-describe(`Nuxt Ignis version should be the same as in package.json (${version})`, () => {
-  test('setup.js', () => {
-    expect(hasText('bin/setup.js', `{ 'nuxt-ignis': '${version}' }`)).toBe(true)
   })
 })
 
