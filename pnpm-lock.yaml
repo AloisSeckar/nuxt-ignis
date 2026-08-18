@@ -13,26 +13,26 @@ catalogs:
       specifier: 1.0.0-beta.81
       version: 1.0.0-beta.81
     '@nuxt-ignis/content':
-      specifier: 0.1.3
-      version: 0.1.3
+      specifier: 0.2.0
+      version: 0.2.0
     '@nuxt-ignis/db':
-      specifier: 0.1.1
-      version: 0.1.1
+      specifier: 0.2.0
+      version: 0.2.0
     '@nuxt-ignis/default':
-      specifier: 0.1.1
-      version: 0.1.1
+      specifier: 0.2.0
+      version: 0.2.0
     '@nuxt-ignis/forms':
-      specifier: 0.1.1
-      version: 0.1.1
+      specifier: 0.2.0
+      version: 0.2.0
     '@nuxt-ignis/ui':
-      specifier: 0.1.3
-      version: 0.1.3
+      specifier: 0.2.0
+      version: 0.2.0
     '@nuxt-ignis/utils':
-      specifier: 0.1.1
-      version: 0.1.1
+      specifier: 0.2.0
+      version: 0.2.0
     '@nuxt-ignis/validation':
-      specifier: 0.1.1
-      version: 0.1.1
+      specifier: 0.2.0
+      version: 0.2.0
     '@nuxt/content':
       specifier: 3.15.2
       version: 3.15.2
@@ -222,25 +222,25 @@ importers:
     dependencies:
       '@nuxt-ignis/content':
         specifier: 'catalog:'
-        version: 0.1.3(6ab7c7ca00c3090a1ec8e3b1c94ef2bc)
+        version: 0.2.0(6ab7c7ca00c3090a1ec8e3b1c94ef2bc)
       '@nuxt-ignis/db':
         specifier: 'catalog:'
-        version: 0.1.1(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))
+        version: 0.2.0(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))
       '@nuxt-ignis/default':
         specifier: 'catalog:'
-        version: 0.1.1(c1976ed2dd5087f69317ef7c03670a78)
+        version: 0.2.0(c1976ed2dd5087f69317ef7c03670a78)
       '@nuxt-ignis/forms':
         specifier: 'catalog:'
-        version: 0.1.1(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.1)(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(rollup@4.62.2)(supports-color@10.2.2)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))(vite@8.1.5)(vue@3.5.41(typescript@6.0.3))
+        version: 0.2.0(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.1)(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(rollup@4.62.2)(supports-color@10.2.2)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))(vite@8.1.5)(vue@3.5.41(typescript@6.0.3))
       '@nuxt-ignis/ui':
         specifier: 'catalog:'
-        version: 0.1.3(288aa63d615a5d3cee0d4ca8e2e02ffe)
+        version: 0.2.0(288aa63d615a5d3cee0d4ca8e2e02ffe)
       '@nuxt-ignis/utils':
         specifier: 'catalog:'
-        version: 0.1.1(5e655d6ca87bb4d9c56123252f74e9b9)
+        version: 0.2.0(5e655d6ca87bb4d9c56123252f74e9b9)
       '@nuxt-ignis/validation':
         specifier: 'catalog:'
-        version: 0.1.1(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))
+        version: 0.2.0(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))
       '@nuxt/eslint':
         specifier: 'catalog:'
         version: 1.17.0(@typescript-eslint/utils@8.66.0(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))(supports-color@10.2.2)(typescript@6.0.3))(@vue/compiler-sfc@3.5.41)(esbuild@0.28.1)(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(rollup@4.62.2)(srvx@0.11.22)(supports-color@10.2.2)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))(vite@8.1.5)
@@ -2067,26 +2067,26 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@nuxt-ignis/content@0.1.3':
-    resolution: {integrity: sha512-jeV2qZwvMvsjrSOFsBsylegqI+aUBfBeQkykxTU7qIl6lbMU8eCzeQUjsC7PRCp03c8Ljqg6WjU8tfDaOAtHMA==}
+  '@nuxt-ignis/content@0.2.0':
+    resolution: {integrity: sha512-Qm+e/b+h+DodJIJD1XQsViay7q1hyjGJ0bVRLR6cG7Na9rOuR5GIqbpR+XL9uKuR9iR0dVzOpiUEpniGoYAp2Q==}
 
-  '@nuxt-ignis/db@0.1.1':
-    resolution: {integrity: sha512-MNgnV1RRPIP272Jo6vlhuRtpgBzkN8idl3pqWG11a7M0gttzLvAR2mz+qKk90Wex0Cju98oU7/hDfXSnLa5eAw==}
+  '@nuxt-ignis/db@0.2.0':
+    resolution: {integrity: sha512-58qwQEf7Efsa9ppN9/fGU10WPGg+DauSDEU22sqUGf+sRNw+306cFWqgP823wCDpBxRoIEyjo1L9wVXBUWZeEg==}
 
-  '@nuxt-ignis/default@0.1.1':
-    resolution: {integrity: sha512-5Qr9X7/SQUbnW9C4sgufGC12AvWvBWuDghdKS4AmGFRp7R0TYgLHJ1PW0prmNWlmzy8flgK3bgabM1MdIPC/Uw==}
+  '@nuxt-ignis/default@0.2.0':
+    resolution: {integrity: sha512-k5DfacraOOxpDhdH+9qobQiQzncT6k7knRTjcHTZn+ivka2X76hQmcrjgn2qgyg8GB9ZcgGbRoFmNDpWYNYeJw==}
 
-  '@nuxt-ignis/forms@0.1.1':
-    resolution: {integrity: sha512-LARQwYJIGBjve6lPC9TgflefcoCB5IrtfVORZy6b4JJDW6fSyVhnIIfiNG+8RkrLRbWesvHze6P3io1BJlN7wg==}
+  '@nuxt-ignis/forms@0.2.0':
+    resolution: {integrity: sha512-83WW61d+FfhLerfaV34WQnlt4JFMGY9P8jB86rxgjZgX0+Kv/C+8kjO3b55oWUilVPAv7nHSCoMXg2uVY5uvGw==}
 
-  '@nuxt-ignis/ui@0.1.3':
-    resolution: {integrity: sha512-MNTYh/2XRCgZFrNlA62XM9rIYVNSWODSR1TMCruHBanXK22HlH3Jx9+TSXc5eb+FU+AeSNJl1MYvMq4JWzm4Qw==}
+  '@nuxt-ignis/ui@0.2.0':
+    resolution: {integrity: sha512-FSUhdBLN1ZIyw71fnOBY8YUleacJj5Rk/IshRT6W5qiJtzEvvsZUTJ3lWcl6c+Aly9YBB5L/CLdpFWbkYgB5yg==}
 
-  '@nuxt-ignis/utils@0.1.1':
-    resolution: {integrity: sha512-VAGcvqiZJSbILERZOvQMFdquuvnaGUx39zvmw8jUB3trg/UD4mowvByJ/7RiV4ey1xgj0bTVh6PaYglAA7VgKQ==}
+  '@nuxt-ignis/utils@0.2.0':
+    resolution: {integrity: sha512-MJyDzQum5h2I89XQWiU8KUPENfXvpGRaNporEIQ7vOE8XLAwkq7aBERcKNXcwu0xJakhuKQABNBMuhAOtm1daw==}
 
-  '@nuxt-ignis/validation@0.1.1':
-    resolution: {integrity: sha512-HbLWJa1PsPQbYJjULEZHHmPF15n9szOnjudBaEiKGEn5YCtLr9CgYn05OVfFUO0UoB1DehJmg9vaY1sXjR0kjw==}
+  '@nuxt-ignis/validation@0.2.0':
+    resolution: {integrity: sha512-sg4R6nHvgpWf30sVx++qA4rqUut/3IkrTokn/7fpBtJk+nodIjo/PgZ3thxIPfIPmhncz7/Af1QoQecRSwRe0w==}
 
   '@nuxt/cli@3.37.0':
     resolution: {integrity: sha512-Zj9NwHjEBzVrgezsgMFjpMhNqwNgROk9DzNi/dyfk1mCbXIRigV11br2xOl0Satek30bmv7oZAfMtCnDe6Ip0Q==}
@@ -11991,7 +11991,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.20.1
 
-  '@nuxt-ignis/content@0.1.3(6ab7c7ca00c3090a1ec8e3b1c94ef2bc)':
+  '@nuxt-ignis/content@0.2.0(6ab7c7ca00c3090a1ec8e3b1c94ef2bc)':
     dependencies:
       '@nuxt/content': 3.15.2(@oxc-project/types@0.143.0)(@valibot/to-json-schema@1.7.1(valibot@1.4.2(typescript@6.0.3)))(esbuild@0.28.1)(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(rollup@4.62.2)(supports-color@10.2.2)(valibot@1.4.2(typescript@6.0.3))(vite@8.1.5)
       '@nuxt/kit': 4.5.2(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))
@@ -12076,7 +12076,7 @@ snapshots:
       - webpack
       - zod
 
-  '@nuxt-ignis/db@0.1.1(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))':
+  '@nuxt-ignis/db@0.2.0(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))':
     dependencies:
       '@nuxt/kit': 4.5.2(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))
       '@nuxtjs/supabase': 2.0.10
@@ -12090,7 +12090,7 @@ snapshots:
       - typescript
       - unplugin
 
-  '@nuxt-ignis/default@0.1.1(c1976ed2dd5087f69317ef7c03670a78)':
+  '@nuxt-ignis/default@0.2.0(c1976ed2dd5087f69317ef7c03670a78)':
     dependencies:
       '@nuxt/eslint': 1.17.0(@vue/compiler-sfc@3.5.41)(esbuild@0.28.1)(eslint@10.8.1(jiti@2.7.0)(supports-color@10.2.2))(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(rollup@4.62.2)(srvx@0.11.22)(supports-color@10.2.2)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))(vite@8.1.5)
       '@nuxt/fonts': 0.14.0(db0@0.3.4)(esbuild@0.28.1)(ioredis@5.11.1(supports-color@10.2.2))(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5)
@@ -12170,7 +12170,7 @@ snapshots:
       - vue
       - webpack
 
-  '@nuxt-ignis/forms@0.1.1(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.1)(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(rollup@4.62.2)(supports-color@10.2.2)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))(vite@8.1.5)(vue@3.5.41(typescript@6.0.3))':
+  '@nuxt-ignis/forms@0.2.0(debug@4.4.3(supports-color@10.2.2))(esbuild@0.28.1)(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(rollup@4.62.2)(supports-color@10.2.2)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))(vite@8.1.5)(vue@3.5.41(typescript@6.0.3))':
     dependencies:
       '@formkit/nuxt': 2.1.2(@nuxt/kit@4.5.2(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5)))(esbuild@0.28.1)(rollup@4.62.2)(vite@8.1.5)(vue@3.5.41(typescript@6.0.3))
       '@nuxt/kit': 4.5.2(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))
@@ -12191,7 +12191,7 @@ snapshots:
       - vue
       - webpack
 
-  '@nuxt-ignis/ui@0.1.3(288aa63d615a5d3cee0d4ca8e2e02ffe)':
+  '@nuxt-ignis/ui@0.2.0(288aa63d615a5d3cee0d4ca8e2e02ffe)':
     dependencies:
       '@nuxt/kit': 4.5.2(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))
       '@nuxt/ui': 4.10.0(eb6a4a6a0779c0a91569e68f92e92cdc)
@@ -12286,7 +12286,7 @@ snapshots:
       - yup
       - zod
 
-  '@nuxt-ignis/utils@0.1.1(5e655d6ca87bb4d9c56123252f74e9b9)':
+  '@nuxt-ignis/utils@0.2.0(5e655d6ca87bb4d9c56123252f74e9b9)':
     dependencies:
       '@maas/vue-equipment': 1.0.0-beta.81(5a99cc18dd2ce723695729313e38902b)
       '@nuxt/kit': 4.5.2(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))
@@ -12322,7 +12322,7 @@ snapshots:
       - webpack
       - wheel-gestures
 
-  '@nuxt-ignis/validation@0.1.1(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))':
+  '@nuxt-ignis/validation@0.2.0(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(typescript@6.0.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))':
     dependencies:
       '@nuxt/kit': 4.5.2(magic-string@1.1.0)(magicast@0.5.4)(oxc-parser@0.140.0)(rolldown@1.2.3)(unplugin@3.3.0(esbuild@0.28.1)(rolldown@1.2.3)(rollup@4.62.2)(vite@8.1.5))
       valibot: 1.4.2(typescript@6.0.3)
