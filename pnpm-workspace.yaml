@@ -100,13 +100,6 @@ minimumReleaseAgeExclude:
   - '@nuxt-ignis/validation'
   # exclusions for trusted Vue/Nuxt packages
   # and manually checked one-time exceptions
-  # build @ 2026-08-15 11:25 GMT+2 
-  - 'nuxt-spec@0.3.2'
-  # build @ 2026-08-17 15:30 GMT+2 
-  - '@vue/language-core@3.3.10'
-  - 'vue-component-meta@3.3.10'
-  - 'vue-component-type-helpers@3.3.10'
-  - 'vue-tsc@3.3.10'
 
 allowBuilds:
   # allows node-gyp build of associated native binaries from local sources
