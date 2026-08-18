@@ -3,8 +3,9 @@
 // Will prompt for npm login during run
 //
 // Usage:
-//   node modules/ignis-modules-publish.js              # publish all modules
-//   node modules/ignis-modules-publish.js ui,db        # publish only matching modules
+//   node modules/ignis-modules-publish.js                  # publish all modules
+//   node modules/ignis-modules-publish.js ui,db            # publish only matching modules
+//   node modules/ignis-modules-publish.js --version 2.0.0  # publish all modules with exact version
 
 import { execSync } from 'child_process';
 import { readFileSync, writeFileSync } from 'fs';
@@ -24,9 +25,23 @@ const ALL_MODULES = [
   '07-utils',
 ];
 
+// extract exact version (if provided)
+let exactVersion;
+const args = process.argv.slice(2);
+const versionArgIndex = args.findIndex(arg => arg === '--version');
+if (versionArgIndex !== -1) {
+  const versionArg = args[versionArgIndex];
+  exactVersion = args[versionArgIndex + 1];
+  if (!exactVersion) {
+    console.error('Missing version. Expected a value, e.g. --version 2.0.0');
+    process.exit(1);
+  }
+  args.splice(versionArgIndex, 2);
+}
+
 // Filter modules by comma-separated partial names (e.g. "ui,db")
 // Unquoted commas in PowerShell produce a space-joined string, so split on both commas and whitespace.
-const filters = process.argv.slice(2).join(' ').split(/[,\s]+/).filter(Boolean);
+const filters = args.join(' ').split(/[,\s]+/).filter(Boolean);
 let modules;
 
 if (filters.length) {
@@ -61,11 +76,11 @@ function bumpPatch(version) {
   return parts.join('.');
 }
 
-// Step 1: Bump patch version and publish each module
+// Step 1: Set the requested version or bump patch, then publish each module
 for (const mod of modules) {
   const moduleDir = join(MODULES_DIR, mod);
   const pkg = readPkg(moduleDir);
-  const newVersion = bumpPatch(pkg.version);
+  const newVersion = exactVersion ?? bumpPatch(pkg.version);
 
   console.log(`[${mod}] ${pkg.name}: ${pkg.version} -> ${newVersion}`);
 
