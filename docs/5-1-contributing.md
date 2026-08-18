@@ -29,6 +29,7 @@ We use `pnpm` as our package manager with monorepo support with `pnpm-workspace.
 Following settings are applied:
 
 ```yaml [pnpm-workspace.yaml]
+# https://pnpm.io/settings#packages
 # subfolders where those monorepo settings apply
 packages:
   - core
@@ -36,14 +37,14 @@ packages:
   - docs
   - modules/*
 
-# https://pnpm.io/settings#shamefullyhoist
-# https://pnpm.io/settings#nodelinker
+# https://pnpm.io/settings/node-modules#shamefullyhoist
+# https://pnpm.io/settings/node-modules#nodelinker
 # for end-users of Nuxt Ignis `shamefullyHoist: true` should be enough
 # but because of the monorepo design and some linking issues with pnpm symlinks,
 # the project itself must physically hoist all dependencies into root /node_modules
 nodeLinker: hoisted
 
-# https://pnpm.io/settings#peerdependencyrules
+# https://pnpm.io/settings/peer-dependencies#peerdependencyrules
 # pnpm notoriously warn about some dependency issues that are actually not a problem
 # in current Nuxt Ignis setup - thus we are ignoring them to avoid noise 
 peerDependencyRules:
@@ -54,11 +55,11 @@ peerDependencyRules:
 catalog:
   # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0/pnpm-workspace.yaml for current values
 
-# https://pnpm.io/settings#trustpolicy
+# https://pnpm.io/settings/dependency-resolution#trustpolicy
 # packages cannot change from trusted to untrusted
 trustPolicy: no-downgrade
 
-# https://pnpm.io/settings#minimumreleaseage
+# https://pnpm.io/settings/dependency-resolution#minimumreleaseage
 # new packages cannot be installed earlier than three days after release
 minimumReleaseAge: 4320
 # trusted and verified packages may be excluded using following list
@@ -67,28 +68,39 @@ minimumReleaseAgeExclude:
   # all internal @nuxt-ignis/* packages are excluded to allow new development
   # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0/pnpm-workspace.yaml for current values
 
-# https://pnpm.io/settings#allowBuilds
+# https://pnpm.io/settings/build#allowbuilds
 # pnpm naturally blocks all post-install scripts
 # some are required for development, others are not relevant
 allowBuilds:
-  # post-install scripts required for correct behavior
-  '@parcel/watcher': true
-  '@tailwindcss/oxide': true
-  esbuild: true
+  # allows node-gyp build of associated native binaries from local sources
+  # kept enabled because 'sharp' is a runtime dependency
   sharp: true
+  # provides fallback repair of platform-specific Rust native engine
+  # kept enabled because it can actively detect and fix problems on some platforms
   unrs-resolver: true
-  vue-demi: true
-  # post-install scripts that can be ignored
+  # allows node-gyp build of associated native binaries from local sources
+  # disabled because it would require an explicit opt-in
+  '@parcel/watcher': false
+  # provides fallback download of platform-specific Rust native engine
+  # disabled because the required dependency is already resolved by pnpm install
+  '@tailwindcss/oxide': false
+  # optimization for CLI usage of 'esbuild'
+  # disabled because its runtime resolves native binaries itself
+  esbuild: false
+  # compatibility feature for Vue 2 and Vue 3
+  # disabled because project is Vue 3 only
+  vue-demi: false
+  # post-install script is empty in published package
+  # disabled because there is no action executed
   maplibre-gl: false
-  puppeteer: false
 
-# https://pnpm.io/settings#overrides
+# https://pnpm.io/settings/dependency-resolution#overrides
 # specific package versions (mostly temporary because known vulnerabilities)
 overrides:
   # - package-name
   # see https://github.com/AloisSeckar/nuxt-ignis/blob/v0.6.0/pnpm-workspace.yaml for current values
 
-# https://pnpm.io/settings#verifydepsbeforerun
+# https://pnpm.io/settings/build#verifydepsbeforerun
 # check and throw error if node_modules need to be updated
 verifyDepsBeforeRun: error
 
@@ -97,22 +109,6 @@ verifyDepsBeforeRun: error
 # before the feature is finally settled
 gitChecks: false
 ```
-
-### Reasoning for `allowBuilds` setup
-
-Following packages require their post-install scripts to run:
-
-- **`@parcel/watcher`** — runs `node-gyp-build`: picks a precompiled native `.node` binary for your OS/arch (falls back to compiling C++ via node-gyp). Provides fast FS watching used by Nuxt/Vite.
-- **`@tailwindcss/oxide`** — runs `node-gyp-build`: selects the prebuilt Rust binary for Tailwind v4's engine.
-- **`esbuild`** — runs `node install.js`: verifies/links the platform-specific `@esbuild/<os>-<arch>` binary into `node_modules/esbuild/bin`.
-- **`sharp`** — runs `node install/check`: verifies the prebuilt `libvips`/`@img/sharp-*` native binaries are usable; can rebuild from source if not. Required by `@nuxt/image` and similar.
-- **`unrs-resolver`** — runs `napi-postinstall`: links the platform-specific `@unrs/resolver-binding-*` (Rust/NAPI) native binary used by ESLint and Nuxt module resolution.
-- **`vue-demi`** — runs `node scripts/postinstall.js`: switches its own `dist/` shim files to point at Vue 2 or Vue 3 based on the resolved `vue` version. Required by Pinia and VueUse.
-
-Following packages may be skipped as their post-install scripts are not related:
-
-- **`maplibre-gl`** — has a `prepare` script that is a no-op for registry installs; only relevant when installed directly from a git ref, which we don't do.
-- **`puppeteer`** — runs `node install.mjs`: would download a full Chromium (~150–300 MB) from `storage.googleapis.com`. Not needed — e2e tests use Playwright via `@nuxt/test-utils`. Chromium download is also blocked at source via `PUPPETEER_SKIP_DOWNLOAD=true` in `.npmrc`.
 
 ## Testing
 

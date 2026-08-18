@@ -1,16 +1,16 @@
 # settings for Nuxt & pnpm
 
-# https://pnpm.io/settings#shamefullyhoist
+# https://pnpm.io/settings/node-modules#shamefullyhoist
 # required to handle transitive dependencies 
 # without having to explicitly declare them
 shamefullyHoist: true
 
-# https://pnpm.io/settings#trustpolicy
+# https://pnpm.io/settings/dependency-resolution#trustpolicy
 # for better supply-chain attack protection, new packages
 # cannot change their state from trusted to untrusted
 trustPolicy: no-downgrade
 
-# https://pnpm.io/settings#minimumreleaseage
+# https://pnpm.io/settings/dependency-resolution#minimumreleaseage
 # for better supply-chain attack protection, new packages
 # cannot be installed unless they are at least 3 days old
 minimumReleaseAge: 4320
@@ -30,7 +30,7 @@ minimumReleaseAgeExclude:
   # add more if needed
   # - package-name
 
-# https://pnpm.io/settings#allowBuilds
+# https://pnpm.io/settings/build#allowbuilds
 # pnpm naturally blocks all post-install scripts
 # some are required for development, others are not relevant
 allowBuilds:
@@ -58,13 +58,20 @@ allowBuilds:
   # add more if needed
   # - package-name: boolean
 
+# https://pnpm.io/settings/dependency-resolution#overrides
 # recommended overrides for various (mostly security) reasons
 overrides:
   # suspicious v4 comming from @formkit/nuxt@2.1.2
   chokidar: ^5.0.0
   # suspicious v6 comming from nuxt-security@2.6.0
   semver: ^7.7.0
-  # CVE-2026-9277
-  shell-quote: 1.8.4
-  # CVE-2026-46625 (old version being pulled via @vue/test-utils)
-  js-cookie: ^3.0.7
+  # suspicious v6 comming from nuxt-neon@0.9.0 (via @neondatabase/serverless@1.0.2)
+  undici-types: ^8.0.0
+  # security overrides 2026-08-12
+  brace-expansion: ^5.0.9
+  dompurify: ^3.4.13
+  esbuild: ^0.28.1
+  js-yaml: ^4.3.1
+  sharp: ^0.35.3
+  shell-quote: ^1.10.0
+  tar: ^7.5.22
