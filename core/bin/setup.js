@@ -98,7 +98,7 @@ export async function nuxtIgnisSetup(autoRun = false) {
     if (pnpmSettings) {
       // set pnpm as package manager
       try {
-        await updateJsonFile('package.json', 'packageManager', 'pnpm@11.21.0', true)
+        await updateJsonFile('package.json', 'packageManager', 'pnpm@11.22.0', true)
       } catch (error) {
         console.error('Error setting packageManager:\n', error.message)
       }
