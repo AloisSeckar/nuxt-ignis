@@ -117,19 +117,17 @@ To demonstrate the biggest benefit of using Nuxt Ignis, let's compare the number
 - @nuxt/ui
 - @vueuse/core
 - @vueuse/nuxt
-- crypto-js
 - node-html-parser
 - nuxt
+- nuxt-auth-utils
 - nuxt-neon
 - nuxt-security
 - typescript
 - vue-component-type-helpers
 
-**After** `(4 packages)`
-- crypto-js
+**After** `(2 packages)`
 - node-html-parser
 - nuxt-ignis
-- vue-component-type-helpers
 
 </details>
 
