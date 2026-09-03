@@ -20,7 +20,7 @@ Necessary prerequisite is to have Node.js installed on your machine. At least `v
 
 Recommended IDE is [Visual Studio Code](https://code.visualstudio.com/).
 
-Recommended package manager is [pnpm](https://pnpm.io/) (version `11.22.0` is used across the project).
+Recommended package manager is [pnpm](https://pnpm.io/) (version `12.3.1` is used across the project).
 
 ## Package Management
 

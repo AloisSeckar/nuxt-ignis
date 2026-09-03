@@ -60,7 +60,7 @@ Those dependencies are already included in `nuxt-ignis`. Removing is recommended
 
 ```json [package.json]
 {
-  "packageManager": "pnpm@11.22.0"
+  "packageManager": "pnpm@12.3.1"
 }
 ```
 
