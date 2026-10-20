@@ -189,6 +189,6 @@ You might also need to explicitly add `@unovis/ts` dependency in your `package.j
 
 ## Custom CSS
 
-If you have custom CSS files you want to include in your project, you can do so by defining a comma-delimited array of paths as a value for the `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_CSS` environment variable (or `ignis.config.nuxt.css` in `nuxt.config.ts`).
+If you have custom CSS files you want to include in your project, you can do so by defining a string with comma-delimited list of paths as a value for the `NUXT_PUBLIC_IGNIS_CONFIG_NUXT_CSS` environment variable (or `ignis.config.nuxt.css` in `nuxt.config.ts`).
 
 Refer to [this page](/3-10-features-nuxt.html#css) for more details.
