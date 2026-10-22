@@ -9,5 +9,5 @@
   "devDependencies": {
     "nuxt": "catalog:"
   },
-  "packageManager": "pnpm@12.3.1"
+  "packageManager": "pnpm@12.15.0"
 }

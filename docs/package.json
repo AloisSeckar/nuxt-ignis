@@ -15,5 +15,5 @@
     "vitepress-plugin-group-icons": "catalog:",
     "vitest": "catalog:"
   },
-  "packageManager": "pnpm@12.3.1"
+  "packageManager": "pnpm@12.15.0"
 }
