@@ -66,12 +66,12 @@ catalog:
   'nuxt-charts': 2.2.3
   'nuxt-neon': 0.9.0
   'nuxt-security': 2.6.0
-  'nuxt-spec': 0.3.4
+  'nuxt-spec': 0.4.0
   'open-props': 1.7.23
   'oxc-minify': ^0.154.0
   'pinia': 4.1.0
   'postcss-jit-props': 1.0.16
-  'semver': ^7.7.0
+  'semver': ^7.8.5
   'tailwindcss': 4.3.3
   'typescript': 6.0.3
   'valibot': 1.5.0
@@ -103,6 +103,9 @@ minimumReleaseAgeExclude:
   # build 2026-10-22
   - '@nuxt/image@2.2.0'
   - 'nuxt-spec@0.4.0'
+  - '@nuxt/devtools-assets@4.0.0-beta.7'
+  - '@nuxt/devtools-kit@4.0.0-beta.7'
+  - '@nuxt/devtools@4.0.0-beta.7'
 
 allowBuilds:
   # allows node-gyp build of associated native binaries from local sources
