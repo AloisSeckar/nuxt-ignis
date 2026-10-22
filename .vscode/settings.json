@@ -16,4 +16,10 @@
     "eslint.workingDirectories": [
         { "mode": "auto" },
     ],
+    "chat.tools.terminal.autoApprove": {
+        "/^node \\.agents/skills/bump-deps/bump-deps\\.js$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    },
 }

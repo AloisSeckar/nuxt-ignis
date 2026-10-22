@@ -4,13 +4,15 @@
 // Usage:
 //   node .agents/skills/bump-deps/bump-deps.js
 //
-// - Uses `pnpm outdated -r --format=json` to find catalog packages with updates.
-// - Auto-applies minor/patch bumps (respecting ^/~ prefixes) and mirrors safe
-//   version bumps into docs/3-1-features.md and <PackagesReference> tags.
-// - Skips internal '@nuxt-ignis/*' and never auto-applies major bumps 
+// - Fetches version info from the npm registry for every catalog package.
+// - Auto-applies minor/patch bumps (respecting ^/~ prefixes) of versions that already
+//   satisfy minimumReleaseAge and mirrors them into docs/3-1-features.md and
+//   <PackagesReference> tags.
+// - Skips internal '@nuxt-ignis/*' and never auto-applies major bumps
+//   (reported only, for manual review).
+// - Newer versions that are still younger than minimumReleaseAge are not applied
 //   (reported only, for manual review).
 
-import { execSync } from 'node:child_process'
 import { readFileSync, writeFileSync, readdirSync, statSync } from 'node:fs'
 import { dirname, join, relative, extname } from 'node:path'
 import { fileURLToPath } from 'node:url'
@@ -42,14 +44,9 @@ function findBlockRange(yamlText, key) {
   return { bodyStart, bodyEnd }
 }
 
-// Detects the dominant line-ending style of the file so inserted lines match
-function detectEol(yamlText) {
-  return yamlText.includes('\r\n') ? '\r\n' : '\n'
-}
-
 function parseCatalog(yamlText) {
   const { bodyStart, bodyEnd } = findBlockRange(yamlText, 'catalog')
-  const lineRe = /^\s*'([^']+)':\s*(\^|~)?(\S+)/
+  const lineRe = /^\s*'([^']+)':\s*['"]?(\^|~)?([^'"\s]+)/
   return yamlText
     .slice(bodyStart, bodyEnd)
     .split(/\r?\n/)
@@ -73,55 +70,8 @@ function parseExcludeNames(yamlText) {
 }
 
 function updateCatalogVersion(yamlText, name, versionWithPrefix) {
-  const pattern = new RegExp(`('${escapeRegExp(name)}':\\s*)\\S+`)
-  return yamlText.replace(pattern, `$1${versionWithPrefix}`)
-}
-
-function formatBuildTimestamp(date = new Date()) {
-  const pad = n => String(n).padStart(2, '0')
-  const offsetMin = -date.getTimezoneOffset()
-  const sign = offsetMin >= 0 ? '+' : '-'
-  const offsetH = Math.floor(Math.abs(offsetMin) / 60)
-  const offsetM = Math.abs(offsetMin) % 60
-  const offset = offsetM ? `${offsetH}:${pad(offsetM)}` : `${offsetH}`
-  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())} `
-    + `${pad(date.getHours())}:${pad(date.getMinutes())} GMT${sign}${offset}`
-}
-
-// Appends a new dated comment group + entries at the end of minimumReleaseAgeExclude
-function appendExclusions(yamlText, entries) {
-  const { bodyEnd } = findBlockRange(yamlText, 'minimumReleaseAgeExclude')
-  const eol = detectEol(yamlText)
-  const lines = [
-    `  # build @ ${formatBuildTimestamp()}`,
-    ...entries.map(({ name, version }) => `  - '${name}' # v${version}`),
-  ]
-  return `${yamlText.slice(0, bodyEnd)}${lines.join(eol)}${eol}${yamlText.slice(bodyEnd)}`
-}
-
-// ---- pnpm outdated ----
-
-function getPnpmOutdated() {
-  try {
-    const output = execSync('pnpm outdated -r --format=json', {
-      cwd: ROOT_DIR,
-      encoding: 'utf8',
-      stdio: ['ignore', 'pipe', 'pipe'],
-    })
-    return JSON.parse(output)
-  }
-  catch (err) {
-    // pnpm exits with code 1 when outdated packages are found - stdout still has the JSON
-    if (err.stdout) {
-      try {
-        return JSON.parse(err.stdout.toString())
-      }
-      catch {
-        // fall through to rethrow below
-      }
-    }
-    throw new Error(`'pnpm outdated' failed: ${err.message}`)
-  }
+  const pattern = new RegExp(`('${escapeRegExp(name)}':\\s*)(['"]?)[^'"\\s]+\\2`)
+  return yamlText.replace(pattern, (_, head, quote) => `${head}${quote}${versionWithPrefix}${quote}`)
 }
 
 // ---- npm registry ----
@@ -247,7 +197,6 @@ function updateDocsForPackage(name, oldVersion, newVersion, docFiles) {
 // ---- main ----
 
 async function main() {
-  const outdated = getPnpmOutdated()
   let yamlText = readFileSync(WORKSPACE_YAML_PATH, 'utf8')
   const catalog = parseCatalog(yamlText)
   const minimumReleaseAge = parseMinimumReleaseAge(yamlText)
@@ -255,28 +204,55 @@ async function main() {
   const docFiles = listMarkdownFiles(DOCS_DIR)
 
   const catalogByName = new Map(catalog.map(entry => [entry.name, entry]))
-  const candidates = Object.keys(outdated).filter(
-    name => catalogByName.has(name) && !name.startsWith('@nuxt-ignis/'),
-  )
+  const candidates = catalog.map(entry => entry.name).filter(name => !name.startsWith('@nuxt-ignis/'))
 
   const report = {
     applied: [],
-    appliedRecent: [],
     majors: [],
+    tooRecent: [],
     fetchFailures: [],
   }
+
+  const ageMinutesOf = (time, version) =>
+    time[version] ? (Date.now() - Date.parse(time[version])) / 60_000 : Infinity
 
   const resolved = await mapWithConcurrency(candidates, CONCURRENCY, async (name) => {
     const entry = catalogByName.get(name)
     try {
       const data = await fetchJsonWithRetry(registryUrl(name))
-      const { version: candidateVersion, channelDead } = pickCandidate(
-        entry.version,
-        data.versions || {},
-        outdated[name].latest,
+      const versions = data.versions || {}
+      const time = data.time || {}
+      const distLatest = data['dist-tags']?.latest || entry.version
+      const isExcluded = excludeNames.has(name)
+
+      // Versions allowed by minimumReleaseAge (all of them for excluded packages)
+      const allowedVersions = Object.fromEntries(
+        Object.entries(versions).filter(
+          ([v]) => isExcluded || ageMinutesOf(time, v) >= minimumReleaseAge,
+        ),
       )
-      const bump = classify(entry.version, candidateVersion, channelDead)
-      return { name, entry, bump, candidateVersion, time: data.time || {} }
+      const allowedStable = Object.keys(allowedVersions)
+        .filter(v => semver.valid(v) && !semver.prerelease(v))
+        .sort(semver.rcompare)
+      const allowedLatest = allowedVersions[distLatest] ? distLatest : (allowedStable[0] || entry.version)
+
+      const target = pickCandidate(entry.version, allowedVersions, allowedLatest)
+      const bump = classify(entry.version, target.version, target.channelDead)
+
+      // Newest registry version, reported if blocked by minimumReleaseAge
+      const newest = pickCandidate(entry.version, versions, distLatest)
+      const newestBump = classify(entry.version, newest.version, newest.channelDead)
+      const ageMinutes = ageMinutesOf(time, newest.version)
+      if (newestBump !== 'none' && ageMinutes < minimumReleaseAge && !isExcluded) {
+        report.tooRecent.push({
+          name,
+          current: entry.version,
+          latest: newest.version,
+          daysLeft: ((minimumReleaseAge - ageMinutes) / 1440).toFixed(1),
+        })
+      }
+
+      return { name, entry, bump, candidateVersion: target.version }
     }
     catch (err) {
       report.fetchFailures.push({ name, error: err.message })
@@ -286,29 +262,16 @@ async function main() {
 
   for (const item of resolved) {
     if (!item || item.bump === 'none') continue
-    const { name, entry, bump, candidateVersion, time } = item
+    const { name, entry, bump, candidateVersion } = item
 
     if (bump === 'major') {
       report.majors.push({ name, current: entry.version, latest: candidateVersion })
       continue
     }
 
-    const releasedAt = time[candidateVersion]
-    const ageMinutes = releasedAt ? (Date.now() - Date.parse(releasedAt)) / 60_000 : Infinity
-    const isRecent = ageMinutes < minimumReleaseAge
-
     yamlText = updateCatalogVersion(yamlText, name, `${entry.prefix}${candidateVersion}`)
-
-    if (isRecent && !excludeNames.has(name)) {
-      yamlText = appendExclusions(yamlText, [{ name, version: candidateVersion }])
-      excludeNames.add(name)
-      report.appliedRecent.push({ name, from: entry.version, to: candidateVersion })
-    }
-    else {
-      report.applied.push({ name, from: entry.version, to: candidateVersion })
-    }
-
-    const updatedDocs = updateDocsForPackage(name, entry.version, candidateVersion, docFiles)
+    const docs = updateDocsForPackage(name, entry.version, candidateVersion, docFiles)
+    report.applied.push({ name, from: entry.version, to: candidateVersion, bump, docs })
   }
 
   writeFileSync(WORKSPACE_YAML_PATH, yamlText)
@@ -322,9 +285,17 @@ async function main() {
     console.log('')
   }
 
-  printList('Applied', report.applied, i => `${i.name}: ${i.from} -> ${i.to}`)
-  printList('Applied - manual check', report.appliedRecent, i => `${i.name}: ${i.from} -> ${i.to}`)
+  printList(
+    'Applied',
+    report.applied,
+    i => `${i.name}: ${i.from} -> ${i.to} (${i.bump})${i.docs.length ? ` [docs: ${i.docs.join(', ')}]` : ''}`,
+  )
   printList('Majors available (not applied)', report.majors, i => `${i.name}: ${i.current} -> ${i.latest}`)
+  printList(
+    'Newer version blocked by minimumReleaseAge (not applied)',
+    report.tooRecent,
+    i => `${i.name}: ${i.current} -> ${i.latest} (allowed in ~${i.daysLeft} days)`,
+  )
   printList('Fetch failures (skipped)', report.fetchFailures, i => `${i.name}: ${i.error}`)
 }
 
