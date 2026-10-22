@@ -94,7 +94,7 @@ If you don't want to rely on the default behavior, you can disable those handler
 
 ## Testing
 
-<PackagesReference :packages="[{ name: 'nuxt-spec', version: 'v0.3.1' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-spec', version: '0.4.0' }]" />
 
 Nuxt Ignis embraces [Vitest](https://vitest.dev/) as its test runner library. More specifically, it uses proprietary **Nuxt Spec** package that provides a base layer for testing Nuxt modules and applications united under single dependency. With that you have out-of-the-box access to:
 
@@ -165,7 +165,7 @@ export default defineNuxtConfig({
 
 ## Vue Language Tools
 
-<PackagesReference :packages="[{ name: 'vue-tsc', version: '3.3.10' }, { name: 'vue-component-meta', version: '3.3.10' }, { name: 'vue-component-type-helpers', version: '3.3.10' }]" />
+<PackagesReference :packages="[{ name: 'vue-tsc', version: '3.3.13' }, { name: 'vue-component-meta', version: '3.3.13' }, { name: 'vue-component-type-helpers', version: '3.3.13' }]" />
 
 Following pacakges are automatically made available:
 
@@ -177,7 +177,7 @@ As of now, this cannot be configured. But unless some of the functions from `vue
 
 ## CLI tools
 
-<PackagesReference :packages="[{ name: 'elrh-cosca', version: '0.3.5' }]" />
+<PackagesReference :packages="[{ name: 'elrh-cosca', version: '0.4.3' }]" />
 
 Using experimental [elrh-cosca](https://github.com/AloisSeckar/elrh-cosca) library, Nuxt Ignis provides couple of CLI tools to help you set up your project:
 

@@ -20,7 +20,7 @@ peerDependencyRules:
 
 catalog:
   '@formkit/nuxt': 2.1.2
-  '@maas/vue-equipment': 1.0.0-beta.81
+  '@maas/vue-equipment': 1.0.0-beta.88
   '@nuxt-ignis/content': 0.2.0
   '@nuxt-ignis/db': 0.2.0
   '@nuxt-ignis/default': 0.2.0
@@ -28,62 +28,62 @@ catalog:
   '@nuxt-ignis/ui': 0.2.0
   '@nuxt-ignis/utils': 0.2.0
   '@nuxt-ignis/validation': 0.2.0
-  '@nuxt/content': 3.15.2
-  '@nuxt/devtools': ^4.0.0-alpha.10
+  '@nuxt/content': 3.16.2
+  '@nuxt/devtools': ^4.0.0-alpha.20
   '@nuxt/eslint': 1.17.0
   '@nuxt/eslint-config': 1.17.0
-  '@nuxt/fonts': 0.14.0
-  '@nuxt/image': 2.1.0
-  '@nuxt/kit': 4.5.2
+  '@nuxt/fonts': 1.0.1
+  '@nuxt/image': 2.2.0
+  '@nuxt/kit': 4.6.2
   '@nuxt/module-builder': ^1.0.3
-  '@nuxt/schema': 4.5.2
-  '@nuxt/scripts': 1.3.3
-  '@nuxt/test-utils': ^4.1.0
-  '@nuxt/ui': 4.10.0
+  '@nuxt/schema': 4.6.2
+  '@nuxt/scripts': 1.3.12
+  '@nuxt/test-utils': ^4.3.4
+  '@nuxt/ui': 4.12.0
   '@nuxtjs/i18n': 10.6.0
   '@nuxtjs/tailwindcss': 6.14.0
-  '@nuxtjs/seo': 5.3.12
-  '@nuxtjs/supabase': 2.0.10
-  '@pinia/nuxt': 1.0.1
-  '@stefanobartoletti/nuxt-social-share': 3.2.0
+  '@nuxtjs/seo': 6.0.1
+  '@nuxtjs/supabase': 2.1.0
+  '@pinia/nuxt': 1.0.3
+  '@stefanobartoletti/nuxt-social-share': 3.3.0
   '@tailwindcss/vite': 4.3.3
-  '@types/node': ^26.2.0
+  '@types/node': ^26.6.5
   '@vueform/nuxt': 1.31.0
   '@vueform/vueform': 1.13.13
-  '@vueuse/core': 14.4.0
-  '@vueuse/nuxt': 14.4.0
+  '@vueuse/core': 15.0.0
+  '@vueuse/nuxt': 15.0.0
   'changelogen': ^0.6.2
   'consola': 3.4.2
   'cross-env': ^10.1.0
   'date-fns': 4.4.0
   'defu': 6.1.7
-  'elrh-cosca': 0.3.6
+  'elrh-cosca': 0.4.3
   'elrh-pslo': 1.1.6
-  'eslint': ^10.8.0
-  'magic-regexp': 0.11.0
-  'nuxt': 4.5.2
-  'nuxt-auth-utils': 0.5.30
-  'nuxt-charts': 2.2.0
+  'eslint': ^10.13.0
+  'magic-regexp': 0.11.2
+  'nuxt': 4.6.2
+  'nuxt-auth-utils': 0.5.32
+  'nuxt-charts': 2.2.3
   'nuxt-neon': 0.9.0
   'nuxt-security': 2.6.0
-  'nuxt-spec': 0.3.2
+  'nuxt-spec': 0.3.4
   'open-props': 1.7.23
-  'oxc-minify': ^0.143.0
-  'pinia': 4.0.2
+  'oxc-minify': ^0.154.0
+  'pinia': 4.1.0
   'postcss-jit-props': 1.0.16
   'semver': ^7.7.0
   'tailwindcss': 4.3.3
   'typescript': 6.0.3
-  'valibot': 1.4.2
-  'vitepress': ^2.0.0-alpha.19
-  'vitepress-plugin-group-icons': ^1.7.6
-  'vitest': ^4.1.10
-  'vue': 3.5.41
-  'vue-component-meta': '3.3.10'
-  'vue-component-type-helpers': '3.3.10'
-  'vue-router': 5.2.0
-  'vue-tsc': 3.3.10
-  'zod': 4.4.3
+  'valibot': 1.5.0
+  'vitepress': ^2.0.0-alpha.20
+  'vitepress-plugin-group-icons': ^1.8.1
+  'vitest': ^5.0.5
+  'vue': 3.5.44
+  'vue-component-meta': '3.3.13'
+  'vue-component-type-helpers': '3.3.13'
+  'vue-router': 5.4.0
+  'vue-tsc': 3.3.13
+  'zod': 4.6.7
 
 trustPolicy: no-downgrade
 
@@ -100,6 +100,9 @@ minimumReleaseAgeExclude:
   - '@nuxt-ignis/validation'
   # exclusions for trusted Vue/Nuxt packages
   # and manually checked one-time exceptions
+  # build 2026-10-22
+  - '@nuxt/image@2.2.0'
+  - 'nuxt-spec@0.4.0'
 
 allowBuilds:
   # allows node-gyp build of associated native binaries from local sources
@@ -126,7 +129,7 @@ allowBuilds:
 
 overrides:
   # Vite v8
-  vite: ^8.0.0
+  vite: ^8.3.0
   # TypeScript v6
   typescript: ^6.0.0
   # suspicious v4 comming from @formkit/nuxt@2.1.2
@@ -135,15 +138,6 @@ overrides:
   semver: ^7.7.0
   # suspicious v6 comming from nuxt-neon@0.9.0 (via @neondatabase/serverless@1.0.2)
   undici-types: ^8.0.0
-  # security overrides 2026-08-12
-  brace-expansion: ^5.0.9
-  dompurify: ^3.4.13
-  esbuild: ^0.28.1
-  js-yaml: ^4.3.1
-  sharp: ^0.35.3
-  shell-quote: ^1.10.0
-  tar: ^7.5.22
-  # currently no fix for 'image-size' package (CVE-2025-71329 & CVE-2025-71330)
 
 verifyDepsBeforeRun: error
 

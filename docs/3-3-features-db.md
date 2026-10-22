@@ -48,7 +48,7 @@ For details and more config options see the [`nuxt-neon` docs](https://github.co
 
 ## Supabase
 
-<PackagesReference :packages="[{ name: '@nuxtjs/supabase', version: '2.0.10' }]" />
+<PackagesReference :packages="[{ name: '@nuxtjs/supabase', version: '2.1.0' }]" />
 
 [Supabase](https://supabase.com/) is an open-source Firebase alternative that provides a suite of tools for building applications, including a Postgres database, authentication, and real-time subscriptions.
 

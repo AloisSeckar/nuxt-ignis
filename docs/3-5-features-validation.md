@@ -4,7 +4,7 @@ Nuxt Ignis offers two alternatives for schema validation:
 
 ## Zod
 
-<PackagesReference :packages="[{ name: 'zod', version: '4.4.3' }]" />
+<PackagesReference :packages="[{ name: 'zod', version: '4.6.7' }]" />
 
 [Zod](https://zod.dev/) is a TypeScript-first schema declaration and validation library that allows you to define schemas for your data and validate them at runtime. It provides a simple and intuitive API for defining schemas and validating data against them.
 
@@ -63,7 +63,7 @@ const isValid: boolean = await isValidByZod(ZodSchema, object)
 
 ## Valibot
 
-<PackagesReference :packages="[{ name: 'valibot', version: '1.4.2' }]" />
+<PackagesReference :packages="[{ name: 'valibot', version: '1.5.0' }]" />
 
 [Valibot](https://valibot.dev/) is a TypeScript-first schema validation library that allows you to define schemas for your data and validate them at runtime. It provides a simple and intuitive API for defining schemas and validating data against them.
 

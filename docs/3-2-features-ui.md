@@ -26,7 +26,7 @@ If you want to do small adjustments or add more default rules, you can use the C
 
 ## Nuxt UI
 
-<PackagesReference :packages="[{ name: '@nuxt/ui', version: '4.10.0' }]" />
+<PackagesReference :packages="[{ name: '@nuxt/ui', version: '4.12.0' }]" />
 
 [`Nuxt UI`](https://ui.nuxt.com/) is an official UI library for Nuxt, providing a set of components and utilities to build user interfaces. It is designed to be flexible and easy to use and it might be a natural choice when building Nuxt applications. It also brings in `Tailwind CSS` and `Nuxt Icon` modules out of the box.
 
@@ -160,7 +160,7 @@ Your custom CSS files may be added via [dedicated option](/3-10-features-nuxt.ht
 
 ## Nuxt Charts
 
-<PackagesReference :packages="[{ name: 'nuxt-charts', version: '2.2.0' }]" />
+<PackagesReference :packages="[{ name: 'nuxt-charts', version: '2.2.3' }]" />
 
 [Nuxt Charts](https://nuxt.com/modules/charts) is a module for creating visualy appealing charts in your Nuxt application.
 
